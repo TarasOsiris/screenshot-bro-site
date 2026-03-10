@@ -156,90 +156,11 @@ const features = [
 function AppPreview() {
   return (
     <div className="macos-window w-full max-w-4xl mx-auto">
-      {/* Title bar */}
-      <div className="macos-titlebar">
-        <div className="macos-dot" style={{ background: "#ff5f57" }} />
-        <div className="macos-dot" style={{ background: "#febc2e" }} />
-        <div className="macos-dot" style={{ background: "#28c840" }} />
-        <span className="ml-3 text-xs text-white/30 font-mono">Screenshot Bro — My App Screenshots</span>
-      </div>
-
-      {/* App content mock */}
-      <div className="bg-[#13131d] p-6 flex gap-4">
-        {/* Sidebar */}
-        <div className="hidden md:flex flex-col gap-2 w-40 shrink-0">
-          <div className="text-[10px] uppercase tracking-widest text-white/20 mb-1 font-mono">Rows</div>
-          {["iPhone 6.5″", "iPad 13″"].map((label, i) => (
-            <div
-              key={label}
-              className={`text-xs px-3 py-2 rounded-lg cursor-default ${
-                i === 0 ? "bg-accent/20 text-accent-light" : "text-white/40 hover:text-white/60"
-              }`}
-            >
-              {label}
-            </div>
-          ))}
-          <div className="mt-auto text-[10px] text-white/15 font-mono">v1.0.0</div>
-        </div>
-
-        {/* Canvas area */}
-        <div className="flex-1 flex gap-3 overflow-hidden">
-          {[
-            { from: "#6366f1", to: "#a855f7" },
-            { from: "#f59e0b", to: "#ef4444" },
-            { from: "#34d399", to: "#3b82f6" },
-          ].map((grad, i) => (
-            <div
-              key={i}
-              className="flex-1 aspect-[9/19.5] rounded-lg relative overflow-hidden"
-              style={{
-                background: `linear-gradient(160deg, ${grad.from}, ${grad.to})`,
-                minWidth: 0,
-              }}
-            >
-              {/* Mock device frame */}
-              <div className="absolute inset-x-[15%] top-[12%] bottom-[8%] rounded-[14px] bg-black/30 backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                <div className="w-[70%] h-[60%] rounded-md bg-white/10 flex flex-col gap-1.5 p-2">
-                  <div className="h-2 w-3/4 rounded bg-white/20" />
-                  <div className="h-2 w-1/2 rounded bg-white/15" />
-                  <div className="flex-1 rounded bg-white/5 mt-1" />
-                </div>
-              </div>
-              {/* Mock text overlay */}
-              <div className="absolute bottom-[4%] inset-x-0 text-center">
-                <div className="text-[8px] font-semibold text-white/80 drop-shadow-lg tracking-wide">
-                  {["Track Progress", "Stay Focused", "Achieve Goals"][i]}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Inspector */}
-        <div className="hidden lg:flex flex-col gap-3 w-44 shrink-0">
-          <div className="text-[10px] uppercase tracking-widest text-white/20 font-mono">Inspector</div>
-          {[
-            ["Background", "Gradient"],
-            ["Angle", "160°"],
-            ["Format", "PNG"],
-            ["Scale", "3x"],
-          ].map(([label, value]) => (
-            <div key={label} className="flex items-center justify-between text-xs">
-              <span className="text-white/30">{label}</span>
-              <span className="text-white/60 font-mono text-[11px]">{value}</span>
-            </div>
-          ))}
-          <div className="mt-2 flex gap-1.5">
-            {["#6366f1", "#a855f7", "#f59e0b", "#34d399"].map((c) => (
-              <div
-                key={c}
-                className="w-5 h-5 rounded-full border border-white/10"
-                style={{ background: c }}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+      <img
+        src="/app-preview.png"
+        alt="Screenshot Bro app — editing App Store screenshots with device frames, gradients, and multi-template layout"
+        className="w-full h-auto block"
+      />
     </div>
   );
 }
@@ -336,6 +257,72 @@ export default function Home() {
           <AppPreview />
           {/* Glow under preview */}
           <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-accent/10 blur-3xl rounded-full" />
+        </div>
+      </section>
+
+      {/* ── Why Screenshot Bro? ── */}
+      <section className="py-28 px-6 border-t border-border-subtle">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-xs uppercase tracking-[0.25em] text-warm font-mono mb-3">
+              The Problem
+            </p>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
+              Why Screenshot Bro?
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            {/* Without */}
+            <div className="relative rounded-2xl bg-surface-raised border border-border p-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose/10 text-rose text-xs font-medium mb-6">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+                Without Screenshot Bro
+              </div>
+              <ul className="space-y-4">
+                {[
+                  "Manually resize each screenshot in Figma or Photoshop",
+                  "Copy-paste device frames one by one across artboards",
+                  "Re-export every file when you change a single color",
+                  "Juggle dozens of layers for 6 screenshots × 2 device sizes",
+                ].map((text) => (
+                  <li key={text} className="flex items-start gap-3 text-sm text-white/35 leading-relaxed">
+                    <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/15 shrink-0" />
+                    {text}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* With */}
+            <div className="relative rounded-2xl bg-surface-raised border border-accent/30 p-8">
+              <div className="absolute inset-0 rounded-2xl bg-accent/[0.03]" />
+              <div className="relative">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-mint/10 text-mint text-xs font-medium mb-6">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20,6 9,17 4,12" />
+                  </svg>
+                  With Screenshot Bro
+                </div>
+                <ul className="space-y-4">
+                  {[
+                    "Design one template — all variants update instantly",
+                    "Drop in device frames with a click, pick your model",
+                    "Change a gradient or text once, it's everywhere",
+                    "Export every screenshot in every size with one button",
+                  ].map((text) => (
+                    <li key={text} className="flex items-start gap-3 text-sm text-white/60 leading-relaxed">
+                      <span className="mt-1 w-1.5 h-1.5 rounded-full bg-mint shrink-0" />
+                      {text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
