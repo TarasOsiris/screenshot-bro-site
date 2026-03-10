@@ -282,12 +282,6 @@ export default function Home() {
         <div className="grid-bg absolute inset-0 opacity-40" />
 
         <div className="relative max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="animate-fade-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-border text-xs text-white/50 mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-mint pulse-ring" />
-            Native macOS App
-          </div>
-
           {/* Headline */}
           <h1
             className="animate-fade-up font-display font-800 text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95] mb-6"
