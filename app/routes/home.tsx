@@ -272,6 +272,11 @@ export default function Home() {
             </h2>
           </div>
 
+          <p className="max-w-2xl mx-auto text-center text-base text-white/40 leading-relaxed mb-16">
+            {/* TODO: Replace with your story about why you created Screenshot Bro */}
+            I was tired of spending hours in Figma tweaking App Store screenshots every time I shipped an update. So I built the tool I wished existed — a fast, native Mac app that lets you design once and export everything. This is that tool.
+          </p>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             {/* Without */}
             <div className="relative rounded-2xl bg-surface-raised border border-border p-8">
