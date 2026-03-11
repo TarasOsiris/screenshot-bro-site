@@ -110,43 +110,43 @@ const features = [
   {
     icon: <IconDevice />,
     title: "Device Frames",
-    description: "Pixel-perfect iPhone and iPad mockups. Set the device body color, drop in your screen content, done.",
+    description: "iPhone, iPad Pro 11\", iPad Pro 13\", and Mac Desktop frames. Accurate bezels, configurable body colors, and per-row defaults.",
     accent: "var(--color-mint)",
   },
   {
     icon: <IconGradient />,
-    title: "Beautiful Backgrounds",
-    description: "13 gradient presets — Ocean, Sunset, Mint, Berry — or craft your own with multi-stop gradients and angle control.",
+    title: "Backgrounds & Spanning",
+    description: "Solid colors, 12 gradient presets, or images. Gradients and images can span across multiple templates in a row for seamless designs.",
     accent: "var(--color-warm)",
   },
   {
     icon: <IconShapes />,
-    title: "Shape Tools",
-    description: "Rectangles, circles, text, images, SVGs, and device frames. Full control over color, opacity, rotation, and border radius.",
+    title: "Shape Tools + SVG",
+    description: "Rectangles, circles, text, images, SVGs, and device frames. Inline text editing, fill modes, shape clipping, and full transform controls.",
     accent: "var(--color-rose)",
   },
   {
     icon: <IconAlign />,
     title: "Smart Alignment",
-    description: "Snap guides appear as you drag, keeping everything lined up. Nudge with arrow keys for pixel-perfect placement.",
+    description: "Snap guides appear as you drag, keeping everything lined up. Nudge with arrow keys, Option-drag to duplicate, jump-to-shape magnifier.",
     accent: "var(--color-accent-light)",
   },
   {
     icon: <IconExport />,
-    title: "Batch Export",
-    description: "PNG or JPEG at 1x, 2x, or 3x. Export all rows and templates at once into organized folders. One click.",
+    title: "Localized Export",
+    description: "Export PNG or JPEG at 1x–3x for 30+ locales. Auto-organized folders by locale and row. One click, every language, every size.",
     accent: "var(--color-warm-light)",
   },
   {
     icon: <IconProject />,
-    title: "Project Management",
-    description: "Save, name, and switch between screenshot projects. Auto-saves as you work. Full undo/redo support.",
+    title: "Localization Built In",
+    description: "30+ locale presets from English to Arabic. Per-shape text overrides, translation tracking, and keyboard shortcuts to flip between languages.",
     accent: "var(--color-mint)",
   },
   {
     icon: <IconNative />,
     title: "Native macOS",
-    description: "Built with Swift and SwiftUI. No Electron, no browser tab. Instant launch, native performance, zero lag.",
+    description: "Built with Swift and SwiftUI. No Electron, no browser tab. Instant launch, native performance, auto-save, full undo/redo.",
     accent: "var(--color-accent)",
   },
 ];
@@ -155,7 +155,7 @@ const features = [
 
 function AppPreview() {
   return (
-    <div className="macos-window w-full max-w-4xl mx-auto">
+    <div className="macos-window w-full mx-auto">
       <img
         src="/app-preview.png"
         alt="Screenshot Bro app — editing App Store screenshots with device frames, gradients, and multi-template layout"
@@ -212,7 +212,7 @@ export default function Home() {
             <br />
             <span className="text-gradient">screenshots,</span>
             <br />
-            <span className="text-white">batch‑crafted.</span>
+            <span className="text-white">localized.</span>
           </h1>
 
           {/* Sub */}
@@ -220,8 +220,8 @@ export default function Home() {
             className="animate-fade-up max-w-xl mx-auto text-base sm:text-lg text-white/55 leading-relaxed mb-10"
             style={{ animationDelay: "0.2s" }}
           >
-            Design once, export every variant. Device frames, gradients, text overlays —
-            all in a lightning-fast native macOS editor.
+            Design once, export every variant in 30+ languages. Device frames, gradients,
+            text overlays — all in a lightning-fast native macOS editor.
           </p>
 
           {/* CTAs */}
@@ -251,7 +251,7 @@ export default function Home() {
 
         {/* App Preview */}
         <div
-          className="animate-fade-up relative max-w-4xl mx-auto mt-16 px-4"
+          className="animate-fade-up relative max-w-6xl mx-auto mt-16"
           style={{ animationDelay: "0.5s" }}
         >
           <AppPreview />
@@ -273,8 +273,7 @@ export default function Home() {
           </div>
 
           <p className="max-w-2xl mx-auto text-center text-base text-white/55 leading-relaxed mb-16">
-            {/* TODO: Replace with your story about why you created Screenshot Bro */}
-            I was tired of spending hours in Figma tweaking App Store screenshots every time I shipped an update. So I built the tool I wished existed — a fast, native Mac app that lets you design once and export everything. This is that tool.
+            I was tired of spending hours in Figma tweaking App Store screenshots every time I shipped an update — and it got worse when I started localizing into multiple languages. So I built the tool I wished existed — a fast, native Mac app that lets you design once, localize into 30+ languages, and export everything. This is that tool.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
@@ -292,7 +291,7 @@ export default function Home() {
                   "Manually resize each screenshot in Figma or Photoshop",
                   "Copy-paste device frames one by one across artboards",
                   "Re-export every file when you change a single color",
-                  "Juggle dozens of layers for 6 screenshots × 2 device sizes",
+                  "Duplicate everything for each language, lose track of translations",
                 ].map((text) => (
                   <li key={text} className="flex items-start gap-3 text-sm text-white/50 leading-relaxed">
                     <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/30 shrink-0" />
@@ -315,9 +314,9 @@ export default function Home() {
                 <ul className="space-y-4">
                   {[
                     "Design one template — all variants update instantly",
-                    "Drop in device frames with a click, pick your model",
-                    "Change a gradient or text once, it's everywhere",
-                    "Export every screenshot in every size with one button",
+                    "Drop in device frames with a click, pick your model and color",
+                    "Add 30+ locales with per-shape text overrides",
+                    "Export every screenshot, every language, every size — one click",
                   ].map((text) => (
                     <li key={text} className="flex items-start gap-3 text-sm text-white/60 leading-relaxed">
                       <span className="mt-1 w-1.5 h-1.5 rounded-full bg-mint shrink-0" />
@@ -389,17 +388,17 @@ export default function Home() {
               {
                 step: "01",
                 title: "Set Up Rows",
-                desc: "Pick your device sizes — iPhone 6.5\", iPad 13\", whatever you need. Add as many rows as you want.",
+                desc: "Pick your device sizes — iPhone 6.5\", iPad Pro 13\", Mac Desktop. Add as many rows as you need.",
               },
               {
                 step: "02",
-                title: "Design Once",
-                desc: "Drop in device frames, add text and shapes, choose a gradient. Changes flow across all templates.",
+                title: "Design & Localize",
+                desc: "Drop in device frames, add text and shapes, choose a background. Add locales and translate — per-shape text overrides keep every language pixel-perfect.",
               },
               {
                 step: "03",
                 title: "Export All",
-                desc: "Hit export. Get organized folders with every screenshot at your chosen scale. That's it.",
+                desc: "Hit export. Get organized folders by locale and row with every screenshot at your chosen scale. One click.",
               },
             ].map((s) => (
               <div key={s.step} className="relative">
@@ -429,8 +428,8 @@ export default function Home() {
             Ready to ship<br />better screenshots?
           </h2>
           <p className="text-base text-white/55 mb-10 max-w-md mx-auto">
-            Screenshot Bro is coming soon. Drop me an email to get early access
-            and be the first to try it.
+            Screenshot Bro is a native macOS app. Drop me an email to get early access
+            and start shipping better screenshots today.
           </p>
           <a
             href="mailto:tleskiv@ninevastudios.com?subject=Screenshot%20Bro%20Early%20Access"
@@ -440,7 +439,7 @@ export default function Home() {
             Get Early Access
           </a>
           <p className="mt-4 text-xs text-white/40 font-mono">
-            macOS app · Coming soon
+            macOS app · Swift & SwiftUI · Zero dependencies
           </p>
         </div>
       </section>
