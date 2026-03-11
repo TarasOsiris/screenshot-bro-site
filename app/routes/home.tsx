@@ -184,7 +184,7 @@ export default function Home() {
             </span>
           </div>
           <div className="flex items-center gap-6">
-            <a href="#features" className="text-xs text-white/40 hover:text-white/80 transition-colors hidden sm:block">
+            <a href="#features" className="text-xs text-white/50 hover:text-white/80 transition-colors hidden sm:block">
               Features
             </a>
             <a
@@ -217,7 +217,7 @@ export default function Home() {
 
           {/* Sub */}
           <p
-            className="animate-fade-up max-w-xl mx-auto text-base sm:text-lg text-white/40 leading-relaxed mb-10"
+            className="animate-fade-up max-w-xl mx-auto text-base sm:text-lg text-white/55 leading-relaxed mb-10"
             style={{ animationDelay: "0.2s" }}
           >
             Design once, export every variant. Device frames, gradients, text overlays —
@@ -238,7 +238,7 @@ export default function Home() {
             </a>
             <a
               href="#features"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/[0.03] border border-border text-white/60 hover:text-white/90 hover:border-white/20 text-sm transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/[0.03] border border-border text-white/70 hover:text-white/90 hover:border-white/20 text-sm transition-all"
             >
               See what it does
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -272,7 +272,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <p className="max-w-2xl mx-auto text-center text-base text-white/40 leading-relaxed mb-16">
+          <p className="max-w-2xl mx-auto text-center text-base text-white/55 leading-relaxed mb-16">
             {/* TODO: Replace with your story about why you created Screenshot Bro */}
             I was tired of spending hours in Figma tweaking App Store screenshots every time I shipped an update. So I built the tool I wished existed — a fast, native Mac app that lets you design once and export everything. This is that tool.
           </p>
@@ -294,8 +294,8 @@ export default function Home() {
                   "Re-export every file when you change a single color",
                   "Juggle dozens of layers for 6 screenshots × 2 device sizes",
                 ].map((text) => (
-                  <li key={text} className="flex items-start gap-3 text-sm text-white/35 leading-relaxed">
-                    <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/15 shrink-0" />
+                  <li key={text} className="flex items-start gap-3 text-sm text-white/50 leading-relaxed">
+                    <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/30 shrink-0" />
                     {text}
                   </li>
                 ))}
@@ -340,7 +340,7 @@ export default function Home() {
             </p>
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
               Everything you need.<br className="hidden sm:block" />
-              <span className="text-white/30">Nothing you don't.</span>
+              <span className="text-white/45">Nothing you don't.</span>
             </h2>
           </div>
 
@@ -363,7 +363,7 @@ export default function Home() {
                 <h3 className="font-display font-semibold text-white text-sm">
                   {f.title}
                 </h3>
-                <p className="text-xs leading-relaxed text-white/35">
+                <p className="text-xs leading-relaxed text-white/50">
                   {f.description}
                 </p>
               </div>
@@ -409,7 +409,7 @@ export default function Home() {
                 <h3 className="font-display font-semibold text-white text-lg mb-2">
                   {s.title}
                 </h3>
-                <p className="text-sm text-white/35 leading-relaxed">
+                <p className="text-sm text-white/50 leading-relaxed">
                   {s.desc}
                 </p>
               </div>
@@ -428,7 +428,7 @@ export default function Home() {
           <h2 className="font-display font-800 text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight mb-6">
             Ready to ship<br />better screenshots?
           </h2>
-          <p className="text-base text-white/35 mb-10 max-w-md mx-auto">
+          <p className="text-base text-white/55 mb-10 max-w-md mx-auto">
             Download Screenshot Bro for free. No sign-up, no watermarks.
             Just open and start creating.
           </p>
@@ -439,7 +439,7 @@ export default function Home() {
             <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
             Download for macOS
           </a>
-          <p className="mt-4 text-xs text-white/20 font-mono">
+          <p className="mt-4 text-xs text-white/40 font-mono">
             Requires macOS 14 Sonoma or later
           </p>
         </div>
@@ -452,11 +452,16 @@ export default function Home() {
             <div className="w-5 h-5 rounded-md bg-gradient-to-br from-accent to-accent-light flex items-center justify-center text-white text-[9px] font-bold font-display">
               S
             </div>
-            <span className="text-xs text-white/25">Screenshot Bro</span>
+            <span className="text-xs text-white/45">Screenshot Bro</span>
           </div>
-          <p className="text-xs text-white/15">
-            Built with SwiftUI. Designed for developers.
-          </p>
+          <div className="flex items-center gap-4">
+            <a href="mailto:tleskiv@ninevastudios.com" className="text-xs text-white/45 hover:text-white/80 transition-colors">
+              Contact
+            </a>
+            <span className="text-xs text-white/35">
+              Built with SwiftUI. Designed for developers.
+            </span>
+          </div>
         </div>
       </footer>
 
