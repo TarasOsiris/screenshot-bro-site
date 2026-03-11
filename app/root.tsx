@@ -37,6 +37,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         />
         <Meta />
         <Links />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-F386WM75M8" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-F386WM75M8');`,
+          }}
+        />
       </head>
       <body className="noise">
         {children}
