@@ -378,13 +378,7 @@ export function BackToTopButton({ visible }: { visible: boolean }) {
   return (
     <button
       type="button"
-      onClick={() => {
-        const behavior = window.matchMedia("(prefers-reduced-motion: reduce)")
-          .matches
-          ? "auto"
-          : "smooth";
-        window.scrollTo({ top: 0, behavior });
-      }}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       className={`fixed bottom-6 right-6 z-40 w-10 h-10 rounded-full bg-surface-raised border border-border flex items-center justify-center text-white/40 hover:text-white/80 transition-all ${
         visible
           ? "opacity-100 translate-y-0"

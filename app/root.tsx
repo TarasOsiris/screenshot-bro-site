@@ -18,7 +18,7 @@ const GA_ID =
     ? (import.meta.env.VITE_GA_ID as string)
     : undefined;
 
-const SOFTWARE_APP_SCHEMA = {
+const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: SITE_NAME,
@@ -27,7 +27,7 @@ const SOFTWARE_APP_SCHEMA = {
   description: SITE_DESCRIPTION,
   url: SITE_URL,
   image: SOCIAL_IMAGE,
-};
+});
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -71,7 +71,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(SOFTWARE_APP_SCHEMA),
+            __html: SOFTWARE_APP_SCHEMA_JSON,
           }}
         />
         {GA_ID ? (

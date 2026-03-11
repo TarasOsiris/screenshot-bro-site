@@ -10,8 +10,6 @@ import {
   SiteNav,
   WorkflowSection,
 } from "~/components/home/sections";
-import { EARLY_ACCESS_MAILTO } from "~/config/site";
-
 function useScrollFade(threshold = 100) {
   const [visible, setVisible] = useState(false);
 
@@ -37,14 +35,14 @@ export default function Home() {
         Skip to content
       </a>
 
-      <SiteNav href={EARLY_ACCESS_MAILTO} />
+      <SiteNav />
 
       <main id="main-content">
-        <HeroSection href={EARLY_ACCESS_MAILTO} />
+        <HeroSection />
         <ProblemSection />
         <FeaturesSection />
         <WorkflowSection />
-        <DownloadSection href={EARLY_ACCESS_MAILTO} />
+        <DownloadSection />
       </main>
 
       <SiteFooter />
