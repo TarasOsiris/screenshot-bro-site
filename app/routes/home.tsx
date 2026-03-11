@@ -188,10 +188,10 @@ export default function Home() {
               Features
             </a>
             <a
-              href="#download"
+              href="mailto:tleskiv@ninevastudios.com?subject=Screenshot%20Bro%20Early%20Access"
               className="text-xs font-medium bg-white/5 hover:bg-white/10 border border-border text-white/80 px-4 py-1.5 rounded-lg transition-all"
             >
-              Download
+              Get Early Access
             </a>
           </div>
         </div>
@@ -230,11 +230,11 @@ export default function Home() {
             style={{ animationDelay: "0.3s" }}
           >
             <a
-              href="#download"
+              href="mailto:tleskiv@ninevastudios.com?subject=Screenshot%20Bro%20Early%20Access"
               className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-sm transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
             >
               <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
-              Download for Mac
+              Get Early Access
             </a>
             <a
               href="#features"
@@ -429,18 +429,18 @@ export default function Home() {
             Ready to ship<br />better screenshots?
           </h2>
           <p className="text-base text-white/55 mb-10 max-w-md mx-auto">
-            Download Screenshot Bro for free. No sign-up, no watermarks.
-            Just open and start creating.
+            Screenshot Bro is coming soon. Drop me an email to get early access
+            and be the first to try it.
           </p>
           <a
-            href="#"
+            href="mailto:tleskiv@ninevastudios.com?subject=Screenshot%20Bro%20Early%20Access"
             className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-base transition-all hover:shadow-[0_0_48px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
           >
             <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
-            Download for macOS
+            Get Early Access
           </a>
           <p className="mt-4 text-xs text-white/40 font-mono">
-            Requires macOS 14 Sonoma or later
+            macOS app · Coming soon
           </p>
         </div>
       </section>
