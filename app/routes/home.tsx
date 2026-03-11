@@ -418,44 +418,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Gradient Showcase ── */}
-      <section className="py-20 px-6 border-t border-border-subtle">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-xs uppercase tracking-[0.25em] text-rose font-mono mb-3">
-              Presets
-            </p>
-            <h2 className="font-display font-bold text-3xl sm:text-4xl text-white tracking-tight">
-              Gorgeous gradients, built in.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
-            {[
-              { name: "Ocean", from: "#2563eb", to: "#06b6d4" },
-              { name: "Sunset", from: "#f97316", to: "#ec4899" },
-              { name: "Peach", from: "#fb923c", to: "#f472b6" },
-              { name: "Mint", from: "#34d399", to: "#2dd4bf" },
-              { name: "Berry", from: "#a855f7", to: "#ec4899" },
-              { name: "Flame", from: "#ef4444", to: "#f59e0b" },
-              { name: "Night", from: "#1e1b4b", to: "#7c3aed" },
-            ].map((g) => (
-              <div key={g.name} className="group cursor-default">
-                <div
-                  className="aspect-[3/4] rounded-xl transition-transform group-hover:scale-105 group-hover:shadow-lg"
-                  style={{
-                    background: `linear-gradient(160deg, ${g.from}, ${g.to})`,
-                  }}
-                />
-                <p className="text-[11px] text-white/25 mt-2 text-center font-mono group-hover:text-white/50 transition-colors">
-                  {g.name}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Download CTA ── */}
       <section id="download" className="relative py-32 px-6 overflow-hidden">
         <div className="absolute inset-0">
