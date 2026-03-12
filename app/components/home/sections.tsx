@@ -186,9 +186,9 @@ export function ProblemSection() {
               {WITHOUT_BRO_POINTS.map((text) => (
                 <li
                   key={text}
-                  className="flex items-start gap-3 text-sm text-white/50 leading-relaxed"
+                  className="flex items-center gap-3 text-sm text-white/50 leading-relaxed"
                 >
-                  <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/30 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-white/30 shrink-0" />
                   {text}
                 </li>
               ))}
@@ -218,9 +218,9 @@ export function ProblemSection() {
                 {WITH_BRO_POINTS.map((text) => (
                   <li
                     key={text}
-                    className="flex items-start gap-3 text-sm text-white/60 leading-relaxed"
+                    className="flex items-center gap-3 text-sm text-white/60 leading-relaxed"
                   >
-                    <span className="mt-1 w-1.5 h-1.5 rounded-full bg-mint shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-mint shrink-0" />
                     {text}
                   </li>
                 ))}
