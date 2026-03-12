@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Familjen Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Familjen Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --color-surface: #08080c;
@@ -10,9 +10,9 @@
   --color-surface-overlay: #1a1a24;
   --color-border-subtle: #ffffff0a;
   --color-border: #ffffff14;
-  --color-accent: #6366f1;
-  --color-accent-light: #818cf8;
-  --color-accent-glow: #6366f140;
+  --color-accent: #0673EC;
+  --color-accent-light: #3B93F0;
+  --color-accent-glow: #0673EC40;
   --color-warm: #f59e0b;
   --color-warm-light: #fbbf24;
   --color-mint: #34d399;
@@ -154,7 +154,7 @@ button:focus-visible {
 
 /* Gradient text */
 .text-gradient {
-  background: linear-gradient(135deg, #e2e2e8 0%, #818cf8 50%, #f59e0b 100%);
+  background: linear-gradient(135deg, #e2e2e8 0%, #3B93F0 50%, #f59e0b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

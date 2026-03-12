@@ -81,11 +81,13 @@ export function HeroSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
           className="animate-fade-up font-display font-800 text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95] mb-6"
           style={{ animationDelay: "0.1s" }}
         >
-          <span className="text-white">App Store</span>
+          <span className="text-white">Design App Store</span>
           <br />
-          <span className="text-gradient">screenshots,</span>
+          <span className="text-accent">screenshots</span>
+          <span className="text-white"> in </span>
+          <span className="text-white">minutes,</span>
           <br />
-          <span className="text-white">localized.</span>
+          <span className="text-white">not hours.</span>
         </h1>
 
         <p

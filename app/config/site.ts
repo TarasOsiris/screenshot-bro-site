@@ -1,7 +1,7 @@
 export const SITE_NAME = "Screenshot Bro";
 export const SITE_DESCRIPTION =
   "Create stunning App Store & Google Play screenshots on your Mac. Native macOS app with device frames, gradients, batch export, and multi-template editing.";
-export const SITE_TAGLINE = "App Store screenshots, localized.";
+export const SITE_TAGLINE = "Design App Store screenshots in minutes, not hours.";
 export const SITE_URL =
   (import.meta.env.VITE_SITE_URL as string | undefined)?.replace(/\/$/, "") ??
   "https://screenshotbro.app";
