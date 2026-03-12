@@ -40,6 +40,11 @@ export const links: Route.LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap",
   },
+  { rel: "icon", href: "/favicon.ico", sizes: "48x48" },
+  { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+  { rel: "icon", href: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+  { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+  { rel: "manifest", href: "/site.webmanifest" },
   { rel: "canonical", href: SITE_URL },
 ];
 

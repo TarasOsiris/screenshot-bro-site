@@ -48,13 +48,8 @@ export function SiteNav({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
   return (
     <nav className="fixed top-0 inset-x-0 z-40 border-b border-border-subtle bg-surface/80 backdrop-blur-xl">
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-        <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-accent to-accent-light flex items-center justify-center text-white text-xs font-bold font-display">
-            S
-          </div>
-          <span className="font-display font-bold text-sm text-white tracking-tight">
-            {SITE_NAME}
-          </span>
+        <div className="flex items-center">
+          <img src="/logo-light.svg" alt={SITE_NAME} width="150" height="24" className="h-6 w-auto" />
         </div>
         <div className="flex items-center gap-6">
           <a
@@ -352,11 +347,8 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border-subtle py-10 px-6">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
-          <div className="w-5 h-5 rounded-md bg-gradient-to-br from-accent to-accent-light flex items-center justify-center text-white text-[9px] font-bold font-display">
-            S
-          </div>
-          <span className="text-xs text-white/45">{SITE_NAME}</span>
+        <div className="flex items-center">
+          <img src="/logo-light.svg" alt={SITE_NAME} width="120" height="20" className="h-4 w-auto opacity-45" />
         </div>
         <div className="flex items-center gap-4">
           <a
