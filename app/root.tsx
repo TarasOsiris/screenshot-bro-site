@@ -8,10 +8,15 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "~/config/site";
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TAGLINE,
+  SITE_URL,
+} from "~/config/site";
 import "./app.css";
 
-const SITE_TITLE = `${SITE_NAME} - App Store Screenshots for macOS`;
+const SITE_TITLE = `${SITE_NAME} — App Store Screenshot Generator for macOS`;
 const SOCIAL_IMAGE = `${SITE_URL}/app-preview.png`;
 const GA_ID =
   import.meta.env.PROD && import.meta.env.VITE_GA_ID
@@ -27,6 +32,16 @@ const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
   description: SITE_DESCRIPTION,
   url: SITE_URL,
   image: SOCIAL_IMAGE,
+  screenshot: SOCIAL_IMAGE,
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/PreOrder",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  applicationSubCategory: "Screenshot Generator",
+  featureList:
+    "Device Frames, Gradient Backgrounds, Multi-Template Editing, Batch Export, Localization (30+ languages), SVG Support",
 });
 
 export const links: Route.LinksFunction = () => [
@@ -57,15 +72,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="theme-color" content="#08080c" />
         <title>{SITE_TITLE}</title>
         <meta name="description" content={SITE_DESCRIPTION} />
+        <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={SITE_NAME} />
         <meta property="og:title" content={SITE_TITLE} />
         <meta property="og:description" content={SITE_DESCRIPTION} />
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:image" content={SOCIAL_IMAGE} />
+        <meta property="og:image:width" content="2250" />
+        <meta property="og:image:height" content="1334" />
         <meta
           property="og:image:alt"
-          content="Screenshot Bro app preview with localized App Store screenshot templates"
+          content="Screenshot Bro — native macOS app for designing App Store screenshots with device frames, gradients, and localization"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={SITE_TITLE} />

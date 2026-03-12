@@ -46,7 +46,7 @@ type CtaProps = {
 
 export function SiteNav({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
   return (
-    <nav className="fixed top-0 inset-x-0 z-40 border-b border-border-subtle bg-surface/80 backdrop-blur-xl">
+    <nav aria-label="Main navigation" className="fixed top-0 inset-x-0 z-40 border-b border-border-subtle bg-surface/80 backdrop-blur-xl">
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
         <div className="flex items-center">
           <img src="/logo-light.svg" alt={SITE_NAME} width="150" height="24" className="h-6 w-auto" />
@@ -85,9 +85,7 @@ export function HeroSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
           <br />
           <span className="text-accent">screenshots</span>
           <span className="text-white"> in </span>
-          <span className="text-white">minutes,</span>
-          <br />
-          <span className="text-white">not hours.</span>
+          <span className="text-white">minutes.</span>
         </h1>
 
         <p
