@@ -103,6 +103,58 @@ export const WITH_BRO_POINTS = [
   "Export every screenshot, every language, every size - one click",
 ];
 
+export type FeatureShowcase = {
+  id: string;
+  label: string;
+  title: string;
+  description: string;
+  media: string; // path to gif/video/image in public/
+  mediaAlt: string;
+};
+
+export const FEATURE_SHOWCASES: FeatureShowcase[] = [
+  {
+    id: "multi-template",
+    label: "Multi-Template",
+    title: "Edit once, update everywhere.",
+    description:
+      "Change a shape, swap a screenshot, tweak the text — every template in the row updates simultaneously. No more copy-pasting across dozens of artboards.",
+    media: "",
+    mediaAlt:
+      "Editing one template and seeing changes reflected across all templates in the row",
+  },
+  {
+    id: "device-frames",
+    label: "Device Frames",
+    title: "Pixel-perfect device mockups.",
+    description:
+      "Drop in iPhone, iPad, or Mac frames with accurate bezels and side buttons. Pick your device body color, set defaults per row, and swap screenshots with a click.",
+    media: "",
+    mediaAlt:
+      "Adding device frames to screenshots with configurable colors and models",
+  },
+  {
+    id: "localization",
+    label: "Localization",
+    title: "30+ languages, one project.",
+    description:
+      "Add locales, override text per shape, and track translation progress — all without leaving the editor. Export auto-organizes folders by language.",
+    media: "",
+    mediaAlt:
+      "Switching between locales and editing translated text overlays on screenshots",
+  },
+  {
+    id: "batch-export",
+    label: "Batch Export",
+    title: "Every size. Every language. One click.",
+    description:
+      "Export PNG or JPEG at 1x–3x for every row, every template, every locale. Organized folders land on your disk in seconds.",
+    media: "",
+    mediaAlt:
+      "Exporting all screenshots at once into organized folders by locale and device size",
+  },
+];
+
 export type WorkflowStep = {
   step: string;
   title: string;

@@ -204,6 +204,26 @@ button:focus-visible {
   border-radius: 50%;
 }
 
+/* Animated gradient placeholder for showcase media */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.showcase-placeholder {
+  background: linear-gradient(
+    135deg,
+    var(--color-surface-raised),
+    var(--color-accent-glow),
+    var(--color-surface-overlay),
+    var(--color-accent-glow),
+    var(--color-surface-raised)
+  );
+  background-size: 300% 300%;
+  animation: gradient-shift 6s ease infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

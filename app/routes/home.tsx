@@ -6,6 +6,7 @@ import {
   FeaturesSection,
   HeroSection,
   ProblemSection,
+  ShowcasesSection,
   SiteFooter,
   SiteNav,
   WorkflowSection,
@@ -41,6 +42,7 @@ export default function Home() {
         <HeroSection />
         <ProblemSection />
         <FeaturesSection />
+        <ShowcasesSection />
         <WorkflowSection />
         <DownloadSection />
       </main>

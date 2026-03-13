@@ -1,12 +1,14 @@
 import {
   CONTACT_MAILTO,
   EARLY_ACCESS_MAILTO,
+  FEATURE_SHOWCASES,
   FEATURES,
   SITE_NAME,
   WITHOUT_BRO_POINTS,
   WITH_BRO_POINTS,
   WORKFLOW_STEPS,
 } from "~/config/site";
+import type { FeatureShowcase } from "~/config/site";
 import { AppleLogo, FeatureIcon } from "~/components/home/icons";
 
 function AppPreview() {
@@ -278,6 +280,78 @@ export function FeaturesSection() {
   );
 }
 
+function FeatureShowcaseBlock({
+  showcase,
+  reversed,
+}: {
+  showcase: FeatureShowcase;
+  reversed?: boolean;
+}) {
+  const isVideo =
+    showcase.media.endsWith(".mp4") || showcase.media.endsWith(".webm");
+
+  return (
+    <div
+      className={`flex flex-col ${reversed ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-10 lg:gap-14`}
+    >
+      <div className="lg:w-1/4 shrink-0">
+        <p className="text-xs uppercase tracking-[0.25em] text-accent font-mono mb-3">
+          {showcase.label}
+        </p>
+        <h3 className="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight mb-4">
+          {showcase.title}
+        </h3>
+        <p className="text-base text-white/55 leading-relaxed">
+          {showcase.description}
+        </p>
+      </div>
+      <div className="lg:w-3/4 w-full">
+        <div className="rounded-2xl overflow-hidden border border-border bg-surface-raised">
+          {showcase.media ? (
+            isVideo ? (
+              <video
+                src={showcase.media}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto block"
+                aria-label={showcase.mediaAlt}
+              />
+            ) : (
+              <img
+                src={showcase.media}
+                alt={showcase.mediaAlt}
+                className="w-full h-auto block"
+                loading="lazy"
+                decoding="async"
+              />
+            )
+          ) : (
+            <div className="showcase-placeholder aspect-video" />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function ShowcasesSection() {
+  return (
+    <section className="py-28 px-6 border-t border-border-subtle">
+      <div className="max-w-6xl mx-auto space-y-32">
+        {FEATURE_SHOWCASES.map((showcase, index) => (
+          <FeatureShowcaseBlock
+            key={showcase.id}
+            showcase={showcase}
+            reversed={index % 2 === 1}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function WorkflowSection() {
   return (
     <section className="py-28 px-6 border-t border-border-subtle">
@@ -294,7 +368,7 @@ export function WorkflowSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {WORKFLOW_STEPS.map((step) => (
             <div key={step.step} className="relative">
-              <div className="font-mono text-5xl font-bold text-white/[0.04] mb-4">
+              <div className="font-mono text-5xl font-bold text-accent/50 mb-4">
                 {step.step}
               </div>
               <h3 className="font-display font-semibold text-white text-lg mb-2">
