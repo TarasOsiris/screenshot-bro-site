@@ -119,7 +119,7 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     title: "Edit once, update everywhere.",
     description:
       "Change a shape, swap a screenshot, tweak the text — every template in the row updates simultaneously. No more copy-pasting across dozens of artboards.",
-    media: "",
+    media: "/showcases/batch-export.mp4",
     mediaAlt:
       "Editing one template and seeing changes reflected across all templates in the row",
   },
@@ -129,7 +129,7 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     title: "Pixel-perfect device mockups.",
     description:
       "Drop in iPhone, iPad, or Mac frames with accurate bezels and side buttons. Pick your device body color, set defaults per row, and swap screenshots with a click.",
-    media: "",
+    media: "/showcases/batch-export.mp4",
     mediaAlt:
       "Adding device frames to screenshots with configurable colors and models",
   },
@@ -139,7 +139,7 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     title: "30+ languages, one project.",
     description:
       "Add locales, override text per shape, and track translation progress — all without leaving the editor. Export auto-organizes folders by language.",
-    media: "",
+    media: "/showcases/batch-export.mp4",
     mediaAlt:
       "Switching between locales and editing translated text overlays on screenshots",
   },
@@ -149,7 +149,7 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     title: "Every size. Every language. One click.",
     description:
       "Export PNG or JPEG at 1x–3x for every row, every template, every locale. Organized folders land on your disk in seconds.",
-    media: "",
+    media: "/showcases/batch-export.mp4",
     mediaAlt:
       "Exporting all screenshots at once into organized folders by locale and device size",
   },
