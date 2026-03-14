@@ -17,7 +17,7 @@ import {
 import "./app.css";
 
 const SITE_TITLE = `${SITE_NAME} — App Store Screenshot Generator for macOS`;
-const SOCIAL_IMAGE = `${SITE_URL}/app-preview.png`;
+const SOCIAL_IMAGE = `${SITE_URL}/og-image.png`;
 const GA_ID =
   import.meta.env.PROD && import.meta.env.VITE_GA_ID
     ? (import.meta.env.VITE_GA_ID as string)
@@ -79,8 +79,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta property="og:description" content={SITE_DESCRIPTION} />
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:image" content={SOCIAL_IMAGE} />
-        <meta property="og:image:width" content="2250" />
-        <meta property="og:image:height" content="1334" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta
           property="og:image:alt"
           content="Screenshot Bro — native macOS app for designing App Store screenshots with device frames, gradients, and localization"
