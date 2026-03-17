@@ -134,6 +134,9 @@ function AppPreview() {
         muted
         playsInline
         preload="auto"
+        onLoadedMetadata={(event) => {
+          event.currentTarget.playbackRate = 1.25;
+        }}
         className="w-full h-auto block"
         aria-label="Screenshot Bro app demo - designing App Store screenshots with device frames, gradients, and batch export"
       />
@@ -199,16 +202,6 @@ export function HeroSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
 
       <div className="relative max-w-6xl mx-auto">
         <div className="max-w-4xl mx-auto text-center">
-          <div
-            className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-white/[0.72]"
-            style={{ animationDelay: "0.05s" }}
-          >
-            <span className="inline-flex h-2 w-2 rounded-full bg-mint pulse-ring" />
-            Native macOS app
-            <span className="text-white/25">/</span>
-            Public beta on TestFlight
-          </div>
-
           <h1
             className="animate-fade-up mt-6 font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.94]"
             style={{ animationDelay: "0.12s" }}
