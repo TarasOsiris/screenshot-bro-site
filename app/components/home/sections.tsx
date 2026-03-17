@@ -64,7 +64,7 @@ export function SiteNav({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
             href={href}
             className="text-xs font-medium bg-white/5 hover:bg-white/10 border border-border text-white/80 px-4 py-1.5 rounded-lg transition-all"
           >
-            Get Early Access
+            Join Public Beta
           </a>
         </div>
       </div>
@@ -108,7 +108,7 @@ export function HeroSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
             className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-sm transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
           >
             <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
-            Get Early Access
+            Join Public Beta Testing
           </a>
           <a
             href="#features"
@@ -399,15 +399,15 @@ export function DownloadSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
           better screenshots?
         </h2>
         <p className="text-base text-white/55 mb-10 max-w-md mx-auto">
-          Screenshot Bro is a native macOS app. Drop me an email to get early
-          access and start shipping better screenshots today.
+          Screenshot Bro is a native macOS app. Join the public beta testing
+          and start shipping better screenshots today.
         </p>
         <a
           href={href}
           className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-base transition-all hover:shadow-[0_0_48px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
         >
           <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
-          Get Early Access
+          Join Public Beta Testing
         </a>
         <p className="mt-4 text-xs text-white/40 font-mono">
           macOS app | Swift & SwiftUI | Zero dependencies

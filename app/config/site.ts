@@ -7,10 +7,8 @@ export const SITE_URL =
   "https://screenshotbro.app";
 
 export const EARLY_ACCESS_EMAIL = "tleskiv@ninevastudios.com";
-export const EARLY_ACCESS_SUBJECT = "Screenshot Bro Early Access";
-export const EARLY_ACCESS_MAILTO = `mailto:${EARLY_ACCESS_EMAIL}?subject=${encodeURIComponent(
-  EARLY_ACCESS_SUBJECT,
-)}`;
+export const TESTFLIGHT_URL = "https://testflight.apple.com/join/GWjeTCFh";
+export const EARLY_ACCESS_MAILTO = TESTFLIGHT_URL;
 export const CONTACT_MAILTO = `mailto:${EARLY_ACCESS_EMAIL}`;
 
 export type FeatureIconKey =
