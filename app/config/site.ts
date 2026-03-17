@@ -24,12 +24,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "FAQ", href: "#faq" },
 ];
 
-export const HERO_HIGHLIGHTS = [
-  "Device frames and template syncing",
-  "Gradients, shapes, text, images, and SVGs",
-  "Localized export organized by row and language",
-];
-
 export const BETA_BENEFITS = [
   "Instant access through TestFlight on macOS",
   "Current core workflow: import, design, localize, export",

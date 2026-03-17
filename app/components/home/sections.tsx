@@ -8,7 +8,6 @@ import {
   FAQS,
   FEATURE_SHOWCASES,
   FEATURES,
-  HERO_HIGHLIGHTS,
   NAV_ITEMS,
   PRIMARY_CTA_LABEL,
   SITE_NAME,
@@ -248,20 +247,6 @@ export function HeroSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
               <ArrowDownIcon />
             </a>
           </div>
-
-          <ul
-            className="animate-fade-up mt-6 flex flex-wrap items-center justify-center gap-3"
-            style={{ animationDelay: "0.34s" }}
-          >
-            {HERO_HIGHLIGHTS.map((item) => (
-              <li
-                key={item}
-                className="soft-pill rounded-full px-4 py-2 text-sm text-white/[0.68]"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
         </div>
 
         <div
