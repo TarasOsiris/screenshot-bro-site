@@ -9,7 +9,6 @@ import {
   FEATURE_SHOWCASES,
   FEATURES,
   HERO_HIGHLIGHTS,
-  HERO_STATS,
   NAV_ITEMS,
   PRIMARY_CTA_LABEL,
   SITE_NAME,
@@ -20,7 +19,6 @@ import {
 import type {
   FaqItem,
   FeatureShowcase,
-  HeroStat,
   NavItem,
 } from "~/config/site";
 
@@ -155,17 +153,6 @@ function NavLink({ item }: { item: NavItem }) {
   );
 }
 
-function HeroStatCard({ stat }: { stat: HeroStat }) {
-  return (
-    <div className="soft-panel rounded-2xl p-5 text-left">
-      <div className="font-display text-3xl font-bold text-white mb-2">
-        {stat.value}
-      </div>
-      <p className="text-sm text-white/55 leading-relaxed">{stat.label}</p>
-    </div>
-  );
-}
-
 type CtaProps = {
   href?: string;
 };
@@ -283,15 +270,6 @@ export function HeroSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
         >
           <AppPreview />
           <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-accent/10 blur-3xl rounded-full" />
-        </div>
-
-        <div
-          className="animate-fade-up mt-8 grid grid-cols-1 md:grid-cols-3 gap-4"
-          style={{ animationDelay: "0.5s" }}
-        >
-          {HERO_STATS.map((stat) => (
-            <HeroStatCard key={stat.label} stat={stat} />
-          ))}
         </div>
       </div>
     </section>

@@ -24,17 +24,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "FAQ", href: "#faq" },
 ];
 
-export type HeroStat = {
-  value: string;
-  label: string;
-};
-
-export const HERO_STATS: HeroStat[] = [
-  { value: "Multi", label: "locale support in one project" },
-  { value: "1x-3x", label: "export presets for each screenshot row" },
-  { value: "SwiftUI", label: "native macOS app with instant launch" },
-];
-
 export const HERO_HIGHLIGHTS = [
   "Device frames and template syncing",
   "Gradients, shapes, text, images, and SVGs",
