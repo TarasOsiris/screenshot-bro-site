@@ -14,30 +14,16 @@ import { AppleLogo, FeatureIcon } from "~/components/home/icons";
 function AppPreview() {
   return (
     <div className="macos-window w-full mx-auto">
-      <picture>
-        <source
-          srcSet="/app-preview-sm.avif 1125w, /app-preview.avif 2250w"
-          sizes="(max-width: 1200px) 100vw, 1200px"
-          type="image/avif"
-        />
-        <source
-          srcSet="/app-preview-sm.webp 1125w, /app-preview.webp 2250w"
-          sizes="(max-width: 1200px) 100vw, 1200px"
-          type="image/webp"
-        />
-        <img
-          src="/app-preview.png"
-          srcSet="/app-preview-sm.png 1125w, /app-preview.png 2250w"
-          sizes="(max-width: 1200px) 100vw, 1200px"
-          width={2250}
-          height={1334}
-          alt="Screenshot Bro app - editing App Store screenshots with device frames, gradients, and multi-template layout"
-          className="w-full h-auto block"
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-        />
-      </picture>
+      <video
+        src="/demo-main.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="w-full h-auto block"
+        aria-label="Screenshot Bro app demo - designing App Store screenshots with device frames, gradients, and batch export"
+      />
     </div>
   );
 }
@@ -74,13 +60,13 @@ export function SiteNav({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
 
 export function HeroSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
   return (
-    <section className="relative pt-32 pb-20 px-6 overflow-hidden">
+    <section className="relative pt-28 pb-16 px-6 overflow-hidden">
       <div className="hero-gradient" />
       <div className="grid-bg absolute inset-0 opacity-40" />
 
       <div className="relative max-w-4xl mx-auto text-center">
         <h1
-          className="animate-fade-up font-display font-800 text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95] mb-6"
+          className="animate-fade-up font-display font-800 text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95] mb-5"
           style={{ animationDelay: "0.1s" }}
         >
           <span className="text-white">Design App Store</span>
@@ -89,15 +75,6 @@ export function HeroSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
           <span className="text-white"> in </span>
           <span className="text-white">minutes.</span>
         </h1>
-
-        <p
-          className="animate-fade-up max-w-xl mx-auto text-base sm:text-lg text-white/55 leading-relaxed mb-10"
-          style={{ animationDelay: "0.2s" }}
-        >
-          Design once, export every variant in 30+ languages. Device frames,
-          gradients, text overlays - all in a lightning-fast native macOS
-          editor.
-        </p>
 
         <div
           className="animate-fade-up flex flex-col sm:flex-row items-center justify-center gap-4"
@@ -134,11 +111,35 @@ export function HeroSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
       </div>
 
       <div
-        className="animate-fade-up relative max-w-6xl mx-auto mt-16"
+        className="animate-fade-up relative max-w-6xl mx-auto mt-12"
         style={{ animationDelay: "0.5s" }}
       >
         <AppPreview />
         <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-accent/10 blur-3xl rounded-full" />
+      </div>
+
+      <div
+        className="animate-fade-up relative max-w-5xl mx-auto mt-20 text-center"
+        style={{ animationDelay: "0.6s" }}
+      >
+        <p className="text-3xl sm:text-4xl text-white/70 font-display font-semibold mb-12">
+          Three steps. Ship screenshots.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 text-left">
+          {WORKFLOW_STEPS.map((step) => (
+            <div key={step.step}>
+              <div className="font-mono text-5xl font-bold text-accent/50 mb-4">
+                {step.step}
+              </div>
+              <h3 className="font-display font-semibold text-white text-xl mb-3">
+                {step.title}
+              </h3>
+              <p className="text-base text-white/50 leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -295,13 +296,13 @@ function FeatureShowcaseBlock({
       className={`flex flex-col ${reversed ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-10 lg:gap-14`}
     >
       <div className="lg:w-1/4 shrink-0">
-        <p className="text-xs uppercase tracking-[0.25em] text-accent font-mono mb-3">
+        <p className="text-sm uppercase tracking-[0.25em] text-accent font-mono mb-4">
           {showcase.label}
         </p>
-        <h3 className="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight mb-4">
+        <h3 className="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-5 leading-[1.1]">
           {showcase.title}
         </h3>
-        <p className="text-base text-white/55 leading-relaxed">
+        <p className="text-lg text-white/55 leading-relaxed">
           {showcase.description}
         </p>
       </div>

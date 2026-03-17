@@ -40,10 +40,10 @@ export default function Home() {
 
       <main id="main-content">
         <HeroSection />
-        <ProblemSection />
         <ShowcasesSection />
         <WorkflowSection />
         <FeaturesSection />
+        <ProblemSection />
         <DownloadSection />
       </main>
 

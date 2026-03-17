@@ -112,14 +112,14 @@ export type FeatureShowcase = {
 
 export const FEATURE_SHOWCASES: FeatureShowcase[] = [
   {
-    id: "multi-template",
-    label: "Multi-Template",
-    title: "Edit once, update everywhere.",
+    id: "batch-import",
+    label: "Batch Import",
+    title: "Drag, drop, done.",
     description:
-      "Change a shape, swap a screenshot, tweak the text — every template in the row updates simultaneously. No more copy-pasting across dozens of artboards.",
+      "Drag and drop multiple screenshots at once — Screenshot Bro imports them all and automatically wraps each one in the device frame. No manual placement, no tedious one-by-one workflow.",
     media: "/showcases/batch-export.mp4",
     mediaAlt:
-      "Editing one template and seeing changes reflected across all templates in the row",
+      "Dragging and dropping multiple screenshots that automatically get wrapped in device frames",
   },
   {
     id: "device-frames",
