@@ -1,3 +1,4 @@
+import { useCallback, type RefCallback } from "react";
 import {
   CONTACT_MAILTO,
   EARLY_ACCESS_MAILTO,
@@ -11,13 +12,27 @@ import {
 import type { FeatureShowcase } from "~/config/site";
 import { AppleLogo, FeatureIcon } from "~/components/home/icons";
 
+function useLoopWithPause(delayMs = 2000): RefCallback<HTMLVideoElement> {
+  return useCallback((el: HTMLVideoElement | null) => {
+    if (!el) return;
+    const handler = () => {
+      setTimeout(() => {
+        el.currentTime = 0;
+        el.play();
+      }, delayMs);
+    };
+    el.addEventListener("ended", handler);
+  }, [delayMs]);
+}
+
 function AppPreview() {
+  const videoRef = useLoopWithPause();
   return (
     <div className="macos-window w-full mx-auto">
       <video
+        ref={videoRef}
         src="/demo-main.mp4"
         autoPlay
-        loop
         muted
         playsInline
         preload="auto"
@@ -283,55 +298,45 @@ export function FeaturesSection() {
 
 function FeatureShowcaseBlock({
   showcase,
-  reversed,
 }: {
   showcase: FeatureShowcase;
-  reversed?: boolean;
 }) {
   const isVideo =
     showcase.media.endsWith(".mp4") || showcase.media.endsWith(".webm");
+  const videoRef = useLoopWithPause();
 
   return (
-    <div
-      className={`flex flex-col ${reversed ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-10 lg:gap-14`}
-    >
-      <div className="lg:w-1/4 shrink-0">
+    <div className="rounded-2xl border border-border bg-surface-raised overflow-hidden">
+      {isVideo ? (
+        <video
+          ref={videoRef}
+          src={showcase.media}
+          autoPlay
+          muted
+          playsInline
+          preload="none"
+          className="w-full h-auto block"
+          aria-label={showcase.mediaAlt}
+        />
+      ) : (
+        <img
+          src={showcase.media}
+          alt={showcase.mediaAlt}
+          className="w-full h-auto block"
+          loading="lazy"
+          decoding="async"
+        />
+      )}
+      <div className="p-8 sm:p-10">
         <p className="text-sm uppercase tracking-[0.25em] text-accent font-mono mb-4">
           {showcase.label}
         </p>
         <h3 className="font-display font-800 text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-5 leading-[1.1]">
           {showcase.title}
         </h3>
-        <p className="text-lg text-white/55 leading-relaxed">
+        <p className="text-lg text-white/55 leading-relaxed max-w-2xl">
           {showcase.description}
         </p>
-      </div>
-      <div className="lg:w-3/4 w-full">
-        <div className="rounded-2xl overflow-hidden border border-border bg-surface-raised">
-          {showcase.media ? (
-            isVideo ? (
-              <video
-                src={showcase.media}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-auto block"
-                aria-label={showcase.mediaAlt}
-              />
-            ) : (
-              <img
-                src={showcase.media}
-                alt={showcase.mediaAlt}
-                className="w-full h-auto block"
-                loading="lazy"
-                decoding="async"
-              />
-            )
-          ) : (
-            <div className="showcase-placeholder aspect-video" />
-          )}
-        </div>
       </div>
     </div>
   );
@@ -341,11 +346,10 @@ export function ShowcasesSection() {
   return (
     <section className="py-28 px-6 border-t border-border-subtle">
       <div className="max-w-6xl mx-auto space-y-32">
-        {FEATURE_SHOWCASES.map((showcase, index) => (
+        {FEATURE_SHOWCASES.map((showcase) => (
           <FeatureShowcaseBlock
             key={showcase.id}
             showcase={showcase}
-            reversed={index % 2 === 1}
           />
         ))}
       </div>

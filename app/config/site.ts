@@ -122,14 +122,14 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
       "Dragging and dropping multiple screenshots that automatically get wrapped in device frames",
   },
   {
-    id: "device-frames",
-    label: "Device Frames",
-    title: "Pixel-perfect device mockups.",
+    id: "shapes",
+    label: "Shapes & Layers",
+    title: "Build it up, layer by layer.",
     description:
-      "Drop in iPhone, iPad, or Mac frames with accurate bezels and side buttons. Pick your device body color, set defaults per row, and swap screenshots with a click.",
-    media: "/showcases/batch-export.mp4",
+      "Add rectangles, circles, stars, text, images, and SVGs — then resize, rotate, and style each one. Set fill colors, opacity, outlines, and corner radius right from the inspector. Stack layers, lock aspect ratios, and snap to pixel-perfect alignment.",
+    media: "/showcases/shapes.mp4",
     mediaAlt:
-      "Adding device frames to screenshots with configurable colors and models",
+      "Adding and manipulating shapes on the screenshot canvas with resize handles and style controls",
   },
   {
     id: "localization",
