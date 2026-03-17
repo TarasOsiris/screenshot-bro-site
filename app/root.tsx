@@ -41,7 +41,7 @@ const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
   },
   applicationSubCategory: "Screenshot Generator",
   featureList:
-    "Device Frames, Gradient Backgrounds, Multi-Template Editing, Batch Export, Localization (30+ languages), SVG Support",
+    "Device Frames, Gradient Backgrounds, Multi-Template Editing, Batch Export, Multi-language Localization, SVG Support",
 });
 
 export const links: Route.LinksFunction = () => [

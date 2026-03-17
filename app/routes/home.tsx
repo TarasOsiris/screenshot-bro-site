@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import {
   BackToTopButton,
   DownloadSection,
+  FaqSection,
   FeaturesSection,
   HeroSection,
   ProblemSection,
@@ -44,6 +45,7 @@ export default function Home() {
         <WorkflowSection />
         <FeaturesSection />
         <ProblemSection />
+        <FaqSection />
         <DownloadSection />
       </main>
 

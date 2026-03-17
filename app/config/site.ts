@@ -1,6 +1,6 @@
 export const SITE_NAME = "Screenshot Bro";
 export const SITE_DESCRIPTION =
-  "Design App Store screenshots in minutes with Screenshot Bro — a native macOS app. Device frames, gradient backgrounds, 30+ locales, batch export, and multi-template editing. Built with SwiftUI.";
+  "Design App Store screenshots in minutes with Screenshot Bro — a native macOS app. Device frames, gradient backgrounds, multiple locales, batch export, and multi-template editing. Built with SwiftUI.";
 export const SITE_TAGLINE = "Design App Store screenshots in minutes.";
 export const SITE_URL =
   (import.meta.env.VITE_SITE_URL as string | undefined)?.replace(/\/$/, "") ??
@@ -10,6 +10,70 @@ export const EARLY_ACCESS_EMAIL = "tleskiv@ninevastudios.com";
 export const TESTFLIGHT_URL = "https://testflight.apple.com/join/GWjeTCFh";
 export const EARLY_ACCESS_MAILTO = TESTFLIGHT_URL;
 export const CONTACT_MAILTO = `mailto:${EARLY_ACCESS_EMAIL}`;
+export const PRIMARY_CTA_LABEL = "Join public beta";
+
+export type NavItem = {
+  label: string;
+  href: string;
+};
+
+export const NAV_ITEMS: NavItem[] = [
+  { label: "Showcases", href: "#showcases" },
+  { label: "Features", href: "#features" },
+  { label: "Workflow", href: "#workflow" },
+  { label: "FAQ", href: "#faq" },
+];
+
+export type HeroStat = {
+  value: string;
+  label: string;
+};
+
+export const HERO_STATS: HeroStat[] = [
+  { value: "Multi", label: "locale support in one project" },
+  { value: "1x-3x", label: "export presets for each screenshot row" },
+  { value: "SwiftUI", label: "native macOS app with instant launch" },
+];
+
+export const HERO_HIGHLIGHTS = [
+  "Device frames and template syncing",
+  "Gradients, shapes, text, images, and SVGs",
+  "Localized export organized by row and language",
+];
+
+export const BETA_BENEFITS = [
+  "Instant access through TestFlight on macOS",
+  "Current core workflow: import, design, localize, export",
+  "Direct feedback loop with the developer while the product evolves",
+];
+
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+export const FAQS: FaqItem[] = [
+  {
+    question: "Is Screenshot Bro only for macOS?",
+    answer:
+      "Yes. Screenshot Bro is a native macOS app built with Swift and SwiftUI, so it is designed for Mac-based App Store workflows.",
+  },
+  {
+    question: "How do I join the beta?",
+    answer:
+      "Use the public beta button to open the TestFlight invite. Install the app, launch it on your Mac, and you can start building screenshot sets right away.",
+  },
+  {
+    question: "Can I localize screenshots for multiple languages?",
+    answer:
+      "Yes. Projects can carry multiple locales, with per-shape text overrides and exports grouped automatically by language and screenshot row.",
+  },
+  {
+    question: "What can I export?",
+    answer:
+      "Screenshot Bro exports PNG or JPEG assets at 1x, 2x, or 3x and organizes the output into predictable folders so App Store upload is less manual.",
+  },
+];
 
 export type FeatureIconKey =
   | "templates"
@@ -68,14 +132,14 @@ export const FEATURES: FeatureItem[] = [
     icon: "export",
     title: "Localized Export",
     description:
-      "Export PNG or JPEG at 1x-3x for 30+ locales. Auto-organized folders by locale and row. One click, every language, every size.",
+      "Export PNG or JPEG at 1x-3x for multiple locales. Auto-organized folders by locale and row. One click, every language, every size.",
     accent: "var(--color-warm-light)",
   },
   {
     icon: "project",
     title: "Localization Built In",
     description:
-      "30+ locale presets from English to Arabic. Per-shape text overrides, translation tracking, and keyboard shortcuts to flip between languages.",
+      "Locale presets from English to Arabic. Per-shape text overrides, translation tracking, and keyboard shortcuts to flip between languages.",
     accent: "var(--color-mint)",
   },
   {
@@ -97,7 +161,7 @@ export const WITHOUT_BRO_POINTS = [
 export const WITH_BRO_POINTS = [
   "Design one template - all variants update instantly",
   "Drop in device frames with a click, pick your model and color",
-  "Add 30+ locales with per-shape text overrides",
+  "Add multiple locales with per-shape text overrides",
   "Export every screenshot, every language, every size - one click",
 ];
 
@@ -132,9 +196,19 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
       "Adding and manipulating shapes on the screenshot canvas with resize handles and style controls",
   },
   {
+    id: "backgrounds",
+    label: "Backgrounds",
+    title: "Make cool backgrounds.",
+    description:
+      "Choose from 12 gradient presets, solid colors, or drop in your own images. Gradients and images can span across multiple templates in a row for seamless, edge-to-edge designs. Adjust angle, opacity, and color stops — every background updates live across all templates.",
+    media: "/showcases/backgrounds.mp4",
+    mediaAlt:
+      "Switching between gradient presets, solid colors, and spanning backgrounds across multiple screenshot templates",
+  },
+  {
     id: "localization",
     label: "Localization",
-    title: "30+ languages, one project.",
+    title: "Multiple languages, one project.",
     description:
       "Add locales, override text per shape, and track translation progress — all without leaving the editor. Export auto-organizes folders by language.",
     media: "/showcases/batch-export.mp4",
