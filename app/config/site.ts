@@ -189,14 +189,14 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
       "Switching between gradient presets, solid colors, and spanning backgrounds across multiple screenshot templates",
   },
   {
-    id: "localization",
-    label: "Localization",
-    title: "Multiple languages, one project.",
+    id: "device-frames",
+    label: "Device Frames",
+    title: "Customize device frames.",
     description:
-      "Add locales, override text per shape, and track translation progress — all without leaving the editor. Export auto-organizes folders by language.",
-    media: "/showcases/batch-export.mp4",
+      "Pick from a library of device bezels — iPhone, iPad, Mac, Apple Watch, and more. Swap frames, adjust colors, and match your brand without re-importing screenshots.",
+    media: "/showcases/frames.mp4",
     mediaAlt:
-      "Switching between locales and editing translated text overlays on screenshots",
+      "Selecting and customizing device frames around app screenshots",
   },
   {
     id: "batch-export",
