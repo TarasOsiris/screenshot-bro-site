@@ -198,16 +198,6 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     mediaAlt:
       "Selecting and customizing device frames around app screenshots",
   },
-  {
-    id: "batch-export",
-    label: "Batch Export",
-    title: "Every size. Every language. One click.",
-    description:
-      "Export PNG or JPEG at 1x–3x for every row, every template, every locale. Organized folders land on your disk in seconds.",
-    media: "/showcases/batch-export.mp4",
-    mediaAlt:
-      "Exporting all screenshots at once into organized folders by locale and device size",
-  },
 ];
 
 export type WorkflowStep = {
