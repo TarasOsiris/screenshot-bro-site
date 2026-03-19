@@ -1,6 +1,6 @@
 export const SITE_NAME = "Screenshot Bro";
 export const SITE_DESCRIPTION =
-  "Design App Store screenshots in minutes with Screenshot Bro — a native macOS app. Device frames, gradient backgrounds, multiple locales, batch export, and multi-template editing. Built with SwiftUI.";
+  "Design App Store screenshots in minutes. Device frames, gradients, localization, batch export — all in a native macOS app.";
 export const SITE_TAGLINE = "Design App Store screenshots in minutes.";
 export const SITE_URL =
   (import.meta.env.VITE_SITE_URL as string | undefined)?.replace(/\/$/, "") ??

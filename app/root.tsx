@@ -16,7 +16,7 @@ import {
 } from "~/config/site";
 import "./app.css";
 
-const SITE_TITLE = `${SITE_NAME} — App Store Screenshot Generator for macOS`;
+const SITE_TITLE = `${SITE_NAME} — Design beautiful App Store Screenshots with native Mac app`;
 const SOCIAL_IMAGE = `${SITE_URL}/og-image.png`;
 const GA_ID =
   import.meta.env.PROD && import.meta.env.VITE_GA_ID
