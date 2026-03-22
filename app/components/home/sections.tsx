@@ -182,13 +182,26 @@ export function SiteNav({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
           ))}
         </div>
 
-        <a
-          href={href}
-          className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.06] px-4 py-2 text-sm font-medium text-white/[0.88] transition-all hover:border-white/20 hover:bg-white/10"
-        >
-          <AppleLogo className="opacity-80" />
-          {PRIMARY_CTA_LABEL}
-        </a>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://x.com/soycastic"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-9 h-9 rounded-xl border border-white/10 bg-white/[0.06] text-white/60 hover:text-white/90 hover:border-white/20 hover:bg-white/10 transition-all"
+            aria-label="Follow on X"
+          >
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+          <a
+            href={href}
+            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.06] px-4 py-2 text-sm font-medium text-white/[0.88] transition-all hover:border-white/20 hover:bg-white/10"
+          >
+            <AppleLogo className="opacity-80" />
+            {PRIMARY_CTA_LABEL}
+          </a>
+        </div>
       </div>
     </nav>
   );
@@ -647,6 +660,17 @@ export function SiteFooter() {
             className="text-sm text-white/55 hover:text-white/90 transition-colors"
           >
             Contact
+          </a>
+          <a
+            href="https://x.com/soycastic"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-white/55 hover:text-white/90 transition-colors"
+          >
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            Follow my journey
           </a>
         </div>
 
