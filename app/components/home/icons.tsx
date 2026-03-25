@@ -178,6 +178,87 @@ export function AppleLogo({ className }: AppleLogoProps) {
   );
 }
 
+function IconCloud() {
+  return (
+    <svg
+      aria-hidden="true"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+    </svg>
+  );
+}
+
+function IconFonts() {
+  return (
+    <svg
+      aria-hidden="true"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="4,7 4,4 20,4 20,7" />
+      <line x1="9.5" y1="20" x2="14.5" y2="20" />
+      <line x1="12" y1="4" x2="12" y2="20" />
+    </svg>
+  );
+}
+
+function IconStarter() {
+  return (
+    <svg
+      aria-hidden="true"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M3 9h18" />
+      <path d="M9 21V9" />
+    </svg>
+  );
+}
+
+function IconKeyboard() {
+  return (
+    <svg
+      aria-hidden="true"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="2" y="6" width="20" height="12" rx="2" />
+      <line x1="6" y1="10" x2="6" y2="10.01" />
+      <line x1="10" y1="10" x2="10" y2="10.01" />
+      <line x1="14" y1="10" x2="14" y2="10.01" />
+      <line x1="18" y1="10" x2="18" y2="10.01" />
+      <line x1="8" y1="14" x2="16" y2="14" />
+    </svg>
+  );
+}
+
 const ICONS: Record<FeatureIconKey, ReactElement> = {
   templates: <IconTemplates />,
   device: <IconDevice />,
@@ -187,6 +268,10 @@ const ICONS: Record<FeatureIconKey, ReactElement> = {
   export: <IconExport />,
   project: <IconProject />,
   native: <IconNative />,
+  cloud: <IconCloud />,
+  fonts: <IconFonts />,
+  starter: <IconStarter />,
+  keyboard: <IconKeyboard />,
 };
 
 export function FeatureIcon({ icon }: { icon: FeatureIconKey }) {

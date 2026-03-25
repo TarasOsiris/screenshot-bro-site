@@ -1,6 +1,6 @@
 export const SITE_NAME = "Screenshot Bro";
 export const SITE_DESCRIPTION =
-  "Design App Store screenshots in minutes. Device frames, gradients, localization, batch export — all in a native macOS app.";
+  "Design App Store screenshots in minutes. Device frames, gradients, localization, iCloud sync, batch export — all in a native macOS app.";
 export const SITE_TAGLINE = "Design App Store screenshots in minutes.";
 export const SITE_URL =
   (import.meta.env.VITE_SITE_URL as string | undefined)?.replace(/\/$/, "") ??
@@ -56,6 +56,16 @@ export const FAQS: FaqItem[] = [
     answer:
       "Screenshot Bro exports PNG or JPEG assets at 1x, 2x, or 3x and organizes the output into predictable folders so App Store upload is less manual.",
   },
+  {
+    question: "Does it sync between Macs?",
+    answer:
+      "Yes. Screenshot Bro supports opt-in iCloud Drive sync. Projects stay available across all your Macs with automatic conflict resolution.",
+  },
+  {
+    question: "Can I use custom fonts?",
+    answer:
+      "Yes. Import any .ttf, .otf, or .ttc font file and use it in text shapes. Fonts are registered for the app session so they work in both the editor and exports.",
+  },
 ];
 
 export type FeatureIconKey =
@@ -66,7 +76,11 @@ export type FeatureIconKey =
   | "align"
   | "export"
   | "project"
-  | "native";
+  | "native"
+  | "cloud"
+  | "fonts"
+  | "starter"
+  | "keyboard";
 
 export type FeatureItem = {
   icon: FeatureIconKey;
@@ -87,7 +101,7 @@ export const FEATURES: FeatureItem[] = [
     icon: "device",
     title: "Device Frames",
     description:
-      'iPhone, iPad Pro 11", iPad Pro 13", and Mac Desktop frames. Accurate bezels, configurable body colors, and per-row defaults.',
+      'iPhone 17 series, iPad Pro 11" & 13", MacBook, iMac, and Android phone & tablet frames. Accurate bezels, configurable body colors, and per-row defaults.',
     accent: "var(--color-mint)",
   },
   {
@@ -101,7 +115,7 @@ export const FEATURES: FeatureItem[] = [
     icon: "shapes",
     title: "Shape Tools + SVG",
     description:
-      "Rectangles, circles, text, images, SVGs, and device frames. Inline text editing, fill modes, shape clipping, and full transform controls.",
+      "Rectangles, circles, stars, text, images, SVGs, and device frames. Inline text editing, fill modes, shape clipping, and full transform controls.",
     accent: "var(--color-rose)",
   },
   {
@@ -131,6 +145,34 @@ export const FEATURES: FeatureItem[] = [
     description:
       "Built with Swift and SwiftUI. No Electron, no browser tab. Instant launch, native performance, auto-save, full undo/redo.",
     accent: "var(--color-accent)",
+  },
+  {
+    icon: "cloud",
+    title: "iCloud Sync",
+    description:
+      "Opt-in iCloud Drive sync keeps projects available across all your Macs. Last-writer-wins merge with tombstone-aware conflict resolution.",
+    accent: "var(--color-mint)",
+  },
+  {
+    icon: "fonts",
+    title: "Custom Fonts",
+    description:
+      "Import your own .ttf, .otf, or .ttc font files. Use any typeface in text shapes — no system font limitations.",
+    accent: "var(--color-warm)",
+  },
+  {
+    icon: "starter",
+    title: "Project Templates",
+    description:
+      "Start from built-in templates with pre-configured layouts, device frames, and backgrounds. Jump straight into designing.",
+    accent: "var(--color-rose)",
+  },
+  {
+    icon: "keyboard",
+    title: "Keyboard Shortcuts",
+    description:
+      "Nudge, duplicate, cut/copy/paste, z-order, zoom, and select — all from the keyboard. Shift-nudge for 10px jumps, Option-drag to clone.",
+    accent: "var(--color-accent-light)",
   },
 ];
 
@@ -193,7 +235,7 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     label: "Device Frames",
     title: "Customize device frames.",
     description:
-      "Pick from a library of device bezels — iPhone, iPad, Mac, Apple Watch, and more. Swap frames, adjust colors, and match your brand without re-importing screenshots.",
+      "Pick from a library of device bezels — iPhone, iPad, MacBook, iMac, and Android phones & tablets. Swap frames, choose body colors, and match your brand without re-importing screenshots.",
     media: "/showcases/frames.mp4",
     mediaAlt:
       "Selecting and customizing device frames around app screenshots",
