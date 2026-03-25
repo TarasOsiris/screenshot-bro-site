@@ -250,37 +250,37 @@ export type AppScreenshot = {
 
 export const APP_SCREENSHOTS: AppScreenshot[] = [
   {
-    src: "/screenshots/01_screenshot.png",
+    src: "/screenshots/01_screenshot.webp",
     alt: "Screenshot Bro editor showing multi-template App Store screenshot design with device frames",
     caption: "Design pretty App Store screenshots",
   },
   {
-    src: "/screenshots/02_screenshot.png",
+    src: "/screenshots/02_screenshot.webp",
     alt: "Batch export view with all project screenshots ready for App Store upload",
     caption: "Export the whole project at once",
   },
   {
-    src: "/screenshots/03_screenshot.png",
+    src: "/screenshots/03_screenshot.webp",
     alt: "Template picker showing multiple built-in layout templates for iPhone and iPad",
     caption: "Pick from built-in templates",
   },
   {
-    src: "/screenshots/04_screenshot.png",
+    src: "/screenshots/04_screenshot.webp",
     alt: "Localization editor with German locale showing per-shape text overrides",
     caption: "Localize screenshots easily",
   },
   {
-    src: "/screenshots/05_screenshot.png",
+    src: "/screenshots/05_screenshot.webp",
     alt: "Device frame selection showing MacBook, iPad, and iPhone frames on canvas",
     caption: "Add real device frames",
   },
   {
-    src: "/screenshots/06_screenshot.png",
+    src: "/screenshots/06_screenshot.webp",
     alt: "Background editor with gradient presets, color picker, and angle controls",
     caption: "Make beautiful backgrounds",
   },
   {
-    src: "/screenshots/07_screenshot.png",
+    src: "/screenshots/07_screenshot.webp",
     alt: "Shape tools with SVGs, stars, and colorful vector elements on the canvas",
     caption: "Add SVGs, shapes, and images",
   },

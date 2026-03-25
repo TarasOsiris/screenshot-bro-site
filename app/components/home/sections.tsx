@@ -526,8 +526,8 @@ export function ScreenshotsSection() {
               <img
                 src={shot.src}
                 alt={shot.alt}
-                width="2880"
-                height="1800"
+                width="1440"
+                height="900"
                 loading={i < 2 ? "eager" : "lazy"}
                 decoding="async"
                 className="w-full h-auto block"
