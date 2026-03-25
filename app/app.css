@@ -300,6 +300,96 @@ button:focus-visible {
   animation: gradient-shift 6s ease infinite;
 }
 
+/* Privacy policy prose */
+.prose-policy {
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.75;
+  font-size: 0.9375rem;
+}
+
+.prose-policy h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.25rem;
+  color: white;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.prose-policy .meta {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 2rem;
+}
+
+.prose-policy h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-policy p {
+  margin-bottom: 1rem;
+}
+
+.prose-policy ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.prose-policy ul li {
+  margin-bottom: 0.5rem;
+}
+
+.prose-policy a {
+  color: var(--color-accent-light);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-policy a:hover {
+  color: white;
+}
+
+.prose-policy strong {
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 600;
+}
+
+.prose-policy code {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.375rem;
+  padding: 0.125rem 0.375rem;
+}
+
+.prose-policy table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.prose-policy th {
+  text-align: left;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+  padding: 0.625rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.prose-policy td {
+  padding: 0.625rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

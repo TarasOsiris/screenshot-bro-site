@@ -758,6 +758,12 @@ export function SiteFooter() {
             <NavLink key={item.href} item={item} />
           ))}
           <a
+            href="/privacy"
+            className="text-sm text-white/55 hover:text-white/90 transition-colors"
+          >
+            Privacy
+          </a>
+          <a
             href={CONTACT_MAILTO}
             className="text-sm text-white/55 hover:text-white/90 transition-colors"
           >
