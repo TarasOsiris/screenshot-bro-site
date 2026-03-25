@@ -9,6 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import {
+  FAQS,
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_TAGLINE,
@@ -16,8 +17,9 @@ import {
 } from "~/config/site";
 import "./app.css";
 
-const SITE_TITLE = `${SITE_NAME} — Design beautiful App Store Screenshots with native Mac app`;
+const SITE_TITLE = `${SITE_NAME} — App Store Screenshot Designer for Mac`;
 const SOCIAL_IMAGE = `${SITE_URL}/og-image.png`;
+const TWITTER_HANDLE = "@soycastic";
 const GA_ID =
   import.meta.env.PROD && import.meta.env.VITE_GA_ID
     ? (import.meta.env.VITE_GA_ID as string)
@@ -35,13 +37,26 @@ const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
   screenshot: SOCIAL_IMAGE,
   offers: {
     "@type": "Offer",
-    availability: "https://schema.org/PreOrder",
+    availability: "https://schema.org/OnlineOnly",
     price: "0",
     priceCurrency: "USD",
   },
   applicationSubCategory: "Screenshot Generator",
   featureList:
-    "Device Frames, Gradient Backgrounds, Multi-Template Editing, Batch Export, Multi-language Localization, SVG Support",
+    "Device Frames, Gradient Backgrounds, Multi-Template Editing, Batch Export, Multi-language Localization, SVG Support, iCloud Sync, Custom Fonts, Project Templates, Keyboard Shortcuts",
+});
+
+const FAQ_SCHEMA_JSON = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
 });
 
 export const links: Route.LinksFunction = () => [
@@ -86,6 +101,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
           content="Screenshot Bro — native macOS app for designing App Store screenshots with device frames, gradients, and localization"
         />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={TWITTER_HANDLE} />
+        <meta name="twitter:creator" content={TWITTER_HANDLE} />
         <meta name="twitter:title" content={SITE_TITLE} />
         <meta name="twitter:description" content={SITE_DESCRIPTION} />
         <meta name="twitter:image" content={SOCIAL_IMAGE} />
@@ -95,6 +112,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: SOFTWARE_APP_SCHEMA_JSON,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: FAQ_SCHEMA_JSON,
           }}
         />
         {GA_ID ? (
