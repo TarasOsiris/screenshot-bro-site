@@ -49,7 +49,7 @@ export const FAQS: FaqItem[] = [
   {
     question: "Can I localize screenshots for multiple languages?",
     answer:
-      "Yes. Projects can carry multiple locales, with per-shape text overrides and exports grouped automatically by language and screenshot row.",
+      "Yes. Choose from 30 language presets and add per-shape text, position, and image overrides. Exports are grouped automatically by language and screenshot row.",
   },
   {
     question: "What can I export?",
@@ -108,21 +108,21 @@ export const FEATURES: FeatureItem[] = [
     icon: "gradient",
     title: "Backgrounds & Spanning",
     description:
-      "Solid colors, 12 gradient presets, or images. Gradients and images can span across multiple templates in a row for seamless designs.",
+      "Solid colors, linear/radial/angular gradients with multi-stop editor, or images with fill, fit, stretch, and tile modes. Backgrounds can span across multiple templates in a row.",
     accent: "var(--color-warm)",
   },
   {
     icon: "shapes",
     title: "Shape Tools + SVG",
     description:
-      "Rectangles, circles, stars, text, images, SVGs, and device frames. Inline text editing, fill modes, shape clipping, and full transform controls.",
+      "Rectangles, circles, stars, text, images, SVGs, and device frames. Inline text editing, outlines, fill modes, shape clipping, and full transform controls.",
     accent: "var(--color-rose)",
   },
   {
     icon: "align",
     title: "Smart Alignment",
     description:
-      "Snap guides appear as you drag, keeping everything lined up. Nudge with arrow keys, Option-drag to duplicate, jump-to-shape magnifier.",
+      "Snap guides appear as you drag, keeping everything lined up. Nudge with arrow keys, Option-drag to duplicate, Shift-drag to lock aspect ratio.",
     accent: "var(--color-accent-light)",
   },
   {
@@ -136,7 +136,7 @@ export const FEATURES: FeatureItem[] = [
     icon: "project",
     title: "Localization Built In",
     description:
-      "Locale presets from English to Arabic. Per-shape text overrides, translation tracking, and keyboard shortcuts to flip between languages.",
+      "30 language presets from English to Arabic, Hindi, and CJK. Per-shape text, position, and image overrides with translation progress tracking.",
     accent: "var(--color-mint)",
   },
   {
@@ -171,7 +171,7 @@ export const FEATURES: FeatureItem[] = [
     icon: "keyboard",
     title: "Keyboard Shortcuts",
     description:
-      "Nudge, duplicate, cut/copy/paste, z-order, zoom, and select — all from the keyboard. Shift-nudge for 10px jumps, Option-drag to clone.",
+      "Nudge, duplicate, cut/copy/paste, z-order, zoom, locale cycling, and select — all from the keyboard. Shift-nudge for 10px jumps, Option-drag to clone.",
     accent: "var(--color-accent-light)",
   },
 ];
@@ -215,7 +215,7 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     label: "Shapes & Layers",
     title: "Build it up, layer by layer.",
     description:
-      "Add rectangles, circles, stars, text, images, and SVGs — then resize, rotate, and style each one. Set fill colors, opacity, outlines, and corner radius right from the inspector. Stack layers, lock aspect ratios, and snap to pixel-perfect alignment.",
+      "Add rectangles, circles, stars, text, images, and SVGs — then resize, rotate, and style each one. Set fill colors, gradients, opacity, outlines, and corner radius right from the inspector. Stack layers, Shift-drag to lock aspect ratio, and snap to pixel-perfect alignment.",
     media: "/showcases/shapes.mp4",
     mediaAlt:
       "Adding and manipulating shapes on the screenshot canvas with resize handles and style controls",
@@ -225,7 +225,7 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     label: "Backgrounds",
     title: "Make cool backgrounds.",
     description:
-      "Choose from 12 gradient presets, solid colors, or drop in your own images. Gradients and images can span across multiple templates in a row for seamless, edge-to-edge designs. Adjust angle, opacity, and color stops — every background updates live across all templates.",
+      "Choose from 12 gradient presets, build your own with the multi-stop editor, or drop in images with fill, fit, stretch, and tile modes. Backgrounds can span across multiple templates in a row for seamless, edge-to-edge designs. Adjust angle, opacity, and color stops — everything updates live.",
     media: "/showcases/backgrounds.mp4",
     mediaAlt:
       "Switching between gradient presets, solid colors, and spanning backgrounds across multiple screenshot templates",
