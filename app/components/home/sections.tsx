@@ -6,6 +6,7 @@ import {
   BETA_BENEFITS,
   CONTACT_MAILTO,
   EARLY_ACCESS_MAILTO,
+  REDDIT_COMMUNITY_URL,
   FAQS,
   FEATURE_SHOWCASES,
   FEATURES,
@@ -757,6 +758,14 @@ export function SiteFooter() {
           {NAV_ITEMS.map((item) => (
             <NavLink key={item.href} item={item} />
           ))}
+          <a
+            href={REDDIT_COMMUNITY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-white/55 hover:text-white/90 transition-colors"
+          >
+            Community
+          </a>
           <a
             href="/privacy"
             className="text-sm text-white/55 hover:text-white/90 transition-colors"

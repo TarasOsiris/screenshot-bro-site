@@ -10,6 +10,7 @@ export const EARLY_ACCESS_EMAIL = "tleskiv@ninevastudios.com";
 export const TESTFLIGHT_URL = "https://testflight.apple.com/join/GWjeTCFh";
 export const EARLY_ACCESS_MAILTO = TESTFLIGHT_URL;
 export const CONTACT_MAILTO = `mailto:${EARLY_ACCESS_EMAIL}`;
+export const REDDIT_COMMUNITY_URL = "https://www.reddit.com/r/ScreenshotBro/";
 export const PRIMARY_CTA_LABEL = "Join public beta";
 
 export type NavItem = {
@@ -297,7 +298,7 @@ export const WORKFLOW_STEPS: WorkflowStep[] = [
     step: "01",
     title: "Set Up Rows",
     description:
-      'Pick your device sizes - iPhone 6.5", iPad Pro 13", Mac Desktop. Add as many rows as you need.',
+      'Pick your device sizes — iPhone 17, iPad Pro 11" or 13", MacBook, or iMac. Add as many rows as you need.',
   },
   {
     step: "02",
