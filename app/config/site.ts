@@ -7,11 +7,10 @@ export const SITE_URL =
   "https://screenshotbro.app";
 
 export const EARLY_ACCESS_EMAIL = "tleskiv@ninevastudios.com";
-export const TESTFLIGHT_URL = "https://testflight.apple.com/join/GWjeTCFh";
-export const EARLY_ACCESS_MAILTO = TESTFLIGHT_URL;
+export const APP_STORE_URL = "https://apps.apple.com/us/app/screenshot-bro/id6760177675";
 export const CONTACT_MAILTO = `mailto:${EARLY_ACCESS_EMAIL}`;
 export const REDDIT_COMMUNITY_URL = "https://www.reddit.com/r/ScreenshotBro/";
-export const PRIMARY_CTA_LABEL = "Join public beta";
+export const PRIMARY_CTA_LABEL = "Get on the App Store";
 
 export type NavItem = {
   label: string;
@@ -26,9 +25,9 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const BETA_BENEFITS = [
-  "Instant access through TestFlight on macOS",
-  "Current core workflow: import, design, localize, export",
-  "Direct feedback loop with the developer while the product evolves",
+  "Available now on the Mac App Store",
+  "Full workflow: import, design, localize, export",
+  "Direct feedback loop with the developer as the product evolves",
 ];
 
 export type FaqItem = {
@@ -43,9 +42,9 @@ export const FAQS: FaqItem[] = [
       "Yes. Screenshot Bro is a native macOS app built with Swift and SwiftUI, so it is designed for Mac-based App Store workflows.",
   },
   {
-    question: "How do I join the beta?",
+    question: "How do I get Screenshot Bro?",
     answer:
-      "Use the public beta button to open the TestFlight invite. Install the app, launch it on your Mac, and you can start building screenshot sets right away.",
+      "Download it from the Mac App Store. Install the app, launch it on your Mac, and you can start building screenshot sets right away.",
   },
   {
     question: "Can I localize screenshots for multiple languages?",

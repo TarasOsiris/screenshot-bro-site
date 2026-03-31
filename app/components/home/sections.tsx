@@ -5,7 +5,7 @@ import {
   APP_SCREENSHOTS,
   BETA_BENEFITS,
   CONTACT_MAILTO,
-  EARLY_ACCESS_MAILTO,
+  APP_STORE_URL,
   REDDIT_COMMUNITY_URL,
   FAQS,
   FEATURE_SHOWCASES,
@@ -126,7 +126,7 @@ function AppPreview() {
           style={{ background: "#28c840" }}
         />
         <span className="ml-3 text-xs text-white/45 font-mono">
-          Screenshot Bro beta preview
+          Screenshot Bro
         </span>
       </div>
       <video
@@ -161,7 +161,7 @@ type CtaProps = {
   href?: string;
 };
 
-export function SiteNav({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
+export function SiteNav({ href = APP_STORE_URL }: CtaProps) {
   return (
     <nav
       aria-label="Main navigation"
@@ -209,7 +209,7 @@ export function SiteNav({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
   );
 }
 
-export function HeroSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
+export function HeroSection({ href = APP_STORE_URL }: CtaProps) {
   return (
     <section className="relative pt-32 pb-20 px-6 overflow-hidden">
       <div className="hero-gradient" />
@@ -269,7 +269,7 @@ export function HeroSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
   );
 }
 
-export function ShowcasesSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
+export function ShowcasesSection({ href = APP_STORE_URL }: CtaProps) {
   return (
     <section
       id="showcases"
@@ -343,13 +343,13 @@ function FeatureShowcaseBlock({
               href={href}
               className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.06] px-4 py-2.5 text-sm font-medium text-white/[0.88] transition-all hover:border-white/20 hover:bg-white/10"
             >
-              Try this in the beta
+              Try it now
             </a>
             <a
               href="#early-access"
               className="text-sm text-white/[0.52] hover:text-white/[0.88] transition-colors"
             >
-              See beta details
+              See details
             </a>
           </div>
         </div>
@@ -686,7 +686,7 @@ export function FaqSection() {
   );
 }
 
-export function DownloadSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
+export function DownloadSection({ href = APP_STORE_URL }: CtaProps) {
   return (
     <section
       id="early-access"
@@ -703,9 +703,8 @@ export function DownloadSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
           better screenshots?
         </h2>
         <p className="text-base text-white/[0.58] mb-10 max-w-2xl mx-auto leading-relaxed">
-          Join the public beta through TestFlight and use the current macOS app
-          for the full screenshot workflow: setup, design, localization, and
-          export.
+          Download from the Mac App Store and use the full screenshot
+          workflow: setup, design, localization, and export.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 text-left">
@@ -733,7 +732,7 @@ export function DownloadSection({ href = EARLY_ACCESS_MAILTO }: CtaProps) {
         </div>
 
         <p className="mt-4 text-xs text-white/40 font-mono">
-          macOS app | Swift & SwiftUI | Public beta via TestFlight
+          macOS app | Swift & SwiftUI | Available on the Mac App Store
         </p>
       </div>
     </section>
