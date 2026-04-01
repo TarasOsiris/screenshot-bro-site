@@ -108,27 +108,7 @@ function AppPreview() {
   const videoRef = useLoopWithPause();
 
   return (
-    <div className="macos-window w-full mx-auto">
-      <div className="macos-titlebar">
-        <span
-          aria-hidden="true"
-          className="macos-dot"
-          style={{ background: "#ff5f57" }}
-        />
-        <span
-          aria-hidden="true"
-          className="macos-dot"
-          style={{ background: "#febc2e" }}
-        />
-        <span
-          aria-hidden="true"
-          className="macos-dot"
-          style={{ background: "#28c840" }}
-        />
-        <span className="ml-3 text-xs text-white/45 font-mono">
-          Screenshot Bro
-        </span>
-      </div>
+    <div className="w-full mx-auto rounded-2xl overflow-hidden">
       <video
         ref={videoRef}
         src="/demo-main.mp4"
