@@ -242,6 +242,35 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
   },
 ];
 
+export type ShowcaseApp = {
+  name: string;
+  icon: string;
+  url: string;
+};
+
+export const SHOWCASE_APPS: ShowcaseApp[] = [
+  {
+    name: "Refuells",
+    icon: "/showcase/refuells.jpg",
+    url: "https://apps.apple.com/app/refuells-fuel-trip-tracker/id6756374694",
+  },
+  {
+    name: "AdRadar",
+    icon: "/showcase/adradar.jpg",
+    url: "https://apps.apple.com/app/adradar-ad-revenue-tracker/id6747883093",
+  },
+  {
+    name: "TT Tracker",
+    icon: "/showcase/tt-tracker.jpg",
+    url: "https://apps.apple.com/app/table-tennis-training-tracker/id6758044383",
+  },
+  {
+    name: "My Checklist Routines",
+    icon: "/showcase/checklist-routines.jpg",
+    url: "https://apps.apple.com/app/my-checklist-routines/id6759321248",
+  },
+];
+
 export type AppScreenshot = {
   src: string;
   alt: string;

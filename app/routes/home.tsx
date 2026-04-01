@@ -12,6 +12,7 @@ export const links: Route.LinksFunction = () => [
 ];
 
 import {
+  AppShowcaseSection,
   BackToTopButton,
   DownloadSection,
   FaqSection,
@@ -53,6 +54,7 @@ export default function Home() {
 
       <main id="main-content">
         <HeroSection />
+        <AppShowcaseSection />
         <ShowcasesSection />
         <WorkflowSection />
         <FeaturesSection />
