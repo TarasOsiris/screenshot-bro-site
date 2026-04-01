@@ -1,5 +1,16 @@
 import { useEffect, useState } from "react";
 
+import type { Route } from "./+types/home";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "~/config/site";
+export const meta: Route.MetaFunction = () => [
+  { title: `${SITE_NAME} — App Store Screenshot Designer for Mac` },
+  { name: "description", content: SITE_DESCRIPTION },
+];
+
+export const links: Route.LinksFunction = () => [
+  { rel: "canonical", href: SITE_URL },
+];
+
 import {
   BackToTopButton,
   DownloadSection,

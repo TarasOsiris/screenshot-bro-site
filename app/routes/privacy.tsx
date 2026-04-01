@@ -1,4 +1,17 @@
+import type { Route } from "./+types/privacy";
 import { CONTACT_MAILTO, SITE_NAME, SITE_URL } from "~/config/site";
+
+export const meta: Route.MetaFunction = () => [
+  { title: `Privacy Policy — ${SITE_NAME}` },
+  {
+    name: "description",
+    content: `Privacy policy for ${SITE_NAME}. Learn how we handle your data — no analytics, no tracking, all data stays on your Mac.`,
+  },
+];
+
+export const links: Route.LinksFunction = () => [
+  { rel: "canonical", href: `${SITE_URL}/privacy` },
+];
 
 const EFFECTIVE_DATE = "March 25, 2026";
 const DEVELOPER_NAME = "Nineva Studios";

@@ -12,7 +12,6 @@ import {
   FAQS,
   SITE_DESCRIPTION,
   SITE_NAME,
-  SITE_TAGLINE,
   SITE_URL,
 } from "~/config/site";
 import "./app.css";
@@ -75,7 +74,6 @@ export const links: Route.LinksFunction = () => [
   { rel: "icon", href: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
   { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
   { rel: "manifest", href: "/site.webmanifest" },
-  { rel: "canonical", href: SITE_URL },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -85,8 +83,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#08080c" />
-        <title>{SITE_TITLE}</title>
-        <meta name="description" content={SITE_DESCRIPTION} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={SITE_NAME} />
