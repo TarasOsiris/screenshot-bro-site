@@ -269,6 +269,11 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
     icon: "/showcase/checklist-routines.jpg",
     url: "https://apps.apple.com/app/my-checklist-routines/id6759321248",
   },
+  {
+    name: "Utorbu",
+    icon: "/showcase/utorbu.jpg",
+    url: "https://apps.apple.com/ua/app/utorbu/id6759218990",
+  },
 ];
 
 export type AppScreenshot = {
