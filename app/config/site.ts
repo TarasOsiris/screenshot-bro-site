@@ -274,6 +274,11 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
     icon: "/showcase/utorbu.jpg",
     url: "https://apps.apple.com/ua/app/utorbu/id6759218990",
   },
+  {
+    name: "Chapper",
+    icon: "/showcase/chapper.jpg",
+    url: "https://apps.apple.com/us/app/chapper/id6760984679",
+  },
 ];
 
 export type AppScreenshot = {
