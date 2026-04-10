@@ -13,12 +13,12 @@ import {
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_URL,
+  TWITTER_HANDLE,
 } from "~/config/site";
 import "./app.css";
 
 const SITE_TITLE = `${SITE_NAME} — App Store Screenshot Designer for Mac`;
 const SOCIAL_IMAGE = `${SITE_URL}/og-image.png`;
-const TWITTER_HANDLE = "@soycastic";
 const GA_ID =
   import.meta.env.PROD && import.meta.env.VITE_GA_ID
     ? (import.meta.env.VITE_GA_ID as string)
@@ -144,30 +144,74 @@ export default function App() {
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
+  let status = 500;
+  let message = "Something went wrong";
+  let details = "An unexpected error occurred. Please try again later.";
   let stack: string | undefined;
 
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
-    details =
-      error.status === 404
-        ? "The requested page could not be found."
-        : error.statusText || details;
+    status = error.status;
+    if (error.status === 404) {
+      message = "Page not found";
+      details =
+        "The page you're looking for doesn't exist or has been moved.";
+    } else {
+      message = `Error ${error.status}`;
+      details = error.statusText || details;
+    }
   } else if (import.meta.env.DEV && error && error instanceof Error) {
     details = error.message;
     stack = error.stack;
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto font-body">
-      <h1 className="font-display text-4xl font-bold">{message}</h1>
-      <p className="mt-4 text-white/60">{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto mt-4 bg-surface-raised rounded-lg">
-          <code className="font-mono text-sm">{stack}</code>
-        </pre>
-      )}
-    </main>
+    <div className="min-h-screen flex flex-col">
+      <nav className="border-b border-border-subtle bg-surface/78 backdrop-blur-2xl">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center">
+          <a href="/" className="flex items-center shrink-0">
+            <img
+              src="/logo-light.svg"
+              alt={SITE_NAME}
+              width="150"
+              height="24"
+              className="h-6 w-auto"
+            />
+          </a>
+        </div>
+      </nav>
+
+      <main className="flex-1 flex items-center justify-center px-6">
+        <div className="text-center max-w-lg">
+          <p className="font-mono text-8xl font-bold text-accent/40 mb-6">
+            {status}
+          </p>
+          <h1 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+            {message}
+          </h1>
+          <p className="text-base text-white/55 mb-10 leading-relaxed">
+            {details}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="/"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-sm transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
+            >
+              Go to homepage
+            </a>
+            <a
+              href="/blog"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/[0.03] border border-border text-white/[0.72] hover:text-white/[0.92] hover:border-white/20 text-sm transition-all"
+            >
+              Read the blog
+            </a>
+          </div>
+          {stack && (
+            <pre className="w-full p-4 overflow-x-auto mt-10 bg-surface-raised rounded-lg text-left">
+              <code className="font-mono text-sm text-white/60">{stack}</code>
+            </pre>
+          )}
+        </div>
+      </main>
+    </div>
   );
 }

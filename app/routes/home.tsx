@@ -11,20 +11,20 @@ export const links: Route.LinksFunction = () => [
   { rel: "canonical", href: SITE_URL },
 ];
 
-import {
-  AppShowcaseSection,
-  BackToTopButton,
-  DownloadSection,
-  FaqSection,
-  FeaturesSection,
-  HeroSection,
-  ProblemSection,
-  ScreenshotsSection,
-  ShowcasesSection,
-  SiteFooter,
-  SiteNav,
-  WorkflowSection,
-} from "~/components/home/sections";
+import { SiteNav } from "~/components/home/SiteNav";
+import { HeroSection } from "~/components/home/HeroSection";
+import { AppShowcaseSection } from "~/components/home/AppShowcaseSection";
+import { ShowcasesSection } from "~/components/home/ShowcasesSection";
+import { WorkflowSection } from "~/components/home/WorkflowSection";
+import { FeaturesSection } from "~/components/home/FeaturesSection";
+import { ScreenshotsSection } from "~/components/home/ScreenshotsSection";
+import { TestimonialsSection } from "~/components/home/TestimonialsSection";
+import { ProblemSection } from "~/components/home/ProblemSection";
+import { FaqSection } from "~/components/home/FaqSection";
+import { DownloadSection } from "~/components/home/DownloadSection";
+import { SiteFooter } from "~/components/home/SiteFooter";
+import { BackToTopButton } from "~/components/home/BackToTopButton";
+
 function useScrollFade(threshold = 100) {
   const [visible, setVisible] = useState(false);
 
@@ -59,6 +59,7 @@ export default function Home() {
         <WorkflowSection />
         <FeaturesSection />
         <ScreenshotsSection />
+        <TestimonialsSection />
         <ProblemSection />
         <FaqSection />
         <DownloadSection />

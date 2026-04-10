@@ -11,6 +11,8 @@ export const APP_STORE_URL = "https://apps.apple.com/us/app/screenshot-bro/id676
 export const CONTACT_MAILTO = `mailto:${EARLY_ACCESS_EMAIL}`;
 export const REDDIT_COMMUNITY_URL = "https://www.reddit.com/r/ScreenshotBro/";
 export const PRIMARY_CTA_LABEL = "Get on the App Store";
+export const TWITTER_HANDLE = "@soycastic";
+export const X_PROFILE_URL = "https://x.com/soycastic";
 
 export type NavItem = {
   label: string;
