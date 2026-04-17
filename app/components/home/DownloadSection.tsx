@@ -24,7 +24,8 @@ export function DownloadSection({ href = APP_STORE_URL }: { href?: string }) {
         </h2>
         <p className="text-base text-white/[0.58] mb-10 max-w-2xl mx-auto leading-relaxed">
           Download from the Mac App Store and use the full screenshot
-          workflow: setup, design, localization, and export.
+          workflow: setup, design, auto-translation, localization, and export
+          for App Store and Google Play assets.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 text-left">
@@ -52,7 +53,7 @@ export function DownloadSection({ href = APP_STORE_URL }: { href?: string }) {
         </div>
 
         <p className="mt-4 text-xs text-white/40 font-mono">
-          macOS app | Swift & SwiftUI | Available on the Mac App Store
+          macOS 15+ app | Swift & SwiftUI | Available on the Mac App Store
         </p>
       </div>
     </section>

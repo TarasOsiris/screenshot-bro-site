@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import type { Route } from "./+types/home";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "~/config/site";
 export const meta: Route.MetaFunction = () => [
-  { title: `${SITE_NAME} — App Store Screenshot Designer for Mac` },
+  { title: `${SITE_NAME} — App Store & Google Play Screenshot Designer for Mac` },
   { name: "description", content: SITE_DESCRIPTION },
 ];
 
@@ -14,6 +14,7 @@ export const links: Route.LinksFunction = () => [
 import { SiteNav } from "~/components/home/SiteNav";
 import { HeroSection } from "~/components/home/HeroSection";
 import { AppShowcaseSection } from "~/components/home/AppShowcaseSection";
+import { StorefrontSection } from "~/components/home/StorefrontSection";
 import { ShowcasesSection } from "~/components/home/ShowcasesSection";
 import { WorkflowSection } from "~/components/home/WorkflowSection";
 import { FeaturesSection } from "~/components/home/FeaturesSection";
@@ -55,6 +56,7 @@ export default function Home() {
       <main id="main-content">
         <HeroSection />
         <AppShowcaseSection />
+        <StorefrontSection />
         <ShowcasesSection />
         <WorkflowSection />
         <FeaturesSection />

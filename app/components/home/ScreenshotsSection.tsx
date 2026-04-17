@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { SectionIntro } from "~/components/home/SectionIntro";
 import { APP_SCREENSHOTS } from "~/config/site";
 
@@ -35,13 +35,33 @@ export function ScreenshotsSection() {
   const scrollTo = (index: number) => {
     const container = scrollRef.current;
     if (!container) return;
+    const clamped = Math.max(0, Math.min(APP_SCREENSHOTS.length - 1, index));
     const children = Array.from(container.children) as HTMLElement[];
-    children[index]?.scrollIntoView({
+    children[clamped]?.scrollIntoView({
       behavior: "smooth",
       block: "nearest",
       inline: "center",
     });
   };
+
+  const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      scrollTo(activeIndex + 1);
+    } else if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      scrollTo(activeIndex - 1);
+    } else if (event.key === "Home") {
+      event.preventDefault();
+      scrollTo(0);
+    } else if (event.key === "End") {
+      event.preventDefault();
+      scrollTo(APP_SCREENSHOTS.length - 1);
+    }
+  };
+
+  const atStart = activeIndex === 0;
+  const atEnd = activeIndex === APP_SCREENSHOTS.length - 1;
 
   return (
     <section
@@ -52,36 +72,79 @@ export function ScreenshotsSection() {
         <SectionIntro
           eyebrow="Screenshots"
           title="See it in action."
-          description="App Store screenshots of Screenshot Bro itself — what you see is what you ship."
+          description="Mac App Store screenshots of Screenshot Bro itself - the same editor you use for App Store and Google Play screenshot sets."
         />
       </div>
 
       <div
-        ref={scrollRef}
-        className="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 px-[max(1.5rem,calc((100vw-72rem)/2))]"
-        style={{ scrollbarWidth: "none" }}
+        className="relative"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="App screenshots"
       >
-        {APP_SCREENSHOTS.map((shot, i) => (
-          <figure
-            key={shot.src}
-            className="snap-center shrink-0 w-[min(85vw,720px)] group"
-          >
-            <div className="rounded-2xl overflow-hidden border border-border-subtle bg-surface-raised transition-transform duration-300 group-hover:scale-[1.01]">
-              <img
-                src={shot.src}
-                alt={shot.alt}
-                width="1440"
-                height="900"
-                loading={i < 2 ? "eager" : "lazy"}
-                decoding="async"
-                className="w-full h-auto block"
-              />
-            </div>
-            <figcaption className="mt-3 text-center text-sm text-white/50">
-              {shot.caption}
-            </figcaption>
-          </figure>
-        ))}
+        <div
+          ref={scrollRef}
+          tabIndex={0}
+          onKeyDown={onKeyDown}
+          className="flex gap-5 md:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 px-[max(1.5rem,calc((100vw-72rem)/2))] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 rounded-lg"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {APP_SCREENSHOTS.map((shot, i) => {
+            const isActive = i === activeIndex;
+            return (
+              <figure
+                key={shot.src}
+                aria-roledescription="slide"
+                aria-label={`${i + 1} of ${APP_SCREENSHOTS.length}`}
+                className="snap-center shrink-0 w-[min(85vw,560px)] lg:w-[min(66vw,720px)] group"
+              >
+                <div
+                  className={`rounded-2xl overflow-hidden border border-border-subtle bg-surface-raised transition-all duration-500 ease-out ${
+                    isActive
+                      ? "opacity-100 scale-100 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]"
+                      : "opacity-45 scale-[0.92] group-hover:opacity-70"
+                  }`}
+                >
+                  <img
+                    src={shot.src}
+                    alt={shot.alt}
+                    width="1440"
+                    height="900"
+                    loading={i < 2 ? "eager" : "lazy"}
+                    decoding="async"
+                    className="w-full h-auto block"
+                  />
+                </div>
+                <figcaption
+                  className={`mt-3 text-center text-sm transition-colors duration-300 ${
+                    isActive ? "text-white/70" : "text-white/35"
+                  }`}
+                >
+                  {shot.caption}
+                </figcaption>
+              </figure>
+            );
+          })}
+        </div>
+
+        <button
+          type="button"
+          onClick={() => scrollTo(activeIndex - 1)}
+          disabled={atStart}
+          aria-label="Previous screenshot"
+          className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-4 lg:left-8 items-center justify-center w-11 h-11 rounded-full bg-surface-raised/80 backdrop-blur-md border border-border-subtle text-white/80 hover:text-white hover:bg-surface-raised hover:border-white/20 transition-all disabled:opacity-0 disabled:pointer-events-none"
+        >
+          <ChevronLeftIcon />
+        </button>
+        <button
+          type="button"
+          onClick={() => scrollTo(activeIndex + 1)}
+          disabled={atEnd}
+          aria-label="Next screenshot"
+          className="hidden md:flex absolute top-1/2 -translate-y-1/2 right-4 lg:right-8 items-center justify-center w-11 h-11 rounded-full bg-surface-raised/80 backdrop-blur-md border border-border-subtle text-white/80 hover:text-white hover:bg-surface-raised hover:border-white/20 transition-all disabled:opacity-0 disabled:pointer-events-none"
+        >
+          <ChevronRightIcon />
+        </button>
       </div>
 
       <div className="flex items-center justify-center gap-2 mt-6">
@@ -90,15 +153,56 @@ export function ScreenshotsSection() {
             key={shot.src}
             type="button"
             onClick={() => scrollTo(i)}
-            className={`w-2 h-2 rounded-full transition-all ${
+            className={`h-2 rounded-full transition-all ${
               i === activeIndex
                 ? "bg-accent w-6"
-                : "bg-white/20 hover:bg-white/40"
+                : "bg-white/20 hover:bg-white/40 w-2"
             }`}
             aria-label={`Go to screenshot ${i + 1}`}
+            aria-current={i === activeIndex}
           />
         ))}
       </div>
+
+      <p className="mt-3 text-center text-xs text-white/40 tabular-nums">
+        {activeIndex + 1} / {APP_SCREENSHOTS.length}
+      </p>
     </section>
+  );
+}
+
+function ChevronLeftIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="15 18 9 12 15 6" />
+    </svg>
+  );
+}
+
+function ChevronRightIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="9 18 15 12 9 6" />
+    </svg>
   );
 }

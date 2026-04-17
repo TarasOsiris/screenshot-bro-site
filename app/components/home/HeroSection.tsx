@@ -39,7 +39,9 @@ export function HeroSection({ href = APP_STORE_URL }: { href?: string }) {
           >
             <span className="text-white">Design App Store</span>
             <br />
-            <span className="text-accent">screenshots</span>
+            <span className="text-accent">and Google Play</span>
+            <br />
+            <span className="text-white">screenshots</span>
             <span className="text-white"> without </span>
             <span className="text-white">Figma busywork.</span>
           </h1>
@@ -49,7 +51,8 @@ export function HeroSection({ href = APP_STORE_URL }: { href?: string }) {
             style={{ animationDelay: "0.2s" }}
           >
             Import your shots, wrap them in device frames, localize the copy,
-            and export every size from one fast native Mac app.
+            auto-translate missing text, and export store-ready files from one
+            fast native Mac app.
           </p>
 
           <div

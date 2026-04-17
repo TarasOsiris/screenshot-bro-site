@@ -9,15 +9,24 @@ import {
 
 import type { Route } from "./+types/root";
 import {
+  APP_CATEGORY,
+  APP_SCREENSHOTS,
+  APP_STORE_APP_ID,
+  APP_STORE_URL,
+  FEATURES,
   FAQS,
+  MINIMUM_MACOS_VERSION,
   SITE_DESCRIPTION,
+  SITE_KEYWORDS,
   SITE_NAME,
   SITE_URL,
+  REDDIT_COMMUNITY_URL,
   TWITTER_HANDLE,
+  X_PROFILE_URL,
 } from "~/config/site";
 import "./app.css";
 
-const SITE_TITLE = `${SITE_NAME} — App Store Screenshot Designer for Mac`;
+const SITE_TITLE = `${SITE_NAME} — App Store & Google Play Screenshot Designer for Mac`;
 const SOCIAL_IMAGE = `${SITE_URL}/og-image.png`;
 const GA_ID =
   import.meta.env.PROD && import.meta.env.VITE_GA_ID
@@ -27,22 +36,65 @@ const GA_ID =
 const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
+  "@id": `${SITE_URL}/#software`,
   name: SITE_NAME,
-  operatingSystem: "macOS",
+  alternateName: "ScreenshotBro",
+  operatingSystem: `macOS ${MINIMUM_MACOS_VERSION} or later`,
   applicationCategory: "DesignApplication",
+  applicationSubCategory: "App Store screenshot generator",
+  category: APP_CATEGORY,
   description: SITE_DESCRIPTION,
   url: SITE_URL,
+  downloadUrl: APP_STORE_URL,
+  installUrl: APP_STORE_URL,
   image: SOCIAL_IMAGE,
-  screenshot: SOCIAL_IMAGE,
+  screenshot: APP_SCREENSHOTS.map((screenshot) => ({
+    "@type": "ImageObject",
+    url: `${SITE_URL}${screenshot.src}`,
+    caption: screenshot.caption,
+    description: screenshot.alt,
+  })),
+  identifier: {
+    "@type": "PropertyValue",
+    propertyID: "Apple App Store ID",
+    value: APP_STORE_APP_ID,
+  },
+  author: {
+    "@type": "Person",
+    name: "Taras Leskiv",
+    url: X_PROFILE_URL,
+  },
+  publisher: {
+    "@type": "Person",
+    name: "Taras Leskiv",
+    url: X_PROFILE_URL,
+  },
   offers: {
     "@type": "Offer",
-    availability: "https://schema.org/OnlineOnly",
-    price: "0",
+    availability: "https://schema.org/InStock",
+    price: "0.00",
     priceCurrency: "USD",
   },
-  applicationSubCategory: "Screenshot Generator",
-  featureList:
-    "Device Frames, Gradient Backgrounds, Multi-Template Editing, Batch Export, Multi-language Localization, SVG Support, iCloud Sync, Custom Fonts, Project Templates, Keyboard Shortcuts",
+  isAccessibleForFree: true,
+  softwareRequirements: `macOS ${MINIMUM_MACOS_VERSION} or later`,
+  keywords: SITE_KEYWORDS,
+  sameAs: [APP_STORE_URL, X_PROFILE_URL, REDDIT_COMMUNITY_URL],
+  featureList: FEATURES.map((feature) => feature.title),
+});
+
+const WEB_SITE_SCHEMA_JSON = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  inLanguage: "en",
+  publisher: {
+    "@type": "Person",
+    name: "Taras Leskiv",
+    url: X_PROFILE_URL,
+  },
 });
 
 const FAQ_SCHEMA_JSON = JSON.stringify({
@@ -83,6 +135,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#08080c" />
+        <meta name="keywords" content={SITE_KEYWORDS} />
+        <meta name="application-name" content={SITE_NAME} />
+        <meta name="apple-itunes-app" content={`app-id=${APP_STORE_APP_ID}`} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={SITE_NAME} />
@@ -108,6 +163,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: SOFTWARE_APP_SCHEMA_JSON,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: WEB_SITE_SCHEMA_JSON,
           }}
         />
         <script

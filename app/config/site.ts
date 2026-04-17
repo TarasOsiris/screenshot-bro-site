@@ -1,18 +1,35 @@
 export const SITE_NAME = "Screenshot Bro";
 export const SITE_DESCRIPTION =
-  "Design App Store screenshots in minutes. Device frames, gradients, localization, iCloud sync, batch export — all in a native macOS app.";
-export const SITE_TAGLINE = "Design App Store screenshots in minutes.";
+  "Create App Store and Google Play screenshots in a native Mac app. Add device frames, backgrounds, localization, auto-translate copy, and export every size.";
+export const SITE_TAGLINE =
+  "Design App Store and Google Play screenshots in minutes.";
 export const SITE_URL =
   (import.meta.env.VITE_SITE_URL as string | undefined)?.replace(/\/$/, "") ??
   "https://screenshotbro.app";
 
 export const EARLY_ACCESS_EMAIL = "tleskiv@ninevastudios.com";
+export const APP_STORE_APP_ID = "6760177675";
 export const APP_STORE_URL = "https://apps.apple.com/us/app/screenshot-bro/id6760177675";
 export const CONTACT_MAILTO = `mailto:${EARLY_ACCESS_EMAIL}`;
 export const REDDIT_COMMUNITY_URL = "https://www.reddit.com/r/ScreenshotBro/";
 export const PRIMARY_CTA_LABEL = "Get on the App Store";
 export const TWITTER_HANDLE = "@soycastic";
 export const X_PROFILE_URL = "https://x.com/soycastic";
+export const APP_CATEGORY = "Graphics & Design";
+export const MINIMUM_MACOS_VERSION = "15.0";
+export const SITE_KEYWORDS = [
+  "App Store screenshots",
+  "App Store screenshot generator",
+  "Mac App Store screenshots",
+  "Google Play screenshots",
+  "screenshot maker",
+  "device frames",
+  "app marketing screenshots",
+  "localized screenshots",
+  "auto translate screenshots",
+  "App Store Connect screenshots",
+  "macOS screenshot designer",
+].join(", ");
 
 export type NavItem = {
   label: string;
@@ -21,6 +38,7 @@ export type NavItem = {
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Showcases", href: "#showcases" },
+  { label: "Storefronts", href: "#storefronts" },
   { label: "Features", href: "#features" },
   { label: "Workflow", href: "#workflow" },
   { label: "FAQ", href: "#faq" },
@@ -28,8 +46,8 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const BETA_BENEFITS = [
   "Available now on the Mac App Store",
-  "Full workflow: import, design, localize, export",
-  "Direct feedback loop with the developer as the product evolves",
+  "Full workflow: import, design, auto-translate, localize, export",
+  "App Store and Google Play screenshot layouts in one project",
 ];
 
 export type FaqItem = {
@@ -51,7 +69,12 @@ export const FAQS: FaqItem[] = [
   {
     question: "Can I localize screenshots for multiple languages?",
     answer:
-      "Yes. Choose from 30 language presets and add per-shape text, position, and image overrides. Exports are grouped automatically by language and screenshot row.",
+      "Yes. Choose from 30 language presets, auto-translate missing copy, and add per-shape text, position, and image overrides. Exports are grouped automatically by language and screenshot row.",
+  },
+  {
+    question: "Can I make Google Play screenshots too?",
+    answer:
+      "Yes. Screenshot Bro supports Android phone and tablet layouts alongside iPhone, iPad, MacBook, and iMac screenshot sets, so the same project can cover App Store and Google Play assets.",
   },
   {
     question: "What can I export?",
@@ -67,6 +90,34 @@ export const FAQS: FaqItem[] = [
     question: "Can I use custom fonts?",
     answer:
       "Yes. Import any .ttf, .otf, or .ttc font file and use it in text shapes. Fonts are registered for the app session so they work in both the editor and exports.",
+  },
+];
+
+export type StorefrontPoint = {
+  title: string;
+  description: string;
+};
+
+export const STOREFRONT_POINTS: StorefrontPoint[] = [
+  {
+    title: "App Store screenshots",
+    description:
+      "Create iPhone, iPad, MacBook, and iMac screenshot sets with accurate device frames, localized copy, gradients, images, and SVG graphics.",
+  },
+  {
+    title: "Google Play screenshots",
+    description:
+      "Prepare Android phone and tablet screenshots in the same focused editor, with layouts built for app marketing assets rather than general design files.",
+  },
+  {
+    title: "Localization workflow",
+    description:
+      "Use language presets, auto-translate missing text, review per-locale overrides, and keep every screenshot row organized before export.",
+  },
+  {
+    title: "Store-ready export",
+    description:
+      "Export PNG or JPEG files into predictable folders by locale and row, with scale options for the storefront and marketing channels you need.",
   },
 ];
 
@@ -103,7 +154,7 @@ export const FEATURES: FeatureItem[] = [
     icon: "device",
     title: "Device Frames",
     description:
-      'iPhone 17 series, iPad Pro 11" & 13", MacBook, iMac, and Android phone & tablet frames. Accurate bezels, configurable body colors, and per-row defaults.',
+      'iPhone 17 series, iPad Pro 11" & 13", MacBook, iMac, and Android phone & tablet frames for App Store and Google Play screenshots. Accurate bezels, configurable body colors, and per-row defaults.',
     accent: "var(--color-mint)",
   },
   {
@@ -131,14 +182,14 @@ export const FEATURES: FeatureItem[] = [
     icon: "export",
     title: "Localized Export",
     description:
-      "Export PNG or JPEG at 1x-3x for multiple locales. Auto-organized folders by locale and row. One click, every language, every size.",
+      "Export PNG or JPEG at 1x-3x for multiple locales. Auto-organized folders by locale and row for App Store Connect, Google Play, and launch assets.",
     accent: "var(--color-warm-light)",
   },
   {
     icon: "project",
     title: "Localization Built In",
     description:
-      "30 language presets from English to Arabic, Hindi, and CJK. Per-shape text, position, and image overrides with translation progress tracking.",
+      "30 language presets from English to Arabic, Hindi, and CJK. Auto-translate missing copy, then fine-tune per-shape text, position, and image overrides with translation progress tracking.",
     accent: "var(--color-mint)",
   },
   {
@@ -344,7 +395,7 @@ export const WORKFLOW_STEPS: WorkflowStep[] = [
     step: "02",
     title: "Design & Localize",
     description:
-      "Drop in device frames, add text and shapes, choose a background. Add locales and translate - per-shape text overrides keep every language pixel-perfect.",
+      "Drop in device frames, add text and shapes, choose a background. Add locales, auto-translate missing copy, and tune per-shape text overrides so every language stays pixel-perfect.",
   },
   {
     step: "03",
