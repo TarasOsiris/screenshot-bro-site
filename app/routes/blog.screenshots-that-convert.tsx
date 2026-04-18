@@ -1,22 +1,14 @@
 import type { Route } from "./+types/blog.screenshots-that-convert";
-import { SITE_NAME, SITE_URL, APP_STORE_URL } from "~/config/site";
-import { AppleLogo } from "~/components/home/icons";
 import { ContentLayout } from "~/components/ContentLayout";
+import { BlogCTA } from "~/components/BlogCTA";
+import { BlogPostHeader } from "~/components/BlogPostHeader";
+import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
 
-export const meta: Route.MetaFunction = () => [
-  {
-    title: `How to Design App Store Screenshots That Actually Convert — ${SITE_NAME}`,
-  },
-  {
-    name: "description",
-    content:
-      "The first two screenshots decide whether someone taps 'Get'. Learn the layout patterns, copy formulas, and design principles that drive downloads.",
-  },
-];
+const SLUG = "screenshots-that-convert";
 
-export const links: Route.LinksFunction = () => [
-  { rel: "canonical", href: `${SITE_URL}/blog/screenshots-that-convert` },
-];
+export const meta: Route.MetaFunction = ({ matches }) =>
+  buildBlogPostMeta(SLUG, matches);
+export const links: Route.LinksFunction = () => buildBlogPostLinks(SLUG);
 
 export default function BlogPost() {
   return (
@@ -27,8 +19,7 @@ export default function BlogPost() {
       ]}
     >
       <article className="max-w-3xl mx-auto prose-policy">
-        <p className="meta">March 28, 2026 &middot; 8 min read</p>
-        <h1>How to Design App Store Screenshots That Actually Convert</h1>
+        <BlogPostHeader slug={SLUG} />
 
         <p>
           Most people spend less than 7 seconds on your App Store listing
@@ -111,18 +102,7 @@ export default function BlogPost() {
           analytics.
         </p>
 
-        <div className="mt-10 p-6 rounded-2xl bg-surface-raised border border-border text-center">
-          <p className="text-sm text-white/60 mb-4">
-            Design screenshot sets that convert — without the Figma busywork.
-          </p>
-          <a
-            href={APP_STORE_URL}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-sm"
-          >
-            <AppleLogo className="opacity-80" />
-            Get Screenshot Bro on the Mac App Store
-          </a>
-        </div>
+        <BlogCTA message="Design screenshot sets that convert — without the Figma busywork." />
       </article>
     </ContentLayout>
   );

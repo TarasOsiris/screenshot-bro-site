@@ -30,6 +30,12 @@ export function SiteNav({ href = APP_STORE_URL }: { href?: string }) {
           {NAV_ITEMS.map((item) => (
             <NavLink key={item.href} item={item} />
           ))}
+          <a
+            href="/blog"
+            className="text-sm text-white/55 hover:text-white/90 transition-colors"
+          >
+            Blog
+          </a>
         </div>
 
         <div className="flex items-center gap-3">

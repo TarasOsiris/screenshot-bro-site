@@ -2,18 +2,46 @@ import type { Route } from "./+types/blog._index";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 import { BLOG_POSTS } from "~/config/blog";
 import { ContentLayout } from "~/components/ContentLayout";
+import { mergeMeta } from "~/config/meta";
 
-export const meta: Route.MetaFunction = () => [
-  { title: `Blog — ${SITE_NAME}` },
-  {
-    name: "description",
-    content: `Guides, tips, and references for designing App Store screenshots. Learn how to create screenshots that convert, manage localization, and ship faster.`,
-  },
-];
+const BLOG_INDEX_TITLE = `Blog — ${SITE_NAME}`;
+const BLOG_INDEX_DESCRIPTION =
+  "Guides, tips, and references for designing App Store and Google Play screenshots. Learn how to create screenshots that convert, manage localization, and ship faster.";
+const BLOG_INDEX_URL = `${SITE_URL}/blog`;
+
+export const meta: Route.MetaFunction = ({ matches }) =>
+  mergeMeta(matches, [
+    { title: BLOG_INDEX_TITLE },
+    { name: "description", content: BLOG_INDEX_DESCRIPTION },
+    { property: "og:title", content: BLOG_INDEX_TITLE },
+    { property: "og:description", content: BLOG_INDEX_DESCRIPTION },
+    { property: "og:url", content: BLOG_INDEX_URL },
+    { name: "twitter:title", content: BLOG_INDEX_TITLE },
+    { name: "twitter:description", content: BLOG_INDEX_DESCRIPTION },
+  ]);
 
 export const links: Route.LinksFunction = () => [
-  { rel: "canonical", href: `${SITE_URL}/blog` },
+  { rel: "canonical", href: BLOG_INDEX_URL },
 ];
+
+const BLOG_JSON_LD = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": `${BLOG_INDEX_URL}#blog`,
+  name: `${SITE_NAME} Blog`,
+  url: BLOG_INDEX_URL,
+  description: BLOG_INDEX_DESCRIPTION,
+  inLanguage: "en",
+  blogPost: BLOG_POSTS.map((post) => ({
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    url: `${SITE_URL}/blog/${post.slug}`,
+    datePublished: post.date,
+    dateModified: post.date,
+    articleSection: post.category,
+  })),
+});
 
 export default function BlogIndex() {
   return (
@@ -23,6 +51,10 @@ export default function BlogIndex() {
         { label: "Changelog", href: "/changelog" },
       ]}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: BLOG_JSON_LD }}
+      />
       <div className="max-w-3xl mx-auto">
         <div className="mb-16">
           <p className="text-xs uppercase tracking-[0.25em] text-accent-light font-mono mb-3">

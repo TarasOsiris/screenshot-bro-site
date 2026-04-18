@@ -1,13 +1,25 @@
+export const BLOG_CATEGORIES = ["Reference", "Guide"] as const;
+export type BlogCategory = (typeof BLOG_CATEGORIES)[number];
+
 export type BlogPost = {
   slug: string;
   title: string;
   description: string;
   date: string;
   readTime: string;
-  category: string;
+  category: BlogCategory;
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "screenshot-sizes-app-store-google-play",
+    title: "Screenshot Sizes for App Store and Google Play (2026)",
+    description:
+      "Every screenshot dimension you need for the Apple App Store and Google Play in 2026 — iPhone, iPad, Mac, Apple Watch, Apple TV, Vision Pro, Android phone, tablet, Wear OS, and Android TV.",
+    date: "2026-04-18",
+    readTime: "9 min read",
+    category: "Reference",
+  },
   {
     slug: "app-store-screenshot-sizes",
     title: "App Store Screenshot Sizes for Every Apple Device in 2026",

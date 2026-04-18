@@ -1,25 +1,14 @@
 import type { Route } from "./+types/blog.localize-app-store-screenshots";
-import { SITE_NAME, SITE_URL, APP_STORE_URL } from "~/config/site";
-import { AppleLogo } from "~/components/home/icons";
 import { ContentLayout } from "~/components/ContentLayout";
+import { BlogCTA } from "~/components/BlogCTA";
+import { BlogPostHeader } from "~/components/BlogPostHeader";
+import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
 
-export const meta: Route.MetaFunction = () => [
-  {
-    title: `Localizing App Store Screenshots Without Losing Your Mind — ${SITE_NAME}`,
-  },
-  {
-    name: "description",
-    content:
-      "Supporting multiple languages on the App Store means multiplying your screenshot workload. Here's how to set up a system that scales.",
-  },
-];
+const SLUG = "localize-app-store-screenshots";
 
-export const links: Route.LinksFunction = () => [
-  {
-    rel: "canonical",
-    href: `${SITE_URL}/blog/localize-app-store-screenshots`,
-  },
-];
+export const meta: Route.MetaFunction = ({ matches }) =>
+  buildBlogPostMeta(SLUG, matches);
+export const links: Route.LinksFunction = () => buildBlogPostLinks(SLUG);
 
 export default function BlogPost() {
   return (
@@ -30,8 +19,7 @@ export default function BlogPost() {
       ]}
     >
       <article className="max-w-3xl mx-auto prose-policy">
-        <p className="meta">March 15, 2026 &middot; 6 min read</p>
-        <h1>Localizing App Store Screenshots Without Losing Your Mind</h1>
+        <BlogPostHeader slug={SLUG} />
 
         <p>
           You support 6 languages. Each language needs 10 screenshots. Each
@@ -108,18 +96,7 @@ export default function BlogPost() {
           localization becomes a reasonable task instead of a dreaded one.
         </p>
 
-        <div className="mt-10 p-6 rounded-2xl bg-surface-raised border border-border text-center">
-          <p className="text-sm text-white/60 mb-4">
-            Localize your screenshots in minutes, not hours.
-          </p>
-          <a
-            href={APP_STORE_URL}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-sm"
-          >
-            <AppleLogo className="opacity-80" />
-            Get Screenshot Bro on the Mac App Store
-          </a>
-        </div>
+        <BlogCTA message="Localize your screenshots in minutes, not hours." />
       </article>
     </ContentLayout>
   );

@@ -1,7 +1,5 @@
-import { NavLink } from "~/components/NavLink";
 import {
   CONTACT_MAILTO,
-  NAV_ITEMS,
   REDDIT_COMMUNITY_URL,
   SITE_NAME,
   X_PROFILE_URL,
@@ -22,9 +20,6 @@ export function SiteFooter() {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-5">
-          {NAV_ITEMS.map((item) => (
-            <NavLink key={item.href} item={item} />
-          ))}
           <a
             href="/blog"
             className="text-sm text-white/55 hover:text-white/90 transition-colors"

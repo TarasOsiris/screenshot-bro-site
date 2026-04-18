@@ -1,13 +1,21 @@
 import type { Route } from "./+types/privacy";
 import { CONTACT_MAILTO, SITE_NAME, SITE_URL } from "~/config/site";
+import { mergeMeta } from "~/config/meta";
 
-export const meta: Route.MetaFunction = () => [
-  { title: `Privacy Policy — ${SITE_NAME}` },
-  {
-    name: "description",
-    content: `Privacy policy for ${SITE_NAME}. Learn how we handle your data — no analytics, no tracking, all data stays on your Mac.`,
-  },
-];
+const PRIVACY_TITLE = `Privacy Policy — ${SITE_NAME}`;
+const PRIVACY_DESCRIPTION = `Privacy policy for ${SITE_NAME}. Learn how we handle your data — no analytics, no tracking, all data stays on your Mac.`;
+const PRIVACY_URL = `${SITE_URL}/privacy`;
+
+export const meta: Route.MetaFunction = ({ matches }) =>
+  mergeMeta(matches, [
+    { title: PRIVACY_TITLE },
+    { name: "description", content: PRIVACY_DESCRIPTION },
+    { property: "og:title", content: PRIVACY_TITLE },
+    { property: "og:description", content: PRIVACY_DESCRIPTION },
+    { property: "og:url", content: PRIVACY_URL },
+    { name: "twitter:title", content: PRIVACY_TITLE },
+    { name: "twitter:description", content: PRIVACY_DESCRIPTION },
+  ]);
 
 export const links: Route.LinksFunction = () => [
   { rel: "canonical", href: `${SITE_URL}/privacy` },

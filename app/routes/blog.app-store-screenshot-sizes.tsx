@@ -1,22 +1,14 @@
 import type { Route } from "./+types/blog.app-store-screenshot-sizes";
-import { SITE_NAME, SITE_URL, APP_STORE_URL } from "~/config/site";
-import { AppleLogo } from "~/components/home/icons";
 import { ContentLayout } from "~/components/ContentLayout";
+import { BlogCTA } from "~/components/BlogCTA";
+import { BlogPostHeader } from "~/components/BlogPostHeader";
+import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
 
-export const meta: Route.MetaFunction = () => [
-  {
-    title: `App Store Screenshot Sizes for Every Apple Device in 2026 — ${SITE_NAME}`,
-  },
-  {
-    name: "description",
-    content:
-      "A complete reference of required screenshot dimensions for iPhone, iPad, Mac, and Apple Watch — plus tips for managing multiple sizes efficiently.",
-  },
-];
+const SLUG = "app-store-screenshot-sizes";
 
-export const links: Route.LinksFunction = () => [
-  { rel: "canonical", href: `${SITE_URL}/blog/app-store-screenshot-sizes` },
-];
+export const meta: Route.MetaFunction = ({ matches }) =>
+  buildBlogPostMeta(SLUG, matches);
+export const links: Route.LinksFunction = () => buildBlogPostLinks(SLUG);
 
 export default function BlogPost() {
   return (
@@ -27,8 +19,7 @@ export default function BlogPost() {
       ]}
     >
       <article className="max-w-3xl mx-auto prose-policy">
-        <p className="meta">April 8, 2026 &middot; 5 min read</p>
-        <h1>App Store Screenshot Sizes for Every Apple Device in 2026</h1>
+        <BlogPostHeader slug={SLUG} />
 
         <p>
           Apple requires specific screenshot dimensions for each device class.
@@ -140,18 +131,7 @@ export default function BlogPost() {
           </li>
         </ul>
 
-        <div className="mt-10 p-6 rounded-2xl bg-surface-raised border border-border text-center">
-          <p className="text-sm text-white/60 mb-4">
-            Stop managing screenshot sizes manually.
-          </p>
-          <a
-            href={APP_STORE_URL}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-sm"
-          >
-            <AppleLogo className="opacity-80" />
-            Get Screenshot Bro on the Mac App Store
-          </a>
-        </div>
+        <BlogCTA message="Stop managing screenshot sizes manually." />
       </article>
     </ContentLayout>
   );

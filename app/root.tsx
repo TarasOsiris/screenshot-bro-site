@@ -26,8 +26,8 @@ import {
 } from "~/config/site";
 import "./app.css";
 
-const SITE_TITLE = `${SITE_NAME} — App Store & Google Play Screenshot Designer for Mac`;
-const SOCIAL_IMAGE = `${SITE_URL}/og-image.png`;
+export const SITE_TITLE = `${SITE_NAME} — App Store & Google Play Screenshot Designer for Mac`;
+export const SOCIAL_IMAGE = `${SITE_URL}/og-image.png`;
 const GA_ID =
   import.meta.env.PROD && import.meta.env.VITE_GA_ID
     ? (import.meta.env.VITE_GA_ID as string)
@@ -110,6 +110,31 @@ const FAQ_SCHEMA_JSON = JSON.stringify({
   })),
 });
 
+const SOCIAL_IMAGE_ALT =
+  "Screenshot Bro — native macOS app for designing App Store and Google Play screenshots with device frames, gradients, and localization";
+
+export const meta: Route.MetaFunction = () => [
+  { title: SITE_TITLE },
+  { name: "description", content: SITE_DESCRIPTION },
+  { property: "og:locale", content: "en_US" },
+  { property: "og:type", content: "website" },
+  { property: "og:site_name", content: SITE_NAME },
+  { property: "og:title", content: SITE_TITLE },
+  { property: "og:description", content: SITE_DESCRIPTION },
+  { property: "og:url", content: SITE_URL },
+  { property: "og:image", content: SOCIAL_IMAGE },
+  { property: "og:image:width", content: "1200" },
+  { property: "og:image:height", content: "630" },
+  { property: "og:image:alt", content: SOCIAL_IMAGE_ALT },
+  { name: "twitter:card", content: "summary_large_image" },
+  { name: "twitter:site", content: TWITTER_HANDLE },
+  { name: "twitter:creator", content: TWITTER_HANDLE },
+  { name: "twitter:title", content: SITE_TITLE },
+  { name: "twitter:description", content: SITE_DESCRIPTION },
+  { name: "twitter:image", content: SOCIAL_IMAGE },
+  { name: "twitter:image:alt", content: SOCIAL_IMAGE_ALT },
+];
+
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
@@ -138,25 +163,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="keywords" content={SITE_KEYWORDS} />
         <meta name="application-name" content={SITE_NAME} />
         <meta name="apple-itunes-app" content={`app-id=${APP_STORE_APP_ID}`} />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content={SITE_NAME} />
-        <meta property="og:title" content={SITE_TITLE} />
-        <meta property="og:description" content={SITE_DESCRIPTION} />
-        <meta property="og:url" content={SITE_URL} />
-        <meta property="og:image" content={SOCIAL_IMAGE} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta
-          property="og:image:alt"
-          content="Screenshot Bro — native macOS app for designing App Store screenshots with device frames, gradients, and localization"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content={TWITTER_HANDLE} />
-        <meta name="twitter:creator" content={TWITTER_HANDLE} />
-        <meta name="twitter:title" content={SITE_TITLE} />
-        <meta name="twitter:description" content={SITE_DESCRIPTION} />
-        <meta name="twitter:image" content={SOCIAL_IMAGE} />
         <Meta />
         <Links />
         <script

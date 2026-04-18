@@ -1,14 +1,22 @@
 import type { Route } from "./+types/changelog";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 import { ContentLayout } from "~/components/ContentLayout";
+import { mergeMeta } from "~/config/meta";
 
-export const meta: Route.MetaFunction = () => [
-  { title: `Changelog — ${SITE_NAME}` },
-  {
-    name: "description",
-    content: `What's new in ${SITE_NAME}. Release notes, new features, and improvements for the macOS App Store screenshot designer.`,
-  },
-];
+const CHANGELOG_TITLE = `Changelog — ${SITE_NAME}`;
+const CHANGELOG_DESCRIPTION = `What's new in ${SITE_NAME}. Release notes, new features, and improvements for the macOS App Store screenshot designer.`;
+const CHANGELOG_URL = `${SITE_URL}/changelog`;
+
+export const meta: Route.MetaFunction = ({ matches }) =>
+  mergeMeta(matches, [
+    { title: CHANGELOG_TITLE },
+    { name: "description", content: CHANGELOG_DESCRIPTION },
+    { property: "og:title", content: CHANGELOG_TITLE },
+    { property: "og:description", content: CHANGELOG_DESCRIPTION },
+    { property: "og:url", content: CHANGELOG_URL },
+    { name: "twitter:title", content: CHANGELOG_TITLE },
+    { name: "twitter:description", content: CHANGELOG_DESCRIPTION },
+  ]);
 
 export const links: Route.LinksFunction = () => [
   { rel: "canonical", href: `${SITE_URL}/changelog` },
