@@ -31,6 +31,19 @@ type ChangelogEntry = {
 
 const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "1.4",
+    date: "April 2026",
+    title: "Upload to App Store Connect",
+    changes: [
+      { type: "added", text: "One-click upload of rendered screenshots straight to App Store Connect via the official API" },
+      { type: "added", text: "Auto-detected display types from row size, with override support for iPhone, iPad, and Mac" },
+      { type: "added", text: "Locale matching between project locales and App Store version localizations" },
+      { type: "added", text: "Preflight validation — flags oversized images, missing locales, version lock states, and platform conflicts before anything is uploaded" },
+      { type: "added", text: "App Store Connect API key management: Issuer ID, Key ID, and .p8 stored in the macOS Keychain" },
+      { type: "improved", text: "Batch export now runs in the same render pipeline as direct upload for consistent output" },
+    ],
+  },
+  {
     version: "1.3",
     date: "April 2026",
     title: "Project Templates & Keyboard Shortcuts",

@@ -121,6 +121,26 @@ function IconExport() {
   );
 }
 
+function IconUpload() {
+  return (
+    <svg
+      aria-hidden="true"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" />
+      <polyline points="8 8 12 4 16 8" />
+      <line x1="12" y1="4" x2="12" y2="16" />
+    </svg>
+  );
+}
+
 function IconProject() {
   return (
     <svg
@@ -266,6 +286,7 @@ const ICONS: Record<FeatureIconKey, ReactElement> = {
   shapes: <IconShapes />,
   align: <IconAlign />,
   export: <IconExport />,
+  upload: <IconUpload />,
   project: <IconProject />,
   native: <IconNative />,
   cloud: <IconCloud />,

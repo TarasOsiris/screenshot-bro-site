@@ -1,8 +1,8 @@
 export const SITE_NAME = "Screenshot Bro";
 export const SITE_DESCRIPTION =
-  "Create App Store and Google Play screenshots in a native Mac app. Add device frames, backgrounds, localization, auto-translate copy, and export every size.";
+  "Design App Store and Google Play screenshots in a native Mac app. Device frames, localization, auto-translate, batch export, and one-click upload direct to App Store Connect — skip the manual drag-and-drop.";
 export const SITE_TAGLINE =
-  "Design App Store and Google Play screenshots in minutes.";
+  "Design and upload App Store and Google Play screenshots in minutes.";
 export const SITE_URL =
   (import.meta.env.VITE_SITE_URL as string | undefined)?.replace(/\/$/, "") ??
   "https://screenshotbro.app";
@@ -28,6 +28,9 @@ export const SITE_KEYWORDS = [
   "localized screenshots",
   "auto translate screenshots",
   "App Store Connect screenshots",
+  "upload to App Store Connect",
+  "App Store Connect API upload",
+  "automatic App Store screenshots upload",
   "macOS screenshot designer",
 ].join(", ");
 
@@ -39,6 +42,7 @@ export type NavItem = {
 export const NAV_ITEMS: NavItem[] = [
   { label: "Showcases", href: "#showcases" },
   { label: "Storefronts", href: "#storefronts" },
+  { label: "Upload", href: "#upload" },
   { label: "Features", href: "#features" },
   { label: "Workflow", href: "#workflow" },
   { label: "FAQ", href: "#faq" },
@@ -47,7 +51,7 @@ export const NAV_ITEMS: NavItem[] = [
 export const BETA_BENEFITS = [
   "Available now on the Mac App Store",
   "Full workflow: import, design, auto-translate, localize, export",
-  "App Store and Google Play screenshot layouts in one project",
+  "Upload direct to App Store Connect — no more drag-and-drop in a browser tab",
 ];
 
 export type FaqItem = {
@@ -80,6 +84,11 @@ export const FAQS: FaqItem[] = [
     question: "What can I export?",
     answer:
       "Screenshot Bro exports PNG or JPEG assets at 1x, 2x, or 3x and organizes the output into predictable folders so App Store upload is less manual.",
+  },
+  {
+    question: "Can I upload screenshots directly to App Store Connect?",
+    answer:
+      "Yes. Connect your App Store Connect API key once (Issuer ID, Key ID, and .p8) and Screenshot Bro uploads rendered screenshots straight to your chosen app and version. It auto-detects the correct display type for each row, matches your project locales to App Store Connect localizations, and replaces existing screenshots in a single pass — no manual drag-and-drop into the browser.",
   },
   {
     question: "Does it sync between Macs?",
@@ -117,7 +126,7 @@ export const STOREFRONT_POINTS: StorefrontPoint[] = [
   {
     title: "Store-ready export",
     description:
-      "Export PNG or JPEG files into predictable folders by locale and row, with scale options for the storefront and marketing channels you need.",
+      "Export PNG or JPEG files into predictable folders by locale and row, or push them straight to App Store Connect without leaving the app.",
   },
 ];
 
@@ -128,6 +137,7 @@ export type FeatureIconKey =
   | "shapes"
   | "align"
   | "export"
+  | "upload"
   | "project"
   | "native"
   | "cloud"
@@ -186,6 +196,13 @@ export const FEATURES: FeatureItem[] = [
     accent: "var(--color-warm-light)",
   },
   {
+    icon: "upload",
+    title: "Upload to App Store Connect",
+    description:
+      "One-click upload straight to App Store Connect. Auto-detect display types from row size, match project locales to App Store localizations, and replace existing screenshots with a preflight that catches problems before they reach Apple.",
+    accent: "var(--color-accent-light)",
+  },
+  {
     icon: "project",
     title: "Localization Built In",
     description:
@@ -234,6 +251,7 @@ export const WITHOUT_BRO_POINTS = [
   "Copy-paste device frames one by one across artboards",
   "Re-export every file when you change a single color",
   "Duplicate everything for each language, lose track of translations",
+  "Drag and drop every PNG into App Store Connect by hand",
 ];
 
 export const WITH_BRO_POINTS = [
@@ -241,6 +259,7 @@ export const WITH_BRO_POINTS = [
   "Drop in device frames with a click, pick your model and color",
   "Add multiple locales with per-shape text overrides",
   "Export every screenshot, every language, every size - one click",
+  "Upload direct to App Store Connect — no browser, no drag-and-drop",
 ];
 
 export type FeatureShowcase = {
@@ -402,5 +421,11 @@ export const WORKFLOW_STEPS: WorkflowStep[] = [
     title: "Export All",
     description:
       "Hit export. Get organized folders by locale and row with every screenshot at your chosen scale. One click.",
+  },
+  {
+    step: "04",
+    title: "Upload to App Store Connect",
+    description:
+      "Connect your API key once, then push screenshots straight to the right app, version, display type, and locale — no manual drag-and-drop into the browser.",
   },
 ];

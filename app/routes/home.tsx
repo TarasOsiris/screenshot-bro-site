@@ -11,6 +11,7 @@ import { SiteNav } from "~/components/home/SiteNav";
 import { HeroSection } from "~/components/home/HeroSection";
 import { AppShowcaseSection } from "~/components/home/AppShowcaseSection";
 import { StorefrontSection } from "~/components/home/StorefrontSection";
+import { UploadSection } from "~/components/home/UploadSection";
 import { ShowcasesSection } from "~/components/home/ShowcasesSection";
 import { WorkflowSection } from "~/components/home/WorkflowSection";
 import { FeaturesSection } from "~/components/home/FeaturesSection";
@@ -53,6 +54,7 @@ export default function Home() {
         <HeroSection />
         <AppShowcaseSection />
         <StorefrontSection />
+        <UploadSection />
         <ShowcasesSection />
         <WorkflowSection />
         <FeaturesSection />

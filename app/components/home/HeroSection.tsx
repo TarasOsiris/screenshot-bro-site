@@ -37,13 +37,10 @@ export function HeroSection({ href = APP_STORE_URL }: { href?: string }) {
             className="animate-fade-up mt-6 font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.94]"
             style={{ animationDelay: "0.12s" }}
           >
-            <span className="text-white">Design App Store</span>
+            <span className="text-white">Design and ship</span>
             <br />
-            <span className="text-accent">and Google Play</span>
-            <br />
-            <span className="text-white">screenshots</span>
-            <span className="text-white"> without </span>
-            <span className="text-white">Figma busywork.</span>
+            <span className="text-accent">App Store</span>
+            <span className="text-white"> screenshots.</span>
           </h1>
 
           <p
@@ -51,8 +48,11 @@ export function HeroSection({ href = APP_STORE_URL }: { href?: string }) {
             style={{ animationDelay: "0.2s" }}
           >
             Import your shots, wrap them in device frames, localize the copy,
-            auto-translate missing text, and export store-ready files from one
-            fast native Mac app.
+            auto-translate missing text, and{" "}
+            <span className="text-white/[0.85]">
+              upload straight to App Store Connect
+            </span>{" "}
+            — all from one fast native Mac app.
           </p>
 
           <div
