@@ -14,13 +14,13 @@ export function WorkflowSection() {
           description="The product is opinionated around one job: create polished screenshot sets without maintaining a pile of one-off design files."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {WORKFLOW_STEPS.map((step) => (
-            <div key={step.step} className="workflow-card rounded-3xl p-7">
-              <div className="font-mono text-5xl font-bold text-accent/50 mb-5">
+            <div key={step.step} className="workflow-card rounded-3xl p-6">
+              <div className="font-mono text-4xl font-bold text-accent/50 mb-4">
                 {step.step}
               </div>
-              <h3 className="font-display font-semibold text-white text-xl mb-3">
+              <h3 className="font-display font-semibold text-white text-lg mb-2.5">
                 {step.title}
               </h3>
               <p className="text-sm text-white/55 leading-relaxed">

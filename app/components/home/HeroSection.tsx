@@ -34,7 +34,7 @@ export function HeroSection({ href = APP_STORE_URL }: { href?: string }) {
       <div className="relative max-w-6xl mx-auto">
         <div className="max-w-4xl mx-auto text-center">
           <h1
-            className="animate-fade-up mt-6 font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.94]"
+            className="animate-fade-up mt-6 font-display font-extrabold text-5xl sm:text-6xl md:text-7xl tracking-tight leading-[0.98]"
             style={{ animationDelay: "0.12s" }}
           >
             <span className="text-white">Design and ship</span>
@@ -70,7 +70,7 @@ export function HeroSection({ href = APP_STORE_URL }: { href?: string }) {
               href="#showcases"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/[0.03] border border-border text-white/[0.72] hover:text-white/[0.92] hover:border-white/20 text-sm transition-all"
             >
-              Explore the workflow
+              See it in action
               <ArrowDownIcon />
             </a>
           </div>

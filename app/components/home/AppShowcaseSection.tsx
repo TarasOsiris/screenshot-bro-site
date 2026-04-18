@@ -5,13 +5,13 @@ export function AppShowcaseSection() {
   return (
     <section
       id="app-showcase"
-      className="py-28 px-6 border-t border-border-subtle scroll-mt-24"
+      className="py-24 px-6 border-t border-border-subtle scroll-mt-24"
     >
       <div className="max-w-6xl mx-auto">
         <SectionIntro
-          eyebrow="Showcase"
-          title="Apps that ship with Screenshot Bro."
-          description="Real apps using Screenshot Bro to design their App Store screenshots."
+          eyebrow="Shipped with Screenshot Bro"
+          title="You'd be in good company."
+          description="Indie apps already using Screenshot Bro for their App Store and Google Play screenshots."
         />
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-2xl mx-auto">

@@ -87,7 +87,7 @@ export function ShowcasesSection({ href = APP_STORE_URL }: { href?: string }) {
         <SectionIntro
           eyebrow="Showcases"
           title="See the core workflow before you install."
-          description="Browse the main product moments in the order most people evaluate them: setup speed, design control, backgrounds, localization, and export."
+          description="Batch import, one-click App Store Connect upload, layers, backgrounds, and device frames — the moments most people use to judge whether this saves them time."
         />
 
         <div className="mb-10 flex flex-wrap items-center justify-center gap-3">

@@ -16,7 +16,11 @@ export function SiteNav({ href = APP_STORE_URL }: { href?: string }) {
       className="fixed top-0 inset-x-0 z-40 border-b border-border-subtle bg-surface/78 backdrop-blur-2xl"
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
-        <a href="#main-content" className="flex items-center shrink-0">
+        <a
+          href="/"
+          aria-label={`${SITE_NAME} home`}
+          className="flex items-center shrink-0 rounded-md"
+        >
           <img
             src="/logo-light.svg"
             alt={SITE_NAME}

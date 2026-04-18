@@ -41,8 +41,6 @@ export type NavItem = {
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Showcases", href: "#showcases" },
-  { label: "Storefronts", href: "#storefronts" },
-  { label: "Upload", href: "#upload" },
   { label: "Features", href: "#features" },
   { label: "Workflow", href: "#workflow" },
   { label: "FAQ", href: "#faq" },
@@ -99,34 +97,6 @@ export const FAQS: FaqItem[] = [
     question: "Can I use custom fonts?",
     answer:
       "Yes. Import any .ttf, .otf, or .ttc font file and use it in text shapes. Fonts are registered for the app session so they work in both the editor and exports.",
-  },
-];
-
-export type StorefrontPoint = {
-  title: string;
-  description: string;
-};
-
-export const STOREFRONT_POINTS: StorefrontPoint[] = [
-  {
-    title: "App Store screenshots",
-    description:
-      "Create iPhone, iPad, MacBook, and iMac screenshot sets with accurate device frames, localized copy, gradients, images, and SVG graphics.",
-  },
-  {
-    title: "Google Play screenshots",
-    description:
-      "Prepare Android phone and tablet screenshots in the same focused editor, with layouts built for app marketing assets rather than general design files.",
-  },
-  {
-    title: "Localization workflow",
-    description:
-      "Use language presets, auto-translate missing text, review per-locale overrides, and keep every screenshot row organized before export.",
-  },
-  {
-    title: "Store-ready export",
-    description:
-      "Export PNG or JPEG files into predictable folders by locale and row, or push them straight to App Store Connect without leaving the app.",
   },
 ];
 
@@ -200,7 +170,7 @@ export const FEATURES: FeatureItem[] = [
     title: "Upload to App Store Connect",
     description:
       "One-click upload straight to App Store Connect. Auto-detect display types from row size, match project locales to App Store localizations, and replace existing screenshots with a preflight that catches problems before they reach Apple.",
-    accent: "var(--color-accent-light)",
+    accent: "var(--color-warm)",
   },
   {
     icon: "project",
@@ -281,6 +251,16 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     media: "/showcases/batch-export.mp4",
     mediaAlt:
       "Dragging and dropping multiple screenshots that automatically get wrapped in device frames",
+  },
+  {
+    id: "auto-upload",
+    label: "Auto Upload",
+    title: "Upload to App Store Connect in one click.",
+    description:
+      "Connect your App Store Connect API key once, then push rendered screenshots straight to the right app, version, display type, and locale. Auto-detected display types, locale matching, preflight checks, and one-pass replace — no drag-and-drop in the browser.",
+    media: "/showcases/autoupload.mp4",
+    mediaAlt:
+      "Uploading screenshots directly from Screenshot Bro to App Store Connect with auto-detected display types and matched locales",
   },
   {
     id: "shapes",
