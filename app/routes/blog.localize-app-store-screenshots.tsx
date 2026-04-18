@@ -18,8 +18,9 @@ export default function BlogPost() {
         { label: "Screenshot Bro", href: "/" },
       ]}
     >
-      <article className="max-w-3xl mx-auto prose-policy">
-        <BlogPostHeader slug={SLUG} />
+      <div className="max-w-3xl mx-auto">
+        <article className="prose-policy">
+          <BlogPostHeader slug={SLUG} />
 
         <p>
           You support 6 languages. Each language needs 10 screenshots. Each
@@ -96,8 +97,9 @@ export default function BlogPost() {
           localization becomes a reasonable task instead of a dreaded one.
         </p>
 
+        </article>
         <BlogCTA message="Localize your screenshots in minutes, not hours." />
-      </article>
+      </div>
     </ContentLayout>
   );
 }

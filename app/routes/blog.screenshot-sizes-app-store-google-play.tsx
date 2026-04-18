@@ -18,8 +18,9 @@ export default function BlogPost() {
         { label: "Screenshot Bro", href: "/" },
       ]}
     >
-      <article className="max-w-3xl mx-auto prose-policy">
-        <BlogPostHeader slug={SLUG} />
+      <div className="max-w-3xl mx-auto">
+        <article className="prose-policy">
+          <BlogPostHeader slug={SLUG} />
 
         <p>
           Apple App Store Connect and Google Play Console both reject uploads
@@ -369,8 +370,9 @@ export default function BlogPost() {
           same source of truth.
         </p>
 
+        </article>
         <BlogCTA message="One Mac app for App Store and Google Play screenshots." />
-      </article>
+      </div>
     </ContentLayout>
   );
 }

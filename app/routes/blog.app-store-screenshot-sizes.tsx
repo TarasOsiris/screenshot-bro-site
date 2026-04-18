@@ -18,8 +18,9 @@ export default function BlogPost() {
         { label: "Screenshot Bro", href: "/" },
       ]}
     >
-      <article className="max-w-3xl mx-auto prose-policy">
-        <BlogPostHeader slug={SLUG} />
+      <div className="max-w-3xl mx-auto">
+        <article className="prose-policy">
+          <BlogPostHeader slug={SLUG} />
 
         <p>
           Apple requires specific screenshot dimensions for each device class.
@@ -131,8 +132,9 @@ export default function BlogPost() {
           </li>
         </ul>
 
+        </article>
         <BlogCTA message="Stop managing screenshot sizes manually." />
-      </article>
+      </div>
     </ContentLayout>
   );
 }

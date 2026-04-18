@@ -18,8 +18,9 @@ export default function BlogPost() {
         { label: "Screenshot Bro", href: "/" },
       ]}
     >
-      <article className="max-w-3xl mx-auto prose-policy">
-        <BlogPostHeader slug={SLUG} />
+      <div className="max-w-3xl mx-auto">
+        <article className="prose-policy">
+          <BlogPostHeader slug={SLUG} />
 
         <p>
           Most people spend less than 7 seconds on your App Store listing
@@ -102,8 +103,9 @@ export default function BlogPost() {
           analytics.
         </p>
 
+        </article>
         <BlogCTA message="Design screenshot sets that convert — without the Figma busywork." />
-      </article>
+      </div>
     </ContentLayout>
   );
 }

@@ -63,9 +63,9 @@ export function SiteNav({ href = APP_STORE_URL }: { href?: string }) {
           </a>
           <a
             href={href}
-            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.06] px-4 py-2 text-sm font-medium text-white/[0.88] transition-all hover:border-white/20 hover:bg-white/10"
+            className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white transition-all hover:border-white/25 hover:bg-white/15"
           >
-            <AppleLogo className="opacity-80" />
+            <AppleLogo />
             {PRIMARY_CTA_LABEL}
           </a>
         </div>
