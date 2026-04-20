@@ -2,6 +2,7 @@ import type { Route } from "./+types/blog.localize-app-store-screenshots";
 import { ContentLayout } from "~/components/ContentLayout";
 import { BlogCTA } from "~/components/BlogCTA";
 import { BlogPostHeader } from "~/components/BlogPostHeader";
+import { RelatedPosts } from "~/components/RelatedPosts";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
 
 const SLUG = "localize-app-store-screenshots";
@@ -99,6 +100,7 @@ export default function BlogPost() {
 
         </article>
         <BlogCTA message="Localize your screenshots in minutes, not hours." />
+        <RelatedPosts currentSlug={SLUG} />
       </div>
     </ContentLayout>
   );

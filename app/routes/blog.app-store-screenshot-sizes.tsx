@@ -2,6 +2,7 @@ import type { Route } from "./+types/blog.app-store-screenshot-sizes";
 import { ContentLayout } from "~/components/ContentLayout";
 import { BlogCTA } from "~/components/BlogCTA";
 import { BlogPostHeader } from "~/components/BlogPostHeader";
+import { RelatedPosts } from "~/components/RelatedPosts";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
 
 const SLUG = "app-store-screenshot-sizes";
@@ -134,6 +135,7 @@ export default function BlogPost() {
 
         </article>
         <BlogCTA message="Stop managing screenshot sizes manually." />
+        <RelatedPosts currentSlug={SLUG} />
       </div>
     </ContentLayout>
   );

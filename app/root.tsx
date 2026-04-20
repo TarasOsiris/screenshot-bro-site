@@ -22,6 +22,7 @@ import {
   SITE_URL,
   REDDIT_COMMUNITY_URL,
   TWITTER_HANDLE,
+  WORKFLOW_STEPS,
   X_PROFILE_URL,
 } from "~/config/site";
 import "./app.css";
@@ -110,6 +111,27 @@ const FAQ_SCHEMA_JSON = JSON.stringify({
   })),
 });
 
+const HOW_TO_SCHEMA_JSON = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to create App Store and Google Play screenshots with Screenshot Bro",
+  description:
+    "A four-step workflow for designing, localizing, exporting, and uploading App Store and Google Play screenshots from a native Mac app.",
+  totalTime: "PT20M",
+  tool: [{ "@type": "HowToTool", name: SITE_NAME }],
+  supply: [
+    { "@type": "HowToSupply", name: "Raw app screenshots (PNG or JPEG)" },
+    { "@type": "HowToSupply", name: "App Store Connect API key (optional, for direct upload)" },
+  ],
+  step: WORKFLOW_STEPS.map((step, index) => ({
+    "@type": "HowToStep",
+    position: index + 1,
+    name: step.title,
+    text: step.description,
+    url: `${SITE_URL}/#workflow`,
+  })),
+});
+
 const SOCIAL_IMAGE_ALT =
   "Screenshot Bro — native macOS app for designing App Store and Google Play screenshots with device frames, gradients, and localization";
 
@@ -181,6 +203,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: FAQ_SCHEMA_JSON,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: HOW_TO_SCHEMA_JSON,
           }}
         />
         {GA_ID ? (

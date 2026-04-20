@@ -18,6 +18,7 @@ import { TestimonialsSection } from "~/components/home/TestimonialsSection";
 import { ProblemSection } from "~/components/home/ProblemSection";
 import { FaqSection } from "~/components/home/FaqSection";
 import { DownloadSection } from "~/components/home/DownloadSection";
+import { BlogPreviewSection } from "~/components/home/BlogPreviewSection";
 import { SiteFooter } from "~/components/home/SiteFooter";
 import { BackToTopButton } from "~/components/home/BackToTopButton";
 
@@ -56,6 +57,7 @@ export default function Home() {
         <FeaturesSection />
         <ScreenshotsSection />
         <TestimonialsSection />
+        <BlogPreviewSection />
         <FaqSection />
         <DownloadSection />
         <AppShowcaseSection />

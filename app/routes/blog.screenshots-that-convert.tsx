@@ -2,6 +2,7 @@ import type { Route } from "./+types/blog.screenshots-that-convert";
 import { ContentLayout } from "~/components/ContentLayout";
 import { BlogCTA } from "~/components/BlogCTA";
 import { BlogPostHeader } from "~/components/BlogPostHeader";
+import { RelatedPosts } from "~/components/RelatedPosts";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
 
 const SLUG = "screenshots-that-convert";
@@ -105,6 +106,7 @@ export default function BlogPost() {
 
         </article>
         <BlogCTA message="Design screenshot sets that convert — without the Figma busywork." />
+        <RelatedPosts currentSlug={SLUG} />
       </div>
     </ContentLayout>
   );

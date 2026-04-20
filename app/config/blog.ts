@@ -12,6 +12,15 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "upload-screenshots-to-app-store-connect",
+    title: "How to Upload Screenshots to App Store Connect (2026 Guide)",
+    description:
+      "Three ways to upload App Store screenshots: the web uploader, Transporter/fastlane, and the App Store Connect API. When to pick each, gotchas with display types and locales, and how to automate the whole flow from your Mac.",
+    date: "2026-04-20",
+    readTime: "10 min read",
+    category: "Guide",
+  },
+  {
     slug: "screenshot-sizes-app-store-google-play",
     title: "Screenshot Sizes for App Store and Google Play (2026)",
     description:

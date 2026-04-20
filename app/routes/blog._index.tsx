@@ -26,21 +26,51 @@ export const links: Route.LinksFunction = () => [
 
 const BLOG_JSON_LD = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Blog",
-  "@id": `${BLOG_INDEX_URL}#blog`,
-  name: `${SITE_NAME} Blog`,
-  url: BLOG_INDEX_URL,
-  description: BLOG_INDEX_DESCRIPTION,
-  inLanguage: "en",
-  blogPost: BLOG_POSTS.map((post) => ({
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.description,
-    url: `${SITE_URL}/blog/${post.slug}`,
-    datePublished: post.date,
-    dateModified: post.date,
-    articleSection: post.category,
-  })),
+  "@graph": [
+    {
+      "@type": "Blog",
+      "@id": `${BLOG_INDEX_URL}#blog`,
+      name: `${SITE_NAME} Blog`,
+      url: BLOG_INDEX_URL,
+      description: BLOG_INDEX_DESCRIPTION,
+      inLanguage: "en",
+      blogPost: BLOG_POSTS.map((post) => ({
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.description,
+        url: `${SITE_URL}/blog/${post.slug}`,
+        datePublished: post.date,
+        dateModified: post.date,
+        articleSection: post.category,
+      })),
+    },
+    {
+      "@type": "ItemList",
+      itemListElement: BLOG_POSTS.map((post, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: `${SITE_URL}/blog/${post.slug}`,
+        name: post.title,
+      })),
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: SITE_NAME,
+          item: SITE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blog",
+          item: BLOG_INDEX_URL,
+        },
+      ],
+    },
+  ],
 });
 
 export default function BlogIndex() {

@@ -2,6 +2,7 @@ import type { Route } from "./+types/blog.screenshot-sizes-app-store-google-play
 import { ContentLayout } from "~/components/ContentLayout";
 import { BlogCTA } from "~/components/BlogCTA";
 import { BlogPostHeader } from "~/components/BlogPostHeader";
+import { RelatedPosts } from "~/components/RelatedPosts";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
 
 const SLUG = "screenshot-sizes-app-store-google-play";
@@ -372,6 +373,7 @@ export default function BlogPost() {
 
         </article>
         <BlogCTA message="One Mac app for App Store and Google Play screenshots." />
+        <RelatedPosts currentSlug={SLUG} />
       </div>
     </ContentLayout>
   );
