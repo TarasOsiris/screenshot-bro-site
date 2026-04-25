@@ -33,6 +33,12 @@ export function SiteFooter() {
             Changelog
           </a>
           <a
+            href="/docs/project-schema"
+            className="text-sm text-white/55 hover:text-white/90 transition-colors"
+          >
+            Docs
+          </a>
+          <a
             href={REDDIT_COMMUNITY_URL}
             target="_blank"
             rel="noopener noreferrer"

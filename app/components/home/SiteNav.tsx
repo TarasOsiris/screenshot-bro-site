@@ -40,6 +40,12 @@ export function SiteNav({ href = APP_STORE_URL }: { href?: string }) {
           >
             Blog
           </a>
+          <a
+            href="/docs/project-schema"
+            className="text-sm text-white/55 hover:text-white/90 transition-colors"
+          >
+            Docs
+          </a>
         </div>
 
         <div className="flex items-center gap-3">
