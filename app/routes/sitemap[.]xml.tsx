@@ -13,6 +13,7 @@ const STATIC_PAGES: SitemapEntry[] = [
   { loc: "/blog", changefreq: "weekly", priority: "0.8" },
   { loc: "/changelog", changefreq: "monthly", priority: "0.6" },
   { loc: "/privacy", changefreq: "monthly", priority: "0.3" },
+  { loc: "/docs/project-schema", changefreq: "monthly", priority: "0.5" },
 ];
 
 function buildSitemap(): string {
