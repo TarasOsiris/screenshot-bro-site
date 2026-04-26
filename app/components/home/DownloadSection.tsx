@@ -52,7 +52,7 @@ export function DownloadSection({ href = APP_STORE_URL }: { href?: string }) {
           </a>
         </div>
 
-        <p className="mt-4 text-xs text-white/40 font-mono">
+        <p className="mt-4 text-xs text-white/60 font-mono">
           macOS 15+ app | Swift & SwiftUI | Available on the Mac App Store
         </p>
       </div>

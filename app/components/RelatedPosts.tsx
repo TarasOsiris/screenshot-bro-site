@@ -34,7 +34,7 @@ export function RelatedPosts({
                 <span className="px-2 py-0.5 rounded bg-accent/10 text-accent-light text-[11px] font-medium">
                   {post.category}
                 </span>
-                <span className="text-[11px] text-white/35 font-mono">
+                <span className="text-[11px] text-white/60 font-mono">
                   {post.readTime}
                 </span>
               </div>

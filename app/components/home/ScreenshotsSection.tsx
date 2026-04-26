@@ -106,7 +106,9 @@ export function ScreenshotsSection() {
                   }`}
                 >
                   <img
-                    src={shot.src}
+                    src={shot.src.replace(".webp", "-720.webp")}
+                    srcSet={`${shot.src.replace(".webp", "-720.webp")} 720w, ${shot.src} 1440w`}
+                    sizes="(min-width: 1024px) min(66vw, 720px), min(85vw, 560px)"
                     alt={shot.alt}
                     width="1440"
                     height="900"
@@ -117,7 +119,7 @@ export function ScreenshotsSection() {
                 </div>
                 <figcaption
                   className={`mt-3 text-center text-sm transition-colors duration-300 ${
-                    isActive ? "text-white/70" : "text-white/35"
+                    isActive ? "text-white/70" : "text-white/55"
                   }`}
                 >
                   {shot.caption}
@@ -147,24 +149,28 @@ export function ScreenshotsSection() {
         </button>
       </div>
 
-      <div className="flex items-center justify-center gap-2 mt-6">
+      <div className="flex items-center justify-center gap-1 mt-6">
         {APP_SCREENSHOTS.map((shot, i) => (
           <button
             key={shot.src}
             type="button"
             onClick={() => scrollTo(i)}
-            className={`h-2 rounded-full transition-all ${
-              i === activeIndex
-                ? "bg-accent w-6"
-                : "bg-white/20 hover:bg-white/40 w-2"
-            }`}
+            className="group inline-flex h-6 min-w-6 items-center justify-center px-1"
             aria-label={`Go to screenshot ${i + 1}`}
             aria-current={i === activeIndex}
-          />
+          >
+            <span
+              className={`block h-2 rounded-full transition-all ${
+                i === activeIndex
+                  ? "bg-accent w-6"
+                  : "bg-white/20 group-hover:bg-white/40 w-2"
+              }`}
+            />
+          </button>
         ))}
       </div>
 
-      <p className="mt-3 text-center text-xs text-white/40 tabular-nums">
+      <p className="mt-3 text-center text-xs text-white/60 tabular-nums">
         {activeIndex + 1} / {APP_SCREENSHOTS.length}
       </p>
     </section>

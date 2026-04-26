@@ -130,7 +130,7 @@ export default function Changelog() {
                 <span className="font-mono text-sm font-medium text-accent-light">
                   v{entry.version}
                 </span>
-                <span className="text-sm text-white/35">{entry.date}</span>
+                <span className="text-sm text-white/60">{entry.date}</span>
               </div>
 
               <h2 className="font-display font-bold text-xl text-white mb-4">

@@ -71,7 +71,7 @@ export function SiteFooter() {
           </a>
         </div>
 
-        <span className="text-sm text-white/40 text-center">
+        <span className="text-sm text-white/60 text-center">
           Built with SwiftUI. Designed for developers shipping App Store
           updates.
         </span>

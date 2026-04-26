@@ -272,7 +272,7 @@ export default function Privacy() {
           <a href="/" className="text-sm text-white/55 hover:text-white/90 transition-colors">
             &larr; Back to {SITE_NAME}
           </a>
-          <span className="text-sm text-white/40">
+          <span className="text-sm text-white/60">
             {DEVELOPER_NAME}
           </span>
         </div>

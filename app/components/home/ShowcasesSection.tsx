@@ -1,4 +1,4 @@
-import { useLoopWithPause } from "~/components/home/hooks";
+import { useLazyLoopVideo } from "~/components/home/hooks";
 import { SectionIntro } from "~/components/home/SectionIntro";
 import { APP_STORE_URL, FEATURE_SHOWCASES } from "~/config/site";
 import type { FeatureShowcase } from "~/config/site";
@@ -12,7 +12,7 @@ function FeatureShowcaseBlock({
 }) {
   const isVideo =
     showcase.media.endsWith(".mp4") || showcase.media.endsWith(".webm");
-  const videoRef = useLoopWithPause();
+  const videoRef = useLazyLoopVideo(showcase.media);
 
   return (
     <article
@@ -53,12 +53,10 @@ function FeatureShowcaseBlock({
           {isVideo ? (
             <video
               ref={videoRef as React.RefObject<HTMLVideoElement>}
-              src={showcase.media}
               autoPlay
               muted
               playsInline
               preload="none"
-              poster={`/showcases/${showcase.id}-poster.webp`}
               className="showcase-media w-full h-full block"
               aria-label={showcase.mediaAlt}
             />

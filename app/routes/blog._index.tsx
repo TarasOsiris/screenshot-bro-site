@@ -109,10 +109,10 @@ export default function BlogIndex() {
                 <span className="px-2 py-0.5 rounded bg-accent/10 text-accent-light text-[11px] font-medium">
                   {post.category}
                 </span>
-                <span className="text-xs text-white/35 font-mono">
+                <span className="text-xs text-white/60 font-mono">
                   {post.date}
                 </span>
-                <span className="text-xs text-white/30">
+                <span className="text-xs text-white/55">
                   {post.readTime}
                 </span>
               </div>

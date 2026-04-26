@@ -66,7 +66,7 @@ export function TestimonialsSection() {
                   <p className="text-sm font-medium text-white/80">
                     {t.name}
                   </p>
-                  <p className="text-xs text-white/40">{t.app}</p>
+                  <p className="text-xs text-white/60">{t.app}</p>
                 </div>
               </figcaption>
             </figure>
