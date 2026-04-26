@@ -341,6 +341,16 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
     icon: "/showcase/pocket.jpg",
     url: "https://apps.apple.com/us/app/pocket-track-your-expenses/id6745982820",
   },
+  {
+    name: "ChronoType",
+    icon: "/showcase/chronotype.jpg",
+    url: "https://apps.apple.com/us/app/chronotype-body-clock/id6761485174",
+  },
+  {
+    name: "Wisp",
+    icon: "/showcase/wisp.jpg",
+    url: "https://apps.apple.com/us/app/wisp-wishlist-gift-registry/id6747362899",
+  },
 ];
 
 export type AppScreenshot = {
