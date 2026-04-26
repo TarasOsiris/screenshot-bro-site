@@ -331,6 +331,16 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
     icon: "/showcase/chapper.jpg",
     url: "https://apps.apple.com/us/app/chapper/id6760984679",
   },
+  {
+    name: "OneTap",
+    icon: "/showcase/onetap.jpg",
+    url: "https://apps.apple.com/us/app/onetap-ios-keyboard/id1639795583",
+  },
+  {
+    name: "Pocket",
+    icon: "/showcase/pocket.jpg",
+    url: "https://apps.apple.com/us/app/pocket-track-your-expenses/id6745982820",
+  },
 ];
 
 export type AppScreenshot = {
