@@ -3,6 +3,7 @@ import {
   Links,
   Meta,
   Outlet,
+  redirect,
   Scripts,
   ScrollRestoration,
 } from "react-router";
@@ -156,6 +157,22 @@ export const meta: Route.MetaFunction = () => [
   { name: "twitter:image", content: SOCIAL_IMAGE },
   { name: "twitter:image:alt", content: SOCIAL_IMAGE_ALT },
 ];
+
+const CANONICAL_HOST = "screenshotbro.app";
+
+export async function loader({ request }: Route.LoaderArgs) {
+  const url = new URL(request.url);
+  // Forwarded host can carry the original public host behind a proxy.
+  const forwardedHost = request.headers.get("x-forwarded-host");
+  const host = (forwardedHost ?? url.host).toLowerCase();
+  if (host !== CANONICAL_HOST && host.endsWith("." + CANONICAL_HOST)) {
+    const proto =
+      request.headers.get("x-forwarded-proto") ?? url.protocol.replace(":", "");
+    const target = `${proto}://${CANONICAL_HOST}${url.pathname}${url.search}`;
+    throw redirect(target, 301);
+  }
+  return null;
+}
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
