@@ -24,10 +24,11 @@ export default function BlogPost() {
           <BlogPostHeader slug={SLUG} />
 
         <p>
-          Most people spend less than 7 seconds on your App Store listing
-          before deciding. Your screenshots are doing more selling than your
-          description ever will. Here is what separates high-converting
-          screenshot sets from forgettable ones.
+          Many people decide quickly whether an App Store listing is relevant.
+          Screenshots are often the first detailed look they get at the app, so
+          they need to explain the value faster than the description can. Here
+          is what separates high-converting screenshot sets from forgettable
+          ones.
         </p>
 
         <h2>1. Lead With the Outcome, Not the Feature</h2>
@@ -90,10 +91,10 @@ export default function BlogPost() {
 
         <h2>6. Localize — the ROI Is Massive</h2>
         <p>
-          Localized screenshots convert 25-40% better in non-English markets.
           If you support multiple languages, your screenshots should too.
           Translate the headline copy, not just the app UI. Users notice when
-          the marketing text is in their language.
+          the marketing text is in their language, and the impact will vary by
+          market, category, and translation quality.
         </p>
 
         <h2>7. Test and Iterate</h2>

@@ -30,10 +30,10 @@ export default function BlogPost() {
               multiple display types per platform
             </a>{" "}
             and every locale has its own slot, so even a small app can end up
-            with 80–200 files to push per release. This guide covers the three
-            real ways to get screenshots into App Store Connect in 2026, when
-            to pick each, and the gotchas that waste an afternoon if you do not
-            know about them in advance.
+            with 80–200 files to push per release. This guide covers four
+            practical ways to get screenshots into App Store Connect in 2026,
+            when to pick each, and the gotchas that waste an afternoon if you
+            do not know about them in advance.
           </p>
 
           <h2>Option 1: The App Store Connect Web Uploader</h2>
@@ -69,9 +69,9 @@ export default function BlogPost() {
           </p>
           <ul>
             <li>
-              Wrong display type. If your exported file is 1290 × 2796 (iPhone
-              15/16/17 Pro Max) and you drop it into the 6.5" bucket, App Store
-              Connect rejects the upload.
+              Wrong display type. If your exported file is 1320 × 2868 (iPhone
+              16/17 Pro Max, 6.9") and you drop it into the 6.5" bucket, App
+              Store Connect rejects the upload.
             </li>
             <li>
               Locked versions. Once a version is "In Review" or "Pending
@@ -79,16 +79,16 @@ export default function BlogPost() {
               version first.
             </li>
             <li>
-              Partial uploads. If an upload fails midway, the existing
-              screenshots are already deleted — you need to re-upload the full
-              set for that display type.
+              Partial uploads. If a replacement workflow fails midway, verify
+              the full display-type set before submitting instead of assuming
+              the old set is still intact.
             </li>
           </ul>
 
           <h2>Option 2: Transporter or Fastlane Deliver</h2>
           <p>
-            Both tools drive the same underlying App Store Connect API, just
-            with different UX.
+            Both tools automate App Store Connect delivery, but with different
+            packaging and setup tradeoffs.
           </p>
           <p>
             <strong>Transporter</strong> is a free Apple utility for shipping
@@ -129,9 +129,10 @@ export default function BlogPost() {
           </p>
           <ul>
             <li>
-              Folder naming matters. fastlane parses the display type from the
-              filename prefix — rename one file wrong and it silently uploads
-              into the wrong bucket.
+              Resolution and naming matter. fastlane can infer display targets
+              from image resolution, and ambiguous iPad families may need
+              Apple's display-family name in the filename to land in the right
+              screenshot slot.
             </li>
             <li>
               App Store Connect API keys must be generated once and stored
@@ -258,7 +259,8 @@ export default function BlogPost() {
               <a href="/blog/app-store-screenshot-sizes">
                 supported dimensions
               </a>{" "}
-              — not one pixel off. Apple rejects mismatches silently sometimes.
+              — not one pixel off. Apple can reject mismatches during upload or
+              processing.
             </li>
             <li>
               The selected App Store version is editable (not "In Review" or
@@ -272,8 +274,7 @@ export default function BlogPost() {
               PNG or JPEG only. No HEIC, no WebP, no progressive JPEGs.
             </li>
             <li>
-              sRGB color profile. Wide-gamut/P3 files sometimes produce subtle
-              color shifts in App Store Connect previews.
+              RGB color, with no alpha channel for screenshots.
             </li>
           </ul>
 

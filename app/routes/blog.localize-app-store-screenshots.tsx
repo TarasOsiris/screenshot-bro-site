@@ -83,7 +83,8 @@ export default function BlogPost() {
 
         <h2>Strategy 4: Track Translation Progress</h2>
         <p>
-          With 30 possible languages, it is easy to miss a translation. Use a
+          App Store Connect supports 50 localizations, so it is easy to miss a
+          translation. Use a
           tool that shows completion status per locale so you can see at a
           glance which languages are fully translated and which are still
           missing overrides.
@@ -92,10 +93,12 @@ export default function BlogPost() {
         <h2>The Bottom Line</h2>
         <p>
           Localization is one of the highest-ROI things you can do for your
-          App Store listing. Localized screenshots convert 25-40% better in
-          non-English markets. The barrier is not the translation itself — it
-          is the repetitive design and export work. Eliminate that, and
-          localization becomes a reasonable task instead of a dreaded one.
+          App Store listing, especially when your product has meaningful demand
+          outside its primary language. The exact conversion lift depends on
+          the app, category, market, and quality of the translation. The
+          barrier is not the translation itself — it is the repetitive design
+          and export work. Eliminate that, and localization becomes a
+          reasonable task instead of a dreaded one.
         </p>
 
         </article>

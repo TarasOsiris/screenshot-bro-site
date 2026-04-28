@@ -36,14 +36,15 @@ export default function BlogPost() {
         <p>
           Apple groups screenshots by <strong>device family</strong> (iPhone,
           iPad, Mac, Apple Watch, Apple TV, Apple Vision Pro). Each family
-          requires at least one set of screenshots, and within iPhone and iPad
-          you only need to upload the largest required size — App Store
-          Connect downscales it for older displays automatically.
+          requires screenshots when your app supports that platform. For
+          iPhone and iPad, App Store Connect can scale higher-resolution
+          screenshots down for older displays when you do not provide custom
+          assets for every size.
         </p>
         <p>
-          Screenshots must be PNG or JPEG, RGB color space (P3 supported), and
-          flat — no alpha channel. You can upload <strong>3 to 10</strong>{" "}
-          screenshots per device family per localization.
+          Screenshots must be JPEG, JPG, or PNG. You can upload{" "}
+          <strong>1 to 10</strong> screenshots per device family per
+          localization.
         </p>
 
         <h3>iPhone</h3>
@@ -60,36 +61,45 @@ export default function BlogPost() {
               <td>
                 6.9" <em>(required)</em>
               </td>
-              <td>1320 x 2868</td>
-              <td>iPhone 17 Pro Max, 16 Pro Max</td>
-            </tr>
-            <tr>
-              <td>6.7"</td>
-              <td>1290 x 2796</td>
-              <td>iPhone 16 Plus, 15 Plus, 14 Pro Max</td>
+              <td>1260 x 2736, 1290 x 2796, or 1320 x 2868</td>
+              <td>
+                iPhone Air, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
+                Plus, 14 Pro Max
+              </td>
             </tr>
             <tr>
               <td>6.5"</td>
-              <td>1242 x 2688</td>
-              <td>iPhone 11 Pro Max, XS Max</td>
+              <td>1284 x 2778 or 1242 x 2688</td>
+              <td>
+                iPhone 14 Plus, 13 Pro Max, 12 Pro Max, 11 Pro Max, 11, XS Max,
+                XR
+              </td>
+            </tr>
+            <tr>
+              <td>6.3"</td>
+              <td>1206 x 2622 or 1179 x 2556</td>
+              <td>iPhone 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
             </tr>
             <tr>
               <td>6.1"</td>
-              <td>1179 x 2556</td>
-              <td>iPhone 17, 16, 15, 14 Pro</td>
+              <td>1170 x 2532, 1125 x 2436, or 1080 x 2340</td>
+              <td>
+                iPhone 17e, 16e, 14, 13 Pro, 13, 13 mini, 12 Pro, 12, 12 mini,
+                11 Pro, XS, X
+              </td>
             </tr>
             <tr>
               <td>5.5" (legacy)</td>
               <td>1242 x 2208</td>
-              <td>iPhone 8 Plus, 7 Plus, 6s Plus</td>
+              <td>iPhone 8 Plus, 7 Plus, 6s Plus, 6 Plus</td>
             </tr>
           </tbody>
         </table>
         <p>
-          As of 2024 Apple only requires the 6.9" set for new submissions. If
-          you also upload the 6.5" set, those will be shown on the older
-          devices that need them. Landscape variants use the same dimensions
-          rotated 90 degrees.
+          For current iPhone apps, the 6.9" set is the primary required set.
+          The 6.5" set is required only if your app runs on iPhone and you do
+          not provide 6.9" screenshots. Landscape variants use the same
+          dimensions rotated 90 degrees.
         </p>
 
         <h3>iPad</h3>
@@ -104,25 +114,24 @@ export default function BlogPost() {
           <tbody>
             <tr>
               <td>
-                13" Liquid Retina XDR <em>(required)</em>
+                13" <em>(required)</em>
               </td>
-              <td>2064 x 2752</td>
-              <td>iPad Pro 13" (M4)</td>
+              <td>2064 x 2752 or 2048 x 2732</td>
+              <td>
+                iPad Pro 13" (M5/M4), iPad Pro 12.9" (3rd-6th gen), iPad Air
+                13" (M4/M3/M2)
+              </td>
             </tr>
             <tr>
-              <td>12.9" Liquid Retina XDR</td>
-              <td>2048 x 2732</td>
-              <td>iPad Pro 12.9" (3rd-6th gen)</td>
-            </tr>
-            <tr>
-              <td>11" Liquid Retina</td>
-              <td>1668 x 2388</td>
-              <td>iPad Pro 11", iPad Air (M2)</td>
-            </tr>
-            <tr>
-              <td>10.9"</td>
-              <td>1640 x 2360</td>
-              <td>iPad Air (4th-5th gen), iPad 10th gen</td>
+              <td>11"</td>
+              <td>
+                1488 x 2266, 1668 x 2420, 1668 x 2388, or 1640 x 2360
+              </td>
+              <td>
+                iPad Pro 11" (M5/M4 and 1st-4th gen), iPad Air 11"
+                (M4/M3/M2), iPad Air (4th-5th gen), iPad (A16/10th gen), iPad
+                mini (A17 Pro/6th gen)
+              </td>
             </tr>
           </tbody>
         </table>
@@ -143,8 +152,7 @@ export default function BlogPost() {
             <strong>2560 x 1600</strong>
           </li>
           <li>
-            <strong>2880 x 1800</strong> (recommended — matches the 16-inch
-            MacBook Pro Retina)
+            <strong>2880 x 1800</strong> (largest accepted size)
           </li>
         </ul>
 
@@ -159,29 +167,34 @@ export default function BlogPost() {
           </thead>
           <tbody>
             <tr>
-              <td>49mm Ultra / Series 10</td>
+              <td>49mm Ultra 3</td>
+              <td>422 x 514</td>
+              <td>Apple Watch Ultra 3</td>
+            </tr>
+            <tr>
+              <td>49mm Ultra</td>
               <td>410 x 502</td>
-              <td>Apple Watch Ultra 2, Series 10</td>
+              <td>Apple Watch Ultra 2, Ultra</td>
             </tr>
             <tr>
-              <td>45mm</td>
+              <td>46mm</td>
+              <td>416 x 496</td>
+              <td>Series 11, Series 10</td>
+            </tr>
+            <tr>
+              <td>45mm / 41mm</td>
               <td>396 x 484</td>
-              <td>Series 7 - 9</td>
+              <td>Series 9, 8, 7</td>
             </tr>
             <tr>
-              <td>41mm</td>
-              <td>352 x 430</td>
-              <td>Series 7 - 9</td>
-            </tr>
-            <tr>
-              <td>44mm</td>
+              <td>44mm / 40mm</td>
               <td>368 x 448</td>
-              <td>Series 4 - 6, SE</td>
+              <td>Series 6, 5, 4, SE 3, SE</td>
             </tr>
             <tr>
-              <td>40mm</td>
-              <td>324 x 394</td>
-              <td>Series 4 - 6, SE</td>
+              <td>42mm / 38mm</td>
+              <td>312 x 390</td>
+              <td>Series 3</td>
             </tr>
           </tbody>
         </table>
@@ -192,17 +205,16 @@ export default function BlogPost() {
             <strong>Apple TV:</strong> 3840 x 2160 (4K) or 1920 x 1080 (HD).
           </li>
           <li>
-            <strong>Apple Vision Pro:</strong> 3840 x 2160 PNG with full,
-            opaque alpha — Apple recommends rendering against a transparent
-            background and then flattening for upload.
+            <strong>Apple Vision Pro:</strong> 3840 x 2160.
           </li>
         </ul>
 
         <h3>App Previews (video)</h3>
         <p>
           Optional, up to 3 per device family, 15 - 30 seconds, M4V / MP4 /
-          MOV. Each preview uses the same pixel dimensions as the screenshot
-          set for its device family.
+          MOV. App previews have their own accepted video resolutions, so do
+          not assume the screenshot pixel dimensions are valid for preview
+          videos.
         </p>
 
         <h2>Google Play</h2>
@@ -210,13 +222,15 @@ export default function BlogPost() {
           Google Play takes a different approach: instead of rigid pixel
           dimensions, it accepts any size that satisfies its{" "}
           <strong>aspect ratio and side-length rules</strong>. Files must be
-          PNG or 24-bit JPEG (no alpha), up to 8 MB each.
+          JPEG or 24-bit PNG with no alpha channel.
         </p>
 
         <h3>Phone screenshots</h3>
         <ul>
           <li>
-            <strong>Minimum 2, maximum 8</strong> screenshots.
+            Google requires at least <strong>2 screenshots overall</strong> to
+            publish a store listing, and you can add up to{" "}
+            <strong>8 screenshots per supported device type</strong>.
           </li>
           <li>
             Each side must be between <strong>320 px and 3840 px</strong>.
@@ -224,7 +238,7 @@ export default function BlogPost() {
           <li>
             The longest side cannot be more than{" "}
             <strong>twice the length</strong> of the shortest side (so the
-            aspect ratio sits between 16:9 and 9:16).
+            aspect ratio sits between 1:2 and 2:1).
           </li>
           <li>
             Recommended: <strong>1080 x 1920</strong> (portrait) or{" "}
@@ -234,21 +248,23 @@ export default function BlogPost() {
 
         <h3>Tablet screenshots</h3>
         <p>
-          Google now treats tablet (large-screen) screenshots as required for
-          apps that target tablets, foldables, or Chromebooks. Two slots:
+          Google has a separate large-screen screenshot section for tablets
+          and Chromebooks. Add at least 4 screenshots for these surfaces, use
+          sides between <strong>1080 px and 7680 px</strong>, and keep them at
+          16:9 landscape or 9:16 portrait.
         </p>
         <ul>
           <li>
-            <strong>7-inch tablet:</strong> same 320 - 3840 px / 16:9 - 9:16
-            rules. Recommended <strong>1200 x 1920</strong>.
+            <strong>7-inch tablet:</strong> recommended{" "}
+            <strong>1200 x 1920</strong>.
           </li>
           <li>
-            <strong>10-inch tablet:</strong> same rules. Recommended{" "}
+            <strong>10-inch tablet:</strong> recommended{" "}
             <strong>1600 x 2560</strong>.
           </li>
         </ul>
 
-        <h3>Wear OS, Android TV, Chromebook, Auto</h3>
+        <h3>Wear OS, Android TV, Chromebook, Auto, XR</h3>
         <ul>
           <li>
             <strong>Wear OS:</strong> 384 x 384 px (square, 1:1).
@@ -257,11 +273,17 @@ export default function BlogPost() {
             <strong>Android TV:</strong> 1920 x 1080 px (16:9 landscape only).
           </li>
           <li>
-            <strong>Chromebook:</strong> aspect ratio of 16:10 or 10:16, sides
+            <strong>Chromebook:</strong> aspect ratio of 16:9 or 9:16, sides
             between 1080 px and 7680 px.
           </li>
           <li>
-            <strong>Android Auto:</strong> 1280 x 720 px (16:9 landscape).
+            <strong>Android Automotive OS:</strong> 800 x 1280 portrait or
+            1024 x 768 landscape; provide at least 2 of each if you provide
+            Automotive screenshots.
+          </li>
+          <li>
+            <strong>Android XR:</strong> 4 to 8 screenshots, 8:5 aspect ratio,
+            recommended 3840 x 2400 and minimum 1920 x 1200.
           </li>
         </ul>
 
@@ -307,11 +329,11 @@ export default function BlogPost() {
             <tr>
               <td>Desktop</td>
               <td>2880 x 1800 (Mac)</td>
-              <td>1280 x 800 (Chromebook)</td>
+              <td>1920 x 1080 or 1080 x 1920 minimum (Chromebook)</td>
             </tr>
             <tr>
               <td>Wearable</td>
-              <td>410 x 502 (Watch Ultra)</td>
+              <td>422 x 514 (Watch Ultra 3)</td>
               <td>384 x 384 (Wear OS)</td>
             </tr>
             <tr>
@@ -321,13 +343,13 @@ export default function BlogPost() {
             </tr>
             <tr>
               <td>Min / max count</td>
-              <td>3 - 10 per family</td>
-              <td>2 - 8 per surface</td>
+              <td>1 - 10 per family</td>
+              <td>2 total minimum; up to 8 per device type</td>
             </tr>
             <tr>
               <td>Format</td>
-              <td>PNG or JPEG, no alpha</td>
-              <td>PNG or JPEG, no alpha</td>
+              <td>JPEG, JPG, or PNG</td>
+              <td>JPEG or 24-bit PNG, no alpha</td>
             </tr>
           </tbody>
         </table>
@@ -337,7 +359,7 @@ export default function BlogPost() {
           <li>
             <strong>Design at the largest required size.</strong> 1320 x 2868
             for iPhone, 2064 x 2752 for iPad, 2880 x 1800 for Mac. Downscaling
-            is lossless; upscaling is not.
+            preserves quality better than upscaling.
           </li>
           <li>
             <strong>Pick one Mac resolution and lock it.</strong> Mixing 2880
@@ -345,9 +367,9 @@ export default function BlogPost() {
             in App Store Connect previews.
           </li>
           <li>
-            <strong>Watch the safe area.</strong> Apple now overlays the
-            top-left and bottom-right corners with the title and CTA on
-            search results — keep critical text in the center 60%.
+            <strong>Watch the safe area.</strong> Store surfaces crop and
+            arrange screenshots differently, so keep critical text away from
+            the edges.
           </li>
           <li>
             <strong>Strip alpha for Google Play.</strong> Google rejects PNGs
