@@ -1,48 +1,18 @@
 import { SectionIntro } from "~/components/home/SectionIntro";
+import type { HomeCopy } from "~/config/localization";
 
-type Testimonial = {
-  quote: string;
-  name: string;
-  app: string;
-  icon: string;
-};
-
-const TESTIMONIALS: Testimonial[] = [
-  {
-    quote:
-      "I used to spend a whole afternoon on screenshots after every release. With Screenshot Bro, I set up templates once and now I just swap the new shots in and hit export.",
-    name: "Refuells Developer",
-    app: "Refuells",
-    icon: "/showcase/refuells.jpg",
-  },
-  {
-    quote:
-      "The localization feature is a lifesaver. I support 6 languages and exporting all of them used to be the worst part of any update. Now it takes one click.",
-    name: "AdRadar Developer",
-    app: "AdRadar",
-    icon: "/showcase/adradar.jpg",
-  },
-  {
-    quote:
-      "Finally a tool that gets out of the way. No Figma plugins, no browser tabs — just a native Mac app that does the job fast.",
-    name: "TT Tracker Developer",
-    app: "TT Tracker",
-    icon: "/showcase/tt-tracker.jpg",
-  },
-];
-
-export function TestimonialsSection() {
+export function TestimonialsSection({ copy }: { copy: HomeCopy }) {
   return (
     <section className="py-28 px-6 border-t border-border-subtle">
       <div className="max-w-6xl mx-auto">
         <SectionIntro
-          eyebrow="Developers"
-          title="What developers are saying."
-          description="Real feedback from indie developers using Screenshot Bro in production."
+          eyebrow={copy.sections.testimonials.eyebrow}
+          title={copy.sections.testimonials.title}
+          description={copy.sections.testimonials.description}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {TESTIMONIALS.map((t) => (
+          {copy.testimonials.map((t) => (
             <figure
               key={t.app}
               className="rounded-3xl bg-surface-raised border border-border p-7 flex flex-col"

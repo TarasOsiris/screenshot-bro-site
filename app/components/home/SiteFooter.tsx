@@ -4,8 +4,9 @@ import {
   SITE_NAME,
   X_PROFILE_URL,
 } from "~/config/site";
+import type { HomeCopy } from "~/config/localization";
 
-export function SiteFooter() {
+export function SiteFooter({ copy }: { copy: HomeCopy }) {
   return (
     <footer className="border-t border-border-subtle py-10 px-6">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
@@ -24,19 +25,19 @@ export function SiteFooter() {
             href="/blog"
             className="text-sm text-white/55 hover:text-white/90 transition-colors"
           >
-            Blog
+            {copy.ui.blog}
           </a>
           <a
             href="/changelog"
             className="text-sm text-white/55 hover:text-white/90 transition-colors"
           >
-            Changelog
+            {copy.ui.changelog}
           </a>
           <a
             href="/docs/project-schema"
             className="text-sm text-white/55 hover:text-white/90 transition-colors"
           >
-            Docs
+            {copy.ui.docs}
           </a>
           <a
             href={REDDIT_COMMUNITY_URL}
@@ -44,19 +45,19 @@ export function SiteFooter() {
             rel="noopener noreferrer"
             className="text-sm text-white/55 hover:text-white/90 transition-colors"
           >
-            Community
+            {copy.ui.community}
           </a>
           <a
             href="/privacy"
             className="text-sm text-white/55 hover:text-white/90 transition-colors"
           >
-            Privacy
+            {copy.ui.privacy}
           </a>
           <a
             href={CONTACT_MAILTO}
             className="text-sm text-white/55 hover:text-white/90 transition-colors"
           >
-            Contact
+            {copy.ui.contact}
           </a>
           <a
             href={X_PROFILE_URL}
@@ -67,13 +68,12 @@ export function SiteFooter() {
             <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
-            Follow my journey
+            {copy.ui.followJourney}
           </a>
         </div>
 
         <span className="text-sm text-white/60 text-center">
-          Built with SwiftUI. Designed for developers shipping App Store
-          updates.
+          {copy.footer.note}
         </span>
       </div>
     </footer>

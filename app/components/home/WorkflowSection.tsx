@@ -1,7 +1,7 @@
 import { SectionIntro } from "~/components/home/SectionIntro";
-import { WORKFLOW_STEPS } from "~/config/site";
+import type { HomeCopy } from "~/config/localization";
 
-export function WorkflowSection() {
+export function WorkflowSection({ copy }: { copy: HomeCopy }) {
   return (
     <section
       id="workflow"
@@ -9,13 +9,13 @@ export function WorkflowSection() {
     >
       <div className="max-w-6xl mx-auto">
         <SectionIntro
-          eyebrow="Workflow"
-          title="A shorter path from raw screenshots to App Store-ready assets."
-          description="The product is opinionated around one job: create polished screenshot sets without maintaining a pile of one-off design files."
+          eyebrow={copy.sections.workflow.eyebrow}
+          title={copy.sections.workflow.title}
+          description={copy.sections.workflow.description}
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {WORKFLOW_STEPS.map((step) => (
+          {copy.workflowSteps.map((step) => (
             <div key={step.step} className="workflow-card rounded-3xl p-6">
               <div className="font-mono text-4xl font-bold text-accent/50 mb-4">
                 {step.step}

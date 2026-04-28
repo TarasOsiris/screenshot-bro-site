@@ -1,8 +1,8 @@
 import { FeatureIcon } from "~/components/home/icons";
 import { SectionIntro } from "~/components/home/SectionIntro";
-import { FEATURES } from "~/config/site";
+import type { HomeCopy } from "~/config/localization";
 
-export function FeaturesSection() {
+export function FeaturesSection({ copy }: { copy: HomeCopy }) {
   return (
     <section
       id="features"
@@ -10,13 +10,13 @@ export function FeaturesSection() {
     >
       <div className="max-w-6xl mx-auto">
         <SectionIntro
-          eyebrow="Capabilities"
-          title="Everything you need. Nothing you don't."
-          description="The feature set stays focused on layout speed, screenshot consistency, and export sanity. No browser tab, no general-purpose design suite, no repetitive resize work."
+          eyebrow={copy.sections.features.eyebrow}
+          title={copy.sections.features.title}
+          description={copy.sections.features.description}
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {FEATURES.map((feature, index) => (
+          {copy.features.map((feature, index) => (
             <div
               key={feature.title}
               className="feature-card rounded-3xl p-6 flex flex-col gap-4 min-h-[220px]"

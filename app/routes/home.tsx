@@ -1,11 +1,48 @@
 import { useEffect, useState } from "react";
+import { data } from "react-router";
 
 import type { Route } from "./+types/home";
 import { SITE_URL } from "~/config/site";
+import {
+  getHomeCopy,
+  isLocaleCode,
+  localizedPath,
+  type LocaleCode,
+} from "~/config/localization";
 
-export const links: Route.LinksFunction = () => [
-  { rel: "canonical", href: SITE_URL },
-];
+type LocaleParams = {
+  locale?: string;
+};
+
+function getRouteLocale(params?: LocaleParams): LocaleCode {
+  const locale = params?.locale;
+  return isLocaleCode(locale) ? locale : "en";
+}
+
+export async function loader({ params }: { params: LocaleParams }) {
+  const locale = params.locale;
+  if (locale && !isLocaleCode(locale)) {
+    throw data("Not found", { status: 404 });
+  }
+  return { locale: getRouteLocale(params) };
+}
+
+export const meta: Route.MetaFunction = (args) => {
+  const params = (args as { params?: LocaleParams }).params;
+  const locale = getRouteLocale(params);
+  const copy = getHomeCopy(locale);
+  const url = `${SITE_URL}${localizedPath(locale)}`;
+  return [
+    { title: copy.siteTitle },
+    { name: "description", content: copy.siteDescription },
+    { property: "og:locale", content: copy.locale.ogLocale },
+    { property: "og:title", content: copy.siteTitle },
+    { property: "og:description", content: copy.siteDescription },
+    { property: "og:url", content: url },
+    { name: "twitter:title", content: copy.siteTitle },
+    { name: "twitter:description", content: copy.siteDescription },
+  ];
+};
 
 import { SiteNav } from "~/components/home/SiteNav";
 import { HeroSection } from "~/components/home/HeroSection";
@@ -35,8 +72,9 @@ function useScrollFade(threshold = 100) {
   return visible;
 }
 
-export default function Home() {
+export default function Home({ loaderData }: Route.ComponentProps) {
   const showBackToTop = useScrollFade(600);
+  const copy = getHomeCopy(loaderData.locale);
 
   return (
     <div className="min-h-screen">
@@ -44,27 +82,27 @@ export default function Home() {
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:px-3 focus:py-2 focus:rounded-md focus:bg-surface-raised"
       >
-        Skip to content
+        {copy.ui.skipToContent}
       </a>
 
-      <SiteNav />
+      <SiteNav copy={copy} />
 
       <main id="main-content">
-        <HeroSection />
-        <ShowcasesSection />
-        <ProblemSection />
-        <WorkflowSection />
-        <FeaturesSection />
-        <ScreenshotsSection />
-        <TestimonialsSection />
-        <BlogPreviewSection />
-        <FaqSection />
-        <DownloadSection />
-        <AppShowcaseSection />
+        <HeroSection copy={copy} />
+        <ShowcasesSection copy={copy} />
+        <ProblemSection copy={copy} />
+        <WorkflowSection copy={copy} />
+        <FeaturesSection copy={copy} />
+        <ScreenshotsSection copy={copy} />
+        <TestimonialsSection copy={copy} />
+        <BlogPreviewSection copy={copy} />
+        <FaqSection copy={copy} />
+        <DownloadSection copy={copy} />
+        <AppShowcaseSection copy={copy} />
       </main>
 
-      <SiteFooter />
-      <BackToTopButton visible={showBackToTop} />
+      <SiteFooter copy={copy} />
+      <BackToTopButton visible={showBackToTop} label={copy.ui.backToTop} />
     </div>
   );
 }

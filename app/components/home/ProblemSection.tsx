@@ -1,22 +1,19 @@
 import { SectionIntro } from "~/components/home/SectionIntro";
-import { WITHOUT_BRO_POINTS, WITH_BRO_POINTS } from "~/config/site";
+import type { HomeCopy } from "~/config/localization";
 
-export function ProblemSection() {
+export function ProblemSection({ copy }: { copy: HomeCopy }) {
   return (
     <section className="py-28 px-6 border-t border-border-subtle">
       <div className="max-w-5xl mx-auto">
         <SectionIntro
-          eyebrow="Why It Exists"
-          title="Because shipping one new feature should not mean rebuilding every screenshot."
-          description="Screenshot Bro came from the same loop most app teams hit: a product update lands, then the screenshot file set turns into a repetitive mini-project again."
+          eyebrow={copy.sections.problem.eyebrow}
+          title={copy.sections.problem.title}
+          description={copy.sections.problem.description}
         />
 
         <div className="soft-panel rounded-3xl p-8 sm:p-10 mb-10">
           <p className="max-w-3xl text-base text-white/[0.62] leading-relaxed">
-            I built it after spending too much time in Figma redoing App Store
-            screenshots every time copy, gradients, or languages changed. The
-            goal is simple: design the system once, then let the app handle the
-            repetitive parts.
+            {copy.problem.story}
           </p>
         </div>
 
@@ -37,10 +34,10 @@ export function ProblemSection() {
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
-              Without Screenshot Bro
+              {copy.problem.withoutLabel}
             </div>
             <ul className="space-y-4">
-              {WITHOUT_BRO_POINTS.map((text) => (
+              {copy.withoutBroPoints.map((text) => (
                 <li
                   key={text}
                   className="flex items-start gap-3 text-sm text-white/50 leading-relaxed"
@@ -69,10 +66,10 @@ export function ProblemSection() {
                 >
                   <polyline points="20,6 9,17 4,12" />
                 </svg>
-                With Screenshot Bro
+                {copy.problem.withLabel}
               </div>
               <ul className="space-y-4">
-                {WITH_BRO_POINTS.map((text) => (
+                {copy.withBroPoints.map((text) => (
                   <li
                     key={text}
                     className="flex items-start gap-3 text-sm text-white/60 leading-relaxed"

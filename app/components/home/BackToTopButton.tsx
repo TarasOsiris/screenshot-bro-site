@@ -1,6 +1,12 @@
 import { ChevronUpIcon } from "~/components/home/small-icons";
 
-export function BackToTopButton({ visible }: { visible: boolean }) {
+export function BackToTopButton({
+  visible,
+  label = "Back to top",
+}: {
+  visible: boolean;
+  label?: string;
+}) {
   return (
     <button
       type="button"
@@ -10,7 +16,7 @@ export function BackToTopButton({ visible }: { visible: boolean }) {
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-4 pointer-events-none"
       }`}
-      aria-label="Back to top"
+      aria-label={label}
     >
       <ChevronUpIcon />
     </button>

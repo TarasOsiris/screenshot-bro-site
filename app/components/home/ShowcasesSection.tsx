@@ -1,14 +1,17 @@
 import { useLazyLoopVideo } from "~/components/home/hooks";
 import { SectionIntro } from "~/components/home/SectionIntro";
-import { APP_STORE_URL, FEATURE_SHOWCASES } from "~/config/site";
+import { APP_STORE_URL } from "~/config/site";
 import type { FeatureShowcase } from "~/config/site";
+import type { HomeCopy } from "~/config/localization";
 
 function FeatureShowcaseBlock({
   showcase,
   href,
+  copy,
 }: {
   showcase: FeatureShowcase;
   href: string;
+  copy: HomeCopy;
 }) {
   const isVideo =
     showcase.media.endsWith(".mp4") || showcase.media.endsWith(".webm");
@@ -38,13 +41,13 @@ function FeatureShowcaseBlock({
               href={href}
               className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.06] px-4 py-2.5 text-sm font-medium text-white/[0.88] transition-all hover:border-white/20 hover:bg-white/10"
             >
-              Try it now
+              {copy.ui.tryItNow}
             </a>
             <a
               href="#early-access"
               className="text-sm text-white/[0.52] hover:text-white/[0.88] transition-colors"
             >
-              See details
+              {copy.ui.seeDetails}
             </a>
           </div>
         </div>
@@ -75,7 +78,13 @@ function FeatureShowcaseBlock({
   );
 }
 
-export function ShowcasesSection({ href = APP_STORE_URL }: { href?: string }) {
+export function ShowcasesSection({
+  copy,
+  href = APP_STORE_URL,
+}: {
+  copy: HomeCopy;
+  href?: string;
+}) {
   return (
     <section
       id="showcases"
@@ -83,13 +92,13 @@ export function ShowcasesSection({ href = APP_STORE_URL }: { href?: string }) {
     >
       <div className="max-w-6xl mx-auto">
         <SectionIntro
-          eyebrow="Showcases"
-          title="See the core workflow before you install."
-          description="Batch import, one-click App Store Connect upload, layers, backgrounds, and device frames — the moments most people use to judge whether this saves them time."
+          eyebrow={copy.sections.showcases.eyebrow}
+          title={copy.sections.showcases.title}
+          description={copy.sections.showcases.description}
         />
 
         <div className="mb-10 flex flex-wrap items-center justify-center gap-3">
-          {FEATURE_SHOWCASES.map((showcase) => (
+          {copy.featureShowcases.map((showcase) => (
             <a
               key={showcase.id}
               href={`#${showcase.id}`}
@@ -101,11 +110,12 @@ export function ShowcasesSection({ href = APP_STORE_URL }: { href?: string }) {
         </div>
 
         <div className="space-y-8">
-          {FEATURE_SHOWCASES.map((showcase) => (
+          {copy.featureShowcases.map((showcase) => (
             <FeatureShowcaseBlock
               key={showcase.id}
               showcase={showcase}
               href={href}
+              copy={copy}
             />
           ))}
         </div>

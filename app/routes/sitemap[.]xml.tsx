@@ -1,5 +1,6 @@
 import { SITE_URL } from "~/config/site";
 import { BLOG_POSTS } from "~/config/blog";
+import { DEFAULT_LOCALE, LOCALES, localizedPath } from "~/config/localization";
 
 type SitemapEntry = {
   loc: string;
@@ -10,6 +11,11 @@ type SitemapEntry = {
 
 const STATIC_PAGES: SitemapEntry[] = [
   { loc: "/", changefreq: "weekly", priority: "1.0" },
+  ...LOCALES.filter((locale) => locale.code !== DEFAULT_LOCALE).map((locale) => ({
+    loc: localizedPath(locale.code),
+    changefreq: "weekly",
+    priority: "0.9",
+  })),
   { loc: "/blog", changefreq: "weekly", priority: "0.8" },
   { loc: "/changelog", changefreq: "monthly", priority: "0.6" },
   { loc: "/privacy", changefreq: "monthly", priority: "0.3" },

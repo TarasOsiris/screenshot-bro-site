@@ -1,7 +1,8 @@
 import { SectionIntro } from "~/components/home/SectionIntro";
 import { SHOWCASE_APPS, X_PROFILE_URL } from "~/config/site";
+import type { HomeCopy } from "~/config/localization";
 
-export function AppShowcaseSection() {
+export function AppShowcaseSection({ copy }: { copy: HomeCopy }) {
   return (
     <section
       id="app-showcase"
@@ -9,9 +10,9 @@ export function AppShowcaseSection() {
     >
       <div className="max-w-6xl mx-auto">
         <SectionIntro
-          eyebrow="Shipped with Screenshot Bro"
-          title="You'd be in good company."
-          description="Indie apps already using Screenshot Bro for their App Store and Google Play screenshots."
+          eyebrow={copy.sections.appShowcase.eyebrow}
+          title={copy.sections.appShowcase.title}
+          description={copy.sections.appShowcase.description}
         />
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-2xl mx-auto">
@@ -49,7 +50,7 @@ export function AppShowcaseSection() {
             <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
-            Submit your app
+            {copy.ui.submitApp}
           </a>
         </div>
       </div>

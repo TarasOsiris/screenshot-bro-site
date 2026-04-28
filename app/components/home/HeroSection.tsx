@@ -1,9 +1,10 @@
 import { AppleLogo } from "~/components/home/icons";
 import { ArrowDownIcon } from "~/components/home/small-icons";
 import { useLoopWithPause } from "~/components/home/hooks";
-import { APP_STORE_URL, PRIMARY_CTA_LABEL } from "~/config/site";
+import { APP_STORE_URL } from "~/config/site";
+import type { HomeCopy } from "~/config/localization";
 
-function AppPreview() {
+function AppPreview({ label }: { label: string }) {
   const videoRef = useLoopWithPause();
 
   return (
@@ -19,13 +20,19 @@ function AppPreview() {
           event.currentTarget.playbackRate = 1.25;
         }}
         className="w-full h-auto block"
-        aria-label="Screenshot Bro app demo - designing App Store screenshots with device frames, gradients, and batch export"
+        aria-label={label}
       />
     </div>
   );
 }
 
-export function HeroSection({ href = APP_STORE_URL }: { href?: string }) {
+export function HeroSection({
+  copy,
+  href = APP_STORE_URL,
+}: {
+  copy: HomeCopy;
+  href?: string;
+}) {
   return (
     <section className="relative pt-32 pb-20 px-6 overflow-hidden">
       <div className="hero-gradient" />
@@ -37,22 +44,21 @@ export function HeroSection({ href = APP_STORE_URL }: { href?: string }) {
             className="animate-fade-up mt-6 font-display font-extrabold text-5xl sm:text-6xl md:text-7xl tracking-tight leading-[0.98]"
             style={{ animationDelay: "0.12s" }}
           >
-            <span className="text-white">Design and ship</span>
+            <span className="text-white">{copy.hero.titleLead}</span>
             <br />
-            <span className="text-accent">App Store</span>
-            <span className="text-white"> screenshots.</span>
+            <span className="text-accent">{copy.hero.titleAccent}</span>
+            <span className="text-white">{copy.hero.titleRest}</span>
           </h1>
 
           <p
             className="animate-fade-up max-w-2xl mx-auto mt-6 text-lg sm:text-xl text-white/[0.62] leading-relaxed"
             style={{ animationDelay: "0.2s" }}
           >
-            Import your shots, wrap them in device frames, localize the copy,
-            auto-translate missing text, and{" "}
+            {copy.hero.descriptionLead}{" "}
             <span className="text-white/[0.85]">
-              upload straight to App Store Connect
+              {copy.hero.descriptionStrong}
             </span>{" "}
-            — all from one fast native Mac app.
+            {copy.hero.descriptionTail}
           </p>
 
           <div
@@ -64,13 +70,13 @@ export function HeroSection({ href = APP_STORE_URL }: { href?: string }) {
               className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-sm transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
             >
               <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
-              {PRIMARY_CTA_LABEL}
+              {copy.primaryCtaLabel}
             </a>
             <a
               href="#showcases"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/[0.03] border border-border text-white/[0.72] hover:text-white/[0.92] hover:border-white/20 text-sm transition-all"
             >
-              See it in action
+              {copy.ui.seeInAction}
               <ArrowDownIcon />
             </a>
           </div>
@@ -86,7 +92,7 @@ export function HeroSection({ href = APP_STORE_URL }: { href?: string }) {
             >
               <img
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1106959&theme=light&t=1775116842049"
-                alt="ScreenshotBro Mac App - Design and export beautiful App Store screenshots. | Product Hunt"
+                alt={copy.ui.productHuntAlt}
                 width="250"
                 height="54"
               />
@@ -98,7 +104,7 @@ export function HeroSection({ href = APP_STORE_URL }: { href?: string }) {
           className="animate-fade-up relative max-w-6xl mx-auto mt-14"
           style={{ animationDelay: "0.42s" }}
         >
-          <AppPreview />
+          <AppPreview label={copy.hero.videoLabel} />
           <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-accent/10 blur-3xl rounded-full" />
         </div>
       </div>

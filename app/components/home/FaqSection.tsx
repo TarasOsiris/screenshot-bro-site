@@ -1,6 +1,6 @@
 import { SectionIntro } from "~/components/home/SectionIntro";
-import { FAQS } from "~/config/site";
 import type { FaqItem } from "~/config/site";
+import type { HomeCopy } from "~/config/localization";
 
 function FaqItemBlock({ item }: { item: FaqItem }) {
   return (
@@ -16,7 +16,7 @@ function FaqItemBlock({ item }: { item: FaqItem }) {
   );
 }
 
-export function FaqSection() {
+export function FaqSection({ copy }: { copy: HomeCopy }) {
   return (
     <section
       id="faq"
@@ -24,13 +24,13 @@ export function FaqSection() {
     >
       <div className="max-w-4xl mx-auto">
         <SectionIntro
-          eyebrow="FAQ"
-          title="The questions most people ask before trying it."
-          description="The product is early, but the core workflow is already there. These answers handle the main compatibility and export questions."
+          eyebrow={copy.sections.faq.eyebrow}
+          title={copy.sections.faq.title}
+          description={copy.sections.faq.description}
         />
 
         <div className="space-y-4">
-          {FAQS.map((item) => (
+          {copy.faqs.map((item) => (
             <FaqItemBlock key={item.question} item={item} />
           ))}
         </div>

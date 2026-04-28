@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { SectionIntro } from "~/components/home/SectionIntro";
-import { APP_SCREENSHOTS } from "~/config/site";
+import type { HomeCopy } from "~/config/localization";
 
-export function ScreenshotsSection() {
+export function ScreenshotsSection({ copy }: { copy: HomeCopy }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const screenshots = copy.appScreenshots;
 
   useEffect(() => {
     const container = scrollRef.current;
@@ -35,7 +36,7 @@ export function ScreenshotsSection() {
   const scrollTo = (index: number) => {
     const container = scrollRef.current;
     if (!container) return;
-    const clamped = Math.max(0, Math.min(APP_SCREENSHOTS.length - 1, index));
+    const clamped = Math.max(0, Math.min(screenshots.length - 1, index));
     const children = Array.from(container.children) as HTMLElement[];
     children[clamped]?.scrollIntoView({
       behavior: "smooth",
@@ -56,12 +57,12 @@ export function ScreenshotsSection() {
       scrollTo(0);
     } else if (event.key === "End") {
       event.preventDefault();
-      scrollTo(APP_SCREENSHOTS.length - 1);
+      scrollTo(screenshots.length - 1);
     }
   };
 
   const atStart = activeIndex === 0;
-  const atEnd = activeIndex === APP_SCREENSHOTS.length - 1;
+  const atEnd = activeIndex === screenshots.length - 1;
 
   return (
     <section
@@ -70,9 +71,9 @@ export function ScreenshotsSection() {
     >
       <div className="max-w-6xl mx-auto">
         <SectionIntro
-          eyebrow="Screenshots"
-          title="See it in action."
-          description="Mac App Store screenshots of Screenshot Bro itself - the same editor you use for App Store and Google Play screenshot sets."
+          eyebrow={copy.sections.screenshots.eyebrow}
+          title={copy.sections.screenshots.title}
+          description={copy.sections.screenshots.description}
         />
       </div>
 
@@ -80,7 +81,7 @@ export function ScreenshotsSection() {
         className="relative"
         role="region"
         aria-roledescription="carousel"
-        aria-label="App screenshots"
+        aria-label={copy.ui.appScreenshots}
       >
         <div
           ref={scrollRef}
@@ -89,13 +90,13 @@ export function ScreenshotsSection() {
           className="flex gap-5 md:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 px-[max(1.5rem,calc((100vw-72rem)/2))] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 rounded-lg"
           style={{ scrollbarWidth: "none" }}
         >
-          {APP_SCREENSHOTS.map((shot, i) => {
+          {screenshots.map((shot, i) => {
             const isActive = i === activeIndex;
             return (
               <figure
                 key={shot.src}
                 aria-roledescription="slide"
-                aria-label={`${i + 1} of ${APP_SCREENSHOTS.length}`}
+                aria-label={copy.ui.slideCount(i + 1, screenshots.length)}
                 className="snap-center shrink-0 w-[min(85vw,560px)] lg:w-[min(66vw,720px)] group"
               >
                 <div
@@ -133,7 +134,7 @@ export function ScreenshotsSection() {
           type="button"
           onClick={() => scrollTo(activeIndex - 1)}
           disabled={atStart}
-          aria-label="Previous screenshot"
+          aria-label={copy.ui.previousScreenshot}
           className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-4 lg:left-8 items-center justify-center w-11 h-11 rounded-full bg-surface-raised/80 backdrop-blur-md border border-border-subtle text-white/80 hover:text-white hover:bg-surface-raised hover:border-white/20 transition-all disabled:opacity-0 disabled:pointer-events-none"
         >
           <ChevronLeftIcon />
@@ -142,7 +143,7 @@ export function ScreenshotsSection() {
           type="button"
           onClick={() => scrollTo(activeIndex + 1)}
           disabled={atEnd}
-          aria-label="Next screenshot"
+          aria-label={copy.ui.nextScreenshot}
           className="hidden md:flex absolute top-1/2 -translate-y-1/2 right-4 lg:right-8 items-center justify-center w-11 h-11 rounded-full bg-surface-raised/80 backdrop-blur-md border border-border-subtle text-white/80 hover:text-white hover:bg-surface-raised hover:border-white/20 transition-all disabled:opacity-0 disabled:pointer-events-none"
         >
           <ChevronRightIcon />
@@ -150,13 +151,13 @@ export function ScreenshotsSection() {
       </div>
 
       <div className="flex items-center justify-center gap-1 mt-6">
-        {APP_SCREENSHOTS.map((shot, i) => (
+        {screenshots.map((shot, i) => (
           <button
             key={shot.src}
             type="button"
             onClick={() => scrollTo(i)}
             className="group inline-flex h-6 min-w-6 items-center justify-center px-1"
-            aria-label={`Go to screenshot ${i + 1}`}
+            aria-label={copy.ui.goToScreenshot(i + 1)}
             aria-current={i === activeIndex}
           >
             <span
@@ -171,7 +172,7 @@ export function ScreenshotsSection() {
       </div>
 
       <p className="mt-3 text-center text-xs text-white/60 tabular-nums">
-        {activeIndex + 1} / {APP_SCREENSHOTS.length}
+        {activeIndex + 1} / {screenshots.length}
       </p>
     </section>
   );

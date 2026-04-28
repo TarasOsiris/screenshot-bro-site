@@ -6,6 +6,7 @@ import {
   redirect,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "react-router";
 
 import type { Route } from "./+types/root";
@@ -26,6 +27,13 @@ import {
   WORKFLOW_STEPS,
   X_PROFILE_URL,
 } from "~/config/site";
+import {
+  LOCALES,
+  getLocaleFromPath,
+  getLocaleInfo,
+  isLocaleCode,
+  localizedPath,
+} from "~/config/localization";
 import "./app.css";
 
 export const SITE_TITLE = `${SITE_NAME} — App Store & Google Play Screenshot Designer for Mac`;
@@ -193,8 +201,15 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const location = useLocation();
+  const locale = getLocaleInfo(getLocaleFromPath(location.pathname));
+  const pathSegments = location.pathname.split("/").filter(Boolean);
+  const isLocalizedHome =
+    location.pathname === "/" ||
+    (pathSegments.length === 1 && isLocaleCode(pathSegments[0]));
+
   return (
-    <html lang="en">
+    <html lang={locale.htmlLang} dir={locale.dir}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -204,6 +219,23 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="apple-itunes-app" content={`app-id=${APP_STORE_APP_ID}`} />
         <Meta />
         <Links />
+        {isLocalizedHome ? (
+          <>
+            <link
+              rel="canonical"
+              href={`${SITE_URL}${localizedPath(locale.code)}`}
+            />
+            {LOCALES.map((alternateLocale) => (
+              <link
+                key={alternateLocale.code}
+                rel="alternate"
+                hrefLang={alternateLocale.htmlLang}
+                href={`${SITE_URL}${localizedPath(alternateLocale.code)}`}
+              />
+            ))}
+            <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
+          </>
+        ) : null}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
