@@ -118,7 +118,7 @@ export default function BlogPost() {
               </td>
               <td>2064 x 2752 or 2048 x 2732</td>
               <td>
-                iPad Pro 13" (M5/M4), iPad Pro 12.9" (3rd-6th gen), iPad Air
+                iPad Pro 13" (M5/M4), iPad Pro 12.9" (3rd–6th gen), iPad Air
                 13" (M4/M3/M2)
               </td>
             </tr>
@@ -128,8 +128,8 @@ export default function BlogPost() {
                 1488 x 2266, 1668 x 2420, 1668 x 2388, or 1640 x 2360
               </td>
               <td>
-                iPad Pro 11" (M5/M4 and 1st-4th gen), iPad Air 11"
-                (M4/M3/M2), iPad Air (4th-5th gen), iPad (A16/10th gen), iPad
+                iPad Pro 11" (M5/M4 and 1st–4th gen), iPad Air 11"
+                (M4/M3/M2), iPad Air (4th–5th gen), iPad (A16/10th gen), iPad
                 mini (A17 Pro/6th gen)
               </td>
             </tr>
@@ -357,7 +357,7 @@ export default function BlogPost() {
         <h2>Working tips</h2>
         <ul>
           <li>
-            <strong>Design at the largest required size.</strong> 1320 x 2868
+            <strong>Design at the largest accepted size.</strong> 1320 x 2868
             for iPhone, 2064 x 2752 for iPad, 2880 x 1800 for Mac. Downscaling
             preserves quality better than upscaling.
           </li>

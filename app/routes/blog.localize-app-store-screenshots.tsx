@@ -83,11 +83,10 @@ export default function BlogPost() {
 
         <h2>Strategy 4: Track Translation Progress</h2>
         <p>
-          App Store Connect supports 50 localizations, so it is easy to miss a
-          translation. Use a
-          tool that shows completion status per locale so you can see at a
-          glance which languages are fully translated and which are still
-          missing overrides.
+          App Store Connect supports 50 localizations, so it is easy to miss
+          a translation. Use a tool that shows completion status per locale so
+          you can see at a glance which languages are fully translated and
+          which are still missing overrides.
         </p>
 
         <h2>The Bottom Line</h2>
