@@ -3,6 +3,7 @@ import { data } from "react-router";
 
 import type { Route } from "./+types/home";
 import { SITE_URL } from "~/config/site";
+import { mergeMeta } from "~/config/meta";
 import {
   getHomeCopy,
   isLocaleCode,
@@ -27,21 +28,22 @@ export async function loader({ params }: { params: LocaleParams }) {
   return { locale: getRouteLocale(params) };
 }
 
-export const meta: Route.MetaFunction = (args) => {
-  const params = (args as { params?: LocaleParams }).params;
+export const meta: Route.MetaFunction = ({ matches, params }) => {
   const locale = getRouteLocale(params);
   const copy = getHomeCopy(locale);
   const url = `${SITE_URL}${localizedPath(locale)}`;
-  return [
+  return mergeMeta(matches, [
     { title: copy.siteTitle },
     { name: "description", content: copy.siteDescription },
     { property: "og:locale", content: copy.locale.ogLocale },
     { property: "og:title", content: copy.siteTitle },
     { property: "og:description", content: copy.siteDescription },
     { property: "og:url", content: url },
+    { property: "og:image:alt", content: copy.socialImageAlt },
     { name: "twitter:title", content: copy.siteTitle },
     { name: "twitter:description", content: copy.siteDescription },
-  ];
+    { name: "twitter:image:alt", content: copy.socialImageAlt },
+  ]);
 };
 
 import { SiteNav } from "~/components/home/SiteNav";

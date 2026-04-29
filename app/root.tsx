@@ -36,7 +36,7 @@ import {
 } from "~/config/localization";
 import "./app.css";
 
-export const SITE_TITLE = `${SITE_NAME} — App Store & Google Play Screenshot Designer for Mac`;
+export const SITE_TITLE = `${SITE_NAME} — App Store & Google Play Screenshots`;
 export const SOCIAL_IMAGE = `${SITE_URL}/og-image.png`;
 const GA_ID =
   import.meta.env.PROD && import.meta.env.VITE_GA_ID

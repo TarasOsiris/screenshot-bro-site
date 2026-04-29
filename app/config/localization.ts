@@ -161,7 +161,7 @@ const EN_TESTIMONIALS = [
 
 const EN_HOME_COPY: HomeCopy = {
   locale: LOCALES[0],
-  siteTitle: `${SITE_NAME} — App Store & Google Play Screenshot Designer for Mac`,
+  siteTitle: `${SITE_NAME} — App Store & Google Play Screenshots`,
   siteDescription: SITE_DESCRIPTION,
   socialImageAlt:
     "Screenshot Bro — native macOS app for designing App Store and Google Play screenshots with device frames, gradients, and localization",

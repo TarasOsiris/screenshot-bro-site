@@ -1,6 +1,6 @@
 export const SITE_NAME = "Screenshot Bro";
 export const SITE_DESCRIPTION =
-  "Design App Store and Google Play screenshots in a native Mac app. Device frames, localization, auto-translate, batch export, and one-click upload direct to App Store Connect — skip the manual drag-and-drop.";
+  "Design App Store and Google Play screenshots on Mac. Add device frames, localize, batch export, and upload direct to App Store Connect.";
 export const SITE_TAGLINE =
   "Design and upload App Store and Google Play screenshots in minutes.";
 export const SITE_URL =
