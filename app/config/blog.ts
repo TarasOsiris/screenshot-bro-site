@@ -12,6 +12,16 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "make-and-ship-screenshots-with-fastlane",
+    title:
+      "Make and Ship App Store Screenshots with Fastlane (Deep Dive, 2026)",
+    description:
+      "An end-to-end technical walkthrough of the fastlane screenshot pipeline — installing fastlane with Bundler, generating screenshots in UI tests with snapshot, framing them with frameit, and uploading them to App Store Connect with deliver. Includes Fastfile, Snapfile, Framefile, Deliverfile examples, App Store Connect API key setup, and a GitHub Actions CI workflow.",
+    date: "2026-04-30",
+    readTime: "15 min read",
+    category: "Guide",
+  },
+  {
     slug: "upload-screenshots-to-app-store-connect",
     title: "How to Upload Screenshots to App Store Connect (2026 Guide)",
     description:
