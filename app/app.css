@@ -390,8 +390,6 @@ button:focus-visible {
   border: 0;
   padding: 0;
   border-radius: 0;
-  font-size: inherit;
-  color: inherit;
 }
 
 /* Syntax highlighting — tuned to match the site palette */
