@@ -298,8 +298,8 @@ export default function BlogPost() {
             <code>SnapshotHelper.swift</code>, a <code>Framefile.json</code> with
             per-screenshot keywords and titles, a <code>Deliverfile</code> tuned
             for screenshot-only uploads, a four-lane <code>Fastfile</code>, and
-            a GitHub Actions workflow that runs the whole thing on{" "}
-            <code>macos-15</code>.
+            a GitHub Actions workflow that runs the whole thing on a{" "}
+            <code>macos-26</code> runner.
           </p>
 
           <h2>1. Prerequisites and Mental Model</h2>
@@ -326,9 +326,10 @@ export default function BlogPost() {
             <li>
               <strong>Upload</strong> — <code>deliver</code> walks the
               screenshots folder, matches each image to an App Store Connect{" "}
-              <em>display family</em> (e.g. iPhone 6.9", iPad 13"), and replaces
-              the screenshot set on the editable App Store version via the App
-              Store Connect API.
+              <em>display family</em> (e.g.{" "}
+              <a href="/blog/app-store-screenshot-sizes">iPhone 6.9", iPad 13"</a>),
+              and replaces the screenshot set on the editable App Store version
+              via the App Store Connect API.
             </li>
           </ol>
           <p>
@@ -877,9 +878,12 @@ bundle exec fastlane deliver`}</code>
               templating engine, not a design tool.
             </li>
             <li>
-              You need to ship a marketing-quality screenshot of a feature that
-              does not yet exist in the app, or that exists only behind a
-              feature flag your test target cannot reach.
+              You need to ship a{" "}
+              <a href="/blog/screenshots-that-convert">
+                marketing-quality screenshot
+              </a>{" "}
+              of a feature that does not yet exist in the app, or that exists
+              only behind a feature flag your test target cannot reach.
             </li>
             <li>
               You are a solo dev who would rather design once in a Mac app and
