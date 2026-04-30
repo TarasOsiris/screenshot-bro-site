@@ -373,7 +373,7 @@ button:focus-visible {
 .prose-policy pre {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(10, 10, 14, 0.72);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 0.5rem;
   padding: 0.875rem 1rem;
@@ -381,7 +381,8 @@ button:focus-visible {
   overflow-x: auto;
   line-height: 1.6;
   white-space: pre;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.86);
+  tab-size: 2;
 }
 
 .prose-policy pre code {
@@ -392,6 +393,40 @@ button:focus-visible {
   font-size: inherit;
   color: inherit;
 }
+
+/* Syntax highlighting — tuned to match the site palette */
+.prose-policy .hljs                 { color: rgba(232, 234, 237, 0.92); }
+.prose-policy .hljs-comment,
+.prose-policy .hljs-quote           { color: rgba(255, 255, 255, 0.32); font-style: italic; }
+.prose-policy .hljs-keyword,
+.prose-policy .hljs-selector-tag,
+.prose-policy .hljs-literal,
+.prose-policy .hljs-section,
+.prose-policy .hljs-link            { color: #c084fc; }            /* purple — keywords */
+.prose-policy .hljs-function .hljs-title,
+.prose-policy .hljs-title.function_,
+.prose-policy .hljs-title           { color: #7dd3fc; }            /* sky — functions */
+.prose-policy .hljs-variable,
+.prose-policy .hljs-template-variable,
+.prose-policy .hljs-attr,
+.prose-policy .hljs-attribute,
+.prose-policy .hljs-name,
+.prose-policy .hljs-tag             { color: #fda4af; }            /* rose — attrs/names */
+.prose-policy .hljs-string,
+.prose-policy .hljs-regexp,
+.prose-policy .hljs-symbol          { color: #86efac; }            /* green — strings */
+.prose-policy .hljs-number,
+.prose-policy .hljs-bullet          { color: #fcd34d; }            /* amber — numbers */
+.prose-policy .hljs-built_in,
+.prose-policy .hljs-builtin-name,
+.prose-policy .hljs-type            { color: #fdba74; }            /* orange — built-ins */
+.prose-policy .hljs-meta,
+.prose-policy .hljs-meta .hljs-keyword,
+.prose-policy .hljs-meta .hljs-string { color: #94a3b8; }          /* slate — meta/preproc */
+.prose-policy .hljs-deletion        { color: #fca5a5; background: rgba(239, 68, 68, 0.12); }
+.prose-policy .hljs-addition        { color: #86efac; background: rgba(34, 197, 94, 0.12); }
+.prose-policy .hljs-emphasis        { font-style: italic; }
+.prose-policy .hljs-strong          { font-weight: 600; }
 
 .prose-policy ol {
   margin-bottom: 1rem;

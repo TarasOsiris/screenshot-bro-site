@@ -2,6 +2,7 @@ import type { Route } from "./+types/blog.make-and-ship-screenshots-with-fastlan
 import { ContentLayout } from "~/components/ContentLayout";
 import { BlogCTA } from "~/components/BlogCTA";
 import { BlogPostHeader } from "~/components/BlogPostHeader";
+import { CodeBlock } from "~/components/CodeBlock";
 import { RelatedPosts } from "~/components/RelatedPosts";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
 
@@ -353,36 +354,39 @@ export default function BlogPost() {
             teammate's laptop, CI — runs the same version. From the project
             root:
           </p>
-          <pre>
-            <code>{`# system Ruby on macOS 14+ is fine, but rbenv/asdf is cleaner
+          <CodeBlock
+            language="bash"
+            code={`# system Ruby on macOS 14+ is fine, but rbenv/asdf is cleaner
 gem install bundler
 bundle init
 echo 'gem "fastlane"' >> Gemfile
 bundle install --path vendor/bundle
 
 # from now on, run fastlane via:
-bundle exec fastlane <lane>`}</code>
-          </pre>
+bundle exec fastlane <lane>`}
+          />
           <p>
             Commit <code>Gemfile</code> and <code>Gemfile.lock</code>. Add{" "}
             <code>vendor/bundle</code> to your <code>.gitignore</code>. Now
             initialize fastlane in the project:
           </p>
-          <pre>
-            <code>{`bundle exec fastlane init
-# choose option 4: "Manual setup"`}</code>
-          </pre>
+          <CodeBlock
+            language="bash"
+            code={`bundle exec fastlane init
+# choose option 4: "Manual setup"`}
+          />
           <p>
             This creates a <code>fastlane/</code> directory with{" "}
             <code>Fastfile</code> and <code>Appfile</code>. Fill in your bundle
             identifier and team ID in <code>Appfile</code>:
           </p>
-          <pre>
-            <code>{`# fastlane/Appfile
+          <CodeBlock
+            language="ruby"
+            code={`# fastlane/Appfile
 app_identifier("com.example.myapp")
 apple_id("you@example.com")     # only needed if you fall back to legacy auth
-team_id("ABCDE12345")           # Developer Portal team ID`}</code>
-          </pre>
+team_id("ABCDE12345")           # Developer Portal team ID`}
+          />
 
           <h2>3. The App Store Connect API Key</h2>
           <p>
@@ -421,9 +425,7 @@ team_id("ABCDE12345")           # Developer Portal team ID`}</code>
             <code>fastlane/asc_api_key.json</code> (and put that path in{" "}
             <code>.gitignore</code>):
           </p>
-          <pre>
-            <code>{ASC_KEY}</code>
-          </pre>
+          <CodeBlock language="json" code={ASC_KEY} />
           <p>
             <code>duration</code> is the lifetime of each generated JWT in
             seconds; the maximum Apple accepts is <code>1200</code> (20
@@ -447,9 +449,7 @@ team_id("ABCDE12345")           # Developer Portal team ID`}</code>
           </p>
 
           <h3>Generate the helper</h3>
-          <pre>
-            <code>{`bundle exec fastlane snapshot init`}</code>
-          </pre>
+          <CodeBlock language="bash" code={`bundle exec fastlane snapshot init`} />
           <p>
             This creates <code>fastlane/Snapfile</code> and{" "}
             <code>fastlane/SnapshotHelper.swift</code>. Add{" "}
@@ -465,9 +465,7 @@ team_id("ABCDE12345")           # Developer Portal team ID`}</code>
             spin up, which locales to run each test in, and which UI test scheme
             to invoke:
           </p>
-          <pre>
-            <code>{SNAPFILE}</code>
-          </pre>
+          <CodeBlock language="ruby" code={SNAPFILE} />
           <p>Highlights:</p>
           <ul>
             <li>
@@ -509,9 +507,7 @@ team_id("ABCDE12345")           # Developer Portal team ID`}</code>
             <code>snapshot(_:)</code> (call wherever you want to record a
             frame).
           </p>
-          <pre>
-            <code>{SNAPSHOT_HELPER_INTEGRATION}</code>
-          </pre>
+          <CodeBlock language="swift" code={SNAPSHOT_HELPER_INTEGRATION} />
           <p>A few practical notes:</p>
           <ul>
             <li>
@@ -537,12 +533,13 @@ team_id("ABCDE12345")           # Developer Portal team ID`}</code>
           </ul>
 
           <h3>Run snapshot</h3>
-          <pre>
-            <code>{`bundle exec fastlane snapshot
+          <CodeBlock
+            language="bash"
+            code={`bundle exec fastlane snapshot
 
 # or, equivalently, in a Fastfile lane:
-#   capture_ios_screenshots`}</code>
-          </pre>
+#   capture_ios_screenshots`}
+          />
           <p>
             Output lands in{" "}
             <code>fastlane/screenshots/&lt;locale&gt;/iPhone 17 Pro Max-01-Home.png</code>{" "}
@@ -557,13 +554,14 @@ team_id("ABCDE12345")           # Developer Portal team ID`}</code>
             wraps them in physical device frames, optionally adds a background,
             a marketing title, and a smaller "keyword" line above it.
           </p>
-          <pre>
-            <code>{`# Download device frames once (cached under ~/.frameit/)
+          <CodeBlock
+            language="bash"
+            code={`# Download device frames once (cached under ~/.frameit/)
 bundle exec fastlane frameit download_frames
 
 # Frame everything in fastlane/screenshots, including subfolders
-bundle exec fastlane frameit --use_platform IOS`}</code>
-          </pre>
+bundle exec fastlane frameit --use_platform IOS`}
+          />
           <p>
             For each <code>foo.png</code> in the screenshots tree,{" "}
             <code>frameit</code> writes <code>foo_framed.png</code> next to it.
@@ -578,9 +576,7 @@ bundle exec fastlane frameit --use_platform IOS`}</code>
             text. Configure them with{" "}
             <code>fastlane/screenshots/Framefile.json</code>:
           </p>
-          <pre>
-            <code>{FRAMEFILE}</code>
-          </pre>
+          <CodeBlock language="json" code={FRAMEFILE} />
           <p>Key fields:</p>
           <ul>
             <li>
@@ -615,12 +611,8 @@ bundle exec fastlane frameit --use_platform IOS`}</code>
             <code>keyword.strings</code> for the smaller label above it. Keys
             are the screenshot filenames without extension or device prefix:
           </p>
-          <pre>
-            <code>{TITLE_STRINGS}</code>
-          </pre>
-          <pre>
-            <code>{KEYWORD_STRINGS}</code>
-          </pre>
+          <CodeBlock language="plaintext" code={TITLE_STRINGS} />
+          <CodeBlock language="plaintext" code={KEYWORD_STRINGS} />
           <p>
             Translations go in{" "}
             <code>fastlane/screenshots/de-DE/title.strings</code> and{" "}
@@ -657,22 +649,22 @@ bundle exec fastlane frameit --use_platform IOS`}</code>
             (and, when ambiguous, from the device prefix in the filename that{" "}
             <code>snapshot</code> already adds):
           </p>
-          <pre>
-            <code>{`fastlane/screenshots/
+          <CodeBlock
+            language="plaintext"
+            code={`fastlane/screenshots/
 ├── en-US/
 │   ├── iPhone 17 Pro Max-01-Home_framed.png       # 6.9" iPhone
 │   ├── iPhone 17 Pro Max-02-Library_framed.png
 │   ├── iPad Pro 13-inch (M4)-01-Home_framed.png   # 13" iPad
-│   └── title.strings
+│   ├── title.strings
+│   └── keyword.strings
 ├── de-DE/
 │   └── ...
-└── Framefile.json`}</code>
-          </pre>
+└── Framefile.json`}
+          />
 
           <h3>Deliverfile</h3>
-          <pre>
-            <code>{DELIVERFILE}</code>
-          </pre>
+          <CodeBlock language="ruby" code={DELIVERFILE} />
           <p>The flags that matter most:</p>
           <ul>
             <li>
@@ -707,16 +699,17 @@ bundle exec fastlane frameit --use_platform IOS`}</code>
           </ul>
 
           <h3>Dry-run, then ship</h3>
-          <pre>
-            <code>{`# verify which display families and locales will be touched, no upload
+          <CodeBlock
+            language="bash"
+            code={`# verify which display families and locales will be touched, no upload
 bundle exec fastlane deliver --verify_only
 
 # inspect the resolved configuration
 bundle exec fastlane deliver --print_resolved_options
 
 # real upload
-bundle exec fastlane deliver`}</code>
-          </pre>
+bundle exec fastlane deliver`}
+          />
           <p>
             On the first real upload, <code>deliver</code> prints an HTML
             preview at <code>fastlane/preview.html</code> and waits for
@@ -730,9 +723,7 @@ bundle exec fastlane deliver`}</code>
             One file with four lanes covering capture, frame, capture+frame, and
             full ship. Local development uses one lane; CI uses another.
           </p>
-          <pre>
-            <code>{FASTFILE}</code>
-          </pre>
+          <CodeBlock language="ruby" code={FASTFILE} />
           <p>
             <code>capture_ios_screenshots</code>, <code>frame_screenshots</code>,
             and <code>upload_to_app_store</code> are the canonical names of{" "}
@@ -745,12 +736,10 @@ bundle exec fastlane deliver`}</code>
           <p>
             Screenshots are slow (15 minutes is typical for 5 locales × 3
             devices) but they parallelize well across simulators. A single{" "}
-            <code>macos-15</code> runner with concurrent simulators is usually
+            <code>macos-26</code> runner with concurrent simulators is usually
             enough.
           </p>
-          <pre>
-            <code>{GHA_WORKFLOW}</code>
-          </pre>
+          <CodeBlock language="yaml" code={GHA_WORKFLOW} />
           <p>Things that make CI runs reliable:</p>
           <ul>
             <li>
@@ -903,16 +892,17 @@ bundle exec fastlane deliver`}</code>
           </p>
 
           <h2>TL;DR Cheat Sheet</h2>
-          <pre>
-            <code>{`# Setup (once)
+          <CodeBlock
+            language="bash"
+            code={`# Setup (once)
 bundle init && echo 'gem "fastlane"' >> Gemfile && bundle install
 bundle exec fastlane init
 bundle exec fastlane snapshot init
 bundle exec fastlane frameit download_frames
 
 # Per release
-bundle exec fastlane ship_screenshots`}</code>
-          </pre>
+bundle exec fastlane ship_screenshots`}
+          />
           <p>
             That is the full pipeline. Two commands at install time, one
             command per release. The complexity hides in the configuration
