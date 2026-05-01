@@ -53,6 +53,7 @@ import { ShowcasesSection } from "~/components/home/ShowcasesSection";
 import { WorkflowSection } from "~/components/home/WorkflowSection";
 import { FeaturesSection } from "~/components/home/FeaturesSection";
 import { ScreenshotsSection } from "~/components/home/ScreenshotsSection";
+import { InstagramReelSection } from "~/components/home/InstagramReelSection";
 import { TestimonialsSection } from "~/components/home/TestimonialsSection";
 import { ProblemSection } from "~/components/home/ProblemSection";
 import { FaqSection } from "~/components/home/FaqSection";
@@ -91,6 +92,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
       <main id="main-content">
         <HeroSection copy={copy} />
+        <InstagramReelSection copy={copy} />
         <ShowcasesSection copy={copy} />
         <ProblemSection copy={copy} />
         <WorkflowSection copy={copy} />

@@ -85,6 +85,7 @@ export type HomeCopy = {
     browseGuides: string;
     submitApp: string;
     contactDeveloper: string;
+    watchOnInstagram: string;
     backToTop: string;
     appScreenshots: string;
     previousScreenshot: string;
@@ -109,6 +110,7 @@ export type HomeCopy = {
     workflow: SectionCopy;
     features: SectionCopy;
     screenshots: SectionCopy;
+    reel: SectionCopy;
     testimonials: SectionCopy;
     blog: SectionCopy;
     faq: SectionCopy;
@@ -195,6 +197,7 @@ const EN_HOME_COPY: HomeCopy = {
     browseGuides: "Browse all guides",
     submitApp: "Submit your app",
     contactDeveloper: "Contact the developer",
+    watchOnInstagram: "Watch on Instagram",
     backToTop: "Back to top",
     appScreenshots: "App screenshots",
     previousScreenshot: "Previous screenshot",
@@ -248,6 +251,12 @@ const EN_HOME_COPY: HomeCopy = {
       title: "See it in action.",
       description:
         "Mac App Store screenshots of Screenshot Bro itself - the same editor you use for App Store and Google Play screenshot sets.",
+    },
+    reel: {
+      eyebrow: "On Instagram",
+      title: "A 60-second tour of the app.",
+      description:
+        "Watch device frames, layers, localized exports, and one-click App Store Connect upload come together inside Screenshot Bro.",
     },
     testimonials: {
       eyebrow: "Developers",
