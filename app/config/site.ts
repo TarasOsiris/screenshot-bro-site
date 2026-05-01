@@ -49,6 +49,35 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "FAQ", href: "#faq" },
 ];
 
+export type SecondaryLinkKey =
+  | "blog"
+  | "changelog"
+  | "docs"
+  | "community"
+  | "contact"
+  | "privacy";
+
+export type SecondaryLink = {
+  uiKey: SecondaryLinkKey;
+  href: string;
+  external?: boolean;
+};
+
+export const PRODUCT_LINKS: SecondaryLink[] = [
+  { uiKey: "blog", href: "/blog" },
+  { uiKey: "changelog", href: "/changelog" },
+  { uiKey: "docs", href: "/docs/project-schema" },
+];
+
+export const COMMUNITY_LINKS: SecondaryLink[] = [
+  { uiKey: "community", href: REDDIT_COMMUNITY_URL, external: true },
+  { uiKey: "contact", href: CONTACT_MAILTO },
+];
+
+export const LEGAL_LINKS: SecondaryLink[] = [
+  { uiKey: "privacy", href: "/privacy" },
+];
+
 export const BETA_BENEFITS = [
   "Available now on the Mac App Store",
   "Full workflow: import, design, auto-translate, localize, export",

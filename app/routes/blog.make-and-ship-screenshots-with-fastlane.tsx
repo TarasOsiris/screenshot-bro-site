@@ -351,12 +351,7 @@ bundle exec fastlane ship_screenshots`;
 export default function BlogPost({ loaderData }: Route.ComponentProps) {
   const { blocks } = loaderData;
   return (
-    <ContentLayout
-      footerLinks={[
-        { label: "\u2190 All posts", href: "/blog" },
-        { label: "Screenshot Bro", href: "/" },
-      ]}
-    >
+    <ContentLayout>
       <div className="max-w-3xl mx-auto">
         <article className="prose-policy">
           <BlogPostHeader slug={SLUG} />

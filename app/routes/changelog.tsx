@@ -129,12 +129,7 @@ const TYPE_STYLES = {
 
 export default function Changelog() {
   return (
-    <ContentLayout
-      footerLinks={[
-        { label: "\u2190 Back to Screenshot Bro", href: "/" },
-        { label: "Privacy", href: "/privacy" },
-      ]}
-    >
+    <ContentLayout>
       <div className="max-w-3xl mx-auto">
         <div className="mb-16">
           <p className="text-xs uppercase tracking-[0.25em] text-accent-light font-mono mb-3">

@@ -86,6 +86,8 @@ export type HomeCopy = {
     submitApp: string;
     contactDeveloper: string;
     watchOnInstagram: string;
+    productLabel: string;
+    resourcesLabel: string;
     backToTop: string;
     appScreenshots: string;
     previousScreenshot: string;
@@ -198,6 +200,8 @@ const EN_HOME_COPY: HomeCopy = {
     submitApp: "Submit your app",
     contactDeveloper: "Contact the developer",
     watchOnInstagram: "Watch on Instagram",
+    productLabel: "Product",
+    resourcesLabel: "Resources",
     backToTop: "Back to top",
     appScreenshots: "App screenshots",
     previousScreenshot: "Previous screenshot",

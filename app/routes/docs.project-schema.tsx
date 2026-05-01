@@ -26,12 +26,7 @@ export const links: Route.LinksFunction = () => [
 
 export default function ProjectSchema() {
   return (
-    <ContentLayout
-      footerLinks={[
-        { label: "← Home", href: "/" },
-        { label: "Screenshot Bro", href: "/" },
-      ]}
-    >
+    <ContentLayout>
       <div className="max-w-3xl mx-auto">
         <article className="prose-policy">
           <h1>Project File Schema</h1>

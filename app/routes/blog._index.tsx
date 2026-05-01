@@ -75,12 +75,7 @@ const BLOG_JSON_LD = JSON.stringify({
 
 export default function BlogIndex() {
   return (
-    <ContentLayout
-      footerLinks={[
-        { label: "\u2190 Back to Screenshot Bro", href: "/" },
-        { label: "Changelog", href: "/changelog" },
-      ]}
-    >
+    <ContentLayout>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: BLOG_JSON_LD }}

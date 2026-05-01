@@ -1,5 +1,6 @@
 import type { Route } from "./+types/privacy";
-import { CONTACT_MAILTO, SITE_NAME, SITE_URL } from "~/config/site";
+import { SITE_NAME, SITE_URL } from "~/config/site";
+import { ContentLayout } from "~/components/ContentLayout";
 import { mergeMeta } from "~/config/meta";
 
 const PRIVACY_TITLE = `Privacy Policy — ${SITE_NAME}`;
@@ -27,23 +28,8 @@ const DEVELOPER_EMAIL = "tleskiv@ninevastudios.com";
 
 export default function Privacy() {
   return (
-    <div className="min-h-screen">
-      <nav className="fixed top-0 inset-x-0 z-40 border-b border-border-subtle bg-surface/78 backdrop-blur-2xl">
-        <div className="max-w-3xl mx-auto px-6 h-16 flex items-center">
-          <a href="/" className="flex items-center shrink-0">
-            <img
-              src="/logo-light.svg"
-              alt={SITE_NAME}
-              width="150"
-              height="24"
-              className="h-6 w-auto"
-            />
-          </a>
-        </div>
-      </nav>
-
-      <main className="pt-32 pb-20 px-6">
-        <article className="max-w-3xl mx-auto prose-policy">
+    <ContentLayout>
+      <article className="max-w-3xl mx-auto prose-policy">
           <h1>Privacy Policy</h1>
           <p className="meta">
             Effective date: {EFFECTIVE_DATE}
@@ -264,19 +250,7 @@ export default function Privacy() {
             <br />
             <a href={`mailto:${DEVELOPER_EMAIL}`}>{DEVELOPER_EMAIL}</a>
           </p>
-        </article>
-      </main>
-
-      <footer className="border-t border-border-subtle py-10 px-6">
-        <div className="max-w-3xl mx-auto flex items-center justify-between">
-          <a href="/" className="text-sm text-white/55 hover:text-white/90 transition-colors">
-            &larr; Back to {SITE_NAME}
-          </a>
-          <span className="text-sm text-white/60">
-            {DEVELOPER_NAME}
-          </span>
-        </div>
-      </footer>
-    </div>
+      </article>
+    </ContentLayout>
   );
 }

@@ -13,12 +13,7 @@ export const links: Route.LinksFunction = () => buildBlogPostLinks(SLUG);
 
 export default function BlogPost() {
   return (
-    <ContentLayout
-      footerLinks={[
-        { label: "\u2190 All posts", href: "/blog" },
-        { label: "Screenshot Bro", href: "/" },
-      ]}
-    >
+    <ContentLayout>
       <div className="max-w-3xl mx-auto">
         <article className="prose-policy">
           <BlogPostHeader slug={SLUG} />
