@@ -122,7 +122,7 @@ export default function Privacy() {
             </li>
           </ul>
 
-          <h2>4. In-App Purchases (RevenueCat)</h2>
+          <h2>4. In-App Purchases &amp; Subscriptions (RevenueCat)</h2>
           <p>
             {SITE_NAME} uses{" "}
             <a
@@ -132,20 +132,29 @@ export default function Privacy() {
             >
               RevenueCat
             </a>{" "}
-            to manage in-app purchase validation for the Pro upgrade. When you
-            make a purchase or restore a previous purchase:
+            to manage in-app purchase validation for the Pro entitlement,
+            which can be unlocked via a one-time lifetime purchase or an
+            auto-renewing subscription. When you start, renew, or restore a
+            purchase:
           </p>
           <ul>
             <li>
-              RevenueCat receives a transaction receipt from Apple's App Store to
-              verify your entitlement. This is standard for all App Store
-              purchases.
+              RevenueCat receives the transaction receipt from Apple's App
+              Store to verify your entitlement. This is standard for all App
+              Store purchases, including auto-renewing subscriptions.
             </li>
             <li>
               RevenueCat may process an anonymous app-specific identifier and
-              purchase details (product ID, transaction date, entitlement
-              status). No personal information such as your name or email is
-              shared.
+              purchase details (product ID, transaction and renewal dates,
+              entitlement status, and subscription state such as expiration
+              and renewal). No personal information such as your name or
+              email is shared.
+            </li>
+            <li>
+              For subscriptions, RevenueCat is also notified by Apple when a
+              renewal succeeds, fails, is paused, or is cancelled, so the App
+              can keep your entitlement state accurate. We do not see your
+              billing details — Apple handles all payment processing.
             </li>
             <li>
               RevenueCat's handling of data is governed by their{" "}
@@ -160,8 +169,10 @@ export default function Privacy() {
             </li>
           </ul>
           <p>
-            If you do not make a purchase, no data is sent to RevenueCat beyond
-            an initial anonymous entitlement check.
+            If you do not make a purchase, no data is sent to RevenueCat
+            beyond an initial anonymous entitlement check. Subscription terms,
+            including auto-renewal and cancellation, are described in our{" "}
+            <a href={`${SITE_URL}/terms`}>Terms of Use</a>.
           </p>
 
           <h2>5. Third-Party Services Summary</h2>

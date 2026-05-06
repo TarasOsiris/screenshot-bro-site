@@ -72,6 +72,7 @@ export type HomeCopy = {
     changelog: string;
     community: string;
     privacy: string;
+    terms: string;
     contact: string;
     redditCommunity: string;
     followOnX: string;
@@ -186,6 +187,7 @@ const EN_HOME_COPY: HomeCopy = {
     changelog: "Changelog",
     community: "Community",
     privacy: "Privacy",
+    terms: "Terms",
     contact: "Contact",
     redditCommunity: "Reddit community",
     followOnX: "Follow on X",
@@ -364,6 +366,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       changelog: "Novedades",
       community: "Comunidad",
       privacy: "Privacidad",
+      terms: "Términos",
       contact: "Contacto",
       followJourney: "Sigue mi progreso",
       language: "Idioma",
@@ -513,6 +516,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       changelog: "更新日志",
       community: "社区",
       privacy: "隐私",
+      terms: "条款",
       contact: "联系",
       followJourney: "关注我的进展",
       language: "语言",
@@ -655,6 +659,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       changelog: "बदलाव",
       community: "समुदाय",
       privacy: "प्राइवेसी",
+      terms: "शर्तें",
       contact: "संपर्क",
       followJourney: "मेरी यात्रा देखें",
       language: "भाषा",
@@ -799,6 +804,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       changelog: "Nouveautés",
       community: "Communauté",
       privacy: "Confidentialité",
+      terms: "Conditions",
       contact: "Contact",
       followJourney: "Suivre mon parcours",
       language: "Langue",
@@ -948,6 +954,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       changelog: "سجل التغييرات",
       community: "المجتمع",
       privacy: "الخصوصية",
+      terms: "الشروط",
       contact: "تواصل",
       followJourney: "تابع رحلتي",
       language: "اللغة",

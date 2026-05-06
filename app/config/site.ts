@@ -55,7 +55,8 @@ export type SecondaryLinkKey =
   | "docs"
   | "community"
   | "contact"
-  | "privacy";
+  | "privacy"
+  | "terms";
 
 export type SecondaryLink = {
   uiKey: SecondaryLinkKey;
@@ -76,6 +77,7 @@ export const COMMUNITY_LINKS: SecondaryLink[] = [
 
 export const LEGAL_LINKS: SecondaryLink[] = [
   { uiKey: "privacy", href: "/privacy" },
+  { uiKey: "terms", href: "/terms" },
 ];
 
 export const BETA_BENEFITS = [
