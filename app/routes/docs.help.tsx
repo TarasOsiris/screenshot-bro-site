@@ -49,6 +49,14 @@ type Block =
       rows: { keys: string; description: string }[];
     };
 
+type SectionImage = {
+  src?: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
+};
+
 type SectionId =
   | "welcome"
   | "projects"
@@ -74,6 +82,7 @@ type Section = {
   navTitle: string;
   title: string;
   subtitle?: string;
+  image?: SectionImage;
   blocks: Block[];
 };
 
@@ -83,6 +92,13 @@ const SECTIONS: Section[] = [
     navTitle: "Welcome",
     title: "Welcome to Screenshot Bro",
     subtitle: "Beautiful App Store and Google Play screenshots, made on your Mac.",
+    image: {
+      src: "/docs/help/editor-overview.webp",
+      alt: "Screenshot Bro editor with two rows of templates and the right-side inspector",
+      width: 1600,
+      height: 1004,
+      caption: "The Screenshot Bro editor — rows of templates with a shared row canvas, plus the inspector on the right.",
+    },
     blocks: [
       { kind: "p", text: "Screenshot Bro turns raw device screenshots into polished, store-ready marketing images. Drop in a screenshot, pick a device frame, add a headline, and export at exactly the resolution the App Store and Google Play expect." },
       { kind: "h", text: "Three things to know first" },
@@ -103,6 +119,12 @@ const SECTIONS: Section[] = [
     navTitle: "Projects",
     title: "Projects",
     subtitle: "One project per app — or per major release.",
+    image: {
+      alt: "New Project window with name field, Blank/Template choice, and configurable rows",
+      width: 1600,
+      height: 1033,
+      caption: "**File ▸ New Project** — set a name, choose Blank or Template, and pre-configure rows with their device categories.",
+    },
     blocks: [
       { kind: "p", text: "A project is a self-contained collection of rows, templates, shapes, locales, and image resources. Projects are stored on disk under your user Application Support folder and can be optionally synced via iCloud Drive." },
       { kind: "h", text: "Creating a project" },
@@ -129,6 +151,12 @@ const SECTIONS: Section[] = [
     navTitle: "Rows",
     title: "Rows",
     subtitle: "One row per device type.",
+    image: {
+      alt: "Two rows of templates in the editor, each with its own screenshot size",
+      width: 1600,
+      height: 1284,
+      caption: "Each row groups templates of one device size — the App Store requires separate uploads per size.",
+    },
     blocks: [
       { kind: "p", text: "Rows are horizontal groups of screenshots inside a project. Each row has its own screenshot size (in pixels), device category, and a row-level background. The App Store requires separate uploads per device size — that's why rows exist." },
       { kind: "h", text: "Adding rows" },
@@ -152,6 +180,12 @@ const SECTIONS: Section[] = [
     navTitle: "Templates",
     title: "Templates",
     subtitle: "The individual screenshots inside a row.",
+    image: {
+      alt: "A row with three templates side by side, each rendering a different design",
+      width: 1600,
+      height: 453,
+      caption: "A row of three templates. Each is one final exported image at the row's pixel size.",
+    },
     blocks: [
       { kind: "p", text: "Each column inside a row is a template. A template is one final exported image — its dimensions match the row's screenshot size. The App Store accepts up to 10 templates per row; Google Play up to 8." },
       { kind: "h", text: "Adding templates" },
@@ -174,6 +208,12 @@ const SECTIONS: Section[] = [
     navTitle: "Shapes & Text",
     title: "Shapes & Text",
     subtitle: "Build the layout with rectangles, circles, stars, text, images, devices, and SVGs.",
+    image: {
+      alt: "Inspector Shapes section with Shapes, Text, Image, Device, and SVG buttons",
+      width: 510,
+      height: 380,
+      caption: "The **Shapes** section in the inspector — every shape type one click away.",
+    },
     blocks: [
       { kind: "h", text: "Adding shapes" },
       { kind: "li", text: "Use the **Shapes** dropdown in the inspector to add a Rectangle, Circle, or Star." },
@@ -207,6 +247,12 @@ const SECTIONS: Section[] = [
     navTitle: "Devices & Frames",
     title: "Devices & Frames",
     subtitle: "Real device frames with accurate screen insets.",
+    image: {
+      alt: "Inspector Device section showing the default device frame picker",
+      width: 510,
+      height: 230,
+      caption: "The **Device** section in the inspector — pick a category and model with accurate screen insets.",
+    },
     blocks: [
       { kind: "p", text: "Device frames wrap your screenshot in an authentic phone or tablet bezel. Screenshot Bro ships pixel-accurate frames for the latest iPhones, iPads, MacBooks, and a generic Android catalog." },
       { kind: "h", text: "Categories" },
@@ -234,6 +280,12 @@ const SECTIONS: Section[] = [
     navTitle: "Backgrounds",
     title: "Backgrounds",
     subtitle: "Color, gradient, or image — at row or template level.",
+    image: {
+      alt: "Background editor with Color, Gradient, and Image style tabs",
+      width: 510,
+      height: 260,
+      caption: "The **Background** editor — three styles, switchable per row or per template.",
+    },
     blocks: [
       { kind: "h", text: "Three styles" },
       { kind: "li", text: "**Color** — a solid fill picked from the inline color picker." },
@@ -261,6 +313,12 @@ const SECTIONS: Section[] = [
     navTitle: "Editing on the Canvas",
     title: "Editing on the Canvas",
     subtitle: "Drag, resize, rotate, snap.",
+    image: {
+      alt: "Canvas zoomed in on a template with shapes, headlines, and a device frame",
+      width: 1050,
+      height: 640,
+      caption: "The row canvas — drag, resize, rotate, snap. Shapes can span across templates.",
+    },
     blocks: [
       { kind: "h", text: "Selection" },
       { kind: "li", text: "Click a shape to select it. **Shift-click** to add to or remove from the selection." },
@@ -291,6 +349,12 @@ const SECTIONS: Section[] = [
     navTitle: "Locales & Translations",
     title: "Locales & Translations",
     subtitle: "Translate text once, lay it out once, ship every language.",
+    image: {
+      alt: "Locale menu open in the menu bar showing 30 language presets",
+      width: 1100,
+      height: 1300,
+      caption: "The **Locale** menu — pick from 30 built-in language presets, or define a custom code.",
+    },
     blocks: [
       { kind: "p", text: "Locales let you generate localized screenshot sets without duplicating your project. Each locale shares the same layout and shapes; only text properties (content, font, size, alignment) are overridden per locale." },
       { kind: "h", text: "Adding locales" },
@@ -319,6 +383,12 @@ const SECTIONS: Section[] = [
     navTitle: "Importing",
     title: "Importing",
     subtitle: "Drop screenshots, images, fonts, and SVGs.",
+    image: {
+      alt: "Editor templates and the row dropzone at the bottom — drop targets for screenshots and images",
+      width: 1600,
+      height: 486,
+      caption: "Drop screenshots onto templates, or onto the row dropzone — Screenshot Bro routes them by pixel size.",
+    },
     blocks: [
       { kind: "h", text: "Screenshots" },
       { kind: "li", text: "Drag and drop a PNG / JPEG onto a template to attach it as a device screenshot. A device shape is auto-created if needed." },
@@ -343,6 +413,12 @@ const SECTIONS: Section[] = [
     navTitle: "Exporting",
     title: "Exporting",
     subtitle: "Produce store-ready PNGs and JPEGs.",
+    image: {
+      alt: "Export progress dialog overlaid on the editor showing batch render progress",
+      width: 1600,
+      height: 452,
+      caption: "Export renders every locale × row × template at the configured scale, with a progress overlay.",
+    },
     blocks: [
       { kind: "h", text: "Quick export" },
       { kind: "li", text: "Click **Export** in the toolbar to render the current project to PNG." },
@@ -779,11 +855,31 @@ function renderBlocks(blocks: Block[]): React.ReactNode[] {
 }
 
 function SectionView({ section }: { section: Section }) {
+  const image = section.image;
+  const imageSrc = image && (image.src ?? `/docs/help/${section.id}.webp`);
   return (
     <section>
       <h2 id={section.id}>{section.title}</h2>
       {section.subtitle && (
         <p className="-mt-2 mb-4 text-white/55 italic">{section.subtitle}</p>
+      )}
+      {image && imageSrc && (
+        <figure className="not-prose my-6">
+          <img
+            src={imageSrc}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-auto rounded-lg border border-border-subtle bg-surface-raised"
+          />
+          {image.caption && (
+            <figcaption className="mt-2 text-center text-xs text-white/55 italic">
+              <MD text={image.caption} />
+            </figcaption>
+          )}
+        </figure>
       )}
       {renderBlocks(section.blocks)}
     </section>
