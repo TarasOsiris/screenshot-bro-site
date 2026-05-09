@@ -93,44 +93,44 @@ export type FaqItem = {
 
 export const FAQS: FaqItem[] = [
   {
-    question: "Is Screenshot Bro only for macOS?",
+    question: "Is Screenshot Bro free?",
     answer:
-      "Yes. Screenshot Bro is a native macOS app built with Swift and SwiftUI, so it is designed for Mac-based App Store workflows.",
+      "Yes. The free tier is unlimited in time and lets you keep 1 project with up to 3 rows and 5 templates per row — full access to every device frame, shape, and locale, watermark-free exports included. Pro lifts those limits and unlocks App Store Connect upload and iCloud sync.",
   },
   {
-    question: "How do I get Screenshot Bro?",
+    question: "What do I need to run it?",
     answer:
-      "Download it from the Mac App Store. Install the app, launch it on your Mac, and you can start building screenshot sets right away.",
+      "macOS 15 (Sequoia) or later, on Apple Silicon or Intel. No companion iPhone, no account, no internet connection required for everyday editing.",
   },
   {
-    question: "Can I localize screenshots for multiple languages?",
+    question: "Does my data leave my Mac?",
     answer:
-      "Yes. Choose from 30 language presets, auto-translate missing copy, and add per-shape text, position, and image overrides. Exports are grouped automatically by language and screenshot row.",
+      "By default, no. Projects, screenshots, and fonts stay on disk. Auto-translation runs through Apple's on-device Translation framework — no API keys, no third-party servers, no analytics. Optional iCloud Drive sync uses your personal iCloud account; we don't operate any intermediate servers.",
+  },
+  {
+    question: "How does localization work?",
+    answer:
+      "Pick from 30 language presets, or define your own code. Auto-translate fills in missing copy on-device. Translations save as per-locale text overrides, so layout, color, and images stay shared across every locale — design once, ship in every language. Exports are organized into locale folders App Store Connect can pick up directly.",
   },
   {
     question: "Can I make Google Play screenshots too?",
     answer:
-      "Yes. Screenshot Bro supports Android phone and tablet layouts alongside iPhone, iPad, MacBook, and iMac screenshot sets, so the same project can cover App Store and Google Play assets.",
+      "Yes. Android phone and tablet rows render alongside iPhone, iPad, and Mac in the same project. Each device category comes pre-set to the pixel dimensions the relevant store accepts.",
   },
   {
-    question: "What can I export?",
+    question: "Can I drop simulator and device screenshots straight in?",
     answer:
-      "Screenshot Bro exports PNG or JPEG assets at 1x, 2x, or 3x and organizes the output into predictable folders so App Store upload is less manual.",
+      "Yes. Drop a folder of screenshots and Screenshot Bro routes each one to the right row by its pixel size — iPhone shots to the iPhone row, iPad to iPad, Android to Android. A one-click capture button on each template also pulls the most recent simulator screenshot directly into the canvas.",
   },
   {
-    question: "Can I upload screenshots directly to App Store Connect?",
+    question: "Can I upload to App Store Connect from inside the app?",
     answer:
-      "Yes. Connect your App Store Connect API key once (Issuer ID, Key ID, and .p8) and Screenshot Bro uploads rendered screenshots straight to your chosen app and version. It auto-detects the correct display type for each row, matches your project locales to App Store Connect localizations, and replaces existing screenshots in a single pass — no manual drag-and-drop into the browser.",
+      "Yes. Configure your App Store Connect API key once (Issuer ID, Key ID, and .p8). Screenshot Bro auto-detects the right display type for each row, matches your project locales to App Store Connect localizations, and replaces existing screenshots in a single pass — no drag-and-drop in the browser.",
   },
   {
     question: "Does it sync between Macs?",
     answer:
-      "Yes. Screenshot Bro supports opt-in iCloud Drive sync. Projects stay available across all your Macs with automatic conflict resolution.",
-  },
-  {
-    question: "Can I use custom fonts?",
-    answer:
-      "Yes. Import any .ttf, .otf, or .ttc font file and use it in text shapes. Fonts are registered for the app session so they work in both the editor and exports.",
+      "Yes — opt-in iCloud Drive sync keeps projects, screenshots, and fonts available on every Mac signed into your Apple ID. Conflicts merge field-by-field with last-writer-wins, so editing the same project on two Macs converges cleanly.",
   },
 ];
 

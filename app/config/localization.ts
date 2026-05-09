@@ -336,29 +336,29 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ],
     faqs: [
       {
-        question: "¿Screenshot Bro es solo para macOS?",
+        question: "¿Screenshot Bro es gratis?",
         answer:
-          "Sí. Screenshot Bro es una app nativa para macOS creada con Swift y SwiftUI, pensada para flujos de trabajo de App Store en Mac.",
+          "Sí. El nivel gratuito no caduca: 1 proyecto con hasta 3 filas y 5 plantillas por fila, con acceso completo a todos los marcos, formas y locales y exportaciones sin marca de agua. Pro elimina esos límites y habilita la subida a App Store Connect y la sincronización por iCloud.",
       },
       {
-        question: "¿Cómo consigo Screenshot Bro?",
+        question: "¿Qué necesito para usarlo?",
         answer:
-          "Descárgalo desde la Mac App Store, instálalo en tu Mac y empieza a crear conjuntos de capturas de inmediato.",
+          "macOS 15 (Sequoia) o posterior, en Apple Silicon o Intel. No hace falta iPhone acompañante, cuenta ni conexión a internet para editar.",
       },
       {
-        question: "¿Puedo localizar capturas en varios idiomas?",
+        question: "¿Mis datos salen de mi Mac?",
         answer:
-          "Sí. Añade idiomas, traduce automáticamente el texto que falte y ajusta texto, posición e imágenes por locale.",
+          "Por defecto, no. Los proyectos, capturas y tipografías se guardan localmente. La traducción automática usa el framework Translation de Apple en el dispositivo: sin claves API, sin servidores externos, sin analítica. La sincronización iCloud Drive es opcional y va por tu cuenta personal de iCloud.",
       },
       {
-        question: "¿También sirve para Google Play?",
+        question: "¿Cómo funciona la localización?",
         answer:
-          "Sí. Screenshot Bro admite layouts de Android phone y tablet junto con iPhone, iPad, MacBook e iMac.",
+          "Elige entre 30 idiomas predefinidos o añade el tuyo. La traducción automática rellena el texto que falte en el dispositivo. Las traducciones se guardan como sobreescrituras por locale, así diseñas una vez y se aplica a todos los idiomas. La exportación organiza las carpetas por locale para subir directo a App Store Connect.",
       },
       {
         question: "¿Puedo subir directo a App Store Connect?",
         answer:
-          "Sí. Conecta tu clave API de App Store Connect una vez y sube las capturas renderizadas al app, versión, display type y locale correctos.",
+          "Sí. Conecta tu clave API de App Store Connect una vez (Issuer ID, Key ID y archivo .p8) y Screenshot Bro detecta el display type correcto, casa los locales con las localizaciones de App Store Connect y reemplaza las capturas en una sola pasada — sin arrastrar archivos en el navegador.",
       },
     ],
     ui: {
@@ -479,29 +479,29 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ],
     faqs: [
       {
-        question: "Screenshot Bro 只支持 macOS 吗？",
+        question: "Screenshot Bro 是免费的吗？",
         answer:
-          "是的。Screenshot Bro 是使用 Swift 和 SwiftUI 构建的原生 macOS 应用，专为 Mac 上的 App Store 工作流设计。",
+          "是的。免费版没有时间限制：1 个项目，最多 3 行、每行 5 个模板，可使用全部设备外框、形状和语言，导出无水印。Pro 版解除这些限制，并启用 App Store Connect 上传与 iCloud 同步。",
       },
       {
-        question: "如何获取 Screenshot Bro？",
+        question: "运行需要什么？",
         answer:
-          "从 Mac App Store 下载并安装，然后就可以开始创建截图集。",
+          "macOS 15（Sequoia）或更新版本，支持 Apple Silicon 与 Intel。无需配套 iPhone、账号或网络连接即可日常编辑。",
       },
       {
-        question: "可以为多种语言本地化截图吗？",
+        question: "我的数据会离开 Mac 吗？",
         answer:
-          "可以。你可以添加语言，自动翻译缺失文案，并为每个语言调整文本、位置和图片。",
+          "默认不会。项目、截图和字体都保存在本地。自动翻译通过苹果的 Translation 框架在设备本地运行——无 API key、无第三方服务器、无统计追踪。可选的 iCloud Drive 同步使用你自己的 iCloud 账号，我们没有任何中间服务器。",
       },
       {
-        question: "也能制作 Google Play 截图吗？",
+        question: "本地化是怎么运作的？",
         answer:
-          "可以。Screenshot Bro 支持 Android 手机和平板布局，也支持 iPhone、iPad、MacBook 和 iMac。",
+          "可从 30 种语言预设中选择，也可以添加自定义语言代码。自动翻译在本地补齐缺失文案。翻译保存为按语言的文本覆盖，所以布局、颜色、图片在所有语言中共用——设计一次，多语言交付。导出按语言分文件夹，可直接上传到 App Store Connect。",
       },
       {
         question: "可以直接上传到 App Store Connect 吗？",
         answer:
-          "可以。连接一次 App Store Connect API Key 后，就能把渲染后的截图上传到正确的 app、版本、显示类型和语言。",
+          "可以。一次配置 App Store Connect API Key（Issuer ID、Key ID 和 .p8 文件）。Screenshot Bro 会自动识别每行的显示类型，把项目语言匹配到 App Store Connect 的本地化，并一次性替换所有截图——无需在浏览器里拖拽。",
       },
     ],
     navItems: [
@@ -622,29 +622,29 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ],
     faqs: [
       {
-        question: "क्या Screenshot Bro सिर्फ macOS के लिए है?",
+        question: "क्या Screenshot Bro फ्री है?",
         answer:
-          "हां। Screenshot Bro Swift और SwiftUI से बना native macOS app है, इसलिए यह Mac-based App Store workflows के लिए बनाया गया है।",
+          "हां। Free tier की कोई time limit नहीं है: 1 project, अधिकतम 3 rows और हर row में 5 templates, सभी device frames, shapes और locales तक पूरी पहुंच, बिना watermark exports। Pro इन limits को हटाता है और App Store Connect upload व iCloud sync unlock करता है।",
       },
       {
-        question: "Screenshot Bro कैसे पाएं?",
+        question: "इसे चलाने के लिए क्या चाहिए?",
         answer:
-          "इसे Mac App Store से डाउनलोड करें, Mac पर install करें और तुरंत screenshot sets बनाना शुरू करें।",
+          "macOS 15 (Sequoia) या उससे नया, Apple Silicon या Intel पर। Editing के लिए न तो iPhone चाहिए, न account, न internet connection।",
       },
       {
-        question: "क्या मैं कई भाषाओं के screenshots localize कर सकता हूं?",
+        question: "क्या मेरा data Mac से बाहर जाता है?",
         answer:
-          "हां। Languages जोड़ें, missing copy auto-translate करें और हर locale के लिए text, position और image overrides सेट करें।",
+          "Default रूप से नहीं। Projects, screenshots और fonts local में रहते हैं। Auto-translate Apple के on-device Translation framework से चलता है — कोई API key नहीं, कोई third-party server नहीं, कोई analytics नहीं। Optional iCloud Drive sync आपके personal iCloud account से होता है; हमारा कोई intermediate server नहीं है।",
       },
       {
-        question: "क्या Google Play screenshots भी बन सकते हैं?",
+        question: "Localization कैसे काम करती है?",
         answer:
-          "हां। Screenshot Bro Android phone और tablet layouts के साथ iPhone, iPad, MacBook और iMac भी support करता है।",
+          "30 language presets में से चुनें, या custom code define करें। Auto-translate missing text on-device भर देता है। Translations per-locale text overrides के रूप में save होती हैं, इसलिए layout, color और images सभी locales में share रहते हैं — design एक बार, deploy हर भाषा में। Exports locale folders में organize होते हैं जिन्हें App Store Connect सीधे ले लेता है।",
       },
       {
         question: "क्या App Store Connect पर direct upload हो सकता है?",
         answer:
-          "हां। API key एक बार connect करें, फिर rendered screenshots सही app, version, display type और locale में upload करें।",
+          "हां। App Store Connect API key एक बार configure करें (Issuer ID, Key ID और .p8 file)। Screenshot Bro हर row के लिए सही display type detect करता है, project locales को App Store Connect localizations से match करता है और एक pass में मौजूदा screenshots replace कर देता है — browser में drag-drop की जरूरत नहीं।",
       },
     ],
     navItems: [
@@ -767,29 +767,29 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ],
     faqs: [
       {
-        question: "Screenshot Bro est-il seulement pour macOS ?",
+        question: "Screenshot Bro est-il gratuit ?",
         answer:
-          "Oui. Screenshot Bro est une app macOS native construite avec Swift et SwiftUI, pensée pour les workflows App Store sur Mac.",
+          "Oui. La version gratuite n'expire jamais : 1 projet, jusqu'à 3 rangées et 5 templates par rangée, accès complet à tous les cadres, formes et locales, exports sans filigrane. Pro lève ces limites et active l'envoi vers App Store Connect et la sync iCloud.",
       },
       {
-        question: "Comment obtenir Screenshot Bro ?",
+        question: "Que faut-il pour l'utiliser ?",
         answer:
-          "Téléchargez-le depuis le Mac App Store, installez-le sur votre Mac et commencez à créer vos captures.",
+          "macOS 15 (Sequoia) ou plus récent, sur Apple Silicon ou Intel. Pas d'iPhone compagnon, pas de compte, pas de connexion internet requise pour éditer.",
       },
       {
-        question: "Puis-je localiser des captures dans plusieurs langues ?",
+        question: "Mes données quittent-elles mon Mac ?",
         answer:
-          "Oui. Ajoutez des langues, traduisez automatiquement le texte manquant et ajustez le texte, la position et les images par locale.",
+          "Par défaut, non. Projets, captures et polices restent en local. La traduction automatique passe par le framework Translation d'Apple sur l'appareil — pas de clé API, pas de serveur tiers, pas d'analytics. La sync iCloud Drive est optionnelle et utilise votre compte iCloud personnel ; nous n'opérons aucun serveur intermédiaire.",
       },
       {
-        question: "Puis-je créer des captures Google Play ?",
+        question: "Comment fonctionne la localisation ?",
         answer:
-          "Oui. Screenshot Bro prend en charge Android phone et tablet, ainsi que iPhone, iPad, MacBook et iMac.",
+          "Choisissez parmi 30 langues prédéfinies, ou ajoutez votre propre code. La traduction automatique remplit le texte manquant sur l'appareil. Les traductions sont enregistrées comme des surcharges texte par locale : layout, couleurs et images sont partagés entre toutes les langues. Conception unique, livraison dans chaque langue. L'export crée un dossier par locale, prêt pour App Store Connect.",
       },
       {
         question: "Puis-je envoyer directement vers App Store Connect ?",
         answer:
-          "Oui. Connectez votre clé API une fois, puis envoyez les captures vers la bonne app, version, taille d'écran et locale.",
+          "Oui. Configurez votre clé API App Store Connect une fois (Issuer ID, Key ID et fichier .p8). Screenshot Bro détecte le bon display type pour chaque rangée, fait correspondre vos locales aux localisations App Store Connect et remplace les captures existantes en une seule passe — sans glisser-déposer dans le navigateur.",
       },
     ],
     navItems: [
@@ -917,29 +917,29 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ],
     faqs: [
       {
-        question: "هل Screenshot Bro مخصص لـ macOS فقط؟",
+        question: "هل Screenshot Bro مجاني؟",
         answer:
-          "نعم. Screenshot Bro تطبيق macOS أصلي مبني بـ Swift و SwiftUI ومصمم لسير عمل App Store على Mac.",
+          "نعم. النسخة المجانية بلا حد زمني: مشروع واحد، حتى 3 صفوف و5 قوالب لكل صف، مع وصول كامل إلى جميع إطارات الأجهزة والأشكال واللغات وتصدير بدون علامة مائية. تزيل خطة Pro هذه الحدود وتُفعّل الرفع إلى App Store Connect ومزامنة iCloud.",
       },
       {
-        question: "كيف أحصل على Screenshot Bro؟",
+        question: "ما الذي أحتاجه لتشغيله؟",
         answer:
-          "نزّله من Mac App Store، ثبّته على Mac وابدأ بإنشاء مجموعات اللقطات فوراً.",
+          "macOS 15 (Sequoia) أو أحدث، على Apple Silicon أو Intel. لا حاجة إلى iPhone مرافق ولا حساب ولا اتصال إنترنت للتعديل اليومي.",
       },
       {
-        question: "هل يمكن توطين اللقطات لعدة لغات؟",
+        question: "هل تغادر بياناتي جهاز Mac؟",
         answer:
-          "نعم. أضف اللغات، ترجم النصوص الناقصة تلقائياً واضبط النصوص والمواضع والصور لكل لغة.",
+          "افتراضياً لا. تبقى المشاريع واللقطات والخطوط على القرص. تعمل الترجمة التلقائية عبر إطار Translation من Apple على الجهاز — بدون مفاتيح API ولا خوادم خارجية ولا تتبع. مزامنة iCloud Drive اختيارية وتستخدم حسابك الشخصي على iCloud؛ لا نشغّل أي خوادم وسيطة.",
       },
       {
-        question: "هل يمكن إنشاء لقطات Google Play أيضاً؟",
+        question: "كيف يعمل التوطين؟",
         answer:
-          "نعم. يدعم Screenshot Bro تخطيطات Android phone وtablet بجانب iPhone وiPad وMacBook وiMac.",
+          "اختر من بين 30 لغة جاهزة، أو أضف رمزك الخاص. تملأ الترجمة التلقائية النصوص الناقصة على الجهاز. تُحفظ الترجمات كتجاوزات نصية لكل لغة، فيما يبقى التصميم واللون والصور مشتركة بين جميع اللغات — صمم مرة واحدة، انشر بكل اللغات. يُنظَّم التصدير في مجلدات حسب اللغة جاهزة لـ App Store Connect.",
       },
       {
         question: "هل يمكن الرفع مباشرة إلى App Store Connect؟",
         answer:
-          "نعم. اربط مفتاح API مرة واحدة ثم ارفع اللقطات إلى التطبيق والإصدار ونوع الشاشة واللغة الصحيحة.",
+          "نعم. اضبط مفتاح App Store Connect API مرة واحدة (Issuer ID وKey ID وملف .p8). يتعرّف Screenshot Bro تلقائياً على نوع الشاشة لكل صف، ويطابق لغات مشروعك مع توطينات App Store Connect، ويستبدل اللقطات الحالية في تمريرة واحدة — بدون السحب والإفلات في المتصفح.",
       },
     ],
     navItems: [
