@@ -78,6 +78,7 @@ export type HomeCopy = {
     redditCommunity: string;
     followOnX: string;
     followJourney: string;
+    madeWithLoveAt: string;
     language: string;
     homeLabel: string;
     seeInAction: string;
@@ -194,6 +195,7 @@ const EN_HOME_COPY: HomeCopy = {
     redditCommunity: "Reddit community",
     followOnX: "Follow on X",
     followJourney: "Follow my journey",
+    madeWithLoveAt: "Made with ❤️ at",
     language: "Language",
     homeLabel: `${SITE_NAME} home`,
     seeInAction: "See it in action",
@@ -372,6 +374,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       terms: "Términos",
       contact: "Contacto",
       followJourney: "Sigue mi progreso",
+      madeWithLoveAt: "Hecho con ❤️ en",
       language: "Idioma",
       seeInAction: "Ver cómo funciona",
       tryItNow: "Pruébalo ahora",
@@ -523,6 +526,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       terms: "条款",
       contact: "联系",
       followJourney: "关注我的进展",
+      madeWithLoveAt: "用 ❤️ 制作于",
       language: "语言",
       seeInAction: "查看演示",
       tryItNow: "立即试用",
@@ -667,6 +671,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       terms: "शर्तें",
       contact: "संपर्क",
       followJourney: "मेरी यात्रा देखें",
+      madeWithLoveAt: "❤️ से बनाया, यहां:",
       language: "भाषा",
       seeInAction: "काम करते देखें",
       tryItNow: "अभी आजमाएं",
@@ -813,6 +818,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       terms: "Conditions",
       contact: "Contact",
       followJourney: "Suivre mon parcours",
+      madeWithLoveAt: "Fait avec ❤️ chez",
       language: "Langue",
       seeInAction: "Voir en action",
       tryItNow: "Essayer maintenant",
@@ -964,6 +970,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       terms: "الشروط",
       contact: "تواصل",
       followJourney: "تابع رحلتي",
+      madeWithLoveAt: "صُنع بـ ❤️ في",
       language: "اللغة",
       seeInAction: "شاهده عملياً",
       tryItNow: "جرّبه الآن",

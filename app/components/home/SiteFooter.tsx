@@ -2,6 +2,8 @@ import {
   COMMUNITY_LINKS,
   COMPARISON_LINKS,
   LEGAL_LINKS,
+  NINEVA_STUDIOS_NAME,
+  NINEVA_STUDIOS_URL,
   PRODUCT_LINKS,
   REDDIT_COMMUNITY_URL,
   SITE_NAME,
@@ -57,9 +59,25 @@ export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
         </div>
 
         <div className="mt-12 pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="text-xs text-white/45">
-            © {year} {SITE_NAME}
-          </span>
+          <div className="flex flex-col sm:flex-row items-center gap-x-3 gap-y-1 text-xs text-white/45">
+            <span>
+              © {year} {SITE_NAME}
+            </span>
+            <span className="hidden sm:inline text-white/25" aria-hidden="true">
+              ·
+            </span>
+            <span>
+              {copy.ui.madeWithLoveAt}{" "}
+              <a
+                href={NINEVA_STUDIOS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/65 hover:text-white/95 transition-colors"
+              >
+                {NINEVA_STUDIOS_NAME}
+              </a>
+            </span>
+          </div>
           <a
             href={X_PROFILE_URL}
             target="_blank"
