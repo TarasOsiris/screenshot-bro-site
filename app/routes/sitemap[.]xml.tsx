@@ -22,6 +22,7 @@ const STATIC_PAGES: SitemapEntry[] = [
   { loc: "/terms", changefreq: "monthly", priority: "0.3" },
   { loc: "/docs/help", changefreq: "monthly", priority: "0.7" },
   { loc: "/docs/project-schema", changefreq: "monthly", priority: "0.5" },
+  { loc: "/vs/fastlane-snapshot", changefreq: "monthly", priority: "0.7" },
 ];
 
 function buildSitemap(): string {

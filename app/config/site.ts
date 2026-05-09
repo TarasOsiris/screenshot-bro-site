@@ -53,6 +53,7 @@ export type SecondaryLinkKey =
   | "blog"
   | "changelog"
   | "docs"
+  | "vsFastlane"
   | "community"
   | "contact"
   | "privacy"
@@ -73,6 +74,10 @@ export const PRODUCT_LINKS: SecondaryLink[] = [
 export const COMMUNITY_LINKS: SecondaryLink[] = [
   { uiKey: "community", href: REDDIT_COMMUNITY_URL, external: true },
   { uiKey: "contact", href: CONTACT_MAILTO },
+];
+
+export const COMPARISON_LINKS: SecondaryLink[] = [
+  { uiKey: "vsFastlane", href: "/vs/fastlane-snapshot" },
 ];
 
 export const LEGAL_LINKS: SecondaryLink[] = [

@@ -70,6 +70,7 @@ export type HomeCopy = {
     blog: string;
     docs: string;
     changelog: string;
+    vsFastlane: string;
     community: string;
     privacy: string;
     terms: string;
@@ -185,6 +186,7 @@ const EN_HOME_COPY: HomeCopy = {
     blog: "Blog",
     docs: "Docs",
     changelog: "Changelog",
+    vsFastlane: "Compare to Fastlane",
     community: "Community",
     privacy: "Privacy",
     terms: "Terms",
@@ -364,6 +366,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ui: {
       skipToContent: "Saltar al contenido",
       changelog: "Novedades",
+      vsFastlane: "Comparar con Fastlane",
       community: "Comunidad",
       privacy: "Privacidad",
       terms: "Términos",
@@ -514,6 +517,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       skipToContent: "跳到内容",
       blog: "博客",
       changelog: "更新日志",
+      vsFastlane: "对比 Fastlane",
       community: "社区",
       privacy: "隐私",
       terms: "条款",
@@ -657,6 +661,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       skipToContent: "कंटेंट पर जाएं",
       blog: "ब्लॉग",
       changelog: "बदलाव",
+      vsFastlane: "Fastlane से तुलना",
       community: "समुदाय",
       privacy: "प्राइवेसी",
       terms: "शर्तें",
@@ -802,6 +807,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       skipToContent: "Aller au contenu",
       blog: "Blog",
       changelog: "Nouveautés",
+      vsFastlane: "Comparer à Fastlane",
       community: "Communauté",
       privacy: "Confidentialité",
       terms: "Conditions",
@@ -952,6 +958,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       skipToContent: "تخطي إلى المحتوى",
       blog: "المدونة",
       changelog: "سجل التغييرات",
+      vsFastlane: "مقارنة مع Fastlane",
       community: "المجتمع",
       privacy: "الخصوصية",
       terms: "الشروط",

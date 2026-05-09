@@ -924,6 +924,14 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
             command per release. The complexity hides in the configuration
             files above — and once they are written, they barely change.
           </p>
+          <p>
+            Wondering whether to set this up at all, or to use a Mac app
+            for the same job? See{" "}
+            <a href="/vs/fastlane-snapshot">
+              Fastlane snapshot vs Screenshot Bro
+            </a>{" "}
+            for the side-by-side and the "use both" workflow.
+          </p>
         </article>
 
         <BlogCTA message="Want the same upload flow without the XCUITest pipeline? Design and ship App Store screenshots from one Mac app." />

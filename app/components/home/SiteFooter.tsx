@@ -1,5 +1,6 @@
 import {
   COMMUNITY_LINKS,
+  COMPARISON_LINKS,
   LEGAL_LINKS,
   PRODUCT_LINKS,
   REDDIT_COMMUNITY_URL,
@@ -50,7 +51,7 @@ export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
           />
           <FooterColumn
             label={copy.ui.resourcesLabel}
-            links={[...COMMUNITY_LINKS, ...LEGAL_LINKS]}
+            links={[...COMPARISON_LINKS, ...COMMUNITY_LINKS, ...LEGAL_LINKS]}
             copy={copy}
           />
         </div>

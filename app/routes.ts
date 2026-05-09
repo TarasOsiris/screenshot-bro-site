@@ -14,6 +14,7 @@ export default [
   route("blog/localize-app-store-screenshots", "routes/blog.localize-app-store-screenshots.tsx"),
   route("docs/help", "routes/docs.help.tsx"),
   route("docs/project-schema", "routes/docs.project-schema.tsx"),
+  route("vs/fastlane-snapshot", "routes/vs.fastlane-snapshot.tsx"),
   route("sitemap.xml", "routes/sitemap[.]xml.tsx"),
   route(":locale", "routes/localized-home.tsx"),
   route("*", "routes/$.tsx"),
