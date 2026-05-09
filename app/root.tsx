@@ -23,6 +23,7 @@ import {
   SITE_NAME,
   SITE_URL,
   REDDIT_COMMUNITY_URL,
+  THREADS_URL,
   TWITTER_HANDLE,
   WORKFLOW_STEPS,
   X_PROFILE_URL,
@@ -88,7 +89,7 @@ const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
   isAccessibleForFree: true,
   softwareRequirements: `macOS ${MINIMUM_MACOS_VERSION} or later`,
   keywords: SITE_KEYWORDS,
-  sameAs: [APP_STORE_URL, X_PROFILE_URL, REDDIT_COMMUNITY_URL],
+  sameAs: [APP_STORE_URL, X_PROFILE_URL, THREADS_URL, REDDIT_COMMUNITY_URL],
   featureList: FEATURES.map((feature) => feature.title),
 });
 

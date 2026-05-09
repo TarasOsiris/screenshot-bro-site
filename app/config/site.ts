@@ -17,6 +17,7 @@ export const NINEVA_STUDIOS_URL = "https://ninevastudios.com/";
 export const PRIMARY_CTA_LABEL = "Get on the App Store";
 export const TWITTER_HANDLE = "@soycastic";
 export const X_PROFILE_URL = "https://x.com/soycastic";
+export const THREADS_URL = "https://www.threads.com/@soycastic";
 export const INSTAGRAM_REEL_URL = "https://www.instagram.com/reels/DXtwyWMDHxF/";
 export const INSTAGRAM_REEL_EMBED_URL =
   "https://www.instagram.com/reel/DXtwyWMDHxF/embed/";

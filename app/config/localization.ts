@@ -77,6 +77,7 @@ export type HomeCopy = {
     contact: string;
     redditCommunity: string;
     followOnX: string;
+    followOnThreads: string;
     followJourney: string;
     madeWithLoveAt: string;
     language: string;
@@ -194,6 +195,7 @@ const EN_HOME_COPY: HomeCopy = {
     contact: "Contact",
     redditCommunity: "Reddit community",
     followOnX: "Follow on X",
+    followOnThreads: "Follow on Threads",
     followJourney: "Follow my journey",
     madeWithLoveAt: "Made with ❤️ at",
     language: "Language",
