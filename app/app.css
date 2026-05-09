@@ -10,9 +10,9 @@
   --color-surface-overlay: #1a1a24;
   --color-border-subtle: #ffffff0a;
   --color-border: #ffffff14;
-  --color-accent: #0673EC;
-  --color-accent-light: #3B93F0;
-  --color-accent-glow: #0673EC40;
+  --color-accent: #0466D6;
+  --color-accent-light: #1A75DC;
+  --color-accent-glow: color-mix(in srgb, var(--color-accent) 25%, transparent);
   --color-warm: #f59e0b;
   --color-warm-light: #fbbf24;
   --color-mint: #34d399;
@@ -107,7 +107,7 @@ button:focus-visible {
 .feature-card:hover {
   border-color: var(--color-accent);
   transform: translateY(-2px);
-  box-shadow: 0 20px 40px -24px rgba(6, 115, 236, 0.45);
+  box-shadow: 0 20px 40px -24px color-mix(in srgb, var(--color-accent) 45%, transparent);
 }
 
 .feature-card:focus-within {
@@ -147,7 +147,7 @@ button:focus-visible {
   border-radius: 28px;
   border: 1px solid var(--color-border);
   background:
-    radial-gradient(circle at top left, rgba(6, 115, 236, 0.09), transparent 32%),
+    radial-gradient(circle at top left, color-mix(in srgb, var(--color-accent) 9%, transparent), transparent 32%),
     var(--color-surface-raised);
   transition: border-color 0.25s ease, transform 0.25s ease;
 }
@@ -229,7 +229,7 @@ button:focus-visible {
 
 /* Gradient text */
 .text-gradient {
-  background: linear-gradient(135deg, #e2e2e8 0%, #3B93F0 50%, #f59e0b 100%);
+  background: linear-gradient(135deg, #e2e2e8 0%, var(--color-accent-light) 50%, var(--color-warm) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
