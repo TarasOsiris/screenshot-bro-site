@@ -1,19 +1,21 @@
 import type { ReactElement } from "react";
 import type { FeatureIconKey } from "~/config/site";
 
-function IconTemplates() {
+type IconProps = { size?: number };
+
+const SVG_BASE = {
+  "aria-hidden": true as const,
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: "1.5",
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+};
+
+export function IconTemplates({ size = 32 }: IconProps = {}) {
   return (
-    <svg
-      aria-hidden="true"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg {...SVG_BASE} width={size} height={size}>
       <rect x="3" y="3" width="7" height="7" rx="1" />
       <rect x="14" y="3" width="7" height="7" rx="1" />
       <rect x="3" y="14" width="7" height="7" rx="1" />
@@ -22,38 +24,18 @@ function IconTemplates() {
   );
 }
 
-function IconDevice() {
+export function IconDevice({ size = 32 }: IconProps = {}) {
   return (
-    <svg
-      aria-hidden="true"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg {...SVG_BASE} width={size} height={size}>
       <rect x="5" y="2" width="14" height="20" rx="3" />
       <line x1="12" y1="18" x2="12" y2="18.01" />
     </svg>
   );
 }
 
-function IconGradient() {
+export function IconGradient({ size = 32 }: IconProps = {}) {
   return (
-    <svg
-      aria-hidden="true"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg {...SVG_BASE} width={size} height={size}>
       <circle cx="12" cy="12" r="9" />
       <path d="M12 3a9 9 0 0 1 0 18" fill="currentColor" opacity="0.2" />
       <circle cx="12" cy="12" r="4" />
@@ -61,19 +43,9 @@ function IconGradient() {
   );
 }
 
-function IconShapes() {
+export function IconShapes({ size = 32 }: IconProps = {}) {
   return (
-    <svg
-      aria-hidden="true"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg {...SVG_BASE} width={size} height={size}>
       <polygon points="12,2 22,17 2,17" />
       <circle cx="17" cy="17" r="5" fill="var(--color-surface)" />
       <circle cx="17" cy="17" r="5" />
@@ -81,19 +53,9 @@ function IconShapes() {
   );
 }
 
-function IconAlign() {
+function IconAlign({ size = 32 }: IconProps = {}) {
   return (
-    <svg
-      aria-hidden="true"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg {...SVG_BASE} width={size} height={size}>
       <line x1="12" y1="2" x2="12" y2="22" />
       <rect x="4" y="6" width="16" height="4" rx="1" />
       <rect x="6" y="14" width="12" height="4" rx="1" />
@@ -101,19 +63,9 @@ function IconAlign() {
   );
 }
 
-function IconExport() {
+export function IconExport({ size = 32 }: IconProps = {}) {
   return (
-    <svg
-      aria-hidden="true"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg {...SVG_BASE} width={size} height={size}>
       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
       <polyline points="7,10 12,15 17,10" />
       <line x1="12" y1="15" x2="12" y2="3" />
@@ -121,19 +73,9 @@ function IconExport() {
   );
 }
 
-function IconUpload() {
+export function IconUpload({ size = 32 }: IconProps = {}) {
   return (
-    <svg
-      aria-hidden="true"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg {...SVG_BASE} width={size} height={size}>
       <path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" />
       <polyline points="8 8 12 4 16 8" />
       <line x1="12" y1="4" x2="12" y2="16" />
@@ -141,37 +83,17 @@ function IconUpload() {
   );
 }
 
-function IconProject() {
+export function IconProject({ size = 32 }: IconProps = {}) {
   return (
-    <svg
-      aria-hidden="true"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg {...SVG_BASE} width={size} height={size}>
       <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
     </svg>
   );
 }
 
-function IconNative() {
+function IconNative({ size = 32 }: IconProps = {}) {
   return (
-    <svg
-      aria-hidden="true"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg {...SVG_BASE} width={size} height={size}>
       <path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
       <line x1="8" y1="20" x2="16" y2="20" />
       <line x1="12" y1="18" x2="12" y2="20" />
@@ -198,37 +120,17 @@ export function AppleLogo({ className }: AppleLogoProps) {
   );
 }
 
-function IconCloud() {
+export function IconCloud({ size = 32 }: IconProps = {}) {
   return (
-    <svg
-      aria-hidden="true"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg {...SVG_BASE} width={size} height={size}>
       <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
     </svg>
   );
 }
 
-function IconFonts() {
+function IconFonts({ size = 32 }: IconProps = {}) {
   return (
-    <svg
-      aria-hidden="true"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg {...SVG_BASE} width={size} height={size}>
       <polyline points="4,7 4,4 20,4 20,7" />
       <line x1="9.5" y1="20" x2="14.5" y2="20" />
       <line x1="12" y1="4" x2="12" y2="20" />
@@ -236,19 +138,9 @@ function IconFonts() {
   );
 }
 
-function IconStarter() {
+function IconStarter({ size = 32 }: IconProps = {}) {
   return (
-    <svg
-      aria-hidden="true"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg {...SVG_BASE} width={size} height={size}>
       <rect x="3" y="3" width="18" height="18" rx="2" />
       <path d="M3 9h18" />
       <path d="M9 21V9" />
@@ -256,19 +148,9 @@ function IconStarter() {
   );
 }
 
-function IconKeyboard() {
+export function IconKeyboard({ size = 32 }: IconProps = {}) {
   return (
-    <svg
-      aria-hidden="true"
-      width="32"
-      height="32"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg {...SVG_BASE} width={size} height={size}>
       <rect x="2" y="6" width="20" height="12" rx="2" />
       <line x1="6" y1="10" x2="6" y2="10.01" />
       <line x1="10" y1="10" x2="10" y2="10.01" />

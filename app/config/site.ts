@@ -67,7 +67,7 @@ export type SecondaryLink = {
 export const PRODUCT_LINKS: SecondaryLink[] = [
   { uiKey: "blog", href: "/blog" },
   { uiKey: "changelog", href: "/changelog" },
-  { uiKey: "docs", href: "/docs/project-schema" },
+  { uiKey: "docs", href: "/docs/help" },
 ];
 
 export const COMMUNITY_LINKS: SecondaryLink[] = [

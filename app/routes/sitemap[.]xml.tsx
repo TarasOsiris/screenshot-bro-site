@@ -20,6 +20,7 @@ const STATIC_PAGES: SitemapEntry[] = [
   { loc: "/changelog", changefreq: "monthly", priority: "0.6" },
   { loc: "/privacy", changefreq: "monthly", priority: "0.3" },
   { loc: "/terms", changefreq: "monthly", priority: "0.3" },
+  { loc: "/docs/help", changefreq: "monthly", priority: "0.7" },
   { loc: "/docs/project-schema", changefreq: "monthly", priority: "0.5" },
 ];
 

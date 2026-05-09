@@ -12,6 +12,7 @@ export default [
   route("blog/app-store-screenshot-sizes", "routes/blog.app-store-screenshot-sizes.tsx"),
   route("blog/screenshots-that-convert", "routes/blog.screenshots-that-convert.tsx"),
   route("blog/localize-app-store-screenshots", "routes/blog.localize-app-store-screenshots.tsx"),
+  route("docs/help", "routes/docs.help.tsx"),
   route("docs/project-schema", "routes/docs.project-schema.tsx"),
   route("sitemap.xml", "routes/sitemap[.]xml.tsx"),
   route(":locale", "routes/localized-home.tsx"),
