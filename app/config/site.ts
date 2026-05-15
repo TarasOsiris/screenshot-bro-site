@@ -155,7 +155,10 @@ export type FeatureIconKey =
   | "cloud"
   | "fonts"
   | "starter"
-  | "keyboard";
+  | "keyboard"
+  | "privacy"
+  | "batch"
+  | "free";
 
 export type FeatureItem = {
   icon: FeatureIconKey;
@@ -255,6 +258,27 @@ export const FEATURES: FeatureItem[] = [
     description:
       "Nudge, duplicate, cut/copy/paste, z-order, zoom, locale cycling, and select — all from the keyboard. Shift-nudge for 10px jumps, Option-drag to clone.",
     accent: "var(--color-accent-light)",
+  },
+  {
+    icon: "privacy",
+    title: "Privacy-First",
+    description:
+      "Auto-translate runs on-device through Apple's Translation framework. No API keys, no servers, no analytics — projects, fonts, and screenshots stay on your Mac.",
+    accent: "var(--color-warm-light)",
+  },
+  {
+    icon: "batch",
+    title: "Batch Image Import",
+    description:
+      "Drop a folder of screenshots and let device size auto-detect from filename. Bulk-fill a row with iPhone, iPad, or Mac shots without naming a single file.",
+    accent: "var(--color-mint)",
+  },
+  {
+    icon: "free",
+    title: "Free Forever Tier",
+    description:
+      "1 project, 3 rows, 5 templates per row — with every device frame, all 30 locales, and every export format. No watermark, no trial expiry, no signup.",
+    accent: "var(--color-rose)",
   },
 ];
 

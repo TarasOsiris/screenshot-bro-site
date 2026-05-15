@@ -161,6 +161,33 @@ export function IconKeyboard({ size = 32 }: IconProps = {}) {
   );
 }
 
+function IconPrivacy({ size = 32 }: IconProps = {}) {
+  return (
+    <svg {...SVG_BASE} width={size} height={size}>
+      <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  );
+}
+
+function IconBatch({ size = 32 }: IconProps = {}) {
+  return (
+    <svg {...SVG_BASE} width={size} height={size}>
+      <rect x="7" y="7" width="14" height="14" rx="2" />
+      <path d="M17 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2" />
+    </svg>
+  );
+}
+
+function IconFree({ size = 32 }: IconProps = {}) {
+  return (
+    <svg {...SVG_BASE} width={size} height={size}>
+      <path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" />
+      <path d="M19 17l.6 1.7L21 19l-1.4.6L19 21l-.6-1.4L17 19l1.4-.3z" />
+    </svg>
+  );
+}
+
 const ICONS: Record<FeatureIconKey, ReactElement> = {
   templates: <IconTemplates />,
   device: <IconDevice />,
@@ -175,6 +202,9 @@ const ICONS: Record<FeatureIconKey, ReactElement> = {
   fonts: <IconFonts />,
   starter: <IconStarter />,
   keyboard: <IconKeyboard />,
+  privacy: <IconPrivacy />,
+  batch: <IconBatch />,
+  free: <IconFree />,
 };
 
 export function FeatureIcon({ icon }: { icon: FeatureIconKey }) {
