@@ -31,6 +31,43 @@ type ChangelogEntry = {
 
 const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "2.6",
+    date: "May 13, 2026",
+    title: "Shape Lock, Inline Locale Bar, and Export Filename Suffixes",
+    changes: [
+      { type: "added", text: "Freeform-style shape Lock with pixel-perfect selection handles" },
+      { type: "added", text: "\"Match Size to Selected Devices\" right-click action to resize a row to its device shapes" },
+      { type: "added", text: "\"Translate Selected to All Languages\" action, with unified language terminology across the app" },
+      { type: "added", text: "Optional locale code and custom suffix appended to exported screenshot filenames" },
+      { type: "added", text: "SF Symbol icons in canvas and row context menus" },
+      { type: "improved", text: "Locale switcher moved out of the toolbar into an inline flag-chip bar" },
+      { type: "improved", text: "Shape properties bar split into per-control sections, with a rotation reset" },
+      { type: "improved", text: "Font picker renders each entry in its own typeface" },
+      { type: "improved", text: "Locked shapes are skipped during bulk operations and multi-select drags" },
+      { type: "improved", text: "Screenshot drops honor the row's Android default" },
+      { type: "improved", text: "RevenueCat user ID shown in the Purchase settings tab" },
+      { type: "fixed", text: "Shapes that span into neighboring templates are preserved when a template is deleted" },
+    ],
+  },
+  {
+    version: "2.5",
+    date: "May 9, 2026",
+    title: "Onboarding Coach Marks, Help Window, and 3D Device Polish",
+    changes: [
+      { type: "added", text: "Interactive onboarding coach marks after the welcome modal" },
+      { type: "added", text: "Comprehensive Help window covering core editor features" },
+      { type: "added", text: "iPhone 17 Pro Max 3D device frame" },
+      { type: "added", text: "Editable text field for shape rotation degrees" },
+      { type: "added", text: "Post-purchase celebration sheet" },
+      { type: "added", text: "Subscription tier details on the paywall, with a consolidated App Store Connect API Key UI" },
+      { type: "added", text: "Periodic App Store review prompt after sustained use" },
+      { type: "improved", text: "3D device controls unified into a single popover; size is preserved across orientation flips" },
+      { type: "improved", text: "3D device pitch and yaw range widened to ±90°" },
+      { type: "improved", text: "Generic Android device frames flex to match the dropped screenshot's aspect" },
+      { type: "improved", text: "Refactored oversized views and centralized logging for better stability" },
+    ],
+  },
+  {
     version: "2.4",
     date: "May 1, 2026",
     title: "Spanish UI, Showcase Export, and Pro Tier",
