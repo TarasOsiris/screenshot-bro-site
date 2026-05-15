@@ -393,6 +393,11 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
     icon: "/showcase/wisp.jpg",
     url: "https://apps.apple.com/us/app/wisp-wishlist-gift-registry/id6747362899",
   },
+  {
+    name: "Librera Reader",
+    icon: "/showcase/librera.jpg",
+    url: "https://play.google.com/store/apps/details?id=com.foobnix.pdf.reader",
+  },
 ];
 
 export type AppScreenshot = {
