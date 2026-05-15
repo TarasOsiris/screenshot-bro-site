@@ -398,6 +398,11 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
     icon: "/showcase/librera.jpg",
     url: "https://play.google.com/store/apps/details?id=com.foobnix.pdf.reader",
   },
+  {
+    name: "PocketMates",
+    icon: "/showcase/pocketmates.jpg",
+    url: "https://apps.apple.com/ua/app/pocketmates/id6763726732",
+  },
 ];
 
 export type AppScreenshot = {
