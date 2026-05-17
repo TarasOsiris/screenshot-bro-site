@@ -190,7 +190,7 @@ function MobileMenu({
     <div
       id="mobile-nav"
       hidden={!open}
-      className="lg:hidden fixed inset-x-0 top-16 bottom-0 z-30 overflow-y-auto bg-surface/95 backdrop-blur-2xl border-t border-border-subtle"
+      className="lg:hidden fixed inset-x-0 top-16 z-30 overflow-y-auto bg-surface/95 backdrop-blur-2xl border-t border-border-subtle h-[calc(100dvh-4rem)]"
     >
       <div className="px-6 py-8 flex flex-col gap-8">
         {sectionAnchors.length > 0 ? (
