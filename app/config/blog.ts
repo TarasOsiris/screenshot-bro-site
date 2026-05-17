@@ -13,6 +13,58 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "google-play-screenshot-sizes-requirements",
+    title: "Google Play Screenshot Sizes and Requirements",
+    description:
+      "A practical guide to Google Play screenshot sizes, formats, device-specific requirements, and export workflow for phone, tablet, Chromebook, Wear OS, TV, Automotive, and Android XR listings.",
+    date: "2026-05-17",
+    readTime: "10 min read",
+    category: "Reference",
+    keywords: [
+      "Google Play screenshot sizes",
+      "Google Play screenshot requirements",
+      "google play screenshot generator",
+      "Play Store screenshots",
+      "Android app screenshots",
+      "Google Play tablet screenshots",
+      "Google Play feature graphic",
+    ],
+  },
+  {
+    slug: "ab-test-app-store-screenshots",
+    title: "How to A/B Test App Store and Google Play Screenshots",
+    description:
+      "Learn how to test app screenshots with Apple Product Page Optimization and Google Play Store Listing Experiments, what to test first, and how to avoid noisy results.",
+    date: "2026-05-17",
+    readTime: "9 min read",
+    category: "Guide",
+    keywords: [
+      "A/B test app store screenshots",
+      "App Store screenshot testing",
+      "Product Page Optimization screenshots",
+      "Google Play Store Listing Experiments",
+      "app store conversion rate optimization",
+      "ASO screenshot testing",
+    ],
+  },
+  {
+    slug: "custom-product-pages-app-store-screenshots",
+    title: "Custom Product Pages: App Store Screenshots for Campaigns",
+    description:
+      "Use App Store custom product pages to create campaign-specific screenshot sets for Apple Ads, seasonal launches, feature pages, and localized acquisition funnels.",
+    date: "2026-05-17",
+    readTime: "8 min read",
+    category: "Guide",
+    keywords: [
+      "custom product pages",
+      "App Store custom product pages",
+      "custom product page screenshots",
+      "Apple Ads screenshots",
+      "App Store screenshots for campaigns",
+      "ASO landing pages",
+    ],
+  },
+  {
     slug: "design-app-store-screenshots-in-figma",
     title: "How to Design App Store Screenshots in Figma",
     description:
