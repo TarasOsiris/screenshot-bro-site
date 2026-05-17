@@ -22,7 +22,7 @@ export function buildBlogPostMeta(
   const post = getPost(slug);
   const title = `${post.title} — ${SITE_NAME}`;
   const url = `${SITE_URL}/blog/${post.slug}`;
-  return mergeMeta(matches, [
+  const meta: MetaDescriptor[] = [
     { title },
     { name: "description", content: post.description },
     { property: "og:type", content: "article" },
@@ -40,7 +40,19 @@ export function buildBlogPostMeta(
     { name: "twitter:title", content: post.title },
     { name: "twitter:description", content: post.description },
     { name: "twitter:image", content: BLOG_OG_IMAGE },
-  ]);
+  ];
+
+  if (post.keywords?.length) {
+    meta.push({ name: "keywords", content: post.keywords.join(", ") });
+    meta.push(
+      ...post.keywords.map((keyword) => ({
+        property: "article:tag",
+        content: keyword,
+      })),
+    );
+  }
+
+  return mergeMeta(matches, meta);
 }
 
 export function buildBlogPostLinks(slug: string) {
@@ -65,6 +77,7 @@ export function buildBlogPostingJsonLd(slug: string): string {
         datePublished: post.date,
         dateModified: post.date,
         articleSection: post.category,
+        keywords: post.keywords,
         inLanguage: "en",
         image: BLOG_OG_IMAGE,
         author: {

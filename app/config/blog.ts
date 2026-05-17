@@ -8,9 +8,48 @@ export type BlogPost = {
   date: string;
   readTime: string;
   category: BlogCategory;
+  keywords?: string[];
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "design-app-store-screenshots-in-figma",
+    title: "How to Design App Store Screenshots in Figma",
+    description:
+      "A practical Figma tutorial for designing App Store screenshots: file setup, device frames, reusable components, localization, export settings, and when to use a dedicated screenshot tool instead.",
+    date: "2026-05-17",
+    readTime: "11 min read",
+    category: "Guide",
+    keywords: [
+      "how to design app store screenshots in Figma",
+      "Figma app store screenshots",
+      "app store screenshot design",
+      "app store screenshot template",
+      "app screenshot maker",
+      "app store screenshots",
+      "Figma alternative for app screenshots",
+    ],
+  },
+  {
+    slug: "best-app-store-screenshot-tools",
+    title: "Best App Store Screenshot Tools for Indie Developers",
+    description:
+      "Compare Screenshot Bro with AppScreens, AppLaunchpad, Rotato, Placeit, Figma, and other app screenshot tools. Find the best workflow for creating App Store and Google Play screenshots faster.",
+    date: "2026-05-17",
+    readTime: "12 min read",
+    category: "Guide",
+    keywords: [
+      "app store screenshot tool",
+      "app store screenshot generator",
+      "google play screenshot generator",
+      "app screenshot maker",
+      "app store screenshots",
+      "app screenshots for indie developers",
+      "Figma alternative for app screenshots",
+      "AppScreens alternative",
+      "Rotato alternative for app screenshots",
+    ],
+  },
   {
     slug: "make-and-ship-screenshots-with-fastlane",
     title: "Fastlane: Make and Ship App Store Screenshots (2026 Guide)",

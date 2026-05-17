@@ -6,6 +6,8 @@ export default [
   route("terms", "routes/terms.tsx"),
   route("changelog", "routes/changelog.tsx"),
   route("blog", "routes/blog._index.tsx"),
+  route("blog/design-app-store-screenshots-in-figma", "routes/blog.design-app-store-screenshots-in-figma.tsx"),
+  route("blog/best-app-store-screenshot-tools", "routes/blog.best-app-store-screenshot-tools.tsx"),
   route("blog/make-and-ship-screenshots-with-fastlane", "routes/blog.make-and-ship-screenshots-with-fastlane.tsx"),
   route("blog/upload-screenshots-to-app-store-connect", "routes/blog.upload-screenshots-to-app-store-connect.tsx"),
   route("blog/screenshot-sizes-app-store-google-play", "routes/blog.screenshot-sizes-app-store-google-play.tsx"),

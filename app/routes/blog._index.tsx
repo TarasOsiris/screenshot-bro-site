@@ -42,6 +42,7 @@ const BLOG_JSON_LD = JSON.stringify({
         datePublished: post.date,
         dateModified: post.date,
         articleSection: post.category,
+        keywords: post.keywords,
       })),
     },
     {

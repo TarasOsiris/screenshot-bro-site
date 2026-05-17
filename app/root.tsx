@@ -148,6 +148,7 @@ const SOCIAL_IMAGE_ALT =
 export const meta: Route.MetaFunction = () => [
   { title: SITE_TITLE },
   { name: "description", content: SITE_DESCRIPTION },
+  { name: "keywords", content: SITE_KEYWORDS },
   { property: "og:locale", content: "en_US" },
   { property: "og:type", content: "website" },
   { property: "og:site_name", content: SITE_NAME },
@@ -215,7 +216,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#08080c" />
-        <meta name="keywords" content={SITE_KEYWORDS} />
         <meta name="application-name" content={SITE_NAME} />
         <meta name="apple-itunes-app" content={`app-id=${APP_STORE_APP_ID}`} />
         <Meta />
@@ -249,18 +249,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
             __html: WEB_SITE_SCHEMA_JSON,
           }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: FAQ_SCHEMA_JSON,
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: HOW_TO_SCHEMA_JSON,
-          }}
-        />
+        {isLocalizedHome ? (
+          <>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: FAQ_SCHEMA_JSON,
+              }}
+            />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: HOW_TO_SCHEMA_JSON,
+              }}
+            />
+          </>
+        ) : null}
         {GA_ID ? (
           <>
             <script
