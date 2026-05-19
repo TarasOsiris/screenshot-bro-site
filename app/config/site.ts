@@ -427,6 +427,11 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
     icon: "/showcase/pocketmates.jpg",
     url: "https://apps.apple.com/ua/app/pocketmates/id6763726732",
   },
+  {
+    name: "Localify",
+    icon: "/showcase/localify.jpg",
+    url: "https://apps.apple.com/us/app/localify-app-ai-localization/id6766060498",
+  },
 ];
 
 export type AppScreenshot = {
