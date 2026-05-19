@@ -15,7 +15,7 @@ export function AppShowcaseSection({ copy }: { copy: HomeCopy }) {
           description={copy.sections.appShowcase.description}
         />
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-2xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-8 max-w-2xl lg:max-w-4xl mx-auto">
           {SHOWCASE_APPS.map((app) => (
             <a
               key={app.name}
