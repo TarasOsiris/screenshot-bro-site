@@ -256,7 +256,7 @@ export default function BlogPost() {
             discipline: naming, components, export presets, and a checklist for
             every release. If localization is a recurring job, compare that
             manual setup with a dedicated{" "}
-            <a href="/docs/help#localization">screenshot localization workflow</a>.
+            <a href="/docs/help#locales">screenshot localization workflow</a>.
           </p>
 
           <h2>7. Set Up Export Presets</h2>

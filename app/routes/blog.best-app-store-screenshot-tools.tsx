@@ -217,7 +217,7 @@ export default function BlogPost() {
             <li>
               <strong>Useful links:</strong>{" "}
               <a href="/#features">features</a>,{" "}
-              <a href="/docs/help#localization">localization docs</a>,{" "}
+              <a href="/docs/help#locales">localization docs</a>,{" "}
               <a href="/blog/upload-screenshots-to-app-store-connect">
                 App Store Connect upload guide
               </a>

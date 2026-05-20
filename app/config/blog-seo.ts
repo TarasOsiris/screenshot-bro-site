@@ -20,7 +20,8 @@ export function buildBlogPostMeta(
   matches: readonly MetaMatchLike[],
 ): MetaDescriptor[] {
   const post = getPost(slug);
-  const title = `${post.title} — ${SITE_NAME}`;
+  const fullTitle = `${post.title} — ${SITE_NAME}`;
+  const title = fullTitle.length <= 60 ? fullTitle : post.title;
   const url = `${SITE_URL}/blog/${post.slug}`;
   const meta: MetaDescriptor[] = [
     { title },
@@ -77,7 +78,7 @@ export function buildBlogPostingJsonLd(slug: string): string {
         datePublished: post.date,
         dateModified: post.date,
         articleSection: post.category,
-        keywords: post.keywords,
+        keywords: post.keywords?.join(", "),
         inLanguage: "en",
         image: BLOG_OG_IMAGE,
         author: {

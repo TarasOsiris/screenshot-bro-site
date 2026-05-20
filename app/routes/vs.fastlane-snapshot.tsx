@@ -6,7 +6,7 @@ import { SITE_NAME, SITE_URL, MINIMUM_MACOS_VERSION } from "~/config/site";
 
 const PAGE_TITLE = `Fastlane snapshot vs ${SITE_NAME} — which to use?`;
 const PAGE_DESCRIPTION =
-  "Honest comparison: Fastlane snapshot captures app UI screenshots from XCUITest; Screenshot Bro designs marketing screenshots from any source. They solve different problems — most teams end up using both.";
+  "Fastlane snapshot captures UI screenshots from XCUITest; Screenshot Bro designs marketing screenshots. They solve different problems.";
 const PAGE_URL = `${SITE_URL}/vs/fastlane-snapshot`;
 
 export const meta: Route.MetaFunction = ({ matches }) =>

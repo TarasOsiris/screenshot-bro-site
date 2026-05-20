@@ -6,7 +6,7 @@ import { mergeMeta } from "~/config/meta";
 
 const BLOG_INDEX_TITLE = `Blog — ${SITE_NAME}`;
 const BLOG_INDEX_DESCRIPTION =
-  "Guides, tips, and references for designing App Store and Google Play screenshots. Learn how to create screenshots that convert, manage localization, and ship faster.";
+  "Guides, tips, and references for designing App Store and Google Play screenshots that convert, with localization and export workflows.";
 const BLOG_INDEX_URL = `${SITE_URL}/blog`;
 
 export const meta: Route.MetaFunction = ({ matches }) =>
@@ -42,7 +42,7 @@ const BLOG_JSON_LD = JSON.stringify({
         datePublished: post.date,
         dateModified: post.date,
         articleSection: post.category,
-        keywords: post.keywords,
+        keywords: post.keywords?.join(", "),
       })),
     },
     {
