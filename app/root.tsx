@@ -39,7 +39,10 @@ import "./app.css";
 
 export const SITE_TITLE = `${SITE_NAME} — App Store & Google Play Screenshots`;
 export const SOCIAL_IMAGE = `${SITE_URL}/og-image.png`;
-const GA_ID = import.meta.env.PROD ? "G-N0BL1983JF" : undefined;
+const GA_ID =
+  import.meta.env.PROD && import.meta.env.VITE_GA_ID
+    ? (import.meta.env.VITE_GA_ID as string)
+    : undefined;
 
 const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
   "@context": "https://schema.org",
