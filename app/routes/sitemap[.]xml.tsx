@@ -17,6 +17,11 @@ const STATIC_PAGES: SitemapEntry[] = [
     priority: "0.9",
   })),
   { loc: "/blog", changefreq: "weekly", priority: "0.8" },
+  ...LOCALES.filter((locale) => locale.code !== DEFAULT_LOCALE).map((locale) => ({
+    loc: localizedPath(locale.code, "/blog"),
+    changefreq: "weekly",
+    priority: "0.8",
+  })),
   { loc: "/changelog", changefreq: "monthly", priority: "0.6" },
   { loc: "/privacy", changefreq: "monthly", priority: "0.3" },
   { loc: "/terms", changefreq: "monthly", priority: "0.3" },
@@ -28,12 +33,25 @@ const STATIC_PAGES: SitemapEntry[] = [
 function buildSitemap(): string {
   const today = new Date().toISOString().split("T")[0];
 
-  const blogEntries: SitemapEntry[] = BLOG_POSTS.map((post) => ({
-    loc: `/blog/${post.slug}`,
-    changefreq: "monthly",
-    priority: "0.7",
-    lastmod: post.date,
-  }));
+  const blogEntries: SitemapEntry[] = [];
+  BLOG_POSTS.forEach((post) => {
+    // English
+    blogEntries.push({
+      loc: `/blog/${post.slug}`,
+      changefreq: "monthly",
+      priority: "0.7",
+      lastmod: post.date,
+    });
+    // Other locales
+    LOCALES.filter((locale) => locale.code !== DEFAULT_LOCALE).forEach((locale) => {
+      blogEntries.push({
+        loc: localizedPath(locale.code, `/blog/${post.slug}`),
+        changefreq: "monthly",
+        priority: "0.7",
+        lastmod: post.date,
+      });
+    });
+  });
 
   const allEntries = [...STATIC_PAGES, ...blogEntries];
 

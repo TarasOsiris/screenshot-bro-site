@@ -1,3 +1,6 @@
+import type { LocaleCode } from "~/config/localization";
+import { LOCALIZED_BLOG_POSTS } from "./blog-translations";
+
 export const BLOG_CATEGORIES = ["Reference", "Guide"] as const;
 export type BlogCategory = (typeof BLOG_CATEGORIES)[number];
 
@@ -157,3 +160,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Guide",
   },
 ];
+
+export function getLocalizedBlogPosts(locale: LocaleCode): BlogPost[] {
+  if (locale === "en") return BLOG_POSTS;
+  return LOCALIZED_BLOG_POSTS[locale as Exclude<LocaleCode, "en">] || BLOG_POSTS;
+}

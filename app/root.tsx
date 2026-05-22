@@ -202,13 +202,37 @@ export const links: Route.LinksFunction = () => [
   { rel: "manifest", href: "/site.webmanifest" },
 ];
 
+const isLocalizedPath = (pathname: string): boolean => {
+  const segments = pathname.split("/").filter(Boolean);
+  if (segments.length === 0 || (segments.length === 1 && isLocaleCode(segments[0]))) {
+    return true;
+  }
+  if (
+    (segments.length === 1 && segments[0] === "blog") ||
+    (segments.length === 2 && isLocaleCode(segments[0]) && segments[1] === "blog")
+  ) {
+    return true;
+  }
+  if (
+    (segments.length === 2 && segments[0] === "blog") ||
+    (segments.length === 3 && isLocaleCode(segments[0]) && segments[1] === "blog")
+  ) {
+    return true;
+  }
+  return false;
+};
+
+const getCleanPath = (pathname: string): string => {
+  const segments = pathname.split("/").filter(Boolean);
+  if (segments.length > 0 && isLocaleCode(segments[0])) {
+    segments.shift();
+  }
+  return "/" + segments.join("/");
+};
+
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const locale = getLocaleInfo(getLocaleFromPath(location.pathname));
-  const pathSegments = location.pathname.split("/").filter(Boolean);
-  const isLocalizedHome =
-    location.pathname === "/" ||
-    (pathSegments.length === 1 && isLocaleCode(pathSegments[0]));
 
   return (
     <html lang={locale.htmlLang} dir={locale.dir}>
@@ -220,23 +244,32 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="apple-itunes-app" content={`app-id=${APP_STORE_APP_ID}`} />
         <Meta />
         <Links />
-        {isLocalizedHome ? (
+        {isLocalizedPath(location.pathname) ? (
           <>
             <link
               rel="canonical"
-              href={`${SITE_URL}${localizedPath(locale.code)}`}
+              href={`${SITE_URL}${localizedPath(locale.code, getCleanPath(location.pathname))}`}
             />
             {LOCALES.map((alternateLocale) => (
               <link
                 key={alternateLocale.code}
                 rel="alternate"
                 hrefLang={alternateLocale.htmlLang}
-                href={`${SITE_URL}${localizedPath(alternateLocale.code)}`}
+                href={`${SITE_URL}${localizedPath(alternateLocale.code, getCleanPath(location.pathname))}`}
               />
             ))}
-            <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
+            <link
+              rel="alternate"
+              hrefLang="x-default"
+              href={`${SITE_URL}${getCleanPath(location.pathname)}`}
+            />
           </>
-        ) : null}
+        ) : (
+          <link
+            rel="canonical"
+            href={`${SITE_URL}${location.pathname}`}
+          />
+        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

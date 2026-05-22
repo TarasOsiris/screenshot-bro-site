@@ -105,9 +105,14 @@ export function SiteNav({
                 aria-label={copy.ui.language}
                 value={copy.locale.code}
                 onChange={(event) => {
-                  window.location.href = localizedPath(
-                    event.currentTarget.value as LocaleCode,
-                  );
+                  const targetLocale = event.currentTarget.value as LocaleCode;
+                  let currentPath = window.location.pathname;
+                  const segments = currentPath.split("/").filter(Boolean);
+                  if (segments.length > 0 && LOCALES.some(l => l.code === segments[0] && l.code !== "en")) {
+                    segments.shift();
+                  }
+                  const cleanPath = "/" + segments.join("/");
+                  window.location.href = localizedPath(targetLocale, cleanPath);
                 }}
                 className="hidden sm:block h-9 rounded-xl border border-white/10 bg-white/[0.06] px-2 text-xs font-medium text-white/70 outline-none transition-all hover:border-white/20 hover:bg-white/10 focus:border-accent/60"
               >
@@ -244,9 +249,14 @@ function MobileMenu({
               aria-label={copy.ui.language}
               value={copy.locale.code}
               onChange={(event) => {
-                window.location.href = localizedPath(
-                  event.currentTarget.value as LocaleCode,
-                );
+                const targetLocale = event.currentTarget.value as LocaleCode;
+                let currentPath = window.location.pathname;
+                const segments = currentPath.split("/").filter(Boolean);
+                if (segments.length > 0 && LOCALES.some(l => l.code === segments[0] && l.code !== "en")) {
+                  segments.shift();
+                }
+                const cleanPath = "/" + segments.join("/");
+                window.location.href = localizedPath(targetLocale, cleanPath);
               }}
               className="w-full h-11 rounded-xl border border-white/10 bg-white/[0.06] px-3 text-sm font-medium text-white/80 outline-none transition-all focus:border-accent/60"
             >

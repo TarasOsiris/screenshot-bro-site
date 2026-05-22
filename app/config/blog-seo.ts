@@ -1,16 +1,18 @@
 import type { MetaDescriptor } from "react-router";
-import { BLOG_POSTS, type BlogPost } from "~/config/blog";
+import { getLocalizedBlogPosts, type BlogPost } from "~/config/blog";
 import { mergeMeta, type MetaMatchLike } from "~/config/meta";
 import { SITE_NAME, SITE_URL, TWITTER_HANDLE } from "~/config/site";
+import { localizedPath, type LocaleCode } from "~/config/localization";
 
 const BLOG_OG_IMAGE = `${SITE_URL}/og-image.png`;
 const AUTHOR_NAME = "Taras Leskiv";
 const AUTHOR_URL = "https://x.com/soycastic";
 
-function getPost(slug: string): BlogPost {
-  const post = BLOG_POSTS.find((entry) => entry.slug === slug);
+function getPost(slug: string, locale: LocaleCode = "en"): BlogPost {
+  const posts = getLocalizedBlogPosts(locale);
+  const post = posts.find((entry) => entry.slug === slug);
   if (!post) {
-    throw new Error(`Unknown blog post slug: ${slug}`);
+    throw new Error(`Unknown blog post slug: ${slug} for locale: ${locale}`);
   }
   return post;
 }
@@ -18,10 +20,11 @@ function getPost(slug: string): BlogPost {
 export function buildBlogPostMeta(
   slug: string,
   matches: readonly MetaMatchLike[],
+  locale: LocaleCode = "en",
 ): MetaDescriptor[] {
-  const post = getPost(slug);
+  const post = getPost(slug, locale);
   const title = `${post.title} — ${SITE_NAME}`;
-  const url = `${SITE_URL}/blog/${post.slug}`;
+  const url = `${SITE_URL}${localizedPath(locale, `/blog/${post.slug}`)}`;
   const meta: MetaDescriptor[] = [
     { title },
     { name: "description", content: post.description },
@@ -56,15 +59,15 @@ export function buildBlogPostMeta(
 }
 
 export function buildBlogPostLinks(slug: string) {
-  const post = getPost(slug);
-  return [
-    { rel: "canonical", href: `${SITE_URL}/blog/${post.slug}` },
-  ];
+  // Canonical links are handled dynamically by the root Layout (root.tsx)
+  // to support different locales. We return an empty array here to avoid duplicates.
+  return [];
 }
 
-export function buildBlogPostingJsonLd(slug: string): string {
-  const post = getPost(slug);
-  const url = `${SITE_URL}/blog/${post.slug}`;
+export function buildBlogPostingJsonLd(slug: string, locale: LocaleCode = "en"): string {
+  const post = getPost(slug, locale);
+  const url = `${SITE_URL}${localizedPath(locale, `/blog/${post.slug}`)}`;
+  const blogUrl = `${SITE_URL}${localizedPath(locale, "/blog")}`;
   return JSON.stringify({
     "@context": "https://schema.org",
     "@graph": [
@@ -78,7 +81,7 @@ export function buildBlogPostingJsonLd(slug: string): string {
         dateModified: post.date,
         articleSection: post.category,
         keywords: post.keywords,
-        inLanguage: "en",
+        inLanguage: locale,
         image: BLOG_OG_IMAGE,
         author: {
           "@type": "Person",
@@ -96,9 +99,9 @@ export function buildBlogPostingJsonLd(slug: string): string {
         },
         isPartOf: {
           "@type": "Blog",
-          "@id": `${SITE_URL}/blog#blog`,
+          "@id": `${blogUrl}#blog`,
           name: `${SITE_NAME} Blog`,
-          url: `${SITE_URL}/blog`,
+          url: blogUrl,
         },
       },
       {
@@ -114,7 +117,7 @@ export function buildBlogPostingJsonLd(slug: string): string {
             "@type": "ListItem",
             position: 2,
             name: "Blog",
-            item: `${SITE_URL}/blog`,
+            item: blogUrl,
           },
           {
             "@type": "ListItem",
