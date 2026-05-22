@@ -297,7 +297,7 @@ function ContentEn() {
         <li>
           <strong>Useful links:</strong>{" "}
           <a href="/#features">features</a>,{" "}
-          <a href="/docs/help#localization">localization docs</a>,{" "}
+          <a href="/docs/help#locales">localization docs</a>,{" "}
           <a href="/blog/upload-screenshots-to-app-store-connect">
             App Store Connect upload guide
           </a>
@@ -688,7 +688,7 @@ function ContentEs() {
         <li>
           <strong>Enlaces útiles:</strong>{" "}
           <a href="/#features">características</a>,{" "}
-          <a href="/docs/help#localization">documentación de localización</a>,{" "}
+          <a href="/docs/help#locales">documentación de localización</a>,{" "}
           <a href="/blog/upload-screenshots-to-app-store-connect">
             guía de subida a App Store Connect
           </a>{" "}
@@ -1005,7 +1005,7 @@ function ContentZh() {
         <li>
           <strong>常用链接：</strong>{" "}
           <a href="/#features">功能介绍</a>，{" "}
-          <a href="/docs/help#localization">本地化文档</a>，{" "}
+          <a href="/docs/help#locales">本地化文档</a>，{" "}
           <a href="/blog/upload-screenshots-to-app-store-connect">
             App Store Connect 上传指南
           </a>{" "}
@@ -1322,7 +1322,7 @@ function ContentHi() {
         <li>
           <strong>उपयोगी लिंक:</strong>{" "}
           <a href="/#features">विशेषताएं</a>,{" "}
-          <a href="/docs/help#localization">स्थानीयकरण दस्तावेज़</a>,{" "}
+          <a href="/docs/help#locales">स्थानीयकरण दस्तावेज़</a>,{" "}
           <a href="/blog/upload-screenshots-to-app-store-connect">
             ऐप स्टोर कनेक्ट अपलोड गाइड
           </a>
@@ -1639,7 +1639,7 @@ function ContentFr() {
         <li>
           <strong>Liens utiles :</strong>{" "}
           <a href="/#features">fonctionnalités</a>,{" "}
-          <a href="/docs/help#localization">documentation sur la localisation</a>,{" "}
+          <a href="/docs/help#locales">documentation sur la localisation</a>,{" "}
           <a href="/blog/upload-screenshots-to-app-store-connect">
             guide de chargement sur App Store Connect
           </a>
@@ -1956,7 +1956,7 @@ function ContentAr() {
         <li>
           <strong>روابط مفيدة:</strong>{" "}
           <a href="/#features">الميزات</a>،{" "}
-          <a href="/docs/help#localization">مستندات التوطين</a>،{" "}
+          <a href="/docs/help#locales">مستندات التوطين</a>،{" "}
           <a href="/blog/upload-screenshots-to-app-store-connect">
             دليل الرفع إلى App Store Connect
           </a>

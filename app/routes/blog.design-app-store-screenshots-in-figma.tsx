@@ -336,7 +336,7 @@ function ContentEn() {
         discipline: naming, components, export presets, and a checklist for
         every release. If localization is a recurring job, compare that
         manual setup with a dedicated{" "}
-        <a href="/docs/help#localization">screenshot localization workflow</a>.
+        <a href="/docs/help#locales">screenshot localization workflow</a>.
       </p>
 
       <h2>7. Set Up Export Presets</h2>
@@ -656,7 +656,7 @@ function ContentEs() {
       </ul>
       <p>
         Si ofreces soporte para muchos idiomas, este suele ser el momento en que Figma se convierte en un cuello de botella de producción. Aún puedes hacerlo, pero requieres disciplina: nombres claros, componentes, ajustes de exportación y una lista de verificación para cada lanzamiento. Si la localización es una tarea recurrente, compara esa configuración manual con un flujo de trabajo de{" "}
-        <a href="/docs/help#localization">localización de capturas de pantalla</a> dedicado.
+        <a href="/docs/help#locales">localización de capturas de pantalla</a> dedicado.
       </p>
 
       <h2>7. Configura los ajustes preestablecidos de exportación</h2>
@@ -947,7 +947,7 @@ function ContentZh() {
       </ul>
       <p>
         如果您支持多种语言，这通常是 Figma 成为生产瓶颈的时刻。您仍然可以这样做，但需要极高的自律：清晰的命名、组件化、导出预设以及每次发布的清单。如果本地化是一项经常性的工作，请将那种手动设置与专用的{" "}
-        <a href="/docs/help#localization">截图本地化工作流</a> 进行对比。
+        <a href="/docs/help#locales">截图本地化工作流</a> 进行对比。
       </p>
 
       <h2>7. 设置导出预设</h2>
@@ -1237,7 +1237,7 @@ function ContentHi() {
       </ul>
       <p>
         यदि आप कई भाषाओं का समर्थन करते हैं, तो यह वह बिंदु है जहां फिग्मा अक्सर उत्पादन अड़चन बन जाता है। आप अभी भी ऐसा कर सकते, हैं लेकिन आपको अनुशासन की आवश्यकता है: नामकरण, घटक, निर्यात प्रीसेट, और हर रिलीज के लिए एक चेकलिस्ट। यदि स्थानीयकरण एक आवर्ती काम है, तो उस मैन्युअल सेटअप की तुलना एक समर्पित{" "}
-        <a href="/docs/help#localization">स्क्रीनशॉट स्थानीयकरण वर्कफ़्लो</a> से करें।
+        <a href="/docs/help#locales">स्क्रीनशॉट स्थानीयकरण वर्कफ़्लो</a> से करें。
       </p>
 
       <h2>7. निर्यात प्रीसेट सेट करें</h2>
@@ -1531,7 +1531,7 @@ function ContentFr() {
       </ul>
       <p>
         Si vous devez gérer de nombreuses langues, c&apos;est à ce moment précis que Figma montre ses limites en termes de productivité. C&apos;est faisable, mais cela demande une rigueur de fer : conventions de nommage, composants, préréglages d&apos;exportation et checklist de vérification à chaque version. Si la traduction de vos visuels est une tâche récurrente, comparez ce processus manuel à un flux de travail de{" "}
-        <a href="/docs/help#localization">localisation de captures d&apos;écran</a> dédié.
+        <a href="/docs/help#locales">localisation de captures d&apos;écran</a> dédié.
       </p>
 
       <h2>7. Configurez des profils d&apos;exportation</h2>
@@ -1821,7 +1821,7 @@ function ContentAr() {
       </ul>
       <p>
         إذا كنت تدعم العديد من اللغات، فهذه هي النقطة التي غالبًا ما يصبح فيها Figma عنق زجاجة في الإنتاج. لا يزال بإمكانك القيام بذلك، لكنك تحتاج إلى الانضباط: التسمية، والمكونات، والإعدادات المسبقة للتصدير، وقائمة مرجعية لكل إصدار. إذا كان التوطين وظيفة متكررة، فقارن هذا الإعداد اليدوي بسير عمل{" "}
-        <a href="/docs/help#localization">توطين لقطات شاشة مخصص</a>.
+        <a href="/docs/help#locales">توطين لقطات شاشة مخصص</a>.
       </p>
 
       <h2>7. إعداد الإعدادات المسبقة للتصدير</h2>

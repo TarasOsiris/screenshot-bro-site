@@ -23,7 +23,8 @@ export function buildBlogPostMeta(
   locale: LocaleCode = "en",
 ): MetaDescriptor[] {
   const post = getPost(slug, locale);
-  const title = `${post.title} — ${SITE_NAME}`;
+  const fullTitle = `${post.title} — ${SITE_NAME}`;
+  const title = fullTitle.length <= 60 ? fullTitle : post.title;
   const url = `${SITE_URL}${localizedPath(locale, `/blog/${post.slug}`)}`;
   const meta: MetaDescriptor[] = [
     { title },
@@ -80,7 +81,7 @@ export function buildBlogPostingJsonLd(slug: string, locale: LocaleCode = "en"):
         datePublished: post.date,
         dateModified: post.date,
         articleSection: post.category,
-        keywords: post.keywords,
+        keywords: post.keywords?.join(", "),
         inLanguage: locale,
         image: BLOG_OG_IMAGE,
         author: {
