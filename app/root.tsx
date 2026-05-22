@@ -202,6 +202,11 @@ export const links: Route.LinksFunction = () => [
   { rel: "manifest", href: "/site.webmanifest" },
 ];
 
+const isLocalizedHome = (pathname: string): boolean => {
+  const segments = pathname.split("/").filter(Boolean);
+  return segments.length === 0 || (segments.length === 1 && isLocaleCode(segments[0]));
+};
+
 const isLocalizedPath = (pathname: string): boolean => {
   const segments = pathname.split("/").filter(Boolean);
   if (segments.length === 0 || (segments.length === 1 && isLocaleCode(segments[0]))) {
@@ -282,7 +287,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             __html: WEB_SITE_SCHEMA_JSON,
           }}
         />
-        {isLocalizedHome ? (
+        {isLocalizedHome(location.pathname) ? (
           <>
             <script
               type="application/ld+json"
