@@ -1,4 +1,10 @@
-import { useEffect, useState } from "react";
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+import { useEffect, useRef, useState } from "react";
 import { data } from "react-router";
 
 import type { Route } from "./+types/home";
@@ -75,9 +81,35 @@ function useScrollFade(threshold = 100) {
   return visible;
 }
 
+function useGadsConversionTracking() {
+  const isFromGads = useRef(false);
+
+  useEffect(() => {
+    isFromGads.current = new URLSearchParams(window.location.search).has("gclid");
+  }, []);
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (!isFromGads.current) return;
+      const anchor = (e.target as HTMLElement).closest?.("a[href*='apps.apple.com']");
+      if (!anchor) return;
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "ads_conversion_outbound_click", {
+          event_category: "conversion",
+          event_label: anchor.getAttribute("href"),
+          transport_type: "beacon",
+        });
+      }
+    }
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
+}
+
 export default function Home({ loaderData }: Route.ComponentProps) {
   const showBackToTop = useScrollFade(600);
   const copy = getHomeCopy(loaderData.locale);
+  useGadsConversionTracking();
 
   return (
     <div className="min-h-screen">
