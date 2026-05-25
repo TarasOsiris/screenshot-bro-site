@@ -4,7 +4,7 @@ declare global {
   }
 }
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { data } from "react-router";
 
 import type { Route } from "./+types/home";
@@ -81,16 +81,21 @@ function useScrollFade(threshold = 100) {
   return visible;
 }
 
-function useGadsConversionTracking() {
-  const isFromGads = useRef(false);
+const GADS_APP_STORE_URL =
+  "https://apps.apple.com/app/apple-store/id6760177675?pt=117277360&ct=gadsmay25&mt=8";
+
+function useGadsConversion() {
+  const [isFromGads, setIsFromGads] = useState(false);
 
   useEffect(() => {
-    isFromGads.current = new URLSearchParams(window.location.search).has("gclid");
+    if (new URLSearchParams(window.location.search).has("gclid")) {
+      setIsFromGads(true);
+    }
   }, []);
 
   useEffect(() => {
+    if (!isFromGads) return;
     function handleClick(e: MouseEvent) {
-      if (!isFromGads.current) return;
       const anchor = (e.target as HTMLElement).closest?.("a[href*='apps.apple.com']");
       if (!anchor) return;
       if (typeof window.gtag === "function") {
@@ -103,13 +108,15 @@ function useGadsConversionTracking() {
     }
     document.addEventListener("click", handleClick);
     return () => document.removeEventListener("click", handleClick);
-  }, []);
+  }, [isFromGads]);
+
+  return isFromGads ? GADS_APP_STORE_URL : undefined;
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
   const showBackToTop = useScrollFade(600);
   const copy = getHomeCopy(loaderData.locale);
-  useGadsConversionTracking();
+  const gadsHref = useGadsConversion();
 
   return (
     <div className="min-h-screen">
@@ -120,12 +127,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         {copy.ui.skipToContent}
       </a>
 
-      <SiteNav copy={copy} />
+      <SiteNav copy={copy} href={gadsHref} />
 
       <main id="main-content">
-        <HeroSection copy={copy} />
+        <HeroSection copy={copy} href={gadsHref} />
         <InstagramReelSection copy={copy} />
-        <ShowcasesSection copy={copy} />
+        <ShowcasesSection copy={copy} href={gadsHref} />
         <ProblemSection copy={copy} />
         <WorkflowSection copy={copy} />
         <FeaturesSection copy={copy} />
@@ -133,7 +140,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <TestimonialsSection copy={copy} />
         <BlogPreviewSection copy={copy} />
         <FaqSection copy={copy} />
-        <DownloadSection copy={copy} />
+        <DownloadSection copy={copy} href={gadsHref} />
         <AppShowcaseSection copy={copy} />
       </main>
 
