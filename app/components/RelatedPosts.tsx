@@ -8,6 +8,11 @@ const KEEP_READING_COPIES: Record<LocaleCode, string> = {
   hi: "पढ़ना जारी रखें",
   fr: "Continuer la lecture",
   ar: "متابعة القراءة",
+  de: "Weiterlesen",
+  ja: "読み続ける",
+  pt: "Continuar lendo",
+  it: "Continua a leggere",
+  ko: "계속 읽기"
 };
 
 export function RelatedPosts({

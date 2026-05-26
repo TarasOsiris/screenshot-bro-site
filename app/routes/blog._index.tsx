@@ -37,6 +37,31 @@ const INDEX_COPY: Record<LocaleCode, { eyebrow: string; title: string; descripti
     title: "الأدلة والموارد",
     description: "أدلة عملية لتصميم لقطات شاشة App Store تؤدي بالفعل إلى زيادة التحويل.",
   },
+  de: {
+    eyebrow: "Blog",
+    title: "Leitfäden & Ressourcen",
+    description: "Praktische Leitfäden für das Design von App-Store-Screenshots, die konvertieren.",
+  },
+  ja: {
+    eyebrow: "ブログ",
+    title: "ガイドとリソース",
+    description: "ダウンロードにつながる App Store スクリーンショットをデザインするための実践ガイド。",
+  },
+  pt: {
+    eyebrow: "Blog",
+    title: "Guias e Recursos",
+    description: "Guias práticos para criar capturas de tela da App Store que convertem.",
+  },
+  it: {
+    eyebrow: "Blog",
+    title: "Guide e Risorse",
+    description: "Guide pratiche per progettare screenshot di App Store che convertono.",
+  },
+  ko: {
+    eyebrow: "블로그",
+    title: "가이드 및 리소스",
+    description: "전환율을 높이는 App Store 스크린샷 디자인을 위한 실용 가이드.",
+  },
 };
 
 export async function loader({ params }: Route.LoaderArgs) {

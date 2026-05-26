@@ -42,6 +42,8 @@ export default function BlogPost() {
 
 function getCTAMessage(locale: LocaleCode): string {
   switch (locale) {
+    case "de":
+      return "Hör auf, Screenshot-Größen manuell zu verwalten.";
     case "es":
       return "Deja de gestionar los tamaños de las capturas de pantalla manualmente.";
     case "zh":
@@ -52,6 +54,14 @@ function getCTAMessage(locale: LocaleCode): string {
       return "Arrêtez de gérer manuellement les tailles de captures d'écran.";
     case "ar":
       return "توقف عن إدارة مقاسات لقطات الشاشة يدويًا.";
+    case "ja":
+      return "スクリーンショットのサイズを手動で管理するのはもうやめましょう。";
+    case "pt":
+      return "Pare de gerenciar tamanhos de captura de tela manualmente.";
+    case "it":
+      return "Smetti di gestire manualmente le dimensioni degli screenshot.";
+    case "ko":
+      return "더 이상 스크린샷 크기를 수동으로 관리하지 마세요.";
     default:
       return "Stop managing screenshot sizes manually.";
   }
@@ -59,6 +69,8 @@ function getCTAMessage(locale: LocaleCode): string {
 
 function renderContent(locale: LocaleCode) {
   switch (locale) {
+    case "de":
+      return <ContentDe />;
     case "es":
       return <ContentEs />;
     case "zh":
@@ -69,6 +81,14 @@ function renderContent(locale: LocaleCode) {
       return <ContentFr />;
     case "ar":
       return <ContentAr />;
+    case "ja":
+      return <ContentJa />;
+    case "pt":
+      return <ContentPt />;
+    case "it":
+      return <ContentIt />;
+    case "ko":
+      return <ContentKo />;
     default:
       return <ContentEn />;
   }
@@ -1066,3 +1086,823 @@ function ContentAr() {
     </>
   );
 }
+
+function ContentDe() {
+  return (
+    <>
+      <p>
+        Apple erfordert spezifische Screenshot-Abmessungen für jede Plattform und
+        Display-Klasse. Wenn Sie eine erforderliche Größe verpassen, kann App Store Connect
+        das Asset ablehnen oder auf einen skalierten Screenshot zurückgreifen. Hier sind die
+        aktuell akzeptierten Abmessungen für 2026.
+      </p>
+
+      <h2>iPhone-Screenshots</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Displaygröße</th>
+            <th>Pixel (Hochformat)</th>
+            <th>Geräte</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>6.9&quot;</td>
+            <td>1260 x 2736, 1290 x 2796 oder 1320 x 2868</td>
+            <td>
+              iPhone Air, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
+              Plus, 14 Pro Max
+            </td>
+          </tr>
+          <tr>
+            <td>6.5&quot;</td>
+            <td>1284 x 2778 oder 1242 x 2688</td>
+            <td>
+              iPhone 14 Plus, 13 Pro Max, 12 Pro Max, 11 Pro Max, 11, XS Max,
+              XR
+            </td>
+          </tr>
+          <tr>
+            <td>6.3&quot;</td>
+            <td>1179 x 2556 oder 1206 x 2622</td>
+            <td>iPhone 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
+          </tr>
+          <tr>
+            <td>6.1&quot;</td>
+            <td>1170 x 2532, 1125 x 2436 oder 1080 x 2340</td>
+            <td>
+              iPhone 17e, 16e, 14, 13 Pro, 13, 13 mini, 12 Pro, 12, 12 mini,
+              11 Pro, XS, X
+            </td>
+          </tr>
+          <tr>
+            <td>5.5&quot;</td>
+            <td>1242 x 2208</td>
+            <td>iPhone 8 Plus, 7 Plus, 6s Plus, 6 Plus</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>iPad-Screenshots</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Displaygröße</th>
+            <th>Pixel (Hochformat)</th>
+            <th>Geräte</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>13&quot;</td>
+            <td>2064 x 2752 oder 2048 x 2732</td>
+            <td>
+              iPad Pro 13&quot; (M5/M4), iPad Pro 12.9&quot; (3.–6. Gen.), iPad Air
+              13&quot; (M4/M3/M2)
+            </td>
+          </tr>
+          <tr>
+            <td>11&quot;</td>
+            <td>
+              1488 x 2266, 1668 x 2420, 1668 x 2388 oder 1640 x 2360
+            </td>
+            <td>
+              iPad Pro 11&quot; (M5/M4 und 1.–4. Gen.), iPad Air 11&quot;
+              (M4/M3/M2), iPad Air (4.–5. Gen.), iPad (A16/10. Gen.), iPad
+              mini (A17 Pro/6. Gen.)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Mac-Screenshots</h2>
+      <p>
+        Mac App Store-Screenshots müssen eine der von Apple akzeptierten 16:10-Größen
+        verwenden: <strong>1280 x 800</strong>, <strong>1440 x 900</strong>,{" "}
+        <strong>2560 x 1600</strong> oder <strong>2880 x 1800</strong>.
+        Apple akzeptiert ein bis zehn Screenshots pro Lokalisierung.
+      </p>
+
+      <h2>Apple Watch-Screenshots</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Modell</th>
+            <th>Pixel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Apple Watch Ultra 3</td>
+            <td>422 x 514</td>
+          </tr>
+          <tr>
+            <td>Apple Watch Ultra 2 / Ultra</td>
+            <td>410 x 502</td>
+          </tr>
+          <tr>
+            <td>Series 11 / Series 10</td>
+            <td>416 x 496</td>
+          </tr>
+          <tr>
+            <td>Series 9 / 8 / 7</td>
+            <td>396 x 484</td>
+          </tr>
+          <tr>
+            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>368 x 448</td>
+          </tr>
+          <tr>
+            <td>Series 3</td>
+            <td>312 x 390</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Apple TV- und Vision Pro-Screenshots</h2>
+      <ul>
+        <li>
+          <strong>Apple TV:</strong> 1920 x 1080 oder 3840 x 2160.
+        </li>
+        <li>
+          <strong>Apple Vision Pro:</strong> 3840 x 2160.
+        </li>
+      </ul>
+
+      <h2>Tipps zur Verwaltung mehrerer Größen</h2>
+      <ul>
+        <li>
+          <strong>Gestalten Sie zuerst für die größte Größe.</strong> Es ist einfacher,
+          herunter- als hochzuskalieren. Beginnen Sie mit dem 6.9&quot; iPhone und dem 13&quot; iPad und passen Sie sie dann an.
+        </li>
+        <li>
+          <strong>Verwenden Sie Vorlagen mit Geräterahmen.</strong> Verwenden Sie anstelle
+          der Verwaltung roher Pixeldateien ein Tool, das Ihre App-Screenshots automatisch mit dem passenden Geräterahmen versieht.
+        </li>
+        <li>
+          <strong>Exportieren Sie alle Größen in einem Schritt.</strong> Die manuelle Größenanpassung
+          für jedes Gerät ist der größte Zeitfresser. Ein Batch-Export-Workflow macht dies überflüssig.
+        </li>
+        <li>
+          <strong>Screenshot Bro erledigt all dies für Sie.</strong> Richten Sie Ihre
+          Zeilen mit den benötigten Gerätegrößen ein, gestalten Sie einmalig und exportieren Sie jede
+          Größe mit einem Klick in 1x, 2x oder 3x.
+        </li>
+      </ul>
+    </>
+  );
+}
+
+function ContentJa() {
+  return (
+    <>
+      <p>
+        Appleは、プラットフォームおよびディスプレイファミリーごとに特定のスクリーンショットの寸法を要求しています。必要なサイズが不足していると、App Store Connectはアセットを却下するか、代わりに縮小・拡大されたスクリーンショットを表示することがあります。以下は、2026年現在受け入れられている寸法です。
+      </p>
+
+      <h2>iPhoneのスクリーンショット</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ディスプレイサイズ</th>
+            <th>ピクセル（縦向き）</th>
+            <th>デバイス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>6.9&quot;</td>
+            <td>1260 x 2736、1290 x 2796、または 1320 x 2868</td>
+            <td>
+              iPhone Air、17 Pro Max、16 Pro Max、16 Plus、15 Pro Max、15
+              Plus、14 Pro Max
+            </td>
+          </tr>
+          <tr>
+            <td>6.5&quot;</td>
+            <td>1284 x 2778 または 1242 x 2688</td>
+            <td>
+              iPhone 14 Plus、13 Pro Max、12 Pro Max、11 Pro Max、11、XS Max、
+              XR
+            </td>
+          </tr>
+          <tr>
+            <td>6.3&quot;</td>
+            <td>1179 x 2556 または 1206 x 2622</td>
+            <td>iPhone 17 Pro、17、16 Pro、16、15 Pro、15、14 Pro</td>
+          </tr>
+          <tr>
+            <td>6.1&quot;</td>
+            <td>1170 x 2532、1125 x 2436、または 1080 x 2340</td>
+            <td>
+              iPhone 17e、16e、14、13 Pro、13、13 mini、12 Pro、12、12 mini、
+              11 Pro、XS、X
+            </td>
+          </tr>
+          <tr>
+            <td>5.5&quot;</td>
+            <td>1242 x 2208</td>
+            <td>iPhone 8 Plus、7 Plus、6s Plus、6 Plus</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>iPadのスクリーンショット</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ディスプレイサイズ</th>
+            <th>ピクセル（縦向き）</th>
+            <th>デバイス</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>13&quot;</td>
+            <td>2064 x 2752 または 2048 x 2732</td>
+            <td>
+              iPad Pro 13&quot; (M5/M4)、iPad Pro 12.9&quot; (第3〜6世代)、iPad Air
+              13&quot; (M4/M3/M2)
+            </td>
+          </tr>
+          <tr>
+            <td>11&quot;</td>
+            <td>
+              1488 x 2266、1668 x 2420、1668 x 2388、または 1640 x 2360
+            </td>
+            <td>
+              iPad Pro 11&quot; (M5/M4および第1〜4世代)、iPad Air 11&quot;
+              (M4/M3/M2)、iPad Air (第4〜5世代)、iPad (A16/第10世代)、iPad
+              mini (A17 Pro/第6世代)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Macのスクリーンショット</h2>
+      <p>
+        Mac App Storeのスクリーンショットは、Appleが許可している16:10サイズのいずれかを使用する必要があります：<strong>1280 x 800</strong>、<strong>1440 x 900</strong>、{" "}
+        <strong>2560 x 1600</strong>、または<strong>2880 x 1800</strong>。
+        Appleはローカライズごとに1〜10枚のスクリーンショットを受け入れます。
+      </p>
+
+      <h2>Apple Watchのスクリーンショット</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>モデル</th>
+            <th>ピクセル</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Apple Watch Ultra 3</td>
+            <td>422 x 514</td>
+          </tr>
+          <tr>
+            <td>Apple Watch Ultra 2 / Ultra</td>
+            <td>410 x 502</td>
+          </tr>
+          <tr>
+            <td>Series 11 / Series 10</td>
+            <td>416 x 496</td>
+          </tr>
+          <tr>
+            <td>Series 9 / 8 / 7</td>
+            <td>396 x 484</td>
+          </tr>
+          <tr>
+            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>368 x 448</td>
+          </tr>
+          <tr>
+            <td>Series 3</td>
+            <td>312 x 390</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Apple TVおよびVision Proのスクリーンショット</h2>
+      <ul>
+        <li>
+          <strong>Apple TV：</strong> 1920 x 1080または3840 x 2160。
+        </li>
+        <li>
+          <strong>Apple Vision Pro：</strong> 3840 x 2160。
+        </li>
+      </ul>
+
+      <h2>複数サイズを管理するためのヒント</h2>
+      <ul>
+        <li>
+          <strong>最初に最も大きなサイズでデザインします。</strong> 拡大するよりも縮小する方が簡単です。6.9&quot; iPhoneと13&quot; iPadから始めて、その後で調整します。
+        </li>
+        <li>
+          <strong>デバイスフレーム付きのテンプレートを使用します。</strong> 生のピクセルファイルを管理する代わりに、アプリのスクリーンショットを正しいデバイスのベゼルで自動的に囲むツールを使用します。
+        </li>
+        <li>
+          <strong>すべてのサイズをワンステップで書き出します。</strong> デバイスごとに手動でサイズを変更するのは、主な時間の無駄です。一括書き出しのワークフローを使用すれば、この手間を省くことができます。
+        </li>
+        <li>
+          <strong>Screenshot Broがこれらすべてを処理します。</strong> 必要なデバイスサイズで行を設定し、一度デザインすれば、ワンクリックで1x、2x、または3xのすべてのサイズを書き出すことができます。
+        </li>
+      </ul>
+    </>
+  );
+}
+
+function ContentPt() {
+  return (
+    <>
+      <p>
+        A Apple exige dimensões de captura de tela específicas para cada plataforma e
+        classe de tela. Se você perder um tamanho obrigatório, o App Store Connect
+        poderá rejeitar o recurso ou recorrer a uma captura de tela redimensionada. Aqui estão as
+        dimensões aceitas atualmente para 2026.
+      </p>
+
+      <h2>Capturas de Tela do iPhone</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Tamanho da Tela</th>
+            <th>Pixels (Retrato)</th>
+            <th>Dispositivos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>6.9&quot;</td>
+            <td>1260 x 2736, 1290 x 2796 ou 1320 x 2868</td>
+            <td>
+              iPhone Air, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
+              Plus, 14 Pro Max
+            </td>
+          </tr>
+          <tr>
+            <td>6.5&quot;</td>
+            <td>1284 x 2778 ou 1242 x 2688</td>
+            <td>
+              iPhone 14 Plus, 13 Pro Max, 12 Pro Max, 11 Pro Max, 11, XS Max,
+              XR
+            </td>
+          </tr>
+          <tr>
+            <td>6.3&quot;</td>
+            <td>1179 x 2556 ou 1206 x 2622</td>
+            <td>iPhone 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
+          </tr>
+          <tr>
+            <td>6.1&quot;</td>
+            <td>1170 x 2532, 1125 x 2436 ou 1080 x 2340</td>
+            <td>
+              iPhone 17e, 16e, 14, 13 Pro, 13, 13 mini, 12 Pro, 12, 12 mini,
+              11 Pro, XS, X
+            </td>
+          </tr>
+          <tr>
+            <td>5.5&quot;</td>
+            <td>1242 x 2208</td>
+            <td>iPhone 8 Plus, 7 Plus, 6s Plus, 6 Plus</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Capturas de Tela do iPad</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Tamanho da Tela</th>
+            <th>Pixels (Retrato)</th>
+            <th>Dispositivos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>13&quot;</td>
+            <td>2064 x 2752 ou 2048 x 2732</td>
+            <td>
+              iPad Pro 13&quot; (M5/M4), iPad Pro 12.9&quot; (3ª–6ª ger.), iPad Air
+              13&quot; (M4/M3/M2)
+            </td>
+          </tr>
+          <tr>
+            <td>11&quot;</td>
+            <td>
+              1488 x 2266, 1668 x 2420, 1668 x 2388 ou 1640 x 2360
+            </td>
+            <td>
+              iPad Pro 11&quot; (M5/M4 e 1ª–4ª ger.), iPad Air 11&quot;
+              (M4/M3/M2), iPad Air (4ª–5ª ger.), iPad (A16/10ª ger.), iPad
+              mini (A17 Pro/6ª ger.)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Capturas de Tela do Mac</h2>
+      <p>
+        As capturas de tela da Mac App Store devem usar um dos tamanhos 16:10
+        aceitos pela Apple: <strong>1280 x 800</strong>, <strong>1440 x 900</strong>,{" "}
+        <strong>2560 x 1600</strong> ou <strong>2880 x 1800</strong>.
+        A Apple aceita de uma a dez capturas de tela por localização.
+      </p>
+
+      <h2>Capturas de Tela do Apple Watch</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Modelo</th>
+            <th>Pixels</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Apple Watch Ultra 3</td>
+            <td>422 x 514</td>
+          </tr>
+          <tr>
+            <td>Apple Watch Ultra 2 / Ultra</td>
+            <td>410 x 502</td>
+          </tr>
+          <tr>
+            <td>Series 11 / Series 10</td>
+            <td>416 x 496</td>
+          </tr>
+          <tr>
+            <td>Series 9 / 8 / 7</td>
+            <td>396 x 484</td>
+          </tr>
+          <tr>
+            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>368 x 448</td>
+          </tr>
+          <tr>
+            <td>Series 3</td>
+            <td>312 x 390</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Capturas de Tela do Apple TV e do Vision Pro</h2>
+      <ul>
+        <li>
+          <strong>Apple TV:</strong> 1920 x 1080 ou 3840 x 2160.
+        </li>
+        <li>
+          <strong>Apple Vision Pro:</strong> 3840 x 2160.
+        </li>
+      </ul>
+
+      <h2>Dicas para Gerenciar Vários Tamanhos</h2>
+      <ul>
+        <li>
+          <strong>Desenhe primeiro no maior tamanho.</strong> É mais fácil
+          reduzir a escala do que aumentá-la. Comece com o iPhone de 6.9&quot; e o iPad de 13&quot;, depois adapte.
+        </li>
+        <li>
+          <strong>Use modelos com molduras de dispositivos.</strong> Em vez de
+          gerenciar arquivos de pixels puros, use uma ferramenta que envolva as
+          capturas de tela do seu aplicativo na moldura correta do dispositivo automaticamente.
+        </li>
+        <li>
+          <strong>Exporte todos os tamanhos em uma única etapa.</strong> O redimensionamento manual para
+          cada dispositivo é a principal perda de tempo. Um fluxo de trabalho de exportação em lote elimina isso.
+        </li>
+        <li>
+          <strong>O Screenshot Bro cuida de tudo isso.</strong> Configure suas
+          linhas com os tamanhos de dispositivos necessários, desenhe uma vez e exporte cada
+          tamanho em 1x, 2x ou 3x com um único clique.
+        </li>
+      </ul>
+    </>
+  );
+}
+
+function ContentIt() {
+  return (
+    <>
+      <p>
+        Apple richiede dimensioni specifiche per gli screenshot per ciascuna piattaforma e
+        classe di display. Se manca una dimensione richiesta, App Store Connect può rifiutare
+        la risorsa o utilizzare uno screenshot ridimensionato. Ecco le dimensioni
+        attualmente accettate per il 2026.
+      </p>
+
+      <h2>Screenshot per iPhone</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Dimensioni Display</th>
+            <th>Pixel (Verticale)</th>
+            <th>Dispositivi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>6.9&quot;</td>
+            <td>1260 x 2736, 1290 x 2796 o 1320 x 2868</td>
+            <td>
+              iPhone Air, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
+              Plus, 14 Pro Max
+            </td>
+          </tr>
+          <tr>
+            <td>6.5&quot;</td>
+            <td>1284 x 2778 o 1242 x 2688</td>
+            <td>
+              iPhone 14 Plus, 13 Pro Max, 12 Pro Max, 11 Pro Max, 11, XS Max,
+              XR
+            </td>
+          </tr>
+          <tr>
+            <td>6.3&quot;</td>
+            <td>1179 x 2556 o 1206 x 2622</td>
+            <td>iPhone 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
+          </tr>
+          <tr>
+            <td>6.1&quot;</td>
+            <td>1170 x 2532, 1125 x 2436 o 1080 x 2340</td>
+            <td>
+              iPhone 17e, 16e, 14, 13 Pro, 13, 13 mini, 12 Pro, 12, 12 mini,
+              11 Pro, XS, X
+            </td>
+          </tr>
+          <tr>
+            <td>5.5&quot;</td>
+            <td>1242 x 2208</td>
+            <td>iPhone 8 Plus, 7 Plus, 6s Plus, 6 Plus</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Screenshot per iPad</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Dimensioni Display</th>
+            <th>Pixel (Verticale)</th>
+            <th>Dispositivi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>13&quot;</td>
+            <td>2064 x 2752 o 2048 x 2732</td>
+            <td>
+              iPad Pro 13&quot; (M5/M4), iPad Pro 12.9&quot; (3ª–6ª gen), iPad Air
+              13&quot; (M4/M3/M2)
+            </td>
+          </tr>
+          <tr>
+            <td>11&quot;</td>
+            <td>
+              1488 x 2266, 1668 x 2420, 1668 x 2388 o 1640 x 2360
+            </td>
+            <td>
+              iPad Pro 11&quot; (M5/M4 e 1ª–4ª gen), iPad Air 11&quot;
+              (M4/M3/M2), iPad Air (4ª–5ª gen), iPad (A16/10ª gen), iPad
+              mini (A17 Pro/6ª gen)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Screenshot per Mac</h2>
+      <p>
+        Gli screenshot del Mac App Store devono utilizzare una delle dimensioni 16:10
+        accettate da Apple: <strong>1280 x 800</strong>, <strong>1440 x 900</strong>,{" "}
+        <strong>2560 x 1600</strong> o <strong>2880 x 1800</strong>.
+        Apple accetta da uno a dieci screenshot per localizzazione.
+      </p>
+
+      <h2>Screenshot per Apple Watch</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Modello</th>
+            <th>Pixel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Apple Watch Ultra 3</td>
+            <td>422 x 514</td>
+          </tr>
+          <tr>
+            <td>Apple Watch Ultra 2 / Ultra</td>
+            <td>410 x 502</td>
+          </tr>
+          <tr>
+            <td>Series 11 / Series 10</td>
+            <td>416 x 496</td>
+          </tr>
+          <tr>
+            <td>Series 9 / 8 / 7</td>
+            <td>396 x 484</td>
+          </tr>
+          <tr>
+            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>368 x 448</td>
+          </tr>
+          <tr>
+            <td>Series 3</td>
+            <td>312 x 390</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Screenshot per Apple TV e Vision Pro</h2>
+      <ul>
+        <li>
+          <strong>Apple TV:</strong> 1920 x 1080 o 3840 x 2160.
+        </li>
+        <li>
+          <strong>Apple Vision Pro:</strong> 3840 x 2160.
+        </li>
+      </ul>
+
+      <h2>Consigli per la Gestione di Molteplici Dimensioni</h2>
+      <ul>
+        <li>
+          <strong>Progetta prima per le dimensioni più grandi.</strong> È più facile
+          ridurre le dimensioni che aumentarle. Inizia con l&apos;iPhone da 6.9&quot; e l&apos;iPad da 13&quot;, quindi procedi all&apos;adattamento.
+        </li>
+        <li>
+          <strong>Usa modelli con cornici per dispositivi.</strong> Invece di
+          gestire file di pixel grezzi, usa uno strumento che inserisca automaticamente gli
+          screenshot della tua app all&apos;interno della cornice del dispositivo corretta.
+        </li>
+        <li>
+          <strong>Esporta tutte le dimensioni in un solo passaggio.</strong> Il ridimensionamento manuale per
+          ciascun dispositivo è la principale perdita di tempo. Un flusso di lavoro di esportazione in batch lo elimina.
+        </li>
+        <li>
+          <strong>Screenshot Bro gestisce tutto questo.</strong> Imposta le
+          righe con le dimensioni dei dispositivi che desideri, crea il design una sola volta
+          ed esporta ogni dimensione a 1x, 2x o 3x con un solo clic.
+        </li>
+      </ul>
+    </>
+  );
+}
+
+function ContentKo() {
+  return (
+    <>
+      <p>
+        Apple은 각 플랫폼 및 디스플레이 등급에 따라 구체적인 스크린샷 크기를 요구합니다. 필수 크기를 누락하면 App Store Connect에서 애셋을 거부하거나 크기가 조정된 스크린샷으로 대체할 수 있습니다. 2026년 기준 현재 허용되는 규격은 다음과 같습니다.
+      </p>
+
+      <h2>iPhone 스크린샷</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>디스플레이 크기</th>
+            <th>픽셀 (세로 방향)</th>
+            <th>기기</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>6.9&quot;</td>
+            <td>1260 x 2736, 1290 x 2796 또는 1320 x 2868</td>
+            <td>
+              iPhone Air, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
+              Plus, 14 Pro Max
+            </td>
+          </tr>
+          <tr>
+            <td>6.5&quot;</td>
+            <td>1284 x 2778 또는 1242 x 2688</td>
+            <td>
+              iPhone 14 Plus, 13 Pro Max, 12 Pro Max, 11 Pro Max, 11, XS Max,
+              XR
+            </td>
+          </tr>
+          <tr>
+            <td>6.3&quot;</td>
+            <td>1179 x 2556 또는 1206 x 2622</td>
+            <td>iPhone 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
+          </tr>
+          <tr>
+            <td>6.1&quot;</td>
+            <td>1170 x 2532, 1125 x 2436 또는 1080 x 2340</td>
+            <td>
+              iPhone 17e, 16e, 14, 13 Pro, 13, 13 mini, 12 Pro, 12, 12 mini,
+              11 Pro, XS, X
+            </td>
+          </tr>
+          <tr>
+            <td>5.5&quot;</td>
+            <td>1242 x 2208</td>
+            <td>iPhone 8 Plus, 7 Plus, 6s Plus, 6 Plus</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>iPad 스크린샷</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>디스플레이 크기</th>
+            <th>픽셀 (세로 방향)</th>
+            <th>기기</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>13&quot;</td>
+            <td>2064 x 2752 또는 2048 x 2732</td>
+            <td>
+              iPad Pro 13&quot; (M5/M4), iPad Pro 12.9&quot; (3~6세대), iPad Air
+              13&quot; (M4/M3/M2)
+            </td>
+          </tr>
+          <tr>
+            <td>11&quot;</td>
+            <td>
+              1488 x 2266, 1668 x 2420, 1668 x 2388 또는 1640 x 2360
+            </td>
+            <td>
+              iPad Pro 11&quot; (M5/M4 및 1~4세대), iPad Air 11&quot;
+              (M4/M3/M2), iPad Air (4~5세대), iPad (A16/10세대), iPad
+              mini (A17 Pro/6세대)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Mac 스크린샷</h2>
+      <p>
+        Mac App Store 스크린샷은 Apple에서 허용하는 16:10 비율 크기 중 하나를 사용해야 합니다: <strong>1280 x 800</strong>, <strong>1440 x 900</strong>,{" "}
+        <strong>2560 x 1600</strong> 또는 <strong>2880 x 1800</strong>.
+        Apple은 현지화당 1~10개의 스크린샷을 지원합니다.
+      </p>
+
+      <h2>Apple Watch 스크린샷</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>모델</th>
+            <th>픽셀</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Apple Watch Ultra 3</td>
+            <td>422 x 514</td>
+          </tr>
+          <tr>
+            <td>Apple Watch Ultra 2 / Ultra</td>
+            <td>410 x 502</td>
+          </tr>
+          <tr>
+            <td>Series 11 / Series 10</td>
+            <td>416 x 496</td>
+          </tr>
+          <tr>
+            <td>Series 9 / 8 / 7</td>
+            <td>396 x 484</td>
+          </tr>
+          <tr>
+            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>368 x 448</td>
+          </tr>
+          <tr>
+            <td>Series 3</td>
+            <td>312 x 390</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Apple TV 및 Vision Pro 스크린샷</h2>
+      <ul>
+        <li>
+          <strong>Apple TV:</strong> 1920 x 1080 또는 3840 x 2160.
+        </li>
+        <li>
+          <strong>Apple Vision Pro:</strong> 3840 x 2160.
+        </li>
+      </ul>
+
+      <h2>다양한 크기 관리를 위한 팁</h2>
+      <ul>
+        <li>
+          <strong>가장 큰 크기로 먼저 디자인하세요.</strong> 크기를 키우는 것보다 줄이는 것이 훨씬 쉽습니다. 6.9&quot; iPhone 및 13&quot; iPad로 시작한 다음 맞게 변형하세요.
+        </li>
+        <li>
+          <strong>기기 프레임이 포함된 템플릿을 사용하세요.</strong> 원본 픽셀 파일을 직접 관리하는 대신, 앱 스크린샷을 적절한 기기 베젤로 자동 래핑해 주는 도구를 사용하는 것이 좋습니다.
+        </li>
+        <li>
+          <strong>한 번에 모든 크기를 내보내세요.</strong> 각 기기별로 수동으로 크기를 조절하는 것이 가장 많은 시간이 소요되는 작업입니다. 일괄 내보내기 워크플로우를 사용하면 이 과정을 생략할 수 있습니다.
+        </li>
+        <li>
+          <strong>Screenshot Bro가 이 모든 것을 대신 해결해 드립니다.</strong> 필요한 기기 크기로 행을 설정하고 디자인을 한 번만 마친 후, 클릭 한 번으로 모든 크기를 1x, 2x, 3x 배율로 내보낼 수 있습니다.
+        </li>
+      </ul>
+    </>
+  );
+}
+

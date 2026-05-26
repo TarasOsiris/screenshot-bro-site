@@ -34,7 +34,7 @@ export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
             <p className="text-sm text-white/55 leading-relaxed">
               {copy.footer.note}
             </p>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <SocialButton
                 href={REDDIT_COMMUNITY_URL}
                 label={copy.ui.redditCommunity}
@@ -50,6 +50,19 @@ export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
                 label={copy.ui.followOnThreads}
                 icon="threads"
               />
+              <a
+                href="https://www.producthunt.com/products/screenshotbro-mac-app?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-screenshotbro-mac-app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1106959&theme=dark&t=1775116842049"
+                  alt={copy.ui.productHuntAlt}
+                  width="200"
+                  height="43"
+                  className="opacity-80 hover:opacity-100 transition-opacity"
+                />
+              </a>
             </div>
           </div>
 

@@ -56,6 +56,16 @@ function getCTAMessage(locale: LocaleCode): string {
       return "Générez des ensembles de captures d'écran App Store dédiés à vos campagnes sans avoir à recréer chaque fichier manuellement.";
     case "ar":
       return "صمّم مجموعات لقطات شاشة لمتجر التطبيقات مخصصة لحملاتك دون الحاجة لإعادة بناء كل ملف يدويًا.";
+    case "de":
+      return "Erstellen Sie kampagnenspezifische App Store-Screenshot-Sets, ohne jede Datei manuell neu erstellen zu müssen.";
+    case "ja":
+      return "すべてのファイルを手作業で作り直すことなく、キャンペーン専用のApp Storeスクリーンショットセットを作成できます。";
+    case "pt":
+      return "Crie conjuntos de capturas de tela da App Store específicos para campanhas sem precisar refazer cada arquivo manualmente.";
+    case "it":
+      return "Crea set di screenshot dell'App Store specifici per le campagne senza dover ricostruire manualmente ogni singolo file.";
+    case "ko":
+      return "모든 파일을 수작업으로 다시 만들 필요 없이 캠페인 맞춤형 App Store 스크린샷 세트를 제작하세요.";
     default:
       return "Build campaign-specific App Store screenshot sets without rebuilding every file by hand.";
   }
@@ -73,6 +83,16 @@ function getCTAButtonLabel(locale: LocaleCode): string {
       return "Télécharger Screenshot Bro";
     case "ar":
       return "تنزيل Screenshot Bro";
+    case "de":
+      return "Screenshot Bro herunterladen";
+    case "ja":
+      return "Screenshot Broをダウンロード";
+    case "pt":
+      return "Baixar Screenshot Bro";
+    case "it":
+      return "Scarica Screenshot Bro";
+    case "ko":
+      return "Screenshot Bro 다운로드";
     default:
       return "Download Screenshot Bro";
   }
@@ -90,6 +110,16 @@ function renderContent(locale: LocaleCode) {
       return <ContentFr />;
     case "ar":
       return <ContentAr />;
+    case "de":
+      return <ContentDe />;
+    case "ja":
+      return <ContentJa />;
+    case "pt":
+      return <ContentPt />;
+    case "it":
+      return <ContentIt />;
+    case "ko":
+      return <ContentKo />;
     default:
       return <ContentEn />;
   }
@@ -593,7 +623,7 @@ function ContentHi() {
         कई स्क्रीनशॉट सेट बनाना है जो एक ही उत्पाद से आते हैं लेकिन अलग-अलग कहानियां बताते हैं।
       </p>
       <p>
-        Apple का कहना है कि आप iPhone और iPad ऐप्स के लिए 70 तक अतिरिक्त कस्टम उत्पाद पृष्ठ
+        Apple का कहना है कि आप iPhone &amp; iPad ऐप्स के लिए 70 तक अतिरिक्त कस्टम उत्पाद पृष्ठ
         प्रकाशित कर सकते हैं। प्रत्येक पृष्ठ स्क्रीनशॉट, प्रचार पाठ और ऐप पूर्वावलोकन को
         बदल सकता है, और प्रत्येक पृष्ठ को एक अद्वितीय URL मिलता है जिसका उपयोग आप अभियानों में कर सकते हैं।
       </p>
@@ -652,7 +682,7 @@ function ContentHi() {
         </li>
         <li>
           <strong>मौसमी पृष्ठ:</strong> अभियान को प्रासंगिक बनाएं, लेकिन ऐप
-          अनुभव को स्पष्ट रखें।
+          अनुभव को स्पष्ट रखें。
         </li>
         <li>
           <strong>स्थानीयकरण पृष्ठ:</strong> उस उपयोग के मामले को आगे रखें जो
@@ -680,7 +710,7 @@ function ContentHi() {
         </li>
       </ul>
       <p>
-        ऐप वही है। स्क्रीनशॉट अलग हैं क्योंकि विज़िटर की प्रेरणा अलग है।
+        앱은 동일합니다. 단지 방문자의 동기가 다르기 때문에 스크린샷이 다르게 보일 뿐입니다.
       </p>
 
       <h2>स्क्रीनशॉट सेट कैसे बनाएं</h2>
@@ -795,7 +825,7 @@ function ContentFr() {
       <p>
         Apple indique également que les pages produit personnalisées peuvent être associées à Apple Ads et
         apparaître dans les résultats de recherche pertinents. Vous pouvez attribuer des mots-clés à une
-        page produit personnalisée, mais ces mots-clés doivent correspondre à l&apos;intention de la page
+        page produit personnalisée, mas ces mots-clés doivent correspondre à l&apos;intention de la page
         et chaque combinaison de mots-clés doit être unique à une seule page produit personnalisée.
       </p>
 
@@ -1067,6 +1097,788 @@ function ContentAr() {
         افتراضية، وثلاث صفحات حملات، وخمس لغات، وأحجام أجهزة متعددة. يساعدك <a href="/">Screenshot Bro</a>{" "}
         من خلال الاحتفاظ بلقطات الشاشة الخاصة بك في مشاريع محلية قابلة لإعادة الاستخدام مع إطارات
         الأجهزة والتوطين والتصدير الجماعي والرفع إلى App Store Connect.
+      </p>
+    </>
+  );
+}
+
+function ContentDe() {
+  return (
+    <>
+      <p>
+        Ihre Standard-App-Store-Produktseite muss die gesamte App erklären.
+        Eigene Produktseiten ermöglichen es Ihnen, fokussiertere Versionen für
+        bestimmte Kampagnen, Funktionen, Zielgruppen oder saisonale Momente zu erstellen. Für
+        viele Indie-Apps bedeutet das die Erstellung mehrerer Screenshot-Sets, die
+        alle vom selben Produkt stammen, aber unterschiedliche Geschichten erzählen.
+      </p>
+      <p>
+        Laut Apple können Sie bis zu 70 zusätzliche eigene Produktseiten
+        für iPhone- und iPad-Apps veröffentlichen. Jede Seite kann unterschiedliche Screenshots,
+        Werbetexte und App-Vorschauen enthalten, und jede Seite erhält eine eindeutige URL,
+        die Sie in Kampagnen verwenden können.
+      </p>
+
+      <h2>Wofür eigene Produktseiten da sind</h2>
+      <p>
+        Eine eigene Produktseite ist kein Ersatz für Ihren Standard-Eintrag.
+        Sie ist eine zielgerichtete Landingpage innerhalb des App Stores. Verwenden Sie eine, wenn ein
+        Besucher mit einer bestimmten Absicht ankommt:
+      </p>
+      <ul>
+        <li>Eine bezahlte Apple Ads-Kampagne für eine bestimmte Funktion.</li>
+        <li>Eine saisonale Werbeaktion oder ein Launch-Event.</li>
+        <li>Ein bestimmtes Zielgruppensegment wie Studenten, Freiberufler oder Teams.</li>
+        <li>Ein lokaler Markt, auf dem ein Anwendungsfall wichtiger ist als ein anderer.</li>
+        <li>Ein Deep-Link in einen bestimmten Teil Ihrer App.</li>
+      </ul>
+
+      <h2>Was Sie anpassen können</h2>
+      <p>
+        Laut Apples{" "}
+        <a
+          href="https://developer.apple.com/app-store/custom-product-pages/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Dokumentation zu eigenen Produktseiten
+        </a>
+        , können eigene Produktseiten unterschiedliche Screenshots, Werbetexte und
+        App-Vorschauen enthalten. In App Store Connect können Sie mit einer leeren Seite beginnen
+        oder Ihre Standard-Produktseite kopieren und dann die Assets für die
+        Lokalisierungen der Seite anpassen.
+      </p>
+      <p>
+        Apple gibt auch an, dass eigene Produktseiten mit Apple Ads verwendet werden können und
+        in relevanten Suchergebnissen erscheinen können. Sie können einer eigenen Produktseite
+        Keywords zuweisen, aber die Keywords sollten der Absicht dieser Seite entsprechen und
+        jede Keyword-Kombination sollte für eine einzelne eigene Produktseite einzigartig sein.
+      </p>
+
+      <h2>Screenshot-Strategie</h2>
+      <p>
+        Der Fehler besteht darin, die Standard-Screenshots zu kopieren und nur
+        die erste Überschrift zu ändern. Eine eigene Produktseite sollte sich so anfühlen, als wäre sie
+        bewusst für die Zielgruppe erstellt worden, die auf den Link geklickt hat.
+      </p>
+      <p>
+        Bauen Sie jedes Screenshot-Set um einen bestimmten Aspekt herum auf:
+      </p>
+      <ul>
+        <li>
+          <strong>Funktionsseite:</strong> Beginnen Sie mit der Funktion, zeigen Sie dann
+          den Workflow und den Nutzen.
+        </li>
+        <li>
+          <strong>Zielgruppenseite:</strong> Verwenden Sie eine Sprache und Beispiele, die
+          zur Zielgruppe passen.
+        </li>
+        <li>
+          <strong>Saisonale Seite:</strong> Machen Sie die Kampagne relevant, aber
+          halten Sie das App-Erlebnis klar verständlich.
+        </li>
+        <li>
+          <strong>Lokalisierungsseite:</strong> Beginnen Sie mit dem Anwendungsfall, der
+          in dieser Region am wichtigsten ist.
+        </li>
+      </ul>
+
+      <h2>Beispiel: Eine App, drei Seiten</h2>
+      <p>
+        Stellen Sie sich einen Habit Tracker vor. Die Standard-Produktseite erklärt die
+        gesamte App. Eigene Produktseiten könnten sich konzentrieren auf:
+      </p>
+      <ul>
+        <li>
+          <strong>Fitness-Gewohnheiten:</strong> Trainings-Streaks, Fortschrittsdiagramme,
+          Erinnerungen und Apple Health-Kontext.
+        </li>
+        <li>
+          <strong>Lerngewohnheiten:</strong> Leseziele, Fokussitzungen und
+          Prüfungsvorbereitungsroutinen.
+        </li>
+        <li>
+          <strong>Neujahrskampagne:</strong> Neuanfang-Ziele, einfaches
+          Setup und Fortschritt in der ersten Woche.
+        </li>
+      </ul>
+      <p>
+        Die App ist dieselbe. Die Screenshots sind unterschiedlich, weil die
+        Motivation des Besuchers eine andere ist.
+      </p>
+
+      <h2>So erstellen Sie das Screenshot-Set</h2>
+      <ol>
+        <li>Definieren Sie die Kampagnenabsicht, bevor Sie ein Design-Tool öffnen.</li>
+        <li>Wählen Sie die erste Screenshot-Überschrift passend zu dieser Absicht.</li>
+        <li>Verwenden Sie Ihr Basis-Screenshot-System wieder, damit Rahmen, Schriftarten und Exportgrößen konsistent bleiben.</li>
+        <li>Ersetzen Sie die App-Screenshots durch Ansichten, die den Kampagnenansatz unterstützen.</li>
+        <li>Lokalisieren Sie die Texte der Screenshots, wenn die Seite auf einen bestimmten Markt abzielt.</li>
+        <li>Exportieren Sie dieselben erforderlichen Gerätegrößen wie für Ihre Standard-Produktseite.</li>
+      </ol>
+      <p>
+        Für gültige Abmessungen verwenden Sie Apples{" "}
+        <a
+          href="https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Screenshot-Spezifikationen
+        </a>{" "}
+        oder das{" "}
+        <a href="/blog/app-store-screenshot-sizes">
+          Handbuch für App Store-Screenshot-Größen
+        </a>{" "}
+        dieser Website.
+      </p>
+
+      <h2>Prüfung und Messung</h2>
+      <p>
+        Apple gibt an, dass Metadaten für eigene Produktseiten unabhängig von einem App-Update zur
+        Überprüfung eingereicht werden müssen. Sobald die Seiten online sind, können Sie die Leistung
+        in den App-Analysen messen, einschließlich Impressionen der Produktseite, Downloads,
+        erneuten Downloads und Konversionsraten.
+      </p>
+      <p>
+        Beurteilen Sie eine eigene Produktseite nicht nur nach der Konversionsrate. Wenn eine
+        Seite mit bezahlter Akquisition verknüpft ist, sollten Sie auch die Bindung (Retention), die
+        Einnahmen und die Frage im Auge behalten, ob die Kampagnenbotschaft die richtigen Nutzer anzieht.
+      </p>
+
+      <h2>Eigene Produktseiten vs. A/B-Tests</h2>
+      <p>
+        Verwenden Sie die Produktseiten-Optimierung, wenn Sie Varianten mit
+        Ihrem Standard-Eintrag vergleichen möchten. Verwenden Sie eigene Produktseiten, wenn Sie
+        die Zielgruppe oder Kampagne bereits kennen und eine zielgerichtete App-Store-Landingpage benötigen.
+        Sie sind miteinander verwandt, lösen aber unterschiedliche Probleme.
+      </p>
+      <p>
+        Informationen zur Teststrategie finden Sie unter{" "}
+        <a href="/blog/ab-test-app-store-screenshots">
+          A/B-Testing von App Store- und Google Play-Screenshots
+        </a>
+        .
+      </p>
+
+      <h2>Wie Screenshot Bro hilft</h2>
+      <p>
+        Eigene Produktseiten vervielfachen Ihren Screenshot-Arbeitsaufwand. Eine App kann
+        schnell eine Standardseite, drei Kampagnenseiten, fünf Regionen
+        und mehrere Gerätegrößen umfassen. <a href="/">Screenshot Bro</a> hilft Ihnen,
+        indem es Ihre Screenshots in wiederverwendbaren lokalen Projekten mit Gerätereihen,
+        Lokalisierung, Batch-Export und Upload zu App Store Connect verwaltet.
+      </p>
+    </>
+  );
+}
+
+function ContentJa() {
+  return (
+    <>
+      <p>
+        デフォルトのApp Store製品ページでは、アプリ全体を説明する必要があります。
+        カスタム製品ページを使用すると、特定のキャンペーン、機能、ターゲット層、または季節ごとのイベントに焦点を当てたバージョンを作成できます。
+        多くの個人開発アプリにとって、それは同じ製品から作成されながらも異なるストーリーを伝える、複数のスクリーンショットセットを作成することを意味します。
+      </p>
+      <p>
+        Appleによると、iPhoneおよびiPadアプリ向けに最大70個의カスタム製品ページを追加で公開できます。
+        各ページでスクリーンショット、プロモーション用テキスト、アプリプレビューを変更することができ、各ページにはキャンペーンで使用できる独自のURLが割り当てられます。
+      </p>
+
+      <h2>カスタム製品ページの用途</h2>
+      <p>
+        カスタム製品ページは、デフォルトのストア掲載情報に代わるものではありません。
+        App Store内のターゲットを絞ったランディングページです。訪問者が特定の意図を持って訪れる場合に作成します：
+      </p>
+      <ul>
+        <li>1つの機能に特化したApple Search Adsの有料キャンペーン。</li>
+        <li>季節ごとのプロモーションやリリースの瞬間。</li>
+        <li>学生、フリーランサー、チームなど、特定のターゲット層のセグメント。</li>
+        <li>特定のユースケースが他よりも重視されるローカル市場。</li>
+        <li>アプリの特定のセクションへのディープリンク。</li>
+      </ul>
+
+      <h2>カスタマイズできる要素</h2>
+      <p>
+        Appleの{" "}
+        <a
+          href="https://developer.apple.com/app-store/custom-product-pages/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          カスタム製品ページのドキュメント
+        </a>
+        によると、カスタム製品ページではスクリーンショット、プロモーション用テキスト、アプリプレビューを変更できます。App Store Connectでは、白紙のページから作成することも、デフォルトの製品ページをコピーして、ページの各ローカライズ版のアセットをカスタマイズすることもできます。
+      </p>
+      <p>
+        また、Appleはカスタム製品ページがApple Search Adsで使用可能であり、関連する検索結果に表示される場合があるとしています。カスタム製品ページにキーワードを割り当てることができますが、キーワードはそのページの意図と一致している必要があり、各キーワードの組み合わせは1つのカスタム製品ページに対して一意である必要があります。
+      </p>
+
+      <h2>スクリーンショットの戦略</h2>
+      <p>
+        よくある間違いは、デフォルトのスクリーンショットをコピーして、最初の見出しだけを変更することです。
+        カスタム製品ページは、リンクをクリックしたユーザーに合わせて意図的に作られていると感じられるものであるべきです。
+      </p>
+      <p>
+        それぞれのスクリーンショットセットを、1つの側面に絞って構築します：
+      </p>
+      <ul>
+        <li>
+          <strong>機能紹介ページ：</strong>まず機能を紹介し、次にワークフローと実績を示します。
+        </li>
+        <li>
+          <strong>ターゲット層向けページ：</strong>ターゲット層に響く言葉や具体例を使用します。
+        </li>
+        <li>
+          <strong>季節イベントページ：</strong>キャンペーンに関連性を持たせつつ、アプリの体験を明確に伝えます。
+        </li>
+        <li>
+          <strong>ローカライズページ：</strong>その地域で最も重視されるユースケースを優先して提示します。
+        </li>
+      </ul>
+
+      <h2>例：1つのアプリ、3つのページ</h2>
+      <p>
+        習慣トラッカーアプリを例に考えてみましょう。デフォルトの製品ページではアプリ全体を説明します。カスタム製品ページでは以下に焦点を当てることができます：
+      </p>
+      <ul>
+        <li>
+          <strong>フィットネス習慣：</strong>ワークアウトの継続記録、進捗チャート、リマインダー、Appleヘルスケアとの連携。
+        </li>
+        <li>
+          <strong>学習習慣：</strong>読書目標、集中セッション、試験対策のルーティン。
+        </li>
+        <li>
+          <strong>新年キャンペーン：</strong>新年からの新たな目標、シンプルな設定、最初の1週間の進捗。
+        </li>
+      </ul>
+      <p>
+        アプリは同じですが、訪問者の目的が異なるため、スクリーンショットも異なります。
+      </p>
+
+      <h2>スクリーンショットセットの作成手順</h2>
+      <ol>
+        <li>デザインツールを開く前に、キャンペーンの目的を明確にします。</li>
+        <li>その目的に合わせて、最初のスクリーンショットの見出しを決めます。</li>
+        <li>ベースとなるスクリーンショットの仕組みを再利用し、デバイスのフレーム、フォント、書き出しサイズの一貫性を保ちます。</li>
+        <li>キャンペーンの切り口をサポートする画面に、アプリのスクリーンショットを差し替えます。</li>
+        <li>特定の市場をターゲットにする場合は、スクリーンショットのテキストをローカライズします。</li>
+        <li>デフォルトの製品ページと同じ、必須의デバイスサイズで書き出します。</li>
+      </ol>
+      <p>
+        正しいサイズについては、Appleの{" "}
+        <a
+          href="https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          スクリーンショットの仕様
+        </a>{" "}
+        または当サイトの{" "}
+        <a href="/blog/app-store-screenshot-sizes">
+          App Storeスクリーンショットサイズガイド
+        </a>
+        を参照してください。
+      </p>
+
+      <h2>審査と効果測定</h2>
+      <p>
+        Appleによると、カスタム製品ページのメタデータは、アプリのアップデートとは無関係に審査に提出する必要があります。ページが公開された後は、App Analyticsで製品ページのインプレッション数、ダウンロード数、再ダウンロード数、コンバージョン率などのパフォーマンスを測定できます。
+      </p>
+      <p>
+        コンバージョン率だけでカスタム製品ページを評価しないでください。ページが有料広告キャンペーンと連動している場合は、継続率や収益、さらにキャンペーンのメッセージが適切なユーザーを引きつけているかどうかにも注目してください。
+      </p>
+
+      <h2>カスタム製品ページ vs A/Bテスト</h2>
+      <p>
+        デフォルトの製品ページに対してバリエーションをテストしたい場合は、「プロダクトページの最適化（PPO）」を使用します。ターゲット層やキャンペーンがすでに決まっており、App Store内で専用のランディングページが必要な場合は、「カスタム製品ページ」を使用します。これらは関連していますが、解決する課題が異なります。
+      </p>
+      <p>
+        テスト戦略については、こちらの記事をご覧ください：{" "}
+        <a href="/blog/ab-test-app-store-screenshots">
+          App StoreとGoogle PlayのスクリーンショットでA/Bテストを実施する方法
+        </a>
+        。
+      </p>
+
+      <h2>Screenshot Broの活用方法</h2>
+      <p>
+        カスタム製品ページを作成すると、スクリーンショット作業の手間が何倍にも増えます。1つのアプリで、デフォルトページ、3つのキャンペーンページ、5つのロケール、そして複数のデバイスサイズがすぐに必要になります。<a href="/">Screenshot Bro</a>は、デバイス行、ローカライズ、一括書き出し、App Store Connectへのアップロード機能を備えた、再利用可能なローカルプロジェクトにスクリーンショットを保持することで作業をサポートします。
+      </p>
+    </>
+  );
+}
+
+function ContentPt() {
+  return (
+    <>
+      <p>
+        Sua página de produto padrão da App Store precisa explicar o aplicativo inteiro.
+        As páginas de produto personalizadas permitem criar versões mais focadas para
+        campanhas, recursos, públicos ou momentos sazonais específicos. Para
+        muitos aplicativos independentes, isso significa criar vários conjuntos de capturas de tela que
+        vêm do mesmo produto, mas contam histórias diferentes.
+      </p>
+      <p>
+        A Apple afirma que você pode publicar até 70 páginas de produto personalizadas adicionais
+        para aplicativos de iPhone e iPad. Cada página pode variar capturas de tela,
+        texto promocional e prévias do aplicativo, e cada página recebe um URL exclusivo
+        que você pode usar em campanhas.
+      </p>
+
+      <h2>Para que servem as páginas de produto personalizadas</h2>
+      <p>
+        Uma página de produto personalizada não substitui sua listagem padrão.
+        Ela é uma página de destino direcionada dentro da App Store. Use uma quando o
+        visitante chegar com uma intenção específica:
+      </p>
+      <ul>
+        <li>Uma campanha paga do Apple Ads para um recurso específico.</li>
+        <li>Uma promoção sazonal ou momento de lançamento.</li>
+        <li>Um segmento de público específico, como estudantes, freelancers ou equipes.</li>
+        <li>Um mercado local onde um caso de uso é mais importante do que outro.</li>
+        <li>Um link direto para uma parte específica do seu aplicativo.</li>
+      </ul>
+
+      <h2>O que você pode personalizar</h2>
+      <p>
+        De acordo com a{" "}
+        <a
+          href="https://developer.apple.com/app-store/custom-product-pages/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          documentação de páginas de produto personalizadas
+        </a>{" "}
+        da Apple, as páginas de produto personalizadas podem variar capturas de tela, texto promocional e
+        prévias do aplicativo. No App Store Connect, você pode começar com uma página em branco
+        ou copiar sua página de produto padrão e, em seguida, personalizar os recursos para as
+        localizações da página.
+      </p>
+      <p>
+        A Apple também afirma que as páginas de produto personalizadas podem ser usadas com o Apple Ads e
+        podem aparecer em resultados de pesquisa relevantes. Você pode atribuir palavras-chave a uma
+        página de produto personalizada, mas as palavras-chave devem corresponder à intenção dessa página e
+        cada combinação de palavras-chave deve ser exclusiva para uma única página de produto personalizada.
+      </p>
+
+      <h2>Estratégia de capturas de tela</h2>
+      <p>
+        O erro comum é copiar suas capturas de tela padrão e alterar apenas
+        o primeiro título. Uma página de produto personalizada deve parecer intencionalmente
+        construída para o público que clicou no link.
+      </p>
+      <p>
+        Crie cada conjunto de capturas de tela em torno de um ângulo:
+      </p>
+      <ul>
+        <li>
+          <strong>Página de recurso:</strong> comece com o recurso, depois mostre
+          o fluxo de trabalho e a prova de eficácia.
+        </li>
+        <li>
+          <strong>Página de público:</strong> use linguagem e exemplos que
+          se adaptem ao grupo-alvo.
+        </li>
+        <li>
+          <strong>Página sazonal:</strong> torne a campanha relevante, mas
+          mantenha a experiência do aplicativo clara.
+        </li>
+        <li>
+          <strong>Página de localização:</strong> comece com o caso de uso que
+          mais importa nessa região.
+        </li>
+      </ul>
+
+      <h2>Exemplo: um aplicativo, três páginas</h2>
+      <p>
+        Imagine um rastreador de hábitos. A página de produto padrão explica todo o
+        aplicativo. As páginas de produto personalizadas podem focar em:
+      </p>
+      <ul>
+        <li>
+          <strong>Hábitos de fitness:</strong> sequências de treinos, gráficos de progresso,
+          lembretes e contexto com o Apple Health.
+        </li>
+        <li>
+          <strong>Hábitos de estudo:</strong> metas de leitura, sessões de foco e
+          rotinas de preparação para exames.
+        </li>
+        <li>
+          <strong>Campanha de Ano Novo:</strong> metas de recomeço, configuração simples
+          e progresso na primeira semana.
+        </li>
+      </ul>
+      <p>
+        O aplicativo é o mesmo. As capturas de tela são diferentes porque a
+        motivação do visitante é diferente.
+      </p>
+
+      <h2>Como criar o conjunto de capturas de tela</h2>
+      <ol>
+        <li>Defina a intenção da campanha antes de abrir uma ferramenta de design.</li>
+        <li>Escolha o título da primeira captura de tela para essa intenção.</li>
+        <li>Reutilize seu sistema básico de capturas de tela para que molduras, fontes e tamanhos de exportação permaneçam consistentes.</li>
+        <li>Substitua as capturas de tela do aplicativo por telas que apoiem o ângulo da campanha.</li>
+        <li>Localize o texto da captura de tela se a página for direcionada a um mercado específico.</li>
+        <li>Exporte os mesmos tamanhos de dispositivo exigidos da sua página de produto padrão.</li>
+      </ol>
+      <p>
+        Para dimensões válidas, use as{" "}
+        <a
+          href="https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          especificações de captura de tela
+        </a>{" "}
+        da Apple ou o{" "}
+        <a href="/blog/app-store-screenshot-sizes">
+          guia de tamanhos de captura de tela da App Store
+        </a>{" "}
+        deste site.
+      </p>
+
+      <h2>Revisão e medição</h2>
+      <p>
+        A Apple afirma que os metadados das páginas de produto personalizadas devem ser enviados para
+        revisão, independentemente de uma atualização do aplicativo. Assim que as páginas estiverem ativas, você poderá
+        medir o desempenho no App Analytics, incluindo impressões da página de produto, downloads, redownloads e taxas de conversão.
+      </p>
+      <p>
+        Não julgue uma página de produto personalizada apenas pela taxa de conversão. Se uma
+        página estiver vinculada a uma aquisição paga, acompanhe também a retenção, os lucros e
+        se a mensagem da campanha atrai os usuários certos.
+      </p>
+
+      <h2>Páginas de produto personalizadas vs. Testes A/B</h2>
+      <p>
+        Use a Otimização da Página de Produto quando quiser testar variantes em relação à
+        sua listagem padrão. Use páginas de produto personalizadas quando você já conhecer
+        o público ou a campanha e precisar de uma página de destino direcionada na App Store.
+        Elas estão relacionadas, mas resolvem problemas diferentes.
+      </p>
+      <p>
+        Para estratégias de teste, leia{" "}
+        <a href="/blog/ab-test-app-store-screenshots">
+          Como fazer testes A/B em capturas de tela da App Store e do Google Play
+        </a>
+        .
+      </p>
+
+      <h2>Como o Screenshot Bro ajuda</h2>
+      <p>
+        As páginas de produto personalizadas multiplicam seu volume de trabalho com capturas de tela. Um aplicativo pode
+        rapidamente exigir uma página padrão, três páginas de campanha, cinco idiomas e
+        vários tamanhos de dispositivo. O <a href="/">Screenshot Bro</a> ajuda ao
+        manter suas capturas de tela em projetos locais reutilizáveis com linhas de dispositivos,
+        localização, exportação em lote e upload para o App Store Connect.
+      </p>
+    </>
+  );
+}
+
+function ContentIt() {
+  return (
+    <>
+      <p>
+        La tua pagina del prodotto predefinita dell&apos;App Store deve spiegare l&apos;intera app.
+        Le pagine del prodotto personalizzate ti consentono di creare versioni più mirate per
+        campagne, funzionalità, segmenti di pubblico o momenti stagionali specifici. Per
+        molte app indie, ciò significa creare più set di screenshot che
+        provengono tutti dallo stesso prodotto ma raccontano storie diverse.
+      </p>
+      <p>
+        Apple afferma che è possibile pubblicare fino a 70 pagine del prodotto personalizzate aggiuntive
+        per le app iPhone e iPad. Ogni pagina può variare screenshot,
+        testo promozionale e anteprime dell&apos;app, e ogni pagina ottiene un URL unico
+        da poter utilizzare nelle campagne.
+      </p>
+
+      <h2>A cosa servono le pagine del prodotto personalizzate</h2>
+      <p>
+        Una pagina del prodotto personalizzata non sostituisce la tua scheda di presentazione predefinita.
+        Si tratta di una landing page mirata all&apos;interno dell&apos;App Store. Usane una quando un
+        visitatore arriva con un intento specifico:
+      </p>
+      <ul>
+        <li>Una campagna Apple Ads a pagamento per una singola funzionalità.</li>
+        <li>Una promozione stagionale o il momento del lancio.</li>
+        <li>Un segmento di pubblico specifico, come studenti, freelancer o team.</li>
+        <li>Un mercato locale in cui un caso d&apos;uso è più importante di un altro.</li>
+        <li>Un deep link a una parte specifica della tua app.</li>
+      </ul>
+
+      <h2>Cosa puoi personalizzare</h2>
+      <p>
+        Secondo la{" "}
+        <a
+          href="https://developer.apple.com/app-store/custom-product-pages/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          documentazione sulle pagine del prodotto personalizzate
+        </a>{" "}
+        di Apple, le pagine del prodotto personalizzate possono variare screenshot, testo promozionale e
+        anteprime dell&apos;app. In App Store Connect, puoi iniziare da una pagina vuota
+        o copiare la tua pagina del prodotto predefinita, quindi personalizzare le risorse per le
+        localizzazioni della pagina.
+      </p>
+      <p>
+        Apple afferma inoltre che le pagine del prodotto personalizzate possono essere utilizzate con Apple Ads e
+        possono apparire nei risultati di ricerca pertinenti. Puoi assegnare parole chiave a una
+        pagina del prodotto personalizzata, ma le parole chiave dovrebbero corrispondere all&apos;intento di
+        quella pagina e ogni combinazione di parole chiave dovrebbe essere unica per una singola pagina del prodotto personalizzata.
+      </p>
+
+      <h2>Strategia per gli screenshot</h2>
+      <p>
+        L&apos;erro più comune consiste nel copiare gli screenshot predefiniti e modificare solo
+        il primo titolo. Una pagina del prodotto personalizzata dovrebbe sembrare creata intenzionalmente
+        per il pubblico che ha fatto clic sul collegamento.
+      </p>
+      <p>
+        Costruisci ogni set di screenshot attorno a una prospettiva specifica:
+      </p>
+      <ul>
+        <li>
+          <strong>Pagina funzionalità:</strong> inizia con la funzionalità, quindi mostra
+          il flusso di lavoro e le prove di efficacia.
+        </li>
+        <li>
+          <strong>Pagina pubblico:</strong> utilizza un linguaggio e degli esempi che
+          corrispondano al gruppo target.
+        </li>
+        <li>
+          <strong>Pagina stagionale:</strong> rende la campagna pertinente, ma
+          mantieni chiara l&apos;esperienza dell&apos;app.
+        </li>
+        <li>
+          <strong>Pagina di localizzazione:</strong> inizia con il caso d&apos;uso che
+          conta di più in quell&apos;area geografica.
+        </li>
+      </ul>
+
+      <h2>Esempio: un&apos;app, tre pagine</h2>
+      <p>
+        Immagina un tracciatore di abitudini. La pagina del prodotto predefinita spiega l&apos;intera
+        app. Le pagine del prodotto personalizzate potrebbero concentrarsi su:
+      </p>
+      <ul>
+        <li>
+          <strong>Abitudini di fitness:</strong> serie di allenamenti, grafici di progresso,
+          promemoria e integrazione con Apple Salute.
+        </li>
+        <li>
+          <strong>Abitudini di studio:</strong> obiettivi di lettura, sessioni di concentrazione e
+          routine di preparazione agli esami.
+        </li>
+        <li>
+          <strong>Campagna di Capodanno:</strong> obiettivi di nuovo inizio, configurazione semplice
+          e progressi della prima settimana.
+        </li>
+      </ul>
+      <p>
+        L&apos;app è la stessa. Gli screenshot sono diversi perché la
+        motivazione del visitatore è diversa.
+      </p>
+
+      <h2>Come creare il set di screenshot</h2>
+      <ol>
+        <li>Definisci l&apos;intento della campagna prima di aprire uno strumento di progettazione.</li>
+        <li>Scegli il titolo del primo screenshot adatto a quell&apos;intento.</li>
+        <li>Riusa il tuo sistema di screenshot di base in modo che cornici, caratteri e dimensioni di esportazione rimangano coerenti.</li>
+        <li>Sostituisci gli screenshot dell&apos;app con schermate che supportino l&apos;angolazione della campagna.</li>
+        <li>Localizza i testi degli screenshot se la pagina si rivolge a un mercato specifico.</li>
+        <li>Esporta le stesse dimensioni del dispositivo richieste per la tua pagina del prodotto predefinita.</li>
+      </ol>
+      <p>
+        Per le dimensioni valide, consulta le{" "}
+        <a
+          href="https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          specifiche degli screenshot
+        </a>{" "}
+        di Apple o la{" "}
+        <a href="/blog/app-store-screenshot-sizes">
+          guida alle dimensioni degli screenshot dell&apos;App Store
+        </a>{" "}
+        di questo sito.
+      </p>
+
+      <h2>Revisione e misurazione</h2>
+      <p>
+        Apple precisa che i metadati nelle pagine del prodotto personalizzate devono essere inviati per la
+        revisione, indipendentemente dall&apos;aggiornamento dell&apos;app. Una volta che le pagine sono attive, puoi
+        misurare le prestazioni in App Analytics, inclusi le visualizzazioni della pagina del prodotto, i download, i nuovi download e i tassi di conversione.
+      </p>
+      <p>
+        Non giudicare una pagina del prodotto personalizzata solo in base al tasso di conversione. Se una
+        pagina è legata all&apos;acquisizione a pagamento, osserva anche la ritenzione, i ricavi e
+        se il messaggio della campagna attira gli utenti giusti.
+      </p>
+
+      <h2>Pagine del prodotto personalizzate vs Test A/B</h2>
+      <p>
+        Utilizza l&apos;ottimizzazione della pagina del prodotto quando desideri testare varianti rispetto alla
+        tua scheda predefinita. Cultilizza le pagine del prodotto personalizzate quando conosci già
+        il pubblico o la campagna e hai bisogno di una landing page mirata sull&apos;App Store.
+        Sono correlate, ma risolvono problemi diversi.
+      </p>
+      <p>
+        Per la strategia di test, leggi{" "}
+        <a href="/blog/ab-test-app-store-screenshots">
+          Come eseguire test A/B sugli screenshot di App Store e Google Play
+        </a>
+        .
+      </p>
+
+      <h2>Come ti aiuta Screenshot Bro</h2>
+      <p>
+        Le pagine del prodotto personalizzate moltiplicano il carico di lavoro per gli screenshot. Un&apos;app può
+        diventare rapidamente una pagina predefinita, tre pagine di campagna, cinque lingue
+        e più dimensioni del dispositivo. <a href="/">Screenshot Bro</a> ti aiuta
+        mantenendo i tuoi screenshot in progetti locali riutilizzabili con righe di dispositivi,
+        localizzazione, esportazione in batch e caricamento su App Store Connect.
+      </p>
+    </>
+  );
+}
+
+function ContentKo() {
+  return (
+    <>
+      <p>
+        기본 App Store 제품 페이지는 앱 전체를 설명해야 합니다.
+        맞춤형 제품 페이지를 사용하면 특정 캠페인, 기능, 타겟 고객 또는 시즌별 이벤트에 맞춰 더욱 집중된 버전을 만들 수 있습니다.
+        많은 인디 앱의 경우, 이는 동일한 제품에서 시작하지만 서로 다른 이야기를 전달하는 여러 스크린샷 세트를 만드는 것을 의미합니다.
+      </p>
+      <p>
+        Apple에 따르면 iPhone 및 iPad 앱용으로 최대 70개의 맞춤형 제품 페이지를 추가로 게시할 수 있습니다.
+        각 페이지마다 스크린샷, 홍보 텍스트, 앱 미리보기를 다르게 구성할 수 있으며, 캠페인에 사용할 수 있는 고유한 URL이 제공됩니다.
+      </p>
+
+      <h2>맞춤형 제품 페이지의 용도</h2>
+      <p>
+        맞춤형 제품 페이지는 기본 스토어 등록정보를 대체하는 것이 아닙니다.
+        이는 App Store 내부의 타겟팅된 랜딩 페이지입니다. 방문자가 특정 의도를 가지고 유입될 때 유용합니다:
+      </p>
+      <ul>
+        <li>하나의 특정 기능을 타겟팅한 유료 Apple Search Ads 캠페인.</li>
+        <li>시즌별 프로모션 또는 출시 이벤트.</li>
+        <li>학생, 프리랜서, 팀 등 특정 타겟 고객 세그먼트.</li>
+        <li>특정 유즈케이스가 다른 것보다 더 중요한 로컬 시장.</li>
+        <li>앱의 특정 위치로 연결되는 딥 링크.</li>
+      </ul>
+
+      <h2>수정 및 맞춤 설정할 수 있는 항목</h2>
+      <p>
+        Apple의{" "}
+        <a
+          href="https://developer.apple.com/app-store/custom-product-pages/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          맞춤형 제품 페이지 문서
+        </a>
+        에 따르면, 맞춤형 제품 페이지는 스크린샷, 홍보 텍스트 및 앱 미리보기를 다르게 구성할 수 있습니다. App Store Connect에서 빈 페이지로 시작하거나 기본 제품 페이지를 복사한 다음, 페이지의 각 로컬라이제이션에 맞는 에셋을 커스텀 설정할 수 있습니다.
+      </p>
+      <p>
+        Apple은 또한 맞춤형 제품 페이지를 Apple Search Ads와 함께 사용할 수 있으며 관련 검색 결과에 표시될 수 있다고 설명합니다. 맞춤형 제품 페이지에 키워드를 할당할 수 있지만, 키워드는 해당 페이지의 목적에 부합해야 하며 각 키워드 조합은 하나의 맞춤형 제품 페이지에만 고유하게 사용되어야 합니다.
+      </p>
+
+      <h2>스크린샷 전략</h2>
+      <p>
+        자주 범하는 실수는 기본 스크린샷을 그대로 복사하여 첫 번째 헤드라인만 변경하는 것입니다.
+        맞춤형 제품 페이지는 링크를 클릭한 고객을 위해 의도적으로 디자인된 느낌을 주어야 합니다.
+      </p>
+      <p>
+        각 스크린샷 세트를 하나의 명확한 콘셉트를 중심으로 구축하세요:
+      </p>
+      <ul>
+        <li>
+          <strong>기능 소개 페이지:</strong> 기능을 먼저 내세운 다음 작업 흐름과 실제 효과를 보여줍니다.
+        </li>
+        <li>
+          <strong>타겟 고객 페이지:</strong> 타겟 그룹의 관심사와 일치하는 언어와 예시를 사용합니다.
+        </li>
+        <li>
+          <strong>시즌별 페이지:</strong> 캠페인을 관련성 있게 만들되, 앱의 핵심 경험을 명확히 전달합니다.
+        </li>
+        <li>
+          <strong>로컬라이제이션 페이지:</strong> 해당 언어권에서 가장 중요한 유즈케이스를 먼저 보여줍니다.
+        </li>
+      </ul>
+
+      <h2>예시: 하나의 앱, 세 개의 페이지</h2>
+      <p>
+        습관 관리 앱을 예로 들어 보겠습니다. 기본 제품 페이지는 앱 전체를 설명하지만, 맞춤형 제품 페이지는 다음에 초점을 맞출 수 있습니다:
+      </p>
+      <ul>
+        <li>
+          <strong>피트니스 습관:</strong> 운동 연속 달성 기록, 진행 상황 차트, 알림 및 Apple 건강 앱 연동.
+        </li>
+        <li>
+          <strong>학습 습관:</strong> 독서 목표, 집중 세션, 시험 준비 루틴.
+        </li>
+        <li>
+          <strong>새해 맞이 캠페인:</strong> 새로운 시작을 위한 목표 설정, 간편한 초기 설정, 첫 주 진행 상황 체크.
+        </li>
+      </ul>
+      <p>
+        앱은 동일합니다. 단지 방문자의 동기가 다르기 때문에 스크린샷이 다르게 보일 뿐입니다.
+      </p>
+
+      <h2>스크린샷 세트를 제작하는 방법</h2>
+      <ol>
+        <li>디자인 도구를 열기 전에 캠페인 의도를 명확하게 정의합니다.</li>
+        <li>해당 의도에 부합하는 첫 번째 스크린샷의 헤드라인을 정합니다.</li>
+        <li>기존의 기본 스크린샷 시스템을 재사용하여 기기 프레임, 폰트, 내보내기 크기가 일정하게 유지되도록 합니다.</li>
+        <li>앱 스크린샷을 캠페인 방향을 가장 잘 보여주는 화면으로 교체합니다.</li>
+        <li>페이지가 특정 시장을 타겟으로 하는 경우 스크린샷 텍스트를 현지화합니다.</li>
+        <li>기본 제품 페이지와 동일하게 필요한 기기 크기로 내보냅니다.</li>
+      </ol>
+      <p>
+        올바른 기기 크기 사양은 Apple의{" "}
+        <a
+          href="https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          스크린샷 사양
+        </a>{" "}
+        또는 이 사이트의{" "}
+        <a href="/blog/app-store-screenshot-sizes">
+          App Store 스크린샷 크기 가이드
+        </a>
+        를 참조하세요.
+      </p>
+
+      <h2>심사 및 분석 측정</h2>
+      <p>
+        Apple에 따르면 맞춤형 제품 페이지의 메타데이터는 앱 업데이트와 무관하게 심사를 위해 제출되어야 합니다. 페이지가 라이브된 후에는 App Analytics에서 제품 페이지 노출 수, 다운로드 수, 재다운로드 수, 전환율 등을 포함한 성과를 측정할 수 있습니다.
+      </p>
+      <p>
+        전환율만으로 맞춤형 제품 페이지를 판단해서는 안 됩니다. 페이지가 유료 획득 마케팅과 연결되어 있다면, 리텐션(유지율), 수익, 그리고 캠페인 메시지가 올바른 유저를 유치하고 있는지 여도 함께 모니터링해야 합니다.
+      </p>
+
+      <h2>맞춤형 제품 페이지 vs A/B 테스트</h2>
+      <p>
+        기본 스토어 등록정보를 기준으로 여러 버전을 테스트하려면 '제품 페이지 최적화(PPO)'를 사용하세요. 타겟 고객이나 캠페인을 이미 파악하고 있으며 App Store 내 전용 랜딩 페이지가 필요한 경우에는 '맞춤형 제품 페이지'를 사용하세요. 두 기능은 서로 연관되어 있지만 해결하는 문제는 다릅니다.
+      </p>
+      <p>
+        테스트 전략에 대한 자세한 정보는 다음 글을 참조하세요:{" "}
+        <a href="/blog/ab-test-app-store-screenshots">
+          App Store 및 Google Play 스크린샷 A/B 테스트 방법
+        </a>
+        .
+      </p>
+
+      <h2>Screenshot Bro가 도움을 주는 방법</h2>
+      <p>
+        맞춤형 제품 페이지를 운영하면 스크린샷 작업량이 크게 늘어납니다. 하나의 앱에 대해 기본 페이지, 3개의 캠페인 페이지, 5개의 로컬라이제이션 언어 및 다양한 기기 크기가 순식간에 필요할 수 있습니다. <a href="/">Screenshot Bro</a>는 스크린샷을 기기 행, 로컬라이제이션 번역, 배치 내보내기, App Store Connect 업로드 기능을 갖춘 재사용 가능한 로컬 프로젝트로 유지하여 이를 손쉽게 관리할 수 있게 도와줍니다.
       </p>
     </>
   );

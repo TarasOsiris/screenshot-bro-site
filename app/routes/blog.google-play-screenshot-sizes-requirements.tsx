@@ -47,7 +47,7 @@ export default function BlogPost() {
 function getCTAMessage(locale: LocaleCode): string {
   switch (locale) {
     case "es":
-      return "Crea capturas para Google Play y App Store desde un único flujo de trabajo nativo de Mac.";
+      return "Crea capturas para Google Play y App Store desde un único flujo de trabalho nativo de Mac.";
     case "zh":
       return "在同一个原生 Mac 工作流中创建 Google Play 和 App Store 屏幕截图。";
     case "hi":
@@ -56,6 +56,16 @@ function getCTAMessage(locale: LocaleCode): string {
       return "Générez vos captures Google Play et App Store depuis un unique flux de travail Mac natif.";
     case "ar":
       return "صمّم لقطات شاشة Google Play و App Store من سير عمل Mac أصلي واحد.";
+    case "de":
+      return "Erstellen Sie Google Play- und App Store-Screenshots in einem einzigen nativen Mac-Workflow.";
+    case "ja":
+      return "1つのネイティブMacワークフローからGoogle PlayとApp Storeのスクリーンショットを作成します。";
+    case "pt":
+      return "Crie capturas de tela do Google Play e da App Store a partir de um único fluxo de trabalho nativo do Mac.";
+    case "it":
+      return "Crea screenshot per Google Play e App Store da un unico flusso di lavoro nativo su Mac.";
+    case "ko":
+      return "단 하나의 네이티브 Mac 워크플로우로 Google Play 및 App Store 스크린샷을 만드세요.";
     default:
       return "Create Google Play and App Store screenshots from one native Mac workflow.";
   }
@@ -73,6 +83,16 @@ function getCTAButtonLabel(locale: LocaleCode): string {
       return "Télécharger Screenshot Bro";
     case "ar":
       return "تنزيل Screenshot Bro";
+    case "de":
+      return "Screenshot Bro herunterladen";
+    case "ja":
+      return "Screenshot Broをダウンロード";
+    case "pt":
+      return "Baixar Screenshot Bro";
+    case "it":
+      return "Scarica Screenshot Bro";
+    case "ko":
+      return "Screenshot Bro 다운로드";
     default:
       return "Download Screenshot Bro";
   }
@@ -90,6 +110,16 @@ function renderContent(locale: LocaleCode) {
       return <ContentFr />;
     case "ar":
       return <ContentAr />;
+    case "de":
+      return <ContentDe />;
+    case "ja":
+      return <ContentJa />;
+    case "pt":
+      return <ContentPt />;
+    case "it":
+      return <ContentIt />;
+    case "ko":
+      return <ContentKo />;
     default:
       return <ContentEn />;
   }

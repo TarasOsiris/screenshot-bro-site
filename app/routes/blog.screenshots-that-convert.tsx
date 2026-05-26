@@ -42,6 +42,8 @@ export default function BlogPost() {
 
 function getCTAMessage(locale: LocaleCode): string {
   switch (locale) {
+    case "de":
+      return "Gestalte Screenshot-Sets, die konvertieren – ganz ohne die lästige Arbeit in Figma.";
     case "es":
       return "Diseña conjuntos de capturas que conviertan, sin el trabajo pesado de Figma.";
     case "zh":
@@ -52,6 +54,14 @@ function getCTAMessage(locale: LocaleCode): string {
       return "Concevez des ensembles de captures qui convertissent, sans le travail fastidieux sur Figma.";
     case "ar":
       return "صمم مجموعات لقطات شاشة تؤدي إلى زيادة التحويل - دون عناء العمل على Figma.";
+    case "ja":
+      return "Figmaの面倒な作業なしで、コンバージョンにつながるスクリーンショットセットをデザイン。";
+    case "pt":
+      return "Crie conjuntos de capturas de tela que convertem — sem o trabalho repetitivo no Figma.";
+    case "it":
+      return "Progetta set di screenshot che convertono, senza il lavoro noioso su Figma.";
+    case "ko":
+      return "Figma의 번거로운 작업 없이 전환을 유도하는 스크린샷 세트를 디자인하세요.";
     default:
       return "Design screenshot sets that convert — without the Figma busywork.";
   }
@@ -59,6 +69,8 @@ function getCTAMessage(locale: LocaleCode): string {
 
 function renderContent(locale: LocaleCode) {
   switch (locale) {
+    case "de":
+      return <ContentDe />;
     case "es":
       return <ContentEs />;
     case "zh":
@@ -69,6 +81,14 @@ function renderContent(locale: LocaleCode) {
       return <ContentFr />;
     case "ar":
       return <ContentAr />;
+    case "ja":
+      return <ContentJa />;
+    case "pt":
+      return <ContentPt />;
+    case "it":
+      return <ContentIt />;
+    case "ko":
+      return <ContentKo />;
     default:
       return <ContentEn />;
   }
@@ -532,6 +552,424 @@ function ContentAr() {
       <h2>7. الاختبار والتكرار</h2>
       <p>
         تدعم Apple ما يصل إلى 10 لقطات شاشة و3 معاينات للتطبيق لكل لغة. استخدم جميع الخانات المتاحة. جرب لقطات شاشة رئيسية مختلفة وقس التأثير على معدل التحويل من خلال تحليلات App Store Connect.
+      </p>
+    </>
+  );
+}
+
+function ContentDe() {
+  return (
+    <>
+      <p>
+        Viele Menschen entscheiden schnell, ob ein App-Store-Eintrag für sie relevant ist.
+        Screenshots sind oft der erste detaillierte Blick auf die App. Sie müssen den Nutzen
+        daher schneller erklären, als es die Beschreibung kann. Hier erfahren Sie, was
+        konvertierungsstarke Screenshot-Sets von leicht zu vergessenden unterscheidet.
+      </p>
+
+      <h2>1. Beginnen Sie mit dem Ergebnis, nicht mit der Funktion</h2>
+      <p>
+        Ihr erster Screenshot sollte die Frage beantworten: &quot;Was bringt mir diese App?&quot;
+        – und nicht &quot;Wie sieht die Benutzeroberfläche aus?&quot;. Zeigen Sie das Endergebnis: eine erledigte
+        Aufgabe, ein schönes Ergebnis, ein gelöstes Problem. Die Details zu den Funktionen
+        folgen später.
+      </p>
+      <p>
+        <strong>Schlecht:</strong> &quot;Dashboard-Ansicht mit Seitenleisten-Navigation&quot;
+        <br />
+        <strong>Gut:</strong> &quot;Jeden Tankstopp mit nur einem Fingertipp erfassen&quot;
+      </p>
+
+      <h2>2. Verwenden Sie kurze, nutzenorientierte Texte</h2>
+      <p>
+        Jeder Screenshot erhält eine Überschrift – maximal 4 bis 8 Wörter. Schreiben Sie in der
+        zweiten Person (&quot;Exportieren Sie Ihre Screenshots mit einem Klick&quot;) und konzentrieren Sie sich
+        darauf, was der Benutzer gewinnt, nicht darauf, was die App enthält.
+      </p>
+      <ul>
+        <li>Platzieren Sie den Text über dem Geräterahmen, damit er zuerst gelesen wird</li>
+        <li>Verwenden Sie für alle Screenshots eine einheitliche Schriftgröße und Position</li>
+        <li>Eine Idee pro Screenshot – überladen Sie ihn nicht</li>
+      </ul>
+
+      <h2>3. Die ersten beiden Screenshots entscheiden alles</h2>
+      <p>
+        Im App Store sind ohne Scrollen nur die ersten 2–3 Screenshots sichtbar.
+        Diese müssen den Kernwert Ihrer App vermitteln. Heben Sie sich sekundäre
+        Funktionen (Einstellungen, Integrationen, Sonderfälle) für die
+        Positionen 4–10 auf.
+      </p>
+
+      <h2>4. Verwenden Sie echte Geräterahmen</h2>
+      <p>
+        Geräterahmen verleihen Glaubwürdigkeit und visuelle Struktur. Ein nackter Screenshot,
+        der frei im Raum schwebt, wirkt unfertig. Verpacken Sie ihn in den tatsächlichen
+        Geräterahmen, auf dem Ihre Benutzer ihn sehen werden – iPhone, iPad oder Mac.
+      </p>
+      <p>
+        Screenshot Bro enthält eine aktuelle Bibliothek von Apple- und Android-Geräterahmen
+        mit konfigurierbaren Gehäusefarben, damit Ihre Rahmen immer zu Ihrer Marke passen.
+      </p>
+
+      <h2>5. Entwerfen Sie ein einheitliches visuelles System</h2>
+      <p>
+        Wählen Sie einen Hintergrundstil und behalten Sie diesen für alle Screenshots bei.
+        Verlaufshintergründe eignen sich hervorragend, da sie Tiefe verleihen, ohne mit dem
+        Geräterahmen zu konkurrieren. Verwenden Sie die Farbpalette Ihrer Marke und
+        achten Sie auf einheitliche Abstände.
+      </p>
+      <ul>
+        <li>Gleiche Verlaufsrichtung und Farbfamilie im gesamten Set</li>
+        <li>Konsistente Textplatzierung und Hierarchie</li>
+        <li>Optional: Erstrecken Sie einen Hintergrund über mehrere Screenshots für einen Panorama-Effekt</li>
+      </ul>
+
+      <h2>6. Lokalisieren Sie – der ROI ist enorm</h2>
+      <p>
+        Wenn Sie mehrere Sprachen unterstützen, sollten Ihre Screenshots das auch tun.
+        Übersetzen Sie die Überschriften, nicht nur die Benutzeroberfläche der App.
+        Benutzer merken es, wenn der Marketingtext in ihrer Sprache verfasst ist, und
+        die Auswirkung variiert je nach Markt, Kategorie und Übersetzungsqualität.
+      </p>
+
+      <h2>7. Testen und optimieren</h2>
+      <p>
+        Apple unterstützt bis zu 10 Screenshots und 3 App-Vorschauen pro
+        Lokalisierung. Nutzen Sie alle Plätze. Probieren Sie verschiedene Einstiegs-Screenshots
+        aus und messen Sie die Auswirkung auf die Konversionsrate über die App Store Connect
+        Analytics.
+      </p>
+    </>
+  );
+}
+
+function ContentJa() {
+  return (
+    <>
+      <p>
+        多くの人は、App Storeの製品ページが自分に関連があるかどうかを瞬時に判断します。
+        多くの場合、スクリーンショットはユーザーがアプリを詳しく見る最初の機会となるため、
+        説明文よりも早く価値を伝える必要があります。ここでは、コンバージョン率の高いスクリーンショットセットと、
+        印象に残らないセットを分けるポイントを紹介します。
+      </p>
+
+      <h2>1. 機能ではなく、結果を前面に出す</h2>
+      <p>
+        最初のスクリーンショットは、「UIがどうなっているか」ではなく、「このアプリが自分に何をもたらしてくれるか」
+        という疑問に答えるものであるべきです。タスクの完了、美しい成果물、問題の解決など、
+        最終的な結果を示しましょう。機能の詳細な説明は後回しで構いません。
+      </p>
+      <p>
+        <strong>悪い例：</strong> &quot;サイドバーナビゲーション付きのダッシュボード表示&quot;
+        <br />
+        <strong>良い例：</strong> &quot;1タップですべての給油記録を追跡&quot;
+      </p>
+
+      <h2>2. メリットを伝える短いコピーを使う</h2>
+      <p>
+        各スクリーンショットに設定する見出しは、1つあたり最大で4〜8語にします。
+        ユーザーに語りかける形で書き（&quot;1クリックでスクリーンショットを書き出し&quot;）、
+        アプリに含まれる機能ではなく、ユーザーが得られるメリットに焦点を当てます。
+      </p>
+      <ul>
+        <li>最初に読まれるよう、テキストはデバイスフレームの上に配置する</li>
+        <li>すべてのスクリーンショットでフォントサイズと配置を統一する</li>
+        <li>スクリーンショット1枚につきアイデアは1つに絞り、情報を詰め込みすぎない</li>
+      </ul>
+
+      <h2>3. 最初の2枚のスクリーンショットがすべて</h2>
+      <p>
+        App Storeでは、スクロールせずに表示されるのは最初の2〜3枚のスクリーンショットだけです。
+        これらでアプリの核心的な価値を伝えなければなりません。サブ機能（設定、連携、特殊なユースケースなど）は
+        4〜10枚目に残しておきましょう。
+      </p>
+
+      <h2>4. 実際のデバイスフレームを使用する</h2>
+      <p>
+        デバイスフレームを使用することで、信頼性と視覚的なまとまりが生まれます。
+        背景のない生のスクリーンショットが浮いている状態では、未完成に見えてしまいます。
+        ユーザーが実際に使用するデバイス（iPhone, iPad, Macなど）のベゼルにはめ込みましょう。
+      </p>
+      <p>
+        Screenshot Broには、本体カラーを設定できるAppleおよびAndroidデバイスフレームの最新ライブラリが
+        用意されているため、フレームを常にブランドにマッチさせることができます。
+      </p>
+
+      <h2>5. 一貫したビジュアルシステムをデザインする</h2>
+      <p>
+        背景のスタイルを1つ決め、所有的なスクリーンショットで統一します。
+        グラデーション背景は、デバイスフレームの邪魔をせずに奥行きを表現できるため効果的です。
+        ブランドのカラーパレットを使用し、一貫した余白を維持しましょう。
+      </p>
+      <ul>
+        <li>セット全体で同じグラデーションの方向と色系統を使用する</li>
+        <li>一貫したテキストの配置と階層</li>
+        <li>オプション：複数のスクリーンショットにまたがる1つの背景を使用して、パノラマ効果を演出する</li>
+      </ul>
+
+      <h2>6. ローカライズする — 投資対効果（ROI）は絶大</h2>
+      <p>
+        アプリが複数の言語に対応しているなら、スクリーンショットも対応させるべきです。
+        アプリのUIだけでなく、見出しのコピーも翻訳しましょう。
+        ユーザーはマーケティングテキストが自分の言語で書かれているかどうかに気づきます。その効果は、
+        市場、カテゴリ、および翻訳の品質によって異なります。
+      </p>
+
+      <h2>7. テストと改善を繰り返す</h2>
+      <p>
+        Appleは、ローカライズごとに最大10枚のスクリーンショットと3つのアプリプレビューをサポートしています。
+        すべてのスロットを活用しましょう。さまざまなメインのスクリーンショットを試して、
+        App Store Connectの分析ツールでコンバージョン率への影響を測定します。
+      </p>
+    </>
+  );
+}
+
+function ContentPt() {
+  return (
+    <>
+      <p>
+        Muitas pessoas decidem rapidamente se uma página na App Store é relevante.
+        As capturas de tela geralmente são o primeiro olhar detalhado que elas têm do aplicativo, por isso
+        precisam explicar o valor mais rápido do que a descrição. Aqui está o que separa conjuntos de
+        capturas de tela de alta conversão daqueles que são esquecíveis.
+      </p>
+
+      <h2>1. Comece com o Resultado, Não com a Funcionalidade</h2>
+      <p>
+        Sua primeira captura de tela deve responder a &quot;o que este aplicativo faz por mim?&quot;
+        — não &quot;como é a interface do usuário&quot;. Mostre o resultado final: uma tarefa concluída, um
+        resultado bonito, um problema resolvido. Os detalhes dos recursos vêm depois.
+      </p>
+      <p>
+        <strong>Ruim:</strong> &quot;Visualização do painel com navegação na barra lateral&quot;
+        <br />
+        <strong>Bom:</strong> &quot;Acompanhe cada abastecimento de combustível com um toque&quot;
+      </p>
+
+      <h2>2. Use Textos Curtos e Focados em Benefícios</h2>
+      <p>
+        Cada captura de tela ganha um título — no máximo 4 a 8 palavras. Escreva na
+        segunda pessoa (&quot;Exporte suas capturas de tela em um clique&quot;) e concentre-se no
+        que o usuário ganha, não no que o aplicativo contém.
+      </p>
+      <ul>
+        <li>Mantenha o texto acima do frame do dispositivo para que seja lido primeiro</li>
+        <li>Use um tamanho de fonte e posição consistentes em todas as capturas de tela</li>
+        <li>Uma ideia por captura de tela — não sobrecarregue</li>
+      </ul>
+
+      <h2>3. As Duas Primeiras Capturas de Tela São Tudo</h2>
+      <p>
+        Na App Store, apenas as primeiras 2 a 3 capturas de tela são visíveis sem rolar.
+        Elas devem comunicar o valor principal do seu aplicativo. Guarde os
+        recursos secundários (configurações, integrações, casos extremos) para as
+        posições de 4 a 10.
+      </p>
+
+      <h2>4. Use Frames de Dispositivos Reais</h2>
+      <p>
+        Frames de dispositivos adicionam credibilidade e estrutura visual. Uma captura de tela pura
+        flutuando no espaço parece inacabada. Envolva-a na moldura do dispositivo real em que
+        os usuários a verão — iPhone, iPad ou Mac.
+      </p>
+      <p>
+        O Screenshot Bro inclui uma biblioteca atualizada de frames de dispositivos Apple e Android
+        com cores de corpo configuráveis, para que seus frames sempre combinem com a sua marca.
+      </p>
+
+      <h2>5. Desenhe um Sistema Visual Consistente</h2>
+      <p>
+        Escolha um estilo de fundo e use-o em todas as capturas de tela.
+        Fundos com gradiente funcionam bem porque adicionam profundidade sem competir com o
+        frame do dispositivo. Use a paleta de cores da sua marca e mantenha um espaçamento
+        consistente.
+      </p>
+      <ul>
+        <li>Mesma direção de gradiente e família de cores em todo o conjunto</li>
+        <li>Posicionamento e hierarquia de texto consistentes</li>
+        <li>Opcional: estenda um fundo por várias capturas de tela para obter um efeito panorâmico</li>
+      </ul>
+
+      <h2>6. Localize — o Retorno Sobre o Investimento é Enorme</h2>
+      <p>
+        Se você oferece suporte a vários idiomas, suas capturas de tela também devem oferecer.
+        Traduza o texto do título, não apenas a interface do aplicativo. Os usuários percebem
+        quando o texto de marketing está no idioma deles, e o impacto variará de acordo com o
+        mercado, categoria e qualidade da tradução.
+      </p>
+
+      <h2>7. Teste e Itere</h2>
+      <p>
+        A Apple suporta até 10 capturas de tela e 3 prévias de aplicativos por localização.
+        Use todos os espaços disponíveis. Experimente diferentes capturas de tela principais e
+        meça o impacto na taxa de conversão por meio das análises do App Store Connect.
+      </p>
+    </>
+  );
+}
+
+function ContentIt() {
+  return (
+    <>
+      <p>
+        Molte persone decidono rapidamente se una scheda dell&apos;App Store è rilevante.
+        Gli screenshot sono spesso il primo sguardo dettagliato che danno all&apos;app, quindi
+        devono spiegare il valore più velocemente di quanto possa fare la descrizione. Ecco
+        cosa distingue i set di screenshot ad alta conversione da quelli facilmente dimenticabili.
+      </p>
+
+      <h2>1. Inizia con il risultato, non con la funzionalità</h2>
+      <p>
+        Il tuo primo screenshot dovrebbe rispondere alla domanda &quot;cosa fa questa app per me?&quot;
+        — e non &quot;com&apos;è l&apos;interfaccia utente&quot;. Mostra il risultato finale: un&apos;attività completata, un
+        output straordinario, un problema risolto. I dettagli della funzionalità verranno dopo.
+      </p>
+      <p>
+        <strong>Negativo:</strong> &quot;Vista dashboard con navigazione laterale&quot;
+        <br />
+        <strong>Positivo:</strong> &quot;Traccia ogni rifornimento con un solo tocco&quot;
+      </p>
+
+      <h2>2. Usa testi brevi e focalizzati sui vantaggi</h2>
+      <p>
+        Ogni screenshot ha un solo titolo — al massimo da 4 a 8 parole. Scrivi in seconda
+        persona (&quot;Esporta i tuoi screenshot in un clic&quot;) e concentrati su ciò che
+        l&apos;utente ottiene, non su ciò che l&apos;app contiene.
+      </p>
+      <ul>
+        <li>Mantieni il testo sopra il frame del dispositivo in modo che venga letto per primo</li>
+        <li>Usa dimensioni del carattere e posizione coerenti in tutti gli screenshot</li>
+        <li>Un&apos;idea per screenshot: non sovraccaricare</li>
+      </ul>
+
+      <h2>3. I primi due screenshot sono tutto</h2>
+      <p>
+        Sull&apos;App Store, solo i primi 2-3 screenshot sono visibili senza scorrere.
+        Questi devono comunicare il valore principale della tua app. Salva le
+        funzionalità secondarie (impostazioni, integrazioni, casi limite) per le
+        posizioni da 4 a 10.
+      </p>
+
+      <h2>4. Usa frame di dispositivi reali</h2>
+      <p>
+        I frame del dispositivo aggiungono credibilità e struttura visiva. Uno screenshot grezzo
+        fluttuante nello spazio sembra incompleto. Inseriscilo nella cornice del dispositivo
+        reale su cui i tuoi utenti lo vedranno: iPhone, iPad o Mac.
+      </p>
+      <p>
+        Screenshot Bro include una libreria aggiornata di frame di dispositivi Apple and Android
+        con colori della scocca configurabili, in modo che i tuoi frame si abbinino sempre al tuo brand.
+      </p>
+
+      <h2>5. Progetta un sistema visivo coerente</h2>
+      <p>
+        Scegli uno stile di sfondo e mantienilo in tutti gli screenshot.
+        Gli sfondi sfumati funzionano bene perché aggiungono profondità senza competere con il
+        frame del dispositivo. Usa la tavolozza dei colori del tuo brand e mantieni una spaziatura
+        coerente.
+      </p>
+      <ul>
+        <li>Stessa direzione della sfumatura e famiglia di colori in tutto il set</li>
+        <li>Posizionamento e gerarchia del testo coerenti</li>
+        <li>Opzionale: estendi un singolo sfondo su più screenshot per un effetto panoramico</li>
+      </ul>
+
+      <h2>6. Localizza: il ROI è enorme</h2>
+      <p>
+        Se supporti più lingue, anche i tuoi screenshot dovrebbero farlo.
+        Traduci i testi dei titoli, non solo l&apos;interfaccia utente dell&apos;app. Gli utenti notano
+        quando il testo di marketing è nella loro lingua, e l&apos;impatto varierà in base al
+        mercato, alla categoria e alla qualità della traduzione.
+      </p>
+
+      <h2>7. Testa e migliora</h2>
+      <p>
+        Apple supporta fino a 10 screenshot e 3 anteprime dell&apos;app per localizzazione.
+        Usa tutti gli slot a disposizione. Prova diversi screenshot principali e misura l&apos;impatto
+        sul tasso di conversione tramite le statistiche di App Store Connect.
+      </p>
+    </>
+  );
+}
+
+function ContentKo() {
+  return (
+    <>
+      <p>
+        많은 사용자가 App Store의 제품 페이지가 자신에게 유용한지 빠르게 결정합니다.
+        스크린샷은 대개 앱을 자세히 들여다보는 첫 번째 기회이므로, 텍스트 설명보다 빠르게 핵심 가치를
+        전달해야 합니다. 높은 전환율을 기록하는 스크린샷 세트와 쉽게 잊혀지는 세트를 구분하는
+        차이점은 다음과 같습니다.
+      </p>
+
+      <h2>1. 기능이 아닌 결과를 먼저 제시하세요</h2>
+      <p>
+        첫 번째 스크린샷은 &quot;UI가 어떻게 생겼는지&quot;가 아니라 &quot;이 앱이 나에게 어떤 가치를 제공하는지&quot;에
+        대한 답을 보여주어야 합니다. 완료된 작업, 아름다운 결과물, 해결된 문제 등 최종 결과물을
+        보여주세요. 기능의 세부 정보는 나중에 나와도 늦지 않습니다.
+      </p>
+      <p>
+        <strong>나쁨:</strong> &quot;사이드바 탐색 기능이 있는 대시보드 뷰&quot;
+        <br />
+        <strong>좋음:</strong> &quot;원터치로 모든 주유 기록 추적&quot;
+      </p>
+
+      <h2>2. 혜택 중심의 짧은 문구를 사용하세요</h2>
+      <p>
+        각 스크린샷에는 하나의 헤드라인(최대 4~8단어)만 사용하세요. 사용자 입장에서 작성하고
+        (&quot;원클릭으로 스크린샷 내보내기&quot;) 앱에 어떤 기능이 포함되어 있는지보다 사용자가 무엇을
+        얻을 수 있는지에 집중하세요.
+      </p>
+      <ul>
+        <li>사용자가 가장 먼저 읽을 수 있도록 텍스트를 기기 프레임 위에 배치하세요</li>
+        <li>모든 스크린샷에 걸쳐 일관된 글꼴 크기와 위치를 유지하세요</li>
+        <li>스크린샷 한 장당 하나의 핵심 아이디어만 담고 정보 과부하를 피하세요</li>
+      </ul>
+
+      <h2>3. 처음 두 장의 스크린샷이 승패를 가릅니다</h2>
+      <p>
+        App Store에서는 화면을 스크롤하지 않고도 보이는 스크린샷은 처음 2~3장에 불과합니다.
+        이 스크린샷들이 앱의 핵심 가치를 반드시 전달해야 합니다. 부차적인 기능(설정,
+        연동, 특수 사례 등)은 4~10번째 자리로 배치하세요.
+      </p>
+
+      <h2>4. 실제 기기 프레임을 사용하세요</h2>
+      <p>
+        기기 프레임은 시각적 구조와 신뢰도를 높여줍니다. 공중에 떠 있는 듯한 가공되지 않은
+        스크린샷은 미완성된 것처럼 보입니다. 사용자가 실제로 앱을 사용하게 될 기기(iPhone, iPad,
+        Mac)의 베젤로 감싸세요.
+      </p>
+      <p>
+        Screenshot Bro는 기기 본체 색상을 자유롭게 구성할 수 있는 최신 Apple 및 Android 기기
+        프레임 라이브러리를 제공하므로, 프레임을 항상 브랜드 이미지에 맞게 일치시킬 수 있습니다.
+      </p>
+
+      <h2>5. 일관성 있는 시각 시스템을 디자인하세요</h2>
+      <p>
+        하나의 배경 스타일을 선택하고 모든 스크린샷에 동일하게 적용하세요.
+        그라디언트 배경은 기기 프레임과 충돌하지 않으면서 깊이감을 더해주므로 효과적입니다.
+        브랜드의 컬러 팔레트를 사용하고 일관된 간격을 유지하세요.
+      </p>
+      <ul>
+        <li>전체 세트에서 동일한 그라디언트 방향과 색상 계열 적용</li>
+        <li>일관된 텍스트 위치 및 계층 구조</li>
+        <li>선택 사항: 여러 스크린샷에 걸쳐 하나의 배경을 연결하여 파노라마 효과 연출</li>
+      </ul>
+
+      <h2>6. 로컬라이즈하세요 — ROI가 엄청납니다</h2>
+      <p>
+        앱이 여러 언어를 지원한다면 스크린샷도 동일하게 지원해야 합니다.
+        앱 UI뿐만 아니라 헤드라인 문구도 번역하세요. 사용자는 마케팅 문구가 자신들의
+        언어로 작성되어 있는지 쉽게 알아채며, 그 효과는 시장, 카테고리, 그리고 번역
+        품질에 따라 크게 달라집니다.
+      </p>
+
+      <h2>7. 테스트하고 반복 개선하세요</h2>
+      <p>
+        Apple은 언어별로 최대 10장의 스크린샷과 3개의 앱 미리보기를 지원합니다. 모든
+        슬롯을 활용해 보세요. 다양한 대표 스크린샷을 시도하고 App Store Connect 분석
+        데이터를 통해 전환율에 미치는 영향을 측정하세요.
       </p>
     </>
   );
