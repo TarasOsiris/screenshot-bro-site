@@ -70,12 +70,13 @@ function ContentEn() {
       </p>
       <p>
         This shortlist is based on the template categories that are currently
-        easiest to find in Figma&apos;s own template pages, Figma Community mirror
-        indexes, and recent developer discussions around App Store screenshot
-        production. It is not a permanent download ranking, because Figma
-        Community search order changes over time. Treat it as a practical
-        guide to the template types worth checking before you build your
-        actual screenshot workflow in <a href="/">Screenshot Bro</a>.
+        easiest to find in Figma&apos;s own template pages and Figma Community
+        files, including popular App Store screenshot templates, iPhone
+        mockup kits, and broader device mockup collections. It is not a
+        permanent download ranking, because Figma Community search order
+        changes over time. Treat it as a practical guide to the template
+        types worth checking before you build your actual screenshot workflow
+        in <a href="/">Screenshot Bro</a>.
       </p>
 
       <ArticleImage
@@ -134,17 +135,20 @@ function ContentEn() {
       <h2>1. App Store Screenshot Templates</h2>
       <p>
         Start with the direct category: Figma files built for App Store
-        screenshots. Community indexes surface files such as{" "}
-        <a href="https://code.grida.co/community/file/891325178364097650">
-          Template for App Store Screenshots
+        screenshots. One strong example is Median.co&apos;s{" "}
+        <a href="https://www.figma.com/community/file/1471925742378558731/500-app-store-screenshot-templates-for-android-and-ios-apps">
+          500+ App Store Screenshot Templates for Android and iOS Apps
         </a>
-        ,{" "}
-        <a href="https://code.grida.co/community/file/1198162612398400646">
+        . Other Figma Community files in this category include{" "}
+        <a href="https://www.figma.com/community/file/891325178364097650">
+          Template for App Store Screenshots
+        </a>{" "}
+        and{" "}
+        <a href="https://www.figma.com/community/file/1198162612398400646">
           App Store Screenshot Template
         </a>
-        , and other App Store screenshot files under the screenshot tag. These
-        are useful when you want the basic pattern: headline, device frame,
-        background, and a sequence of feature slides.
+        . These are useful when you want the basic pattern: headline, device
+        frame, background, and a sequence of feature slides.
       </p>
       <p>
         The best ones are not just pretty. They already think in screenshot
@@ -158,13 +162,13 @@ function ContentEn() {
       <h2>2. App Store and Google Play Templates</h2>
       <p>
         If you ship both iOS and Android, look for cross-store files such as{" "}
-        <a href="https://code.grida.co/community/file/919892723902077463">
+        <a href="https://www.figma.com/community/file/919892723902077463">
           App Store and Google Play template
         </a>{" "}
-        or the broader files listed under the Figma screenshot tag. These are
-        helpful because they remind you to design for more than one storefront:
-        iPhone, iPad, Android phone, Android tablet, and sometimes feature
-        graphics.
+        or broader App Store screenshot files that include both iOS and
+        Android examples. These are helpful because they remind you to design
+        for more than one storefront: iPhone, iPad, Android phone, Android
+        tablet, and sometimes feature graphics.
       </p>
       <p>
         The limitation is maintenance. In Figma, every extra store size
@@ -186,7 +190,7 @@ function ContentEn() {
       <h2>3. Screenshot Builder Kits</h2>
       <p>
         Builder-style files, including{" "}
-        <a href="https://code.grida.co/community/file/900812557422655005">
+        <a href="https://www.figma.com/community/file/900812557422655005">
           AppStore - Screenshot Builder (iOS &amp; iPad)
         </a>{" "}
         and kits like FIGMA TO STORE, are the most useful if you already like
@@ -225,13 +229,13 @@ function ContentEn() {
       <h2>5. Full Device Mockup Collections</h2>
       <p>
         Large collections like{" "}
-        <a href="https://code.grida.co/community/file/1209371598104774338">
+        <a href="https://www.figma.com/community/file/1209371598104774338">
           Device Mockups Ultimate Collection
         </a>{" "}
         are popular because they cover many contexts: iPhone, iPad, MacBook,
         iMac, watch, Android phones, tablets, and sometimes laptop scenes.
-        The Figma Community mirror tags for device mockups and iPhone mockups
-        show how broad this category is.
+        Search Figma Community for terms like &quot;device mockup&quot; and
+        &quot;iPhone mockup&quot; and you will see how broad this category is.
       </p>
       <p>
         Use these when the goal is a brand or launch asset, not a strict store
