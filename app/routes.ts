@@ -7,6 +7,7 @@ export default [
   route("changelog", "routes/changelog.tsx"),
   route("blog", "routes/blog._index.tsx"),
   route(":locale/blog", "routes/blog._index.tsx", { id: "blog-locale" }),
+  route("blog/app-store-screenshot-designers-creators-to-follow", "routes/blog.app-store-screenshot-designers-creators-to-follow.tsx"),
   route("blog/google-play-screenshot-sizes-requirements", "routes/blog.google-play-screenshot-sizes-requirements.tsx"),
   route(":locale/blog/google-play-screenshot-sizes-requirements", "routes/blog.google-play-screenshot-sizes-requirements.tsx", { id: "blog-google-play-screenshot-sizes-requirements-locale" }),
   route("blog/ab-test-app-store-screenshots", "routes/blog.ab-test-app-store-screenshots.tsx"),

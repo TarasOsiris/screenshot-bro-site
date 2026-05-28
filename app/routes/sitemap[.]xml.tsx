@@ -94,7 +94,7 @@ function buildSitemap(): string {
   const blogEntries: SitemapEntry[] = [];
   BLOG_POSTS.forEach((post) => {
     const path = `/blog/${post.slug}`;
-    const alternates = localeAlternates(path);
+    const alternates = post.localized === false ? undefined : localeAlternates(path);
     blogEntries.push({
       loc: path,
       changefreq: "monthly",
@@ -102,15 +102,17 @@ function buildSitemap(): string {
       lastmod: post.date,
       alternates,
     });
-    LOCALES.filter((locale) => locale.code !== DEFAULT_LOCALE).forEach((locale) => {
-      blogEntries.push({
-        loc: localizedPath(locale.code, path),
-        changefreq: "monthly",
-        priority: "0.7",
-        lastmod: post.date,
-        alternates,
+    if (post.localized !== false) {
+      LOCALES.filter((locale) => locale.code !== DEFAULT_LOCALE).forEach((locale) => {
+        blogEntries.push({
+          loc: localizedPath(locale.code, path),
+          changefreq: "monthly",
+          priority: "0.7",
+          lastmod: post.date,
+          alternates,
+        });
       });
-    });
+    }
   });
 
   const urls = [...staticEntries, ...blogEntries]

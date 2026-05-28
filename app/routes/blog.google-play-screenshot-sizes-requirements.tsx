@@ -110,16 +110,6 @@ function renderContent(locale: LocaleCode) {
       return <ContentFr />;
     case "ar":
       return <ContentAr />;
-    case "de":
-      return <ContentDe />;
-    case "ja":
-      return <ContentJa />;
-    case "pt":
-      return <ContentPt />;
-    case "it":
-      return <ContentIt />;
-    case "ko":
-      return <ContentKo />;
     default:
       return <ContentEn />;
   }

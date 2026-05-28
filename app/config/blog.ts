@@ -12,9 +12,29 @@ export type BlogPost = {
   readTime: string;
   category: BlogCategory;
   keywords?: string[];
+  localized?: boolean;
 };
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "app-store-screenshot-designers-creators-to-follow",
+    title: "Cool App Store Screenshot Designers and Creators to Follow",
+    description:
+      "A practical follow list for indie developers looking for App Store screenshot design inspiration, ASO creative teardown accounts, and better visual references.",
+    date: "2026-05-28",
+    readTime: "8 min read",
+    category: "Guide",
+    localized: false,
+    keywords: [
+      "App Store screenshot designers",
+      "App Store screenshot inspiration",
+      "ASO creators",
+      "app screenshot design",
+      "app store screenshots",
+      "app store screenshot examples",
+      "mobile app marketing design",
+    ],
+  },
   {
     slug: "google-play-screenshot-sizes-requirements",
     title: "Google Play Screenshot Sizes and Requirements",

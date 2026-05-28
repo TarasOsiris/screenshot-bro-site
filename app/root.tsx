@@ -30,6 +30,7 @@ import {
   WORKFLOW_STEPS,
   X_PROFILE_URL,
 } from "~/config/site";
+import { BLOG_POSTS } from "~/config/blog";
 import {
   LOCALES,
   buildOgLocaleMeta,
@@ -245,7 +246,9 @@ const isLocalizedPath = (pathname: string): boolean => {
     (segments.length === 2 && segments[0] === "blog") ||
     (segments.length === 3 && isLocaleCode(segments[0]) && segments[1] === "blog")
   ) {
-    return true;
+    const slug = segments[0] === "blog" ? segments[1] : segments[2];
+    const post = BLOG_POSTS.find((entry) => entry.slug === slug);
+    return post?.localized !== false;
   }
   return false;
 };
