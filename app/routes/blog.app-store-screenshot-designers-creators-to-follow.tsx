@@ -28,6 +28,87 @@ export default function BlogPost() {
   );
 }
 
+function ArticleImage({
+  src,
+  alt,
+  caption,
+  width,
+  height,
+}: {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+}) {
+  return (
+    <figure className="my-8">
+      <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        loading="lazy"
+        decoding="async"
+        className="w-full h-auto rounded-lg border border-border-subtle bg-surface-raised"
+      />
+      <figcaption className="mt-2 text-center text-xs leading-relaxed text-white/45">
+        {caption}
+      </figcaption>
+    </figure>
+  );
+}
+
+function ScreenshotPreviewGrid() {
+  const previews = [
+    {
+      src: "/screenshots/01_screenshot-720.webp",
+      alt: "Screenshot Bro export showing a finished App Store screenshot layout with a device frame and large headline",
+      caption: "Start with a clear first-frame hook.",
+    },
+    {
+      src: "/screenshots/02_screenshot-720.webp",
+      alt: "Screenshot Bro export showing a polished app screenshot with a framed product screen and caption",
+      caption: "Keep the visual system consistent.",
+    },
+    {
+      src: "/screenshots/03_screenshot-720.webp",
+      alt: "Screenshot Bro export showing another App Store screenshot variation from the same set",
+      caption: "Build a set you can update later.",
+    },
+  ];
+
+  return (
+    <figure className="my-8">
+      <div className="grid gap-3 sm:grid-cols-3">
+        {previews.map((preview) => (
+          <div
+            key={preview.src}
+            className="overflow-hidden rounded-lg border border-border-subtle bg-surface-raised"
+          >
+            <img
+              src={preview.src}
+              alt={preview.alt}
+              width={720}
+              height={450}
+              loading="lazy"
+              decoding="async"
+              className="h-auto w-full"
+            />
+            <p className="m-0 px-3 py-2 text-[11px] leading-snug text-white/50">
+              {preview.caption}
+            </p>
+          </div>
+        ))}
+      </div>
+      <figcaption className="mt-2 text-center text-xs leading-relaxed text-white/45">
+        The useful part of inspiration is not copying a style. It is finding a
+        stronger structure for your own screenshot set.
+      </figcaption>
+    </figure>
+  );
+}
+
 function ContentEn() {
   return (
     <>
@@ -47,6 +128,14 @@ function ContentEn() {
         Connect upload. The inspiration lives on social media. The repeatable
         production work should live in your screenshot project.
       </p>
+
+      <ArticleImage
+        src="/og-image.png"
+        alt="Screenshot Bro app preview with App Store screenshot designs on a dark background"
+        width={1200}
+        height={630}
+        caption="Use creators and galleries for direction, then turn the idea into a reusable Screenshot Bro project."
+      />
 
       <h2>Quick Follow List</h2>
       <div className="overflow-x-auto mb-6">
@@ -120,6 +209,8 @@ function ContentEn() {
         </table>
       </div>
 
+      <ScreenshotPreviewGrid />
+
       <h2>1. The Screenshot First Company</h2>
       <p>
         If you only follow one account in this niche, start with{" "}
@@ -171,6 +262,14 @@ function ContentEn() {
         keep the same structure available for future releases.
       </p>
 
+      <ArticleImage
+        src="/docs/help/templates.webp"
+        alt="Screenshot Bro templates row showing multiple screenshot designs in one project"
+        width={1600}
+        height={453}
+        caption="A good social reference becomes useful when it can be rebuilt as a template row, not just admired as a one-off design."
+      />
+
       <h2>3. AppLaunchpad Inspiration</h2>
       <p>
         <a href="https://theapplaunchpad.com/app-screenshot-inspiration">
@@ -205,6 +304,14 @@ function ContentEn() {
         the gallery to understand the category language, then build a
         repeatable version that still feels like your product.
       </p>
+
+      <ArticleImage
+        src="/docs/help/editor-overview.webp"
+        alt="Screenshot Bro editor showing app screenshots, device frames, text layers, and project controls"
+        width={1600}
+        height={1004}
+        caption="Screenshot Bro is where the inspiration turns into production: frames, text, backgrounds, spacing, rows, and variants in one editor."
+      />
 
       <h2>5. Asoinspo</h2>
       <p>
@@ -246,6 +353,14 @@ function ContentEn() {
         a localized set for a priority market. Keep the project editable so
         you can react to results instead of rebuilding the whole thing later.
       </p>
+
+      <ArticleImage
+        src="/docs/help/exporting.webp"
+        alt="Screenshot Bro export panel showing export progress for localized App Store screenshot assets"
+        width={1600}
+        height={452}
+        caption="Once the design works, the boring part should be automated: export every row, template, and locale from the same project."
+      />
 
       <h2>How to Use This Follow List With Screenshot Bro</h2>
       <ol>
