@@ -18,11 +18,7 @@ export const meta: Route.MetaFunction = ({ matches }) =>
     { name: "twitter:description", content: TERMS_DESCRIPTION },
   ]);
 
-export const links: Route.LinksFunction = () => [
-  { rel: "canonical", href: `${SITE_URL}/terms` },
-];
-
-const EFFECTIVE_DATE = "May 6, 2026";
+export const EFFECTIVE_DATE = "May 6, 2026";
 const DEVELOPER_NAME = "Nineva Studios";
 const DEVELOPER_EMAIL = "tleskiv@ninevastudios.com";
 

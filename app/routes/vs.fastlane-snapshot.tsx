@@ -1,8 +1,13 @@
 import type { Route } from "./+types/vs.fastlane-snapshot";
 import { ContentLayout } from "~/components/ContentLayout";
 import { BlogCTA } from "~/components/BlogCTA";
-import { mergeMeta } from "~/config/meta";
+import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
 import { SITE_NAME, SITE_URL, MINIMUM_MACOS_VERSION } from "~/config/site";
+
+const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
+  { name: "Comparisons", path: "/vs/fastlane-snapshot" },
+  { name: "vs Fastlane snapshot", path: "/vs/fastlane-snapshot" },
+]);
 
 const PAGE_TITLE = `Fastlane snapshot vs ${SITE_NAME} — which to use?`;
 const PAGE_DESCRIPTION =
@@ -23,10 +28,6 @@ export const meta: Route.MetaFunction = ({ matches }) =>
     { name: "twitter:description", content: PAGE_DESCRIPTION },
     { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
   ]);
-
-export const links: Route.LinksFunction = () => [
-  { rel: "canonical", href: PAGE_URL },
-];
 
 const FAQ_JSON_LD = JSON.stringify({
   "@context": "https://schema.org",
@@ -74,6 +75,10 @@ export default function FastlaneSnapshotComparison() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: FAQ_JSON_LD }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: BREADCRUMB_JSON_LD }}
         />
 
         <p className="meta">Comparison · 8 min read</p>

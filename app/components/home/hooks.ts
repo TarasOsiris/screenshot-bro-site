@@ -22,6 +22,38 @@ export function useLoopWithPause(delayMs = 2000) {
 }
 
 /**
+ * Loops a video and defers setting `src` past first paint so the video
+ * fetch doesn't compete with LCP-critical resources.
+ */
+export function useDeferredLoopVideo(src: string, delayMs = 2000, deferMs = 250) {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const onEnded = () => {
+      window.setTimeout(() => {
+        el.currentTime = 0;
+        void el.play();
+      }, delayMs);
+    };
+    el.addEventListener("ended", onEnded);
+
+    const timer = window.setTimeout(() => {
+      if (!el.src) el.src = src;
+    }, deferMs);
+
+    return () => {
+      el.removeEventListener("ended", onEnded);
+      window.clearTimeout(timer);
+    };
+  }, [src, delayMs, deferMs]);
+
+  return ref;
+}
+
+/**
  * Defer setting `<video>` src until the element scrolls near the viewport,
  * so off-screen videos don't download on initial page load. Also re-loops
  * with the given delay between plays.

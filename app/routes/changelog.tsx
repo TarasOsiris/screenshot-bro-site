@@ -1,7 +1,11 @@
 import type { Route } from "./+types/changelog";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 import { ContentLayout } from "~/components/ContentLayout";
-import { mergeMeta } from "~/config/meta";
+import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
+
+const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
+  { name: "Changelog", path: "/changelog" },
+]);
 
 const CHANGELOG_TITLE = `Changelog — ${SITE_NAME}`;
 const CHANGELOG_DESCRIPTION = `What's new in ${SITE_NAME}. Release notes, new features, and improvements for the macOS App Store screenshot designer.`;
@@ -18,10 +22,6 @@ export const meta: Route.MetaFunction = ({ matches }) =>
     { name: "twitter:description", content: CHANGELOG_DESCRIPTION },
   ]);
 
-export const links: Route.LinksFunction = () => [
-  { rel: "canonical", href: `${SITE_URL}/changelog` },
-];
-
 type ChangelogEntry = {
   version: string;
   date: string;
@@ -29,7 +29,7 @@ type ChangelogEntry = {
   changes: { type: "added" | "improved" | "fixed"; text: string }[];
 };
 
-const CHANGELOG: ChangelogEntry[] = [
+export const CHANGELOG: ChangelogEntry[] = [
   {
     version: "2.6",
     date: "May 13, 2026",
@@ -167,6 +167,10 @@ const TYPE_STYLES = {
 export default function Changelog() {
   return (
     <ContentLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: BREADCRUMB_JSON_LD }}
+      />
       <div className="max-w-3xl mx-auto">
         <div className="mb-16">
           <p className="text-xs uppercase tracking-[0.25em] text-accent-light font-mono mb-3">

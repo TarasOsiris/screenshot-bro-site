@@ -1,7 +1,12 @@
 import type { Route } from "./+types/docs.project-schema";
 import { ContentLayout } from "~/components/ContentLayout";
-import { mergeMeta } from "~/config/meta";
+import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
 import { SITE_NAME, SITE_URL } from "~/config/site";
+
+const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
+  { name: "Docs", path: "/docs/help" },
+  { name: "Project Schema", path: "/docs/project-schema" },
+]);
 
 const TITLE = `Project File Schema — ${SITE_NAME}`;
 const DESCRIPTION =
@@ -20,13 +25,13 @@ export const meta: Route.MetaFunction = ({ matches }) =>
     { name: "twitter:description", content: DESCRIPTION },
   ]);
 
-export const links: Route.LinksFunction = () => [
-  { rel: "canonical", href: PAGE_URL },
-];
-
 export default function ProjectSchema() {
   return (
     <ContentLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: BREADCRUMB_JSON_LD }}
+      />
       <div className="max-w-3xl mx-auto">
         <article className="prose-policy">
           <h1>Project File Schema</h1>

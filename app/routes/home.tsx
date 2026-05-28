@@ -11,6 +11,7 @@ import type { Route } from "./+types/home";
 import { SITE_URL } from "~/config/site";
 import { mergeMeta } from "~/config/meta";
 import {
+  buildOgLocaleMeta,
   getHomeCopy,
   isLocaleCode,
   localizedPath,
@@ -41,7 +42,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
   return mergeMeta(matches, [
     { title: copy.siteTitle },
     { name: "description", content: copy.siteDescription },
-    { property: "og:locale", content: copy.locale.ogLocale },
+    ...buildOgLocaleMeta(locale),
     { property: "og:title", content: copy.siteTitle },
     { property: "og:description", content: copy.siteDescription },
     { property: "og:url", content: url },

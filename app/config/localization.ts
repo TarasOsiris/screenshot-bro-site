@@ -1902,3 +1902,16 @@ export function buildHomeAlternates(path = "/") {
     href: localizedPath(locale.code, path),
   }));
 }
+
+export function buildOgLocaleMeta(
+  current: LocaleCode = DEFAULT_LOCALE,
+): { property: string; content: string }[] {
+  const currentInfo = getLocaleInfo(current);
+  return [
+    { property: "og:locale", content: currentInfo.ogLocale },
+    ...LOCALES.filter((locale) => locale.code !== current).map((locale) => ({
+      property: "og:locale:alternate",
+      content: locale.ogLocale,
+    })),
+  ];
+}

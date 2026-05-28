@@ -18,6 +18,8 @@ import {
   FEATURES,
   FAQS,
   MINIMUM_MACOS_VERSION,
+  NINEVA_STUDIOS_NAME,
+  NINEVA_STUDIOS_URL,
   SITE_DESCRIPTION,
   SITE_KEYWORDS,
   SITE_NAME,
@@ -30,6 +32,7 @@ import {
 } from "~/config/site";
 import {
   LOCALES,
+  buildOgLocaleMeta,
   getLocaleFromPath,
   getLocaleInfo,
   isLocaleCode,
@@ -101,11 +104,30 @@ const WEB_SITE_SCHEMA_JSON = JSON.stringify({
   url: SITE_URL,
   description: SITE_DESCRIPTION,
   inLanguage: "en",
-  publisher: {
+  publisher: { "@id": `${SITE_URL}/#organization` },
+});
+
+const ORGANIZATION_SCHEMA_JSON = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: NINEVA_STUDIOS_NAME,
+  url: NINEVA_STUDIOS_URL,
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE_URL}/logo-light.svg`,
+  },
+  founder: {
     "@type": "Person",
     name: "Taras Leskiv",
     url: X_PROFILE_URL,
   },
+  sameAs: [
+    NINEVA_STUDIOS_URL,
+    X_PROFILE_URL,
+    THREADS_URL,
+    REDDIT_COMMUNITY_URL,
+  ],
 });
 
 const FAQ_SCHEMA_JSON = JSON.stringify({
@@ -148,8 +170,7 @@ const SOCIAL_IMAGE_ALT =
 export const meta: Route.MetaFunction = () => [
   { title: SITE_TITLE },
   { name: "description", content: SITE_DESCRIPTION },
-  { name: "keywords", content: SITE_KEYWORDS },
-  { property: "og:locale", content: "en_US" },
+  ...buildOgLocaleMeta(),
   { property: "og:type", content: "website" },
   { property: "og:site_name", content: SITE_NAME },
   { property: "og:title", content: SITE_TITLE },
@@ -191,6 +212,8 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.gstatic.com",
     crossOrigin: "anonymous",
   },
+  { rel: "preconnect", href: "https://apps.apple.com" },
+  { rel: "dns-prefetch", href: "https://apps.apple.com" },
   {
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap",
@@ -285,6 +308,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: WEB_SITE_SCHEMA_JSON,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: ORGANIZATION_SCHEMA_JSON,
           }}
         />
         {isLocalizedHome(location.pathname) ? (

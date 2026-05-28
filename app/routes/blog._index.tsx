@@ -3,7 +3,7 @@ import { SITE_NAME, SITE_URL } from "~/config/site";
 import { getLocalizedBlogPosts } from "~/config/blog";
 import { ContentLayout } from "~/components/ContentLayout";
 import { mergeMeta } from "~/config/meta";
-import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { buildOgLocaleMeta, isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
 import { data, useLoaderData } from "react-router";
 
 const INDEX_COPY: Record<LocaleCode, { eyebrow: string; title: string; description: string }> = {
@@ -81,6 +81,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
   return mergeMeta(matches, [
     { title },
     { name: "description", content: copy.description },
+    ...buildOgLocaleMeta(locale),
     { property: "og:title", content: title },
     { property: "og:description", content: copy.description },
     { property: "og:url", content: url },

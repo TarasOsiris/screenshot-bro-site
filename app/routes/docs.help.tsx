@@ -12,8 +12,13 @@ import {
   IconTemplates,
   IconUpload,
 } from "~/components/home/icons";
-import { mergeMeta } from "~/config/meta";
+import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
 import { SITE_NAME, SITE_URL } from "~/config/site";
+
+const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
+  { name: "Docs", path: "/docs/help" },
+  { name: "Help", path: "/docs/help" },
+]);
 
 const TITLE = `Help & Documentation — ${SITE_NAME}`;
 const DESCRIPTION =
@@ -30,10 +35,6 @@ export const meta: Route.MetaFunction = ({ matches }) =>
     { name: "twitter:title", content: TITLE },
     { name: "twitter:description", content: DESCRIPTION },
   ]);
-
-export const links: Route.LinksFunction = () => [
-  { rel: "canonical", href: PAGE_URL },
-];
 
 const SUPPORT_EMAIL = "leskiv.taras@gmail.com";
 
@@ -889,6 +890,10 @@ function SectionView({ section }: { section: Section }) {
 export default function Help() {
   return (
     <ContentLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: BREADCRUMB_JSON_LD }}
+      />
       <div className="max-w-6xl mx-auto">
         <header className="prose-policy mb-12">
           <h1>Screenshot Bro Help</h1>

@@ -2,7 +2,7 @@ import type { MetaDescriptor } from "react-router";
 import { getLocalizedBlogPosts, type BlogPost } from "~/config/blog";
 import { mergeMeta, type MetaMatchLike } from "~/config/meta";
 import { SITE_NAME, SITE_URL, TWITTER_HANDLE } from "~/config/site";
-import { localizedPath, type LocaleCode } from "~/config/localization";
+import { buildOgLocaleMeta, localizedPath, type LocaleCode } from "~/config/localization";
 
 const BLOG_OG_IMAGE = `${SITE_URL}/og-image.png`;
 const AUTHOR_NAME = "Taras Leskiv";
@@ -29,6 +29,7 @@ export function buildBlogPostMeta(
   const meta: MetaDescriptor[] = [
     { title },
     { name: "description", content: post.description },
+    ...buildOgLocaleMeta(locale),
     { property: "og:type", content: "article" },
     { property: "og:title", content: post.title },
     { property: "og:description", content: post.description },
@@ -47,7 +48,6 @@ export function buildBlogPostMeta(
   ];
 
   if (post.keywords?.length) {
-    meta.push({ name: "keywords", content: post.keywords.join(", ") });
     meta.push(
       ...post.keywords.map((keyword) => ({
         property: "article:tag",

@@ -1,21 +1,20 @@
 import { AppleLogo } from "~/components/home/icons";
 import { ArrowDownIcon } from "~/components/home/small-icons";
-import { useLoopWithPause } from "~/components/home/hooks";
+import { useDeferredLoopVideo } from "~/components/home/hooks";
 import { APP_STORE_URL } from "~/config/site";
 import type { HomeCopy } from "~/config/localization";
 
 function AppPreview({ label }: { label: string }) {
-  const videoRef = useLoopWithPause();
+  const videoRef = useDeferredLoopVideo("/demo-main.mp4");
 
   return (
     <div className="w-full mx-auto rounded-2xl overflow-hidden">
       <video
         ref={videoRef as React.RefObject<HTMLVideoElement>}
-        src="/demo-main.mp4"
         autoPlay
         muted
         playsInline
-        preload="metadata"
+        preload="none"
         onLoadedMetadata={(event) => {
           event.currentTarget.playbackRate = 1.25;
         }}
