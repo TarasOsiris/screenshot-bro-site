@@ -17,6 +17,25 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "popular-figma-templates-app-store-screenshots-device-mockups",
+    title: "Popular Figma Templates for App Store Screenshots and Device Mockups",
+    description:
+      "A practical shortlist of Figma templates and device mockup kits for App Store screenshots, plus when to move from Figma to a dedicated Screenshot Bro workflow.",
+    date: "2026-05-28",
+    readTime: "9 min read",
+    category: "Guide",
+    localized: false,
+    keywords: [
+      "Figma app store screenshot templates",
+      "Figma device mockups",
+      "iPhone mockup Figma",
+      "App Store screenshot template Figma",
+      "Google Play screenshot template Figma",
+      "device mockup templates",
+      "app screenshot mockups",
+    ],
+  },
+  {
     slug: "app-store-screenshot-designers-creators-to-follow",
     title: "Cool App Store Screenshot Designers and Creators to Follow",
     description:
