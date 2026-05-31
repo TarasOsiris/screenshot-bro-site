@@ -432,6 +432,11 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
     icon: "/showcase/localify.jpg",
     url: "https://apps.apple.com/us/app/localify-app-ai-localization/id6766060498",
   },
+  {
+    name: "GrammarTrack",
+    icon: "/showcase/grammartrack.jpg",
+    url: "https://apps.apple.com/ua/app/grammartrack/id6748993866?l=uk",
+  },
 ];
 
 export type AppScreenshot = {
