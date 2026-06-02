@@ -437,6 +437,11 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
     icon: "/showcase/grammartrack.jpg",
     url: "https://apps.apple.com/ua/app/grammartrack/id6748993866?l=uk",
   },
+  {
+    name: "Weekline",
+    icon: "/showcase/weekline.jpg",
+    url: "https://apps.apple.com/us/app/weekline-weekly-planner-todo/id6773311167",
+  },
 ];
 
 export type AppScreenshot = {
