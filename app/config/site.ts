@@ -442,6 +442,11 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
     icon: "/showcase/weekline.jpg",
     url: "https://apps.apple.com/us/app/weekline-weekly-planner-todo/id6773311167",
   },
+  {
+    name: "Dibsify",
+    icon: "/showcase/dibsify.jpg",
+    url: "https://apps.apple.com/us/app/dibsify-wishlist-rsvp-event/id6769796676",
+  },
 ];
 
 export type AppScreenshot = {
