@@ -76,7 +76,7 @@ export const PRODUCT_LINKS: SecondaryLink[] = [
 
 export const COMMUNITY_LINKS: SecondaryLink[] = [
   { uiKey: "community", href: REDDIT_COMMUNITY_URL, external: true },
-  { uiKey: "contact", href: CONTACT_MAILTO },
+  { uiKey: "contact", href: "/support" },
 ];
 
 export const COMPARISON_LINKS: SecondaryLink[] = [

@@ -5,6 +5,7 @@ export default [
   route("privacy", "routes/privacy.tsx"),
   route("terms", "routes/terms.tsx"),
   route("changelog", "routes/changelog.tsx"),
+  route("support", "routes/support.tsx"),
   route("blog", "routes/blog._index.tsx"),
   route(":locale/blog", "routes/blog._index.tsx", { id: "blog-locale" }),
   route("blog/popular-figma-templates-app-store-screenshots-device-mockups", "routes/blog.popular-figma-templates-app-store-screenshots-device-mockups.tsx"),

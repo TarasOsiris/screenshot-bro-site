@@ -86,6 +86,7 @@ function buildSitemap(): string {
     { loc: "/changelog", changefreq: "monthly", priority: "0.6", lastmod: latestChangelogDate },
     { loc: "/privacy", changefreq: "yearly", priority: "0.3", lastmod: privacyDate },
     { loc: "/terms", changefreq: "yearly", priority: "0.3", lastmod: termsDate },
+    { loc: "/support", changefreq: "yearly", priority: "0.4", lastmod: homeLastmod },
     { loc: "/docs/help", changefreq: "monthly", priority: "0.7", lastmod: latestChangelogDate },
     { loc: "/docs/project-schema", changefreq: "monthly", priority: "0.5", lastmod: latestChangelogDate },
     { loc: "/vs/fastlane-snapshot", changefreq: "monthly", priority: "0.7", lastmod: latestBlogDate },
