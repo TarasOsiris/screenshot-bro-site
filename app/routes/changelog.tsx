@@ -31,6 +31,28 @@ type ChangelogEntry = {
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "2.9",
+    date: "June 11, 2026",
+    title: "Text Backgrounds, Per-Text Localization, and Project Starring",
+    changes: [
+      { type: "added", text: "Text background controls — add a colored highlight behind any text shape" },
+      { type: "added", text: "Star projects to pin your favorites to the top of the switcher, on both Mac and iPad" },
+      { type: "added", text: "Per-text localization popover in the shape properties bar for quickly translating a single text shape" },
+      { type: "added", text: "Change a project's base language" },
+      { type: "added", text: "Apply an imported custom font to the selected shapes straight from the properties bar" },
+      { type: "added", text: "App version is now shown in Settings" },
+      { type: "improved", text: "Rich-text formatting is now undoable, and the formatting bar stays visible the whole time you're editing text" },
+      { type: "improved", text: "Cmd+Z / Cmd+Shift+Z route through document undo while still deferring to text editors" },
+      { type: "improved", text: "Translations are guarded against wrong-language substitution; rich-text translations are recognized and shown read-only" },
+      { type: "improved", text: "App Store Connect upload fans out to every matching locale at once" },
+      { type: "fixed", text: "Reordering templates no longer detaches shapes or drops rapid clicks" },
+      { type: "fixed", text: "Project deletions now stick across iCloud sync" },
+      { type: "fixed", text: "Translation banner no longer re-fires every time you return to a non-base locale" },
+      { type: "fixed", text: "Horizontal row scrolling no longer goes missing on launch" },
+      { type: "fixed", text: "Rich-text formatting undo works on the first edit after opening a project" },
+    ],
+  },
+  {
     version: "2.8",
     date: "June 6, 2026",
     title: "iPad Onboarding, App Store Connect Upload on iPad, and Export Destinations",
