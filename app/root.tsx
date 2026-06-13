@@ -17,6 +17,7 @@ import {
   APP_STORE_URL,
   FEATURES,
   FAQS,
+  MINIMUM_IPADOS_VERSION,
   MINIMUM_MACOS_VERSION,
   NINEVA_STUDIOS_NAME,
   NINEVA_STUDIOS_URL,
@@ -54,7 +55,10 @@ const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
   "@id": `${SITE_URL}/#software`,
   name: SITE_NAME,
   alternateName: "ScreenshotBro",
-  operatingSystem: `macOS ${MINIMUM_MACOS_VERSION} or later`,
+  operatingSystem: [
+    `macOS ${MINIMUM_MACOS_VERSION} or later`,
+    `iPadOS ${MINIMUM_IPADOS_VERSION} or later`,
+  ],
   applicationCategory: "DesignApplication",
   applicationSubCategory: "App Store screenshot generator",
   category: APP_CATEGORY,
@@ -91,7 +95,7 @@ const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
     priceCurrency: "USD",
   },
   isAccessibleForFree: true,
-  softwareRequirements: `macOS ${MINIMUM_MACOS_VERSION} or later`,
+  softwareRequirements: `macOS ${MINIMUM_MACOS_VERSION} or later, or iPadOS ${MINIMUM_IPADOS_VERSION} or later`,
   keywords: SITE_KEYWORDS,
   sameAs: [APP_STORE_URL, X_PROFILE_URL, THREADS_URL, REDDIT_COMMUNITY_URL],
   featureList: FEATURES.map((feature) => feature.title),
@@ -149,7 +153,7 @@ const HOW_TO_SCHEMA_JSON = JSON.stringify({
   "@type": "HowTo",
   name: "How to create App Store and Google Play screenshots with Screenshot Bro",
   description:
-    "A four-step workflow for designing, localizing, exporting, and uploading App Store and Google Play screenshots from a native Mac app.",
+    "A four-step workflow for designing, localizing, exporting, and uploading App Store and Google Play screenshots from a native Mac and iPad app.",
   totalTime: "PT20M",
   tool: [{ "@type": "HowToTool", name: SITE_NAME }],
   supply: [
@@ -166,7 +170,7 @@ const HOW_TO_SCHEMA_JSON = JSON.stringify({
 });
 
 const SOCIAL_IMAGE_ALT =
-  "Screenshot Bro — native macOS app for designing App Store and Google Play screenshots with device frames, gradients, and localization";
+  "Screenshot Bro — native Mac and iPad app for designing App Store and Google Play screenshots with device frames, gradients, and localization";
 
 export const meta: Route.MetaFunction = () => [
   { title: SITE_TITLE },

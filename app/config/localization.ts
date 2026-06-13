@@ -165,7 +165,7 @@ const EN_TESTIMONIALS = [
   },
   {
     quote:
-      "Finally a tool that gets out of the way. No Figma plugins, no browser tabs — just a native Mac app that does the job fast.",
+      "Finally a tool that gets out of the way. No Figma plugins, no browser tabs — just a native app that does the job fast.",
     name: "TT Tracker Developer",
     app: "TT Tracker",
     icon: "/showcase/tt-tracker.jpg",
@@ -177,7 +177,7 @@ const EN_HOME_COPY: HomeCopy = {
   siteTitle: `${SITE_NAME} — App Store & Google Play Screenshots`,
   siteDescription: SITE_DESCRIPTION,
   socialImageAlt:
-    "Screenshot Bro — native macOS app for designing App Store and Google Play screenshots with device frames, gradients, and localization",
+    "Screenshot Bro — native Mac and iPad app for designing App Store and Google Play screenshots with device frames, gradients, and localization",
   primaryCtaLabel: "Get on the App Store",
   navItems: NAV_ITEMS,
   benefits: BETA_BENEFITS,
@@ -222,9 +222,9 @@ const EN_HOME_COPY: HomeCopy = {
     goToScreenshot: (index) => `Go to screenshot ${index}`,
     slideCount: (index, total) => `${index} of ${total}`,
     productHuntAlt:
-      "ScreenshotBro Mac App - Design and export beautiful App Store screenshots. | Product Hunt",
+      "ScreenshotBro App - Design and export beautiful App Store screenshots. | Product Hunt",
     availabilityNote:
-      "macOS 15+ app | Swift & SwiftUI | Available on the Mac App Store",
+      "macOS 15+ and iPadOS 18+ app | Swift & SwiftUI | Available on the App Store",
   },
   hero: {
     titleLead: "Design and ship",
@@ -233,7 +233,7 @@ const EN_HOME_COPY: HomeCopy = {
     descriptionLead:
       "Import your shots, wrap them in device frames, localize the copy, auto-translate missing text, and",
     descriptionStrong: "upload straight to App Store Connect",
-    descriptionTail: "— all from one fast native Mac app.",
+    descriptionTail: "— all from one fast native Mac and iPad app.",
     videoLabel:
       "Screenshot Bro app demo - designing App Store screenshots with device frames, gradients, and batch export",
   },
@@ -267,7 +267,7 @@ const EN_HOME_COPY: HomeCopy = {
       eyebrow: "Screenshots",
       title: "See it in action.",
       description:
-        "Mac App Store screenshots of Screenshot Bro itself - the same editor you use for App Store and Google Play screenshot sets.",
+        "App Store screenshots of Screenshot Bro itself - the same editor you use for App Store and Google Play screenshot sets.",
     },
     reel: {
       eyebrow: "On Instagram",
@@ -311,7 +311,7 @@ const EN_HOME_COPY: HomeCopy = {
     titleLine1: "Ready to ship",
     titleLine2: "better screenshots?",
     description:
-      "Download from the Mac App Store and use the full screenshot workflow: setup, design, auto-translation, localization, and export for App Store and Google Play assets.",
+      "Download from the App Store and use the full screenshot workflow on Mac or iPad: setup, design, auto-translation, localization, and export for App Store and Google Play assets.",
   },
   footer: {
     note:
@@ -330,9 +330,9 @@ type HomeCopyOverrides = Partial<Omit<HomeCopy, "locale" | "ui" | "sections" | "
 
 const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> = {
   es: {
-    siteTitle: `${SITE_NAME} — Diseñador de capturas para App Store y Google Play en Mac`,
+    siteTitle: `${SITE_NAME} — Diseñador de capturas para App Store y Google Play en Mac y iPad`,
     siteDescription:
-      "Diseña capturas para App Store y Google Play en una app nativa para Mac. Marcos de dispositivos, localización, traducción automática, exportación por lotes y subida directa a App Store Connect.",
+      "Diseña capturas para App Store y Google Play en una app nativa para Mac y iPad. Marcos de dispositivos, localización, traducción automática, exportación por lotes y subida directa a App Store Connect.",
     primaryCtaLabel: "Ver en App Store",
     navItems: [
       { label: "Ejemplos", href: "#showcases" },
@@ -341,7 +341,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Disponible ahora en la Mac App Store",
+      "Disponible ahora en la App Store para Mac y iPad",
       "Flujo completo: importar, diseñar, traducir, localizar y exportar",
       "Subida directa a App Store Connect sin arrastrar archivos en el navegador",
     ],
@@ -354,10 +354,10 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "¿Qué necesito para usarlo?",
         answer:
-          "macOS 15 (Sequoia) o posterior, en Apple Silicon o Intel. No hace falta iPhone acompañante, cuenta ni conexión a internet para editar.",
+          "macOS 15 (Sequoia) o posterior en Mac, o iPadOS 18 o posterior en iPad. No hace falta dispositivo acompañante, cuenta ni conexión a internet para editar.",
       },
       {
-        question: "¿Mis datos salen de mi Mac?",
+        question: "¿Mis datos salen de mi dispositivo?",
         answer:
           "Por defecto, no. Los proyectos, capturas y tipografías se guardan localmente. La traducción automática usa el framework Translation de Apple en el dispositivo: sin claves API, sin servidores externos, sin analítica. La sincronización iCloud Drive es opcional y va por tu cuenta personal de iCloud.",
       },
@@ -395,7 +395,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       goToScreenshot: (index) => `Ir a la captura ${index}`,
       slideCount: (index, total) => `${index} de ${total}`,
       availabilityNote:
-        "App para macOS 15+ | Swift y SwiftUI | Disponible en la Mac App Store",
+        "App para macOS 15+ y iPadOS 18+ | Swift y SwiftUI | Disponible en la App Store",
     },
     hero: {
       titleLead: "Diseña y publica",
@@ -404,7 +404,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       descriptionLead:
         "Importa tus capturas, añade marcos de dispositivo, localiza el texto, traduce lo que falte y",
       descriptionStrong: "sube todo directo a App Store Connect",
-      descriptionTail: "— desde una app nativa para Mac rápida.",
+      descriptionTail: "— desde una app nativa para Mac y iPad rápida.",
     },
     sections: {
       showcases: {
@@ -436,7 +436,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "Capturas",
         title: "Míralo en acción.",
         description:
-          "Capturas reales de Screenshot Bro en la Mac App Store: el mismo editor que usarás para tus assets.",
+          "Capturas reales de Screenshot Bro en la App Store: el mismo editor que usarás para tus assets.",
       },
       testimonials: {
         eyebrow: "Desarrolladores",
@@ -473,7 +473,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "Listo para publicar",
       titleLine2: "mejores capturas?",
       description:
-        "Descárgalo desde la Mac App Store y usa el flujo completo: configuración, diseño, traducción automática, localización y exportación.",
+        "Descárgalo desde la App Store y usa el flujo completo en Mac o iPad: configuración, diseño, traducción automática, localización y exportación.",
     },
     footer: {
       note:
@@ -481,12 +481,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     },
   },
   zh: {
-    siteTitle: `${SITE_NAME} — Mac 上的 App Store 和 Google Play 截图设计工具`,
+    siteTitle: `${SITE_NAME} — Mac 和 iPad 上的 App Store 与 Google Play 截图设计工具`,
     siteDescription:
-      "用原生 Mac 应用设计 App Store 和 Google Play 截图。设备边框、本地化、自动翻译、批量导出，并可直接上传到 App Store Connect。",
+      "用原生 Mac 和 iPad 应用设计 App Store 和 Google Play 截图。设备边框、本地化、自动翻译、批量导出，并可直接上传到 App Store Connect。",
     primaryCtaLabel: "在 App Store 获取",
     benefits: [
-      "现已上架 Mac App Store",
+      "现已在 Mac 和 iPad 的 App Store 上架",
       "完整流程：导入、设计、自动翻译、本地化和导出",
       "直接上传到 App Store Connect，不再在浏览器里拖放文件",
     ],
@@ -499,10 +499,10 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "运行需要什么？",
         answer:
-          "macOS 15（Sequoia）或更新版本，支持 Apple Silicon 与 Intel。无需配套 iPhone、账号或网络连接即可日常编辑。",
+          "Mac 需要 macOS 15（Sequoia）或更新版本，iPad 需要 iPadOS 18 或更新版本。日常编辑无需配套设备、账号或网络连接。",
       },
       {
-        question: "我的数据会离开 Mac 吗？",
+        question: "我的数据会离开设备吗？",
         answer:
           "默认不会。项目、截图和字体都保存在本地。自动翻译通过苹果的 Translation 框架在设备本地运行——无 API key、无第三方服务器、无统计追踪。可选的 iCloud Drive 同步使用你自己的 iCloud 账号，我们没有任何中间服务器。",
       },
@@ -546,7 +546,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       nextScreenshot: "下一张截图",
       goToScreenshot: (index) => `转到第 ${index} 张截图`,
       slideCount: (index, total) => `${index} / ${total}`,
-      availabilityNote: "macOS 15+ 应用 | Swift 和 SwiftUI | 已上架 Mac App Store",
+      availabilityNote: "macOS 15+ 和 iPadOS 18+ 应用 | Swift 和 SwiftUI | 已上架 App Store",
     },
     hero: {
       titleLead: "设计并发布",
@@ -555,7 +555,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       descriptionLead:
         "导入截图，套用设备边框，本地化文案，自动翻译缺失文本，并",
       descriptionStrong: "直接上传到 App Store Connect",
-      descriptionTail: "— 全部在一个快速的原生 Mac 应用中完成。",
+      descriptionTail: "— 全部在一个快速的原生 Mac 和 iPad 应用中完成。",
     },
     sections: {
       showcases: {
@@ -586,7 +586,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "截图",
         title: "看看实际界面。",
         description:
-          "这些是 Screenshot Bro 自己的 Mac App Store 截图，也是你会使用的同一个编辑器。",
+          "这些是 Screenshot Bro 自己的 App Store 截图，也是你会使用的同一个编辑器。",
       },
       testimonials: {
         eyebrow: "开发者",
@@ -619,19 +619,19 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "准备发布",
       titleLine2: "更好的截图？",
       description:
-        "从 Mac App Store 下载，并使用完整截图流程：设置、设计、自动翻译、本地化和导出。",
+        "从 App Store 下载，并在 Mac 或 iPad 上使用完整截图流程：设置、设计、自动翻译、本地化和导出。",
     },
     footer: {
       note: "使用 SwiftUI 构建。为需要发布 App Store 更新的开发者设计。",
     },
   },
   hi: {
-    siteTitle: `${SITE_NAME} — Mac के लिए App Store और Google Play स्क्रीनशॉट डिजाइनर`,
+    siteTitle: `${SITE_NAME} — Mac और iPad के लिए App Store और Google Play स्क्रीनशॉट डिजाइनर`,
     siteDescription:
-      "नेटिव Mac ऐप में App Store और Google Play स्क्रीनशॉट डिजाइन करें। डिवाइस फ्रेम, लोकलाइजेशन, ऑटो-ट्रांसलेट, बैच एक्सपोर्ट और App Store Connect पर सीधा अपलोड।",
+      "नेटिव Mac और iPad ऐप में App Store और Google Play स्क्रीनशॉट डिजाइन करें। डिवाइस फ्रेम, लोकलाइजेशन, ऑटो-ट्रांसलेट, बैच एक्सपोर्ट और App Store Connect पर सीधा अपलोड।",
     primaryCtaLabel: "App Store पर पाएं",
     benefits: [
-      "Mac App Store पर अभी उपलब्ध",
+      "Mac और iPad के लिए App Store पर अभी उपलब्ध",
       "पूरा workflow: import, design, auto-translate, localize और export",
       "App Store Connect पर सीधा upload, browser में drag-and-drop नहीं",
     ],
@@ -644,10 +644,10 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "इसे चलाने के लिए क्या चाहिए?",
         answer:
-          "macOS 15 (Sequoia) या उससे नया, Apple Silicon या Intel पर। Editing के लिए न तो iPhone चाहिए, न account, न internet connection।",
+          "Mac पर macOS 15 (Sequoia) या उससे नया, या iPad पर iPadOS 18 या उससे नया। Editing के लिए न companion device चाहिए, न account, न internet connection।",
       },
       {
-        question: "क्या मेरा data Mac से बाहर जाता है?",
+        question: "क्या मेरा data device से बाहर जाता है?",
         answer:
           "Default रूप से नहीं। Projects, screenshots और fonts local में रहते हैं। Auto-translate Apple के on-device Translation framework से चलता है — कोई API key नहीं, कोई third-party server नहीं, कोई analytics नहीं। Optional iCloud Drive sync आपके personal iCloud account से होता है; हमारा कोई intermediate server नहीं है।",
       },
@@ -692,7 +692,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       goToScreenshot: (index) => `स्क्रीनशॉट ${index} पर जाएं`,
       slideCount: (index, total) => `${index} / ${total}`,
       availabilityNote:
-        "macOS 15+ ऐप | Swift और SwiftUI | Mac App Store पर उपलब्ध",
+        "macOS 15+ और iPadOS 18+ ऐप | Swift और SwiftUI | App Store पर उपलब्ध",
     },
     hero: {
       titleLead: "डिजाइन करें और शिप करें",
@@ -701,7 +701,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       descriptionLead:
         "अपने शॉट्स इंपोर्ट करें, डिवाइस फ्रेम लगाएं, कॉपी लोकलाइज करें, छूटा टेक्स्ट ऑटो-ट्रांसलेट करें और",
       descriptionStrong: "सीधे App Store Connect पर अपलोड करें",
-      descriptionTail: "— सब एक तेज नेटिव Mac ऐप से।",
+      descriptionTail: "— सब एक तेज नेटिव Mac और iPad ऐप से।",
     },
     sections: {
       showcases: {
@@ -733,7 +733,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "स्क्रीनशॉट",
         title: "इसे काम करते देखें।",
         description:
-          "Screenshot Bro के Mac App Store screenshots: वही editor जिससे आप अपने screenshots बनाएंगे।",
+          "Screenshot Bro के App Store screenshots: वही editor जिससे आप अपने screenshots बनाएंगे।",
       },
       testimonials: {
         eyebrow: "डेवलपर्स",
@@ -766,19 +766,19 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "बेहतर screenshots",
       titleLine2: "ship करने के लिए तैयार?",
       description:
-        "Mac App Store से डाउनलोड करें और setup, design, auto-translation, localization और export का पूरा workflow इस्तेमाल करें।",
+        "App Store से डाउनलोड करें और Mac या iPad पर setup, design, auto-translation, localization और export का पूरा workflow इस्तेमाल करें।",
     },
     footer: {
       note: "SwiftUI से बनाया गया। App Store updates ship करने वाले developers के लिए।",
     },
   },
   fr: {
-    siteTitle: `${SITE_NAME} — Créateur de captures App Store et Google Play pour Mac`,
+    siteTitle: `${SITE_NAME} — Créateur de captures App Store et Google Play pour Mac et iPad`,
     siteDescription:
-      "Créez des captures App Store et Google Play dans une app Mac native. Cadres d'appareils, localisation, traduction automatique, export groupé et envoi direct vers App Store Connect.",
+      "Créez des captures App Store et Google Play dans une app native pour Mac et iPad. Cadres d'appareils, localisation, traduction automatique, export groupé et envoi direct vers App Store Connect.",
     primaryCtaLabel: "Voir sur l'App Store",
     benefits: [
-      "Disponible maintenant sur le Mac App Store",
+      "Disponible maintenant sur l'App Store pour Mac et iPad",
       "Flux complet : import, design, traduction automatique, localisation et export",
       "Envoi direct vers App Store Connect sans glisser-déposer dans le navigateur",
     ],
@@ -791,10 +791,10 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Que faut-il pour l'utiliser ?",
         answer:
-          "macOS 15 (Sequoia) ou plus récent, sur Apple Silicon ou Intel. Pas d'iPhone compagnon, pas de compte, pas de connexion internet requise pour éditer.",
+          "macOS 15 (Sequoia) ou plus récent sur Mac, ou iPadOS 18 ou plus récent sur iPad. Aucun appareil compagnon, compte ou connexion internet n'est requis pour éditer.",
       },
       {
-        question: "Mes données quittent-elles mon Mac ?",
+        question: "Mes données quittent-elles mon appareil ?",
         answer:
           "Par défaut, non. Projets, captures et polices restent en local. La traduction automatique passe par le framework Translation d'Apple sur l'appareil — pas de clé API, pas de serveur tiers, pas d'analytics. La sync iCloud Drive est optionnelle et utilise votre compte iCloud personnel ; nous n'opérons aucun serveur intermédiaire.",
       },
@@ -839,7 +839,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       goToScreenshot: (index) => `Aller à la capture ${index}`,
       slideCount: (index, total) => `${index} sur ${total}`,
       availabilityNote:
-        "App macOS 15+ | Swift et SwiftUI | Disponible sur le Mac App Store",
+        "App macOS 15+ et iPadOS 18+ | Swift et SwiftUI | Disponible sur l'App Store",
     },
     hero: {
       titleLead: "Créez et publiez",
@@ -848,7 +848,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       descriptionLead:
         "Importez vos captures, ajoutez des cadres d'appareils, localisez le texte, traduisez automatiquement ce qui manque et",
       descriptionStrong: "envoyez directement vers App Store Connect",
-      descriptionTail: "— depuis une app Mac native et rapide.",
+      descriptionTail: "— depuis une app native rapide pour Mac et iPad.",
     },
     sections: {
       showcases: {
@@ -880,7 +880,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "Captures",
         title: "Voyez-le en action.",
         description:
-          "Captures Mac App Store de Screenshot Bro lui-même: le même éditeur que vous utiliserez.",
+          "Captures App Store de Screenshot Bro lui-même: le même éditeur que vous utiliserez.",
       },
       testimonials: {
         eyebrow: "Développeurs",
@@ -917,7 +917,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "Prêt à publier",
       titleLine2: "de meilleures captures?",
       description:
-        "Téléchargez depuis le Mac App Store et utilisez le flux complet: configuration, design, traduction automatique, localisation et export.",
+        "Téléchargez depuis l'App Store et utilisez le flux complet sur Mac ou iPad: configuration, design, traduction automatique, localisation et export.",
     },
     footer: {
       note:
@@ -925,12 +925,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     },
   },
   ar: {
-    siteTitle: `${SITE_NAME} — مصمم لقطات App Store و Google Play على Mac`,
+    siteTitle: `${SITE_NAME} — مصمم لقطات App Store و Google Play على Mac و iPad`,
     siteDescription:
-      "صمّم لقطات App Store و Google Play داخل تطبيق Mac أصلي. إطارات أجهزة، توطين، ترجمة تلقائية، تصدير جماعي ورفع مباشر إلى App Store Connect.",
+      "صمّم لقطات App Store و Google Play داخل تطبيق أصلي على Mac و iPad. إطارات أجهزة، توطين، ترجمة تلقائية، تصدير جماعي ورفع مباشر إلى App Store Connect.",
     primaryCtaLabel: "احصل عليه من App Store",
     benefits: [
-      "متوفر الآن على Mac App Store",
+      "متوفر الآن على App Store لأجهزة Mac و iPad",
       "سير كامل: استيراد، تصميم، ترجمة تلقائية، توطين وتصدير",
       "رفع مباشر إلى App Store Connect بدون السحب والإفلات في المتصفح",
     ],
@@ -943,10 +943,10 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "ما الذي أحتاجه لتشغيله؟",
         answer:
-          "macOS 15 (Sequoia) أو أحدث، على Apple Silicon أو Intel. لا حاجة إلى iPhone مرافق ولا حساب ولا اتصال إنترنت للتعديل اليومي.",
+          "macOS 15 (Sequoia) أو أحدث على Mac، أو iPadOS 18 أو أحدث على iPad. لا حاجة إلى جهاز مرافق ولا حساب ولا اتصال إنترنت للتعديل اليومي.",
       },
       {
-        question: "هل تغادر بياناتي جهاز Mac؟",
+        question: "هل تغادر بياناتي جهازي؟",
         answer:
           "افتراضياً لا. تبقى المشاريع واللقطات والخطوط على القرص. تعمل الترجمة التلقائية عبر إطار Translation من Apple على الجهاز — بدون مفاتيح API ولا خوادم خارجية ولا تتبع. مزامنة iCloud Drive اختيارية وتستخدم حسابك الشخصي على iCloud؛ لا نشغّل أي خوادم وسيطة.",
       },
@@ -991,7 +991,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       goToScreenshot: (index) => `اذهب إلى اللقطة ${index}`,
       slideCount: (index, total) => `${index} من ${total}`,
       availabilityNote:
-        "تطبيق macOS 15+ | Swift و SwiftUI | متوفر على Mac App Store",
+        "تطبيق macOS 15+ و iPadOS 18+ | Swift و SwiftUI | متوفر على App Store",
     },
     hero: {
       titleLead: "صمّم وانشر",
@@ -1000,7 +1000,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       descriptionLead:
         "استورد لقطاتك، أضف إطارات الأجهزة، وطّن النصوص، ترجم النص المفقود تلقائياً، ثم",
       descriptionStrong: "ارفع مباشرة إلى App Store Connect",
-      descriptionTail: "— كل ذلك من تطبيق Mac أصلي وسريع.",
+      descriptionTail: "— كل ذلك من تطبيق أصلي وسريع على Mac و iPad.",
     },
     sections: {
       showcases: {
@@ -1032,7 +1032,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "اللقطات",
         title: "شاهده أثناء العمل.",
         description:
-          "لقطات Mac App Store لتطبيق Screenshot Bro نفسه: نفس المحرر الذي ستستخدمه.",
+          "لقطات App Store لتطبيق Screenshot Bro نفسه: نفس المحرر الذي ستستخدمه.",
       },
       testimonials: {
         eyebrow: "المطورون",
@@ -1069,7 +1069,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "جاهز لإطلاق",
       titleLine2: "لقطات أفضل؟",
       description:
-        "نزّله من Mac App Store واستخدم سير العمل الكامل: الإعداد، التصميم، الترجمة التلقائية، التوطين والتصدير.",
+        "نزّله من App Store واستخدم سير العمل الكامل على Mac أو iPad: الإعداد، التصميم، الترجمة التلقائية، التوطين والتصدير.",
     },
     footer: {
       note:
@@ -1077,9 +1077,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     },
   },
   de: {
-    siteTitle: `${SITE_NAME} — Screenshot-Designer für App Store & Google Play auf dem Mac`,
+    siteTitle: `${SITE_NAME} — Screenshot-Designer für App Store & Google Play auf Mac und iPad`,
     siteDescription:
-      "Gestalte Screenshots für den App Store und Google Play in einer nativen macOS-App. Geräterahmen, Lokalisierung, automatische Übersetzung, Batch-Export und direkter Upload zu App Store Connect.",
+      "Gestalte Screenshots für den App Store und Google Play in einer nativen App für Mac und iPad. Geräterahmen, Lokalisierung, automatische Übersetzung, Batch-Export und direkter Upload zu App Store Connect.",
     primaryCtaLabel: "Im App Store laden",
     navItems: [
       { label: "Beispiele", href: "#showcases" },
@@ -1088,7 +1088,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Jetzt im Mac App Store erhältlich",
+      "Jetzt im App Store für Mac und iPad erhältlich",
       "Vollständiger Workflow: Importieren, Gestalten, Übersetzen, Lokalisieren und Exportieren",
       "Direkter Upload zu App Store Connect ohne lästiges Drag-and-Drop im Browser",
     ],
@@ -1101,10 +1101,10 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Was brauche ich, um die App zu nutzen?",
         answer:
-          "macOS 15 (Sequoia) oder neuer auf Apple Silicon oder Intel. Kein Begleit-iPhone, kein Account und keine Internetverbindung für das Bearbeiten erforderlich.",
+          "macOS 15 (Sequoia) oder neuer auf dem Mac, oder iPadOS 18 oder neuer auf dem iPad. Kein Begleitgerät, kein Account und keine Internetverbindung für das Bearbeiten erforderlich.",
       },
       {
-        question: "Verlassen meine Daten meinen Mac?",
+        question: "Verlassen meine Daten mein Gerät?",
         answer:
           "Standardmäßig nein. Projekte, Screenshots und Schriftarten werden lokal gespeichert. Die automatische Übersetzung läuft direkt auf dem Gerät über Apples Translation-Framework – keine API-Schlüssel, keine Drittanbieterserver, keine Analyse. Die optionale Synchronisierung über iCloud Drive läuft über Ihren persönlichen iCloud-Account; wir betreiben keine zwischengeschateden Server.",
       },
@@ -1143,7 +1143,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       goToScreenshot: (index) => `Gehe zu Screenshot ${index}`,
       slideCount: (index, total) => `${index} von ${total}`,
       availabilityNote:
-        "macOS 15+ App | Swift & SwiftUI | Im Mac App Store erhältlich",
+        "macOS 15+ und iPadOS 18+ App | Swift & SwiftUI | Im App Store erhältlich",
     },
     hero: {
       titleLead: "Gestalte und veröffentliche",
@@ -1152,7 +1152,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       descriptionLead:
         "Importiere deine Screenshots, passe sie in Geräterahmen ein, lokalisiere den Text, übersetze fehlende Texte automatisch und",
       descriptionStrong: "lade sie direkt zu App Store Connect hoch",
-      descriptionTail: "— alles aus einer schnellen, nativen macOS-App.",
+      descriptionTail: "— alles aus einer schnellen, nativen App für Mac und iPad.",
     },
     sections: {
       showcases: {
@@ -1184,7 +1184,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "Screenshots",
         title: "Sieh es in Aktion.",
         description:
-          "Mac App Store Screenshots von Screenshot Bro selbst – derselbe Editor, den du für deine Screenshots verwendest.",
+          "App Store Screenshots von Screenshot Bro selbst – derselbe Editor, den du für deine Screenshots verwendest.",
       },
       testimonials: {
         eyebrow: "Entwickler",
@@ -1221,7 +1221,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "Bereit für",
       titleLine2: "bessere Screenshots?",
       description:
-        "Lade die App aus dem Mac App Store herunter und nutze den gesamten Workflow: Einrichtung, Design, automatische Übersetzung, Lokalisierung und Export.",
+        "Lade die App aus dem App Store herunter und nutze den gesamten Workflow auf Mac oder iPad: Einrichtung, Design, automatische Übersetzung, Lokalisierung und Export.",
     },
     footer: {
       note:
@@ -1229,9 +1229,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     },
   },
   ja: {
-    siteTitle: `${SITE_NAME} — Mac用App Store & Google Playスクリーンショット作成・デザインツール`,
+    siteTitle: `${SITE_NAME} — Mac・iPad用App Store & Google Playスクリーンショット作成ツール`,
     siteDescription:
-      "App StoreとGoogle Play用のスクリーンショットをネイティブMacアプリでデザイン。デバイスフレーム、ローカライズ、自動翻訳、バッチ書き出し、App Store Connectへの直接アップロードに対応。",
+      "App StoreとGoogle Play用のスクリーンショットをネイティブMac・iPadアプリでデザイン。デバイスフレーム、ローカライズ、自動翻訳、バッチ書き出し、App Store Connectへの直接アップロードに対応。",
     primaryCtaLabel: "App Storeでダウンロード",
     navItems: [
       { label: "デモ", href: "#showcases" },
@@ -1240,7 +1240,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "よくある質問", href: "#faq" },
     ],
     benefits: [
-      "Mac App Storeで配信中",
+      "MacとiPad向けにApp Storeで配信中",
       "インポート、デザイン、翻訳、ローカライズ、書き出しまでの完全なワークフロー",
       "ブラウザへのドラッグ＆ドロップ不要で、App Store Connectに直接アップロード",
     ],
@@ -1253,10 +1253,10 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "動作環境を教えてください。",
         answer:
-          "macOS 15（Sequoia）以降を搭載したApple SiliconまたはIntel搭載のMacが必要です。編集作業にiPhoneやアカウント作成、インターネット接続は必要ありません。",
+          "MacではmacOS 15（Sequoia）以降、iPadではiPadOS 18以降が必要です。編集作業に別のデバイスやアカウント作成、インターネット接続は必要ありません。",
       },
       {
-        question: "データがMacの外部に送信されることはありますか？",
+        question: "データがデバイスの外部に送信されることはありますか？",
         answer:
           "デフォルトでは送信されません。プロジェクト、スクリーンショット、フォントはローカルに保存されます。自動翻訳はAppleのオンデバイスTranslationフレームワークを使用するため、APIキーや外部サーバー、分析機能は一切使用しません。iCloud Driveの同期はオプションで、ユーザー自身の個人用iCloudアカウント経由で行われます。開発元が中間サーバーを運営することはありません。",
       },
@@ -1295,7 +1295,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       goToScreenshot: (index) => `スクリーンショット ${index} へ移動`,
       slideCount: (index, total) => `${total}枚中 ${index}枚目`,
       availabilityNote:
-        "macOS 15以降のアプリ | Swift & SwiftUI | Mac App Storeで入手可能",
+        "macOS 15以降・iPadOS 18以降のアプリ | Swift & SwiftUI | App Storeで入手可能",
     },
     hero: {
       titleLead: "デザインから",
@@ -1304,7 +1304,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       descriptionLead:
         "ショットをインポートし、デバイスフレームを重ね、テキストをローカライズ。不足しているテキストは自動翻訳し、",
       descriptionStrong: "App Store Connectに直接アップロード",
-      descriptionTail: "— これらすべてを、高速なネイティブMacアプリで完結できます。",
+      descriptionTail: "— これらすべてを、高速なネイティブMac・iPadアプリで完結できます。",
     },
     sections: {
       showcases: {
@@ -1336,7 +1336,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "スクリーンショット",
         title: "実際の画面を見る。",
         description:
-          "Screenshot Bro自体のMac App Store用スクリーンショットです。App StoreやGoogle Play用のアセットを作成する際と全く同じエディタを使用しています。",
+          "Screenshot Bro自体のApp Store用スクリーンショットです。App StoreやGoogle Play用のアセットを作成する際と全く同じエディタを使用しています。",
       },
       testimonials: {
         eyebrow: "デベロッパーの声",
@@ -1373,7 +1373,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "より魅力的なスクリーンショットを",
       titleLine2: "配信しませんか？",
       description:
-        "Mac App Storeからダウンロードして、セットアップ、デザイン、自動翻訳、ローカライズ、書き出しまでのフルワークフローを体験してください。",
+        "App Storeからダウンロードして、MacまたはiPadでセットアップ、デザイン、自動翻訳、ローカライズ、書き出しまでのフルワークフローを体験してください。",
     },
     footer: {
       note:
@@ -1381,9 +1381,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     },
   },
   pt: {
-    siteTitle: `${SITE_NAME} — Criador de Capturas de Tela para App Store e Google Play no Mac`,
+    siteTitle: `${SITE_NAME} — Criador de Capturas de Tela para App Store e Google Play no Mac e iPad`,
     siteDescription:
-      "Crie capturas de tela para App Store e Google Play em um app nativo para Mac. Molduras de dispositivos, localização, tradução automática, exportação em lote e envio direto para o App Store Connect.",
+      "Crie capturas de tela para App Store e Google Play em um app nativo para Mac e iPad. Molduras de dispositivos, localização, tradução automática, exportação em lote e envio direto para o App Store Connect.",
     primaryCtaLabel: "Obter na App Store",
     navItems: [
       { label: "Exemplos", href: "#showcases" },
@@ -1392,7 +1392,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Disponível agora na Mac App Store",
+      "Disponível agora na App Store para Mac e iPad",
       "Fluxo completo: importar, projetar, traduzir, localizar e exportar",
       "Envio direto para o App Store Connect sem arrastar arquivos no navegador",
     ],
@@ -1405,10 +1405,10 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "O que preciso para usá-lo?",
         answer:
-          "macOS 15 (Sequoia) ou posterior, rodando em Apple Silicon ou Intel. Não é necessário iPhone complementar, conta ou conexão com a internet para editar.",
+          "macOS 15 (Sequoia) ou posterior no Mac, ou iPadOS 18 ou posterior no iPad. Não é necessário dispositivo complementar, conta ou conexão com a internet para editar.",
       },
       {
-        question: "Meus dados saem do meu Mac?",
+        question: "Meus dados saem do meu dispositivo?",
         answer:
           "Por padrão, não. Projetos, capturas de tela e fontes são armazenados localmente. A tradução automática funciona no dispositivo usando o framework Translation da Apple — sem chaves de API, sem servidores de terceiros, sem telemetria. A sincronização opcional do iCloud Drive é feita diretamente na sua conta pessoal do iCloud; não operamos servidores intermediários.",
       },
@@ -1447,7 +1447,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       goToScreenshot: (index) => `Ir para a captura de tela ${index}`,
       slideCount: (index, total) => `${index} de ${total}`,
       availabilityNote:
-        "App para macOS 15+ | Swift & SwiftUI | Disponível na Mac App Store",
+        "App para macOS 15+ e iPadOS 18+ | Swift & SwiftUI | Disponível na App Store",
     },
     hero: {
       titleLead: "Crie e publique",
@@ -1456,7 +1456,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       descriptionLead:
         "Importe suas capturas, coloque-as em molduras de dispositivos, localize os textos, auto-traduza o que faltar e",
       descriptionStrong: "suba direto para o App Store Connect",
-      descriptionTail: "— tudo a partir de um único app nativo e rápido para Mac.",
+      descriptionTail: "— tudo a partir de um único app nativo e rápido para Mac e iPad.",
     },
     sections: {
       showcases: {
@@ -1488,7 +1488,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "Capturas de Tela",
         title: "Veja em ação.",
         description:
-          "Capturas de tela do próprio Screenshot Bro na Mac App Store — o mesmo editor que você usará para as capturas do seu aplicativo.",
+          "Capturas de tela do próprio Screenshot Bro na App Store — o mesmo editor que você usará para as capturas do seu aplicativo.",
       },
       testimonials: {
         eyebrow: "Desenvolvedores",
@@ -1525,7 +1525,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "Pronto para publicar",
       titleLine2: "capturas de tela melhores?",
       description:
-        "Baixe na Mac App Store e utilize o fluxo completo: configuração, design, tradução automática, localização e exportação.",
+        "Baixe na App Store e utilize o fluxo completo no Mac ou iPad: configuração, design, tradução automática, localização e exportação.",
     },
     footer: {
       note:
@@ -1533,9 +1533,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     },
   },
   it: {
-    siteTitle: `${SITE_NAME} — Designer di screenshot per App Store e Google Play su Mac`,
+    siteTitle: `${SITE_NAME} — Designer di screenshot per App Store e Google Play su Mac e iPad`,
     siteDescription:
-      "Progetta screenshot per App Store e Google Play in un'app Mac nativa. Cornici per dispositivi, localizzazione, traduzione automatica, esportazione in batch e caricamento diretto su App Store Connect.",
+      "Progetta screenshot per App Store e Google Play in un'app nativa per Mac e iPad. Cornici per dispositivi, localizzazione, traduzione automatica, esportazione in batch e caricamento diretto su App Store Connect.",
     primaryCtaLabel: "Scarica su App Store",
     navItems: [
       { label: "Esempi", href: "#showcases" },
@@ -1544,7 +1544,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Disponibile ora sul Mac App Store",
+      "Disponibile ora sull'App Store per Mac e iPad",
       "Flusso completo: importa, progetta, traduci, localizza ed esporta",
       "Caricamento diretto su App Store Connect senza trascinare file nel browser",
     ],
@@ -1557,10 +1557,10 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Di cosa ho bisogno per usarlo?",
         answer:
-          "macOS 15 (Sequoia) o successivo, funzionante su Apple Silicon o Intel. Non è richiesto alcun iPhone di supporto, account o connessione Internet per modificare.",
+          "macOS 15 (Sequoia) o successivo su Mac, oppure iPadOS 18 o successivo su iPad. Non è richiesto alcun dispositivo di supporto, account o connessione Internet per modificare.",
       },
       {
-        question: "I miei dati lasciano il mio Mac?",
+        question: "I miei dati lasciano il mio dispositivo?",
         answer:
           "Per impostazione predefinita, no. Progetti, screenshot e font vengono memorizzati localmente. La traduzione automatica avviene sul dispositivo tramite il framework Translation di Apple: nessuna chiave API, nessun server di terze parti, nessuna telemetria. La sincronizzazione opzionale tramite iCloud Drive utilizza il tuo account iCloud personale; non gestiamo alcun server intermediario.",
       },
@@ -1599,7 +1599,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       goToScreenshot: (index) => `Vai allo screenshot ${index}`,
       slideCount: (index, total) => `${index} di ${total}`,
       availabilityNote:
-        "App per macOS 15+ | Swift e SwiftUI | Disponibile sul Mac App Store",
+        "App per macOS 15+ e iPadOS 18+ | Swift e SwiftUI | Disponibile sull'App Store",
     },
     hero: {
       titleLead: "Progetta e pubblica",
@@ -1608,7 +1608,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       descriptionLead:
         "Importa i tuoi screenshot, inseriscili in cornici per dispositivi, localizza i testi, traduci automaticamente i testi mancanti e",
       descriptionStrong: "carica tutto direttamente su App Store Connect",
-      descriptionTail: "— tutto da un'unica e veloce app nativa per Mac.",
+      descriptionTail: "— tutto da un'unica e veloce app nativa per Mac e iPad.",
     },
     sections: {
       showcases: {
@@ -1640,7 +1640,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "Screenshot",
         title: "Guardalo in azione.",
         description:
-          "Gli screenshot del Mac App Store di Screenshot Bro stesso: lo stesso editor che userai per creare i tuoi asset.",
+          "Gli screenshot dell'App Store di Screenshot Bro stesso: lo stesso editor che userai per creare i tuoi asset.",
       },
       testimonials: {
         eyebrow: "Sviluppatori",
@@ -1677,7 +1677,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "Pronto a pubblicare",
       titleLine2: "screenshot migliori?",
       description:
-        "Scarica dal Mac App Store e prova il flusso di lavoro completo: configurazione, design, traduzione automatica, localizzazione ed esportazione.",
+        "Scarica dall'App Store e prova il flusso di lavoro completo su Mac o iPad: configurazione, design, traduzione automatica, localizzazione ed esportazione.",
     },
     footer: {
       note:
@@ -1685,9 +1685,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     },
   },
   ko: {
-    siteTitle: `${SITE_NAME} — Mac용 App Store & Google Play 스크린샷 디자인 도구`,
+    siteTitle: `${SITE_NAME} — Mac 및 iPad용 App Store & Google Play 스크린샷 디자인 도구`,
     siteDescription:
-      "네이티브 Mac 앱에서 App Store 및 Google Play 스크린샷을 디자인하세요. 디바이스 프레임, 현지화, 자동 번역, 일괄 내보내기, App Store Connect 직접 업로드를 지원합니다.",
+      "네이티브 Mac 및 iPad 앱에서 App Store 및 Google Play 스크린샷을 디자인하세요. 디바이스 프레임, 현지화, 자동 번역, 일괄 내보내기, App Store Connect 직접 업로드를 지원합니다.",
     primaryCtaLabel: "App Store에서 받기",
     navItems: [
       { label: "쇼케이스", href: "#showcases" },
@@ -1696,7 +1696,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "현재 Mac App Store에서 다운로드 가능",
+      "현재 Mac 및 iPad용 App Store에서 다운로드 가능",
       "가져오기, 디자인, 자동 번역, 현지화, 내보내기까지 완벽한 워크플로우",
       "브라우저 드래그 앤 드롭 없이 App Store Connect에 직접 업로드",
     ],
@@ -1709,10 +1709,10 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "사용하려면 무엇이 필요한가요?",
         answer:
-          "Apple Silicon 또는 Intel 칩이 탑재된 Mac의 macOS 15(Sequoia) 이상 버전이 필요합니다. 편집 시 별도의 iPhone 연결, 계정 가입 또는 인터넷 연결은 필요하지 않습니다.",
+          "Mac에서는 macOS 15(Sequoia) 이상, iPad에서는 iPadOS 18 이상이 필요합니다. 편집 시 별도의 기기 연결, 계정 가입 또는 인터넷 연결은 필요하지 않습니다.",
       },
       {
-        question: "내 데이터가 Mac 외부로 전송되나요?",
+        question: "내 데이터가 기기 외부로 전송되나요?",
         answer:
           "기본적으로 전송되지 않습니다. 프로젝트, 스크린샷, 폰트는 모두 로컬에 저장됩니다. 자동 번역은 외부 API 키, 제3자 서버, 분석 추적 없이 Apple의 온디바이스 Translation 프레임워크를 통해 기기 자체에서 실행됩니다. 선택 사항인 iCloud Drive 동기화는 사용자의 개인 iCloud 계정을 통해 진행되며, 개발사 측에서 중간 서버를 운영하지 않습니다.",
       },
@@ -1751,7 +1751,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       goToScreenshot: (index) => `스크린샷 ${index}로 이동`,
       slideCount: (index, total) => `${total}개 중 ${index}번째`,
       availabilityNote:
-        "macOS 15+ 앱 | Swift 및 SwiftUI | Mac App Store에서 다운로드 가능",
+        "macOS 15+ 및 iPadOS 18+ 앱 | Swift 및 SwiftUI | App Store에서 다운로드 가능",
     },
     hero: {
       titleLead: "스크린샷 디자인부터",
@@ -1760,7 +1760,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       descriptionLead:
         "스크린샷을 가져오고, 디바이스 프레임을 씌우고, 문구를 현지화하며, 누락된 텍스트는 자동으로 번역하여",
       descriptionStrong: "App Store Connect에 바로 업로드하세요",
-      descriptionTail: "— 이 모든 작업이 빠르고 네이티브한 하나의 Mac 앱에서 가능합니다.",
+      descriptionTail: "— 이 모든 작업이 빠르고 네이티브한 하나의 Mac 및 iPad 앱에서 가능합니다.",
     },
     sections: {
       showcases: {
@@ -1792,7 +1792,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "스크린샷",
         title: "직접 확인해보세요.",
         description:
-          "Screenshot Bro 앱 자체의 Mac App Store 스크린샷입니다. 귀하의 앱 스크린샷 세트를 제작할 때 사용하게 될 에디터와 동일합니다.",
+          "Screenshot Bro 앱 자체의 App Store 스크린샷입니다. 귀하의 앱 스크린샷 세트를 제작할 때 사용하게 될 에디터와 동일합니다.",
       },
       testimonials: {
         eyebrow: "개발자 한마디",
@@ -1829,7 +1829,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "더 매력적인 스크린샷을",
       titleLine2: "배포할 준비가 되셨나요?",
       description:
-        "Mac App Store에서 다운로드하여 설정, 디자인, 자동 번역, 현지화 및 내보내기까지의 모든 워크플로우를 지금 경험해보세요.",
+        "App Store에서 다운로드하여 Mac 또는 iPad에서 설정, 디자인, 자동 번역, 현지화 및 내보내기까지의 모든 워크플로우를 지금 경험해보세요.",
     },
     footer: {
       note:

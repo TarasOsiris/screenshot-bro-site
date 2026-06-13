@@ -72,17 +72,17 @@ export default function BlogPost() {
 function getCTAMessage(locale: LocaleCode): string {
   switch (locale) {
     case "es":
-      return "Crea, localiza y exporta capturas de pantalla de la App Store desde un flujo de trabajo nativo de Mac.";
+      return "Crea, localiza y exporta capturas de pantalla de la App Store desde un flujo nativo para Mac y iPad.";
     case "zh":
-      return "在原生 Mac 工作流中创建、本地化和导出 App Store 截图。";
+      return "在原生 Mac 和 iPad 工作流中创建、本地化和导出 App Store 截图。";
     case "hi":
-      return "एक नेटिव मैक वर्कफ़्लो से ऐप स्टोर स्क्रीनशॉट बनाएं, स्थानीयकृत करें और निर्यात करें।";
+      return "एक नेटिव Mac और iPad वर्कफ़्लो से App Store screenshots बनाएं, localize करें और export करें।";
     case "fr":
-      return "Créez, localisez et exportez vos captures d'écran App Store depuis un flux de travail macOS natif.";
+      return "Créez, localisez et exportez vos captures d'écran App Store depuis un flux de travail natif pour Mac et iPad.";
     case "ar":
-      return "قم بإنشاء لقطات شاشة App Store وتوطينها وتصديرها من سير عمل Mac أصلي.";
+      return "قم بإنشاء لقطات شاشة App Store وتوطينها وتصديرها من سير عمل أصلي على Mac و iPad.";
     default:
-      return "Create, localize, and export App Store screenshots from a native Mac workflow.";
+      return "Create, localize, and export App Store screenshots from a native Mac and iPad workflow.";
   }
 }
 
@@ -140,7 +140,7 @@ function ContentEn() {
       </p>
       <p>
         <a href="/">Screenshot Bro</a> takes a different approach: it is a
-        native macOS app for creating, localizing, exporting, and uploading{" "}
+        native Mac and iPad app for creating, localizing, exporting, and uploading{" "}
         <strong>app store screenshots</strong> from one local project. If
         you are an indie developer shipping frequent App Store and Google
         Play updates, that workflow matters more than a huge template
@@ -167,11 +167,11 @@ function ContentEn() {
                 <ToolCell name="Screenshot Bro" iconSrc="/favicon.svg" />
               </td>
               <td>Indie devs shipping repeated store updates</td>
-              <td>Native macOS</td>
+              <td>Native macOS and iPadOS</td>
               <td>Built in</td>
               <td>iPhone, iPad, Mac, Android</td>
               <td>Export plus App Store Connect upload</td>
-              <td>Mac-only</td>
+              <td>No browser editor</td>
             </tr>
             <tr>
               <td>
@@ -280,7 +280,7 @@ function ContentEn() {
       </p>
       <p>
         The important difference is that projects stay local and editable on
-        your Mac. When your app UI changes, you update the source
+        your device. When your app UI changes, you update the source
         screenshots and keep the surrounding design system intact. When a
         translator changes one line, you update that locale instead of
         hunting through duplicated Figma frames.
@@ -292,7 +292,7 @@ function ContentEn() {
         </li>
         <li>
           <strong>Workflow:</strong> design, localization, batch export, and
-          App Store Connect upload in one native macOS app.
+          App Store Connect upload in one native Mac and iPad app.
         </li>
         <li>
           <strong>Useful links:</strong>{" "}
@@ -327,7 +327,7 @@ function ContentEn() {
         editing loop, it may feel heavier than it needs to.
       </p>
       <p>
-        <strong>Screenshot Bro advantage:</strong> a native macOS
+        <strong>Screenshot Bro advantage:</strong> a native Mac and iPad
         experience, local projects, fast iteration, and an indie-focused
         workflow for developers who want the screenshot system to live next
         to the rest of their release work.
@@ -523,13 +523,13 @@ function ContentEn() {
       <p>
         Use Screenshot Bro if you need repeatable App Store and Google Play
         screenshot production: local projects, device frames, localization,
-        export folders, and App Store Connect upload in a native Mac app.
+        export folders, and App Store Connect upload in a native Mac and iPad app.
       </p>
 
       <h2>Bottom Line</h2>
       <p>
         If you are tired of rebuilding App Store screenshots manually, try
-        Screenshot Bro — a native macOS app for creating, localizing, and
+        Screenshot Bro — a native Mac and iPad app for creating, localizing, and
         exporting store screenshots faster.
       </p>
     </>
@@ -546,7 +546,7 @@ function ContentEs() {
         Las capturas de pantalla de la aplicación son molestas porque se multiplican. Un cambio en el texto se convierte en todos los tamaños de dispositivo. Una actualización del producto se convierte en todas las localizaciones. Los archivos de Figma crecen hasta convertirse en una pila de marcos duplicados. Las herramientas generadoras de capturas de la App Store basadas en el navegador pueden ser útiles, pero a menudo se sienten lentas o limitadas cuando estás iterando cada semana. Los requisitos de las tiendas también siguen cambiando, por lo que un flujo de trabajo de capturas de pantalla debe ser repetible, no solo bonito una vez.
       </p>
       <p>
-        <a href="/">Screenshot Bro</a> adopta un enfoque diferente: es una aplicación nativa de macOS para crear, localizar, exportar y subir <strong>capturas de pantalla de la App Store</strong> desde un proyecto local. Si eres un desarrollador indie que lanza actualizaciones frecuentes en App Store y Google Play, ese flujo de trabajo importa mucho más que una gran galería de plantillas.
+        <a href="/">Screenshot Bro</a> adopta un enfoque diferente: es una aplicación nativa de Mac e iPad para crear, localizar, exportar y subir <strong>capturas de pantalla de la App Store</strong> desde un proyecto local. Si eres un desarrollador indie que lanza actualizaciones frecuentes en App Store y Google Play, ese flujo de trabajo importa mucho más que una gran galería de plantillas.
       </p>
 
       <h2>Comparación rápida</h2>
@@ -683,7 +683,7 @@ function ContentEs() {
           <strong>Ideal para:</strong> desarrolladores independientes, fundadores en solitario y pequeños equipos móviles.
         </li>
         <li>
-          <strong>Flujo de trabajo:</strong> diseño, localización, exportación por lotes y subida a App Store Connect en una sola aplicación nativa de macOS.
+          <strong>Flujo de trabajo:</strong> diseño, localización, exportación por lotes y subida a App Store Connect en una sola aplicación nativa de Mac e iPad.
         </li>
         <li>
           <strong>Enlaces útiles:</strong>{" "}
@@ -711,7 +711,7 @@ function ContentEs() {
         Eso lo convierte en una excelente opción para equipos, agencias y desarrolladores que desean un flujo de trabajo en el navegador con funciones de localización. La contrapartida es la misma que con la mayoría de herramientas web: si prefieres proyectos locales de Mac, rendimiento nativo y un flujo de edición offline, puede resultarte más pesado de lo necesario.
       </p>
       <p>
-        <strong>Ventaja de Screenshot Bro:</strong> una experiencia nativa de macOS, proyectos locales, iteración rápida y un flujo de trabajo enfocado en indies para desarrolladores que desean que el sistema de capturas conviva con el resto de sus tareas de lanzamiento.
+        <strong>Ventaja de Screenshot Bro:</strong> una experiencia nativa de Mac e iPad, proyectos locales, iteración rápida y un flujo de trabajo enfocado en indies para desarrolladores que desean que el sistema de capturas conviva con el resto de sus tareas de lanzamiento.
       </p>
 
       <h2>AppLaunchpad</h2>
@@ -842,12 +842,12 @@ function ContentEs() {
         Usa Figma si necesitas libertad absoluta de diseño y tienes la disciplina para mantener el archivo. Usa Rotato si necesitas principalmente visuales promocionales en 3D o videos. Usa Placeit si necesitas mockups de marketing genéricos en muchas categorías. Usa AppScreens o AppLaunchpad si tu equipo desea un generador basado en navegador con un flujo de trabajo de plantillas.
       </p>
       <p>
-        Usa Screenshot Bro si necesitas una producción repetible de capturas para App Store y Google Play: proyectos locales, marcos de dispositivos, localización, carpetas de exportación y subida a App Store Connect en una aplicación nativa de Mac.
+        Usa Screenshot Bro si necesitas una producción repetible de capturas para App Store y Google Play: proyectos locales, marcos de dispositivos, localización, carpetas de exportación y subida a App Store Connect en una aplicación nativa de Mac e iPad.
       </p>
 
       <h2>Conclusión</h2>
       <p>
-        Si estás cansado de reconstruir las capturas de pantalla de la App Store manualmente, prueba Screenshot Bro: una aplicación nativa de macOS para crear, localizar y exportar capturas de pantalla de la tienda más rápido.
+        Si estás cansado de reconstruir las capturas de pantalla de la App Store manualmente, prueba Screenshot Bro: una aplicación nativa de Mac e iPad para crear, localizar y exportar capturas de pantalla de la tienda más rápido.
       </p>
     </>
   );
@@ -863,7 +863,7 @@ function ContentZh() {
         应用截图令人头疼，因为它们呈乘数级增长。一个文案改动就需要应用到所有设备尺寸，一次产品更新就需要适配所有地区语言。Figma 文件最终堆满了重复的框架。基于浏览器的 <strong>应用商店截图生成器</strong> 虽然好用，但在每周迭代时往往显得缓慢或受限。商店的要求也一直在变，因此截图工作流必须是可重复的，而不仅仅是一次性的好看。
       </p>
       <p>
-        <a href="/">Screenshot Bro</a> 采用了不同的方法：它是一个原生 macOS 应用程序，可在单个本地项目中完成 <strong>应用商店截图</strong> 的创建、本地化、导出和上传。如果你是需要频繁发布 App Store 和 Google Play 更新的独立开发者，这种工作流比庞大的模板库更为重要。
+        <a href="/">Screenshot Bro</a> 采用了不同的方法：它是一个原生 Mac 和 iPad 应用，可在单个本地项目中完成 <strong>应用商店截图</strong> 的创建、本地化、导出和上传。如果你是需要频繁发布 App Store 和 Google Play 更新的独立开发者，这种工作流比庞大的模板库更为重要。
       </p>
 
       <h2>快速对比</h2>
@@ -1000,7 +1000,7 @@ function ContentZh() {
           <strong>最适合：</strong> 独立开发者、个人创始人以及小型移动团队。
         </li>
         <li>
-          <strong>工作流：</strong> 在单个原生 macOS 应用中完成设计、本地化、批量导出和 App Store Connect 上传。
+          <strong>工作流：</strong> 在单个原生 Mac 和 iPad 应用中完成设计、本地化、批量导出和 App Store Connect 上传。
         </li>
         <li>
           <strong>常用链接：</strong>{" "}
@@ -1159,12 +1159,12 @@ function ContentZh() {
         如果你需要绝对的设计自由度且有耐心维护文件，请使用 Figma。如果你主要需要 3D 宣传视觉效果或视频，请使用 Rotato。如果你在多个类别中需要通用的营销样机，请使用 Placeit。如果你的团队想要具有模板工作流的基于浏览器的生成器，请使用 AppScreens 或 AppLaunchpad。
       </p>
       <p>
-        如果你需要可重复的 App Store 和 Google Play 截图生成：本地项目、设备框架、本地化、导出文件夹以及在原生 Mac 应用中完成 App Store Connect 上传，请使用 Screenshot Bro。
+        如果你需要可重复的 App Store 和 Google Play 截图生成：本地项目、设备框架、本地化、导出文件夹以及在原生 Mac 和 iPad 应用中完成 App Store Connect 上传，请使用 Screenshot Bro。
       </p>
 
       <h2>总结</h2>
       <p>
-        如果你厌倦了手动重新构建 App Store 截图，不妨试试 Screenshot Bro —— 一款能更快速创建、本地化和导出商店截图的原生 macOS 应用。
+        如果你厌倦了手动重新构建 App Store 截图，不妨试试 Screenshot Bro —— 一款能更快速创建、本地化和导出商店截图的原生 Mac 和 iPad 应用。
       </p>
     </>
   );
@@ -1634,7 +1634,7 @@ function ContentFr() {
           <strong>Idéal pour :</strong> les développeurs indépendants, les fondateurs solo et les petites équipes mobiles.
         </li>
         <li>
-          <strong>Flux de travail :</strong> conception, localisation, exportation groupée et envoi sur App Store Connect au sein d&apos;une seule application native macOS.
+          <strong>Flux de travail :</strong> conception, localisation, exportation groupée et envoi sur App Store Connect au sein d&apos;une seule application native pour Mac et iPad.
         </li>
         <li>
           <strong>Liens utiles :</strong>{" "}
@@ -1793,7 +1793,7 @@ function ContentFr() {
         Utilisez Figma si vous recherchez une liberté de conception absolue et possédez la discipline requise pour tenir le fichier à jour. Choisissez Rotato si vous avez surtout besoin de vidéos ou de visuels promotionnels en 3D. Choisissez Placeit pour des mockups marketing génériques. Utilisez AppScreens ou AppLaunchpad si votre équipe souhaite un outil sur navigateur basé sur des modèles prédéfinis.
       </p>
       <p>
-        Choisissez Screenshot Bro si vous cherchez un flux de production reproductible pour l&apos;App Store et Google Play : projets locaux, cadres d&apos;appareils, localisation, dossiers d&apos;exportations structurés et envoi vers App Store Connect dans une application native Mac.
+        Choisissez Screenshot Bro si vous cherchez un flux de production reproductible pour l&apos;App Store et Google Play : projets locaux, cadres d&apos;appareils, localisation, dossiers d&apos;exportations structurés et envoi vers App Store Connect dans une application native pour Mac et iPad.
       </p>
 
       <h2>En résumé</h2>

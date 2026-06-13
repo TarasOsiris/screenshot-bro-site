@@ -299,7 +299,7 @@ function ContentEn() {
             Indie dev or small team, designing + shipping screenshots
             yourself.
           </strong>{" "}
-          Use a Mac app that collapses design and upload into one flow.
+          Use a Mac/iPad app that collapses design and upload into one flow.
         </li>
       </ul>
 
@@ -778,7 +778,7 @@ function ContentZh() {
           <strong>
             独立开发者或小型团队，自己设计并提交屏幕截图。
           </strong>{" "}
-          使用能将设计和上传整合进同一个流程的原生 Mac 应用。
+          使用能将设计和上传整合进同一个流程的原生 Mac 和 iPad 应用。
         </li>
       </ul>
 

@@ -4,7 +4,7 @@ import { ContentLayout } from "~/components/ContentLayout";
 import { mergeMeta } from "~/config/meta";
 
 const PRIVACY_TITLE = `Privacy Policy — ${SITE_NAME}`;
-const PRIVACY_DESCRIPTION = `Privacy policy for ${SITE_NAME}. Learn how we handle your data — no analytics, no tracking, all data stays on your Mac.`;
+const PRIVACY_DESCRIPTION = `Privacy policy for ${SITE_NAME}. Learn how we handle your data — no analytics, no tracking, all data stays on your device.`;
 const PRIVACY_URL = `${SITE_URL}/privacy`;
 
 export const meta: Route.MetaFunction = ({ matches }) =>
@@ -18,7 +18,7 @@ export const meta: Route.MetaFunction = ({ matches }) =>
     { name: "twitter:description", content: PRIVACY_DESCRIPTION },
   ]);
 
-export const EFFECTIVE_DATE = "March 25, 2026";
+export const EFFECTIVE_DATE = "June 13, 2026";
 const DEVELOPER_NAME = "Nineva Studios";
 const DEVELOPER_EMAIL = "tleskiv@ninevastudios.com";
 
@@ -33,9 +33,9 @@ export default function Privacy() {
           <p>
             This Privacy Policy describes how {DEVELOPER_NAME} ("we", "us", or
             "our") handles information in connection with the{" "}
-            <strong>{SITE_NAME}</strong> application for macOS (the "App"). We
-            are committed to protecting your privacy and being transparent about
-            our practices.
+            <strong>{SITE_NAME}</strong> application for macOS and iPadOS (the
+            "App"). We are committed to protecting your privacy and being
+            transparent about our practices.
           </p>
 
           <h2>1. Information We Do Not Collect</h2>
@@ -59,8 +59,8 @@ export default function Privacy() {
           <h2>2. Data Stored on Your Device</h2>
           <p>
             All projects, images, custom fonts, and settings you create in{" "}
-            {SITE_NAME} are stored locally on your Mac in the application's
-            sandboxed container:
+            {SITE_NAME} are stored locally on your device in the application's
+            sandboxed container. On Mac, project files are stored under:
           </p>
           <ul>
             <li>
@@ -92,7 +92,7 @@ export default function Privacy() {
             <li>
               Your project files and imported images are synchronized to your
               personal iCloud Drive account so they are available across your
-              Macs.
+              Macs and iPads.
             </li>
             <li>
               Data is transmitted and stored using Apple's iCloud infrastructure.
@@ -114,7 +114,8 @@ export default function Privacy() {
               You can disable iCloud sync at any time in the App's settings.
               Disabling sync does not delete data already stored in iCloud; you
               can remove it via macOS System Settings &gt; Apple&nbsp;Account
-              &gt; iCloud &gt; Manage Storage.
+              &gt; iCloud &gt; Manage Storage, or iPadOS Settings &gt;
+              Apple&nbsp;Account &gt; iCloud.
             </li>
           </ul>
 
@@ -213,7 +214,8 @@ export default function Privacy() {
             </li>
             <li>
               <strong>iCloud data</strong> — disable sync in the App's settings,
-              then remove files via macOS System Settings or iCloud Drive.
+              then remove files via System Settings on Mac, Settings on iPad,
+              or iCloud Drive.
             </li>
             <li>
               <strong>Purchase records</strong> — managed by Apple and
@@ -232,10 +234,10 @@ export default function Privacy() {
 
           <h2>8. Security</h2>
           <p>
-            The App runs inside macOS App Sandbox, which restricts file system
-            access and network capabilities. All data at rest is protected by
-            macOS file-level encryption (FileVault) and iCloud encryption when
-            applicable.
+            The App runs inside Apple's app sandbox on macOS and iPadOS, which
+            restricts file system access and network capabilities. All data at
+            rest is protected by platform storage encryption and iCloud
+            encryption when applicable.
           </p>
 
           <h2>9. Changes to This Policy</h2>

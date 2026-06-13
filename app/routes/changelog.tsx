@@ -8,7 +8,7 @@ const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
 ]);
 
 const CHANGELOG_TITLE = `Changelog — ${SITE_NAME}`;
-const CHANGELOG_DESCRIPTION = `What's new in ${SITE_NAME}. Release notes, new features, and improvements for the macOS App Store screenshot designer.`;
+const CHANGELOG_DESCRIPTION = `What's new in ${SITE_NAME}. Release notes, new features, and improvements for the App Store screenshot designer for Mac and iPad.`;
 const CHANGELOG_URL = `${SITE_URL}/changelog`;
 
 export const meta: Route.MetaFunction = ({ matches }) =>

@@ -47,17 +47,17 @@ export default function BlogPost() {
 function getCTAMessage(locale: LocaleCode): string {
   switch (locale) {
     case "es":
-      return "¿Cansado de reconstruir archivos de capturas en Figma en cada lanzamiento? Prueba un flujo de trabajo nativo de Mac diseñado para capturas de la App Store y Google Play.";
+      return "¿Cansado de reconstruir archivos de capturas en Figma en cada lanzamiento? Prueba un flujo nativo para Mac y iPad diseñado para capturas de la App Store y Google Play.";
     case "zh":
-      return "厌倦了每次发布都要重新制作 Figma 截图文件？试试专为 App Store 和 Google Play 截图打造的 Mac 原生工作流。";
+      return "厌倦了每次发布都要重新制作 Figma 截图文件？试试专为 App Store 和 Google Play 截图打造的 Mac 和 iPad 原生工作流。";
     case "hi":
-      return "हर रिलीज़ में फिग्मा स्क्रीनशॉट फ़ाइलों को फिर से बनाने से थक गए हैं? ऐप स्टोर और Google Play स्क्रीनशॉट के लिए बने नेटिव मैक वर्कफ़्लो को आज़माएं।";
+      return "हर रिलीज़ में फिग्मा स्क्रीनशॉट फ़ाइलों को फिर से बनाने से थक गए हैं? App Store और Google Play screenshots के लिए बने नेटिव Mac और iPad वर्कफ़्लो को आज़माएं।";
     case "fr":
-      return "Fatigué de recréer vos fichiers de captures d'écran Figma à chaque version ? Essayez un flux de travail Mac natif conçu pour les captures App Store et Google Play.";
+      return "Fatigué de recréer vos fichiers de captures d'écran Figma à chaque version ? Essayez un flux de travail natif pour Mac et iPad conçu pour les captures App Store et Google Play.";
     case "ar":
-      return "هل سئمت من إعادة بناء ملفات لقطات شاشة Figma مع كل إصدار؟ جرب سير عمل Mac أصليًا مصممًا للقطات شاشة App Store و Google Play.";
+      return "هل سئمت من إعادة بناء ملفات لقطات شاشة Figma مع كل إصدار؟ جرب سير عمل أصليًا على Mac و iPad مصممًا للقطات شاشة App Store و Google Play.";
     default:
-      return "Tired of rebuilding Figma screenshot files every release? Try a native Mac workflow built for App Store and Google Play screenshots.";
+      return "Tired of rebuilding Figma screenshot files every release? Try a native Mac and iPad workflow built for App Store and Google Play screenshots.";
   }
 }
 
@@ -436,9 +436,9 @@ function ContentEn() {
         <a href="/">Screenshot Bro</a>.
       </p>
       <p>
-        Screenshot Bro is a native macOS app for designing, localizing,
-        exporting, and uploading store screenshots. It gives you device
-        rows, reusable templates, built-in localization, batch export, and
+        Screenshot Bro is a native Mac and iPad app for designing, localizing,
+        exporting, and uploading store screenshots. It gives you device rows,
+        reusable templates, built-in localization, batch export, and
         <a href="/blog/upload-screenshots-to-app-store-connect">
           {" "}
           App Store Connect upload
@@ -741,7 +741,7 @@ function ContentEs() {
         <a href="/">Screenshot Bro</a>.
       </p>
       <p>
-        Screenshot Bro es una aplicación nativa de macOS para diseñar, localizar, exportar y subir capturas de pantalla de tiendas. Te proporciona filas de dispositivos, plantillas reutilizables, localización integrada, exportación por lotes y{" "}
+        Screenshot Bro es una aplicación nativa de Mac e iPad para diseñar, localizar, exportar y subir capturas de pantalla de tiendas. Te proporciona filas de dispositivos, plantillas reutilizables, localización integrada, exportación por lotes y{" "}
         <a href="/blog/upload-screenshots-to-app-store-connect">
           subida a App Store Connect
         </a>{" "}
@@ -1032,7 +1032,7 @@ function ContentZh() {
         <a href="/">Screenshot Bro</a>。
       </p>
       <p>
-        Screenshot Bro 是一款用于设计、本地化、导出和上传商店截图的原生 macOS 应用。它为您提供设备行、可复用模板、内置本地化、批量导出以及{" "}
+        Screenshot Bro 是一款用于设计、本地化、导出和上传商店截图的原生 Mac 和 iPad 应用。它为您提供设备行、可复用模板、内置本地化、批量导出以及{" "}
         <a href="/blog/upload-screenshots-to-app-store-connect">
           App Store Connect 上传
         </a>{" "}

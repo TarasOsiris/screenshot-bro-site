@@ -18,7 +18,7 @@ export const meta: Route.MetaFunction = ({ matches }) =>
     { name: "twitter:description", content: TERMS_DESCRIPTION },
   ]);
 
-export const EFFECTIVE_DATE = "May 6, 2026";
+export const EFFECTIVE_DATE = "June 13, 2026";
 const DEVELOPER_NAME = "Nineva Studios";
 const DEVELOPER_EMAIL = "tleskiv@ninevastudios.com";
 
@@ -30,10 +30,10 @@ export default function Terms() {
         <p className="meta">Effective date: {EFFECTIVE_DATE}</p>
         <p>
           These Terms of Use ("Terms") govern your use of the{" "}
-          <strong>{SITE_NAME}</strong> macOS application (the "App") provided by{" "}
-          {DEVELOPER_NAME} ("we", "us", or "our"). By downloading, installing,
-          or using the App, you agree to these Terms. If you do not agree, do
-          not use the App.
+          <strong>{SITE_NAME}</strong> application for macOS and iPadOS (the
+          "App") provided by {DEVELOPER_NAME} ("we", "us", or "our"). By
+          downloading, installing, or using the App, you agree to these Terms.
+          If you do not agree, do not use the App.
         </p>
 
         <h2>1. License (EULA)</h2>
@@ -42,7 +42,7 @@ export default function Terms() {
           with these Terms, we grant you a limited, non-exclusive,
           non-transferable, revocable license to install and use the App on
           Apple-branded devices that you own or control, as permitted by the
-          Mac App Store{" "}
+          App Store{" "}
           <a
             href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
             target="_blank"
@@ -108,7 +108,8 @@ export default function Terms() {
             <strong>Manage and cancel:</strong> You can manage and cancel your
             subscription by going to your Apple Account settings on your Mac
             (System Settings &gt; Apple Account &gt; Media &amp; Purchases
-            &gt; Manage) or at{" "}
+            &gt; Manage), on your iPad (Settings &gt; Apple Account &gt;
+            Subscriptions), or at{" "}
             <a
               href="https://apps.apple.com/account/subscriptions"
               target="_blank"
@@ -141,10 +142,10 @@ export default function Terms() {
 
         <h3>2.4 Restoring Purchases</h3>
         <p>
-          You can restore previous purchases on a new Mac signed in to the
-          same Apple Account by using the "Restore Purchases" action inside
-          the App. Restored entitlements are validated against the App Store
-          and our purchase processor (RevenueCat).
+          You can restore previous purchases on a new Mac or iPad signed in to
+          the same Apple Account by using the "Restore Purchases" action inside
+          the App. Restored entitlements are validated against the App Store and
+          our purchase processor (RevenueCat).
         </p>
 
         <h2>3. Acceptable Use</h2>
@@ -166,7 +167,7 @@ export default function Terms() {
 
         <h2>4. Your Content</h2>
         <p>
-          {SITE_NAME} stores your projects locally on your Mac and, if you
+          {SITE_NAME} stores your projects locally on your device and, if you
           enable iCloud sync, in your personal iCloud Drive. We do not collect
           or have access to your projects, screenshots, or fonts. See our{" "}
           <a href={`${SITE_URL}/privacy`}>Privacy Policy</a> for details.
@@ -174,7 +175,7 @@ export default function Terms() {
 
         <h2>5. Updates</h2>
         <p>
-          We may release updates to the App through the Mac App Store. Some
+          We may release updates to the App through the App Store. Some
           updates may add, change, or remove features. Pro entitlements remain
           tied to your Apple Account.
         </p>
@@ -211,7 +212,7 @@ export default function Terms() {
         <h2>9. Governing Law</h2>
         <p>
           These Terms are governed by the laws of Ukraine, without regard to
-          conflict-of-law principles. To the extent the Mac App Store
+          conflict-of-law principles. To the extent the App Store
           Standard EULA applies, that document's governing-law and
           jurisdiction terms control where they conflict with this section.
         </p>

@@ -8,6 +8,7 @@ export default [
   route("support", "routes/support.tsx"),
   route("blog", "routes/blog._index.tsx"),
   route(":locale/blog", "routes/blog._index.tsx", { id: "blog-locale" }),
+  route("blog/app-store-screenshot-localization-guide", "routes/blog.app-store-screenshot-localization-guide.tsx"),
   route("blog/popular-figma-templates-app-store-screenshots-device-mockups", "routes/blog.popular-figma-templates-app-store-screenshots-device-mockups.tsx"),
   route("blog/app-store-screenshot-designers-creators-to-follow", "routes/blog.app-store-screenshot-designers-creators-to-follow.tsx"),
   route("blog/google-play-screenshot-sizes-requirements", "routes/blog.google-play-screenshot-sizes-requirements.tsx"),

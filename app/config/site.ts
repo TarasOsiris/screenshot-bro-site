@@ -1,6 +1,6 @@
 export const SITE_NAME = "Screenshot Bro";
 export const SITE_DESCRIPTION =
-  "Design App Store and Google Play screenshots on Mac. Add device frames, localize, batch export, and upload direct to App Store Connect.";
+  "Design App Store and Google Play screenshots on Mac and iPad. Add device frames, localize, batch export, and upload direct to App Store Connect.";
 export const SITE_TAGLINE =
   "Design and upload App Store and Google Play screenshots in minutes.";
 export const SITE_URL =
@@ -23,6 +23,7 @@ export const INSTAGRAM_REEL_EMBED_URL =
   "https://www.instagram.com/reel/DXtwyWMDHxF/embed/";
 export const APP_CATEGORY = "Graphics & Design";
 export const MINIMUM_MACOS_VERSION = "15.0";
+export const MINIMUM_IPADOS_VERSION = "18.0";
 export const SITE_KEYWORDS = [
   "App Store screenshots",
   "App Store screenshot generator",
@@ -38,6 +39,8 @@ export const SITE_KEYWORDS = [
   "App Store Connect API upload",
   "automatic App Store screenshots upload",
   "macOS screenshot designer",
+  "iPad screenshot designer",
+  "iPad app screenshot maker",
 ].join(", ");
 
 export type NavItem = {
@@ -89,7 +92,7 @@ export const LEGAL_LINKS: SecondaryLink[] = [
 ];
 
 export const BETA_BENEFITS = [
-  "Available now on the Mac App Store",
+  "Available now on the App Store for Mac and iPad",
   "Full workflow: import, design, auto-translate, localize, export",
   "Upload direct to App Store Connect — no more drag-and-drop in a browser tab",
 ];
@@ -108,10 +111,10 @@ export const FAQS: FaqItem[] = [
   {
     question: "What do I need to run it?",
     answer:
-      "macOS 15 (Sequoia) or later, on Apple Silicon or Intel. No companion iPhone, no account, no internet connection required for everyday editing.",
+      "macOS 15 (Sequoia) or later on Mac, or iPadOS 18 or later on iPad. No companion device, no account, no internet connection required for everyday editing.",
   },
   {
-    question: "Does my data leave my Mac?",
+    question: "Does my data leave my device?",
     answer:
       "By default, no. Projects, screenshots, and fonts stay on disk. Auto-translation runs through Apple's on-device Translation framework — no API keys, no third-party servers, no analytics. Optional iCloud Drive sync uses your personal iCloud account; we don't operate any intermediate servers.",
   },
@@ -136,9 +139,9 @@ export const FAQS: FaqItem[] = [
       "Yes. Configure your App Store Connect API key once (Issuer ID, Key ID, and .p8). Screenshot Bro auto-detects the right display type for each row, matches your project locales to App Store Connect localizations, and replaces existing screenshots in a single pass — no drag-and-drop in the browser.",
   },
   {
-    question: "Does it sync between Macs?",
+    question: "Does it sync between devices?",
     answer:
-      "Yes — opt-in iCloud Drive sync keeps projects, screenshots, and fonts available on every Mac signed into your Apple ID. Conflicts merge field-by-field with last-writer-wins, so editing the same project on two Macs converges cleanly.",
+      "Yes — opt-in iCloud Drive sync keeps projects, screenshots, and fonts available on every Mac and iPad signed into your Apple Account. Conflicts merge field-by-field with last-writer-wins, so editing the same project on multiple devices converges cleanly.",
   },
 ];
 
@@ -226,16 +229,16 @@ export const FEATURES: FeatureItem[] = [
   },
   {
     icon: "native",
-    title: "Native macOS",
+    title: "Native Mac & iPad",
     description:
-      "Built with Swift and SwiftUI. No Electron, no browser tab. Instant launch, native performance, auto-save, full undo/redo.",
+      "Built with Swift and SwiftUI for Mac and iPad. No Electron, no browser tab. Instant launch, native performance, auto-save, full undo/redo.",
     accent: "var(--color-accent)",
   },
   {
     icon: "cloud",
     title: "iCloud Sync",
     description:
-      "Opt-in iCloud Drive sync keeps projects available across all your Macs. Last-writer-wins merge with tombstone-aware conflict resolution.",
+      "Opt-in iCloud Drive sync keeps projects available across your Macs and iPads. Last-writer-wins merge with tombstone-aware conflict resolution.",
     accent: "var(--color-mint)",
   },
   {
@@ -263,7 +266,7 @@ export const FEATURES: FeatureItem[] = [
     icon: "privacy",
     title: "Privacy-First",
     description:
-      "Auto-translate runs on-device through Apple's Translation framework. No API keys, no servers, no analytics — projects, fonts, and screenshots stay on your Mac.",
+      "Auto-translate runs on-device through Apple's Translation framework. No API keys, no servers, no analytics — projects, fonts, and screenshots stay on your device.",
     accent: "var(--color-warm-light)",
   },
   {

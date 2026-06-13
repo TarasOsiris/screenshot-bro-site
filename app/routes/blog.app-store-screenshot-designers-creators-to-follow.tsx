@@ -21,7 +21,7 @@ export default function BlogPost() {
           <ContentEn />
         </article>
 
-        <BlogCTA message="Turn inspiration into a reusable screenshot system: device frames, captions, locales, batch export, and App Store Connect upload from one Mac app." />
+        <BlogCTA message="Turn inspiration into a reusable screenshot system: device frames, captions, locales, batch export, and App Store Connect upload from one Mac and iPad app." />
         <RelatedPosts currentSlug={SLUG} />
       </div>
     </ContentLayout>

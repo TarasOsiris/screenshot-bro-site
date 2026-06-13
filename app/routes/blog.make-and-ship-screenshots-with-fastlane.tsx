@@ -376,17 +376,17 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
 function getCTAMessage(locale: LocaleCode): string {
   switch (locale) {
     case "es":
-      return "¿Quieres el mismo flujo de subida sin la pipeline de XCUITest? Diseña y envía capturas de la App Store desde una sola aplicación para Mac.";
+      return "¿Quieres el mismo flujo de subida sin la pipeline de XCUITest? Diseña y envía capturas de la App Store desde una sola aplicación para Mac y iPad.";
     case "zh":
-      return "想要无需 XCUITest 流水线的相同上传流程？只需一款 Mac 应用即可设计并交付 App Store 截图。";
+      return "想要无需 XCUITest 流水线的相同上传流程？只需一款 Mac 和 iPad 应用即可设计并交付 App Store 截图。";
     case "hi":
-      return "क्या आप XCUITest पाइपलाइन के बिना समान अपलोड फ्लो चाहते हैं? एक ही मैक ऐप से ऐप स्टोर स्क्रीनशॉट डिज़ाइन करें और भेजें।";
+      return "क्या आप XCUITest पाइपलाइन के बिना समान अपलोड फ्लो चाहते हैं? एक ही Mac और iPad ऐप से App Store screenshots डिज़ाइन करें और भेजें।";
     case "fr":
-      return "Vous voulez le même flux d'envoi sans le pipeline XCUITest ? Concevez et livrez vos captures App Store depuis une seule application Mac.";
+      return "Vous voulez le même flux d'envoi sans le pipeline XCUITest ? Concevez et livrez vos captures App Store depuis une seule application Mac et iPad.";
     case "ar":
-      return "هل تريد نفس تدفق الرفع بدون خط أنابيب XCUITest؟ صمم واشحن لقطات شاشة App Store من تطبيق Mac واحد.";
+      return "هل تريد نفس تدفق الرفع بدون خط أنابيب XCUITest؟ صمم واشحن لقطات شاشة App Store من تطبيق واحد على Mac و iPad.";
     default:
-      return "Want the same upload flow without the XCUITest pipeline? Design and ship App Store screenshots from one Mac app.";
+      return "Want the same upload flow without the XCUITest pipeline? Design and ship App Store screenshots from one Mac and iPad app.";
   }
 }
 
@@ -954,8 +954,8 @@ function ContentEn({ blocks }: { blocks: any }) {
           only behind a feature flag your test target cannot reach.
         </li>
         <li>
-          You are a solo dev who would rather design once in a Mac app and
-          click <strong>Upload</strong>. The Ruby toolchain plus XCUITest
+          You are a solo dev who would rather design once in a Mac or iPad app
+          and click <strong>Upload</strong>. The Ruby toolchain plus XCUITest
           plus Xcode-version pinning is real maintenance overhead.
         </li>
       </ul>
@@ -978,8 +978,8 @@ function ContentEn({ blocks }: { blocks: any }) {
         files above — and once they are written, they barely change.
       </p>
       <p>
-        Wondering whether to set this up at all, or to use a Mac app
-        for the same job? See{" "}
+        Wondering whether to set this up at all, or to use a Mac/iPad app for
+        the same job? See{" "}
         <a href="/vs/fastlane-snapshot">
           Fastlane snapshot vs Screenshot Bro
         </a>{" "}
@@ -1681,7 +1681,7 @@ function ContentZh({ blocks }: { blocks: any }) {
           您需要发布某项在应用中尚未实现、或仅在测试目标无法触及的 Feature Flag 之后的<a href="/blog/screenshots-that-convert">营销级精美截图</a>。
         </li>
         <li>
-          您是一名独立开发者，宁愿在 Mac 应用中设计一次并直接点击 <strong>上传</strong>。维护 Ruby 工具链、XCUITest 以及锁定 Xcode 版本带来的实际维护成本是相当高的。
+          您是一名独立开发者，宁愿在 Mac 或 iPad 应用中设计一次并直接点击 <strong>上传</strong>。维护 Ruby 工具链、XCUITest 以及锁定 Xcode 版本带来的实际维护成本是相当高的。
         </li>
       </ul>
       <p>

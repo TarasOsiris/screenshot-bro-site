@@ -22,7 +22,7 @@ const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
 
 const TITLE = `Help & Documentation — ${SITE_NAME}`;
 const DESCRIPTION =
-  "Complete guide to Screenshot Bro for macOS — projects, rows, templates, device frames, backgrounds, locales, exporting, and keyboard shortcuts.";
+  "Complete guide to Screenshot Bro for Mac and iPad — projects, rows, templates, device frames, backgrounds, locales, exporting, and keyboard shortcuts.";
 const PAGE_URL = `${SITE_URL}/docs/help`;
 
 export const meta: Route.MetaFunction = ({ matches }) =>
@@ -92,7 +92,7 @@ const SECTIONS: Section[] = [
     id: "welcome",
     navTitle: "Welcome",
     title: "Welcome to Screenshot Bro",
-    subtitle: "Beautiful App Store and Google Play screenshots, made on your Mac.",
+    subtitle: "Beautiful App Store and Google Play screenshots, made on Mac and iPad.",
     image: {
       src: "/docs/help/editor-overview.webp",
       alt: "Screenshot Bro editor with two rows of templates and the right-side inspector",
@@ -127,7 +127,7 @@ const SECTIONS: Section[] = [
       caption: "**File ▸ New Project** — set a name, choose Blank or Template, and pre-configure rows with their device categories.",
     },
     blocks: [
-      { kind: "p", text: "A project is a self-contained collection of rows, templates, shapes, locales, and image resources. Projects are stored on disk under your user Application Support folder and can be optionally synced via iCloud Drive." },
+      { kind: "p", text: "A project is a self-contained collection of rows, templates, shapes, locales, and image resources. Projects are stored locally in the app container and can be optionally synced via iCloud Drive across Mac and iPad." },
       { kind: "h", text: "Creating a project" },
       { kind: "li", text: "**File ▸ New Project…** (⌘N) opens the New Project window." },
       { kind: "li", text: "Choose **Blank** to set up rows and screenshot sizes manually, or **From Template** to start with a pre-designed layout." },
@@ -139,7 +139,7 @@ const SECTIONS: Section[] = [
       { kind: "h", text: "Renaming, duplicating, deleting" },
       { kind: "li", text: "Right-click a project in the picker for rename, duplicate, and delete actions." },
       { kind: "li", text: "Deleted projects are kept as **tombstones** for 30 days so iCloud sync can resolve conflicts cleanly. After 30 days the tombstone (and all images) are purged." },
-      { kind: "h", text: "Where projects live on disk" },
+      { kind: "h", text: "Where projects live on Mac" },
       { kind: "li", text: "`~/Library/Application Support/screenshot/projects.json` — index of all projects." },
       { kind: "li", text: "`~/Library/Application Support/screenshot/projects/<uuid>/project.json` — project data." },
       { kind: "li", text: "`~/Library/Application Support/screenshot/projects/<uuid>/resources/` — imported images, screenshots, and SVGs." },
@@ -464,21 +464,21 @@ const SECTIONS: Section[] = [
     id: "icloud",
     navTitle: "iCloud Sync",
     title: "iCloud Sync",
-    subtitle: "Edit on one Mac, continue on another.",
+    subtitle: "Edit on one device, continue on another.",
     blocks: [
-      { kind: "p", text: "iCloud sync keeps your project library in iCloud Drive (`iCloud.xyz.tleskiv.screenshot`). Changes made on one Mac propagate to others signed into the same iCloud account." },
+      { kind: "p", text: "iCloud sync keeps your project library in iCloud Drive (`iCloud.xyz.tleskiv.screenshot`). Changes made on one Mac or iPad propagate to other devices signed into the same iCloud account." },
       { kind: "h", text: "Enabling" },
       { kind: "li", text: "**Settings ▸ General ▸ iCloud Sync** — toggle on." },
       { kind: "li", text: "First-time enable migrates your local project library into iCloud. A progress indicator shows the migration." },
       { kind: "li", text: "Disabling does **not** delete your iCloud data — your projects remain in the iCloud container until you delete them manually." },
       { kind: "h", text: "How conflicts are resolved" },
       { kind: "li", text: "Each project is merged using a **last-writer-wins** strategy at the field level. The most recently edited shape, row, or background wins." },
-      { kind: "li", text: "Deletions are tracked as **tombstones** for 30 days, so a delete on Mac A correctly propagates to Mac B even if the device is offline at the moment of deletion." },
+      { kind: "li", text: "Deletions are tracked as **tombstones** for 30 days, so a delete on one device correctly propagates to another even if it is offline at the moment of deletion." },
       { kind: "li", text: "File coordination (`NSFileCoordinator`) prevents corruption from concurrent reads/writes." },
       { kind: "h", text: "Knowing what's syncing" },
       { kind: "li", text: "The toolbar shows an iCloud status icon when an upload or download is in progress." },
       { kind: "li", text: "Behind the scenes, an `NSMetadataQuery` watches each project for upload/download progress." },
-      { kind: "tip", text: "If sync seems stuck, open Finder ▸ iCloud Drive ▸ Screenshot Bro and check whether files are still uploading. Toggling iCloud off and on again forces a re-scan." },
+      { kind: "tip", text: "If sync seems stuck, check iCloud Drive for Screenshot Bro files on Mac or the Files app on iPad. Toggling iCloud off and on again forces a re-scan." },
     ],
   },
   {
@@ -531,8 +531,8 @@ const SECTIONS: Section[] = [
       { kind: "li", text: "Future Pro-only features as they ship." },
       { kind: "h", text: "Buying or restoring" },
       { kind: "li", text: "**Settings ▸ Purchase** lists the available plans. RevenueCat handles the transaction." },
-      { kind: "li", text: "**Restore Purchases** brings back an existing subscription on a new Mac." },
-      { kind: "li", text: "Subscriptions are managed through your Apple ID; cancellations happen via System Settings ▸ Apple ID ▸ Subscriptions." },
+      { kind: "li", text: "**Restore Purchases** brings back an existing subscription on a new Mac or iPad." },
+      { kind: "li", text: "Subscriptions are managed through your Apple Account; cancellations happen via System Settings on Mac or Settings on iPad." },
       { kind: "tip", text: "Pro paywall messages adapt to context — the prompt you see when adding a 4th row is different from the one you see when adding a 6th template, so you always know exactly which limit you're hitting." },
     ],
   },
@@ -624,7 +624,7 @@ const SECTIONS: Section[] = [
       { kind: "li", text: `Email: [${SUPPORT_EMAIL}](mailto:${SUPPORT_EMAIL})` },
       { kind: "h", text: "When reporting a bug" },
       { kind: "p", text: "To help us reproduce, please include:" },
-      { kind: "li", text: "macOS version (Apple menu ▸ About This Mac)." },
+      { kind: "li", text: "macOS or iPadOS version (About This Mac on Mac, or Settings ▸ General ▸ About on iPad)." },
       { kind: "li", text: "Screenshot Bro version (Apple menu ▸ About Screenshot Bro)." },
       { kind: "li", text: "Steps to reproduce, ideally with a screen recording." },
       { kind: "li", text: "If the issue affects a project, **Settings ▸ Export ▸ Back Up Projects** and attach the resulting backup so we can reproduce on the exact data." },

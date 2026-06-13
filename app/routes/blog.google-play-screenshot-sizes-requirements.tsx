@@ -47,27 +47,27 @@ export default function BlogPost() {
 function getCTAMessage(locale: LocaleCode): string {
   switch (locale) {
     case "es":
-      return "Crea capturas para Google Play y App Store desde un único flujo de trabalho nativo de Mac.";
+      return "Crea capturas para Google Play y App Store desde un único flujo nativo para Mac y iPad.";
     case "zh":
-      return "在同一个原生 Mac 工作流中创建 Google Play 和 App Store 屏幕截图。";
+      return "在同一个原生 Mac 和 iPad 工作流中创建 Google Play 与 App Store 屏幕截图。";
     case "hi":
-      return "एक नेटिव Mac वर्कफ़्लो से Google Play और App Store स्क्रीनशॉट बनाएं।";
+      return "एक नेटिव Mac और iPad वर्कफ़्लो से Google Play और App Store स्क्रीनशॉट बनाएं।";
     case "fr":
-      return "Générez vos captures Google Play et App Store depuis un unique flux de travail Mac natif.";
+      return "Générez vos captures Google Play et App Store depuis un unique flux de travail natif pour Mac et iPad.";
     case "ar":
-      return "صمّم لقطات شاشة Google Play و App Store من سير عمل Mac أصلي واحد.";
+      return "صمّم لقطات شاشة Google Play و App Store من سير عمل أصلي واحد على Mac و iPad.";
     case "de":
-      return "Erstellen Sie Google Play- und App Store-Screenshots in einem einzigen nativen Mac-Workflow.";
+      return "Erstellen Sie Google Play- und App Store-Screenshots in einem einzigen nativen Workflow für Mac und iPad.";
     case "ja":
-      return "1つのネイティブMacワークフローからGoogle PlayとApp Storeのスクリーンショットを作成します。";
+      return "1つのネイティブMac・iPadワークフローからGoogle PlayとApp Storeのスクリーンショットを作成します。";
     case "pt":
-      return "Crie capturas de tela do Google Play e da App Store a partir de um único fluxo de trabalho nativo do Mac.";
+      return "Crie capturas de tela do Google Play e da App Store a partir de um único fluxo de trabalho nativo para Mac e iPad.";
     case "it":
-      return "Crea screenshot per Google Play e App Store da un unico flusso di lavoro nativo su Mac.";
+      return "Crea screenshot per Google Play e App Store da un unico flusso di lavoro nativo su Mac e iPad.";
     case "ko":
-      return "단 하나의 네이티브 Mac 워크플로우로 Google Play 및 App Store 스크린샷을 만드세요.";
+      return "단 하나의 네이티브 Mac 및 iPad 워크플로우로 Google Play 및 App Store 스크린샷을 만드세요.";
     default:
-      return "Create Google Play and App Store screenshots from one native Mac workflow.";
+      return "Create Google Play and App Store screenshots from one native Mac and iPad workflow.";
   }
 }
 
@@ -274,9 +274,9 @@ function ContentEn() {
       <h2>How Screenshot Bro Helps</h2>
       <p>
         <a href="/">Screenshot Bro</a> keeps App Store and Google Play rows
-        in one native Mac project. You can design phone, tablet, and Android
-        rows together, localize text, batch export organized folders, and
-        avoid rebuilding screenshot files by hand every release.
+        in one native Mac and iPad project. You can design phone, tablet, and
+        Android rows together, localize text, batch export organized folders,
+        and avoid rebuilding screenshot files by hand every release.
       </p>
     </>
   );
@@ -401,7 +401,7 @@ function ContentEs() {
 
       <h2>Cómo ayuda Screenshot Bro</h2>
       <p>
-        <a href="/">Screenshot Bro</a> mantiene las filas de App Store y Google Play en un único proyecto nativo de Mac. Puedes diseñar filas para teléfonos, tabletas y Android juntos, localizar el texto, exportar carpetas organizadas por lotes y evitar tener que volver a crear los archivos de captura a mano en cada lanzamiento.
+        <a href="/">Screenshot Bro</a> mantiene las filas de App Store y Google Play en un único proyecto nativo de Mac e iPad. Puedes diseñar filas para teléfonos, tabletas y Android juntos, localizar el texto, exportar carpetas organizadas por lotes y evitar tener que volver a crear los archivos de captura a mano en cada lanzamiento.
       </p>
     </>
   );

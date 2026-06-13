@@ -2,7 +2,12 @@ import type { Route } from "./+types/vs.fastlane-snapshot";
 import { ContentLayout } from "~/components/ContentLayout";
 import { BlogCTA } from "~/components/BlogCTA";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
-import { SITE_NAME, SITE_URL, MINIMUM_MACOS_VERSION } from "~/config/site";
+import {
+  SITE_NAME,
+  SITE_URL,
+  MINIMUM_IPADOS_VERSION,
+  MINIMUM_MACOS_VERSION,
+} from "~/config/site";
 
 const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
   { name: "Comparisons", path: "/vs/fastlane-snapshot" },
@@ -144,16 +149,16 @@ export default function FastlaneSnapshotComparison() {
 
         <h3>{SITE_NAME}</h3>
         <p>
-          {SITE_NAME} is a native macOS app (Swift + SwiftUI, macOS{" "}
-          {MINIMUM_MACOS_VERSION}+). It does not capture screenshots from a
-          running app — you bring your own raw images, by drag-and-drop or
-          one-click capture from the iOS Simulator, and the app handles
-          the design and ship side: device frames, multi-shape layouts,
-          gradients, custom fonts, on-device auto-translation across 30
-          languages, and direct upload to App Store Connect via the API.
-          Free tier is unlimited in time (1 project, 3 rows, 5 templates
-          per row); Pro lifts those limits and adds App Store Connect
-          upload and iCloud sync.
+          {SITE_NAME} is a native Mac and iPad app (Swift + SwiftUI, macOS{" "}
+          {MINIMUM_MACOS_VERSION}+ or iPadOS {MINIMUM_IPADOS_VERSION}+). It
+          does not capture screenshots from a running app — you bring your own
+          raw images, by drag-and-drop or one-click capture from the iOS
+          Simulator on Mac, and the app handles the design and ship side:
+          device frames, multi-shape layouts, gradients, custom fonts,
+          on-device auto-translation across 30 languages, and direct upload to
+          App Store Connect via the API. Free tier is unlimited in time (1
+          project, 3 rows, 5 templates per row); Pro lifts those limits and
+          adds App Store Connect upload and iCloud sync.
         </p>
 
         <h2>Side-by-side</h2>
@@ -175,7 +180,7 @@ export default function FastlaneSnapshotComparison() {
             <tr>
               <td>Distribution</td>
               <td>Ruby gem via bundler</td>
-              <td>Mac App Store</td>
+              <td>App Store</td>
             </tr>
             <tr>
               <td>Primary job</td>
@@ -263,7 +268,7 @@ export default function FastlaneSnapshotComparison() {
                 First-class — designed for headless CI runs
               </td>
               <td>
-                Not a CI tool. Designed for interactive use on a Mac
+                Not a CI tool. Designed for interactive use on Mac or iPad
               </td>
             </tr>
             <tr>
@@ -285,13 +290,13 @@ export default function FastlaneSnapshotComparison() {
               </td>
             </tr>
             <tr>
-              <td>macOS requirement</td>
+              <td>Platform requirement</td>
               <td>
                 Mac with Xcode for capture; deliver runs anywhere Ruby does
               </td>
               <td>
-                Native macOS {MINIMUM_MACOS_VERSION}+ app (Apple Silicon or
-                Intel)
+                Native macOS {MINIMUM_MACOS_VERSION}+ or iPadOS{" "}
+                {MINIMUM_IPADOS_VERSION}+ app
               </td>
             </tr>
           </tbody>

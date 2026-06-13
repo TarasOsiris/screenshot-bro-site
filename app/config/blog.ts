@@ -17,6 +17,26 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "app-store-screenshot-localization-guide",
+    title: "App Store Screenshot Localization Guide (2026)",
+    description:
+      "Learn how to localize App Store screenshots for more markets: languages, copy, RTL layouts, device sizes, App Store Connect upload, and repeatable exports.",
+    date: "2026-06-13",
+    readTime: "10 min read",
+    category: "Guide",
+    localized: false,
+    keywords: [
+      "App Store screenshot localization",
+      "localize App Store screenshots",
+      "localized app screenshots",
+      "App Store localization",
+      "ASO localization",
+      "app screenshot localization",
+      "localized screenshots App Store Connect",
+      "app store screenshot translation",
+    ],
+  },
+  {
     slug: "popular-figma-templates-app-store-screenshots-device-mockups",
     title: "Popular Figma Templates for App Store Screenshots and Device Mockups",
     description:
@@ -157,7 +177,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "upload-screenshots-to-app-store-connect",
     title: "How to Upload Screenshots to App Store Connect (2026 Guide)",
     description:
-      "Four ways to upload App Store screenshots: the web uploader, Transporter, fastlane, the App Store Connect API, and a Mac app workflow.",
+      "Four ways to upload App Store screenshots: the web uploader, Transporter, fastlane, the App Store Connect API, and a Mac/iPad app workflow.",
     date: "2026-04-20",
     readTime: "10 min read",
     category: "Guide",
