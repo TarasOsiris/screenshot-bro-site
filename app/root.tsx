@@ -246,6 +246,12 @@ const isLocalizedPath = (pathname: string): boolean => {
   ) {
     return true;
   }
+  const docsIndex =
+    segments[0] === "docs" ? 0 : isLocaleCode(segments[0]) && segments[1] === "docs" ? 1 : -1;
+  if (docsIndex !== -1) {
+    const docsPath = segments.slice(docsIndex + 1).join("/");
+    return docsPath === "" || docsPath === "help" || docsPath === "project-schema";
+  }
   if (
     (segments.length === 2 && segments[0] === "blog") ||
     (segments.length === 3 && isLocaleCode(segments[0]) && segments[1] === "blog")

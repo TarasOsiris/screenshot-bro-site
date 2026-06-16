@@ -12,9 +12,22 @@ import {
   X_PROFILE_URL,
   type SecondaryLink,
 } from "~/config/site";
-import { getHomeCopy, type HomeCopy } from "~/config/localization";
+import {
+  getHomeCopy,
+  localizedPath,
+  type HomeCopy,
+  type LocaleCode,
+} from "~/config/localization";
 
 const DEFAULT_COPY = getHomeCopy("en");
+
+function getSecondaryLinkHref(locale: LocaleCode, link: SecondaryLink): string {
+  if (link.external) return link.href;
+  if (link.uiKey === "blog" || link.uiKey === "docs") {
+    return localizedPath(locale, link.href);
+  }
+  return link.href;
+}
 
 export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
   const year = new Date().getFullYear();
@@ -131,7 +144,7 @@ function FooterColumn({
         {links.map((link) => (
           <li key={link.uiKey}>
             <a
-              href={link.href}
+              href={getSecondaryLinkHref(copy.locale.code, link)}
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noopener noreferrer" : undefined}
               className="text-sm text-white/65 hover:text-white/95 transition-colors"
@@ -166,4 +179,3 @@ function SocialButton({
     </a>
   );
 }
-

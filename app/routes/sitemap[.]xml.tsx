@@ -49,6 +49,28 @@ function buildSitemap(): string {
   const termsDate = parseLongDate(TERMS_EFFECTIVE_DATE);
   const privacyDate = parseLongDate(PRIVACY_EFFECTIVE_DATE);
   const homeLastmod = latestBlogDate > latestChangelogDate ? latestBlogDate : latestChangelogDate;
+  const docsPaths = [
+    { path: "/docs/help", priority: "0.7" },
+    { path: "/docs/project-schema", priority: "0.5" },
+  ];
+  const docsEntries: SitemapEntry[] = docsPaths.flatMap(({ path, priority }) => [
+    {
+      loc: path,
+      changefreq: "monthly",
+      priority,
+      lastmod: latestChangelogDate,
+      alternates: localeAlternates(path),
+    },
+    ...LOCALES.filter((locale) => locale.code !== DEFAULT_LOCALE).map(
+      (locale): SitemapEntry => ({
+        loc: localizedPath(locale.code, path),
+        changefreq: "monthly",
+        priority,
+        lastmod: latestChangelogDate,
+        alternates: localeAlternates(path),
+      }),
+    ),
+  ]);
 
   const staticEntries: SitemapEntry[] = [
     {
@@ -87,8 +109,7 @@ function buildSitemap(): string {
     { loc: "/privacy", changefreq: "yearly", priority: "0.3", lastmod: privacyDate },
     { loc: "/terms", changefreq: "yearly", priority: "0.3", lastmod: termsDate },
     { loc: "/support", changefreq: "yearly", priority: "0.4", lastmod: homeLastmod },
-    { loc: "/docs/help", changefreq: "monthly", priority: "0.7", lastmod: latestChangelogDate },
-    { loc: "/docs/project-schema", changefreq: "monthly", priority: "0.5", lastmod: latestChangelogDate },
+    ...docsEntries,
     { loc: "/vs/fastlane-snapshot", changefreq: "monthly", priority: "0.7", lastmod: latestBlogDate },
   ];
 

@@ -1,6 +1,8 @@
 import type { Route } from "./+types/docs.project-schema";
+import { data, useLoaderData } from "react-router";
 import { ContentLayout } from "~/components/ContentLayout";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
+import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 
 const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
@@ -11,23 +13,40 @@ const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
 const TITLE = `Project File Schema — ${SITE_NAME}`;
 const DESCRIPTION =
   "JSON Schema for the Screenshot Bro project file format. Use it to generate, validate, or transform project.json files with AI assistants, scripts, or editor tooling.";
-const PAGE_URL = `${SITE_URL}/docs/project-schema`;
 const SCHEMA_URL = `${SITE_URL}/project-schema.json`;
 
-export const meta: Route.MetaFunction = ({ matches }) =>
-  mergeMeta(matches, [
+function getRouteLocale(locale?: string): LocaleCode {
+  return isLocaleCode(locale) ? locale : "en";
+}
+
+export async function loader({ params }: Route.LoaderArgs) {
+  const locale = params.locale;
+  if (locale && !isLocaleCode(locale)) {
+    throw data("Not Found", { status: 404 });
+  }
+  return { locale: getRouteLocale(locale) };
+}
+
+export const meta: Route.MetaFunction = ({ matches, params }) => {
+  const locale = getRouteLocale(params.locale);
+  const pageUrl = `${SITE_URL}${localizedPath(locale, "/docs/project-schema")}`;
+
+  return mergeMeta(matches, [
     { title: TITLE },
     { name: "description", content: DESCRIPTION },
     { property: "og:title", content: TITLE },
     { property: "og:description", content: DESCRIPTION },
-    { property: "og:url", content: PAGE_URL },
+    { property: "og:url", content: pageUrl },
     { name: "twitter:title", content: TITLE },
     { name: "twitter:description", content: DESCRIPTION },
   ]);
+};
 
 export default function ProjectSchema() {
+  const { locale } = useLoaderData<typeof loader>();
+
   return (
-    <ContentLayout>
+    <ContentLayout locale={locale}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: BREADCRUMB_JSON_LD }}

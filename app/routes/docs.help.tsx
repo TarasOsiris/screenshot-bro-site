@@ -1,5 +1,6 @@
 import type { ReactElement } from "react";
 import type { Route } from "./+types/docs.help";
+import { data, useLoaderData } from "react-router";
 import { ContentLayout } from "~/components/ContentLayout";
 import {
   IconCloud,
@@ -13,6 +14,7 @@ import {
   IconUpload,
 } from "~/components/home/icons";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
+import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 
 const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
@@ -23,18 +25,33 @@ const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
 const TITLE = `Help & Documentation — ${SITE_NAME}`;
 const DESCRIPTION =
   "Complete guide to Screenshot Bro for Mac and iPad — projects, rows, templates, device frames, backgrounds, locales, exporting, and keyboard shortcuts.";
-const PAGE_URL = `${SITE_URL}/docs/help`;
 
-export const meta: Route.MetaFunction = ({ matches }) =>
-  mergeMeta(matches, [
+function getRouteLocale(locale?: string): LocaleCode {
+  return isLocaleCode(locale) ? locale : "en";
+}
+
+export async function loader({ params }: Route.LoaderArgs) {
+  const locale = params.locale;
+  if (locale && !isLocaleCode(locale)) {
+    throw data("Not Found", { status: 404 });
+  }
+  return { locale: getRouteLocale(locale) };
+}
+
+export const meta: Route.MetaFunction = ({ matches, params }) => {
+  const locale = getRouteLocale(params.locale);
+  const pageUrl = `${SITE_URL}${localizedPath(locale, "/docs/help")}`;
+
+  return mergeMeta(matches, [
     { title: TITLE },
     { name: "description", content: DESCRIPTION },
     { property: "og:title", content: TITLE },
     { property: "og:description", content: DESCRIPTION },
-    { property: "og:url", content: PAGE_URL },
+    { property: "og:url", content: pageUrl },
     { name: "twitter:title", content: TITLE },
     { name: "twitter:description", content: DESCRIPTION },
   ]);
+};
 
 const SUPPORT_EMAIL = "leskiv.taras@gmail.com";
 
@@ -740,7 +757,7 @@ const NAV_ENTRIES: { id: SectionId | "project-schema"; navTitle: string; href?: 
 
 const MD_REGEX = /\*\*([^*]+)\*\*|`([^`]+)`|\[([^\]]+)\]\(([^)]+)\)/g;
 
-function MD({ text }: { text: string }) {
+function MD({ text, locale }: { text: string; locale: LocaleCode }) {
   const parts: React.ReactNode[] = [];
   let lastIdx = 0;
   let key = 0;
@@ -756,10 +773,11 @@ function MD({ text }: { text: string }) {
     } else if (match[3] !== undefined && match[4] !== undefined) {
       const href = match[4];
       const external = /^https?:\/\//.test(href);
+      const localizedHref = href.startsWith("/") ? localizedPath(locale, href) : href;
       parts.push(
         <a
           key={key++}
-          href={href}
+          href={localizedHref}
           {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         >
           {match[3]}
@@ -785,7 +803,7 @@ function Tip({ children }: { children: React.ReactNode }) {
   );
 }
 
-function renderBlocks(blocks: Block[]): React.ReactNode[] {
+function renderBlocks(blocks: Block[], locale: LocaleCode): React.ReactNode[] {
   const out: React.ReactNode[] = [];
   let i = 0;
   let key = 0;
@@ -805,7 +823,7 @@ function renderBlocks(blocks: Block[]): React.ReactNode[] {
         <ListTag key={key++}>
           {items.map((item, j) => (
             <li key={j}>
-              <MD text={item.text} />
+              <MD text={item.text} locale={locale} />
             </li>
           ))}
         </ListTag>,
@@ -813,21 +831,21 @@ function renderBlocks(blocks: Block[]): React.ReactNode[] {
     } else if (b.kind === "p") {
       out.push(
         <p key={key++}>
-          <MD text={b.text} />
+          <MD text={b.text} locale={locale} />
         </p>,
       );
       i++;
     } else if (b.kind === "h") {
       out.push(
         <h3 key={key++}>
-          <MD text={b.text} />
+          <MD text={b.text} locale={locale} />
         </h3>,
       );
       i++;
     } else if (b.kind === "tip") {
       out.push(
         <Tip key={key++}>
-          <MD text={b.text} />
+          <MD text={b.text} locale={locale} />
         </Tip>,
       );
       i++;
@@ -855,7 +873,7 @@ function renderBlocks(blocks: Block[]): React.ReactNode[] {
   return out;
 }
 
-function SectionView({ section }: { section: Section }) {
+function SectionView({ section, locale }: { section: Section; locale: LocaleCode }) {
   const image = section.image;
   const imageSrc = image && (image.src ?? `/docs/help/${section.id}.webp`);
   return (
@@ -877,19 +895,21 @@ function SectionView({ section }: { section: Section }) {
           />
           {image.caption && (
             <figcaption className="mt-2 text-center text-xs text-white/55 italic">
-              <MD text={image.caption} />
+              <MD text={image.caption} locale={locale} />
             </figcaption>
           )}
         </figure>
       )}
-      {renderBlocks(section.blocks)}
+      {renderBlocks(section.blocks, locale)}
     </section>
   );
 }
 
 export default function Help() {
+  const { locale } = useLoaderData<typeof loader>();
+
   return (
-    <ContentLayout>
+    <ContentLayout locale={locale}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: BREADCRUMB_JSON_LD }}
@@ -912,7 +932,7 @@ export default function Help() {
               {NAV_ENTRIES.map((entry) => (
                 <a
                   key={entry.id}
-                  href={entry.href ?? `#${entry.id}`}
+                  href={entry.href ? localizedPath(locale, entry.href) : `#${entry.id}`}
                   className="flex items-center gap-2.5 text-sm text-white/60 hover:text-white/95 transition-colors"
                 >
                   <span className="text-white/40 shrink-0">
@@ -926,7 +946,7 @@ export default function Help() {
 
           <article className="prose-policy max-w-3xl">
             {SECTIONS.map((section) => (
-              <SectionView key={section.id} section={section} />
+              <SectionView key={section.id} section={section} locale={locale} />
             ))}
           </article>
         </div>

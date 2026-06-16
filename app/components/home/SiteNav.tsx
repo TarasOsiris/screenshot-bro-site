@@ -28,6 +28,14 @@ type SiteNavProps = {
 
 const DEFAULT_COPY = getHomeCopy("en");
 
+function getSecondaryLinkHref(locale: LocaleCode, link: SecondaryLink): string {
+  if (link.external) return link.href;
+  if (link.uiKey === "blog" || link.uiKey === "docs") {
+    return localizedPath(locale, link.href);
+  }
+  return link.href;
+}
+
 export function SiteNav({
   copy = DEFAULT_COPY,
   href = APP_STORE_URL,
@@ -86,7 +94,7 @@ export function SiteNav({
           {PRODUCT_LINKS.map((link) => (
             <a
               key={link.uiKey}
-              href={link.href}
+              href={getSecondaryLinkHref(copy.locale.code, link)}
               className="text-sm text-white/55 hover:text-white/90 transition-colors"
             >
               {copy.ui[link.uiKey]}
@@ -118,7 +126,7 @@ export function SiteNav({
               >
                 {LOCALES.map((locale) => (
                   <option key={locale.code} value={locale.code}>
-                    {locale.nativeLabel}
+                    {locale.flag} {locale.nativeLabel}
                   </option>
                 ))}
               </select>
@@ -215,7 +223,7 @@ function MobileMenu({
           {PRODUCT_LINKS.map((link) => (
             <MobileLink
               key={link.uiKey}
-              href={link.href}
+              href={getSecondaryLinkHref(copy.locale.code, link)}
               onClick={onClose}
               label={copy.ui[link.uiKey]}
             />
@@ -262,7 +270,7 @@ function MobileMenu({
             >
               {LOCALES.map((locale) => (
                 <option key={locale.code} value={locale.code}>
-                  {locale.nativeLabel}
+                  {locale.flag} {locale.nativeLabel}
                 </option>
               ))}
             </select>
