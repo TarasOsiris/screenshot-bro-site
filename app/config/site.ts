@@ -450,6 +450,11 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
     icon: "/showcase/dibsify.jpg",
     url: "https://apps.apple.com/us/app/dibsify-wishlist-rsvp-event/id6769796676",
   },
+  {
+    name: "KidDo Routine",
+    icon: "/showcase/kiddo-routine.jpg",
+    url: "https://apps.apple.com/ua/app/kiddo-routine/id6777069731",
+  },
 ];
 
 export type AppScreenshot = {
