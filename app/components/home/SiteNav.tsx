@@ -108,28 +108,36 @@ export function SiteNav({
               <label className="sr-only" htmlFor="locale-switcher">
                 {copy.ui.language}
               </label>
-              <select
-                id="locale-switcher"
-                aria-label={copy.ui.language}
-                value={copy.locale.code}
-                onChange={(event) => {
-                  const targetLocale = event.currentTarget.value as LocaleCode;
-                  let currentPath = window.location.pathname;
-                  const segments = currentPath.split("/").filter(Boolean);
-                  if (segments.length > 0 && LOCALES.some(l => l.code === segments[0] && l.code !== "en")) {
-                    segments.shift();
-                  }
-                  const cleanPath = "/" + segments.join("/");
-                  window.location.href = localizedPath(targetLocale, cleanPath);
-                }}
-                className="hidden sm:block h-9 rounded-xl border border-white/10 bg-white/[0.06] px-2 text-xs font-medium text-white/70 outline-none transition-all hover:border-white/20 hover:bg-white/10 focus:border-accent/60"
-              >
-                {LOCALES.map((locale) => (
-                  <option key={locale.code} value={locale.code}>
-                    {locale.flag} {locale.nativeLabel}
-                  </option>
-                ))}
-              </select>
+              <div className="relative hidden sm:block h-9 w-11 rounded-xl border border-white/10 bg-white/[0.06] transition-all hover:border-white/20 hover:bg-white/10 focus-within:border-accent/60">
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 flex items-center justify-center text-base"
+                >
+                  {copy.locale.flag}
+                </span>
+                <select
+                  id="locale-switcher"
+                  aria-label={copy.ui.language}
+                  value={copy.locale.code}
+                  onChange={(event) => {
+                    const targetLocale = event.currentTarget.value as LocaleCode;
+                    let currentPath = window.location.pathname;
+                    const segments = currentPath.split("/").filter(Boolean);
+                    if (segments.length > 0 && LOCALES.some(l => l.code === segments[0] && l.code !== "en")) {
+                      segments.shift();
+                    }
+                    const cleanPath = "/" + segments.join("/");
+                    window.location.href = localizedPath(targetLocale, cleanPath);
+                  }}
+                  className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+                >
+                  {LOCALES.map((locale) => (
+                    <option key={locale.code} value={locale.code}>
+                      {locale.flag} {locale.nativeLabel}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </>
           ) : null}
 
