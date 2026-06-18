@@ -17,6 +17,60 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "applaunchpad-alternative",
+    title: "AppLaunchpad Alternative: A Native App Store Screenshot App",
+    description:
+      "Looking for an AppLaunchpad alternative? How Screenshot Bro compares as a native Mac and iPad app with device frames, localization, and direct App Store Connect upload.",
+    date: "2026-06-18",
+    readTime: "6 min read",
+    category: "Guide",
+    localized: false,
+    keywords: [
+      "applaunchpad alternative",
+      "applaunchpad alternatives",
+      "app store screenshot generator alternative",
+      "applaunchpad vs",
+      "free applaunchpad alternative",
+      "native screenshot generator",
+    ],
+  },
+  {
+    slug: "previewed-alternative",
+    title: "Previewed Alternative: Store-Ready App Screenshots in Every Size",
+    description:
+      "Looking for a Previewed alternative? How Screenshot Bro compares for store-ready screenshots at exact sizes, deep localization, and direct App Store Connect upload.",
+    date: "2026-06-18",
+    readTime: "6 min read",
+    category: "Guide",
+    localized: false,
+    keywords: [
+      "previewed alternative",
+      "previewed app alternative",
+      "previewed.app alternative",
+      "app mockup tool alternative",
+      "app screenshot generator alternative",
+      "3d mockup alternative",
+    ],
+  },
+  {
+    slug: "shotbot-alternative",
+    title: "Shotbot Alternative: From Framing to Full Screenshot Design",
+    description:
+      "Looking for a Shotbot alternative? How Screenshot Bro compares for designing full localized App Store screenshot sets, not just framing individual screenshots.",
+    date: "2026-06-18",
+    readTime: "6 min read",
+    category: "Guide",
+    localized: false,
+    keywords: [
+      "shotbot alternative",
+      "shotbot alternatives",
+      "screenshot framing app alternative",
+      "shotbot vs",
+      "app screenshot designer",
+      "frame screenshots alternative",
+    ],
+  },
+  {
     slug: "publish-app-on-google-play",
     title: "How to Publish an App on Google Play: Step-by-Step (2026)",
     description:
