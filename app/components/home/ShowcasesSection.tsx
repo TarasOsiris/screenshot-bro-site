@@ -52,7 +52,7 @@ function FeatureShowcaseBlock({
           </div>
         </div>
 
-        <div>
+        <div className="min-w-0">
           {isVideo ? (
             <video
               ref={videoRef as React.RefObject<HTMLVideoElement>}
@@ -60,14 +60,18 @@ function FeatureShowcaseBlock({
               muted
               playsInline
               preload="none"
-              className="showcase-media w-full h-full block"
+              width={showcase.mediaWidth}
+              height={showcase.mediaHeight}
+              className="showcase-media w-full h-auto lg:h-full block"
               aria-label={showcase.mediaAlt}
             />
           ) : (
             <img
               src={showcase.media}
               alt={showcase.mediaAlt}
-              className="showcase-media w-full h-full block"
+              width={showcase.mediaWidth}
+              height={showcase.mediaHeight}
+              className="showcase-media w-full h-auto lg:h-full block"
               loading="lazy"
               decoding="async"
             />

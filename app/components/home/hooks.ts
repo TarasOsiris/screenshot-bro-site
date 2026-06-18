@@ -73,15 +73,24 @@ export function useLazyLoopVideo(src: string, delayMs = 2000, rootMargin = "300p
     };
     el.addEventListener("ended", onEnded);
 
+    // Assigning `src` after mount does not re-run the browser's autoplay
+    // algorithm, so mobile Safari/Chrome leave the video paused. Kick off
+    // playback explicitly once a source is set.
+    const start = () => {
+      if (el.src) return;
+      el.src = src;
+      void el.play().catch(() => {});
+    };
+
     let io: IntersectionObserver | null = null;
     if (typeof IntersectionObserver === "undefined") {
-      el.src = src;
+      start();
     } else {
       io = new IntersectionObserver(
         (entries) => {
           for (const entry of entries) {
             if (entry.isIntersecting) {
-              if (!el.src) el.src = src;
+              start();
               io?.disconnect();
               break;
             }
