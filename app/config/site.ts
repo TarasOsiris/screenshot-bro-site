@@ -308,6 +308,8 @@ export type FeatureShowcase = {
   description: string;
   media: string; // path to gif/video/image in public/
   mediaAlt: string;
+  mediaWidth: number; // intrinsic media width, reserves aspect-ratio space
+  mediaHeight: number; // intrinsic media height
 };
 
 export const FEATURE_SHOWCASES: FeatureShowcase[] = [
@@ -318,6 +320,8 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     description:
       "Drag and drop multiple screenshots at once — Screenshot Bro imports them all and automatically wraps each one in the device frame. No manual placement, no tedious one-by-one workflow.",
     media: "/showcases/batch-export.mp4",
+    mediaWidth: 1280,
+    mediaHeight: 818,
     mediaAlt:
       "Dragging and dropping multiple screenshots that automatically get wrapped in device frames",
   },
@@ -328,6 +332,8 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     description:
       "Connect your App Store Connect API key once, then push rendered screenshots straight to the right app, version, display type, and locale. Auto-detected display types, locale matching, preflight checks, and one-pass replace — no drag-and-drop in the browser.",
     media: "/showcases/autoupload.mp4",
+    mediaWidth: 1280,
+    mediaHeight: 988,
     mediaAlt:
       "Uploading screenshots directly from Screenshot Bro to App Store Connect with auto-detected display types and matched locales",
   },
@@ -338,6 +344,8 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     description:
       "Add rectangles, circles, stars, text, images, and SVGs — then resize, rotate, and style each one. Set fill colors, gradients, opacity, outlines, and corner radius right from the inspector. Stack layers, Shift-drag to lock aspect ratio, and snap to pixel-perfect alignment.",
     media: "/showcases/shapes.mp4",
+    mediaWidth: 1620,
+    mediaHeight: 1080,
     mediaAlt:
       "Adding and manipulating shapes on the screenshot canvas with resize handles and style controls",
   },
@@ -348,6 +356,8 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     description:
       "Choose from 12 gradient presets, build your own with the multi-stop editor, or drop in images with fill, fit, stretch, and tile modes. Backgrounds can span across multiple templates in a row for seamless, edge-to-edge designs. Adjust angle, opacity, and color stops — everything updates live.",
     media: "/showcases/backgrounds.mp4",
+    mediaWidth: 1280,
+    mediaHeight: 804,
     mediaAlt:
       "Switching between gradient presets, solid colors, and spanning backgrounds across multiple screenshot templates",
   },
@@ -358,6 +368,8 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     description:
       "Pick from a library of device bezels — iPhone, iPad, MacBook, iMac, and Android phones & tablets. Swap frames, choose body colors, and match your brand without re-importing screenshots.",
     media: "/showcases/frames.mp4",
+    mediaWidth: 1280,
+    mediaHeight: 794,
     mediaAlt:
       "Selecting and customizing device frames around app screenshots",
   },
