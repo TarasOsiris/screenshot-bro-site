@@ -57,6 +57,7 @@ export const NAV_ITEMS: NavItem[] = [
 
 export type SecondaryLinkKey =
   | "blog"
+  | "tutorials"
   | "changelog"
   | "docs"
   | "vsFastlane"
@@ -73,6 +74,7 @@ export type SecondaryLink = {
 
 export const PRODUCT_LINKS: SecondaryLink[] = [
   { uiKey: "blog", href: "/blog" },
+  { uiKey: "tutorials", href: "/tutorials" },
   { uiKey: "changelog", href: "/changelog" },
   { uiKey: "docs", href: "/docs/help" },
 ];

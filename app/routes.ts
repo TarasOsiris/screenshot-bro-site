@@ -6,6 +6,7 @@ export default [
   route("terms", "routes/terms.tsx"),
   route("changelog", "routes/changelog.tsx"),
   route("support", "routes/support.tsx"),
+  route("tutorials", "routes/tutorials.tsx"),
   route("blog", "routes/blog._index.tsx"),
   route(":locale/blog", "routes/blog._index.tsx", { id: "blog-locale" }),
   route("blog/applaunchpad-alternative", "routes/blog.applaunchpad-alternative.tsx"),

@@ -109,6 +109,7 @@ function buildSitemap(): string {
     { loc: "/privacy", changefreq: "yearly", priority: "0.3", lastmod: privacyDate },
     { loc: "/terms", changefreq: "yearly", priority: "0.3", lastmod: termsDate },
     { loc: "/support", changefreq: "yearly", priority: "0.4", lastmod: homeLastmod },
+    { loc: "/tutorials", changefreq: "weekly", priority: "0.6", lastmod: homeLastmod },
     ...docsEntries,
     { loc: "/vs/fastlane-snapshot", changefreq: "monthly", priority: "0.7", lastmod: latestBlogDate },
   ];

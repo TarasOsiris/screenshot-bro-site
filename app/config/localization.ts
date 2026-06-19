@@ -74,6 +74,7 @@ export type HomeCopy = {
   ui: {
     skipToContent: string;
     blog: string;
+    tutorials: string;
     docs: string;
     changelog: string;
     vsFastlane: string;
@@ -192,6 +193,7 @@ const EN_HOME_COPY: HomeCopy = {
   ui: {
     skipToContent: "Skip to content",
     blog: "Blog",
+    tutorials: "Tutorials",
     docs: "Docs",
     changelog: "Changelog",
     vsFastlane: "Compare to Fastlane",
