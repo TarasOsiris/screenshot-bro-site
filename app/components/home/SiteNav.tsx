@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { AppleLogo, RedditGlyph, ThreadsGlyph, XGlyph } from "~/components/home/icons";
 import { NavLink } from "~/components/NavLink";
 import {
-  APP_STORE_URL,
+  APP_STORE_CTA_URL,
   PRODUCT_LINKS,
   REDDIT_COMMUNITY_URL,
   SITE_NAME,
@@ -38,7 +38,7 @@ function getSecondaryLinkHref(locale: LocaleCode, link: SecondaryLink): string {
 
 export function SiteNav({
   copy = DEFAULT_COPY,
-  href = APP_STORE_URL,
+  href = APP_STORE_CTA_URL,
   showSectionAnchors = true,
   showLocaleSwitcher = true,
 }: SiteNavProps) {

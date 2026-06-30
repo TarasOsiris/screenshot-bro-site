@@ -1,13 +1,13 @@
 import { AppleLogo } from "~/components/home/icons";
 import {
-  APP_STORE_URL,
+  APP_STORE_CTA_URL,
   CONTACT_MAILTO,
 } from "~/config/site";
 import type { HomeCopy } from "~/config/localization";
 
 export function DownloadSection({
   copy,
-  href = APP_STORE_URL,
+  href = APP_STORE_CTA_URL,
 }: {
   copy: HomeCopy;
   href?: string;

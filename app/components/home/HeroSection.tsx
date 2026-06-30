@@ -1,7 +1,7 @@
 import { AppleLogo } from "~/components/home/icons";
 import { ArrowDownIcon } from "~/components/home/small-icons";
 import { useDeferredLoopVideo } from "~/components/home/hooks";
-import { APP_STORE_URL } from "~/config/site";
+import { APP_STORE_CTA_URL } from "~/config/site";
 import type { HomeCopy } from "~/config/localization";
 
 function AppPreview({ label }: { label: string }) {
@@ -27,7 +27,7 @@ function AppPreview({ label }: { label: string }) {
 
 export function HeroSection({
   copy,
-  href = APP_STORE_URL,
+  href = APP_STORE_CTA_URL,
 }: {
   copy: HomeCopy;
   href?: string;

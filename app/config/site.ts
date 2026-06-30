@@ -10,6 +10,19 @@ export const SITE_URL =
 export const EARLY_ACCESS_EMAIL = "tleskiv@ninevastudios.com";
 export const APP_STORE_APP_ID = "6760177675";
 export const APP_STORE_URL = "https://apps.apple.com/us/app/screenshot-bro/id6760177675";
+
+// App Store Connect provider token (identifies us as the campaign provider).
+export const APP_STORE_PROVIDER_TOKEN = "117277360";
+
+// Builds an App Store campaign-tracking link. The `ct` value surfaces under
+// App Analytics → Acquisition → Campaigns as the traffic source, so use this
+// for clickable CTAs (not for SEO/structured-data, which keep the bare URL).
+export function appStoreCampaignUrl(campaign: string): string {
+  return `https://apps.apple.com/app/apple-store/id${APP_STORE_APP_ID}?pt=${APP_STORE_PROVIDER_TOKEN}&ct=${campaign}&mt=8`;
+}
+
+// Default CTA link for organic website traffic.
+export const APP_STORE_CTA_URL = appStoreCampaignUrl("website");
 export const CONTACT_MAILTO = `mailto:${EARLY_ACCESS_EMAIL}`;
 export const REDDIT_COMMUNITY_URL = "https://www.reddit.com/r/ScreenshotBro/";
 export const NINEVA_STUDIOS_NAME = "Nineva Studios";

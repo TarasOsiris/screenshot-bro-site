@@ -1,6 +1,6 @@
 import { useLazyLoopVideo } from "~/components/home/hooks";
 import { SectionIntro } from "~/components/home/SectionIntro";
-import { APP_STORE_URL } from "~/config/site";
+import { APP_STORE_CTA_URL } from "~/config/site";
 import type { FeatureShowcase } from "~/config/site";
 import type { HomeCopy } from "~/config/localization";
 
@@ -84,7 +84,7 @@ function FeatureShowcaseBlock({
 
 export function ShowcasesSection({
   copy,
-  href = APP_STORE_URL,
+  href = APP_STORE_CTA_URL,
 }: {
   copy: HomeCopy;
   href?: string;

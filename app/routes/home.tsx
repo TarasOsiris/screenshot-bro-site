@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { data } from "react-router";
 
 import type { Route } from "./+types/home";
-import { SITE_URL } from "~/config/site";
+import { SITE_URL, appStoreCampaignUrl } from "~/config/site";
 import { mergeMeta } from "~/config/meta";
 import {
   buildOgLocaleMeta,
@@ -82,8 +82,7 @@ function useScrollFade(threshold = 100) {
   return visible;
 }
 
-const GADS_APP_STORE_URL =
-  "https://apps.apple.com/app/apple-store/id6760177675?pt=117277360&ct=gadsmay25&mt=8";
+const GADS_APP_STORE_URL = appStoreCampaignUrl("gadsmay25");
 
 function useGadsConversion() {
   const [isFromGads, setIsFromGads] = useState(false);
