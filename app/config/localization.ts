@@ -2448,6 +2448,25 @@ export function localizedPath(locale: LocaleCode, path = "/"): string {
   return `/${locale}${normalizedPath}`;
 }
 
+// Top-level routes that have no per-locale variant — they always live at the
+// canonical, unprefixed URL. Content links to these must NOT be locale-prefixed,
+// otherwise crawlers hit 404s like /es/privacy. Keep in sync with routes.ts and
+// the sitemap.
+const GLOBAL_PATH_SEGMENTS = new Set([
+  "privacy",
+  "terms",
+  "changelog",
+  "support",
+  "tutorials",
+  "vs",
+  "sitemap.xml",
+]);
+
+export function isGlobalPath(path: string): boolean {
+  const segment = path.replace(/^\/+/, "").split(/[/#?]/)[0];
+  return GLOBAL_PATH_SEGMENTS.has(segment);
+}
+
 export function buildHomeAlternates(path = "/") {
   return LOCALES.map((locale) => ({
     rel: "alternate",

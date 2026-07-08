@@ -14,7 +14,7 @@ import {
   IconUpload,
 } from "~/components/home/icons";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
-import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { isGlobalPath, isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 
 const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
@@ -773,7 +773,8 @@ function MD({ text, locale }: { text: string; locale: LocaleCode }) {
     } else if (match[3] !== undefined && match[4] !== undefined) {
       const href = match[4];
       const external = /^https?:\/\//.test(href);
-      const localizedHref = href.startsWith("/") ? localizedPath(locale, href) : href;
+      const localizedHref =
+        href.startsWith("/") && !isGlobalPath(href) ? localizedPath(locale, href) : href;
       parts.push(
         <a
           key={key++}
