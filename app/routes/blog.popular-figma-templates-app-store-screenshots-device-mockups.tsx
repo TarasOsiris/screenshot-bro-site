@@ -80,7 +80,7 @@ function ContentEn() {
       </p>
 
       <ArticleImage
-        src="/docs/help/templates.webp"
+        src="/docs-help/templates.webp"
         alt="Screenshot Bro templates row showing multiple App Store screenshot designs in one project"
         width={1600}
         height={453}
@@ -180,7 +180,7 @@ function ContentEn() {
       </p>
 
       <ArticleImage
-        src="/docs/help/rows.webp"
+        src="/docs-help/rows.webp"
         alt="Screenshot Bro rows view showing screenshot rows for different devices"
         width={1600}
         height={1284}
@@ -246,7 +246,7 @@ function ContentEn() {
       </p>
 
       <ArticleImage
-        src="/docs/help/devices.webp"
+        src="/docs-help/devices.webp"
         alt="Screenshot Bro device picker showing Apple and Android device frames"
         width={510}
         height={230}
@@ -302,7 +302,7 @@ function ContentEn() {
       </p>
 
       <ArticleImage
-        src="/docs/help/locales.webp"
+        src="/docs-help/locales.webp"
         alt="Screenshot Bro localization panel showing per-locale screenshot text overrides"
         width={1100}
         height={1300}

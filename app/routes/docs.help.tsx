@@ -111,7 +111,7 @@ const SECTIONS: Section[] = [
     title: "Welcome to Screenshot Bro",
     subtitle: "Beautiful App Store and Google Play screenshots, made on Mac and iPad.",
     image: {
-      src: "/docs/help/editor-overview.webp",
+      src: "/docs-help/editor-overview.webp",
       alt: "Screenshot Bro editor with two rows of templates and the right-side inspector",
       width: 1600,
       height: 1004,
@@ -876,7 +876,7 @@ function renderBlocks(blocks: Block[], locale: LocaleCode): React.ReactNode[] {
 
 function SectionView({ section, locale }: { section: Section; locale: LocaleCode }) {
   const image = section.image;
-  const imageSrc = image && (image.src ?? `/docs/help/${section.id}.webp`);
+  const imageSrc = image && (image.src ?? `/docs-help/${section.id}.webp`);
   return (
     <section>
       <h2 id={section.id}>{section.title}</h2>

@@ -79,7 +79,7 @@ function ContentEn() {
       </p>
 
       <ArticleImage
-        src="/docs/help/locales.webp"
+        src="/docs-help/locales.webp"
         alt="Screenshot Bro locale settings for translating App Store screenshot captions"
         width={1600}
         height={983}
@@ -229,7 +229,7 @@ function ContentEn() {
       </p>
 
       <ArticleImage
-        src="/docs/help/editing.webp"
+        src="/docs-help/editing.webp"
         alt="Screenshot Bro editor showing editable text and screenshot layout controls"
         width={1600}
         height={1038}

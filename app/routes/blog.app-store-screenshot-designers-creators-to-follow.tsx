@@ -263,7 +263,7 @@ function ContentEn() {
       </p>
 
       <ArticleImage
-        src="/docs/help/templates.webp"
+        src="/docs-help/templates.webp"
         alt="Screenshot Bro templates row showing multiple screenshot designs in one project"
         width={1600}
         height={453}
@@ -306,7 +306,7 @@ function ContentEn() {
       </p>
 
       <ArticleImage
-        src="/docs/help/editor-overview.webp"
+        src="/docs-help/editor-overview.webp"
         alt="Screenshot Bro editor showing app screenshots, device frames, text layers, and project controls"
         width={1600}
         height={1004}
@@ -355,7 +355,7 @@ function ContentEn() {
       </p>
 
       <ArticleImage
-        src="/docs/help/exporting.webp"
+        src="/docs-help/exporting.webp"
         alt="Screenshot Bro export panel showing export progress for localized App Store screenshot assets"
         width={1600}
         height={452}
