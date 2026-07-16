@@ -6,6 +6,7 @@
     "build": "react-router build && test -f build/server/index.js",
     "dev": "react-router dev",
     "start": "react-router-serve build/server/index.js",
+    "indexnow": "node scripts/indexnow-submit.mjs",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
