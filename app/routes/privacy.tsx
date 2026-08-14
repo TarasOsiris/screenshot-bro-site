@@ -4,7 +4,7 @@ import { ContentLayout } from "~/components/ContentLayout";
 import { mergeMeta } from "~/config/meta";
 
 const PRIVACY_TITLE = `Privacy Policy — ${SITE_NAME}`;
-const PRIVACY_DESCRIPTION = `Privacy policy for ${SITE_NAME}. Learn how we handle your data — no analytics, no tracking, all data stays on your device.`;
+const PRIVACY_DESCRIPTION = `Privacy policy for ${SITE_NAME}. Learn how we handle your data — no analytics, no tracking, and your projects stay on your device.`;
 const PRIVACY_URL = `${SITE_URL}/privacy`;
 
 export const meta: Route.MetaFunction = ({ matches }) =>
@@ -18,7 +18,7 @@ export const meta: Route.MetaFunction = ({ matches }) =>
     { name: "twitter:description", content: PRIVACY_DESCRIPTION },
   ]);
 
-export const EFFECTIVE_DATE = "June 13, 2026";
+export const EFFECTIVE_DATE = "August 15, 2026";
 const DEVELOPER_NAME = "Nineva Studios";
 const DEVELOPER_EMAIL = "tleskiv@ninevastudios.com";
 
@@ -48,12 +48,17 @@ export default function Privacy() {
             <li>Usage analytics or behavioral data</li>
             <li>Device identifiers for tracking purposes</li>
             <li>Location data</li>
-            <li>Crash reports or diagnostics sent to our servers</li>
             <li>Advertising identifiers</li>
+            <li>
+              The contents of your projects — screenshots, imported images,
+              fonts, or the text you write
+            </li>
           </ul>
           <p>
             The App contains <strong>no analytics SDKs</strong>, no advertising
-            frameworks, and no telemetry or crash-reporting services.
+            frameworks, and no cross-app or cross-site tracking. It does include
+            a crash and error reporting service, which is described in{" "}
+            <strong>Section 5</strong>.
           </p>
 
           <h2>2. Data Stored on Your Device</h2>
@@ -172,7 +177,65 @@ export default function Privacy() {
             <a href={`${SITE_URL}/terms`}>Terms of Use</a>.
           </p>
 
-          <h2>5. Third-Party Services Summary</h2>
+          <h2>5. Crash and Error Reporting (Sentry)</h2>
+          <p>
+            To find and fix bugs, {SITE_NAME} uses{" "}
+            <a
+              href="https://sentry.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sentry
+            </a>{" "}
+            to report crashes, unhandled errors, and cases where the App stops
+            responding. A report is sent only when something actually goes
+            wrong — the App does not send a stream of usage events.
+          </p>
+          <p>A report contains technical diagnostics:</p>
+          <ul>
+            <li>
+              The error or crash itself — the exception type, message, and stack
+              trace showing which code was running
+            </li>
+            <li>
+              Recent in-app events leading up to the error (for example, that a
+              window opened or an export started)
+            </li>
+            <li>
+              Device and app context — device model, operating system version,
+              App version and build number, language and region settings, and
+              memory and storage state at the time of the error
+            </li>
+            <li>
+              The same anonymous app-specific identifier used by RevenueCat (see
+              Section 4), so repeated crashes from one installation can be
+              recognised as related
+            </li>
+          </ul>
+          <p>
+            Reports do <strong>not</strong> include your projects, screenshots,
+            imported images, fonts, or the text you write in the App. We have
+            configured Sentry not to send personally identifiable information
+            such as your IP address or device name. In rare cases a technical
+            error message may include a file path, which on some systems
+            contains your operating system user name.
+          </p>
+          <p>
+            Crash reporting is enabled by default and is currently not
+            configurable in the App's settings. Reports are transmitted over an
+            encrypted connection to Sentry, which processes them on our behalf
+            under their{" "}
+            <a
+              href="https://sentry.io/privacy/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Privacy Policy
+            </a>
+            . We use this data only to diagnose and fix problems in the App.
+          </p>
+
+          <h2>6. Third-Party Services Summary</h2>
           <table>
             <thead>
               <tr>
@@ -193,6 +256,14 @@ export default function Privacy() {
                 <td>Anonymous ID, transaction receipt</td>
               </tr>
               <tr>
+                <td>Sentry</td>
+                <td>Crash and error reporting</td>
+                <td>
+                  Anonymous ID, crash and error diagnostics, device and app
+                  version info (only when an error occurs)
+                </td>
+              </tr>
+              <tr>
                 <td>Apple App Store</td>
                 <td>In-app purchases</td>
                 <td>Standard App Store transaction data</td>
@@ -204,7 +275,7 @@ export default function Privacy() {
             the App.
           </p>
 
-          <h2>6. Data Retention and Deletion</h2>
+          <h2>7. Data Retention and Deletion</h2>
           <ul>
             <li>
               <strong>Local data</strong> — all project data and preferences are
@@ -222,9 +293,15 @@ export default function Privacy() {
               RevenueCat. You can contact RevenueCat to request deletion of any
               anonymous records associated with your transactions.
             </li>
+            <li>
+              <strong>Crash and error reports</strong> — retained by Sentry for
+              a limited period (90 days by default) and then deleted
+              automatically. You can also email us to request deletion of
+              reports associated with your anonymous identifier.
+            </li>
           </ul>
 
-          <h2>7. Children's Privacy</h2>
+          <h2>8. Children's Privacy</h2>
           <p>
             {SITE_NAME} is not directed at children under the age of 13 and does
             not knowingly collect personal information from children. Since we do
@@ -232,15 +309,17 @@ export default function Privacy() {
             provisions are necessary.
           </p>
 
-          <h2>8. Security</h2>
+          <h2>9. Security</h2>
           <p>
             The App runs inside Apple's app sandbox on macOS and iPadOS, which
             restricts file system access and network capabilities. All data at
             rest is protected by platform storage encryption and iCloud
-            encryption when applicable.
+            encryption when applicable. The limited data the App does send —
+            purchase validation and crash reports — is transmitted over
+            encrypted HTTPS connections.
           </p>
 
-          <h2>9. Changes to This Policy</h2>
+          <h2>10. Changes to This Policy</h2>
           <p>
             We may update this Privacy Policy from time to time. The updated
             version will be posted at{" "}
@@ -249,7 +328,7 @@ export default function Privacy() {
             periodically.
           </p>
 
-          <h2>10. Contact Us</h2>
+          <h2>11. Contact Us</h2>
           <p>
             If you have questions or concerns about this Privacy Policy or the
             App's data practices, please contact us:
