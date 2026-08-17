@@ -196,6 +196,19 @@ export const meta: Route.MetaFunction = () => [
 
 const CANONICAL_HOST = "screenshotbro.app";
 
+// Top-level directories shipped from public/. react-router-serve's static handler
+// 301s a bare directory request to its trailing-slash form (/assets -> /assets/),
+// so stripping the trailing slash back off would ping-pong forever. Every other
+// path is a route, where the no-slash form is the canonical one.
+const STATIC_DIR_SEGMENTS = new Set([
+  "assets",
+  "docs-help",
+  "screenshot",
+  "screenshots",
+  "showcase",
+  "showcases",
+]);
+
 export async function loader({ request }: Route.LoaderArgs) {
   const url = new URL(request.url);
   // Forwarded host can carry the original public host behind a proxy.
@@ -206,6 +219,16 @@ export async function loader({ request }: Route.LoaderArgs) {
       request.headers.get("x-forwarded-proto") ?? url.protocol.replace(":", "");
     const target = `${proto}://${CANONICAL_HOST}${url.pathname}${url.search}`;
     throw redirect(target, 301);
+  }
+  // /docs/help/ and /docs/help render the same page; send crawlers to the one
+  // the canonical tag points at instead of letting both stay live.
+  const segments = url.pathname.split("/").filter(Boolean);
+  if (
+    url.pathname !== "/" &&
+    url.pathname.endsWith("/") &&
+    !STATIC_DIR_SEGMENTS.has(segments[0])
+  ) {
+    throw redirect(`/${segments.join("/")}${url.search}`, 301);
   }
   return null;
 }

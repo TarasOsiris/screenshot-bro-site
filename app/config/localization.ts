@@ -2448,23 +2448,39 @@ export function localizedPath(locale: LocaleCode, path = "/"): string {
   return `/${locale}${normalizedPath}`;
 }
 
-// Top-level routes that have no per-locale variant — they always live at the
-// canonical, unprefixed URL. Content links to these must NOT be locale-prefixed,
-// otherwise crawlers hit 404s like /es/privacy. Keep in sync with routes.ts and
-// the sitemap.
-const GLOBAL_PATH_SEGMENTS = new Set([
-  "privacy",
-  "terms",
-  "changelog",
-  "support",
-  "tutorials",
-  "vs",
-  "sitemap.xml",
-]);
+// Routes that have no per-locale variant — they always live at the canonical,
+// unprefixed URL. Content links to these must NOT be locale-prefixed, otherwise
+// crawlers hit 404s like /es/privacy. Keep in sync with routes.ts and the sitemap.
+export const GLOBAL_ROUTE_PATHS = [
+  "/privacy",
+  "/terms",
+  "/changelog",
+  "/support",
+  "/tutorials",
+  "/vs",
+  "/vs/fastlane-snapshot",
+  "/sitemap.xml",
+  "/llms.txt",
+];
+
+const GLOBAL_PATH_SEGMENTS = new Set(
+  GLOBAL_ROUTE_PATHS.map((path) => path.split("/")[1]),
+);
 
 export function isGlobalPath(path: string): boolean {
   const segment = path.replace(/^\/+/, "").split(/[/#?]/)[0];
   return GLOBAL_PATH_SEGMENTS.has(segment);
+}
+
+// /{locale}/privacy and friends were never real routes, but crawlers and the
+// locale switcher found them anyway. Map them back to the one canonical URL so
+// they 301 instead of 404. Returns null when the path isn't a locale-prefixed
+// global route (so callers keep serving their normal 404).
+export function canonicalGlobalPath(pathname: string): string | null {
+  const segments = pathname.split("/").filter(Boolean);
+  if (segments.length < 2 || !isLocaleCode(segments[0])) return null;
+  const canonical = "/" + segments.slice(1).join("/");
+  return GLOBAL_ROUTE_PATHS.includes(canonical) ? canonical : null;
 }
 
 export function buildHomeAlternates(path = "/") {

@@ -1,5 +1,50 @@
 User-agent: *
 Allow: /
 Disallow: /build/
+# Cloudflare rewrites mailto: links to /cdn-cgi/l/email-protection#<hash>. Crawlers
+# drop the fragment and the bare URL 404s, so keep them out of the index entirely.
+Disallow: /cdn-cgi/
+
+# Answer engines and AI crawlers. They are already covered by the wildcard rule
+# above, but Google-Extended and Applebot-Extended are opt-outs that some sites
+# set by default, so state the intent explicitly: this site wants to be quoted.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
 
 Sitemap: https://screenshotbro.app/sitemap.xml

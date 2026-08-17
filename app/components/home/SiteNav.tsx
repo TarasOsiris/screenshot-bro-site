@@ -13,6 +13,7 @@ import {
 } from "~/config/site";
 import {
   getHomeCopy,
+  isGlobalPath,
   LOCALES,
   localizedPath,
   type HomeCopy,
@@ -34,6 +35,19 @@ function getSecondaryLinkHref(locale: LocaleCode, link: SecondaryLink): string {
     return localizedPath(locale, link.href);
   }
   return link.href;
+}
+
+// Where the language switcher should send the visitor. Global pages (privacy,
+// terms, support, ...) exist only at their canonical unprefixed URL, so there is
+// no translated counterpart to switch to — offer the localized home rather than
+// a /{locale}/privacy that 301s straight back to where they already are.
+function localeSwitchTarget(targetLocale: LocaleCode): string {
+  const segments = window.location.pathname.split("/").filter(Boolean);
+  if (segments.length > 0 && LOCALES.some((l) => l.code === segments[0] && l.code !== "en")) {
+    segments.shift();
+  }
+  const cleanPath = "/" + segments.join("/");
+  return localizedPath(targetLocale, isGlobalPath(cleanPath) ? "/" : cleanPath);
 }
 
 export function SiteNav({
@@ -121,13 +135,7 @@ export function SiteNav({
                   value={copy.locale.code}
                   onChange={(event) => {
                     const targetLocale = event.currentTarget.value as LocaleCode;
-                    let currentPath = window.location.pathname;
-                    const segments = currentPath.split("/").filter(Boolean);
-                    if (segments.length > 0 && LOCALES.some(l => l.code === segments[0] && l.code !== "en")) {
-                      segments.shift();
-                    }
-                    const cleanPath = "/" + segments.join("/");
-                    window.location.href = localizedPath(targetLocale, cleanPath);
+                    window.location.href = localeSwitchTarget(targetLocale);
                   }}
                   className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
                 >
@@ -266,13 +274,7 @@ function MobileMenu({
               value={copy.locale.code}
               onChange={(event) => {
                 const targetLocale = event.currentTarget.value as LocaleCode;
-                let currentPath = window.location.pathname;
-                const segments = currentPath.split("/").filter(Boolean);
-                if (segments.length > 0 && LOCALES.some(l => l.code === segments[0] && l.code !== "en")) {
-                  segments.shift();
-                }
-                const cleanPath = "/" + segments.join("/");
-                window.location.href = localizedPath(targetLocale, cleanPath);
+                window.location.href = localeSwitchTarget(targetLocale);
               }}
               className="w-full h-11 rounded-xl border border-white/10 bg-white/[0.06] px-3 text-sm font-medium text-white/80 outline-none transition-all focus:border-accent/60"
             >

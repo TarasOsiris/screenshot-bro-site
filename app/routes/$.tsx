@@ -1,7 +1,10 @@
+import { redirect } from "react-router";
+
 import { SITE_NAME, SITE_URL, APP_STORE_URL } from "~/config/site";
 import { AppleLogo } from "~/components/home/icons";
 import type { Route } from "./+types/$";
 import { mergeMeta } from "~/config/meta";
+import { canonicalGlobalPath } from "~/config/localization";
 
 const NOT_FOUND_TITLE = `Page Not Found — ${SITE_NAME}`;
 const NOT_FOUND_DESCRIPTION = `The page you're looking for doesn't exist.`;
@@ -17,7 +20,10 @@ export const links: Route.LinksFunction = () => [
   { rel: "canonical", href: SITE_URL },
 ];
 
-export function loader() {
+export function loader({ request }: Route.LoaderArgs) {
+  const url = new URL(request.url);
+  const canonical = canonicalGlobalPath(url.pathname);
+  if (canonical) throw redirect(`${canonical}${url.search}`, 301);
   throw new Response("Not Found", { status: 404 });
 }
 
