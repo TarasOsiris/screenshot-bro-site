@@ -1,7 +1,7 @@
 import type { LocaleCode } from "~/config/localization";
 import { LOCALIZED_BLOG_POSTS } from "./blog-translations";
 
-export const BLOG_CATEGORIES = ["Reference", "Guide"] as const;
+export const BLOG_CATEGORIES = ["Reference", "Guide", "Comparison"] as const;
 export type BlogCategory = (typeof BLOG_CATEGORIES)[number];
 
 export type BlogPost = {
@@ -9,6 +9,9 @@ export type BlogPost = {
   title: string;
   description: string;
   date: string;
+  // Set when the article is revised (e.g. after re-checking a competitor's
+  // pricing). Falls back to `date` for schema, meta and sitemap lastmod.
+  dateModified?: string;
   readTime: string;
   category: BlogCategory;
   keywords?: string[];
@@ -17,13 +20,229 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "best-app-store-screenshot-tools-for-mac",
+    title: "Best App Store Screenshot Tools for Mac (2026)",
+    description:
+      "The native Mac options for App Store screenshots compared: Screenshot Bro, Screenshot Studio, Rotato, Fastlane frameit, Mockuuups Studio, Figma and Sketch.",
+    date: "2026-08-17",
+    readTime: "8 min read",
+    category: "Comparison",
+    localized: false,
+    keywords: [
+      "best app store screenshot tool for mac",
+      "mac app store screenshot generator",
+      "native screenshot generator mac",
+      "app screenshot app for mac",
+      "offline app store screenshot tool",
+      "app store screenshot software mac",
+    ],
+  },
+  {
+    slug: "best-app-screenshot-localization-tools",
+    title: "Best App Screenshot Localization Tools (2026)",
+    description:
+      "Which tools translate App Store and Google Play screenshots well: language coverage, built-in translation, per-locale overrides and export, compared.",
+    date: "2026-08-17",
+    readTime: "8 min read",
+    category: "Comparison",
+    localized: false,
+    keywords: [
+      "app screenshot localization tools",
+      "localize app store screenshots tool",
+      "translate app store screenshots",
+      "multi language app screenshots",
+      "screenshot translation software",
+      "localized screenshots generator",
+    ],
+  },
+  {
+    slug: "best-google-play-screenshot-tools",
+    title: "Best Google Play Screenshot Tools (2026)",
+    description:
+      "Tools that handle a full Google Play listing: phone and tablet screenshots, the 1024x500 feature graphic, Android device frames and localization, compared.",
+    date: "2026-08-17",
+    readTime: "7 min read",
+    category: "Comparison",
+    localized: false,
+    keywords: [
+      "google play screenshot tools",
+      "google play screenshot generator",
+      "play store screenshot maker",
+      "feature graphic generator",
+      "android app screenshot tool",
+      "play store listing graphics tool",
+    ],
+  },
+  {
+    slug: "screenshot-bro-alternatives",
+    title: "Screenshot Bro Alternatives: When to Use Another Tool",
+    description:
+      "An honest list of Screenshot Bro alternatives from its own maker: which tool to use for Windows, Apple Watch, CI automation, 80+ languages or video.",
+    date: "2026-08-17",
+    readTime: "7 min read",
+    category: "Comparison",
+    localized: false,
+    keywords: [
+      "screenshot bro alternatives",
+      "screenshot bro alternative",
+      "screenshot bro vs",
+      "app store screenshot tool comparison",
+      "screenshot bro competitors",
+      "alternatives to screenshot bro",
+    ],
+  },
+  {
+    slug: "appscreens-alternative",
+    title: "AppScreens Alternative: Native Mac Screenshot Editor",
+    description:
+      "Looking for an AppScreens alternative? How Screenshot Bro compares: native Mac and iPad app, watermark-free exports, 30 locales, direct store upload.",
+    date: "2026-08-17",
+    readTime: "6 min read",
+    category: "Comparison",
+    localized: false,
+    keywords: [
+      "appscreens alternative",
+      "appscreens alternatives",
+      "appscreens vs",
+      "appscreens pricing",
+      "app store screenshot generator alternative",
+      "native appscreens alternative",
+    ],
+  },
+  {
+    slug: "screenshots-pro-alternative",
+    title: "Screenshots Pro Alternative: A Native Screenshot App",
+    description:
+      "Looking for a Screenshots Pro alternative? How Screenshot Bro compares: native editing, localization and direct App Store Connect upload, not an API.",
+    date: "2026-08-17",
+    readTime: "6 min read",
+    category: "Comparison",
+    localized: false,
+    keywords: [
+      "screenshots pro alternative",
+      "screenshots.pro alternative",
+      "screenshots pro vs",
+      "app screenshot api alternative",
+      "app store screenshot automation",
+      "screenshot generator alternative",
+    ],
+  },
+  {
+    slug: "rotato-alternative",
+    title: "Rotato Alternative for App Store Screenshot Sets",
+    description:
+      "Looking for a Rotato alternative? Rotato does 3D mockups and video; Screenshot Bro builds the flat App Store and Google Play set in every size and locale.",
+    date: "2026-08-17",
+    readTime: "6 min read",
+    category: "Comparison",
+    localized: false,
+    keywords: [
+      "rotato alternative",
+      "rotato alternatives",
+      "rotato vs",
+      "3d mockup alternative",
+      "app store screenshot mac app",
+      "rotato app store screenshots",
+    ],
+  },
+  {
+    slug: "placeit-alternative",
+    title: "Placeit Alternative for App Store Screenshots",
+    description:
+      "Looking for a Placeit alternative for app screenshots? A broad library with watermarked free downloads versus a focused, watermark-free store tool.",
+    date: "2026-08-17",
+    readTime: "6 min read",
+    category: "Comparison",
+    localized: false,
+    keywords: [
+      "placeit alternative",
+      "placeit alternatives",
+      "placeit app store screenshots",
+      "placeit watermark",
+      "app mockup alternative",
+      "app screenshot generator alternative",
+    ],
+  },
+  {
+    slug: "mockuuups-studio-alternative",
+    title: "Mockuuups Studio Alternative for Store Screenshots",
+    description:
+      "Looking for a Mockuuups Studio alternative? Mockup libraries frame one image at a time; Screenshot Bro builds a localized store set from one canvas.",
+    date: "2026-08-17",
+    readTime: "6 min read",
+    category: "Comparison",
+    localized: false,
+    keywords: [
+      "mockuuups studio alternative",
+      "mockuuups alternative",
+      "mockup generator alternative",
+      "app store screenshot mockups",
+      "device mockup alternative",
+      "figma mockup plugin alternative",
+    ],
+  },
+  {
+    slug: "canva-app-store-screenshots",
+    title: "App Store Screenshots in Canva: How To and When Not",
+    description:
+      "How to make App Store screenshots in Canva step by step, plus the point where duplicating designs per device size and language stops being worth it.",
+    date: "2026-08-17",
+    readTime: "6 min read",
+    category: "Comparison",
+    localized: false,
+    keywords: [
+      "app store screenshots canva",
+      "canva app store screenshot",
+      "canva app screenshot template",
+      "make app screenshots in canva",
+      "canva app store screenshot size",
+      "canva alternative app screenshots",
+    ],
+  },
+  {
+    slug: "appmockup-alternative",
+    title: "AppMockUp Alternative With Projects and Locales",
+    description:
+      "Looking for an AppMockUp alternative? AppMockUp Studio is free in the browser; Screenshot Bro adds saved projects, 30 locales, batch export and upload.",
+    date: "2026-08-17",
+    readTime: "6 min read",
+    category: "Comparison",
+    localized: false,
+    keywords: [
+      "appmockup alternative",
+      "app mockup alternative",
+      "appmockup studio alternative",
+      "free app screenshot generator alternative",
+      "app store screenshot tool free",
+      "browser screenshot generator alternative",
+    ],
+  },
+  {
+    slug: "screenshot-studio-alternative",
+    title: "Screenshot Studio Alternative: Two Native Mac Apps",
+    description:
+      "Screenshot Studio vs Screenshot Bro: two native Apple-platform screenshot apps compared on device coverage, translation, free tiers and project files.",
+    date: "2026-08-17",
+    readTime: "6 min read",
+    category: "Comparison",
+    localized: false,
+    keywords: [
+      "screenshot studio alternative",
+      "screenshot studio vs screenshot bro",
+      "app store screenshot studio alternative",
+      "native mac screenshot app comparison",
+      "mac app store screenshot tool",
+      "screenshot studio review",
+    ],
+  },
+  {
     slug: "applaunchpad-alternative",
     title: "AppLaunchpad Alternative: A Native App Store Screenshot App",
     description:
       "Looking for an AppLaunchpad alternative? How Screenshot Bro compares as a native Mac and iPad app with device frames, localization, and direct App Store Connect upload.",
     date: "2026-06-18",
     readTime: "6 min read",
-    category: "Guide",
+    category: "Comparison",
     localized: false,
     keywords: [
       "applaunchpad alternative",
@@ -41,7 +260,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Looking for a Previewed alternative? How Screenshot Bro compares for store-ready screenshots at exact sizes, deep localization, and direct App Store Connect upload.",
     date: "2026-06-18",
     readTime: "6 min read",
-    category: "Guide",
+    category: "Comparison",
     localized: false,
     keywords: [
       "previewed alternative",
@@ -59,7 +278,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Looking for a Shotbot alternative? How Screenshot Bro compares for designing full localized App Store screenshot sets, not just framing individual screenshots.",
     date: "2026-06-18",
     readTime: "6 min read",
-    category: "Guide",
+    category: "Comparison",
     localized: false,
     keywords: [
       "shotbot alternative",
@@ -203,7 +422,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "A 2026 comparison of free App Store screenshot generators — what each is known for, what to check on free tiers (watermarks, sizes, batch export), and when to upgrade.",
     date: "2026-06-18",
     readTime: "8 min read",
-    category: "Guide",
+    category: "Comparison",
     localized: false,
     keywords: [
       "free app store screenshot generator",
@@ -293,7 +512,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "A practical comparison of making App Store screenshots with a dedicated generator, Figma, or Photoshop — and when each workflow wins on speed, scale, and control.",
     date: "2026-06-18",
     readTime: "8 min read",
-    category: "Guide",
+    category: "Comparison",
     localized: false,
     keywords: [
       "app store screenshot generator vs figma",

@@ -36,7 +36,7 @@ export function buildBlogPostMeta(
     { property: "og:url", content: url },
     { property: "og:image", content: BLOG_OG_IMAGE },
     { property: "article:published_time", content: post.date },
-    { property: "article:modified_time", content: post.date },
+    { property: "article:modified_time", content: post.dateModified ?? post.date },
     { property: "article:author", content: AUTHOR_NAME },
     { property: "article:section", content: post.category },
     { name: "twitter:card", content: "summary_large_image" },
@@ -59,6 +59,28 @@ export function buildBlogPostMeta(
   return mergeMeta(matches, meta);
 }
 
+export type BlogFaqItem = {
+  question: string;
+  answer: string;
+};
+
+// Answer engines and rich results read FAQPage; the rendered <h3>/<p> pairs in
+// BlogArticleShell are invisible to them without it.
+export function buildFaqJsonLd(faqs: readonly BlogFaqItem[]): string {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  });
+}
+
 export function buildBlogPostLinks(slug: string) {
   // Canonical links are handled dynamically by the root Layout (root.tsx)
   // to support different locales. We return an empty array here to avoid duplicates.
@@ -79,7 +101,7 @@ export function buildBlogPostingJsonLd(slug: string, locale: LocaleCode = "en"):
         description: post.description,
         url,
         datePublished: post.date,
-        dateModified: post.date,
+        dateModified: post.dateModified ?? post.date,
         articleSection: post.category,
         keywords: post.keywords?.join(", "),
         inLanguage: locale,

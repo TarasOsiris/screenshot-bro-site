@@ -39,10 +39,10 @@ function localeAlternates(path: string) {
 }
 
 function buildSitemap(): string {
-  const latestBlogDate = BLOG_POSTS.reduce(
-    (latest, post) => (post.date > latest ? post.date : latest),
-    BLOG_POSTS[0]?.date ?? new Date().toISOString().split("T")[0],
-  );
+  const latestBlogDate = BLOG_POSTS.reduce((latest, post) => {
+    const stamp = post.dateModified ?? post.date;
+    return stamp > latest ? stamp : latest;
+  }, BLOG_POSTS[0]?.date ?? new Date().toISOString().split("T")[0]);
   const latestChangelogDate = CHANGELOG[0]
     ? parseLongDate(CHANGELOG[0].date)
     : new Date().toISOString().split("T")[0];
@@ -111,6 +111,7 @@ function buildSitemap(): string {
     { loc: "/support", changefreq: "yearly", priority: "0.4", lastmod: homeLastmod },
     { loc: "/tutorials", changefreq: "weekly", priority: "0.6", lastmod: homeLastmod },
     ...docsEntries,
+    { loc: "/vs", changefreq: "monthly", priority: "0.7", lastmod: latestBlogDate },
     { loc: "/vs/fastlane-snapshot", changefreq: "monthly", priority: "0.7", lastmod: latestBlogDate },
   ];
 
@@ -122,7 +123,7 @@ function buildSitemap(): string {
       loc: path,
       changefreq: "monthly",
       priority: "0.7",
-      lastmod: post.date,
+      lastmod: post.dateModified ?? post.date,
       alternates,
     });
     if (post.localized !== false) {
@@ -131,7 +132,7 @@ function buildSitemap(): string {
           loc: localizedPath(locale.code, path),
           changefreq: "monthly",
           priority: "0.7",
-          lastmod: post.date,
+          lastmod: post.dateModified ?? post.date,
           alternates,
         });
       });

@@ -73,6 +73,7 @@ export type SecondaryLinkKey =
   | "tutorials"
   | "changelog"
   | "docs"
+  | "comparisons"
   | "vsFastlane"
   | "community"
   | "contact"
@@ -98,6 +99,7 @@ export const COMMUNITY_LINKS: SecondaryLink[] = [
 ];
 
 export const COMPARISON_LINKS: SecondaryLink[] = [
+  { uiKey: "comparisons", href: "/vs" },
   { uiKey: "vsFastlane", href: "/vs/fastlane-snapshot" },
 ];
 

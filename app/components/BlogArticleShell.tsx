@@ -2,6 +2,7 @@ import { BlogCTA } from "~/components/BlogCTA";
 import { BlogPostHeader } from "~/components/BlogPostHeader";
 import { ContentLayout } from "~/components/ContentLayout";
 import { RelatedPosts } from "~/components/RelatedPosts";
+import { buildFaqJsonLd, type BlogFaqItem } from "~/config/blog-seo";
 import type { LocaleCode } from "~/config/localization";
 import type { ReactNode } from "react";
 
@@ -11,15 +12,11 @@ type SeoGuideLink = {
   description: string;
 };
 
-type FaqItem = {
-  question: string;
-  answer: string;
-};
-
 export function BlogArticleShell({
   slug,
   locale,
   children,
+  tldr,
   ctaMessage = "Design, localize, export, and update App Store screenshots faster in Screenshot Bro.",
   ctaButtonLabel,
   seoLinks = [],
@@ -28,16 +25,24 @@ export function BlogArticleShell({
   slug: string;
   locale: LocaleCode;
   children: ReactNode;
+  // One-sentence direct answer rendered before the body. Answer engines quote
+  // the first extractable sentence, so comparison pages should always set it.
+  tldr?: string;
   ctaMessage?: string;
   ctaButtonLabel?: string;
   seoLinks?: SeoGuideLink[];
-  faqs?: FaqItem[];
+  faqs?: BlogFaqItem[];
 }) {
   return (
     <ContentLayout locale={locale}>
       <div className="max-w-3xl mx-auto">
         <article className="prose-policy">
           <BlogPostHeader slug={slug} locale={locale} />
+          {tldr ? (
+            <p>
+              <strong>Short answer:</strong> {tldr}
+            </p>
+          ) : null}
           {children}
           {seoLinks.length > 0 ? (
             <section>
@@ -53,6 +58,10 @@ export function BlogArticleShell({
           ) : null}
           {faqs.length > 0 ? (
             <section>
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: buildFaqJsonLd(faqs) }}
+              />
               <h2>FAQ</h2>
               {faqs.map((faq) => (
                 <div key={faq.question}>

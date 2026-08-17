@@ -77,6 +77,7 @@ export type HomeCopy = {
     tutorials: string;
     docs: string;
     changelog: string;
+    comparisons: string;
     vsFastlane: string;
     community: string;
     privacy: string;
@@ -196,6 +197,7 @@ const EN_HOME_COPY: HomeCopy = {
     tutorials: "Tutorials",
     docs: "Docs",
     changelog: "Changelog",
+    comparisons: "All comparisons",
     vsFastlane: "Compare to Fastlane",
     community: "Community",
     privacy: "Privacy",
@@ -920,6 +922,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ui: {
       skipToContent: "Saltar al contenido",
       changelog: "Novedades",
+      comparisons: "Todas las comparativas",
       vsFastlane: "Comparar con Fastlane",
       community: "Comunidad",
       privacy: "Privacidad",
@@ -1072,6 +1075,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       skipToContent: "跳到内容",
       blog: "博客",
       changelog: "更新日志",
+      comparisons: "全部对比",
       vsFastlane: "对比 Fastlane",
       community: "社区",
       privacy: "隐私",
@@ -1217,6 +1221,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       skipToContent: "कंटेंट पर जाएं",
       blog: "ब्लॉग",
       changelog: "बदलाव",
+      comparisons: "सभी तुलनाएं",
       vsFastlane: "Fastlane से तुलना",
       community: "समुदाय",
       privacy: "प्राइवेसी",
@@ -1364,6 +1369,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       skipToContent: "Aller au contenu",
       blog: "Blog",
       changelog: "Nouveautés",
+      comparisons: "Toutes les comparaisons",
       vsFastlane: "Comparer à Fastlane",
       community: "Communauté",
       privacy: "Confidentialité",
@@ -1516,6 +1522,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       skipToContent: "تخطي إلى المحتوى",
       blog: "المدونة",
       changelog: "سجل التغييرات",
+      comparisons: "كل المقارنات",
       vsFastlane: "مقارنة مع Fastlane",
       community: "المجتمع",
       privacy: "الخصوصية",
@@ -1668,6 +1675,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       skipToContent: "Zum Inhalt springen",
       blog: "Blog",
       changelog: "Changelog",
+      comparisons: "Alle Vergleiche",
       vsFastlane: "Vergleich mit Fastlane",
       community: "Community",
       privacy: "Datenschutz",
@@ -1820,6 +1828,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       skipToContent: "コンテンツへスキップ",
       blog: "ブログ",
       changelog: "変更履歴",
+      comparisons: "すべての比較",
       vsFastlane: "Fastlaneとの比較",
       community: "コミュニティ",
       privacy: "プライバシーポリシー",
@@ -1972,6 +1981,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       skipToContent: "Ir para o conteúdo",
       blog: "Blog",
       changelog: "Notas de Versão",
+      comparisons: "Todas as comparações",
       vsFastlane: "Comparar com Fastlane",
       community: "Comunidade",
       privacy: "Privacidade",
@@ -2124,6 +2134,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       skipToContent: "Vai al contenuto",
       blog: "Blog",
       changelog: "Novità",
+      comparisons: "Tutti i confronti",
       vsFastlane: "Confronta con Fastlane",
       community: "Community",
       privacy: "Privacy",
@@ -2276,6 +2287,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       skipToContent: "본문으로 건너뛰기",
       blog: "블로그",
       changelog: "업데이트 소식",
+      comparisons: "전체 비교",
       vsFastlane: "Fastlane과 비교",
       community: "커뮤니티",
       privacy: "개인정보 처리방침",
