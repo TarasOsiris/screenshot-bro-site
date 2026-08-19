@@ -1,0 +1,70 @@
+export type BlogThumb = { src: string; alt: string };
+
+// Keys are post slugs from BLOG_POSTS; files live at public/blog/<slug>.webp
+// and are downloaded by scripts/fetch-blog-thumbs.mjs. Alt text stays English
+// on every locale (matching the untranslated category labels). A post without
+// an entry renders a category-tinted placeholder on the blog index.
+const BLOG_THUMB_ALT: Record<string, string> = {
+  "best-app-store-screenshot-tools-for-mac": "iMac and MacBook on a white desk with phone wireframe sketches",
+  "best-app-screenshot-localization-tools": "Colorful illustrated world map",
+  "best-google-play-screenshot-tools": "Android phone home screen with app icons and widgets",
+  "screenshot-bro-alternatives": "Space gray iPhone showing its home screen apps",
+  "appscreens-alternative": "Hand holding a smartphone displaying a home screen of apps",
+  "screenshots-pro-alternative": "Silver iPhone floating above an open palm",
+  "rotato-alternative": "Person holding a space gray iPhone",
+  "placeit-alternative": "Smartphone with a grid of app icons on a wooden surface",
+  "mockuuups-studio-alternative": "Smartphone with a colorful app interface beside a laptop keyboard",
+  "canva-app-store-screenshots": "Designer using a drawing tablet with color swatches and markers",
+  "appmockup-alternative": "White iPhone on a white table",
+  "screenshot-studio-alternative": "Silver iPhone resting on a MacBook Pro",
+  "applaunchpad-alternative": "Red and white toy rocket on a blue background",
+  "previewed-alternative": "Gold iPhone with its screen turned on",
+  "shotbot-alternative": "Black iPhone displaying a grid of app icons",
+  "publish-app-on-google-play": "Person holding a black Android smartphone",
+  "google-play-promo-video": "Film clapperboard held up before a take",
+  "app-store-description-that-converts": "Person writing on paper with a pen",
+  "app-store-keyword-research": "Magnifying glass next to a gray laptop",
+  "app-store-screenshots-for-games": "Person playing a mobile game on a smartphone",
+  "app-store-screenshots-for-fitness-apps": "Person holding a smartphone with a yoga app open",
+  "change-app-store-screenshots-without-updating-app": "Hand holding a smartphone showing a food app",
+  "best-free-app-store-screenshot-generators": "White Samsung smartphone showing app icons",
+  "mac-app-store-screenshot-sizes": "MacBook Pro on a desk",
+  "iphone-simulator-screenshots": "Monitor and laptop displaying Swift code",
+  "submit-app-to-app-store": "Rocket launch light trail at dusk",
+  "how-many-app-store-screenshots": "Several smartphones laid out on a table",
+  "screenshot-generator-vs-figma-vs-photoshop": "Monitor and laptop running design software",
+  "localize-screenshots-japan-china-germany": "Busy pedestrian crossing in Tokyo",
+  "app-store-app-preview-video-specs": "Professional video camera rig",
+  "device-mockup-generator-app-screenshots": "Stylus on a tablet displaying wireframe sketches",
+  "app-store-optimization-aso-guide": "Performance analytics graphs on a laptop screen",
+  "app-icon-sizes-design-guidelines": "Grid of colorful three-dimensional app icons",
+  "app-store-screenshot-examples": "Samsung smartphone displaying a screen full of app icons",
+  "google-play-feature-graphic-size-template-examples": "Abstract gradient sphere over colorful shapes",
+  "app-store-screenshots-rejected-fix": "Red do-not-enter sign at a roadside",
+  "google-play-screenshot-rejected-fix": "Red and white stop sign",
+  "app-store-screenshot-order": "Six white sticky notes arranged on a wall",
+  "app-store-screenshot-copywriting-examples": "Pen resting on lined notebook paper",
+  "app-store-screenshot-mistakes": "Crumpled sheet of white paper",
+  "iphone-ipad-app-store-screenshots": "Person holding a black iPad beside a green plant",
+  "google-play-store-listing-graphics-checklist": "Hand marking off items on a checklist",
+  "seasonal-app-store-screenshots": "Hand holding an iPhone in front of a Christmas tree",
+  "app-store-screenshot-localization-guide": "Desk globe on a table",
+  "popular-figma-templates-app-store-screenshots-device-mockups": "Watercolor wireframe sketches of screen layouts",
+  "app-store-screenshot-designers-creators-to-follow": "Designer working at a computer",
+  "google-play-screenshot-sizes-requirements": "Person holding a white Android smartphone",
+  "ab-test-app-store-screenshots": "Laptop showing analytics charts on a glass table",
+  "custom-product-pages-app-store-screenshots": "Person holding an iPhone with the screen on",
+  "design-app-store-screenshots-in-figma": "Monitor displaying a design system interface",
+  "best-app-store-screenshot-tools": "Home office workspace with a laptop, monitor and keyboard",
+  "make-and-ship-screenshots-with-fastlane": "MacBook Pro displaying programming code",
+  "upload-screenshots-to-app-store-connect": "MacBook Pro displaying a screen of app icons",
+  "screenshot-sizes-app-store-google-play": "iPhone in a green case beside a black Samsung phone",
+  "app-store-screenshot-sizes": "Tape measure in close-up",
+  "screenshots-that-convert": "Rising chart displayed on a laptop screen",
+  "localize-app-store-screenshots": "World map with location pins",
+};
+
+export function getBlogThumb(slug: string): BlogThumb | undefined {
+  const alt = BLOG_THUMB_ALT[slug];
+  return alt ? { src: `/blog/${slug}.webp`, alt } : undefined;
+}
