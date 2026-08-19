@@ -57,7 +57,8 @@ export default function ProjectSchema() {
 
           <p>
             Screenshot Bro stores each project as a single <code>project.json</code>{" "}
-            file inside <code>~/.screenshot/projects/&lt;uuid&gt;/</code>. The
+            file inside{" "}
+            <code>~/Library/Application Support/screenshot/projects/&lt;uuid&gt;/</code>. The
             format is a well-defined JSON structure derived directly from the
             app's Swift <code>Codable</code> models.
           </p>
