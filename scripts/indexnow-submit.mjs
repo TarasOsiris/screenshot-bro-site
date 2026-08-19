@@ -16,7 +16,9 @@ const ENDPOINT = "https://api.indexnow.org/indexnow";
 const MAX_URLS_PER_REQUEST = 10_000;
 
 async function urlsFromSitemap() {
-  const res = await fetch(`${SITE_URL}/sitemap.xml`);
+  // SITEMAP_URL lets the deploy hook read the sitemap from the local server
+  // (the <loc> entries are production URLs either way).
+  const res = await fetch(process.env.SITEMAP_URL ?? `${SITE_URL}/sitemap.xml`);
   if (!res.ok) {
     throw new Error(`Failed to fetch sitemap: HTTP ${res.status}`);
   }

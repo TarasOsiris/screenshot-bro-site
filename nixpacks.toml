@@ -5,4 +5,6 @@ cmds = ["npm ci --include=dev"]
 cmds = ["npm run build"]
 
 [start]
-cmd = "npm run start"
+# The on-boot script waits for the server, then pings IndexNow with the
+# sitemap (no-op outside Coolify). `exec` keeps the server as the main process.
+cmd = "sh -c 'node scripts/indexnow-on-boot.mjs & exec npm run start'"
