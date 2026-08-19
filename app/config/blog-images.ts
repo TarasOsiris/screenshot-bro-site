@@ -1,9 +1,12 @@
 export type BlogThumb = { src: string; alt: string };
 
-// Keys are post slugs from BLOG_POSTS; files live at public/blog/<slug>.webp
-// and are downloaded by scripts/fetch-blog-thumbs.mjs. Alt text stays English
-// on every locale (matching the untranslated category labels). A post without
-// an entry renders a category-tinted placeholder on the blog index.
+// Keys are post slugs from BLOG_POSTS; files live at public/blog-thumbs/<slug>.webp
+// (NOT public/blog/ — a directory matching the /blog route makes the static
+// server's directory redirect fight the router's trailing-slash redirect,
+// causing a redirect loop in production) and are downloaded by
+// scripts/fetch-blog-thumbs.mjs. Alt text stays English on every locale
+// (matching the untranslated category labels). A post without an entry
+// renders a category-tinted placeholder on the blog index.
 const BLOG_THUMB_ALT: Record<string, string> = {
   "best-app-store-screenshot-tools-for-mac": "iMac and MacBook on a white desk with phone wireframe sketches",
   "best-app-screenshot-localization-tools": "Colorful illustrated world map",
@@ -66,5 +69,5 @@ const BLOG_THUMB_ALT: Record<string, string> = {
 
 export function getBlogThumb(slug: string): BlogThumb | undefined {
   const alt = BLOG_THUMB_ALT[slug];
-  return alt ? { src: `/blog/${slug}.webp`, alt } : undefined;
+  return alt ? { src: `/blog-thumbs/${slug}.webp`, alt } : undefined;
 }

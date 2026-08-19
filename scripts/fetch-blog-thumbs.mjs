@@ -1,6 +1,9 @@
 // Downloads the curated Unsplash thumbnail for every blog post into
-// public/blog/<slug>.webp. Unsplash's CDN does the resize/crop/webp/quality
-// work server-side via query params, so no local image tooling is needed.
+// public/blog-thumbs/<slug>.webp. Unsplash's CDN does the resize/crop/webp/
+// quality work server-side via query params, so no local image tooling is
+// needed. The directory is deliberately NOT public/blog/: a public dir whose
+// name matches the /blog route triggers a redirect loop in production
+// (static-server directory redirect vs router trailing-slash redirect).
 //
 // Usage:
 //   npm run blog:thumbs              # download missing thumbnails
@@ -15,7 +18,7 @@ import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const OUT_DIR = fileURLToPath(new URL("../public/blog/", import.meta.url));
+const OUT_DIR = fileURLToPath(new URL("../public/blog-thumbs/", import.meta.url));
 const BLOG_TS = fileURLToPath(new URL("../app/config/blog.ts", import.meta.url));
 const PARAMS = "?w=800&h=450&fit=crop&fm=webp&q=75";
 const MIN_BYTES = 5_000; // anything smaller is an error page or dead photo ID
@@ -110,7 +113,7 @@ if (checkOnly) {
   let missingFiles = 0;
   for (const slug of Object.keys(THUMBS)) {
     if (!(await fileExists(path.join(OUT_DIR, `${slug}.webp`)))) {
-      console.warn(`Missing file: public/blog/${slug}.webp`);
+      console.warn(`Missing file: public/blog-thumbs/${slug}.webp`);
       missingFiles += 1;
     }
   }
