@@ -25,6 +25,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "The native Mac options for App Store screenshots compared: Screenshot Bro, Screenshot Studio, Rotato, Fastlane frameit, Mockuuups Studio, Figma and Sketch.",
     date: "2026-08-17",
+    dateModified: "2026-08-20",
     readTime: "8 min read",
     category: "Comparison",
     localized: false,
@@ -43,6 +44,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Which tools translate App Store and Google Play screenshots well: language coverage, built-in translation, per-locale overrides and export, compared.",
     date: "2026-08-17",
+    dateModified: "2026-08-20",
     readTime: "8 min read",
     category: "Comparison",
     localized: false,
@@ -61,6 +63,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Tools that handle a full Google Play listing: phone and tablet screenshots, the 1024x500 feature graphic, Android device frames and localization, compared.",
     date: "2026-08-17",
+    dateModified: "2026-08-20",
     readTime: "7 min read",
     category: "Comparison",
     localized: false,
@@ -79,6 +82,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "An honest list of Screenshot Bro alternatives from its own maker: which tool to use for Windows, Apple Watch, CI automation, 80+ languages or video.",
     date: "2026-08-17",
+    dateModified: "2026-08-20",
     readTime: "7 min read",
     category: "Comparison",
     localized: false,
@@ -95,8 +99,9 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "appscreens-alternative",
     title: "AppScreens Alternative: Native Mac Screenshot Editor",
     description:
-      "Looking for an AppScreens alternative? How Screenshot Bro compares: native Mac and iPad app, watermark-free exports, 30 locales, direct store upload.",
+      "Looking for an AppScreens alternative? How Screenshot Bro compares: native Mac app, watermark-free exports, 81 locales, direct store upload.",
     date: "2026-08-17",
+    dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
     localized: false,
@@ -115,6 +120,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Looking for a Screenshots Pro alternative? How Screenshot Bro compares: native editing, localization and direct App Store Connect upload, not an API.",
     date: "2026-08-17",
+    dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
     localized: false,
@@ -133,6 +139,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Looking for a Rotato alternative? Rotato does 3D mockups and video; Screenshot Bro builds the flat App Store and Google Play set in every size and locale.",
     date: "2026-08-17",
+    dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
     localized: false,
@@ -151,6 +158,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Looking for a Placeit alternative for app screenshots? A broad library with watermarked free downloads versus a focused, watermark-free store tool.",
     date: "2026-08-17",
+    dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
     localized: false,
@@ -169,6 +177,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Looking for a Mockuuups Studio alternative? Mockup libraries frame one image at a time; Screenshot Bro builds a localized store set from one canvas.",
     date: "2026-08-17",
+    dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
     localized: false,
@@ -187,6 +196,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "How to make App Store screenshots in Canva step by step, plus the point where duplicating designs per device size and language stops being worth it.",
     date: "2026-08-17",
+    dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
     localized: false,
@@ -203,8 +213,9 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "appmockup-alternative",
     title: "AppMockUp Alternative With Projects and Locales",
     description:
-      "Looking for an AppMockUp alternative? AppMockUp Studio is free in the browser; Screenshot Bro adds saved projects, 30 locales, batch export and upload.",
+      "Looking for an AppMockUp alternative? AppMockUp Studio is free in the browser; Screenshot Bro adds saved projects, 81 locales, batch export and upload.",
     date: "2026-08-17",
+    dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
     localized: false,
@@ -223,6 +234,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Screenshot Studio vs Screenshot Bro: two native Apple-platform screenshot apps compared on device coverage, translation, free tiers and project files.",
     date: "2026-08-17",
+    dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
     localized: false,
@@ -239,8 +251,9 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "applaunchpad-alternative",
     title: "AppLaunchpad Alternative: A Native App Store Screenshot App",
     description:
-      "Looking for an AppLaunchpad alternative? How Screenshot Bro compares as a native Mac and iPad app with device frames, localization, and direct App Store Connect upload.",
+      "Looking for an AppLaunchpad alternative? How Screenshot Bro compares: native Mac app, device frames, localization, direct App Store Connect upload.",
     date: "2026-06-18",
+    dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
     localized: false,
@@ -257,8 +270,9 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "previewed-alternative",
     title: "Previewed Alternative: Store-Ready App Screenshots in Every Size",
     description:
-      "Looking for a Previewed alternative? How Screenshot Bro compares for store-ready screenshots at exact sizes, deep localization, and direct App Store Connect upload.",
+      "Looking for a Previewed alternative? How Screenshot Bro compares: store-ready screenshots at exact sizes, localization and direct App Store Connect upload.",
     date: "2026-06-18",
+    dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
     localized: false,
@@ -275,8 +289,9 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "shotbot-alternative",
     title: "Shotbot Alternative: From Framing to Full Screenshot Design",
     description:
-      "Looking for a Shotbot alternative? How Screenshot Bro compares for designing full localized App Store screenshot sets, not just framing individual screenshots.",
+      "Looking for a Shotbot alternative? How Screenshot Bro compares for designing full localized App Store screenshot sets, not just framing single shots.",
     date: "2026-06-18",
+    dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
     localized: false,
@@ -421,6 +436,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "A 2026 comparison of free App Store screenshot generators — what each is known for, what to check on free tiers (watermarks, sizes, batch export), and when to upgrade.",
     date: "2026-06-18",
+    dateModified: "2026-08-20",
     readTime: "8 min read",
     category: "Comparison",
     localized: false,

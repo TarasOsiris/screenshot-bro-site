@@ -83,6 +83,17 @@ attributed to something.
 - No movement after two consecutive months → the bottleneck is off-site, not
   on-site. Work [directories.md](./directories.md) rather than writing more pages.
 
+## Page backlog (names seen in the wild, no page yet)
+
+- 2026-08-20 — while writing the ten `/vs/` pages: **ScreenKit** (screenkit.tools —
+  publishes its own `/vs/shotbot`-style pages), **AppShots** (App Store
+  id6760330087), **Butterkit** (named in AppLaunchpad's comparison posts). Plus the
+  earlier SERP set: Nuvex, Screenhance, AppDrift, ScreenFast, AppScreenshotStudio,
+  and Hotpot. Check each domain resolves before writing (LaunchMatic precedent).
+- 2026-08-20 — `/vs/` now has 11 pages (fastlane + 10 rivals). Shotbot's website
+  `shotbot.io` did not resolve on writing day; its page cites the App Store listing.
+  Placeit's pricing page blocks automated fetches (HTTP 403) — re-verify by hand.
+
 ## Mentions log
 
 Community and press mentions worth keeping (see
