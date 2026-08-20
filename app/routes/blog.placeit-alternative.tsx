@@ -15,7 +15,7 @@ const COMPARISON = [
   {
     factor: "Platform",
     placeit: "Browser-based, subscription account",
-    screenshotBro: "Native Mac and iPad app",
+    screenshotBro: "Native Mac, iPad and iPhone app",
   },
   {
     factor: "Free downloads",
@@ -30,12 +30,12 @@ const COMPARISON = [
   {
     factor: "Localization",
     placeit: "Edit each template by hand per language",
-    screenshotBro: "30 language presets, auto-translate, per-shape overrides",
+    screenshotBro: "81 language presets, on-device auto-translate, per-shape overrides",
   },
   {
     factor: "Store upload",
     placeit: "Download files, upload yourself",
-    screenshotBro: "Direct App Store Connect upload on Pro",
+    screenshotBro: "Direct App Store Connect and Google Play upload, free tier included",
   },
 ] as const;
 
@@ -55,9 +55,15 @@ export default function BlogPost() {
     <BlogArticleShell
       slug={SLUG}
       locale={locale}
-      tldr="Placeit is a broad browser design library — mockups, logos, video, social — where free downloads carry a watermark. Screenshot Bro does one job instead: App Store and Google Play screenshot sets on Mac and iPad, exported watermark-free in every size and locale."
+      tldr="Placeit is a broad browser design library — mockups, logos, video, social — where free downloads carry a watermark. Screenshot Bro does one job instead: App Store and Google Play screenshot sets on Mac, iPad and iPhone, exported watermark-free in every size and locale."
       ctaMessage="Only need store screenshots, not a whole design library? Try Screenshot Bro free."
+      ctaHomeLinkLabel="App Store screenshot tool for Mac"
       seoLinks={[
+        {
+          href: "/vs/placeit",
+          label: "Full head-to-head: Screenshot Bro vs Placeit",
+          description: "every factor side by side, with a switching guide.",
+        },
         {
           href: "/blog/screenshot-generator-vs-figma-vs-photoshop",
           label: "Generator vs Figma vs Photoshop",
@@ -88,7 +94,7 @@ export default function BlogPost() {
         {
           question: "What is a good Placeit alternative for app screenshots?",
           answer:
-            "Screenshot Bro is a native Mac and iPad app focused only on store screenshots: device frames for iPhone, iPad, Mac, and Android, multi-row layouts, 30 language presets with auto-translate, watermark-free export on the free tier, and direct App Store Connect upload on Pro. AppLaunchpad and Previewed are browser-based alternatives in the same niche.",
+            "Screenshot Bro is a native Mac, iPad and iPhone app focused only on store screenshots: device frames for iPhone, iPad, Mac, and Android, multi-row layouts, 81 language presets with auto-translate, watermark-free export on the free tier, and direct App Store Connect and Google Play upload. AppLaunchpad and Previewed are browser-based alternatives in the same niche.",
         },
       ]}
     >
@@ -155,7 +161,7 @@ export default function BlogPost() {
         Choose <strong>Placeit</strong> if you need a broad design library and
         screenshots are only one item on the list. Choose{" "}
         <strong>Screenshot Bro</strong> if the listing is the job: multi-row
-        layouts, every store size from one canvas, 30 locales, watermark-free
+        layouts, every store size from one canvas, 81 locales, watermark-free
         exports, and upload to App Store Connect. If you are still deciding
         between a dedicated tool and a general one, read{" "}
         <a href="/blog/screenshot-generator-vs-figma-vs-photoshop">

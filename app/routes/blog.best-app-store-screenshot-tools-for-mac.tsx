@@ -9,10 +9,10 @@ const SLUG = "best-app-store-screenshot-tools-for-mac";
 const TOOLS = [
   {
     tool: "Screenshot Bro",
-    type: "Native Mac and iPad app",
+    type: "Native Mac, iPad and iPhone app",
     free: "Watermark-free exports on the free tier",
-    localization: "30 presets, on-device auto-translate",
-    upload: "Direct App Store Connect upload (Pro)",
+    localization: "81 presets, on-device auto-translate",
+    upload: "Direct App Store Connect and Google Play upload, free tier included",
   },
   {
     tool: "Screenshot Studio",
@@ -68,7 +68,8 @@ export default function BlogPost() {
       slug={SLUG}
       locale={locale}
       tldr="Most App Store screenshot generators are browser tools. If you specifically want a Mac app — offline, fast, files on disk — the real options are Screenshot Bro, Screenshot Studio, Rotato, Fastlane frameit on the command line, and general design tools like Figma or Sketch."
-      ctaMessage="Screenshot Bro is a native Mac and iPad app with a watermark-free free tier. Try it free."
+      ctaMessage="Screenshot Bro is a native Mac, iPad and iPhone app with a watermark-free free tier. Try it free."
+      ctaHomeLinkLabel="the native Mac App Store screenshot tool"
       seoLinks={[
         {
           href: "/blog/best-free-app-store-screenshot-generators",
@@ -100,7 +101,7 @@ export default function BlogPost() {
         {
           question: "Do any Mac screenshot tools upload to App Store Connect directly?",
           answer:
-            "Yes. Screenshot Bro uploads directly on its Pro tier, Screenshot Studio uploads directly, and Fastlane can deliver screenshots via fastlane deliver. Most browser-based generators export a folder of files that you upload by hand.",
+            "Yes. Screenshot Bro uploads directly to App Store Connect and Google Play on every tier, free included, Screenshot Studio uploads directly, and Fastlane can deliver screenshots via fastlane deliver. Most browser-based generators export a folder of files that you upload by hand.",
         },
       ]}
     >
@@ -141,11 +142,11 @@ export default function BlogPost() {
 
       <h3>Screenshot Bro — native, watermark-free free tier</h3>
       <p>
-        A Mac and iPad app built around one continuous canvas: every device size,
+        A Mac, iPad and iPhone app built around one continuous canvas: every device size,
         row, and locale side by side. Device frames for iPhone, iPad, Mac, and
-        Android, text, shapes, gradients and SVG, 30 language presets with
+        Android, text, shapes, gradients and SVG, 81 language presets with
         on-device auto-translate and per-shape overrides, batch export organized
-        by locale and row, and direct App Store Connect upload on Pro. The free
+        by locale and row, and direct App Store Connect and Google Play upload. The free
         tier exports without a watermark (1 project, 3 rows, 5 templates per row).
         Projects are <a href="/docs/project-schema">plain JSON files</a>.
       </p>
@@ -232,7 +233,11 @@ export default function BlogPost() {
         <a href="/blog/best-free-app-store-screenshot-generators">
           free generators roundup
         </a>{" "}
-        and the <a href="/vs">full comparison hub</a>.
+        and the <a href="/vs">full comparison hub</a>, which has a head-to-head
+        page for each native tool here:{" "}
+        <a href="/vs/screenshot-studio">Screenshot Studio</a>,{" "}
+        <a href="/vs/rotato">Rotato</a> and{" "}
+        <a href="/vs/mockuuups-studio">Mockuuups Studio</a>.
       </p>
     </BlogArticleShell>
   );

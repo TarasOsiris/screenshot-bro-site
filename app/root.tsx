@@ -58,6 +58,7 @@ const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
   operatingSystem: [
     `macOS ${MINIMUM_MACOS_VERSION} or later`,
     `iPadOS ${MINIMUM_IPADOS_VERSION} or later`,
+    `iOS ${MINIMUM_IPADOS_VERSION} or later`,
   ],
   applicationCategory: "DesignApplication",
   applicationSubCategory: "App Store screenshot generator",
@@ -95,7 +96,7 @@ const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
     priceCurrency: "USD",
   },
   isAccessibleForFree: true,
-  softwareRequirements: `macOS ${MINIMUM_MACOS_VERSION} or later, or iPadOS ${MINIMUM_IPADOS_VERSION} or later`,
+  softwareRequirements: `macOS ${MINIMUM_MACOS_VERSION} or later, iPadOS ${MINIMUM_IPADOS_VERSION} or later, or iOS ${MINIMUM_IPADOS_VERSION} or later`,
   keywords: SITE_KEYWORDS,
   sameAs: [APP_STORE_URL, X_PROFILE_URL, THREADS_URL, REDDIT_COMMUNITY_URL],
   featureList: FEATURES.map((feature) => feature.title),

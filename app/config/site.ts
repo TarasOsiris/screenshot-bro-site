@@ -1,6 +1,6 @@
 export const SITE_NAME = "Screenshot Bro";
 export const SITE_DESCRIPTION =
-  "Design App Store and Google Play screenshots on Mac and iPad. Add device frames, localize, batch export, and upload direct to App Store Connect.";
+  "Native App Store and Google Play screenshot tool for Mac, iPad, and iPhone. Device frames, localization, batch export, and App Store Connect upload.";
 export const SITE_TAGLINE =
   "Design and upload App Store and Google Play screenshots in minutes.";
 export const SITE_URL =
@@ -39,6 +39,8 @@ export const MINIMUM_MACOS_VERSION = "15.0";
 export const MINIMUM_IPADOS_VERSION = "18.0";
 export const SITE_KEYWORDS = [
   "App Store screenshots",
+  "App Store screenshot tool",
+  "App Store screenshot tool for Mac",
   "App Store screenshot generator",
   "Mac App Store screenshots",
   "Google Play screenshots",
@@ -123,12 +125,17 @@ export const FAQS: FaqItem[] = [
   {
     question: "Is Screenshot Bro free?",
     answer:
-      "Yes. The free tier is unlimited in time and lets you keep 1 project with up to 3 rows and 5 templates per row — full access to every device frame, shape, and locale, watermark-free exports included. Pro lifts those limits and unlocks App Store Connect upload and iCloud sync.",
+      "Yes. The free tier is unlimited in time and lets you keep 1 project with up to 3 rows and 5 templates per row — full access to every device frame, shape, and locale, watermark-free exports, App Store Connect and Google Play upload, and iCloud sync included. Pro lifts the project, row, and template limits.",
+  },
+  {
+    question: "How is this different from a web-based App Store screenshot generator?",
+    answer:
+      "Screenshot Bro is a native Mac, iPad, and iPhone app rather than a browser tool, so projects, screenshots, and fonts stay on disk and everyday editing needs no account and no internet connection. Rendering and batch export run on your own hardware instead of a server. If you are on Windows or Linux, want to collaborate in a shared browser session, or only need one or two images, a web-based App Store screenshot tool is the better fit — the alternatives page covers those cases.",
   },
   {
     question: "What do I need to run it?",
     answer:
-      "macOS 15 (Sequoia) or later on Mac, or iPadOS 18 or later on iPad. No companion device, no account, no internet connection required for everyday editing.",
+      "macOS 15 (Sequoia) or later on Mac, iPadOS 18 or later on iPad, or iOS 18 or later on iPhone. No companion device, no account, no internet connection required for everyday editing.",
   },
   {
     question: "Does my data leave my device?",

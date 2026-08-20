@@ -10,7 +10,7 @@ const COMPARISON = [
   {
     factor: "Platform",
     studio: "Native Mac and iOS app",
-    screenshotBro: "Native Mac and iPad app",
+    screenshotBro: "Native Mac, iPad and iPhone app",
   },
   {
     factor: "Device coverage",
@@ -25,7 +25,7 @@ const COMPARISON = [
   {
     factor: "Translation",
     studio: "Built-in AI translation, any language, no API key",
-    screenshotBro: "30 language presets plus custom codes, on-device auto-translate",
+    screenshotBro: "81 language presets plus custom codes, on-device auto-translate",
   },
   {
     factor: "Canvas model",
@@ -35,7 +35,7 @@ const COMPARISON = [
   {
     factor: "Store upload",
     studio: "Direct App Store Connect upload",
-    screenshotBro: "Direct App Store Connect upload on Pro",
+    screenshotBro: "Direct App Store Connect and Google Play upload, free tier included",
   },
 ] as const;
 
@@ -57,7 +57,13 @@ export default function BlogPost() {
       locale={locale}
       tldr="Screenshot Studio and Screenshot Bro are the closest thing to direct rivals: both are native Apple-platform apps that design, localize, and upload store screenshots. Screenshot Studio covers more device classes and translates into any language; Screenshot Bro exports watermark-free on its free tier and keeps projects as plain JSON files."
       ctaMessage="Want to export a real set before paying anything? Screenshot Bro's free tier exports watermark-free."
+      ctaHomeLinkLabel="a native Mac App Store screenshot tool"
       seoLinks={[
+        {
+          href: "/vs/screenshot-studio",
+          label: "Full head-to-head: Screenshot Bro vs Screenshot Studio",
+          description: "every factor side by side, with a switching guide.",
+        },
         {
           href: "/blog/best-app-store-screenshot-tools-for-mac",
           label: "Best tools for Mac",
@@ -88,7 +94,7 @@ export default function BlogPost() {
         {
           question: "Which one should I pick?",
           answer:
-            "If you ship for Apple Watch, Apple TV, or Vision Pro, or you localize beyond 30 markets, Screenshot Studio covers more ground. If you want to export a real set before paying, prefer working on one large canvas, or want project files you can diff and back up yourself, Screenshot Bro fits better. Both upload directly to App Store Connect.",
+            "If you ship for Apple Watch, Apple TV, or Vision Pro, or you want AI translation into a language Apple's on-device translation doesn't cover, Screenshot Studio covers more ground. If you want to export a real set before paying, prefer working on one large canvas, or want project files you can diff and back up yourself, Screenshot Bro fits better. Both upload directly to App Store Connect.",
         },
       ]}
     >
@@ -162,8 +168,8 @@ export default function BlogPost() {
       <h2>Who Should Pick Which</h2>
       <p>
         Choose <strong>Screenshot Studio</strong> if you need Apple Watch, Apple
-        TV, or Vision Pro screenshots, or if you localize into more markets than
-        30 presets cover. Choose <strong>Screenshot Bro</strong> if you want to
+        TV, or Vision Pro screenshots, or if you want AI translation into a language Apple's on-device
+        translation doesn't cover. Choose <strong>Screenshot Bro</strong> if you want to
         export a real set before paying, prefer a single zoomable canvas over a
         per-size editor, and want project files you own outright. Both are native
         and both upload to App Store Connect, so the honest advice is to try each

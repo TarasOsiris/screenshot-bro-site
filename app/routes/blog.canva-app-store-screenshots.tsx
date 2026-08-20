@@ -25,7 +25,7 @@ const COMPARISON = [
   {
     factor: "Localization",
     canva: "Duplicate the design per language and retype the copy",
-    screenshotBro: "30 language presets, auto-translate, per-shape overrides",
+    screenshotBro: "81 language presets, on-device auto-translate, per-shape overrides",
   },
   {
     factor: "Export",
@@ -35,7 +35,7 @@ const COMPARISON = [
   {
     factor: "Store upload",
     canva: "Download files, upload yourself",
-    screenshotBro: "Direct App Store Connect upload on Pro",
+    screenshotBro: "Direct App Store Connect and Google Play upload, free tier included",
   },
 ] as const;
 
@@ -57,6 +57,7 @@ export default function BlogPost() {
       locale={locale}
       tldr="You can absolutely make App Store screenshots in Canva: create a custom-size design at the exact pixel dimensions Apple requires, drop your screenshot into a device mockup, add a headline, and download PNGs. It stops being a good fit once you need every device size in several languages."
       ctaMessage="Outgrown copying Canva designs per size and language? Try Screenshot Bro free."
+      ctaHomeLinkLabel="a dedicated App Store screenshot tool"
       seoLinks={[
         {
           href: "/blog/app-store-screenshot-sizes",
@@ -180,7 +181,7 @@ export default function BlogPost() {
         Stay in <strong>Canva</strong> if screenshots are occasional, one device
         size, one language, and you already pay for it. Move to{" "}
         <strong>Screenshot Bro</strong> when the set repeats across sizes,
-        languages, and releases — one design, every size, 30 locales, and upload
+        languages, and releases — one design, every size, 81 locales, and upload
         straight to App Store Connect. For the broader question of dedicated tool
         versus design tool, read{" "}
         <a href="/blog/screenshot-generator-vs-figma-vs-photoshop">

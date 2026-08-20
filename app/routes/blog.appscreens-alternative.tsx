@@ -10,7 +10,7 @@ const COMPARISON = [
   {
     factor: "Platform",
     appscreens: "Browser-based, projects saved to your account",
-    screenshotBro: "Native Mac and iPad app, projects saved as local files",
+    screenshotBro: "Native Mac, iPad and iPhone app, projects saved as local files",
   },
   {
     factor: "Free tier",
@@ -25,12 +25,12 @@ const COMPARISON = [
   {
     factor: "Localization",
     appscreens: "80+ languages on paid plans",
-    screenshotBro: "30 language presets plus custom codes, on-device auto-translate",
+    screenshotBro: "81 language presets plus custom codes, on-device auto-translate",
   },
   {
     factor: "Store upload",
     appscreens: "Automatic App Store upload on paid plans",
-    screenshotBro: "Direct App Store Connect upload on Pro",
+    screenshotBro: "Direct App Store Connect and Google Play upload, free tier included",
   },
   {
     factor: "Store coverage",
@@ -55,9 +55,15 @@ export default function BlogPost() {
     <BlogArticleShell
       slug={SLUG}
       locale={locale}
-      tldr="AppScreens is a browser tool whose paid plans cover 80+ languages and automatic store upload; Screenshot Bro is a native Mac and iPad app with a watermark-free free tier, 30 language presets, and direct App Store Connect upload on Pro."
-      ctaMessage="Want a native editor with watermark-free exports and 30 locales? Try Screenshot Bro free."
+      tldr="AppScreens is a browser tool whose paid plans cover 80+ languages and automatic store upload; Screenshot Bro is a native Mac, iPad and iPhone app with a watermark-free free tier, 81 language presets, and direct App Store Connect and Google Play upload."
+      ctaMessage="Want a native editor with watermark-free exports and 81 locales? Try Screenshot Bro free."
+      ctaHomeLinkLabel="App Store screenshot generator for Mac, iPad and iPhone"
       seoLinks={[
+        {
+          href: "/vs/appscreens",
+          label: "Full head-to-head: Screenshot Bro vs AppScreens",
+          description: "every factor side by side, with a switching guide.",
+        },
         {
           href: "/blog/best-app-screenshot-localization-tools",
           label: "Best localization tools",
@@ -83,12 +89,12 @@ export default function BlogPost() {
         {
           question: "What is a good AppScreens alternative?",
           answer:
-            "If you want a native Mac and iPad app instead of a browser tool, with watermark-free exports on the free tier, 30 language presets with on-device auto-translate, and direct App Store Connect upload, Screenshot Bro is a strong alternative. Other options include AppLaunchpad, Previewed, and Screenshots Pro.",
+            "If you want a native Mac, iPad and iPhone app instead of a browser tool, with watermark-free exports on the free tier, 81 language presets with on-device auto-translate, and direct App Store Connect upload, Screenshot Bro is a strong alternative. Other options include AppLaunchpad, Previewed, and Screenshots Pro.",
         },
         {
           question: "Does Screenshot Bro support as many languages as AppScreens?",
           answer:
-            "No. AppScreens advertises 80+ languages on paid plans; Screenshot Bro ships 30 language presets and lets you define custom locale codes beyond those, with on-device auto-translate and per-shape text overrides. If you ship into more than 30 App Store locales and want them all preset, AppScreens covers more ground.",
+            "Roughly, with one difference. AppScreens advertises 80+ languages with machine translation on paid plans; Screenshot Bro ships 81 language presets plus custom locale codes, but its on-device auto-translate only covers the languages Apple's Translation framework supports — the rest you fill by typing or pasting translations. If you want machine translation into every market you ship to, AppScreens covers more ground.",
         },
       ]}
     >
@@ -155,8 +161,8 @@ export default function BlogPost() {
 
       <h2>Who Should Pick Which</h2>
       <p>
-        Choose <strong>AppScreens</strong> if you localize into more than 30
-        markets, want the widest storefront coverage, or need a tool that runs on
+        Choose <strong>AppScreens</strong> if you want machine translation into
+        every market you ship to, want the widest storefront coverage, or need a tool that runs on
         any operating system. Choose <strong>Screenshot Bro</strong> if you work
         on a Mac or iPad, want a real editor with multi-row layouts and no
         watermark on the free tier, and prefer project files you own. For the

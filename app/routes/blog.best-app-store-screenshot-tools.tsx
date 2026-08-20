@@ -62,6 +62,8 @@ export default function BlogPost() {
         <BlogCTA
           message={getCTAMessage(locale)}
           buttonLabel={getCTAButtonLabel(locale)}
+          homeLinkLabel="App Store screenshot tool for Mac and iPad"
+          locale={locale}
         />
         <RelatedPosts currentSlug={SLUG} locale={locale} />
       </div>

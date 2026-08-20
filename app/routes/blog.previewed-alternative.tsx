@@ -10,7 +10,7 @@ const COMPARISON = [
   {
     factor: "Platform",
     previewed: "Browser-based",
-    screenshotBro: "Native Mac and iPad app",
+    screenshotBro: "Native Mac, iPad and iPhone app",
   },
   {
     factor: "Signature strength",
@@ -25,7 +25,7 @@ const COMPARISON = [
   {
     factor: "Localization",
     previewed: "Template-based",
-    screenshotBro: "30 language presets, auto-translate, per-shape overrides",
+    screenshotBro: "81 language presets, on-device auto-translate, per-shape overrides",
   },
   {
     factor: "Direct store upload",
@@ -56,7 +56,13 @@ export default function BlogPost() {
       slug={SLUG}
       locale={locale}
       ctaMessage="Need store-ready screenshots in every size and language, with direct upload? Try Screenshot Bro free."
+      ctaHomeLinkLabel="the Mac App Store screenshot generator"
       seoLinks={[
+        {
+          href: "/vs/previewed",
+          label: "Full head-to-head: Screenshot Bro vs Previewed",
+          description: "every factor side by side, with a switching guide.",
+        },
         {
           href: "/blog/device-mockup-generator-app-screenshots",
           label: "Device mockup generator",
@@ -155,7 +161,7 @@ export default function BlogPost() {
         animated promo videos for marketing pages. Choose{" "}
         <strong>Screenshot Bro</strong> if you want store-ready screenshots in
         every device size and language, device frames, and direct App Store
-        Connect upload from a native Mac and iPad app. Many teams use both — an
+        Connect upload from a native Mac, iPad and iPhone app. Many teams use both — an
         animation tool for the website hero and a screenshot app for the store
         gallery. See the{" "}
         <a href="/blog/device-mockup-generator-app-screenshots">

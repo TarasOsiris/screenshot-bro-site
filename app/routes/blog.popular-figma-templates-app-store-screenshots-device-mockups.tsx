@@ -21,7 +21,7 @@ export default function BlogPost() {
           <ContentEn />
         </article>
 
-        <BlogCTA message="Use Figma templates for visual direction, then build the repeatable screenshot workflow in Screenshot Bro: frames, captions, localization, batch export, and App Store Connect upload." />
+        <BlogCTA message="Use Figma templates for visual direction, then build the repeatable screenshot workflow in Screenshot Bro: frames, captions, localization, batch export, and App Store Connect upload." homeLinkLabel="a native App Store screenshot tool for Mac and iPad" />
         <RelatedPosts currentSlug={SLUG} />
       </div>
     </ContentLayout>
@@ -83,7 +83,7 @@ function ContentEn() {
         src="/docs-help/templates.webp"
         alt="Screenshot Bro templates row showing multiple App Store screenshot designs in one project"
         width={1600}
-        height={453}
+        height={710}
         caption="The strongest Figma template ideas are the ones you can turn into a repeatable screenshot system."
       />
 
@@ -183,7 +183,7 @@ function ContentEn() {
         src="/docs-help/rows.webp"
         alt="Screenshot Bro rows view showing screenshot rows for different devices"
         width={1600}
-        height={1284}
+        height={1165}
         caption="Cross-platform screenshot work is easier when device rows are part of the project model, not just duplicated artboards."
       />
 
@@ -249,7 +249,7 @@ function ContentEn() {
         src="/docs-help/devices.webp"
         alt="Screenshot Bro device picker showing Apple and Android device frames"
         width={510}
-        height={230}
+        height={304}
         caption="Device mockups are useful, but store screenshots need current, predictable frames and dimensions."
       />
 
@@ -303,9 +303,9 @@ function ContentEn() {
 
       <ArticleImage
         src="/docs-help/locales.webp"
-        alt="Screenshot Bro localization panel showing per-locale screenshot text overrides"
-        width={1100}
-        height={1300}
+        alt="Screenshot Bro language picker showing built-in language presets"
+        width={1000}
+        height={956}
         caption="The template that looks good in English still has to survive localization. That is where a dedicated screenshot workflow pays off."
       />
 

@@ -266,7 +266,7 @@ function ContentEn() {
         src="/docs-help/templates.webp"
         alt="Screenshot Bro templates row showing multiple screenshot designs in one project"
         width={1600}
-        height={453}
+        height={710}
         caption="A good social reference becomes useful when it can be rebuilt as a template row, not just admired as a one-off design."
       />
 
@@ -309,7 +309,7 @@ function ContentEn() {
         src="/docs-help/editor-overview.webp"
         alt="Screenshot Bro editor showing app screenshots, device frames, text layers, and project controls"
         width={1600}
-        height={1004}
+        height={1046}
         caption="Screenshot Bro is where the inspiration turns into production: frames, text, backgrounds, spacing, rows, and variants in one editor."
       />
 

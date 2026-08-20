@@ -34,7 +34,7 @@ export default function BlogPost() {
           {renderContent(locale)}
         </article>
 
-        <BlogCTA message={getCTAMessage(locale)} />
+        <BlogCTA message={getCTAMessage(locale)} locale={locale} />
         <RelatedPosts currentSlug={SLUG} locale={locale} />
       </div>
     </ContentLayout>

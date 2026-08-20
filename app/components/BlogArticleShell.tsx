@@ -19,6 +19,7 @@ export function BlogArticleShell({
   tldr,
   ctaMessage = "Design, localize, export, and update App Store screenshots faster in Screenshot Bro.",
   ctaButtonLabel,
+  ctaHomeLinkLabel,
   seoLinks = [],
   faqs = [],
 }: {
@@ -30,6 +31,10 @@ export function BlogArticleShell({
   tldr?: string;
   ctaMessage?: string;
   ctaButtonLabel?: string;
+  // Anchor text for the CTA's homepage link. Topically relevant posts (tool
+  // round-ups, alternative pages) set a descriptive one; the rest fall back to
+  // the branded default in BlogCTA.
+  ctaHomeLinkLabel?: string;
   seoLinks?: SeoGuideLink[];
   faqs?: BlogFaqItem[];
 }) {
@@ -72,7 +77,12 @@ export function BlogArticleShell({
             </section>
           ) : null}
         </article>
-        <BlogCTA message={ctaMessage} buttonLabel={ctaButtonLabel} />
+        <BlogCTA
+          message={ctaMessage}
+          buttonLabel={ctaButtonLabel}
+          homeLinkLabel={ctaHomeLinkLabel}
+          locale={locale}
+        />
         <RelatedPosts currentSlug={slug} locale={locale} />
       </div>
     </ContentLayout>

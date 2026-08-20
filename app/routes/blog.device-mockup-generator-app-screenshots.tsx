@@ -46,6 +46,7 @@ export default function BlogPost() {
       slug={SLUG}
       locale={locale}
       ctaMessage="Drop a screenshot, pick a device model and color, and export framed mockups for every store size in Screenshot Bro."
+      ctaHomeLinkLabel="App Store screenshot tool with device frames built in"
       seoLinks={[
         {
           href: "/blog/popular-figma-templates-app-store-screenshots-device-mockups",

@@ -62,6 +62,7 @@ export default function BlogPost() {
       slug={SLUG}
       locale={locale}
       ctaMessage="Skip the per-size, per-locale busywork — design once and export every variant in Screenshot Bro."
+      ctaHomeLinkLabel="a purpose-built App Store screenshot generator"
       seoLinks={[
         {
           href: "/blog/best-app-store-screenshot-tools",

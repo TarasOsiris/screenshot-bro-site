@@ -9,7 +9,7 @@ const SLUG = "best-google-play-screenshot-tools";
 const TOOLS = [
   {
     tool: "Screenshot Bro",
-    type: "Native Mac and iPad app",
+    type: "Native Mac, iPad and iPhone app",
     playSizes: "Play screenshot sizes and Android device frames",
     featureGraphic: "Yes — custom canvas at 1024×500",
     free: "Watermark-free exports on the free tier",
@@ -69,6 +69,7 @@ export default function BlogPost() {
       locale={locale}
       tldr="Google Play needs phone screenshots plus a 1024×500 feature graphic, and most tools are built App-Store-first. Screenshot Bro, AppLaunchpad, Screenshots Pro, and AppScreens all export Play sizes; AppMockUp is the free browser option; Canva or Placeit cover the feature graphic if your tool doesn't."
       ctaMessage="Design App Store and Google Play assets from one project. Try Screenshot Bro free."
+      ctaHomeLinkLabel="App Store and Google Play screenshot tool for Mac"
       seoLinks={[
         {
           href: "/blog/google-play-screenshot-sizes-requirements",
@@ -90,7 +91,7 @@ export default function BlogPost() {
         {
           question: "What tool should I use for Google Play screenshots?",
           answer:
-            "Any tool that exports at Play's required dimensions will do; the difference is how much of the listing it handles. Screenshot Bro covers Play sizes, Android device frames, and localization from a native Mac and iPad app. AppLaunchpad, Screenshots Pro, and AppScreens do the same in the browser, and AppMockUp Studio is free with no account.",
+            "Any tool that exports at Play's required dimensions will do; the difference is how much of the listing it handles. Screenshot Bro covers Play sizes, Android device frames, and localization from a native Mac, iPad and iPhone app. AppLaunchpad, Screenshots Pro, and AppScreens do the same in the browser, and AppMockUp Studio is free with no account.",
         },
         {
           question: "What size is a Google Play feature graphic?",
@@ -147,9 +148,9 @@ export default function BlogPost() {
 
       <h3>Screenshot Bro — one project for both stores</h3>
       <p>
-        A native Mac and iPad app with Android device frames alongside iPhone,
+        A native Mac, iPad and iPhone app with Android device frames alongside iPhone,
         iPad, and Mac ones, Play export sizes, custom canvas sizes for the
-        feature graphic, 30 language presets with auto-translate, and batch
+        feature graphic, 81 language presets with auto-translate, and batch
         export organized by locale and row. Exports are watermark-free on the
         free tier. The advantage over an App-Store-only tool is that both
         listings come out of the same project.

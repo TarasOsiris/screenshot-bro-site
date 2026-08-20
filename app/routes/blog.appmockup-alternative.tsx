@@ -10,7 +10,7 @@ const COMPARISON = [
   {
     factor: "Platform",
     appmockup: "Browser-based, no account required",
-    screenshotBro: "Native Mac and iPad app",
+    screenshotBro: "Native Mac, iPad and iPhone app",
   },
   {
     factor: "Price",
@@ -25,17 +25,17 @@ const COMPARISON = [
   {
     factor: "Project files",
     appmockup: "Lives in the browser session",
-    screenshotBro: "Plain-JSON project files on your Mac, with iCloud sync on Pro",
+    screenshotBro: "Plain-JSON project files on your Mac, with opt-in iCloud sync",
   },
   {
     factor: "Localization",
     appmockup: "Not a built-in workflow",
-    screenshotBro: "30 language presets, auto-translate, per-shape overrides",
+    screenshotBro: "81 language presets, on-device auto-translate, per-shape overrides",
   },
   {
     factor: "Store upload",
     appmockup: "Export files, upload yourself",
-    screenshotBro: "Direct App Store Connect upload on Pro",
+    screenshotBro: "Direct App Store Connect and Google Play upload, free tier included",
   },
 ] as const;
 
@@ -55,9 +55,15 @@ export default function BlogPost() {
     <BlogArticleShell
       slug={SLUG}
       locale={locale}
-      tldr="AppMockUp Studio is a free browser tool with no signup — hard to beat for a quick set of framed screenshots. Screenshot Bro is a native Mac and iPad app for when the listing repeats: saved projects, 30 locales, batch export, and direct App Store Connect upload."
+      tldr="AppMockUp Studio is a free browser tool with no signup — hard to beat for a quick set of framed screenshots. Screenshot Bro is a native Mac, iPad and iPhone app for when the listing repeats: saved projects, 81 locales, batch export, and direct App Store Connect upload."
       ctaMessage="Need saved projects, locales, and upload on top of framing? Try Screenshot Bro free."
+      ctaHomeLinkLabel="a native App Store screenshot tool for Mac, iPad and iPhone"
       seoLinks={[
+        {
+          href: "/vs/appmockup-studio",
+          label: "Full head-to-head: Screenshot Bro vs AppMockUp Studio",
+          description: "every factor side by side, with a switching guide.",
+        },
         {
           href: "/blog/best-free-app-store-screenshot-generators",
           label: "Best free generators",
@@ -83,7 +89,7 @@ export default function BlogPost() {
         {
           question: "What is a good AppMockUp alternative?",
           answer:
-            "If you want saved project files, localization into many languages, batch export organized per locale, and direct App Store Connect upload, Screenshot Bro is a native Mac and iPad alternative with a watermark-free free tier. AppLaunchpad and Previewed are browser alternatives if you prefer to stay in a tab.",
+            "If you want saved project files, localization into many languages, batch export organized per locale, and direct App Store Connect upload, Screenshot Bro is a native Mac, iPad and iPhone alternative with a watermark-free free tier. AppLaunchpad and Previewed are browser alternatives if you prefer to stay in a tab.",
         },
         {
           question: "Why use a paid app when AppMockUp is free?",
@@ -155,7 +161,7 @@ export default function BlogPost() {
         Choose <strong>AppMockUp Studio</strong> for a fast, free, one-off set —
         it is hard to argue with free and no signup. Choose{" "}
         <strong>Screenshot Bro</strong> when the listing is ongoing work: saved
-        projects, 30 locales with auto-translate, batch export per locale, and
+        projects, 81 locales with auto-translate, batch export per locale, and
         upload straight to App Store Connect. Both appear in our{" "}
         <a href="/blog/best-free-app-store-screenshot-generators">
           free generators roundup

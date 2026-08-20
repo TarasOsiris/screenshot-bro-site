@@ -10,7 +10,7 @@ const COMPARISON = [
   {
     factor: "Platform",
     applaunchpad: "Browser-based",
-    screenshotBro: "Native Mac and iPad app",
+    screenshotBro: "Native Mac, iPad and iPhone app",
   },
   {
     factor: "Templates",
@@ -25,7 +25,7 @@ const COMPARISON = [
   {
     factor: "Localization",
     applaunchpad: "Yes",
-    screenshotBro: "30 language presets, auto-translate, per-shape overrides",
+    screenshotBro: "81 language presets, on-device auto-translate, per-shape overrides",
   },
   {
     factor: "Direct store upload",
@@ -56,7 +56,13 @@ export default function BlogPost() {
       slug={SLUG}
       locale={locale}
       ctaMessage="Want a native editor with device frames, localization, and direct upload? Try Screenshot Bro free."
+      ctaHomeLinkLabel="the native App Store screenshot generator for Mac"
       seoLinks={[
+        {
+          href: "/vs/applaunchpad",
+          label: "Full head-to-head: Screenshot Bro vs AppLaunchpad",
+          description: "every factor side by side, with a switching guide.",
+        },
         {
           href: "/blog/best-free-app-store-screenshot-generators",
           label: "Best free screenshot generators",
@@ -82,7 +88,7 @@ export default function BlogPost() {
         {
           question: "What is a good AppLaunchpad alternative?",
           answer:
-            "If you want a native Mac and iPad app rather than a browser tool — with device frames, a multi-row editor, 30-language localization, and direct App Store Connect upload — Screenshot Bro is a strong alternative with a watermark-free free tier. Other options include Previewed, AppMockUp, and Shotbot.",
+            "If you want a native Mac, iPad and iPhone app rather than a browser tool — with device frames, a multi-row editor, 81-language localization, and direct App Store Connect upload — Screenshot Bro is a strong alternative with a watermark-free free tier. Other options include Previewed, AppMockUp, and Shotbot.",
         },
         {
           question: "Why switch from a browser tool to a native app?",
@@ -155,7 +161,7 @@ export default function BlogPost() {
         Choose <strong>AppLaunchpad</strong> if you want a browser tool with the
         widest template library and you are fine exporting files to upload
         yourself. Choose <strong>Screenshot Bro</strong> if you prefer a native
-        Mac and iPad app, want a watermark-free free tier, need device frames and
+        Mac, iPad and iPhone app, want a watermark-free free tier, need device frames and
         deep localization, and want to upload straight to App Store Connect. For
         a wider view, see the{" "}
         <a href="/blog/best-free-app-store-screenshot-generators">

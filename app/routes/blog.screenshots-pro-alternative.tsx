@@ -10,7 +10,7 @@ const COMPARISON = [
   {
     factor: "Platform",
     screenshotsPro: "Browser-based with cloud storage and auto-save",
-    screenshotBro: "Native Mac and iPad app, files on your machine",
+    screenshotBro: "Native Mac, iPad and iPhone app, files on your machine",
   },
   {
     factor: "Pricing model",
@@ -30,12 +30,12 @@ const COMPARISON = [
   {
     factor: "Localization",
     screenshotsPro: "Auto-translate on paid plans",
-    screenshotBro: "30 language presets, on-device auto-translate, per-shape overrides",
+    screenshotBro: "81 language presets, on-device auto-translate, per-shape overrides",
   },
   {
     factor: "Store upload",
     screenshotsPro: "Export files, upload yourself",
-    screenshotBro: "Direct App Store Connect upload on Pro",
+    screenshotBro: "Direct App Store Connect and Google Play upload, free tier included",
   },
 ] as const;
 
@@ -55,9 +55,15 @@ export default function BlogPost() {
     <BlogArticleShell
       slug={SLUG}
       locale={locale}
-      tldr="Screenshots Pro is a browser tool with a free Basic plan and an API for CI/CD pipelines; Screenshot Bro is a native Mac and iPad editor that uploads finished sets straight to App Store Connect. Pick by whether you want screenshots scripted or designed."
+      tldr="Screenshots Pro is a browser tool with a free Basic plan and an API for CI/CD pipelines; Screenshot Bro is a native Mac, iPad and iPhone editor that uploads finished sets straight to App Store Connect. Pick by whether you want screenshots scripted or designed."
       ctaMessage="Prefer designing screenshots in a native editor instead of scripting them? Try Screenshot Bro free."
+      ctaHomeLinkLabel="App Store screenshot generator for Mac"
       seoLinks={[
+        {
+          href: "/vs/screenshots-pro",
+          label: "Full head-to-head: Screenshot Bro vs Screenshots Pro",
+          description: "every factor side by side, with a switching guide.",
+        },
         {
           href: "/vs/fastlane-snapshot",
           label: "Fastlane snapshot vs Screenshot Bro",
@@ -83,7 +89,7 @@ export default function BlogPost() {
         {
           question: "What is a good Screenshots Pro alternative?",
           answer:
-            "If you want a native Mac and iPad editor rather than a browser tool — with multi-row layouts, 30 language presets, watermark-free exports on the free tier, and direct App Store Connect upload — Screenshot Bro is a strong alternative. If what you actually want is scripted screenshots in CI, Fastlane snapshot plus frameit is the closer match.",
+            "If you want a native Mac, iPad and iPhone editor rather than a browser tool — with multi-row layouts, 81 language presets, watermark-free exports on the free tier, and direct App Store Connect upload — Screenshot Bro is a strong alternative. If what you actually want is scripted screenshots in CI, Fastlane snapshot plus frameit is the closer match.",
         },
         {
           question: "Does Screenshot Bro have an API?",

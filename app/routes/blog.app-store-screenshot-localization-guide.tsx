@@ -21,7 +21,7 @@ export default function BlogPost() {
           <ContentEn />
         </article>
 
-        <BlogCTA message="Localize App Store screenshots without duplicating every design file: manage locales, captions, device rows, batch exports, and upload-ready folders in Screenshot Bro." />
+        <BlogCTA message="Localize App Store screenshots without duplicating every design file: manage locales, captions, device rows, batch exports, and upload-ready folders in Screenshot Bro." homeLinkLabel="the App Store screenshot tool built for localization" />
         <RelatedPosts currentSlug={SLUG} />
       </div>
     </ContentLayout>
@@ -80,9 +80,9 @@ function ContentEn() {
 
       <ArticleImage
         src="/docs-help/locales.webp"
-        alt="Screenshot Bro locale settings for translating App Store screenshot captions"
-        width={1600}
-        height={983}
+        alt="Screenshot Bro language picker for translating App Store screenshot captions"
+        width={1000}
+        height={956}
         caption="Treat locales as part of the screenshot project, not as copies of finished image files."
       />
 
@@ -232,7 +232,7 @@ function ContentEn() {
         src="/docs-help/editing.webp"
         alt="Screenshot Bro editor showing editable text and screenshot layout controls"
         width={1600}
-        height={1038}
+        height={751}
         caption="A repeatable layout gives every locale room to breathe without rebuilding the design."
       />
 

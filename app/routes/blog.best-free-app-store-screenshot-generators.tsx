@@ -9,7 +9,7 @@ const SLUG = "best-free-app-store-screenshot-generators";
 const TOOLS = [
   {
     name: "Screenshot Bro",
-    known: "Native Mac and iPad app: device frames, multi-row editor, 30-language localization, direct App Store Connect upload.",
+    known: "Native Mac, iPad and iPhone app: device frames, multi-row editor, 81-language localization, direct App Store Connect and Google Play upload.",
     free: "Free tier with no watermark — one project, a few rows per project, and a handful of templates per row.",
   },
   {
@@ -56,6 +56,7 @@ export default function BlogPost() {
       slug={SLUG}
       locale={locale}
       ctaMessage="Try a native generator with a watermark-free free tier, device frames, localization, and direct upload — Screenshot Bro."
+      ctaHomeLinkLabel="a free App Store screenshot generator for Mac"
       seoLinks={[
         {
           href: "/blog/best-app-store-screenshot-tools",
@@ -165,8 +166,8 @@ export default function BlogPost() {
 
       <h2>Where Screenshot Bro Fits</h2>
       <p>
-        Screenshot Bro is a native Mac and iPad app with a watermark-free free
-        tier, current device frames, a multi-row editor, 30-language
+        Screenshot Bro is a native Mac, iPad and iPhone app with a watermark-free free
+        tier, current device frames, a multi-row editor, 81-language
         localization, and direct App Store Connect upload. It is built for the
         repeatable, multi-size, multi-language case that free browser tools
         struggle with — while still being free to start.

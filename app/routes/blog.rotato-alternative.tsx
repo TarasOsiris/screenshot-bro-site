@@ -15,7 +15,7 @@ const COMPARISON = [
   {
     factor: "Platform",
     rotato: "Native Mac app, plus a web version in beta",
-    screenshotBro: "Native Mac and iPad app",
+    screenshotBro: "Native Mac, iPad and iPhone app",
   },
   {
     factor: "Video output",
@@ -25,7 +25,7 @@ const COMPARISON = [
   {
     factor: "Localization",
     rotato: "Not a built-in workflow",
-    screenshotBro: "30 language presets, auto-translate, per-shape overrides",
+    screenshotBro: "81 language presets, on-device auto-translate, per-shape overrides",
   },
   {
     factor: "Store sizes",
@@ -35,7 +35,7 @@ const COMPARISON = [
   {
     factor: "Store upload",
     rotato: "Export files, upload yourself",
-    screenshotBro: "Direct App Store Connect upload on Pro",
+    screenshotBro: "Direct App Store Connect and Google Play upload, free tier included",
   },
 ] as const;
 
@@ -55,9 +55,15 @@ export default function BlogPost() {
     <BlogArticleShell
       slug={SLUG}
       locale={locale}
-      tldr="Rotato is a native Mac app for 3D mockups and animated product videos; Screenshot Bro is a native Mac and iPad app for flat App Store and Google Play screenshot sets in every size and locale. Many teams use both — Rotato for the video, Screenshot Bro for the listing."
+      tldr="Rotato is a native Mac app for 3D mockups and animated product videos; Screenshot Bro is a native Mac, iPad and iPhone app for flat App Store and Google Play screenshot sets in every size and locale. Many teams use both — Rotato for the video, Screenshot Bro for the listing."
       ctaMessage="Need the flat, localized screenshot set rather than a 3D render? Try Screenshot Bro free."
+      ctaHomeLinkLabel="App Store screenshot tool for Mac, iPad and iPhone"
       seoLinks={[
+        {
+          href: "/vs/rotato",
+          label: "Full head-to-head: Screenshot Bro vs Rotato",
+          description: "every factor side by side, with a switching guide.",
+        },
         {
           href: "/blog/device-mockup-generator-app-screenshots",
           label: "Device mockup generators",
@@ -88,7 +94,7 @@ export default function BlogPost() {
         {
           question: "What is a good Rotato alternative for screenshots?",
           answer:
-            "If you want flat, localized screenshot sets rather than 3D renders and video, Screenshot Bro is a native Mac and iPad alternative with device frames, 30 language presets, batch export by locale, and direct App Store Connect upload. If you specifically want 3D animation, Rotato has few real substitutes.",
+            "If you want flat, localized screenshot sets rather than 3D renders and video, Screenshot Bro is a native Mac, iPad and iPhone alternative with device frames, 81 language presets, batch export by locale, and direct App Store Connect upload. If you specifically want 3D animation, Rotato has few real substitutes.",
         },
       ]}
     >
@@ -157,7 +163,7 @@ export default function BlogPost() {
         Choose <strong>Rotato</strong> when the deliverable moves — an app
         preview video, an animated hero, a 3D render for a launch post. Choose{" "}
         <strong>Screenshot Bro</strong> when the deliverable is the listing
-        itself: multi-row layouts, device frames, 30 locales, batch export, and
+        itself: multi-row layouts, device frames, 81 locales, batch export, and
         upload. They are complements more than substitutes; plenty of developers
         run both. See also the{" "}
         <a href="/blog/device-mockup-generator-app-screenshots">

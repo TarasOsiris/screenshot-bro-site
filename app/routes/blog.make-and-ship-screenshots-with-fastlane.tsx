@@ -366,7 +366,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
           <BlogPostHeader slug={SLUG} locale={locale} />
           {renderContent(locale, blocks)}
         </article>
-        <BlogCTA message={getCTAMessage(locale)} />
+        <BlogCTA message={getCTAMessage(locale)} locale={locale} />
         <RelatedPosts currentSlug={SLUG} locale={locale} />
       </div>
     </ContentLayout>

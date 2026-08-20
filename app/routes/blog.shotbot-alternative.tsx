@@ -15,7 +15,7 @@ const COMPARISON = [
   {
     factor: "Platform",
     shotbot: "Native iOS, macOS, visionOS",
-    screenshotBro: "Native Mac and iPad",
+    screenshotBro: "Native Mac, iPad and iPhone",
   },
   {
     factor: "Workflow extras",
@@ -25,7 +25,7 @@ const COMPARISON = [
   {
     factor: "Localization",
     shotbot: "Not the focus",
-    screenshotBro: "30 language presets, auto-translate, per-shape overrides",
+    screenshotBro: "81 language presets, on-device auto-translate, per-shape overrides",
   },
   {
     factor: "Direct store upload",
@@ -56,7 +56,13 @@ export default function BlogPost() {
       slug={SLUG}
       locale={locale}
       ctaMessage="Designing a full localized screenshot set, not just framing one shot? Try Screenshot Bro free."
+      ctaHomeLinkLabel="a native App Store screenshot tool for Mac"
       seoLinks={[
+        {
+          href: "/vs/shotbot",
+          label: "Full head-to-head: Screenshot Bro vs Shotbot",
+          description: "every factor side by side, with a switching guide.",
+        },
         {
           href: "/blog/best-app-store-screenshot-tools",
           label: "Best screenshot tools",
@@ -87,7 +93,7 @@ export default function BlogPost() {
         {
           question: "How is Screenshot Bro different from Shotbot?",
           answer:
-            "Both are native apps, but they solve different problems. Shotbot is optimized for quickly wrapping a single screenshot in a device frame, with widgets and Shortcuts. Screenshot Bro is a full store-screenshot designer: multi-row layouts, backgrounds and gradients, captions, 30-language localization, and direct upload to App Store Connect.",
+            "Both are native apps, but they solve different problems. Shotbot is optimized for quickly wrapping a single screenshot in a device frame, with widgets and Shortcuts. Screenshot Bro is a full store-screenshot designer: multi-row layouts, backgrounds and gradients, captions, 81-language localization, and direct upload to App Store Connect.",
         },
       ]}
     >
@@ -156,7 +162,7 @@ export default function BlogPost() {
         <strong>Screenshot Bro</strong> if you are building a complete, localized
         App Store and Google Play screenshot set — backgrounds, captions,
         multi-row layouts, device frames, and direct App Store Connect upload —
-        from a native Mac and iPad app with a watermark-free free tier. For more
+        from a native Mac, iPad and iPhone app with a watermark-free free tier. For more
         options, see the{" "}
         <a href="/blog/best-app-store-screenshot-tools">full tools roundup</a>.
       </p>

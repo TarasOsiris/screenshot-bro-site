@@ -15,7 +15,7 @@ const COMPARISON = [
   {
     factor: "Platform",
     mockuuups: "Web, desktop app, Figma, Sketch, Adobe Express, Penpot",
-    screenshotBro: "Native Mac and iPad app",
+    screenshotBro: "Native Mac, iPad and iPhone app",
   },
   {
     factor: "Store sizes",
@@ -30,12 +30,12 @@ const COMPARISON = [
   {
     factor: "Localization",
     mockuuups: "Not a built-in workflow",
-    screenshotBro: "30 language presets, auto-translate, per-shape overrides",
+    screenshotBro: "81 language presets, on-device auto-translate, per-shape overrides",
   },
   {
     factor: "Store upload",
     mockuuups: "Export files, upload yourself",
-    screenshotBro: "Direct App Store Connect upload on Pro",
+    screenshotBro: "Direct App Store Connect and Google Play upload, free tier included",
   },
 ] as const;
 
@@ -55,9 +55,15 @@ export default function BlogPost() {
     <BlogArticleShell
       slug={SLUG}
       locale={locale}
-      tldr="Mockuuups Studio is a mockup library — drop a design onto thousands of devices and print items, from the web, a desktop app, or a Figma plugin. Screenshot Bro is a native Mac and iPad app for the store listing itself: every size, every locale, uploaded to App Store Connect."
+      tldr="Mockuuups Studio is a mockup library — drop a design onto thousands of devices and print items, from the web, a desktop app, or a Figma plugin. Screenshot Bro is a native Mac, iPad and iPhone app for the store listing itself: every size, every locale, uploaded to App Store Connect."
       ctaMessage="Need a whole localized store set rather than one mockup at a time? Try Screenshot Bro free."
+      ctaHomeLinkLabel="a native App Store screenshot tool"
       seoLinks={[
+        {
+          href: "/vs/mockuuups-studio",
+          label: "Full head-to-head: Screenshot Bro vs Mockuuups Studio",
+          description: "every factor side by side, with a switching guide.",
+        },
         {
           href: "/blog/device-mockup-generator-app-screenshots",
           label: "Device mockup generators",
@@ -88,7 +94,7 @@ export default function BlogPost() {
         {
           question: "What is a good Mockuuups Studio alternative for store screenshots?",
           answer:
-            "Screenshot Bro is a native Mac and iPad app built for the listing: device frames for iPhone, iPad, Mac, and Android, multi-row layouts, 30 language presets with on-device auto-translate, batch export organized by locale, and direct App Store Connect upload on Pro. AppLaunchpad and Previewed cover the same niche in the browser.",
+            "Screenshot Bro is a native Mac, iPad and iPhone app built for the listing: device frames for iPhone, iPad, Mac, and Android, multi-row layouts, 81 language presets with on-device auto-translate, batch export organized by locale, and direct App Store Connect and Google Play upload. AppLaunchpad and Previewed cover the same niche in the browser.",
         },
       ]}
     >
