@@ -177,7 +177,7 @@ const EN_TESTIMONIALS = [
 
 const EN_HOME_COPY: HomeCopy = {
   locale: LOCALES[0],
-  siteTitle: `${SITE_NAME} — App Store & Google Play Screenshots`,
+  siteTitle: `App Store Screenshot Tool for Mac & iPad — ${SITE_NAME}`,
   siteDescription: SITE_DESCRIPTION,
   socialImageAlt:
     "Screenshot Bro — native Mac and iPad app for designing App Store and Google Play screenshots with device frames, gradients, and localization",
@@ -238,14 +238,15 @@ const EN_HOME_COPY: HomeCopy = {
     descriptionLead:
       "Import your shots, wrap them in device frames, localize the copy, auto-translate missing text, and",
     descriptionStrong: "upload straight to App Store Connect",
-    descriptionTail: "— all from one fast native Mac and iPad app.",
+    descriptionTail:
+      "— all in one fast, native App Store screenshot tool for Mac and iPad.",
     videoLabel:
       "Screenshot Bro app demo - designing App Store screenshots with device frames, gradients, and batch export",
   },
   sections: {
     showcases: {
       eyebrow: "Showcases",
-      title: "See the core workflow before you install.",
+      title: "See how the screenshot generator works before you install.",
       description:
         "Batch import, one-click App Store Connect upload, layers, backgrounds, and device frames — the moments most people use to judge whether this saves them time.",
     },
@@ -264,7 +265,8 @@ const EN_HOME_COPY: HomeCopy = {
     },
     features: {
       eyebrow: "Capabilities",
-      title: "Everything you need. Nothing you don't.",
+      title:
+        "Everything an App Store screenshot tool should do. Nothing it shouldn't.",
       description:
         "The feature set stays focused on layout speed, screenshot consistency, and export sanity. No browser tab, no general-purpose design suite, no repetitive resize work.",
     },
@@ -2462,7 +2464,9 @@ export function localizedPath(locale: LocaleCode, path = "/"): string {
 
 // Routes that have no per-locale variant — they always live at the canonical,
 // unprefixed URL. Content links to these must NOT be locale-prefixed, otherwise
-// crawlers hit 404s like /es/privacy. Keep in sync with routes.ts and the sitemap.
+// crawlers hit 404s like /es/privacy. Matching is by first path segment, so the
+// "/vs" entry covers every /vs/<slug> comparison page (see config/comparisons.ts).
+// Keep the top-level entries in sync with routes.ts.
 export const GLOBAL_ROUTE_PATHS = [
   "/privacy",
   "/terms",
@@ -2470,7 +2474,6 @@ export const GLOBAL_ROUTE_PATHS = [
   "/support",
   "/tutorials",
   "/vs",
-  "/vs/fastlane-snapshot",
   "/sitemap.xml",
   "/llms.txt",
 ];
@@ -2492,7 +2495,9 @@ export function canonicalGlobalPath(pathname: string): string | null {
   const segments = pathname.split("/").filter(Boolean);
   if (segments.length < 2 || !isLocaleCode(segments[0])) return null;
   const canonical = "/" + segments.slice(1).join("/");
-  return GLOBAL_ROUTE_PATHS.includes(canonical) ? canonical : null;
+  // Segment match, same rule as isGlobalPath: /es/vs/<slug> → /vs/<slug>. An
+  // unknown leaf still ends in a 404 after one hop, never a loop.
+  return isGlobalPath(canonical) ? canonical : null;
 }
 
 export function buildHomeAlternates(path = "/") {

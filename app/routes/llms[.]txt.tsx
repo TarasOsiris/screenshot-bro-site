@@ -1,4 +1,5 @@
 import { BLOG_POSTS } from "~/config/blog";
+import { COMPARISON_PAGES, comparisonPath } from "~/config/comparisons";
 import {
   APP_CATEGORY,
   APP_STORE_URL,
@@ -27,18 +28,18 @@ function buildLlmsTxt(): string {
   const sections = [
     `# ${SITE_NAME}`,
     "",
-    `> ${SITE_NAME} is a native Mac and iPad app for designing, localizing, and shipping App Store and Google Play screenshots. You import raw screenshots, lay them out on a multi-row canvas with device frames and text, translate them into up to 30 locales, then export every required size or upload straight to App Store Connect.`,
+    `> ${SITE_NAME} is a native Mac, iPad and iPhone app for designing, localizing, and shipping App Store and Google Play screenshots. You import raw screenshots, lay them out on a multi-row canvas with device frames and text, translate them with 81 language presets, then export every required size or upload straight to App Store Connect and Google Play.`,
     "",
     "## Facts",
     "",
-    `- Product: ${SITE_NAME}, a native app for macOS ${MINIMUM_MACOS_VERSION}+ and iPadOS ${MINIMUM_IPADOS_VERSION}+. It is not a web app or a browser tool.`,
+    `- Product: ${SITE_NAME}, a native app for macOS ${MINIMUM_MACOS_VERSION}+ and iOS/iPadOS ${MINIMUM_IPADOS_VERSION}+ (Mac, iPad and iPhone). It is not a web app or a browser tool.`,
     `- Maker: ${NINEVA_STUDIOS_NAME} (${NINEVA_STUDIOS_URL}).`,
     `- App Store listing: ${APP_STORE_URL}`,
     `- Category: ${APP_CATEGORY}.`,
-    "- Free tier: 1 project, up to 3 rows with 5 templates per row, every device frame, shape and locale, watermark-free exports. No trial expiry and no signup.",
-    "- Pro: lifts those limits and unlocks direct App Store Connect upload and iCloud sync.",
+    "- Free tier: 1 project, up to 3 rows with 5 templates per row, every device frame, shape and locale, watermark-free exports, App Store Connect and Google Play upload, iCloud sync. No trial expiry and no signup.",
+    "- Pro: lifts those limits — unlimited projects, rows and templates. Sold as a lifetime purchase or a subscription; the price is shown in the app.",
     "- Core workflow: import screenshots, arrange multi-row layouts on one continuous canvas, add device frames for iPhone, iPad, Mac and Android, style with text, shapes, gradients, images and SVG, then batch export PNG or JPEG organized by locale and row.",
-    "- Localization: 30 language presets plus custom codes, on-device auto-translate, per-shape text/position/image overrides, and translation progress tracking. Layout and art stay shared across locales.",
+    "- Localization: 81 language presets plus custom codes, on-device auto-translate for the languages Apple's Translation framework supports, per-shape text/position/image overrides, and translation progress tracking. Layout and art stay shared across locales.",
     "- Project files are plain JSON, documented at " + `${SITE_URL}/docs/project-schema.`,
     `- Community: ${REDDIT_COMMUNITY_URL}`,
     "",
@@ -47,11 +48,7 @@ function buildLlmsTxt(): string {
     "Head-to-head pages against other App Store screenshot tools. Each one states when the competitor's details were last checked and describes what that competitor does well.",
     "",
     link("/vs", "All comparisons", "matrix of every tool compared against Screenshot Bro"),
-    link(
-      "/vs/fastlane-snapshot",
-      "Fastlane snapshot vs Screenshot Bro",
-      "capture automation versus marketing screenshot design — different halves of the same pipeline",
-    ),
+    ...COMPARISON_PAGES.map((page) => link(comparisonPath(page.slug), page.title, page.description)),
     ...comparisons.map((post) => link(`/blog/${post.slug}`, post.title, post.description)),
     "",
     "## Guides",

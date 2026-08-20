@@ -1,5 +1,10 @@
 import { SITE_URL } from "~/config/site";
 import { BLOG_POSTS } from "~/config/blog";
+import {
+  COMPARISON_PAGES,
+  LATEST_COMPARISON_VERIFIED,
+  comparisonPath,
+} from "~/config/comparisons";
 import { DEFAULT_LOCALE, LOCALES, localizedPath } from "~/config/localization";
 import { CHANGELOG } from "~/routes/changelog";
 import { EFFECTIVE_DATE as TERMS_EFFECTIVE_DATE } from "~/routes/terms";
@@ -111,8 +116,15 @@ function buildSitemap(): string {
     { loc: "/support", changefreq: "yearly", priority: "0.4", lastmod: homeLastmod },
     { loc: "/tutorials", changefreq: "weekly", priority: "0.6", lastmod: homeLastmod },
     ...docsEntries,
-    { loc: "/vs", changefreq: "monthly", priority: "0.7", lastmod: latestBlogDate },
-    { loc: "/vs/fastlane-snapshot", changefreq: "monthly", priority: "0.7", lastmod: latestBlogDate },
+    { loc: "/vs", changefreq: "monthly", priority: "0.7", lastmod: LATEST_COMPARISON_VERIFIED },
+    ...COMPARISON_PAGES.map(
+      (page): SitemapEntry => ({
+        loc: comparisonPath(page.slug),
+        changefreq: "monthly",
+        priority: "0.7",
+        lastmod: page.lastVerified,
+      }),
+    ),
   ];
 
   const blogEntries: SitemapEntry[] = [];

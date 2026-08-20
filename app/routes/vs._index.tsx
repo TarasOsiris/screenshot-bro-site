@@ -1,6 +1,12 @@
 import type { Route } from "./+types/vs._index";
 import { ContentLayout } from "~/components/ContentLayout";
 import { BlogCTA } from "~/components/BlogCTA";
+import {
+  HUB_ROWS,
+  LATEST_COMPARISON_VERIFIED,
+  formatMonthYear,
+  type HubRow,
+} from "~/config/comparisons";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 
@@ -13,142 +19,16 @@ const PAGE_DESCRIPTION =
   "Every App Store and Google Play screenshot tool compared against Screenshot Bro: platform, free tier, localization and store upload, with a page for each.";
 const PAGE_URL = `${SITE_URL}/vs`;
 
-type Comparison = {
-  tool: string;
-  href: string;
-  type: string;
-  free: string;
-  localization: string;
-  upload: string;
-  group: "native" | "browser" | "automation" | "design";
-};
-
-// Single source of truth for the table, the group lists and the ItemList schema.
-const COMPARISONS: Comparison[] = [
-  {
-    tool: "Screenshot Studio",
-    href: "/blog/screenshot-studio-alternative",
-    type: "Native Mac and iOS app",
-    free: "Free to try; pay to export",
-    localization: "AI translation, any language",
-    upload: "Direct upload",
-    group: "native",
-  },
-  {
-    tool: "Shotbot",
-    href: "/blog/shotbot-alternative",
-    type: "Native iOS, macOS, visionOS",
-    free: "Limited frames per day",
-    localization: "Not the focus",
-    upload: "Export or share images",
-    group: "native",
-  },
-  {
-    tool: "Rotato",
-    href: "/blog/rotato-alternative",
-    type: "Native Mac app (web beta)",
-    free: "Unlimited free trial",
-    localization: "Not a built-in workflow",
-    upload: "Export files",
-    group: "native",
-  },
-  {
-    tool: "AppLaunchpad",
-    href: "/blog/applaunchpad-alternative",
-    type: "Browser",
-    free: "Limited fonts and assets",
-    localization: "Yes",
-    upload: "Export files",
-    group: "browser",
-  },
-  {
-    tool: "Previewed",
-    href: "/blog/previewed-alternative",
-    type: "Browser",
-    free: "Free Lite for one project",
-    localization: "Template-based",
-    upload: "Export files",
-    group: "browser",
-  },
-  {
-    tool: "AppScreens",
-    href: "/blog/appscreens-alternative",
-    type: "Browser",
-    free: "5 screenshots, 1 project",
-    localization: "80+ languages (paid)",
-    upload: "Automatic upload (paid)",
-    group: "browser",
-  },
-  {
-    tool: "AppMockUp Studio",
-    href: "/blog/appmockup-alternative",
-    type: "Browser, no account",
-    free: "Free",
-    localization: "Not a built-in workflow",
-    upload: "Export files",
-    group: "browser",
-  },
-  {
-    tool: "Screenshots Pro",
-    href: "/blog/screenshots-pro-alternative",
-    type: "Browser",
-    free: "Free Basic plan",
-    localization: "Auto-translate (paid)",
-    upload: "Export files",
-    group: "automation",
-  },
-  {
-    tool: "Fastlane snapshot",
-    href: "/vs/fastlane-snapshot",
-    type: "Command line",
-    free: "Free and open source",
-    localization: "Titles from .strings files",
-    upload: "Yes, via deliver",
-    group: "automation",
-  },
-  {
-    tool: "Mockuuups Studio",
-    href: "/blog/mockuuups-studio-alternative",
-    type: "Desktop, web and plugins",
-    free: "Free tier",
-    localization: "Not a built-in workflow",
-    upload: "Export files",
-    group: "design",
-  },
-  {
-    tool: "Placeit",
-    href: "/blog/placeit-alternative",
-    type: "Browser design library",
-    free: "Watermarked downloads",
-    localization: "Manual per language",
-    upload: "Download files",
-    group: "design",
-  },
-  {
-    tool: "Canva",
-    href: "/blog/canva-app-store-screenshots",
-    type: "Browser and desktop",
-    free: "Free plan",
-    localization: "Manual per language",
-    upload: "Download files",
-    group: "design",
-  },
-  {
-    tool: "Figma and Photoshop",
-    href: "/blog/screenshot-generator-vs-figma-vs-photoshop",
-    type: "Design tools",
-    free: "Figma free tier",
-    localization: "Manual, or via plugins",
-    upload: "Export files",
-    group: "design",
-  },
-];
+// Rows come from config/comparisons.ts — the same list that feeds the sitemap,
+// llms.txt and every /vs page's shell, so the hub can never list a page that
+// does not exist.
+const LAST_CHECKED = formatMonthYear(LATEST_COMPARISON_VERIFIED);
 
 const SCREENSHOT_BRO_ROW = {
-  type: "Native Mac and iPad app",
-  free: "Watermark-free exports",
-  localization: "30 presets, on-device auto-translate",
-  upload: "Direct upload (Pro)",
+  type: "Native Mac, iPad and iPhone app",
+  free: "Watermark-free exports, upload included",
+  localization: "81 presets, on-device auto-translate",
+  upload: "Direct upload, free tier too",
 };
 
 const ITEM_LIST_JSON_LD = JSON.stringify({
@@ -157,15 +37,17 @@ const ITEM_LIST_JSON_LD = JSON.stringify({
   name: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
   url: PAGE_URL,
-  numberOfItems: COMPARISONS.length,
-  itemListElement: COMPARISONS.map((comparison, index) => ({
+  numberOfItems: HUB_ROWS.length,
+  itemListElement: HUB_ROWS.map((row, index) => ({
     "@type": "ListItem",
     position: index + 1,
-    name: `${comparison.tool} vs ${SITE_NAME}`,
-    url: `${SITE_URL}${comparison.href}`,
+    name: `${row.tool} vs ${SITE_NAME}`,
+    url: `${SITE_URL}${row.href}`,
   })),
 });
 
+// Hand-written on purpose: the answers name specific tools, and a renamed
+// competitor in comparisons.ts will not update this prose.
 const FAQ_JSON_LD = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -175,7 +57,7 @@ const FAQ_JSON_LD = JSON.stringify({
       name: "What is the best App Store screenshot generator?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "There isn't one winner — the right tool depends on your platform and how repetitive your listing is. On a Mac, Screenshot Bro and Screenshot Studio handle the whole listing natively. In the browser, AppLaunchpad has the largest template library and AppMockUp Studio is free with no account. For 80+ languages, AppScreens goes furthest. For screenshots generated by CI, Fastlane snapshot or the Screenshots Pro API fit better.",
+        text: "There isn't one winner — the right tool depends on your platform and how repetitive your listing is. On a Mac, Screenshot Bro and Screenshot Studio handle the whole listing natively. In the browser, AppLaunchpad has the largest template library and AppMockUp Studio is free with no account. For 80+ languages with machine translation, AppScreens goes furthest. For screenshots generated by CI, Fastlane snapshot or the Screenshots Pro API fit better.",
       },
     },
     {
@@ -183,7 +65,7 @@ const FAQ_JSON_LD = JSON.stringify({
       name: "Which App Store screenshot tools are free?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "AppMockUp Studio is free in the browser with no account, and Fastlane snapshot and frameit are free and open source. Screenshot Bro's free tier exports without a watermark (1 project, 3 rows, 5 templates per row). Most other tools either watermark free exports, cap the number of screenshots, or require payment before you can export at all.",
+        text: "AppMockUp Studio is free in the browser with no account, and Fastlane snapshot and frameit are free and open source. Screenshot Bro's free tier exports without a watermark (1 project, 3 rows, 5 templates per row) and includes store upload. Most other tools either watermark free exports, cap the number of screenshots, or require payment before you can export at all.",
       },
     },
     {
@@ -191,7 +73,7 @@ const FAQ_JSON_LD = JSON.stringify({
       name: "Which screenshot tools upload directly to App Store Connect?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Screenshot Bro uploads directly on its Pro tier, Screenshot Studio uploads directly, AppScreens offers automatic store upload on paid plans, and Fastlane can upload via the deliver action. Most browser generators export a folder of files that you upload by hand.",
+        text: "Screenshot Bro uploads directly to App Store Connect and Google Play on every tier, free included. Screenshot Studio uploads directly, AppScreens offers automatic store upload on paid plans, and Fastlane can upload via the deliver action. Most browser generators export a folder of files that you upload by hand.",
       },
     },
   ],
@@ -212,19 +94,24 @@ export const meta: Route.MetaFunction = ({ matches }) =>
     { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
   ]);
 
-function GroupList({ group }: { group: Comparison["group"] }) {
+function GroupList({ group }: { group: HubRow["group"] }) {
   return (
     <ul>
-      {COMPARISONS.filter((comparison) => comparison.group === group).map(
-        (comparison) => (
-          <li key={comparison.href}>
-            <a href={comparison.href}>
-              {comparison.tool} vs {SITE_NAME}
-            </a>{" "}
-            — {comparison.type.toLowerCase()}, {comparison.free.toLowerCase()}.
-          </li>
-        ),
-      )}
+      {HUB_ROWS.filter((row) => row.group === group).map((row) => (
+        <li key={row.href}>
+          <a href={row.href}>
+            {row.tool} vs {SITE_NAME}
+          </a>{" "}
+          — {row.type.toLowerCase()}, {row.free.toLowerCase()}.
+          {row.alternativeHref ? (
+            <>
+              {" "}
+              Thinking of switching? See the{" "}
+              <a href={row.alternativeHref}>{row.tool} alternative</a> guide.
+            </>
+          ) : null}
+        </li>
+      ))}
     </ul>
   );
 }
@@ -246,19 +133,21 @@ export default function ComparisonsIndex() {
           dangerouslySetInnerHTML={{ __html: BREADCRUMB_JSON_LD }}
         />
 
-        <p className="meta">Comparisons · updated August 2026</p>
+        <p className="meta">Comparisons · updated {LAST_CHECKED}</p>
         <h1>{SITE_NAME} vs other App Store screenshot tools</h1>
         <p>
-          <strong>Short answer:</strong> if you work on a Mac or iPad and your
-          listing repeats across sizes and languages, {SITE_NAME} is built for
-          exactly that. If you are on Windows, need Apple Watch or Vision Pro
-          sizes, localize into more than 30 markets, or want screenshots
+          <strong>Short answer:</strong> if you work on a Mac, iPad or iPhone
+          and your listing repeats across sizes and languages, {SITE_NAME} is
+          built for exactly that. If you are on Windows, need Apple Watch, TV
+          or Vision Pro sizes, want machine translation beyond the languages
+          Apple&apos;s on-device translation covers, or want screenshots
           generated by CI, one of the tools below fits better — and each row
           links to a page that says why.
         </p>
         <p>
-          Every comparison was checked against the other tool&apos;s own site in
-          August 2026. Pricing and features change, so verify current details
+          Every comparison was checked against the other tool&apos;s own site;
+          the most recent check was in {LAST_CHECKED}, and each page carries
+          its own date. Pricing and features change, so verify current details
           there before deciding. If you think something here is wrong or out of
           date, <a href="/support">tell us</a> and we will fix it.
         </p>
@@ -284,15 +173,15 @@ export default function ComparisonsIndex() {
               <td>{SCREENSHOT_BRO_ROW.localization}</td>
               <td>{SCREENSHOT_BRO_ROW.upload}</td>
             </tr>
-            {COMPARISONS.map((comparison) => (
-              <tr key={comparison.href}>
+            {HUB_ROWS.map((row) => (
+              <tr key={row.href}>
                 <td>
-                  <a href={comparison.href}>{comparison.tool}</a>
+                  <a href={row.href}>{row.tool}</a>
                 </td>
-                <td>{comparison.type}</td>
-                <td>{comparison.free}</td>
-                <td>{comparison.localization}</td>
-                <td>{comparison.upload}</td>
+                <td>{row.type}</td>
+                <td>{row.free}</td>
+                <td>{row.localization}</td>
+                <td>{row.upload}</td>
               </tr>
             ))}
           </tbody>

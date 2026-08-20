@@ -5,8 +5,8 @@ import { SITE_NAME, SITE_URL, TWITTER_HANDLE } from "~/config/site";
 import { buildOgLocaleMeta, localizedPath, type LocaleCode } from "~/config/localization";
 
 const BLOG_OG_IMAGE = `${SITE_URL}/og-image.png`;
-const AUTHOR_NAME = "Taras Leskiv";
-const AUTHOR_URL = "https://x.com/soycastic";
+export const AUTHOR_NAME = "Taras Leskiv";
+export const AUTHOR_URL = "https://x.com/soycastic";
 
 function getPost(slug: string, locale: LocaleCode = "en"): BlogPost {
   const posts = getLocalizedBlogPosts(locale);
