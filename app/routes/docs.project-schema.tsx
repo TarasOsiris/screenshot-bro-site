@@ -12,7 +12,7 @@ const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
 
 const TITLE = `Project File Schema — ${SITE_NAME}`;
 const DESCRIPTION =
-  "JSON Schema for the Screenshot Bro project file format. Use it to generate, validate, or transform project.json files with AI assistants, scripts, or editor tooling.";
+  "JSON Schema for the Screenshot Bro project file format. Use it to generate, validate, or transform project.json with AI assistants, scripts, or tooling.";
 const SCHEMA_URL = `${SITE_URL}/project-schema.json`;
 
 function getRouteLocale(locale?: string): LocaleCode {

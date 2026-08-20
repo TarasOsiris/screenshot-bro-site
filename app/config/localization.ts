@@ -879,9 +879,9 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
 
 const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> = {
   es: {
-    siteTitle: `${SITE_NAME} — Diseñador de capturas para App Store y Google Play en Mac y iPad`,
+    siteTitle: `${SITE_NAME} — Capturas de App Store y Google Play en Mac`,
     siteDescription:
-      "Diseña capturas para App Store y Google Play en una app nativa para Mac y iPad. Marcos de dispositivos, localización, traducción automática, exportación por lotes y subida directa a App Store Connect.",
+      "Diseña capturas para App Store y Google Play en una app nativa para Mac, iPad y iPhone. Marcos de dispositivos, localización y subida a App Store Connect.",
     primaryCtaLabel: "Ver en App Store",
     navItems: [
       { label: "Ejemplos", href: "#showcases" },
@@ -1177,9 +1177,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     },
   },
   hi: {
-    siteTitle: `${SITE_NAME} — Mac और iPad के लिए App Store और Google Play स्क्रीनशॉट डिजाइनर`,
+    siteTitle: `${SITE_NAME} — App Store और Google Play स्क्रीनशॉट Mac पर`,
     siteDescription:
-      "नेटिव Mac और iPad ऐप में App Store और Google Play स्क्रीनशॉट डिजाइन करें। डिवाइस फ्रेम, लोकलाइजेशन, ऑटो-ट्रांसलेट, बैच एक्सपोर्ट और App Store Connect पर सीधा अपलोड।",
+      "नेटिव Mac, iPad और iPhone ऐप में App Store और Google Play स्क्रीनशॉट डिजाइन करें। डिवाइस फ्रेम, लोकलाइजेशन और App Store Connect पर सीधा अपलोड।",
     primaryCtaLabel: "App Store पर पाएं",
     benefits: [
       "Mac और iPad के लिए App Store पर अभी उपलब्ध",
@@ -1325,9 +1325,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     },
   },
   fr: {
-    siteTitle: `${SITE_NAME} — Créateur de captures App Store et Google Play pour Mac et iPad`,
+    siteTitle: `${SITE_NAME} — Captures App Store et Google Play sur Mac`,
     siteDescription:
-      "Créez des captures App Store et Google Play dans une app native pour Mac et iPad. Cadres d'appareils, localisation, traduction automatique, export groupé et envoi direct vers App Store Connect.",
+      "Créez des captures App Store et Google Play dans une app native pour Mac, iPad et iPhone. Cadres d'appareils, localisation et envoi vers App Store Connect.",
     primaryCtaLabel: "Voir sur l'App Store",
     benefits: [
       "Disponible maintenant sur l'App Store pour Mac et iPad",
@@ -1478,7 +1478,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     },
   },
   ar: {
-    siteTitle: `${SITE_NAME} — مصمم لقطات App Store و Google Play على Mac و iPad`,
+    siteTitle: `${SITE_NAME} — لقطات App Store و Google Play على Mac`,
     siteDescription:
       "صمّم لقطات App Store و Google Play داخل تطبيق أصلي على Mac و iPad. إطارات أجهزة، توطين، ترجمة تلقائية، تصدير جماعي ورفع مباشر إلى App Store Connect.",
     primaryCtaLabel: "احصل عليه من App Store",
@@ -1631,9 +1631,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     },
   },
   de: {
-    siteTitle: `${SITE_NAME} — Screenshot-Designer für App Store & Google Play auf Mac und iPad`,
+    siteTitle: `${SITE_NAME} — Screenshots für App Store & Google Play`,
     siteDescription:
-      "Gestalte Screenshots für den App Store und Google Play in einer nativen App für Mac und iPad. Geräterahmen, Lokalisierung, automatische Übersetzung, Batch-Export und direkter Upload zu App Store Connect.",
+      "Screenshots für App Store und Google Play in einer nativen App für Mac, iPad und iPhone. Geräterahmen, Lokalisierung und direkter Upload zu App Store Connect.",
     primaryCtaLabel: "Im App Store laden",
     navItems: [
       { label: "Beispiele", href: "#showcases" },
@@ -1937,9 +1937,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     },
   },
   pt: {
-    siteTitle: `${SITE_NAME} — Criador de Capturas de Tela para App Store e Google Play no Mac e iPad`,
+    siteTitle: `${SITE_NAME} — Capturas para App Store e Google Play`,
     siteDescription:
-      "Crie capturas de tela para App Store e Google Play em um app nativo para Mac e iPad. Molduras de dispositivos, localização, tradução automática, exportação em lote e envio direto para o App Store Connect.",
+      "Crie capturas para App Store e Google Play em um app nativo para Mac, iPad e iPhone. Molduras de dispositivos, localização e envio para App Store Connect.",
     primaryCtaLabel: "Obter na App Store",
     navItems: [
       { label: "Exemplos", href: "#showcases" },
@@ -2090,9 +2090,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     },
   },
   it: {
-    siteTitle: `${SITE_NAME} — Designer di screenshot per App Store e Google Play su Mac e iPad`,
+    siteTitle: `${SITE_NAME} — Screenshot per App Store e Google Play`,
     siteDescription:
-      "Progetta screenshot per App Store e Google Play in un'app nativa per Mac e iPad. Cornici per dispositivi, localizzazione, traduzione automatica, esportazione in batch e caricamento diretto su App Store Connect.",
+      "Progetta screenshot per App Store e Google Play in un'app nativa per Mac, iPad e iPhone. Cornici per dispositivi, localizzazione e upload su App Store Connect.",
     primaryCtaLabel: "Scarica su App Store",
     navItems: [
       { label: "Esempi", href: "#showcases" },

@@ -24,7 +24,7 @@ const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
 
 const TITLE = `Help & Documentation — ${SITE_NAME}`;
 const DESCRIPTION =
-  "Complete guide to Screenshot Bro for Mac and iPad — projects, rows, templates, device frames, backgrounds, languages, exporting, store uploads, and keyboard shortcuts.";
+  "Complete guide to Screenshot Bro for Mac, iPad, and iPhone: projects, rows, templates, device frames, backgrounds, languages, exporting, and store uploads.";
 
 function getRouteLocale(locale?: string): LocaleCode {
   return isLocaleCode(locale) ? locale : "en";

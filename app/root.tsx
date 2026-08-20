@@ -270,12 +270,10 @@ const isLocalizedPath = (pathname: string): boolean => {
   ) {
     return true;
   }
-  const docsIndex =
-    segments[0] === "docs" ? 0 : isLocaleCode(segments[0]) && segments[1] === "docs" ? 1 : -1;
-  if (docsIndex !== -1) {
-    const docsPath = segments.slice(docsIndex + 1).join("/");
-    return docsPath === "" || docsPath === "help" || docsPath === "project-schema";
-  }
+  // /docs is deliberately absent: the help and schema pages are written once in
+  // English and only their nav and footer are translated, so a locale-prefixed
+  // docs URL is a duplicate of the English one, not a translation of it. They
+  // canonicalize to the unprefixed URL below and emit no hreflang cluster.
   if (
     (segments.length === 2 && segments[0] === "blog") ||
     (segments.length === 3 && isLocaleCode(segments[0]) && segments[1] === "blog")
@@ -330,9 +328,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
             />
           </>
         ) : (
+          // Untranslated routes reached under a locale prefix (the docs pages)
+          // point at the one English URL rather than declaring themselves
+          // canonical, so the same content is not indexed eleven times.
           <link
             rel="canonical"
-            href={`${SITE_URL}${location.pathname}`}
+            href={`${SITE_URL}${getCleanPath(location.pathname)}`}
           />
         )}
         <script

@@ -268,7 +268,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "previewed-alternative",
-    title: "Previewed Alternative: Store-Ready App Screenshots in Every Size",
+    title: "Previewed Alternative: Store-Ready App Screenshots",
     description:
       "Looking for a Previewed alternative? How Screenshot Bro compares: store-ready screenshots at exact sizes, localization and direct App Store Connect upload.",
     date: "2026-06-18",
@@ -326,7 +326,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "google-play-promo-video",
     title: "Google Play Promo Video: Specs and How to Add One",
     description:
-      "How the Google Play promo video works in 2026: it is a YouTube URL, not an uploaded file. Specs, rules, where it appears, and how it differs from an App Store app preview.",
+      "How the Google Play promo video works in 2026: it is a YouTube URL, not an upload. Specs, rules, where it appears, and how it differs from iOS.",
     date: "2026-06-18",
     readTime: "7 min read",
     category: "Reference",
@@ -344,7 +344,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "app-store-description-that-converts",
     title: "How to Write an App Store Description That Converts",
     description:
-      "How to write App Store and Google Play descriptions that convert: what each field does, the first-three-lines rule, structure, and how iOS and Play differ on keywords.",
+      "How to write App Store and Google Play descriptions that convert: what each field does, the first-three-lines rule, and how iOS and Play differ.",
     date: "2026-06-18",
     readTime: "9 min read",
     category: "Guide",
@@ -362,7 +362,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "app-store-keyword-research",
     title: "App Store Keyword Research: How to Choose Keywords (2026)",
     description:
-      "How to research and choose App Store keywords in 2026: how the iOS keyword field works, the rules for using it efficiently, and how keyword strategy differs on Google Play.",
+      "How to research and choose App Store keywords in 2026: how the iOS keyword field works, how to use it efficiently, and how Google Play differs.",
     date: "2026-06-18",
     readTime: "9 min read",
     category: "Guide",
@@ -380,7 +380,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "app-store-screenshots-for-games",
     title: "App Store Screenshots for Games: What Converts",
     description:
-      "How to design App Store and Google Play screenshots for games: lead with gameplay, match orientation, a converting sequence, captions, and the Play feature graphic.",
+      "How to design App Store and Google Play screenshots for games: lead with gameplay, match orientation, write captions, and the Play feature graphic.",
     date: "2026-06-18",
     readTime: "8 min read",
     category: "Guide",
@@ -398,7 +398,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "app-store-screenshots-for-fitness-apps",
     title: "App Store Screenshots for Fitness Apps: What Converts",
     description:
-      "How to design App Store screenshots for fitness and wellness apps: sell the outcome, match the visual tone, a converting sequence, and handling health data and claims.",
+      "How to design App Store screenshots for fitness and wellness apps: sell the outcome, match the visual tone, and handle health data and claims.",
     date: "2026-06-18",
     readTime: "8 min read",
     category: "Guide",
@@ -414,9 +414,9 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "change-app-store-screenshots-without-updating-app",
-    title: "Can You Change App Store Screenshots Without Updating the App?",
+    title: "Can You Change App Store Screenshots Without an Update?",
     description:
-      "When you can change App Store and Google Play screenshots without shipping a new app build — the iOS version rules, custom product pages, and why Play is independent.",
+      "When you can change App Store and Google Play screenshots without shipping a build — the iOS version rules, custom product pages, and how Play differs.",
     date: "2026-06-18",
     readTime: "7 min read",
     category: "Guide",
@@ -434,7 +434,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "best-free-app-store-screenshot-generators",
     title: "Best Free App Store Screenshot Generators (2026)",
     description:
-      "A 2026 comparison of free App Store screenshot generators — what each is known for, what to check on free tiers (watermarks, sizes, batch export), and when to upgrade.",
+      "A 2026 comparison of free App Store screenshot generators — what each is known for, what to check on free tiers, and when it pays to upgrade.",
     date: "2026-06-18",
     dateModified: "2026-08-20",
     readTime: "8 min read",
@@ -469,9 +469,9 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "iphone-simulator-screenshots",
-    title: "How to Take iPhone Simulator Screenshots (xcrun simctl + Automation)",
+    title: "How to Take iPhone Simulator Screenshots (xcrun simctl)",
     description:
-      "Capture App Store screenshots from the iOS Simulator with xcrun simctl: native-resolution captures, a clean 9:41 status bar, and automation across devices and languages.",
+      "Capture App Store screenshots from the iOS Simulator with xcrun simctl: native-resolution captures, a clean 9:41 status bar, and automation across devices.",
     date: "2026-06-18",
     readTime: "8 min read",
     category: "Guide",
@@ -489,7 +489,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "submit-app-to-app-store",
     title: "How to Submit an App to the App Store: Step-by-Step (2026)",
     description:
-      "A 2026 step-by-step for submitting an app to the App Store: developer account, App Store Connect record, build upload, metadata and screenshots, review, and release.",
+      "A 2026 step-by-step for submitting an app to the App Store: developer account, App Store Connect record, build upload, metadata, review, release.",
     date: "2026-06-18",
     readTime: "10 min read",
     category: "Guide",
@@ -505,7 +505,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "how-many-app-store-screenshots",
-    title: "How Many Screenshots Should You Use on the App Store and Google Play?",
+    title: "How Many Screenshots for the App Store and Google Play?",
     description:
       "How many screenshots the App Store and Google Play allow, the minimums required, and how many you should actually use for the best conversion.",
     date: "2026-06-18",
@@ -523,9 +523,9 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "screenshot-generator-vs-figma-vs-photoshop",
-    title: "App Store Screenshot Generator vs Figma vs Photoshop: Which to Use",
+    title: "Screenshot Generator vs Figma vs Photoshop: Which to Use",
     description:
-      "A practical comparison of making App Store screenshots with a dedicated generator, Figma, or Photoshop — and when each workflow wins on speed, scale, and control.",
+      "Making App Store screenshots with a dedicated generator, Figma, or Photoshop — and when each workflow wins on speed, scale, and creative control.",
     date: "2026-06-18",
     readTime: "8 min read",
     category: "Comparison",
@@ -541,9 +541,9 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "localize-screenshots-japan-china-germany",
-    title: "Localizing App Store Screenshots for Japan, China, and Germany",
+    title: "Localizing App Store Screenshots: Japan, China, Germany",
     description:
-      "Market-specific tips for localizing App Store and Google Play screenshots in Japan, China, and Germany: text density, the China storefront, and German text expansion.",
+      "Localizing App Store and Google Play screenshots for Japan, China, and Germany: text density, the China storefront, and German text expansion.",
     date: "2026-06-18",
     readTime: "8 min read",
     category: "Guide",
@@ -578,9 +578,9 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "device-mockup-generator-app-screenshots",
-    title: "Device Mockup Generator: Free Device Frames for App Screenshots",
+    title: "Device Mockup Generator: Free Frames for App Screenshots",
     description:
-      "How to wrap app screenshots in realistic device frames — iPhone, iPad, MacBook, and Android — using a device mockup generator, plus free frame sources and export tips.",
+      "How to wrap app screenshots in realistic device frames — iPhone, iPad, MacBook, and Android — plus free frame sources and export tips.",
     date: "2026-06-18",
     readTime: "9 min read",
     category: "Guide",
@@ -598,9 +598,9 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "app-store-optimization-aso-guide",
-    title: "App Store Optimization (ASO) for Indie Developers: 2026 Guide",
+    title: "App Store Optimization (ASO) for Indie Developers 2026",
     description:
-      "A practical 2026 ASO guide for indie developers: app name, subtitle, keywords, screenshots, app preview, localization, ratings, and A/B testing — with what actually moves installs.",
+      "A practical 2026 ASO guide for indie developers: app name, subtitle, keywords, screenshots, localization, ratings, and what actually moves installs.",
     date: "2026-06-18",
     readTime: "11 min read",
     category: "Guide",
@@ -618,9 +618,9 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "app-icon-sizes-design-guidelines",
-    title: "App Icon Sizes and Design Guidelines (App Store + Google Play, 2026)",
+    title: "App Icon Sizes for the App Store and Google Play (2026)",
     description:
-      "App icon sizes and design rules for the App Store and Google Play in 2026: required dimensions, formats, safe areas, no-alpha rules, and common rejection pitfalls.",
+      "App icon sizes and design rules for the App Store and Google Play in 2026: dimensions, formats, safe areas, no-alpha rules, and rejection pitfalls.",
     date: "2026-06-18",
     readTime: "8 min read",
     category: "Reference",
@@ -839,7 +839,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "popular-figma-templates-app-store-screenshots-device-mockups",
-    title: "Popular Figma Templates for App Store Screenshots and Device Mockups",
+    title: "Figma Templates for App Store Screenshots and Mockups",
     description:
       "A practical shortlist of Figma templates and device mockup kits for App Store screenshots, plus when to move from Figma to a dedicated Screenshot Bro workflow.",
     date: "2026-05-28",

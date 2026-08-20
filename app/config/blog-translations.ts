@@ -15,7 +15,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "ab-test-app-store-screenshots",
       title: "Cómo hacer tests A/B de capturas en App Store y Google Play",
-      description: "Aprende a probar capturas con Product Page Optimization de Apple y los experimentos de ficha de Google Play, qué probar primero y cómo evitar ruido en los resultados.",
+      description: "Aprende a probar capturas con Product Page Optimization de Apple y los experimentos de ficha de Google Play.",
       date: "2026-05-17",
       readTime: "Lectura de 9 min",
       category: "Guide",
@@ -24,7 +24,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "custom-product-pages-app-store-screenshots",
       title: "Páginas de producto personalizadas: Capturas para campañas",
-      description: "Usa páginas de producto personalizadas de la App Store para crear capturas específicas de campañas en Apple Ads, lanzamientos estacionales y embudos de adquisición localizados.",
+      description: "Usa páginas de producto personalizadas de la App Store para crear capturas específicas de campañas en Apple Ads.",
       date: "2026-05-17",
       readTime: "Lectura de 8 min",
       category: "Guide",
@@ -33,7 +33,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "design-app-store-screenshots-in-figma",
       title: "Cómo diseñar capturas de la App Store en Figma",
-      description: "Tutorial práctico de Figma para diseñar capturas de la App Store: configuración, marcos, componentes reutilizables, localización, exportación y cuándo usar una herramienta dedicada.",
+      description: "Tutorial práctico de Figma para diseñar capturas de la App Store: configuración, marcos, componentes reutilizables, localización.",
       date: "2026-05-17",
       readTime: "Lectura de 11 min",
       category: "Guide",
@@ -59,7 +59,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "upload-screenshots-to-app-store-connect",
       title: "Cómo subir capturas a App Store Connect (Guía 2026)",
-      description: "Cuatro formas de subir capturas a la App Store: web, Transporter/fastlane, la API de App Store Connect y una app de Mac. Cuándo elegir cada una, gotchas de tamaños y localización.",
+      description: "Cuatro formas de subir capturas a la App Store: web, Transporter/fastlane, la API de App Store Connect y una app de Mac.",
       date: "2026-04-20",
       readTime: "Lectura de 10 min",
       category: "Guide",
@@ -196,7 +196,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "google-play-screenshot-sizes-requirements",
       title: "Google Play स्क्रीनशॉट साइज और आवश्यकताएं",
-      description: "फोन, टैबलेट, क्रोमबुक, Wear OS, टीवी, ऑटोमोटिव और एंड्रॉइड XR लिस्टिंग के लिए Google Play स्क्रीनशॉट आकार, प्रारूप, डिवाइस-विशिष्ट आवश्यकताओं और निर्यात वर्कफ़्लो के लिए एक व्यावहारिक गाइड।",
+      description: "फोन, टैबलेट, क्रोमबुक, Wear OS, टीवी, ऑटोमोटिव और एंड्रॉइड XR लिस्टिंग के लिए Google Play स्क्रीनशॉट आकार, प्रारूप।",
       date: "2026-05-17",
       readTime: "10 मिनट का पठन",
       category: "Reference",
@@ -205,7 +205,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "ab-test-app-store-screenshots",
       title: "App Store और Google Play स्क्रीनशॉट का A/B टेस्ट कैसे करें",
-      description: "एप्पल प्रोडक्ट पेज ऑप्टिमाइज़ेशन और गूगल प्ले स्टोर लिस्टिंग प्रयोगों के साथ ऐप स्क्रीनशॉट का परीक्षण करना सीखें, पहले क्या परीक्षण करें, और शोर-शराबे वाले परिणामों से कैसे बचें।",
+      description: "एप्पल प्रोडक्ट पेज ऑप्टिमाइज़ेशन और गूगल प्ले स्टोर लिस्टिंग प्रयोगों के साथ ऐप स्क्रीनशॉट का परीक्षण करना सीखें, पहले क्या परीक्षण करें।",
       date: "2026-05-17",
       readTime: "9 मिनट का पठन",
       category: "Guide",
@@ -223,7 +223,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "design-app-store-screenshots-in-figma",
       title: "Figma में App Store स्क्रीनशॉट कैसे डिज़ाइन करें",
-      description: "ऐप स्टोर स्क्रीनशॉट डिजाइन करने के लिए एक व्यावहारिक फिग्मा ट्यूटोरियल: फ़ाइल सेटअप, डिवाइस फ्रेम, पुन: प्रयोज्य घटक, स्थानीयकरण, निर्यात सेटिंग्स, और इसके बजाय एक समर्पित स्क्रीनशॉट टूल का उपयोग कब करें।",
+      description: "ऐप स्टोर स्क्रीनशॉट डिजाइन करने के लिए एक व्यावहारिक फिग्मा ट्यूटोरियल: फ़ाइल सेटअप, डिवाइस फ्रेम, पुन: प्रयोज्य घटक, स्थानीयकरण, निर्यात सेटिंग्स।",
       date: "2026-05-17",
       readTime: "11 मिनट का पठन",
       category: "Guide",
@@ -232,7 +232,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "best-app-store-screenshot-tools",
       title: "इंडी डेवलपर्स के लिए सर्वश्रेष्ठ ऐप स्टोर स्क्रीनशॉट टूल",
-      description: "स्क्रीनशॉट ब्रो की तुलना ऐपस्क्रीन्स, ऐपलॉन्चपैड, रोटैटो, प्लेसिड, फिग्मा और अन्य ऐप स्क्रीनशॉट टूल से करें। ऐप स्टोर और गूगल प्ले स्क्रीनशॉट तेजी से बनाने के लिए सबसे अच्छा वर्कफ़्लो खोजें।",
+      description: "स्क्रीनशॉट ब्रो की तुलना ऐपस्क्रीन्स, ऐपलॉन्चपैड, रोटैटो, प्लेसिड, फिग्मा और अन्य ऐप स्क्रीनशॉट टूल से करें।",
       date: "2026-05-17",
       readTime: "12 मिनट का पठन",
       category: "Guide",
@@ -249,7 +249,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "upload-screenshots-to-app-store-connect",
       title: "App Store Connect पर स्क्रीनशॉट कैसे अपलोड करें (2026 गाइड)",
-      description: "ऐप स्टोर स्क्रीनशॉट अपलोड करने के चार तरीके: वेब अपलोडर, ट्रांसपोर्टर/फास्टलेन, ऐप स्टोर कनेक्ट एपीआई, और एक मैक ऐप वर्कफ़्लो। प्रत्येक को कब चुनें, डिस्प्ले प्रकारों और स्थानीयकरणों के साथ गोटचा, और फ्लो को कैसे स्वचालित करें।",
+      description: "ऐप स्टोर स्क्रीनशॉट अपलोड करने के चार तरीके: वेब अपलोडर, ट्रांसपोर्टर/फास्टलेन, ऐप स्टोर कनेक्ट एपीआई, और एक मैक ऐप वर्कफ़्लो।",
       date: "2026-04-20",
       readTime: "10 मिनट का पठन",
       category: "Guide",
@@ -291,7 +291,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "google-play-screenshot-sizes-requirements",
       title: "Tailles et exigences des captures d'écran Google Play",
-      description: "Un guide pratique des tailles, formats, exigences par appareil et flux d'exportation Google Play pour téléphones, tablettes, Chromebooks, Wear OS, TV, Auto et Android XR.",
+      description: "Un guide pratique des tailles, formats, exigences par appareil et flux d'exportation Google Play pour téléphones, tablettes, Chromebooks, Wear OS, TV.",
       date: "2026-05-17",
       readTime: "10 min de lecture",
       category: "Reference",
@@ -300,7 +300,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "ab-test-app-store-screenshots",
       title: "Comment tester A/B vos captures App Store et Google Play",
-      description: "Découvrez comment tester les captures d'écran de vos applications avec Product Page Optimization d'Apple et Store Listing Experiments de Google Play, que tester en premier et comment éviter les résultats biaisés.",
+      description: "Découvrez comment tester les captures d'écran de vos applications avec Product Page Optimization d'Apple et Store Listing Experiments de Google Play.",
       date: "2026-05-17",
       readTime: "9 min de lecture",
       category: "Guide",
@@ -309,7 +309,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "custom-product-pages-app-store-screenshots",
       title: "Pages produit personnalisées : Captures d'écran pour campagnes",
-      description: "Utilisez les pages produit personnalisées de l'App Store pour créer des ensembles de captures d'écran spécifiques à des campagnes Apple Ads, des lancements saisonniers et des entonnoirs d'acquisition localisés.",
+      description: "Utilisez les pages produit personnalisées de l'App Store pour créer des ensembles de captures d'écran spécifiques à des campagnes Apple Ads.",
       date: "2026-05-17",
       readTime: "8 min de lecture",
       category: "Guide",
@@ -318,7 +318,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "design-app-store-screenshots-in-figma",
       title: "Comment concevoir des captures d'écran App Store dans Figma",
-      description: "Un tutoriel Figma pratique pour concevoir des captures d'écran App Store : configuration de fichiers, cadres d'appareils, composants réutilisables, localisation, paramètres d'exportation et alternative dédiée.",
+      description: "Un tutoriel Figma pratique pour concevoir des captures d'écran App Store : configuration de fichiers, cadres d'appareils, composants réutilisables.",
       date: "2026-05-17",
       readTime: "11 min de lecture",
       category: "Guide",
@@ -327,7 +327,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "best-app-store-screenshot-tools",
       title: "Meilleurs outils de captures d'écran App Store pour indies",
-      description: "Comparez Screenshot Bro avec AppScreens, AppLaunchpad, Rotato, Placeit, Figma et d'autres outils. Trouvez le meilleur flux de travail pour créer vos captures App Store et Google Play plus rapidement.",
+      description: "Comparez Screenshot Bro avec AppScreens, AppLaunchpad, Rotato, Placeit, Figma et d'autres outils.",
       date: "2026-05-17",
       readTime: "12 min de lecture",
       category: "Guide",
@@ -344,7 +344,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "upload-screenshots-to-app-store-connect",
       title: "Comment envoyer des captures vers App Store Connect (Guide 2026)",
-      description: "Quatre façons d'envoyer vos captures App Store : via le web, Transporter/fastlane, l'API App Store Connect ou une application Mac. Avantages, pièges des locales et automatisation du flux.",
+      description: "Quatre façons d'envoyer vos captures App Store : via le web, Transporter/fastlane, l'API App Store Connect ou une application Mac.",
       date: "2026-04-20",
       readTime: "10 min de lecture",
       category: "Guide",
@@ -352,7 +352,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "screenshot-sizes-app-store-google-play",
       title: "Tailles de captures pour l'App Store et Google Play (2026)",
-      description: "Toutes les dimensions de captures d'écran dont vous avez besoin pour l'Apple App Store et Google Play en 2026 — iPhone, iPad, Mac, Apple Watch, Apple TV, Vision Pro, Android et plus.",
+      description: "Toutes les dimensions de captures d'écran dont vous avez besoin pour l'Apple App Store et Google Play en 2026 — iPhone, iPad, Mac, Apple Watch, Apple TV.",
       date: "2026-04-18",
       readTime: "9 min de lecture",
       category: "Reference",
@@ -360,7 +360,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "app-store-screenshot-sizes",
       title: "Tailles de captures App Store pour chaque appareil Apple (2026)",
-      description: "Une référence complète des dimensions de captures acceptées pour iPhone, iPad, Mac, Apple Watch, Apple TV et Apple Vision Pro — plus astuces pour gérer plusieurs tailles efficacement.",
+      description: "Une référence complète des dimensions de captures acceptées pour iPhone, iPad, Mac, Apple Watch.",
       date: "2026-04-08",
       readTime: "5 min de lecture",
       category: "Reference",
@@ -368,7 +368,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "screenshots-that-convert",
       title: "Comment concevoir des captures App Store qui convertissent",
-      description: "Vos premières captures d'écran déterminent l'essentiel de la première impression. Apprenez les structures de mise en page, les formules de texte et les principes de design de conversion.",
+      description: "Vos premières captures d'écran déterminent l'essentiel de la première impression. Apprenez les structures de mise en page.",
       date: "2026-03-28",
       readTime: "8 min de lecture",
       category: "Guide",
@@ -404,7 +404,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "custom-product-pages-app-store-screenshots",
       title: "صفحات المنتج المخصصة: لقطات شاشة App Store للحملات",
-      description: "استخدم صفحات المنتج المخصصة في App Store لإنشاء مجموعات لقطات شاشة مخصصة للحملات الإعلانية لـ Apple Ads، والإطلاقات الموسمية، وصفحات الميزات، وقنوات الاستحواذ الموطنة.",
+      description: "استخدم صفحات المنتج المخصصة في App Store لإنشاء مجموعات لقطات شاشة مخصصة للحملات الإعلانية لـ Apple Ads، والإطلاقات الموسمية، وصفحات الميزات.",
       date: "2026-05-17",
       readTime: "قراءة في 8 دقائق",
       category: "Guide",
@@ -413,7 +413,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "design-app-store-screenshots-in-figma",
       title: "كيفية تصميم لقطات شاشة App Store في Figma",
-      description: "برنامج تعليمي عملي في Figma لتصميم لقطات شاشة App Store: إعداد الملف، وإطارات الأجهزة، والمكونات القابلة لإعادة الاستخدام، والتوطين، وإعدادات التصدير، ومتى تستخدم أداة لقطات شاشة مخصصة بدلاً من ذلك.",
+      description: "برنامج تعليمي عملي في Figma لتصميم لقطات شاشة App Store: إعداد الملف، وإطارات الأجهزة، والمكونات القابلة لإعادة الاستخدام، والتوطين، وإعدادات التصدير.",
       date: "2026-05-17",
       readTime: "قراءة في 11 دقيقة",
       category: "Guide",
@@ -439,7 +439,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "upload-screenshots-to-app-store-connect",
       title: "كيفية رفع لقطات الشاشة إلى App Store Connect (دليل 2026)",
-      description: "أربع طرق لرفع لقطات شاشة App Store: رافع الويب، Transporter/fastlane، وواجهة برمجة تطبيقات App Store Connect، وسير عمل تطبيق Mac. متى تختار كل منها، ومشاكل لغات العرض، وكيفية أتمتة التدفق.",
+      description: "أربع طرق لرفع لقطات شاشة App Store: رافع الويب، Transporter/fastlane، وواجهة برمجة تطبيقات App Store Connect، وسير عمل تطبيق Mac.",
       date: "2026-04-20",
       readTime: "قراءة في 10 دقائق",
       category: "Guide",
@@ -481,7 +481,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "google-play-screenshot-sizes-requirements",
       title: "Google Play Screenshot-Größen und Anforderungen",
-      description: "Ein praktischer Leitfaden zu Google Play Screenshot-Größen, Formaten und gerätespezifischen Anforderungen für Smartphones, Tablets, Chromebooks, Wear OS, TV und mehr.",
+      description: "Ein praktischer Leitfaden zu Google Play Screenshot-Größen, Formaten und gerätespezifischen Anforderungen für Smartphones, Tablets, Chromebooks, Wear OS.",
       date: "2026-05-17",
       readTime: "10 Min. Lesezeit",
       category: "Reference",
@@ -499,7 +499,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "custom-product-pages-app-store-screenshots",
       title: "Benutzerdefinierte Produktseiten: App Store Screenshots für Kampagnen",
-      description: "Nutzen Sie benutzerdefinierte Produktseiten im App Store, um kampagnenspezifische Screenshot-Sets für Apple Search Ads, saisonale Launches und mehr zu erstellen.",
+      description: "Nutzen Sie benutzerdefinierte Produktseiten im App Store, um kampagnenspezifische Screenshot-Sets für Apple Search Ads.",
       date: "2026-05-17",
       readTime: "8 Min. Lesezeit",
       category: "Guide",
@@ -508,7 +508,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "design-app-store-screenshots-in-figma",
       title: "Wie man App Store Screenshots in Figma designt",
-      description: "Ein praktisches Figma-Tutorial für das Design von App Store Screenshots: Dateiversionierung, Geräterahmen, wiederverwendbare Komponenten, Lokalisierung und Export.",
+      description: "Ein praktisches Figma-Tutorial für das Design von App Store Screenshots: Dateiversionierung, Geräterahmen, wiederverwendbare Komponenten.",
       date: "2026-05-17",
       readTime: "11 Min. Lesezeit",
       category: "Guide",
@@ -671,7 +671,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "google-play-screenshot-sizes-requirements",
       title: "Tamanhos e requisitos de capturas de tela do Google Play",
-      description: "Um guia prático de tamanhos de capturas de tela do Google Play, formatos e requisitos específicos para celulares, tablets, Chromebooks, Wear OS, TV e Android XR.",
+      description: "Um guia prático de tamanhos de capturas de tela do Google Play, formatos e requisitos específicos para celulares, tablets, Chromebooks, Wear OS.",
       date: "2026-05-17",
       readTime: "Leitura de 10 min",
       category: "Reference",
@@ -689,7 +689,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "custom-product-pages-app-store-screenshots",
       title: "Páginas de produto personalizadas: Screenshots da App Store para campanhas",
-      description: "Use as páginas de produto personalizadas da App Store para criar conjuntos de capturas de tela específicos para campanhas de Apple Ads, lançamentos sazonais e funis de aquisição localizados.",
+      description: "Use as páginas de produto personalizadas da App Store para criar conjuntos de capturas de tela específicos para campanhas de Apple Ads.",
       date: "2026-05-17",
       readTime: "Leitura de 8 min",
       category: "Guide",
@@ -698,7 +698,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "design-app-store-screenshots-in-figma",
       title: "Como desenhar capturas de tela da App Store no Figma",
-      description: "Um tutorial prático do Figma para criar capturas de tela da App Store: configuração do arquivo, frames de dispositivos, componentes reutilizáveis, localização e exportação.",
+      description: "Um tutorial prático do Figma para criar capturas de tela da App Store: configuração do arquivo, frames de dispositivos, componentes reutilizáveis.",
       date: "2026-05-17",
       readTime: "Leitura de 11 min",
       category: "Guide",
@@ -732,7 +732,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "screenshot-sizes-app-store-google-play",
       title: "Tamanhos de capturas de tela para App Store e Google Play (2026)",
-      description: "Todas as dimensões de capturas de tela necessárias para a Apple App Store e Google Play em 2026 — iPhone, iPad, Mac, Apple Watch, Apple TV, Vision Pro e Android.",
+      description: "Todas as dimensões de capturas de tela necessárias para a Apple App Store e Google Play em 2026 — iPhone, iPad, Mac, Apple Watch, Apple TV.",
       date: "2026-04-18",
       readTime: "Leitura de 9 min",
       category: "Reference",
@@ -766,7 +766,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "google-play-screenshot-sizes-requirements",
       title: "Dimensioni e requisiti degli screenshot di Google Play",
-      description: "Una guida pratica a dimensioni, formati e requisiti specifici per dispositivo degli screenshot di Google Play per smartphone, tablet, Chromebook, Wear OS, TV e Android XR.",
+      description: "Una guida pratica a dimensioni, formati e requisiti specifici per dispositivo degli screenshot di Google Play per smartphone, tablet, Chromebook, Wear OS.",
       date: "2026-05-17",
       readTime: "10 min di lettura",
       category: "Reference",
@@ -784,7 +784,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "custom-product-pages-app-store-screenshots",
       title: "Pagine di prodotto personalizzate: Screenshot dell'App Store per campagne",
-      description: "Usa le pagine di prodotto personalizzate dell'App Store per creare set di screenshot mirati per campagne Apple Search Ads, lanci stagionali e funnel di acquisizione localizzati.",
+      description: "Usa le pagine di prodotto personalizzate dell'App Store per creare set di screenshot mirati per campagne Apple Search Ads.",
       date: "2026-05-17",
       readTime: "8 min di lettura",
       category: "Guide",
@@ -793,7 +793,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     {
       slug: "design-app-store-screenshots-in-figma",
       title: "Come progettare screenshot dell'App Store in Figma",
-      description: "Un tutorial pratico di Figma per progettare screenshot dell'App Store: configurazione del file, cornici del dispositivo, componenti riutilizzabili, localizzazione ed esportazione.",
+      description: "Un tutorial pratico di Figma per progettare screenshot dell'App Store: configurazione del file, cornici del dispositivo, componenti riutilizzabili.",
       date: "2026-05-17",
       readTime: "11 min di lettura",
       category: "Guide",

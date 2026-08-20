@@ -58,24 +58,16 @@ function buildSitemap(): string {
     { path: "/docs/help", priority: "0.7" },
     { path: "/docs/project-schema", priority: "0.5" },
   ];
-  const docsEntries: SitemapEntry[] = docsPaths.flatMap(({ path, priority }) => [
-    {
+  // English only: the docs pages are not translated, so their locale-prefixed
+  // URLs canonicalize back here (see root.tsx) and must not be submitted.
+  const docsEntries: SitemapEntry[] = docsPaths.map(
+    ({ path, priority }): SitemapEntry => ({
       loc: path,
       changefreq: "monthly",
       priority,
       lastmod: latestChangelogDate,
-      alternates: localeAlternates(path),
-    },
-    ...LOCALES.filter((locale) => locale.code !== DEFAULT_LOCALE).map(
-      (locale): SitemapEntry => ({
-        loc: localizedPath(locale.code, path),
-        changefreq: "monthly",
-        priority,
-        lastmod: latestChangelogDate,
-        alternates: localeAlternates(path),
-      }),
-    ),
-  ]);
+    }),
+  );
 
   const staticEntries: SitemapEntry[] = [
     {
