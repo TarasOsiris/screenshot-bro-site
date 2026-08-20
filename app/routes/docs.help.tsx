@@ -117,7 +117,7 @@ const SECTIONS: Section[] = [
       src: "/docs-help/editor-overview.webp",
       alt: "Screenshot Bro editor with two rows of templates and the right-side inspector",
       width: 1600,
-      height: 1004,
+      height: 1046,
       caption: "The Screenshot Bro editor — rows of templates with a shared row canvas, plus the inspector on the right.",
     },
     blocks: [
@@ -143,7 +143,7 @@ const SECTIONS: Section[] = [
     image: {
       alt: "New Project window with name field, Blank/Template choice, and configurable rows",
       width: 1600,
-      height: 1033,
+      height: 1272,
       caption: "**File ▸ New Project** — set a name, choose Blank or From Template, and pre-configure rows with their device categories.",
     },
     blocks: [
@@ -174,7 +174,7 @@ const SECTIONS: Section[] = [
     image: {
       alt: "Two rows of templates in the editor, each with its own screenshot size",
       width: 1600,
-      height: 1284,
+      height: 1165,
       caption: "Each row groups templates of one device size — the App Store requires separate uploads per size.",
     },
     blocks: [
@@ -210,9 +210,9 @@ const SECTIONS: Section[] = [
     title: "Templates",
     subtitle: "The individual screenshots inside a row.",
     image: {
-      alt: "A row with three templates side by side, each rendering a different design",
+      alt: "A row of templates side by side, each rendering a different design",
       width: 1600,
-      height: 453,
+      height: 710,
       caption: "A row of three templates. Each is one final exported image at the row's pixel size.",
     },
     blocks: [
@@ -238,10 +238,10 @@ const SECTIONS: Section[] = [
     title: "Shapes & Text",
     subtitle: "Build the layout with rectangles, circles, stars, text, images, devices, and SVGs.",
     image: {
-      alt: "Inspector Add Element section with Shapes, Text, Image, Device, and SVG buttons",
+      alt: "Inspector Shapes section with Shapes, Text, Image, Device, and SVG buttons",
       width: 510,
-      height: 380,
-      caption: "The **Add Element** section in the inspector — every shape type one click away.",
+      height: 215,
+      caption: "The **Shapes** section in the inspector — every shape type one click away.",
     },
     blocks: [
       { kind: "h", text: "Adding shapes" },
@@ -286,7 +286,7 @@ const SECTIONS: Section[] = [
     image: {
       alt: "Inspector Device section showing the default device frame picker",
       width: 510,
-      height: 230,
+      height: 304,
       caption: "The **Device** section in the inspector — pick a category and model with accurate screen insets.",
     },
     blocks: [
@@ -322,10 +322,10 @@ const SECTIONS: Section[] = [
     title: "Backgrounds",
     subtitle: "Color, gradient, or image — at row or template level.",
     image: {
-      alt: "Background editor with Color, Gradient, and Image style tabs",
+      alt: "Background editor in Gradient mode with color stops, preset gallery, angle wheel, and blur",
       width: 510,
-      height: 260,
-      caption: "The **Background** editor — three styles, switchable per row or per template.",
+      height: 843,
+      caption: "The **Background** editor — three styles, gradient presets, angle, blur, and the row-spanning toggle.",
     },
     blocks: [
       { kind: "h", text: "Three styles" },
@@ -355,9 +355,9 @@ const SECTIONS: Section[] = [
     title: "Editing on the Canvas",
     subtitle: "Drag, resize, rotate, snap.",
     image: {
-      alt: "Canvas zoomed in on a template with shapes, headlines, and a device frame",
-      width: 1050,
-      height: 640,
+      alt: "Row canvas with a selected, rotated device frame showing resize handles",
+      width: 1600,
+      height: 751,
       caption: "The row canvas — drag, resize, rotate, snap. Shapes can span across templates.",
     },
     blocks: [
@@ -394,9 +394,9 @@ const SECTIONS: Section[] = [
     title: "Languages & Translations",
     subtitle: "Translate text once, lay it out once, ship every language.",
     image: {
-      alt: "Language presets sheet showing the built-in language list",
-      width: 1100,
-      height: 1300,
+      alt: "Add Language sheet with search field and the built-in language preset list",
+      width: 1000,
+      height: 956,
       caption: "**Language ▸ Manage Languages…** — pick from 81 built-in language presets, or define a custom code.",
     },
     blocks: [
@@ -430,9 +430,9 @@ const SECTIONS: Section[] = [
     title: "Importing",
     subtitle: "Drop screenshots, images, fonts, and SVGs.",
     image: {
-      alt: "Editor templates and the row dropzone at the bottom — drop targets for screenshots and images",
+      alt: "Editor templates with their control bars — the drop targets for screenshots and images",
       width: 1600,
-      height: 486,
+      height: 394,
       caption: "Drop screenshots onto templates, or a whole batch onto the row — Screenshot Bro routes them by pixel size.",
     },
     blocks: [
