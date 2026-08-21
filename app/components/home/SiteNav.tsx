@@ -177,7 +177,7 @@ export function SiteNav({
 
           <button
             type="button"
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-label={menuOpen ? copy.ui.closeMenu : copy.ui.openMenu}
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
             onClick={() => setMenuOpen((open) => !open)}
@@ -223,7 +223,7 @@ function MobileMenu({
     >
       <div className="px-6 py-8 flex flex-col gap-8">
         {sectionAnchors.length > 0 ? (
-          <MobileLinkGroup label="Sections">
+          <MobileLinkGroup label={copy.ui.sectionsLabel}>
             {sectionAnchors.map((item) => (
               <MobileLink
                 key={item.href}

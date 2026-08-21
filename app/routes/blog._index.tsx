@@ -33,7 +33,7 @@ const INDEX_COPY: Record<
   zh: {
     eyebrow: "博客",
     title: "指南与资源",
-    description: "设计 high 转化率 App Store 截图的实用指南。",
+    description: "设计高转化率 App Store 截图的实用指南。",
     latest: "最新",
     all: "全部",
     filterLabel: "按类别筛选文章",

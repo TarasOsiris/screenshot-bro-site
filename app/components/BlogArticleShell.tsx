@@ -12,6 +12,48 @@ type SeoGuideLink = {
   description: string;
 };
 
+const SHORT_ANSWER_LABELS: Record<LocaleCode, string> = {
+  en: "Short answer:",
+  es: "Respuesta corta:",
+  zh: "简短回答：",
+  hi: "संक्षिप्त उत्तर:",
+  fr: "En bref :",
+  ar: "إجابة سريعة:",
+  de: "Kurze Antwort:",
+  ja: "要約：",
+  pt: "Resposta curta:",
+  it: "Risposta breve:",
+  ko: "요약:",
+};
+
+const RELATED_GUIDES_LABELS: Record<LocaleCode, string> = {
+  en: "Related ASO Guides",
+  es: "Guías de ASO relacionadas",
+  zh: "相关 ASO 指南",
+  hi: "संबंधित ASO गाइड",
+  fr: "Guides ASO associés",
+  ar: "أدلة ASO ذات صلة",
+  de: "Verwandte ASO-Leitfäden",
+  ja: "関連するASOガイド",
+  pt: "Guias de ASO relacionados",
+  it: "Guide ASO correlate",
+  ko: "관련 ASO 가이드",
+};
+
+const FAQ_LABELS: Record<LocaleCode, string> = {
+  en: "FAQ",
+  es: "Preguntas frecuentes",
+  zh: "常见问题",
+  hi: "अक्सर पूछे जाने वाले प्रश्न",
+  fr: "FAQ",
+  ar: "الأسئلة الشائعة",
+  de: "Häufig gestellte Fragen",
+  ja: "よくある質問",
+  pt: "Perguntas frequentes",
+  it: "Domande frequenti",
+  ko: "자주 묻는 질문",
+};
+
 export function BlogArticleShell({
   slug,
   locale,
@@ -45,13 +87,13 @@ export function BlogArticleShell({
           <BlogPostHeader slug={slug} locale={locale} />
           {tldr ? (
             <p>
-              <strong>Short answer:</strong> {tldr}
+              <strong>{SHORT_ANSWER_LABELS[locale] || SHORT_ANSWER_LABELS.en}</strong> {tldr}
             </p>
           ) : null}
           {children}
           {seoLinks.length > 0 ? (
             <section>
-              <h2>Related ASO Guides</h2>
+              <h2>{RELATED_GUIDES_LABELS[locale] || RELATED_GUIDES_LABELS.en}</h2>
               <ul>
                 {seoLinks.map((link) => (
                   <li key={link.href}>
@@ -67,7 +109,7 @@ export function BlogArticleShell({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: buildFaqJsonLd(faqs) }}
               />
-              <h2>FAQ</h2>
+              <h2>{FAQ_LABELS[locale] || FAQ_LABELS.en}</h2>
               {faqs.map((faq) => (
                 <div key={faq.question}>
                   <h3>{faq.question}</h3>

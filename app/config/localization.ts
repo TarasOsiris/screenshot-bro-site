@@ -100,6 +100,9 @@ export type HomeCopy = {
     watchOnInstagram: string;
     productLabel: string;
     resourcesLabel: string;
+    sectionsLabel: string;
+    openMenu: string;
+    closeMenu: string;
     backToTop: string;
     appScreenshots: string;
     previousScreenshot: string;
@@ -220,6 +223,9 @@ const EN_HOME_COPY: HomeCopy = {
     watchOnInstagram: "Watch on Instagram",
     productLabel: "Product",
     resourcesLabel: "Resources",
+    sectionsLabel: "Sections",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
     backToTop: "Back to top",
     appScreenshots: "App screenshots",
     previousScreenshot: "Previous screenshot",
@@ -445,7 +451,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
     socialImageAlt:
       "Screenshot Bro — app nativa para Mac y iPad para diseñar capturas de App Store y Google Play con marcos de dispositivo, degradados y localización",
     ui: {
-      docs: "Docs",
+      docs: "Documentación",
       redditCommunity: "Comunidad de Reddit",
       followOnX: "Seguir en X",
       followOnThreads: "Seguir en Threads",
@@ -699,25 +705,25 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
   }),
   hi: compactLandingContent({
     socialImageAlt: "Screenshot Bro — Mac और iPad के लिए App Store और Google Play screenshots बनाने वाला native ऐप",
-    ui: { docs: "Docs", redditCommunity: "Reddit समुदाय", followOnX: "X पर follow करें", followOnThreads: "Threads पर follow करें", homeLabel: `${SITE_NAME} home`, read: "पढ़ें", watchOnInstagram: "Instagram पर देखें", productLabel: "Product", resourcesLabel: "Resources", appScreenshots: "App screenshots", productHuntAlt: "ScreenshotBro App - सुंदर App Store screenshots design और export करें. | Product Hunt" },
+    ui: { docs: "दस्तावेज़", redditCommunity: "Reddit समुदाय", followOnX: "X पर follow करें", followOnThreads: "Threads पर follow करें", homeLabel: `${SITE_NAME} होम`, read: "पढ़ें", watchOnInstagram: "Instagram पर देखें", productLabel: "उत्पाद", resourcesLabel: "संसाधन", appScreenshots: "ऐप स्क्रीनशॉट", productHuntAlt: "ScreenshotBro App - सुंदर App Store screenshots design और export करें. | Product Hunt" },
     reel: { eyebrow: "Instagram पर", title: "ऐप का 60-second tour.", description: "डिवाइस फ्रेम, लेयर्स, localized exports और one-click App Store Connect upload को Screenshot Bro में साथ काम करते देखें।" },
     featureTitles: ["मल्टी-टेम्पलेट एडिटिंग", "डिवाइस फ्रेम", "बैकग्राउंड और स्पैनिंग", "शेप टूल्स + SVG", "स्मार्ट अलाइनमेंट", "लोकलाइज्ड एक्सपोर्ट", "App Store Connect अपलोड", "बिल्ट-इन लोकलाइजेशन", "नेटिव Mac और iPad", "iCloud सिंक", "कस्टम फॉन्ट", "प्रोजेक्ट टेम्पलेट", "कीबोर्ड शॉर्टकट", "प्राइवेसी-फर्स्ट", "बैच इमेज इंपोर्ट", "हमेशा फ्री प्लान"],
     featureDescription: "Multi-language store screenshots के लिए focused tools, native performance, reusable templates और upload-ready exports के साथ।",
     withoutBroPoints: ["हर screenshot manually resize करना", "डिवाइस फ्रेम एक-एक करके copy करना", "एक color बदलने पर सब export करना", "हर language के लिए सब duplicate करना", "हर PNG manually upload करना"],
     withBroPoints: ["एक template से सभी variants update", "एक click में device frame जोड़ें", "Per-shape text से locales जोड़ें", "हर language और size one click में export", "App Store Connect पर direct upload"],
-    showcaseLabels: ["Batch Import", "Auto Upload", "Shapes और Layers", "Backgrounds", "डिवाइस फ्रेम"],
-    showcaseTitles: ["खींचें, छोड़ें, हो गया।", "App Store Connect upload एक click में।", "Layer by layer बनाएं.", "सुंदर backgrounds बनाएं.", "डिवाइस फ्रेम customize करें."],
-    showcaseDescription: "मुख्य workflow दिखाता है कि Screenshot Bro repetitive design, export और upload steps को कैसे कम करता है।",
-    screenshotCaptions: ["सुंदर App Store screenshots design करें", "पूरा project एक साथ export करें", "Built-in templates चुनें", "Screenshots आसानी से localize करें", "Real device frames जोड़ें", "सुंदर backgrounds बनाएं", "SVGs, shapes और images जोड़ें"],
-    screenshotAltSuffix: "Screenshot Bro interface screenshot",
-    workflowTitles: ["Rows setup करें", "Design और localize", "सब export करें", "App Store Connect पर upload"],
-    workflowDescription: "Device sizes से multi-language export और upload तक पूरा screenshot workflow एक native app में रहता है।",
+    showcaseLabels: ["बैच इंपोर्ट", "ऑटो अपलोड", "शेप्स और लेयर्स", "बैकग्राउंड", "डिवाइस फ्रेम"],
+    showcaseTitles: ["खींचें, छोड़ें, हो गया।", "App Store Connect पर एक क्लिक में अपलोड।", "लेयर दर लेयर बनाएं।", "सुंदर बैकग्राउंड बनाएं।", "डिवाइस फ्रेम कस्टमाइज़ करें।"],
+    showcaseDescription: "मुख्य वर्कफ़्लो दिखाता है कि Screenshot Bro दोहराव वाले डिज़ाइन, एक्सपोर्ट और अपलोड चरणों को कैसे कम करता है।",
+    screenshotCaptions: ["सुंदर App Store स्क्रीनशॉट डिज़ाइन करें", "पूरा प्रोजेक्ट एक साथ एक्सपोर्ट करें", "बिल्ट-इन टेम्पलेट चुनें", "स्क्रीनशॉट आसानी से लोकलाइज़ करें", "असली डिवाइस फ्रेम जोड़ें", "सुंदर बैकग्राउंड बनाएं", "SVG, शेप्स और इमेज जोड़ें"],
+    screenshotAltSuffix: "Screenshot Bro इंटरफ़ेस स्क्रीनशॉट",
+    workflowTitles: ["पंक्तियां सेट करें", "डिजाइन और लोकलाइज करें", "सब एक्सपोर्ट करें", "App Store Connect पर अपलोड"],
+    workflowDescription: "डिवाइस साइज़ से मल्टी-लैंग्वेज एक्सपोर्ट और अपलोड तक पूरा स्क्रीनशॉट वर्कफ़्लो एक नेटिव ऐप में रहता है।",
     testimonialQuotes: ["हर release के बाद screenshots में बहुत समय लगता था। अब templates एक बार set करता हूं और new shots export कर देता हूं।", "Localization feature बहुत time बचाता है। Multiple languages export करना अब one click है।", "आखिरकार ऐसा tool मिला जो रास्ते में नहीं आता — browser tabs नहीं, fast native app।"],
-    developerLabel: "Developer",
+    developerLabel: "डेवलपर",
   }),
   fr: compactLandingContent({
     socialImageAlt: "Screenshot Bro — app native Mac et iPad pour créer des captures App Store et Google Play avec cadres, dégradés et localisation",
-    ui: { docs: "Docs", redditCommunity: "Communauté Reddit", followOnX: "Suivre sur X", followOnThreads: "Suivre sur Threads", homeLabel: `Accueil ${SITE_NAME}`, read: "Lire", watchOnInstagram: "Regarder sur Instagram", productLabel: "Produit", resourcesLabel: "Ressources", appScreenshots: "Captures de l'app", productHuntAlt: "ScreenshotBro App - Créez et exportez de belles captures App Store. | Product Hunt" },
+    ui: { docs: "Documentation", redditCommunity: "Communauté Reddit", followOnX: "Suivre sur X", followOnThreads: "Suivre sur Threads", homeLabel: `Accueil ${SITE_NAME}`, read: "Lire", watchOnInstagram: "Regarder sur Instagram", productLabel: "Produit", resourcesLabel: "Ressources", appScreenshots: "Captures de l'app", productHuntAlt: "ScreenshotBro App - Créez et exportez de belles captures App Store. | Product Hunt" },
     reel: { eyebrow: "Sur Instagram", title: "Une visite de l'app en 60 secondes.", description: "Voyez les cadres, calques, exports localisés et l'envoi App Store Connect en un clic dans Screenshot Bro." },
     featureTitles: ["Édition multi-template", "Cadres d'appareils", "Arrière-plans étendus", "Outils de formes + SVG", "Alignement intelligent", "Export localisé", "Envoi App Store Connect", "Localisation intégrée", "Natif Mac et iPad", "Sync iCloud", "Polices personnalisées", "Templates de projet", "Raccourcis clavier", "Confidentialité d'abord", "Import d'images groupé", "Version gratuite permanente"],
     featureDescription: "Des outils ciblés pour des captures de store multilingues, avec performances natives, templates réutilisables et exports prêts à envoyer.",
@@ -753,7 +759,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
   }),
   de: compactLandingContent({
     socialImageAlt: "Screenshot Bro — native Mac- und iPad-App für App Store- und Google Play-Screenshots mit Geräterahmen, Verläufen und Lokalisierung",
-    ui: { docs: "Docs", redditCommunity: "Reddit-Community", followOnX: "Auf X folgen", followOnThreads: "Auf Threads folgen", homeLabel: `${SITE_NAME} Startseite`, read: "Lesen", watchOnInstagram: "Auf Instagram ansehen", productLabel: "Produkt", resourcesLabel: "Ressourcen", appScreenshots: "App-Screenshots", productHuntAlt: "ScreenshotBro App - Schöne App-Store-Screenshots gestalten und exportieren. | Product Hunt" },
+    ui: { docs: "Dokumentation", redditCommunity: "Reddit-Community", followOnX: "Auf X folgen", followOnThreads: "Auf Threads folgen", homeLabel: `${SITE_NAME} Startseite`, read: "Lesen", watchOnInstagram: "Auf Instagram ansehen", productLabel: "Produkt", resourcesLabel: "Ressourcen", appScreenshots: "App-Screenshots", productHuntAlt: "ScreenshotBro App - Schöne App-Store-Screenshots gestalten und exportieren. | Product Hunt" },
     reel: { eyebrow: "Auf Instagram", title: "Eine 60-Sekunden-Tour durch die App.", description: "Sieh, wie Geräterahmen, Ebenen, lokalisierte Exporte und App Store Connect Upload in Screenshot Bro zusammenkommen." },
     featureTitles: ["Multi-Template-Bearbeitung", "Geräterahmen", "Hintergründe & Spanning", "Formwerkzeuge + SVG", "Intelligente Ausrichtung", "Lokalisierter Export", "Upload zu App Store Connect", "Lokalisierung integriert", "Nativ für Mac & iPad", "iCloud Sync", "Eigene Schriften", "Projektvorlagen", "Tastaturkürzel", "Datenschutz zuerst", "Batch-Bildimport", "Kostenlos dauerhaft"],
     featureDescription: "Fokussierte Werkzeuge für mehrsprachige Store-Screenshots mit nativer Performance, wiederverwendbaren Templates und uploadfertigen Exporten.",
@@ -789,7 +795,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
   }),
   pt: compactLandingContent({
     socialImageAlt: "Screenshot Bro — app nativo para Mac e iPad para criar capturas da App Store e Google Play com molduras, gradientes e localização",
-    ui: { docs: "Docs", redditCommunity: "Comunidade Reddit", followOnX: "Seguir no X", followOnThreads: "Seguir no Threads", homeLabel: `Início do ${SITE_NAME}`, read: "Ler", watchOnInstagram: "Assistir no Instagram", productLabel: "Produto", resourcesLabel: "Recursos", appScreenshots: "Capturas do app", productHuntAlt: "ScreenshotBro App - Crie e exporte belas capturas da App Store. | Product Hunt" },
+    ui: { docs: "Documentação", redditCommunity: "Comunidade Reddit", followOnX: "Seguir no X", followOnThreads: "Seguir no Threads", homeLabel: `Início do ${SITE_NAME}`, read: "Ler", watchOnInstagram: "Assistir no Instagram", productLabel: "Produto", resourcesLabel: "Recursos", appScreenshots: "Capturas de tela do app", productHuntAlt: "ScreenshotBro App - Crie e exporte belas capturas da App Store. | Product Hunt" },
     reel: { eyebrow: "No Instagram", title: "Um tour de 60 segundos pelo app.", description: "Veja molduras, camadas, exportações localizadas e envio ao App Store Connect em um clique no Screenshot Bro." },
     featureTitles: ["Edição multi-template", "Molduras de dispositivos", "Fundos e expansão", "Formas + SVG", "Alinhamento inteligente", "Exportação localizada", "Envio ao App Store Connect", "Localização integrada", "Nativo para Mac e iPad", "Sincronização iCloud", "Fontes personalizadas", "Modelos de projeto", "Atalhos de teclado", "Privacidade primeiro", "Importação em lote", "Plano grátis para sempre"],
     featureDescription: "Ferramentas focadas para capturas de loja em vários idiomas, com desempenho nativo, modelos reutilizáveis e exportações prontas para envio.",
@@ -807,7 +813,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
   }),
   it: compactLandingContent({
     socialImageAlt: "Screenshot Bro — app nativa per Mac e iPad per creare screenshot App Store e Google Play con cornici, gradienti e localizzazione",
-    ui: { docs: "Docs", redditCommunity: "Community Reddit", followOnX: "Segui su X", followOnThreads: "Segui su Threads", homeLabel: `Home di ${SITE_NAME}`, read: "Leggi", watchOnInstagram: "Guarda su Instagram", productLabel: "Prodotto", resourcesLabel: "Risorse", appScreenshots: "Screenshot dell'app", productHuntAlt: "ScreenshotBro App - Progetta ed esporta splendidi screenshot App Store. | Product Hunt" },
+    ui: { docs: "Documentazione", redditCommunity: "Community Reddit", followOnX: "Segui su X", followOnThreads: "Segui su Threads", homeLabel: `Home di ${SITE_NAME}`, read: "Leggi", watchOnInstagram: "Guarda su Instagram", productLabel: "Prodotto", resourcesLabel: "Risorse", appScreenshots: "Screenshot dell'app", productHuntAlt: "ScreenshotBro App - Progetta ed esporta splendidi screenshot App Store. | Product Hunt" },
     reel: { eyebrow: "Su Instagram", title: "Un tour dell'app in 60 secondi.", description: "Guarda cornici, livelli, export localizzati e upload su App Store Connect in un clic dentro Screenshot Bro." },
     featureTitles: ["Modifica multi-template", "Cornici dispositivo", "Sfondi estesi", "Strumenti forme + SVG", "Allineamento intelligente", "Export localizzato", "Upload App Store Connect", "Localizzazione integrata", "Nativa Mac e iPad", "Sync iCloud", "Font personalizzati", "Template progetto", "Scorciatoie da tastiera", "Privacy prima di tutto", "Import batch", "Piano gratis per sempre"],
     featureDescription: "Strumenti mirati per screenshot store multilingue, con prestazioni native, template riutilizzabili ed export pronti per l'upload.",
@@ -923,6 +929,8 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ],
     ui: {
       skipToContent: "Saltar al contenido",
+      tutorials: "Tutoriales",
+      docs: "Documentación",
       changelog: "Novedades",
       comparisons: "Todas las comparativas",
       vsFastlane: "Comparar con Fastlane",
@@ -933,6 +941,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       followJourney: "Sigue mi progreso",
       madeWithLoveAt: "Hecho con ❤️ en",
       language: "Idioma",
+      sectionsLabel: "Secciones",
+      openMenu: "Abrir menú",
+      closeMenu: "Cerrar menú",
       seeInAction: "Ver cómo funciona",
       tryItNow: "Pruébalo ahora",
       seeDetails: "Ver detalles",
@@ -950,7 +961,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     hero: {
       titleLead: "Diseña y publica",
       titleAccent: "App Store",
-      titleRest: " screenshots.",
+      titleRest: " capturas.",
       descriptionLead:
         "Importa tus capturas, añade marcos de dispositivo, localiza el texto, traduce lo que falte y",
       descriptionStrong: "sube todo directo a App Store Connect",
@@ -1076,6 +1087,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ui: {
       skipToContent: "跳到内容",
       blog: "博客",
+      tutorials: "教程",
       changelog: "更新日志",
       comparisons: "全部对比",
       vsFastlane: "对比 Fastlane",
@@ -1086,6 +1098,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       followJourney: "关注我的进展",
       madeWithLoveAt: "用 ❤️ 制作于",
       language: "语言",
+      sectionsLabel: "章节",
+      openMenu: "打开菜单",
+      closeMenu: "关闭菜单",
       seeInAction: "查看演示",
       tryItNow: "立即试用",
       seeDetails: "查看详情",
@@ -1222,6 +1237,8 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ui: {
       skipToContent: "कंटेंट पर जाएं",
       blog: "ब्लॉग",
+      tutorials: "ट्यूटोरियल",
+      docs: "दस्तावेज़",
       changelog: "बदलाव",
       comparisons: "सभी तुलनाएं",
       vsFastlane: "Fastlane से तुलना",
@@ -1232,6 +1249,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       followJourney: "मेरी यात्रा देखें",
       madeWithLoveAt: "❤️ से बनाया, यहां:",
       language: "भाषा",
+      productLabel: "उत्पाद",
+      resourcesLabel: "संसाधन",
+      sectionsLabel: "अनुभाग",
+      openMenu: "मेनू खोलें",
+      closeMenu: "मेनू बंद करें",
       seeInAction: "काम करते देखें",
       tryItNow: "अभी आजमाएं",
       seeDetails: "विवरण देखें",
@@ -1370,6 +1392,8 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ui: {
       skipToContent: "Aller au contenu",
       blog: "Blog",
+      tutorials: "Tutoriels",
+      docs: "Documentation",
       changelog: "Nouveautés",
       comparisons: "Toutes les comparaisons",
       vsFastlane: "Comparer à Fastlane",
@@ -1380,6 +1404,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       followJourney: "Suivre mon parcours",
       madeWithLoveAt: "Fait avec ❤️ chez",
       language: "Langue",
+      sectionsLabel: "Sections",
+      openMenu: "Ouvrir le menu",
+      closeMenu: "Fermer le menu",
       seeInAction: "Voir en action",
       tryItNow: "Essayer maintenant",
       seeDetails: "Voir les détails",
@@ -1397,7 +1424,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     hero: {
       titleLead: "Créez et publiez",
       titleAccent: "App Store",
-      titleRest: " screenshots.",
+      titleRest: " captures d'écran.",
       descriptionLead:
         "Importez vos captures, ajoutez des cadres d'appareils, localisez le texte, traduisez automatiquement ce qui manque et",
       descriptionStrong: "envoyez directement vers App Store Connect",
@@ -1523,6 +1550,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ui: {
       skipToContent: "تخطي إلى المحتوى",
       blog: "المدونة",
+      tutorials: "الدروس التعليمية",
       changelog: "سجل التغييرات",
       comparisons: "كل المقارنات",
       vsFastlane: "مقارنة مع Fastlane",
@@ -1533,6 +1561,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       followJourney: "تابع رحلتي",
       madeWithLoveAt: "صُنع بـ ❤️ في",
       language: "اللغة",
+      sectionsLabel: "الأقسام",
+      openMenu: "فتح القائمة",
+      closeMenu: "إغلاق القائمة",
       seeInAction: "شاهده عملياً",
       tryItNow: "جرّبه الآن",
       seeDetails: "عرض التفاصيل",
@@ -1548,9 +1579,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         "تطبيق macOS 15+ و iPadOS 18+ | Swift و SwiftUI | متوفر على App Store",
     },
     hero: {
-      titleLead: "صمّم وانشر",
+      titleLead: "صمّم وانشر لقطات",
       titleAccent: "App Store",
-      titleRest: " screenshots.",
+      titleRest: ".",
       descriptionLead:
         "استورد لقطاتك، أضف إطارات الأجهزة، وطّن النصوص، ترجم النص المفقود تلقائياً، ثم",
       descriptionStrong: "ارفع مباشرة إلى App Store Connect",
@@ -1676,6 +1707,8 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ui: {
       skipToContent: "Zum Inhalt springen",
       blog: "Blog",
+      tutorials: "Anleitungen",
+      docs: "Dokumentation",
       changelog: "Changelog",
       comparisons: "Alle Vergleiche",
       vsFastlane: "Vergleich mit Fastlane",
@@ -1686,6 +1719,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       followJourney: "Folge meiner Reise",
       madeWithLoveAt: "Mit ❤️ gemacht in",
       language: "Sprache",
+      sectionsLabel: "Bereiche",
+      openMenu: "Menü öffnen",
+      closeMenu: "Menü schließen",
       seeInAction: "In Aktion sehen",
       tryItNow: "Jetzt ausprobieren",
       seeDetails: "Details ansehen",
@@ -1829,6 +1865,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ui: {
       skipToContent: "コンテンツへスキップ",
       blog: "ブログ",
+      tutorials: "チュートリアル",
       changelog: "変更履歴",
       comparisons: "すべての比較",
       vsFastlane: "Fastlaneとの比較",
@@ -1839,6 +1876,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       followJourney: "開発プロセスをフォロー",
       madeWithLoveAt: "Made with ❤️ at",
       language: "言語",
+      sectionsLabel: "セクション",
+      openMenu: "メニューを開く",
+      closeMenu: "メニューを閉じる",
       seeInAction: "実際の動作を見る",
       tryItNow: "今すぐ試す",
       seeDetails: "詳細を見る",
@@ -1904,7 +1944,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "ブログ記事",
         title: "より効果的なApp Storeスクリーンショットを作成するためのガイド。",
         description:
-          "サイズ選定、ローカライズ、アップロード、그리고 コンバージョンにつながるデザインのコツやプレイブック。",
+          "サイズ選定、ローカライズ、アップロード、そしてコンバージョンにつながるデザインのコツやプレイブック。",
       },
       faq: {
         eyebrow: "よくある質問",
@@ -1976,12 +2016,14 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Posso enviar diretamente para o App Store Connect?",
         answer:
-          "Sim. Configure sua chave de API do App Store Connect uma vez (Issuer ID, Key ID e arquivo .p8). O Screenshot Bro detects o tipo de exibição correto para cada linha, associa os idiomas do projeto com as localizações do App Store Connect e substitui as capturas existentes de uma só vez — sem arrastar arquivos no navegador.",
+          "Sim. Configure sua chave de API do App Store Connect uma vez (Issuer ID, Key ID e arquivo .p8). O Screenshot Bro detecta o tipo de exibição correto para cada linha, associa os idiomas do projeto com as localizações do App Store Connect e substitui as capturas existentes de uma só vez — sem arrastar arquivos no navegador.",
       },
     ],
     ui: {
       skipToContent: "Ir para o conteúdo",
       blog: "Blog",
+      tutorials: "Tutoriais",
+      docs: "Documentação",
       changelog: "Notas de Versão",
       comparisons: "Todas as comparações",
       vsFastlane: "Comparar com Fastlane",
@@ -1992,6 +2034,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       followJourney: "Acompanhe minha jornada",
       madeWithLoveAt: "Feito com ❤️ em",
       language: "Idioma",
+      sectionsLabel: "Seções",
+      openMenu: "Abrir menu",
+      closeMenu: "Fechar menu",
       seeInAction: "Ver em ação",
       tryItNow: "Experimente agora",
       seeDetails: "Ver detalhes",
@@ -2009,7 +2054,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     hero: {
       titleLead: "Crie e publique",
       titleAccent: "App Store",
-      titleRest: " screenshots.",
+      titleRest: " capturas de tela.",
       descriptionLead:
         "Importe suas capturas, coloque-as em molduras de dispositivos, localize os textos, auto-traduza o que faltar e",
       descriptionStrong: "suba direto para o App Store Connect",
@@ -2127,7 +2172,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "Scegli tra 30 lingue predefinite o aggiungi il tuo codice lingua personalizzato. La traduzione automatica compila il testo mancante direttamente sul dispositivo. Le traduzioni sono salvate come modifiche testuali specifiche per locale, quindi layout, colori e immagini sono condivisi tra tutte le lingue: progetti una volta, distribuisci in ogni lingua. Le esportazioni sono organizzate in cartelle per lingua, pronte per App Store Connect.",
       },
       {
-        question: "Can I caricare direttamente su App Store Connect?",
+        question: "Posso caricare direttamente su App Store Connect?",
         answer:
           "Sì. Configura la tua chiave API di App Store Connect una sola volta (Issuer ID, Key ID e file .p8). Screenshot Bro rileva automaticamente il tipo di visualizzazione corretto per ciascuna riga, associa le lingue del progetto con le localizzazioni di App Store Connect e sostituisce gli screenshot esistenti in un unico passaggio, senza dover trascinare file nel browser.",
       },
@@ -2135,6 +2180,8 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ui: {
       skipToContent: "Vai al contenuto",
       blog: "Blog",
+      tutorials: "Tutorial",
+      docs: "Documentazione",
       changelog: "Novità",
       comparisons: "Tutti i confronti",
       vsFastlane: "Confronta con Fastlane",
@@ -2145,6 +2192,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       followJourney: "Segui il mio percorso",
       madeWithLoveAt: "Fatto con ❤️ a",
       language: "Lingua",
+      sectionsLabel: "Sezioni",
+      openMenu: "Apri menu",
+      closeMenu: "Chiudi menu",
       seeInAction: "Guarda in azione",
       tryItNow: "Prova ora",
       seeDetails: "Vedi dettagli",
@@ -2288,6 +2338,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ui: {
       skipToContent: "본문으로 건너뛰기",
       blog: "블로그",
+      tutorials: "튜토리얼",
       changelog: "업데이트 소식",
       comparisons: "전체 비교",
       vsFastlane: "Fastlane과 비교",
@@ -2298,6 +2349,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       followJourney: "개발 여정 팔로우",
       madeWithLoveAt: "Made with ❤️ at",
       language: "언어",
+      sectionsLabel: "섹션",
+      openMenu: "메뉴 열기",
+      closeMenu: "메뉴 닫기",
       seeInAction: "기능 데모 보기",
       tryItNow: "지금 사용해보기",
       seeDetails: "자세히 보기",
