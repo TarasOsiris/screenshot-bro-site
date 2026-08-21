@@ -30,17 +30,17 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
   };
 
   const descriptions: Record<LocaleCode, string> = {
-    en: `Privacy policy for ${SITE_NAME}. Learn how we handle your data — no analytics, no tracking, and your projects stay on your device.`,
-    es: `Política de privacidad de ${SITE_NAME}. Descubre cómo protegemos tus datos: sin rastreo ni analíticas, tus archivos permanecen en tu dispositivo.`,
-    zh: `${SITE_NAME} 隐私政策。了解我们如何保护你的数据安全——无行为追踪、无第三方分析，所有项目文件完全保存在你的本地设备中。`,
-    ja: `${SITE_NAME}のプライバシーポリシー。追跡やデータ収集を行わず、プロジェクトはすべてデバイス内に安全に保存されます。`,
-    de: `Datenschutzerklärung für ${SITE_NAME}. Keine Analyse-Tools, kein Tracking — Ihre Projekte bleiben sicher auf Ihrem Gerät.`,
-    fr: `Politique de confidentialité de ${SITE_NAME}. Aucun suivi, aucune analyse de données : vos projets restent sur votre appareil.`,
-    pt: `Política de privacidade do ${SITE_NAME}. Seus projetos permanecem seguros no seu dispositivo sem rastreamento ou coleta de dados.`,
-    it: `Informativa sulla privacy di ${SITE_NAME}. Nessun tracciamento o profilazione: i tuoi progetti rimangono al sicuro sul tuo dispositivo.`,
-    ko: `${SITE_NAME} 개인정보 처리방침. 사용자 추적이나 데이터 수집 없이 모든 프로젝트는 기기 내에 안전하게 보관됩니다.`,
-    ar: `سياسة الخصوصية لتطبيق ${SITE_NAME}. لا نقوم بتتبع أي بيانات وتبقى جميع مشاريعك مخزنة محلياً على جهازك.`,
-    hi: `${SITE_NAME} की गोपनीयता नीति। कोई ट्रैकिंग या डेटा संग्रह नहीं — आपके प्रोजेक्ट आपके डिवाइस पर सुरक्षित रहते हैं।`,
+    en: `Privacy policy for ${SITE_NAME}. Learn how we handle your data — no advertising, no cross-app tracking, and your projects stay on your device.`,
+    es: `Política de privacidad de ${SITE_NAME}. Descubre cómo protegemos tus datos: sin publicidad ni rastreo entre apps, tus archivos permanecen en tu dispositivo.`,
+    zh: `${SITE_NAME} 隐私政策。了解我们如何保护你的数据安全——无广告、无跨应用追踪，所有项目文件完全保存在你的本地设备中。`,
+    ja: `${SITE_NAME}のプライバシーポリシー。広告やアプリ間トラッキングは行わず、プロジェクトはすべてデバイス内に安全に保存されます。`,
+    de: `Datenschutzerklärung für ${SITE_NAME}. Keine Werbung, kein app-übergreifendes Tracking — Ihre Projekte bleiben sicher auf Ihrem Gerät.`,
+    fr: `Politique de confidentialité de ${SITE_NAME}. Aucune publicité, aucun suivi inter-applications : vos projets restent sur votre appareil.`,
+    pt: `Política de privacidade do ${SITE_NAME}. Seus projetos permanecem seguros no seu dispositivo, sem publicidade nem rastreamento entre aplicativos.`,
+    it: `Informativa sulla privacy di ${SITE_NAME}. Nessuna pubblicità né tracciamento tra app: i tuoi progetti rimangono al sicuro sul tuo dispositivo.`,
+    ko: `${SITE_NAME} 개인정보 처리방침. 광고나 앱 간 추적 없이 모든 프로젝트는 기기 내에 안전하게 보관됩니다.`,
+    ar: `سياسة الخصوصية لتطبيق ${SITE_NAME}. لا إعلانات ولا تتبع بين التطبيقات، وتبقى جميع مشاريعك مخزنة محلياً على جهازك.`,
+    hi: `${SITE_NAME} की गोपनीयता नीति। कोई विज्ञापन या क्रॉस-ऐप ट्रैकिंग नहीं — आपके प्रोजेक्ट आपके डिवाइस पर सुरक्षित रहते हैं।`,
   };
 
   const title = titles[locale] || titles.en;
@@ -86,10 +86,14 @@ export default function Privacy() {
           <ul>
             <li>Personal information (name, email address, phone number)</li>
             <li>
-              Usage analytics or behavioral data — we do not track which
-              features you use, what you click, or what you create
+              What you click, type, select, or scroll through — the App records
+              no keystrokes, no pointer activity, and no session replay
             </li>
-            <li>Device identifiers for tracking purposes</li>
+            <li>
+              Device identifiers for tracking purposes — nothing the App sends
+              is linked to your Apple Account, your device's identifier for
+              advertisers, or any profile held elsewhere
+            </li>
             <li>Location data</li>
             <li>Advertising identifiers</li>
             <li>
@@ -98,11 +102,15 @@ export default function Privacy() {
             </li>
           </ul>
           <p>
-            The App contains <strong>no analytics SDKs</strong>, no advertising
-            frameworks, and no cross-app or cross-site tracking. It does include
-            a crash and error reporting service, which sends technical
-            diagnostics when something goes wrong and a minimal record of each
-            app run. Both are described in <strong>Section 5</strong>.
+            The App contains <strong>no advertising frameworks</strong> and does
+            no cross-app or cross-site tracking. It does include two services
+            that send data off your device: a crash and error reporting service,
+            which sends technical diagnostics when something goes wrong
+            (<strong>Section 5</strong>), and a product analytics service, which
+            counts a short, fixed list of milestones such as &ldquo;an export
+            finished&rdquo; so we can tell which parts of the App people
+            actually reach (<strong>Section 6</strong>). Neither carries the
+            contents of your work.
           </p>
 
           <h2>2. Data Stored on Your Device</h2>
@@ -234,10 +242,10 @@ export default function Privacy() {
             to report crashes, unhandled errors, and cases where the App stops
             responding (freezes of roughly three seconds or more). An error
             report is sent only when something actually goes wrong — the App
-            does not record what you click, type, select, or scroll through, and
-            does not send a stream of usage events. Separately, the App sends a
-            minimal record of each app run, described under{" "}
-            <em>App run records</em> below.
+            does not record what you click, type, select, or scroll through.
+            Separately, the App sends a minimal record of each app run,
+            described under <em>App run records</em> below, and a short list of
+            product milestones described in <strong>Section 6</strong>.
           </p>
           <p>An error report contains technical diagnostics:</p>
           <ul>
@@ -288,13 +296,17 @@ export default function Privacy() {
             <strong>Identifiers.</strong> Reports are tagged with a random
             identifier that the App generates the first time it runs and stores
             on your device. It is not derived from your device, your Apple
-            Account, or anything about you, and we do not join it to any other
-            data — it exists so that repeated crashes from one installation can
-            be recognised as related, and so that a problem you email us about
-            can be matched to the reports we already received. If you have made
-            a purchase, the anonymous app user ID used by RevenueCat (see Section
-            4) is attached to reports as well, so that a purchase-related bug can
-            be traced to the transaction that triggered it. Both values are shown
+            Account, or anything about you — it exists so that repeated crashes
+            from one installation can be recognised as related, and so that a
+            problem you email us about can be matched to the reports we already
+            received. If you have made a purchase, the anonymous app user ID used
+            by RevenueCat (see Section 4) is attached to reports as well, so that
+            a purchase-related bug can be traced to the transaction that
+            triggered it, and the two anonymous identifiers are associated with
+            one another in our analytics tool (Section 6) so that a purchase can
+            be attributed to the installation that made it. Neither identifier is
+            joined to anything that identifies you personally, because we hold no
+            such data. Both values are shown
             in the App under Settings ▸ General ▸ Copy Diagnostics, alongside
             your App version, storage mode, language, and project counts; that
             information is placed on your clipboard and is sent to us only if you
@@ -348,7 +360,109 @@ export default function Privacy() {
             . We use this data only to diagnose and fix problems in the App.
           </p>
 
-          <h2>6. Third-Party Services Summary</h2>
+          <h2>6. Product Analytics (PostHog)</h2>
+          <p>
+            To understand which parts of {SITE_NAME} people actually reach — how
+            many installations finish the introduction, create a project, get as
+            far as an export — the App sends a short, fixed list of milestone
+            events to{" "}
+            <a
+              href="https://posthog.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              PostHog
+            </a>
+            , hosted in the United States. This is the only feature of the App
+            whose purpose is to observe use rather than to serve you directly, so
+            it is described here in full.
+          </p>
+          <p>
+            <strong>What is sent.</strong> The complete list of events, as named
+            in the App's source code:
+          </p>
+          <ul>
+            <li>
+              <code>app_launched</code>, and the standard install / update / open
+              / background lifecycle records
+            </li>
+            <li>
+              <code>onboarding_started</code>, <code>onboarding_completed</code>,{" "}
+              <code>onboarding_skipped</code>
+            </li>
+            <li>
+              <code>project_created</code> (whether from a blank project, a
+              bundled template, or a duplicate), <code>project_deleted</code>,{" "}
+              <code>template_applied</code>
+            </li>
+            <li>
+              <code>screenshots_imported</code>, <code>locale_added</code>,{" "}
+              <code>translation_run</code>
+            </li>
+            <li>
+              <code>export_started</code>, <code>export_finished</code>,{" "}
+              <code>export_failed</code>, <code>export_routed</code>,{" "}
+              <code>export_abandoned</code>
+            </li>
+            <li>
+              <code>store_upload_finished</code>,{" "}
+              <code>store_upload_failed</code>
+            </li>
+            <li>
+              <code>paywall_shown</code>, <code>paywall_dismissed</code>,{" "}
+              <code>purchase_completed</code>, <code>purchase_failed</code>,{" "}
+              <code>purchase_restored</code>
+            </li>
+            <li>
+              <code>mcp_server_toggled</code>, <code>mcp_tool_called</code> —
+              only if you turn on the optional local automation server
+            </li>
+          </ul>
+          <p>
+            Each event may carry <strong>counts, settings values, durations and
+            outcomes</strong>: how many rows, templates, languages or images were
+            involved, the export format, which destination was chosen, whether an
+            upload succeeded or was cancelled, the identifier of one of{" "}
+            {SITE_NAME}&apos;s own bundled templates. Alongside them, the
+            analytics service records the App version and build, the platform,
+            your device model, operating system version, language, time zone and
+            screen size — the same class of technical context as a crash report.
+          </p>
+          <p>
+            <strong>What is never sent.</strong> No project, row, or language
+            names. No screenshots, imported images, custom fonts, or any text you
+            write. No file names or file paths. No record of what you click,
+            type, select, scroll, or hover over. No screen recordings or session
+            replay. The App enforces this in code rather than by convention: an
+            event property must be one of a fixed list of names, and any free
+            text on a property outside a small allow-list of {SITE_NAME}&apos;s
+            own vocabulary is discarded before the event leaves your device.
+          </p>
+          <p>
+            <strong>Identifiers and location.</strong> Events are labelled with
+            the same random installation identifier described in Section 5, and —
+            if you have made a purchase — the anonymous RevenueCat identifier, so
+            that a purchase can be attributed to the installation that made it.
+            The App sets the reported IP address to zero, so PostHog does not
+            derive your city, region, or country from it. Nothing sent is linked
+            to your name, email address, or Apple Account, none of which we hold.
+          </p>
+          <p>
+            Product analytics is enabled by default and is currently not
+            configurable in the App&apos;s settings. It is switched off entirely
+            in development and test builds. Data is transmitted over an encrypted
+            connection to PostHog, which processes it on our behalf under their{" "}
+            <a
+              href="https://posthog.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Privacy Policy
+            </a>
+            . We use it only to decide what to build and fix next.
+          </p>
+
+          <h2>7. Third-Party Services Summary</h2>
           <table>
             <thead>
               <tr>
@@ -379,6 +493,15 @@ export default function Privacy() {
                 </td>
               </tr>
               <tr>
+                <td>PostHog</td>
+                <td>Product analytics</td>
+                <td>
+                  Random installation ID and anonymous RevenueCat ID, a fixed
+                  list of milestone events (Section 6) with counts, settings
+                  values and outcomes, device and app version info
+                </td>
+              </tr>
+              <tr>
                 <td>Apple App Store</td>
                 <td>In-app purchases</td>
                 <td>Standard App Store transaction data</td>
@@ -390,7 +513,7 @@ export default function Privacy() {
             the App.
           </p>
 
-          <h2>7. Data Retention and Deletion</h2>
+          <h2>8. Data Retention and Deletion</h2>
           <ul>
             <li>
               <strong>Local data</strong> — all project data and preferences are
@@ -416,9 +539,15 @@ export default function Privacy() {
               identifier, which you can find under Settings ▸ General ▸ Copy
               Diagnostics.
             </li>
+            <li>
+              <strong>Product analytics</strong> — milestone events are retained
+              by PostHog under their standard retention period. Email us with the
+              installation identifier from Settings ▸ General ▸ Copy Diagnostics
+              and we will delete the events associated with it.
+            </li>
           </ul>
 
-          <h2>8. Children's Privacy</h2>
+          <h2>9. Children&apos;s Privacy</h2>
           <p>
             {SITE_NAME} is not directed at children under the age of 13 and does
             not knowingly collect personal information from children. Since we do
@@ -426,7 +555,7 @@ export default function Privacy() {
             provisions are necessary.
           </p>
 
-          <h2>9. Security</h2>
+          <h2>10. Security</h2>
           <p>
             The App runs inside Apple's app sandbox on macOS and iPadOS, which
             restricts file system access and network capabilities. All data at
@@ -436,7 +565,7 @@ export default function Privacy() {
             encrypted HTTPS connections.
           </p>
 
-          <h2>10. Changes to This Policy</h2>
+          <h2>11. Changes to This Policy</h2>
           <p>
             We may update this Privacy Policy from time to time. The updated
             version will be posted at{" "}
@@ -445,7 +574,7 @@ export default function Privacy() {
             periodically.
           </p>
 
-          <h2>11. Contact Us</h2>
+          <h2>12. Contact Us</h2>
           <p>
             If you have questions or concerns about this Privacy Policy or the
             App's data practices, please contact us:

@@ -541,7 +541,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
       {
         title: "Privacidad primero",
         description:
-          "La traducción automática corre en el dispositivo con Translation de Apple. Sin claves API, servidores ni analítica: proyectos, fuentes y capturas se quedan en tu equipo.",
+          "La traducción automática corre en el dispositivo con Translation de Apple. Sin claves API, cuentas ni seguimiento publicitario: proyectos, fuentes y capturas se quedan en tu equipo.",
       },
       {
         title: "Importación por lotes",
@@ -847,7 +847,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
       { title: "사용자 지정 폰트", description: ".ttf, .otf, .ttc 파일을 가져와 텍스트 도형에서 원하는 서체를 사용할 수 있습니다." },
       { title: "프로젝트 템플릿", description: "레이아웃, 디바이스 프레임, 배경이 미리 설정된 내장 템플릿으로 바로 시작하세요." },
       { title: "키보드 단축키", description: "이동, 복제, 잘라내기/복사/붙여넣기, 레이어 순서, 줌, locale 전환, 선택을 키보드로 처리합니다." },
-      { title: "개인정보 우선", description: "자동 번역은 Apple Translation을 통해 기기에서 실행됩니다. API 키, 서버, 분석 추적이 없습니다." },
+      { title: "개인정보 우선", description: "자동 번역은 Apple Translation을 통해 기기에서 실행됩니다. API 키, 서버, 광고 추적이 없습니다." },
       { title: "이미지 일괄 가져오기", description: "스크린샷 폴더를 드롭하면 파일명에서 디바이스 크기를 감지해 행을 일괄로 채웁니다." },
       { title: "영구 무료 플랜", description: "1개 프로젝트, 3개 행, 행당 5개 템플릿, 모든 프레임, 30개 locale, 모든 내보내기 형식. 워터마크와 가입이 없습니다." },
     ]),
@@ -914,7 +914,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "¿Mis datos salen de mi dispositivo?",
         answer:
-          "Por defecto, no. Los proyectos, capturas y tipografías se guardan localmente. La traducción automática usa el framework Translation de Apple en el dispositivo: sin claves API, sin servidores externos, sin analítica. La sincronización iCloud Drive es opcional y va por tu cuenta personal de iCloud.",
+          "Por defecto, no. Los proyectos, capturas y tipografías se guardan localmente. La traducción automática usa el framework Translation de Apple en el dispositivo: sin claves API y sin servidores externos. La sincronización iCloud Drive es opcional y va por tu cuenta personal de iCloud. Lo que sí se envía son informes de fallos anónimos y recuentos anónimos de hitos como «una exportación finalizada», para saber qué corregir y mejorar: nunca tus proyectos, imágenes ni el texto que escribes.",
       },
       {
         question: "¿Cómo funciona la localización?",
@@ -1065,7 +1065,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "我的数据会离开设备吗？",
         answer:
-          "默认不会。项目、截图和字体都保存在本地。自动翻译通过苹果的 Translation 框架在设备本地运行——无 API key、无第三方服务器、无统计追踪。可选的 iCloud Drive 同步使用你自己的 iCloud 账号，我们没有任何中间服务器。",
+          "默认不会。项目、截图和字体都保存在本地。自动翻译通过苹果的 Translation 框架在设备本地运行——无 API key、无第三方服务器。可选的 iCloud Drive 同步使用你自己的 iCloud 账号，我们没有任何中间服务器。确实会发送的是匿名崩溃报告，以及诸如“导出完成”这类里程碑的匿名计数，以便我们知道该修复和改进什么——绝不包括你的项目、图片或你撰写的文字。",
       },
       {
         question: "本地化是怎么运作的？",
@@ -1215,7 +1215,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "क्या मेरा data device से बाहर जाता है?",
         answer:
-          "Default रूप से नहीं। Projects, screenshots और fonts local में रहते हैं। Auto-translate Apple के on-device Translation framework से चलता है — कोई API key नहीं, कोई third-party server नहीं, कोई analytics नहीं। Optional iCloud Drive sync आपके personal iCloud account से होता है; हमारा कोई intermediate server नहीं है।",
+          "Default रूप से नहीं। Projects, screenshots और fonts local में रहते हैं। Auto-translate Apple के on-device Translation framework से चलता है — कोई API key नहीं, कोई third-party server नहीं। Optional iCloud Drive sync आपके personal iCloud account से होता है; हमारा कोई intermediate server नहीं है। जो भेजा जाता है वह है anonymous crash reports और “एक export पूरा हुआ” जैसे milestones की anonymous गिनती, ताकि हमें पता चले क्या ठीक और बेहतर करना है — आपके projects, images या आपके लिखे text कभी नहीं।",
       },
       {
         question: "Localization कैसे काम करती है?",
@@ -1370,7 +1370,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Mes données quittent-elles mon appareil ?",
         answer:
-          "Par défaut, non. Projets, captures et polices restent en local. La traduction automatique passe par le framework Translation d'Apple sur l'appareil — pas de clé API, pas de serveur tiers, pas d'analytics. La sync iCloud Drive est optionnelle et utilise votre compte iCloud personnel ; nous n'opérons aucun serveur intermédiaire.",
+          "Par défaut, non. Projets, captures et polices restent en local. La traduction automatique passe par le framework Translation d'Apple sur l'appareil — pas de clé API, pas de serveur tiers. La sync iCloud Drive est optionnelle et utilise votre compte iCloud personnel ; nous n'opérons aucun serveur intermédiaire. Ce qui est envoyé : des rapports de plantage anonymes et des comptages anonymes d'étapes comme « un export terminé », pour savoir quoi corriger et améliorer — jamais vos projets, vos images ni le texte que vous écrivez.",
       },
       {
         question: "Comment fonctionne la localisation ?",
@@ -1528,7 +1528,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "هل تغادر بياناتي جهازي؟",
         answer:
-          "افتراضياً لا. تبقى المشاريع واللقطات والخطوط على القرص. تعمل الترجمة التلقائية عبر إطار Translation من Apple على الجهاز — بدون مفاتيح API ولا خوادم خارجية ولا تتبع. مزامنة iCloud Drive اختيارية وتستخدم حسابك الشخصي على iCloud؛ لا نشغّل أي خوادم وسيطة.",
+          "افتراضياً لا. تبقى المشاريع واللقطات والخطوط على القرص. تعمل الترجمة التلقائية عبر إطار Translation من Apple على الجهاز — بدون مفاتيح API ولا خوادم خارجية ولا تتبع إعلاني. مزامنة iCloud Drive اختيارية وتستخدم حسابك الشخصي على iCloud؛ لا نشغّل أي خوادم وسيطة. ما يُرسل فعلاً هو تقارير أعطال مجهولة المصدر وأعداد مجهولة لمراحل مثل «اكتمل التصدير»، لنعرف ما يجب إصلاحه وتحسينه — وليس مشاريعك أو صورك أو النص الذي تكتبه أبداً.",
       },
       {
         question: "كيف يعمل التوطين؟",
@@ -1691,7 +1691,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Verlassen meine Daten mein Gerät?",
         answer:
-          "Standardmäßig nein. Projekte, Screenshots und Schriftarten werden lokal gespeichert. Die automatische Übersetzung läuft direkt auf dem Gerät über Apples Translation-Framework – keine API-Schlüssel, keine Drittanbieterserver, keine Analyse. Die optionale Synchronisierung über iCloud Drive läuft über Ihren persönlichen iCloud-Account; wir betreiben keine zwischengeschateden Server.",
+          "Standardmäßig nein. Projekte, Screenshots und Schriftarten werden lokal gespeichert. Die automatische Übersetzung läuft direkt auf dem Gerät über Apples Translation-Framework – keine API-Schlüssel, keine Drittanbieterserver. Die optionale Synchronisierung über iCloud Drive läuft über Ihren persönlichen iCloud-Account; wir betreiben keine zwischengeschalteten Server. Gesendet werden anonyme Absturzberichte sowie anonyme Zählungen von Meilensteinen wie „ein Export ist fertig“, damit wir wissen, was zu beheben und zu verbessern ist – niemals Ihre Projekte, Bilder oder der Text, den Sie schreiben.",
       },
       {
         question: "Wie funktioniert die Lokalisierung?",
@@ -1849,7 +1849,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "データがデバイスの外部に送信されることはありますか？",
         answer:
-          "デフォルトでは送信されません。プロジェクト、スクリーンショット、フォントはローカルに保存されます。自動翻訳はAppleのオンデバイスTranslationフレームワークを使用するため、APIキーや外部サーバー、分析機能は一切使用しません。iCloud Driveの同期はオプションで、ユーザー自身の個人用iCloudアカウント経由で行われます。開発元が中間サーバーを運営することはありません。",
+          "デフォルトでは送信されません。プロジェクト、スクリーンショット、フォントはローカルに保存されます。自動翻訳はAppleのオンデバイスTranslationフレームワークを使用するため、APIキーや外部サーバーは一切使用しません。iCloud Driveの同期はオプションで、ユーザー自身の個人用iCloudアカウント経由で行われます。開発元が中間サーバーを運営することはありません。送信されるのは、匿名のクラッシュレポートと、「書き出しが完了した」といった節目の匿名の集計のみです。修正・改善すべき点を知るためのもので、プロジェクトや画像、入力したテキストが送られることはありません。",
       },
       {
         question: "ローカライズはどのように機能しますか？",
@@ -2006,7 +2006,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Meus dados saem do meu dispositivo?",
         answer:
-          "Por padrão, não. Projetos, capturas de tela e fontes são armazenados localmente. A tradução automática funciona no dispositivo usando o framework Translation da Apple — sem chaves de API, sem servidores de terceiros, sem telemetria. A sincronização opcional do iCloud Drive é feita diretamente na sua conta pessoal do iCloud; não operamos servidores intermediários.",
+          "Por padrão, não. Projetos, capturas de tela e fontes são armazenados localmente. A tradução automática funciona no dispositivo usando o framework Translation da Apple — sem chaves de API e sem servidores de terceiros. A sincronização opcional do iCloud Drive é feita diretamente na sua conta pessoal do iCloud; não operamos servidores intermediários. O que é enviado são relatórios de falhas anônimos e contagens anônimas de marcos como «uma exportação concluída», para sabermos o que corrigir e melhorar — nunca seus projetos, imagens ou o texto que você escreve.",
       },
       {
         question: "Como funciona a localização?",
@@ -2164,7 +2164,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "I miei dati lasciano il mio dispositivo?",
         answer:
-          "Per impostazione predefinita, no. Progetti, screenshot e font vengono memorizzati localmente. La traduzione automatica avviene sul dispositivo tramite il framework Translation di Apple: nessuna chiave API, nessun server di terze parti, nessuna telemetria. La sincronizzazione opzionale tramite iCloud Drive utilizza il tuo account iCloud personale; non gestiamo alcun server intermediario.",
+          "Per impostazione predefinita, no. Progetti, screenshot e font vengono memorizzati localmente. La traduzione automatica avviene sul dispositivo tramite il framework Translation di Apple: nessuna chiave API e nessun server di terze parti. La sincronizzazione opzionale tramite iCloud Drive utilizza il tuo account iCloud personale; non gestiamo alcun server intermediario. Ciò che viene inviato sono segnalazioni di crash anonime e conteggi anonimi di traguardi come «un'esportazione completata», per capire cosa correggere e migliorare: mai i tuoi progetti, le immagini o il testo che scrivi.",
       },
       {
         question: "Come funziona la localizzazione?",
@@ -2322,7 +2322,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "내 데이터가 기기 외부로 전송되나요?",
         answer:
-          "기본적으로 전송되지 않습니다. 프로젝트, 스크린샷, 폰트는 모두 로컬에 저장됩니다. 자동 번역은 외부 API 키, 제3자 서버, 분석 추적 없이 Apple의 온디바이스 Translation 프레임워크를 통해 기기 자체에서 실행됩니다. 선택 사항인 iCloud Drive 동기화는 사용자의 개인 iCloud 계정을 통해 진행되며, 개발사 측에서 중간 서버를 운영하지 않습니다.",
+          "기본적으로 전송되지 않습니다. 프로젝트, 스크린샷, 폰트는 모두 로컬에 저장됩니다. 자동 번역은 외부 API 키나 제3자 서버 없이 Apple의 온디바이스 Translation 프레임워크를 통해 기기 자체에서 실행됩니다. 선택 사항인 iCloud Drive 동기화는 사용자의 개인 iCloud 계정을 통해 진행되며, 개발사 측에서 중간 서버를 운영하지 않습니다. 실제로 전송되는 것은 익명 충돌 보고서와 '내보내기 완료'와 같은 주요 단계의 익명 집계뿐이며, 무엇을 고치고 개선할지 파악하는 데만 사용됩니다. 프로젝트나 이미지, 작성하신 텍스트는 절대 전송되지 않습니다.",
       },
       {
         question: "현지화(Localization)는 어떻게 작동하나요?",

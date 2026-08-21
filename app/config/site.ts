@@ -140,7 +140,7 @@ export const FAQS: FaqItem[] = [
   {
     question: "Does my data leave my device?",
     answer:
-      "Your work doesn't. Projects, screenshots, and fonts stay on disk. Auto-translation runs through Apple's on-device Translation framework — no API keys, no third-party servers, no analytics. Optional iCloud Drive sync uses your personal iCloud account; we don't operate any intermediate servers. The only thing sent out is an anonymous crash report when something breaks, so we can fix it — never your projects or images.",
+      "Your work doesn't. Projects, screenshots, and fonts stay on disk. Auto-translation runs through Apple's on-device Translation framework — no API keys, no third-party servers. Optional iCloud Drive sync uses your personal iCloud account; we don't operate any intermediate servers. What does get sent is an anonymous crash report when something breaks, plus anonymous counts of milestones like 'an export finished' so we know what to improve — never your projects, images, or the text you write.",
   },
   {
     question: "How does localization work?",
@@ -290,7 +290,7 @@ export const FEATURES: FeatureItem[] = [
     icon: "privacy",
     title: "Privacy-First",
     description:
-      "Auto-translate runs on-device through Apple's Translation framework. No API keys, no accounts, no analytics — projects, fonts, and screenshots stay on your device.",
+      "Auto-translate runs on-device through Apple's Translation framework. No API keys, no accounts, no ad tracking — projects, fonts, and screenshots stay on your device.",
     accent: "var(--color-warm-light)",
   },
   {
