@@ -6,6 +6,7 @@ import {
   comparisonPath,
 } from "~/config/comparisons";
 import { DEFAULT_LOCALE, LOCALES, localizedPath } from "~/config/localization";
+import { GUIDE_UPDATED } from "~/config/tutorial-guide";
 import { CHANGELOG } from "~/routes/changelog";
 import { EFFECTIVE_DATE as TERMS_EFFECTIVE_DATE } from "~/routes/terms";
 import { EFFECTIVE_DATE as PRIVACY_EFFECTIVE_DATE } from "~/routes/privacy";
@@ -107,6 +108,12 @@ function buildSitemap(): string {
     { loc: "/terms", changefreq: "yearly", priority: "0.3", lastmod: termsDate },
     { loc: "/support", changefreq: "yearly", priority: "0.4", lastmod: homeLastmod },
     { loc: "/tutorials", changefreq: "weekly", priority: "0.6", lastmod: homeLastmod },
+    {
+      loc: "/tutorials/how-to-use-screenshot-bro",
+      changefreq: "monthly",
+      priority: "0.7",
+      lastmod: GUIDE_UPDATED,
+    },
     ...docsEntries,
     { loc: "/vs", changefreq: "monthly", priority: "0.7", lastmod: LATEST_COMPARISON_VERIFIED },
     ...COMPARISON_PAGES.map(

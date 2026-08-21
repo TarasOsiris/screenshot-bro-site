@@ -64,7 +64,12 @@ function buildLlmsTxt(): string {
     link("/", "Home", "what the app does, screenshots, and FAQ"),
     link("/docs/help", "Help docs", "how to use every part of the editor"),
     link("/docs/project-schema", "Project file schema", "the plain-JSON format Screenshot Bro projects are stored in"),
-    link("/tutorials", "Video tutorials", "short walkthroughs of the workflow"),
+    link("/tutorials", "Tutorials", "the written guide plus short video walkthroughs"),
+    link(
+      "/tutorials/how-to-use-screenshot-bro",
+      "How to use Screenshot Bro",
+      "step-by-step written walkthrough of the whole workflow, from a first project to a store upload",
+    ),
     link("/changelog", "Changelog", "what shipped in each release"),
     link("/support", "Support", "contact the maker"),
     link("/blog", "Blog index", "every guide, reference and comparison"),

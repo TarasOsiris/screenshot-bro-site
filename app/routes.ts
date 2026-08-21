@@ -7,6 +7,10 @@ export default [
   route("changelog", "routes/changelog.tsx"),
   route("support", "routes/support.tsx"),
   route("tutorials", "routes/tutorials.tsx"),
+  route(
+    "tutorials/how-to-use-screenshot-bro",
+    "routes/tutorials.how-to-use-screenshot-bro.tsx",
+  ),
   route("blog", "routes/blog._index.tsx"),
   route(":locale/blog", "routes/blog._index.tsx", { id: "blog-locale" }),
   route("blog/best-app-store-screenshot-tools-for-mac", "routes/blog.best-app-store-screenshot-tools-for-mac.tsx"),

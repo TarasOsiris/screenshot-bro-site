@@ -13,8 +13,14 @@ import {
   IconTemplates,
   IconUpload,
 } from "~/components/home/icons";
+import {
+  DocFigure,
+  renderBlocks,
+  type Block,
+  type SectionImage,
+} from "~/components/DocBlocks";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
-import { isGlobalPath, isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 
 const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
@@ -54,26 +60,6 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
 };
 
 const SUPPORT_EMAIL = "leskiv.taras@gmail.com";
-
-type Block =
-  | { kind: "p"; text: string }
-  | { kind: "h"; text: string }
-  | { kind: "li"; text: string }
-  | { kind: "oli"; text: string }
-  | { kind: "tip"; text: string }
-  | {
-      kind: "table";
-      title: string;
-      rows: { keys: string; description: string }[];
-    };
-
-type SectionImage = {
-  src?: string;
-  alt: string;
-  width: number;
-  height: number;
-  caption?: string;
-};
 
 type SectionId =
   | "welcome"
@@ -132,6 +118,7 @@ const SECTIONS: Section[] = [
       { kind: "oli", text: "Pick a device frame, add a headline, choose a background, and arrange shapes." },
       { kind: "oli", text: "Add the languages you support — translate text once and let the layout follow." },
       { kind: "oli", text: "Export. You'll get a folder organized by language and device, ready to upload — or upload straight to App Store Connect or Google Play from inside the app." },
+      { kind: "p", text: "New here? [How to use Screenshot Bro](/tutorials/how-to-use-screenshot-bro) walks that workflow step by step, with a screenshot of the app at each stage. This page is the reference behind it." },
       { kind: "tip", text: "If this is your first time, an interactive tour walks you through the editor when your first project opens. Create a new project from a template any time via **File ▸ New Project**." },
     ],
   },
@@ -905,125 +892,6 @@ const NAV_ENTRIES: { id: SectionId | "project-schema"; navTitle: string; href?: 
   { id: "project-schema", navTitle: "Project File Schema", href: "/docs/project-schema" },
 ];
 
-const MD_REGEX = /\*\*([^*]+)\*\*|`([^`]+)`|\[([^\]]+)\]\(([^)]+)\)/g;
-
-function MD({ text, locale }: { text: string; locale: LocaleCode }) {
-  const parts: React.ReactNode[] = [];
-  let lastIdx = 0;
-  let key = 0;
-  for (const match of text.matchAll(MD_REGEX)) {
-    const idx = match.index ?? 0;
-    if (idx > lastIdx) {
-      parts.push(text.slice(lastIdx, idx));
-    }
-    if (match[1] !== undefined) {
-      parts.push(<strong key={key++}>{match[1]}</strong>);
-    } else if (match[2] !== undefined) {
-      parts.push(<code key={key++}>{match[2]}</code>);
-    } else if (match[3] !== undefined && match[4] !== undefined) {
-      const href = match[4];
-      const external = /^https?:\/\//.test(href);
-      const localizedHref =
-        href.startsWith("/") && !isGlobalPath(href) ? localizedPath(locale, href) : href;
-      parts.push(
-        <a
-          key={key++}
-          href={localizedHref}
-          {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-        >
-          {match[3]}
-        </a>,
-      );
-    }
-    lastIdx = idx + match[0].length;
-  }
-  if (lastIdx < text.length) {
-    parts.push(text.slice(lastIdx));
-  }
-  return <>{parts}</>;
-}
-
-function Tip({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="not-prose my-5 rounded-lg border border-yellow-300/25 bg-yellow-300/[0.06] px-4 py-3">
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-yellow-300/80">
-        Tip
-      </span>
-      <p className="mt-1 mb-0 text-white/75">{children}</p>
-    </div>
-  );
-}
-
-function renderBlocks(blocks: Block[], locale: LocaleCode): React.ReactNode[] {
-  const out: React.ReactNode[] = [];
-  let i = 0;
-  let key = 0;
-  while (i < blocks.length) {
-    const b = blocks[i];
-    if (b.kind === "li" || b.kind === "oli") {
-      const start = b.kind;
-      const items: Extract<Block, { kind: "li" | "oli" }>[] = [];
-      while (i < blocks.length) {
-        const next = blocks[i];
-        if (next.kind !== start) break;
-        items.push(next);
-        i++;
-      }
-      const ListTag = start === "oli" ? "ol" : "ul";
-      out.push(
-        <ListTag key={key++}>
-          {items.map((item, j) => (
-            <li key={j}>
-              <MD text={item.text} locale={locale} />
-            </li>
-          ))}
-        </ListTag>,
-      );
-    } else if (b.kind === "p") {
-      out.push(
-        <p key={key++}>
-          <MD text={b.text} locale={locale} />
-        </p>,
-      );
-      i++;
-    } else if (b.kind === "h") {
-      out.push(
-        <h3 key={key++}>
-          <MD text={b.text} locale={locale} />
-        </h3>,
-      );
-      i++;
-    } else if (b.kind === "tip") {
-      out.push(
-        <Tip key={key++}>
-          <MD text={b.text} locale={locale} />
-        </Tip>,
-      );
-      i++;
-    } else if (b.kind === "table") {
-      out.push(
-        <div key={key++}>
-          <h3>{b.title}</h3>
-          <table>
-            <tbody>
-              {b.rows.map((row) => (
-                <tr key={row.keys}>
-                  <td className="whitespace-nowrap align-top w-1">
-                    <code>{row.keys}</code>
-                  </td>
-                  <td>{row.description}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>,
-      );
-      i++;
-    }
-  }
-  return out;
-}
-
 function SectionView({ section, locale }: { section: Section; locale: LocaleCode }) {
   const image = section.image;
   const imageSrc = image && (image.src ?? `/docs-help/${section.id}.webp`);
@@ -1034,22 +902,7 @@ function SectionView({ section, locale }: { section: Section; locale: LocaleCode
         <p className="-mt-2 mb-4 text-white/55 italic">{section.subtitle}</p>
       )}
       {image && imageSrc && (
-        <figure className="not-prose my-6">
-          <img
-            src={imageSrc}
-            alt={image.alt}
-            width={image.width}
-            height={image.height}
-            loading="lazy"
-            decoding="async"
-            className="w-full h-auto rounded-lg border border-border-subtle bg-surface-raised"
-          />
-          {image.caption && (
-            <figcaption className="mt-2 text-center text-xs text-white/55 italic">
-              <MD text={image.caption} locale={locale} />
-            </figcaption>
-          )}
-        </figure>
+        <DocFigure image={image} src={imageSrc} locale={locale} />
       )}
       {renderBlocks(section.blocks, locale)}
     </section>
