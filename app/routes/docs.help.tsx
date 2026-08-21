@@ -46,16 +46,46 @@ export async function loader({ params }: Route.LoaderArgs) {
 
 export const meta: Route.MetaFunction = ({ matches, params }) => {
   const locale = getRouteLocale(params.locale);
+  const titles: Record<LocaleCode, string> = {
+    en: `Help & Documentation — ${SITE_NAME}`,
+    es: `Ayuda y Documentación — ${SITE_NAME}`,
+    zh: `帮助中心与使用文档 — ${SITE_NAME}`,
+    ja: `ヘルプ＆ドキュメント — ${SITE_NAME}`,
+    de: `Hilfe & Dokumentation — ${SITE_NAME}`,
+    fr: `Aide & Documentation — ${SITE_NAME}`,
+    pt: `Ajuda & Documentação — ${SITE_NAME}`,
+    it: `Guida e Documentazione — ${SITE_NAME}`,
+    ko: `도움말 및 공식 문서 — ${SITE_NAME}`,
+    ar: `المساعدة والتوثيق الرسمي — ${SITE_NAME}`,
+    hi: `सहायता और दस्तावेज़ीकरण — ${SITE_NAME}`,
+  };
+
+  const descriptions: Record<LocaleCode, string> = {
+    en: "Complete guide to Screenshot Bro for Mac, iPad, and iPhone: projects, rows, templates, device frames, backgrounds, languages, exporting, and store uploads.",
+    es: "Guía completa de Screenshot Bro para Mac e iPad: proyectos, plantillas, marcos de dispositivos, fondos, idiomas y exportación.",
+    zh: "Screenshot Bro 官方使用指南：项目创建、尺寸排版、模版套用、机型框架、背景特效、多语言本地化及应用商店一键导出。",
+    ja: "Screenshot Bro（Mac/iPad）の総合ガイド。プロジェクト管理、端末フレーム、テンプレート、多言語展開、書き出し設定を解説。",
+    de: "Ausführliche Dokumentation zu Screenshot Bro: Projekte, Vorlagen, Geräterahmen, Hintergründe, Sprachen und Store-Uploads.",
+    fr: "Guide complet de Screenshot Bro : gestion de projets, gabarits d'appareils, modèles, fonds, traduction et export.",
+    pt: "Guia completo do Screenshot Bro: projetos, templates, molduras de dispositivos, planos de fundo e exportação para lojas.",
+    it: "Guida completa a Screenshot Bro: progetti, modelli, cornici per dispositivi, sfondi, localizzazione ed esportazione per gli store.",
+    ko: "Screenshot Bro 종합 가이드: 프로젝트, 템플릿, 디바이스 프레임, 배경, 다국어 지원 및 스토어 내보내기.",
+    ar: "دليل شامل لتطبيق Screenshot Bro: المشاريع، القوالب، إطارات الأجهزة، الخلفيات، اللغات، والتصدير للمتاجر.",
+    hi: "Screenshot Bro की पूरी गाइड: प्रोजेक्ट, टेम्प्लेट, डिवाइस फ़्रेम, बैकग्राउंड, भाषाएँ और स्टोर अपलोड।",
+  };
+
+  const title = titles[locale] || titles.en;
+  const description = descriptions[locale] || descriptions.en;
   const pageUrl = `${SITE_URL}${localizedPath(locale, "/docs/help")}`;
 
   return mergeMeta(matches, [
-    { title: TITLE },
-    { name: "description", content: DESCRIPTION },
-    { property: "og:title", content: TITLE },
-    { property: "og:description", content: DESCRIPTION },
+    { title },
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
     { property: "og:url", content: pageUrl },
-    { name: "twitter:title", content: TITLE },
-    { name: "twitter:description", content: DESCRIPTION },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
   ]);
 };
 

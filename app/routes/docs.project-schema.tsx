@@ -29,16 +29,46 @@ export async function loader({ params }: Route.LoaderArgs) {
 
 export const meta: Route.MetaFunction = ({ matches, params }) => {
   const locale = getRouteLocale(params.locale);
+  const titles: Record<LocaleCode, string> = {
+    en: `Project File Schema — ${SITE_NAME}`,
+    es: `Esquema de archivo de proyecto — ${SITE_NAME}`,
+    zh: `项目文件格式规范（Schema） — ${SITE_NAME}`,
+    ja: `プロジェクトファイル仕様（Schema） — ${SITE_NAME}`,
+    de: `Projekt-Dateischema — ${SITE_NAME}`,
+    fr: `Schéma de fichier de projet — ${SITE_NAME}`,
+    pt: `Esquema de arquivo de projeto — ${SITE_NAME}`,
+    it: `Schema dei file di progetto — ${SITE_NAME}`,
+    ko: `프로젝트 파일 스키마 규격 — ${SITE_NAME}`,
+    ar: `مخطط ملف المشروع (Schema) — ${SITE_NAME}`,
+    hi: `प्रोजेक्ट फ़ाइल स्कीमा — ${SITE_NAME}`,
+  };
+
+  const descriptions: Record<LocaleCode, string> = {
+    en: "JSON Schema for the Screenshot Bro project file format. Use it to generate, validate, or transform project.json with AI assistants, scripts, or tooling.",
+    es: "Esquema JSON del formato de archivo de Screenshot Bro para generar, validar y transformar proyectos con scripts o IA.",
+    zh: "Screenshot Bro 项目文件（project.json）的官方 JSON Schema 规范。支持通过脚本或 AI 自动生成与批量处理。",
+    ja: "Screenshot Bro の project.json 形式を定義する JSON Schema 仕様書。AI やスクリプトによる自動生成・検証に最適です。",
+    de: "JSON-Schema für das Screenshot Bro Projektdateiformat zur Automatisierung und Validierung.",
+    fr: "Schéma JSON du format de fichier Screenshot Bro pour la génération et validation automatisée.",
+    pt: "Esquema JSON para o formato de projeto do Screenshot Bro. Automatize e valide via scripts ou IA.",
+    it: "Schema JSON per i file di progetto di Screenshot Bro: genera, valida e trasforma project.json.",
+    ko: "Screenshot Bro project.json 파일 형식을 위한 JSON Schema. AI 또는 스크립트로 프로젝트를 자동 생성·검증하세요.",
+    ar: "مخطط JSON لتنسيق ملفات Screenshot Bro لتوليد المشاريع وتعديلها برمجياً.",
+    hi: "Screenshot Bro प्रोजेक्ट फ़ाइल स्वरूप के लिए JSON स्कीमा।",
+  };
+
+  const title = titles[locale] || titles.en;
+  const description = descriptions[locale] || descriptions.en;
   const pageUrl = `${SITE_URL}${localizedPath(locale, "/docs/project-schema")}`;
 
   return mergeMeta(matches, [
-    { title: TITLE },
-    { name: "description", content: DESCRIPTION },
-    { property: "og:title", content: TITLE },
-    { property: "og:description", content: DESCRIPTION },
+    { title },
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
     { property: "og:url", content: pageUrl },
-    { name: "twitter:title", content: TITLE },
-    { name: "twitter:description", content: DESCRIPTION },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
   ]);
 };
 

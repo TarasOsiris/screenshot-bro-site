@@ -103,26 +103,89 @@ function buildSitemap(): string {
         alternates: localeAlternates("/blog"),
       }),
     ),
-    { loc: "/changelog", changefreq: "monthly", priority: "0.6", lastmod: latestChangelogDate },
-    { loc: "/privacy", changefreq: "yearly", priority: "0.3", lastmod: privacyDate },
-    { loc: "/terms", changefreq: "yearly", priority: "0.3", lastmod: termsDate },
-    { loc: "/support", changefreq: "yearly", priority: "0.4", lastmod: homeLastmod },
-    { loc: "/tutorials", changefreq: "weekly", priority: "0.6", lastmod: homeLastmod },
+    { loc: "/changelog", changefreq: "monthly", priority: "0.6", lastmod: latestChangelogDate, alternates: localeAlternates("/changelog") },
+    ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
+      loc: localizedPath(l.code, "/changelog"),
+      changefreq: "monthly",
+      priority: "0.6",
+      lastmod: latestChangelogDate,
+      alternates: localeAlternates("/changelog"),
+    })),
+    { loc: "/privacy", changefreq: "yearly", priority: "0.3", lastmod: privacyDate, alternates: localeAlternates("/privacy") },
+    ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
+      loc: localizedPath(l.code, "/privacy"),
+      changefreq: "yearly",
+      priority: "0.3",
+      lastmod: privacyDate,
+      alternates: localeAlternates("/privacy"),
+    })),
+    { loc: "/terms", changefreq: "yearly", priority: "0.3", lastmod: termsDate, alternates: localeAlternates("/terms") },
+    ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
+      loc: localizedPath(l.code, "/terms"),
+      changefreq: "yearly",
+      priority: "0.3",
+      lastmod: termsDate,
+      alternates: localeAlternates("/terms"),
+    })),
+    { loc: "/support", changefreq: "yearly", priority: "0.4", lastmod: homeLastmod, alternates: localeAlternates("/support") },
+    ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
+      loc: localizedPath(l.code, "/support"),
+      changefreq: "yearly",
+      priority: "0.4",
+      lastmod: homeLastmod,
+      alternates: localeAlternates("/support"),
+    })),
+    { loc: "/tutorials", changefreq: "weekly", priority: "0.6", lastmod: homeLastmod, alternates: localeAlternates("/tutorials") },
+    ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
+      loc: localizedPath(l.code, "/tutorials"),
+      changefreq: "weekly",
+      priority: "0.6",
+      lastmod: homeLastmod,
+      alternates: localeAlternates("/tutorials"),
+    })),
     {
       loc: "/tutorials/how-to-use-screenshot-bro",
       changefreq: "monthly",
       priority: "0.7",
       lastmod: GUIDE_UPDATED,
+      alternates: localeAlternates("/tutorials/how-to-use-screenshot-bro"),
     },
+    ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
+      loc: localizedPath(l.code, "/tutorials/how-to-use-screenshot-bro"),
+      changefreq: "monthly",
+      priority: "0.7",
+      lastmod: GUIDE_UPDATED,
+      alternates: localeAlternates("/tutorials/how-to-use-screenshot-bro"),
+    })),
     ...docsEntries,
-    { loc: "/vs", changefreq: "monthly", priority: "0.7", lastmod: LATEST_COMPARISON_VERIFIED },
-    ...COMPARISON_PAGES.map(
-      (page): SitemapEntry => ({
-        loc: comparisonPath(page.slug),
-        changefreq: "monthly",
-        priority: "0.7",
-        lastmod: page.lastVerified,
-      }),
+    { loc: "/vs", changefreq: "monthly", priority: "0.7", lastmod: LATEST_COMPARISON_VERIFIED, alternates: localeAlternates("/vs") },
+    ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
+      loc: localizedPath(l.code, "/vs"),
+      changefreq: "monthly",
+      priority: "0.7",
+      lastmod: LATEST_COMPARISON_VERIFIED,
+      alternates: localeAlternates("/vs"),
+    })),
+    ...COMPARISON_PAGES.flatMap(
+      (page): SitemapEntry[] => {
+        const path = comparisonPath(page.slug);
+        return [
+          {
+            loc: path,
+            changefreq: "monthly",
+            priority: "0.7",
+            lastmod: page.lastVerified,
+            alternates: localeAlternates(path),
+          },
+          ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
+            loc: localizedPath(l.code, path),
+            changefreq: "monthly",
+            priority: "0.7",
+            lastmod: page.lastVerified,
+            alternates: localeAlternates(path),
+          })),
+        ];
+      },
     ),
   ];
 

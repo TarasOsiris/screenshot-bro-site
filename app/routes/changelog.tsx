@@ -2,25 +2,61 @@ import type { Route } from "./+types/changelog";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 import { ContentLayout } from "~/components/ContentLayout";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
+import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { data, useLoaderData } from "react-router";
 
-const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
-  { name: "Changelog", path: "/changelog" },
-]);
+export async function loader({ params }: Route.LoaderArgs) {
+  const locale = params.locale;
+  if (locale && !isLocaleCode(locale)) {
+    throw data("Not Found", { status: 404 });
+  }
+  return { locale: (locale || "en") as LocaleCode };
+}
 
-const CHANGELOG_TITLE = `Changelog — ${SITE_NAME}`;
-const CHANGELOG_DESCRIPTION = `What's new in ${SITE_NAME}. Release notes, new features, and improvements for the App Store screenshot designer for Mac and iPad.`;
-const CHANGELOG_URL = `${SITE_URL}/changelog`;
+export const meta: Route.MetaFunction = ({ matches, params }) => {
+  const locale = (params.locale || "en") as LocaleCode;
+  const titles: Record<LocaleCode, string> = {
+    en: `Changelog — ${SITE_NAME}`,
+    es: `Historial de cambios — ${SITE_NAME}`,
+    zh: `更新日志与版本历史 — ${SITE_NAME}`,
+    ja: `更新履歴・リリースノート — ${SITE_NAME}`,
+    de: `Changelog & Versionshinweise — ${SITE_NAME}`,
+    fr: `Journal des modifications — ${SITE_NAME}`,
+    pt: `Histórico de atualizações — ${SITE_NAME}`,
+    it: `Changelog e note di rilascio — ${SITE_NAME}`,
+    ko: `업데이트 내역 및 릴리즈 노트 — ${SITE_NAME}`,
+    ar: `سجل التحديثات والإصدارات — ${SITE_NAME}`,
+    hi: `अपडेट इतिहास और बदलाव — ${SITE_NAME}`,
+  };
 
-export const meta: Route.MetaFunction = ({ matches }) =>
-  mergeMeta(matches, [
-    { title: CHANGELOG_TITLE },
-    { name: "description", content: CHANGELOG_DESCRIPTION },
-    { property: "og:title", content: CHANGELOG_TITLE },
-    { property: "og:description", content: CHANGELOG_DESCRIPTION },
-    { property: "og:url", content: CHANGELOG_URL },
-    { name: "twitter:title", content: CHANGELOG_TITLE },
-    { name: "twitter:description", content: CHANGELOG_DESCRIPTION },
+  const descriptions: Record<LocaleCode, string> = {
+    en: `What's new in ${SITE_NAME}. Release notes, new features, and improvements for the App Store screenshot designer for Mac and iPad.`,
+    es: `Novedades en ${SITE_NAME}. Notas de versión, nuevas funciones y mejoras para el diseñador de capturas de pantalla de App Store.`,
+    zh: `${SITE_NAME} 最新更新动态。查看 Mac 与 iPad 端 App Store 截图设计器的版本说明、新功能与性能改进。`,
+    ja: `${SITE_NAME}の最新リリース情報。新機能、改善点、バグ修正などアップデート履歴を掲載しています。`,
+    de: `Neuigkeiten in ${SITE_NAME}. Versionshinweise, neue Funktionen und Verbesserungen für macOS und iPadOS.`,
+    fr: `Quoi de neuf dans ${SITE_NAME} ? Notes de version, fonctionnalités et correctifs pour Mac et iPad.`,
+    pt: `Novidades no ${SITE_NAME}. Notas de lançamento, novos recursos e melhorias para Mac e iPad.`,
+    it: `Novità in ${SITE_NAME}. Note di rilascio, nuove funzionalità e miglioramenti per Mac e iPad.`,
+    ko: `${SITE_NAME}의 새로운 소식. Mac 및 iPad용 App Store 스크린샷 디자이너의 최신 릴리즈 노트와 개선 사항.`,
+    ar: `كل جديد في ${SITE_NAME}. ملاحظات الإصدارات والميزات الجديدة والتحسينات لنظامي Mac و iPad.`,
+    hi: `${SITE_NAME} में क्या नया है। Mac और iPad के लिए ऐप स्टोर स्क्रीनशॉट डिज़ाइनर की नई सुविधाएँ और सुधार।`,
+  };
+
+  const title = titles[locale] || titles.en;
+  const description = descriptions[locale] || descriptions.en;
+  const url = `${SITE_URL}${localizedPath(locale, "/changelog")}`;
+
+  return mergeMeta(matches, [
+    { title },
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:url", content: url },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
   ]);
+};
 
 type ChangelogEntry = {
   version: string;
@@ -378,22 +414,87 @@ const TYPE_STYLES = {
 };
 
 export default function Changelog() {
+  const { locale } = useLoaderData<typeof loader>();
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: locale === "es" ? "Historial de cambios" : locale === "zh" ? "更新日志" : locale === "ja" ? "更新履歴" : "Changelog", path: localizedPath(locale, "/changelog") },
+  ]);
+
+  const titles: Record<LocaleCode, { eyebrow: string; title: string; subtitle: string }> = {
+    en: {
+      eyebrow: "Changelog",
+      title: "What's new in Screenshot Bro",
+      subtitle: "New features, improvements, and bug fixes shipped with each release.",
+    },
+    es: {
+      eyebrow: "Historial de versiones",
+      title: "Novedades en Screenshot Bro",
+      subtitle: "Nuevas funciones, mejoras y correcciones incluidas en cada versión.",
+    },
+    zh: {
+      eyebrow: "更新日志",
+      title: "Screenshot Bro 最新动态",
+      subtitle: "每个版本中发布的全新功能、性能提升与问题修复。",
+    },
+    ja: {
+      eyebrow: "更新履歴",
+      title: "Screenshot Bro の新機能と改善点",
+      subtitle: "各リリースで追加された新機能、使いやすさの向上、バグ修正の一覧です。",
+    },
+    de: {
+      eyebrow: "Versionsverlauf",
+      title: "Neuigkeiten in Screenshot Bro",
+      subtitle: "Neue Funktionen, Optimierungen und Fehlerbehebungen jedes Updates.",
+    },
+    fr: {
+      eyebrow: "Journal des modifications",
+      title: "Quoi de neuf dans Screenshot Bro",
+      subtitle: "Nouvelles fonctionnalités, améliorations et corrections apportées à chaque version.",
+    },
+    pt: {
+      eyebrow: "Histórico de lançamentos",
+      title: "Novidades no Screenshot Bro",
+      subtitle: "Novos recursos, melhorias de desempenho e correções a cada versão.",
+    },
+    it: {
+      eyebrow: "Registro delle modifiche",
+      title: "Novità in Screenshot Bro",
+      subtitle: "Nuove funzioni, miglioramenti e correzioni introdotte con ogni aggiornamento.",
+    },
+    ko: {
+      eyebrow: "업데이트 로그",
+      title: "Screenshot Bro 최신 변경 사항",
+      subtitle: "각 버전별로 추가된 새로운 기능, 성능 개선 및 버그 수정 내역입니다.",
+    },
+    ar: {
+      eyebrow: "سجل التغييرات",
+      title: "ما الجديد في Screenshot Bro",
+      subtitle: "الميزات والتحسينات وإصلاحات الأخطاء المضمنة في كل إصدار.",
+    },
+    hi: {
+      eyebrow: "परिवर्तन लॉग",
+      title: "Screenshot Bro में क्या नया है",
+      subtitle: "प्रत्येक रिलीज़ के साथ जोड़ी गई नई सुविधाएँ, सुधार और बग समाधान।",
+    },
+  };
+
+  const copy = titles[locale] || titles.en;
+
   return (
     <ContentLayout>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: BREADCRUMB_JSON_LD }}
+        dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }}
       />
       <div className="max-w-3xl mx-auto">
         <div className="mb-16">
           <p className="text-xs uppercase tracking-[0.25em] text-accent-light font-mono mb-3">
-            Changelog
+            {copy.eyebrow}
           </p>
           <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white tracking-tight">
-            What's new in Screenshot Bro
+            {copy.title}
           </h1>
           <p className="mt-4 text-base text-white/55 leading-relaxed">
-            New features, improvements, and bug fixes shipped with each release.
+            {copy.subtitle}
           </p>
         </div>
 

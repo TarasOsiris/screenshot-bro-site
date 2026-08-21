@@ -2,21 +2,61 @@ import type { Route } from "./+types/terms";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 import { ContentLayout } from "~/components/ContentLayout";
 import { mergeMeta } from "~/config/meta";
+import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { data } from "react-router";
 
-const TERMS_TITLE = `Terms of Use — ${SITE_NAME}`;
-const TERMS_DESCRIPTION = `Terms of Use, EULA, and subscription terms for ${SITE_NAME} — auto-renewing subscriptions, lifetime purchase, cancellation, and refunds.`;
-const TERMS_URL = `${SITE_URL}/terms`;
+export async function loader({ params }: Route.LoaderArgs) {
+  const locale = params.locale;
+  if (locale && !isLocaleCode(locale)) {
+    throw data("Not Found", { status: 404 });
+  }
+  return { locale: (locale || "en") as LocaleCode };
+}
 
-export const meta: Route.MetaFunction = ({ matches }) =>
-  mergeMeta(matches, [
-    { title: TERMS_TITLE },
-    { name: "description", content: TERMS_DESCRIPTION },
-    { property: "og:title", content: TERMS_TITLE },
-    { property: "og:description", content: TERMS_DESCRIPTION },
-    { property: "og:url", content: TERMS_URL },
-    { name: "twitter:title", content: TERMS_TITLE },
-    { name: "twitter:description", content: TERMS_DESCRIPTION },
+export const meta: Route.MetaFunction = ({ matches, params }) => {
+  const locale = (params.locale || "en") as LocaleCode;
+  const titles: Record<LocaleCode, string> = {
+    en: `Terms of Use — ${SITE_NAME}`,
+    es: `Términos de uso — ${SITE_NAME}`,
+    zh: `使用条款与最终用户许可协议 — ${SITE_NAME}`,
+    ja: `利用規約・EULA — ${SITE_NAME}`,
+    de: `Nutzungsbedingungen — ${SITE_NAME}`,
+    fr: `Conditions d'utilisation — ${SITE_NAME}`,
+    pt: `Termos de uso — ${SITE_NAME}`,
+    it: `Termini di utilizzo — ${SITE_NAME}`,
+    ko: `이용약관 및 EULA — ${SITE_NAME}`,
+    ar: `شروط الاستخدام — ${SITE_NAME}`,
+    hi: `उपयोग की शर्तें — ${SITE_NAME}`,
+  };
+
+  const descriptions: Record<LocaleCode, string> = {
+    en: `Terms of Use, EULA, and subscription terms for ${SITE_NAME} — auto-renewing subscriptions, lifetime purchase, cancellation, and refunds.`,
+    es: `Términos de uso, CLUF y suscripciones de ${SITE_NAME}: suscripciones autorenovables, compra de por vida y reembolsos.`,
+    zh: `${SITE_NAME} 使用条款、EULA 协议与订阅政策：自动续订、终身版购买、退款及取消政策说明。`,
+    ja: `${SITE_NAME}の利用規約、EULA、サブスクリプションおよび買い切りプランの条件。`,
+    de: `Nutzungsbedingungen, EULA und Abonnementbedingungen für ${SITE_NAME}.`,
+    fr: `Conditions d'utilisation, CLUF et politique d'abonnement pour ${SITE_NAME}.`,
+    pt: `Termos de uso, EULA e condições de assinatura do ${SITE_NAME}.`,
+    it: `Termini di utilizzo, EULA e condizioni di abbonamento per ${SITE_NAME}.`,
+    ko: `${SITE_NAME} 이용약관, EULA 및 구독/평생 라이선스 조건 안내.`,
+    ar: `شروط الاستخدام واتفاقية الترخيص وسياسة الاشتراكات لتطبيق ${SITE_NAME}.`,
+    hi: `${SITE_NAME} के उपयोग की शर्तें, EULA और सदस्यता की शर्तें।`,
+  };
+
+  const title = titles[locale] || titles.en;
+  const description = descriptions[locale] || descriptions.en;
+  const url = `${SITE_URL}${localizedPath(locale, "/terms")}`;
+
+  return mergeMeta(matches, [
+    { title },
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:url", content: url },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
   ]);
+};
 
 export const EFFECTIVE_DATE = "June 13, 2026";
 const DEVELOPER_NAME = "Nineva Studios";

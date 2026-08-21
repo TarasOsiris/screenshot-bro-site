@@ -9,20 +9,65 @@ import {
 } from "~/config/comparisons";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
 import { SITE_NAME, SITE_URL } from "~/config/site";
+import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { data, useLoaderData } from "react-router";
 
-const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
-  { name: "Comparisons", path: "/vs" },
-]);
+export async function loader({ params }: Route.LoaderArgs) {
+  const locale = params.locale;
+  if (locale && !isLocaleCode(locale)) {
+    throw data("Not Found", { status: 404 });
+  }
+  return { locale: (locale || "en") as LocaleCode };
+}
 
-const PAGE_TITLE = `${SITE_NAME} vs other App Store screenshot tools`;
-const PAGE_DESCRIPTION =
-  "Every App Store and Google Play screenshot tool compared against Screenshot Bro: platform, free tier, localization and store upload, with a page for each.";
-const PAGE_URL = `${SITE_URL}/vs`;
+export const meta: Route.MetaFunction = ({ matches, params }) => {
+  const locale = (params.locale || "en") as LocaleCode;
+  const titles: Record<LocaleCode, string> = {
+    en: `${SITE_NAME} vs other App Store screenshot tools`,
+    es: `${SITE_NAME} frente a otras herramientas de capturas para App Store`,
+    zh: `${SITE_NAME} 与其他 App Store 截图生成器横向对比`,
+    ja: `${SITE_NAME} と他のApp Storeスクリーンショット作成ツールの比較`,
+    de: `${SITE_NAME} im Vergleich zu anderen App Store Screenshot-Tools`,
+    fr: `${SITE_NAME} vs autres outils de captures d'écran App Store`,
+    pt: `${SITE_NAME} vs outras ferramentas de captura de tela da App Store`,
+    it: `${SITE_NAME} a confronto con altri generatori di screenshot per App Store`,
+    ko: `${SITE_NAME}와 주요 App Store 스크린샷 툴 비교`,
+    ar: `مقارنة ${SITE_NAME} مع أدوات لقطات شاشة App Store الأخرى`,
+    hi: `${SITE_NAME} बनाम अन्य App Store स्क्रीनशॉट टूल्स`,
+  };
 
-// Rows come from config/comparisons.ts — the same list that feeds the sitemap,
-// llms.txt and every /vs page's shell, so the hub can never list a page that
-// does not exist.
-const LAST_CHECKED = formatMonthYear(LATEST_COMPARISON_VERIFIED);
+  const descriptions: Record<LocaleCode, string> = {
+    en: "Every App Store and Google Play screenshot tool compared against Screenshot Bro: platform, free tier, localization and store upload, with a page for each.",
+    es: "Comparativa de herramientas para App Store y Google Play frente a Screenshot Bro: plataformas, versiones gratuitas, traducción y subida a tiendas.",
+    zh: "全方位横向对比主流应用商店截图设计工具与 Screenshot Bro：平台支持、免费额度、多语言翻译及商店一键上传能力。",
+    ja: "App Store / Google Playスクリーンショット作成ツールを徹底比較。対応OS、無料枠、翻訳機能、ストア直接送信機能の違いを解説。",
+    de: "Vergleich aller führenden Screenshot-Tools mit Screenshot Bro: Plattformen, Gratis-Funktionen, Lokalisierung und Upload.",
+    fr: "Comparatif complet des outils de captures d'écran App Store face à Screenshot Bro : fonctionnalités gratuites, traduction et export.",
+    pt: "Comparativo detalhado de ferramentas para App Store e Google Play vs Screenshot Bro: recursos gratuitos, tradução e upload.",
+    it: "Confronto dettagliato tra Screenshot Bro e i principali strumenti per screenshot di App Store e Google Play.",
+    ko: "Screenshot Bro와 주요 App Store 스크린샷 제작 도구의 기능, 무료 제공 범위, 번역 및 스토어 업로드 지원 비교.",
+    ar: "مقارنة شاملة بين Screenshot Bro وأبرز أدوات تصميم لقطات شاشة المتاجر.",
+    hi: "Screenshot Bro और अन्य ऐप स्टोर स्क्रीनशॉट टूल्स की विस्तृत तुलना।",
+  };
+
+  const title = titles[locale] || titles.en;
+  const description = descriptions[locale] || descriptions.en;
+  const pageUrl = `${SITE_URL}${localizedPath(locale, "/vs")}`;
+
+  return mergeMeta(matches, [
+    { title },
+    { name: "description", content: description },
+    { property: "og:type", content: "website" },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:url", content: pageUrl },
+    { property: "og:image", content: `${SITE_URL}/og-image.png` },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
+    { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
+  ]);
+};
 
 const SCREENSHOT_BRO_ROW = {
   type: "Native Mac, iPad and iPhone app",
@@ -34,9 +79,9 @@ const SCREENSHOT_BRO_ROW = {
 const ITEM_LIST_JSON_LD = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: PAGE_TITLE,
-  description: PAGE_DESCRIPTION,
-  url: PAGE_URL,
+  name: `${SITE_NAME} vs other App Store screenshot tools`,
+  description: "Every App Store and Google Play screenshot tool compared against Screenshot Bro: platform, free tier, localization and store upload, with a page for each.",
+  url: `${SITE_URL}/vs`,
   numberOfItems: HUB_ROWS.length,
   itemListElement: HUB_ROWS.map((row, index) => ({
     "@type": "ListItem",
@@ -79,27 +124,12 @@ const FAQ_JSON_LD = JSON.stringify({
   ],
 });
 
-export const meta: Route.MetaFunction = ({ matches }) =>
-  mergeMeta(matches, [
-    { title: PAGE_TITLE },
-    { name: "description", content: PAGE_DESCRIPTION },
-    { property: "og:type", content: "website" },
-    { property: "og:title", content: PAGE_TITLE },
-    { property: "og:description", content: PAGE_DESCRIPTION },
-    { property: "og:url", content: PAGE_URL },
-    { property: "og:image", content: `${SITE_URL}/og-image.png` },
-    { name: "twitter:card", content: "summary_large_image" },
-    { name: "twitter:title", content: PAGE_TITLE },
-    { name: "twitter:description", content: PAGE_DESCRIPTION },
-    { name: "twitter:image", content: `${SITE_URL}/og-image.png` },
-  ]);
-
-function GroupList({ group }: { group: HubRow["group"] }) {
+function GroupList({ group, locale }: { group: HubRow["group"]; locale: LocaleCode }) {
   return (
     <ul>
       {HUB_ROWS.filter((row) => row.group === group).map((row) => (
         <li key={row.href}>
-          <a href={row.href}>
+          <a href={localizedPath(locale, row.href)}>
             {row.tool} vs {SITE_NAME}
           </a>{" "}
           — {row.type.toLowerCase()}, {row.free.toLowerCase()}.
@@ -107,7 +137,7 @@ function GroupList({ group }: { group: HubRow["group"] }) {
             <>
               {" "}
               Thinking of switching? See the{" "}
-              <a href={row.alternativeHref}>{row.tool} alternative</a> guide.
+              <a href={localizedPath(locale, row.alternativeHref)}>{row.tool} alternative</a> guide.
             </>
           ) : null}
         </li>
@@ -117,6 +147,12 @@ function GroupList({ group }: { group: HubRow["group"] }) {
 }
 
 export default function ComparisonsIndex() {
+  const { locale } = useLoaderData<typeof loader>();
+  const LAST_CHECKED = formatMonthYear(LATEST_COMPARISON_VERIFIED);
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: locale === "es" ? "Comparativas" : locale === "zh" ? "对比评测" : locale === "ja" ? "ツール比較" : "Comparisons", path: localizedPath(locale, "/vs") },
+  ]);
+
   return (
     <ContentLayout>
       <article className="max-w-3xl mx-auto prose-policy">
@@ -130,7 +166,7 @@ export default function ComparisonsIndex() {
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: BREADCRUMB_JSON_LD }}
+          dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }}
         />
 
         <p className="meta">Comparisons · updated {LAST_CHECKED}</p>
@@ -176,7 +212,7 @@ export default function ComparisonsIndex() {
             {HUB_ROWS.map((row) => (
               <tr key={row.href}>
                 <td>
-                  <a href={row.href}>{row.tool}</a>
+                  <a href={localizedPath(locale, row.href)}>{row.tool}</a>
                 </td>
                 <td>{row.type}</td>
                 <td>{row.free}</td>
@@ -192,28 +228,28 @@ export default function ComparisonsIndex() {
           Tools that run locally, work offline, and keep project files on your
           own disk.
         </p>
-        <GroupList group="native" />
+        <GroupList group="native" locale={locale} />
 
         <h2>Browser generators</h2>
         <p>
           Nothing to install and they run on any operating system — the right
           answer if you are not on a Mac.
         </p>
-        <GroupList group="browser" />
+        <GroupList group="browser" locale={locale} />
 
         <h2>Automation</h2>
         <p>
           For screenshots that should be produced by a pipeline rather than a
           person.
         </p>
-        <GroupList group="automation" />
+        <GroupList group="automation" locale={locale} />
 
         <h2>Design tools and mockup libraries</h2>
         <p>
           General-purpose tools that can make store screenshots, with more
           freedom and more manual repetition.
         </p>
-        <GroupList group="design" />
+        <GroupList group="design" locale={locale} />
 
         <h2>Roundups</h2>
         <ul>

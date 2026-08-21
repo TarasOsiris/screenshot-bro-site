@@ -10,6 +10,7 @@ import {
 } from "~/config/comparisons";
 import { buildBreadcrumbJsonLd } from "~/config/meta";
 import { SITE_NAME } from "~/config/site";
+import { localizedPath, type LocaleCode } from "~/config/localization";
 
 export type RelatedLink = {
   href: string;
@@ -37,6 +38,7 @@ export function ComparisonShell({
   related = [],
   ctaMessage = DEFAULT_CTA,
   ctaButtonLabel,
+  locale = "en",
 }: {
   slug: string;
   children: ReactNode;
@@ -47,12 +49,13 @@ export function ComparisonShell({
   related?: RelatedLink[];
   ctaMessage?: string;
   ctaButtonLabel?: string;
+  locale?: LocaleCode;
 }) {
   const page = getComparisonPage(slug);
   const checked = formatMonthYear(page.lastVerified);
   const breadcrumb = buildBreadcrumbJsonLd([
-    { name: "Comparisons", path: "/vs" },
-    { name: page.heading, path: comparisonPath(slug) },
+    { name: locale === "es" ? "Comparativas" : locale === "zh" ? "对比评测" : locale === "ja" ? "ツール比較" : "Comparisons", path: localizedPath(locale, "/vs") },
+    { name: page.heading, path: localizedPath(locale, comparisonPath(slug)) },
   ]);
 
   return (
@@ -60,7 +63,7 @@ export function ComparisonShell({
       <article className="max-w-3xl mx-auto prose-policy">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: buildComparisonArticleJsonLd(slug) }}
+          dangerouslySetInnerHTML={{ __html: buildComparisonArticleJsonLd(slug, locale) }}
         />
         <script
           type="application/ld+json"

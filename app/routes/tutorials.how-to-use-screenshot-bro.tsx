@@ -13,51 +13,61 @@ import {
   GUIDE_UPDATED,
 } from "~/config/tutorial-guide";
 import { formatBlogDate } from "~/lib/format-blog-date";
+import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { data, useLoaderData } from "react-router";
 
-const PATH = "/tutorials/how-to-use-screenshot-bro";
-const PAGE_URL = `${SITE_URL}${PATH}`;
-const TITLE = `How to Use ${SITE_NAME} — ${SITE_NAME}`;
-const DESCRIPTION =
-  "Step-by-step guide to designing, localizing, and exporting App Store and Google Play screenshots with Screenshot Bro.";
+export async function loader({ params }: Route.LoaderArgs) {
+  const locale = params.locale;
+  if (locale && !isLocaleCode(locale)) {
+    throw data("Not Found", { status: 404 });
+  }
+  return { locale: (locale || "en") as LocaleCode };
+}
 
-const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
-  { name: "Tutorials", path: "/tutorials" },
-  { name: `How to use ${SITE_NAME}`, path: PATH },
-]);
+export const meta: Route.MetaFunction = ({ matches, params }) => {
+  const locale = (params.locale || "en") as LocaleCode;
+  const titles: Record<LocaleCode, string> = {
+    en: `How to Use ${SITE_NAME} — Step-by-Step Guide`,
+    es: `Cómo usar ${SITE_NAME} — Guía paso a paso`,
+    zh: `如何使用 ${SITE_NAME} — 官方操作指南`,
+    ja: `${SITE_NAME} の使い方 — 完全ステップ解説`,
+    de: `So verwenden Sie ${SITE_NAME} — Schritt-für-Schritt`,
+    fr: `Comment utiliser ${SITE_NAME} — Guide complet`,
+    pt: `Como usar o ${SITE_NAME} — Guia passo a passo`,
+    it: `Come usare ${SITE_NAME} — Guida pratica`,
+    ko: `${SITE_NAME} 사용 방법 — 단계별 완전 가이드`,
+    ar: `كيفية استخدام ${SITE_NAME} — دليل خطوة بخطوة`,
+    hi: `${SITE_NAME} का उपयोग कैसे करें — चरण-दर-चरण गाइड`,
+  };
 
-const HOW_TO_JSON_LD = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  name: `How to use ${SITE_NAME}`,
-  description: DESCRIPTION,
-  totalTime: GUIDE_TOTAL_TIME,
-  url: PAGE_URL,
-  tool: [{ "@type": "HowToTool", name: SITE_NAME }],
-  supply: [
-    { "@type": "HowToSupply", name: "Raw screenshots of your app" },
-  ],
-  step: GUIDE_STEPS.map((guideStep, index) => ({
-    "@type": "HowToStep",
-    position: index + 1,
-    name: guideStep.title,
-    text: guideStep.summary,
-    url: `${PAGE_URL}#${guideStep.id}`,
-    ...(guideStep.images?.[0]?.src
-      ? { image: `${SITE_URL}${guideStep.images[0].src}` }
-      : {}),
-  })),
-});
+  const descriptions: Record<LocaleCode, string> = {
+    en: `Step-by-step guide to designing, localizing, and exporting App Store and Google Play screenshots with Screenshot Bro.`,
+    es: `Guía paso a paso para diseñar, localizar y exportar capturas de App Store y Google Play con Screenshot Bro.`,
+    zh: `通过 10 个清晰步骤，掌握在 Screenshot Bro 中设计、多语言翻译与一键导出应用商店截图的完整技巧。`,
+    ja: `Screenshot Broを使ったApp StoreおよびGoogle Play向けスクリーンショットの設計・ローカライズ・書き出し完全ガイド。`,
+    de: `Schritt-für-Schritt-Anleitung zur Erstellung und Lokalisierung von App Store Screenshots mit Screenshot Bro.`,
+    fr: `Guide pas à pas pour concevoir, traduire et exporter vos captures d'écran avec Screenshot Bro.`,
+    pt: `Guia passo a passo para criar, traduzir e exportar capturas de tela com o Screenshot Bro.`,
+    it: `Guida passo dopo passo per creare, localizzare ed esportare screenshot con Screenshot Bro.`,
+    ko: `Screenshot Bro로 App Store 및 Google Play 스크린샷을 디자인, 번역, 내보내는 10단계 가이드.`,
+    ar: `دليل خطوة بخطوة لتصميم وتوطين وتصدير لقطات شاشة المتاجر عبر Screenshot Bro.`,
+    hi: `Screenshot Bro के साथ स्क्रीनशॉट डिज़ाइन, अनुवाद और निर्यात करने की चरण-दर-चरण गाइड।`,
+  };
 
-export const meta: Route.MetaFunction = ({ matches }) =>
-  mergeMeta(matches, [
-    { title: TITLE },
-    { name: "description", content: DESCRIPTION },
-    { property: "og:title", content: TITLE },
-    { property: "og:description", content: DESCRIPTION },
-    { property: "og:url", content: PAGE_URL },
-    { name: "twitter:title", content: TITLE },
-    { name: "twitter:description", content: DESCRIPTION },
+  const title = titles[locale] || titles.en;
+  const description = descriptions[locale] || descriptions.en;
+  const pageUrl = `${SITE_URL}${localizedPath(locale, "/tutorials/how-to-use-screenshot-bro")}`;
+
+  return mergeMeta(matches, [
+    { title },
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:url", content: pageUrl },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
   ]);
+};
 
 const INTRO_VIDEO = VIDEO_TUTORIALS[0];
 
@@ -70,32 +80,34 @@ function StepNumber({ index }: { index: number }) {
 }
 
 export default function HowToUseGuide() {
+  const { locale } = useLoaderData<typeof loader>();
+
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: locale === "es" ? "Tutoriales" : locale === "zh" ? "教程" : locale === "ja" ? "チュートリアル" : "Tutorials", path: localizedPath(locale, "/tutorials") },
+    { name: `How to use ${SITE_NAME}`, path: localizedPath(locale, "/tutorials/how-to-use-screenshot-bro") },
+  ]);
+
   return (
     <ContentLayout>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: BREADCRUMB_JSON_LD }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: HOW_TO_JSON_LD }}
+        dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }}
       />
       <div className="max-w-6xl mx-auto">
         <header className="prose-policy mb-12">
           <p className="text-xs uppercase tracking-[0.25em] text-accent-light font-mono mb-3">
-            Tutorial
+            {locale === "es" ? "Tutorial" : locale === "zh" ? "教程指南" : locale === "ja" ? "チュートリアル" : "Tutorial"}
           </p>
           <h1>How to use {SITE_NAME}</h1>
           <p className="meta">
-            Ten steps, about 20 minutes · Updated{" "}
-            {formatBlogDate(GUIDE_UPDATED, "en")}
+            Updated {formatBlogDate(GUIDE_UPDATED, locale)}
           </p>
         </header>
 
         <div className="grid gap-12 lg:grid-cols-[220px_minmax(0,1fr)]">
           <aside className="lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-auto">
             <p className="text-[11px] uppercase tracking-[0.25em] text-white/40 font-mono mb-4">
-              On this page
+              {locale === "es" ? "En esta página" : locale === "zh" ? "本页目录" : locale === "ja" ? "目次" : "On this page"}
             </p>
             <nav className="flex flex-col gap-2">
               <a
@@ -128,12 +140,11 @@ export default function HowToUseGuide() {
           <article className="prose-policy max-w-3xl">
             <section>
               <h2 id="before">Before you start</h2>
-              {renderBlocks(GUIDE_INTRO, "en")}
+              {renderBlocks(GUIDE_INTRO, locale)}
               {INTRO_VIDEO && (
                 <div className="not-prose my-8">
                   <p className="mb-4 text-sm text-white/55">
-                    Prefer to watch first? This video covers the first two
-                    steps.
+                    Prefer to watch first? This video covers the first two steps.
                   </p>
                   <VideoCard video={INTRO_VIDEO} headingLevel="h3" />
                 </div>
@@ -154,10 +165,10 @@ export default function HowToUseGuide() {
                     key={image.src}
                     image={image}
                     src={image.src ?? ""}
-                    locale="en"
+                    locale={locale}
                   />
                 ))}
-                {renderBlocks(guideStep.blocks, "en")}
+                {renderBlocks(guideStep.blocks, locale)}
                 {guideStep.learnMore && (
                   <p className="text-sm text-white/55">
                     Full reference:{" "}

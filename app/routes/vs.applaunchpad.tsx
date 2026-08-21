@@ -1,3 +1,5 @@
+import { isLocaleCode, type LocaleCode } from "~/config/localization";
+import { data, useLoaderData } from "react-router";
 import type { Route } from "./+types/vs.applaunchpad";
 import {
   ComparisonShell,
@@ -16,8 +18,16 @@ import {
 
 const SLUG = "applaunchpad";
 
-export const meta: Route.MetaFunction = ({ matches }) =>
-  buildComparisonMeta(SLUG, matches);
+export async function loader({ params }: Route.LoaderArgs) {
+  const locale = params.locale;
+  if (locale && !isLocaleCode(locale)) {
+    throw data("Not Found", { status: 404 });
+  }
+  return { locale: (locale || "en") as LocaleCode };
+}
+
+export const meta: Route.MetaFunction = ({ matches, params }) =>
+  buildComparisonMeta(SLUG, matches, (params.locale || "en") as LocaleCode);
 
 const ROWS: ComparisonRow[] = [
   {

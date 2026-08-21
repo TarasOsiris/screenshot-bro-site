@@ -2,21 +2,61 @@ import type { Route } from "./+types/privacy";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 import { ContentLayout } from "~/components/ContentLayout";
 import { mergeMeta } from "~/config/meta";
+import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { data } from "react-router";
 
-const PRIVACY_TITLE = `Privacy Policy — ${SITE_NAME}`;
-const PRIVACY_DESCRIPTION = `Privacy policy for ${SITE_NAME}. Learn how we handle your data — no analytics, no tracking, and your projects stay on your device.`;
-const PRIVACY_URL = `${SITE_URL}/privacy`;
+export async function loader({ params }: Route.LoaderArgs) {
+  const locale = params.locale;
+  if (locale && !isLocaleCode(locale)) {
+    throw data("Not Found", { status: 404 });
+  }
+  return { locale: (locale || "en") as LocaleCode };
+}
 
-export const meta: Route.MetaFunction = ({ matches }) =>
-  mergeMeta(matches, [
-    { title: PRIVACY_TITLE },
-    { name: "description", content: PRIVACY_DESCRIPTION },
-    { property: "og:title", content: PRIVACY_TITLE },
-    { property: "og:description", content: PRIVACY_DESCRIPTION },
-    { property: "og:url", content: PRIVACY_URL },
-    { name: "twitter:title", content: PRIVACY_TITLE },
-    { name: "twitter:description", content: PRIVACY_DESCRIPTION },
+export const meta: Route.MetaFunction = ({ matches, params }) => {
+  const locale = (params.locale || "en") as LocaleCode;
+  const titles: Record<LocaleCode, string> = {
+    en: `Privacy Policy — ${SITE_NAME}`,
+    es: `Política de privacidad — ${SITE_NAME}`,
+    zh: `隐私政策 — ${SITE_NAME}`,
+    ja: `プライバシーポリシー — ${SITE_NAME}`,
+    de: `Datenschutzerklärung — ${SITE_NAME}`,
+    fr: `Politique de confidentialité — ${SITE_NAME}`,
+    pt: `Política de privacidade — ${SITE_NAME}`,
+    it: `Informativa sulla privacy — ${SITE_NAME}`,
+    ko: `개인정보 처리방침 — ${SITE_NAME}`,
+    ar: `سياسة الخصوصية — ${SITE_NAME}`,
+    hi: `गोपनीयता नीति — ${SITE_NAME}`,
+  };
+
+  const descriptions: Record<LocaleCode, string> = {
+    en: `Privacy policy for ${SITE_NAME}. Learn how we handle your data — no analytics, no tracking, and your projects stay on your device.`,
+    es: `Política de privacidad de ${SITE_NAME}. Descubre cómo protegemos tus datos: sin rastreo ni analíticas, tus archivos permanecen en tu dispositivo.`,
+    zh: `${SITE_NAME} 隐私政策。了解我们如何保护你的数据安全——无行为追踪、无第三方分析，所有项目文件完全保存在你的本地设备中。`,
+    ja: `${SITE_NAME}のプライバシーポリシー。追跡やデータ収集を行わず、プロジェクトはすべてデバイス内に安全に保存されます。`,
+    de: `Datenschutzerklärung für ${SITE_NAME}. Keine Analyse-Tools, kein Tracking — Ihre Projekte bleiben sicher auf Ihrem Gerät.`,
+    fr: `Politique de confidentialité de ${SITE_NAME}. Aucun suivi, aucune analyse de données : vos projets restent sur votre appareil.`,
+    pt: `Política de privacidade do ${SITE_NAME}. Seus projetos permanecem seguros no seu dispositivo sem rastreamento ou coleta de dados.`,
+    it: `Informativa sulla privacy di ${SITE_NAME}. Nessun tracciamento o profilazione: i tuoi progetti rimangono al sicuro sul tuo dispositivo.`,
+    ko: `${SITE_NAME} 개인정보 처리방침. 사용자 추적이나 데이터 수집 없이 모든 프로젝트는 기기 내에 안전하게 보관됩니다.`,
+    ar: `سياسة الخصوصية لتطبيق ${SITE_NAME}. لا نقوم بتتبع أي بيانات وتبقى جميع مشاريعك مخزنة محلياً على جهازك.`,
+    hi: `${SITE_NAME} की गोपनीयता नीति। कोई ट्रैकिंग या डेटा संग्रह नहीं — आपके प्रोजेक्ट आपके डिवाइस पर सुरक्षित रहते हैं।`,
+  };
+
+  const title = titles[locale] || titles.en;
+  const description = descriptions[locale] || descriptions.en;
+  const url = `${SITE_URL}${localizedPath(locale, "/privacy")}`;
+
+  return mergeMeta(matches, [
+    { title },
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:url", content: url },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
   ]);
+};
 
 export const EFFECTIVE_DATE = "August 21, 2026";
 const DEVELOPER_NAME = "Nineva Studios";
