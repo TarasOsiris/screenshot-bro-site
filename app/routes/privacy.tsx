@@ -18,7 +18,7 @@ export const meta: Route.MetaFunction = ({ matches }) =>
     { name: "twitter:description", content: PRIVACY_DESCRIPTION },
   ]);
 
-export const EFFECTIVE_DATE = "August 15, 2026";
+export const EFFECTIVE_DATE = "August 21, 2026";
 const DEVELOPER_NAME = "Nineva Studios";
 const DEVELOPER_EMAIL = "tleskiv@ninevastudios.com";
 
@@ -45,7 +45,10 @@ export default function Privacy() {
           </p>
           <ul>
             <li>Personal information (name, email address, phone number)</li>
-            <li>Usage analytics or behavioral data</li>
+            <li>
+              Usage analytics or behavioral data — we do not track which
+              features you use, what you click, or what you create
+            </li>
             <li>Device identifiers for tracking purposes</li>
             <li>Location data</li>
             <li>Advertising identifiers</li>
@@ -57,8 +60,9 @@ export default function Privacy() {
           <p>
             The App contains <strong>no analytics SDKs</strong>, no advertising
             frameworks, and no cross-app or cross-site tracking. It does include
-            a crash and error reporting service, which is described in{" "}
-            <strong>Section 5</strong>.
+            a crash and error reporting service, which sends technical
+            diagnostics when something goes wrong and a minimal record of each
+            app run. Both are described in <strong>Section 5</strong>.
           </p>
 
           <h2>2. Data Stored on Your Device</h2>
@@ -188,37 +192,106 @@ export default function Privacy() {
               Sentry
             </a>{" "}
             to report crashes, unhandled errors, and cases where the App stops
-            responding. A report is sent only when something actually goes
-            wrong — the App does not send a stream of usage events.
+            responding (freezes of roughly three seconds or more). An error
+            report is sent only when something actually goes wrong — the App
+            does not record what you click, type, select, or scroll through, and
+            does not send a stream of usage events. Separately, the App sends a
+            minimal record of each app run, described under{" "}
+            <em>App run records</em> below.
           </p>
-          <p>A report contains technical diagnostics:</p>
+          <p>An error report contains technical diagnostics:</p>
           <ul>
             <li>
               The error or crash itself — the exception type, message, and stack
               trace showing which code was running
             </li>
             <li>
-              Recent in-app events leading up to the error (for example, that a
-              window opened or an export started)
+              A short trail of recent in-app events leading up to the error —
+              for example that the App launched, a project was opened, an export
+              started and finished, or which editing action was performed
+              (&ldquo;Move Shape&rdquo;, &ldquo;Undo&rdquo;). Each entry carries
+              only counts, settings values, and durations — the number of rows,
+              templates or locales involved, the export format, elapsed
+              milliseconds — never the names or contents of your projects, rows,
+              locales, or files. Repeated identical actions are collapsed into a
+              single entry with a count.
+            </li>
+            <li>
+              If you use the App Store Connect or Google Play upload features,
+              entries for the network requests the App made to Apple's and
+              Google's publishing APIs — the address and outcome only. Query
+              strings and URL fragments, which is where those APIs carry
+              identifiers and access tokens, are stripped before the report
+              leaves your device.
             </li>
             <li>
               Device and app context — device model, operating system version,
               App version and build number, language and region settings, and
-              memory and storage state at the time of the error
+              memory and storage state at the time of the error, plus the free
+              space on your disk when a save, copy, or export fails
             </li>
             <li>
-              The same anonymous app-specific identifier used by RevenueCat (see
-              Section 4), so repeated crashes from one installation can be
-              recognised as related
+              Labels describing how the App was configured — whether projects are
+              stored locally or in iCloud, whether Pro is unlocked, whether the
+              local MCP server is running, which App version this installation
+              first ran, and whether the previous run crashed — together with a
+              summary of the open document expressed purely as counts (how many
+              rows, templates, shapes, locales, and images it contains, and which
+              device categories it targets)
+            </li>
+            <li>
+              A random installation identifier, and the anonymous RevenueCat
+              identifier if you have made a purchase (see below)
             </li>
           </ul>
           <p>
-            Reports do <strong>not</strong> include your projects, screenshots,
-            imported images, fonts, or the text you write in the App. We have
-            configured Sentry not to send personally identifiable information
-            such as your IP address or device name. In rare cases a technical
-            error message may include a file path, which on some systems
-            contains your operating system user name.
+            <strong>Identifiers.</strong> Reports are tagged with a random
+            identifier that the App generates the first time it runs and stores
+            on your device. It is not derived from your device, your Apple
+            Account, or anything about you, and we do not join it to any other
+            data — it exists so that repeated crashes from one installation can
+            be recognised as related, and so that a problem you email us about
+            can be matched to the reports we already received. If you have made
+            a purchase, the anonymous app user ID used by RevenueCat (see Section
+            4) is attached to reports as well, so that a purchase-related bug can
+            be traced to the transaction that triggered it. Both values are shown
+            in the App under Settings ▸ General ▸ Copy Diagnostics, alongside
+            your App version, storage mode, language, and project counts; that
+            information is placed on your clipboard and is sent to us only if you
+            choose to paste it into a support email.
+          </p>
+          <p>
+            <strong>App run records.</strong> In addition to error reports,
+            Sentry's SDK sends a small record when the App starts and when it
+            stops, so we can tell whether a crash affects one user in ten or one
+            in a thousand. Such a record says only that a copy of the App ran: the
+            App version, whether it was a release or debug build, how long the run
+            lasted, whether it ended normally or in a crash, and an anonymous
+            per-installation identifier generated by the Sentry SDK. It contains
+            no in-app events, no document information, and none of the labels
+            listed above.
+          </p>
+          <p>
+            <strong>What reports never contain.</strong> Reports do{" "}
+            <strong>not</strong> include your projects, screenshots, imported
+            images, fonts, or any text you write in the App. The App does not
+            attach screenshots of its own window, view hierarchies, or its log
+            output to reports, and performance tracing is switched off, so no
+            timing data is collected about normal use. We have configured Sentry
+            not to send personally identifiable information such as your IP
+            address or device name. File paths that appear in technical error
+            messages are rewritten before sending to remove your operating system
+            user name — <code>/Users/yourname/…</code> becomes{" "}
+            <code>/Users/~/…</code>.
+          </p>
+          <p>
+            <strong>Reports from the operating system.</strong> On macOS and
+            iPadOS, the App also receives crash, hang, and disk-write diagnostics
+            from Apple's MetricKit — a system service that captures problems the
+            App cannot observe from the inside, such as a freeze while it is
+            quitting — and forwards them to Sentry. On iPadOS, a report is also
+            sent when the system itself terminates the App in the background, for
+            example to reclaim memory.
           </p>
           <p>
             Crash reporting is enabled by default and is currently not
@@ -259,8 +332,10 @@ export default function Privacy() {
                 <td>Sentry</td>
                 <td>Crash and error reporting</td>
                 <td>
-                  Anonymous ID, crash and error diagnostics, device and app
-                  version info (only when an error occurs)
+                  Random installation ID, crash and error diagnostics, recent
+                  in-app events, app configuration labels and document counts,
+                  device and app version info (when an error occurs); a minimal
+                  app run record on launch and exit
                 </td>
               </tr>
               <tr>
@@ -294,10 +369,12 @@ export default function Privacy() {
               anonymous records associated with your transactions.
             </li>
             <li>
-              <strong>Crash and error reports</strong> — retained by Sentry for
-              a limited period (90 days by default) and then deleted
-              automatically. You can also email us to request deletion of
-              reports associated with your anonymous identifier.
+              <strong>Crash and error reports</strong> — reports and app run
+              records are retained by Sentry for a limited period (90 days by
+              default) and then deleted automatically. You can also email us to
+              request deletion of reports associated with your installation
+              identifier, which you can find under Settings ▸ General ▸ Copy
+              Diagnostics.
             </li>
           </ul>
 
