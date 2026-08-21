@@ -1,17 +1,21 @@
 import type { Route } from "./+types/blog.google-play-feature-graphic-size-template-examples";
 import { BlogArticleShell } from "~/components/BlogArticleShell";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
-import type { LocaleCode } from "~/config/localization";
-import { useLoaderData } from "react-router";
+import { isLocaleCode, type LocaleCode } from "~/config/localization";
+import { data, useLoaderData } from "react-router";
 
 const SLUG = "google-play-feature-graphic-size-template-examples";
 
-export async function loader() {
-  return { locale: "en" as LocaleCode };
+export async function loader({ params }: Route.LoaderArgs) {
+  const locale = params.locale;
+  if (locale && !isLocaleCode(locale)) {
+    throw data("Not Found", { status: 404 });
+  }
+  return { locale: (locale || "en") as LocaleCode };
 }
 
-export const meta: Route.MetaFunction = ({ matches }) =>
-  buildBlogPostMeta(SLUG, matches, "en");
+export const meta: Route.MetaFunction = ({ matches, params }) =>
+  buildBlogPostMeta(SLUG, matches, (params.locale || "en") as LocaleCode);
 
 export const links: Route.LinksFunction = () => buildBlogPostLinks(SLUG);
 

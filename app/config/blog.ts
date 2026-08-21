@@ -28,7 +28,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "8 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "best app store screenshot tool for mac",
       "mac app store screenshot generator",
@@ -47,7 +46,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "8 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "app screenshot localization tools",
       "localize app store screenshots tool",
@@ -66,7 +64,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "7 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "google play screenshot tools",
       "google play screenshot generator",
@@ -85,7 +82,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "7 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "screenshot bro alternatives",
       "screenshot bro alternative",
@@ -104,7 +100,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "appscreens alternative",
       "appscreens alternatives",
@@ -123,7 +118,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "screenshots pro alternative",
       "screenshots.pro alternative",
@@ -142,7 +136,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "rotato alternative",
       "rotato alternatives",
@@ -161,7 +154,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "placeit alternative",
       "placeit alternatives",
@@ -180,7 +172,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "mockuuups studio alternative",
       "mockuuups alternative",
@@ -199,7 +190,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "app store screenshots canva",
       "canva app store screenshot",
@@ -218,7 +208,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "appmockup alternative",
       "app mockup alternative",
@@ -237,7 +226,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "screenshot studio alternative",
       "screenshot studio vs screenshot bro",
@@ -256,7 +244,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "applaunchpad alternative",
       "applaunchpad alternatives",
@@ -275,7 +262,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "previewed alternative",
       "previewed app alternative",
@@ -294,7 +280,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "6 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "shotbot alternative",
       "shotbot alternatives",
@@ -312,7 +297,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "10 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "how to publish an app on google play",
       "publish app google play",
@@ -330,7 +314,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "7 min read",
     category: "Reference",
-    localized: false,
     keywords: [
       "google play promo video",
       "google play video specs",
@@ -348,7 +331,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "9 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "app store description",
       "how to write app store description",
@@ -366,7 +348,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "9 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "app store keyword research",
       "app store keywords",
@@ -384,7 +365,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "8 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "app store screenshots for games",
       "game screenshots app store",
@@ -402,7 +382,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "8 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "app store screenshots for fitness apps",
       "fitness app screenshots",
@@ -420,7 +399,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "7 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "change app store screenshots without updating app",
       "update app store screenshots",
@@ -439,7 +417,6 @@ export const BLOG_POSTS: BlogPost[] = [
     dateModified: "2026-08-20",
     readTime: "8 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "free app store screenshot generator",
       "best free screenshot generator",
@@ -457,7 +434,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "7 min read",
     category: "Reference",
-    localized: false,
     keywords: [
       "mac app store screenshot size",
       "macOS app screenshots",
@@ -475,7 +451,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "8 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "iphone simulator screenshots",
       "xcrun simctl screenshot",
@@ -493,7 +468,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "10 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "how to submit an app to the app store",
       "app store submission",
@@ -511,7 +485,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "7 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "how many app store screenshots",
       "number of app store screenshots",
@@ -529,7 +502,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "8 min read",
     category: "Comparison",
-    localized: false,
     keywords: [
       "app store screenshot generator vs figma",
       "screenshot tool comparison",
@@ -547,7 +519,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "8 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "localize app store screenshots japan",
       "app store china screenshots",
@@ -565,7 +536,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "9 min read",
     category: "Reference",
-    localized: false,
     keywords: [
       "app preview video",
       "App Store app preview",
@@ -584,7 +554,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "9 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "device mockup generator",
       "iphone mockup",
@@ -604,7 +573,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "11 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "app store optimization",
       "ASO",
@@ -624,7 +592,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-18",
     readTime: "8 min read",
     category: "Reference",
-    localized: false,
     keywords: [
       "app icon size",
       "app icon dimensions",
@@ -644,7 +611,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-17",
     readTime: "12 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "App Store screenshot examples",
       "ASO screenshot examples",
@@ -663,7 +629,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-17",
     readTime: "8 min read",
     category: "Reference",
-    localized: false,
     keywords: [
       "Google Play feature graphic size",
       "Google Play ASO graphics",
@@ -681,7 +646,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-17",
     readTime: "9 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "App Store screenshots rejected",
       "ASO screenshot rejection",
@@ -699,7 +663,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-17",
     readTime: "9 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "Google Play screenshot rejected",
       "Google Play ASO rejection",
@@ -717,7 +680,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-17",
     readTime: "8 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "App Store screenshot order",
       "ASO screenshot order",
@@ -735,7 +697,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-17",
     readTime: "10 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "App Store screenshot text",
       "ASO screenshot copy",
@@ -753,7 +714,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-17",
     readTime: "9 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "App Store screenshot mistakes",
       "ASO screenshot mistakes",
@@ -771,7 +731,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-17",
     readTime: "9 min read",
     category: "Reference",
-    localized: false,
     keywords: [
       "iPhone iPad App Store screenshots",
       "iPhone iPad ASO screenshots",
@@ -789,7 +748,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-17",
     readTime: "10 min read",
     category: "Reference",
-    localized: false,
     keywords: [
       "Google Play store listing graphics",
       "Google Play ASO checklist",
@@ -807,7 +765,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-17",
     readTime: "9 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "seasonal App Store screenshots",
       "seasonal ASO screenshots",
@@ -825,7 +782,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-13",
     readTime: "10 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "App Store screenshot localization",
       "localize App Store screenshots",
@@ -845,7 +801,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-05-28",
     readTime: "9 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "Figma app store screenshot templates",
       "Figma device mockups",
@@ -864,7 +819,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-05-28",
     readTime: "8 min read",
     category: "Guide",
-    localized: false,
     keywords: [
       "App Store screenshot designers",
       "App Store screenshot inspiration",

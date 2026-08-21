@@ -1,3 +1,5 @@
+import { data, useLoaderData } from "react-router";
+import { isLocaleCode, type LocaleCode } from "~/config/localization";
 import type { Route } from "./+types/blog.app-store-screenshot-localization-guide";
 import { BlogCTA } from "~/components/BlogCTA";
 import { BlogPostHeader } from "~/components/BlogPostHeader";
@@ -7,22 +9,31 @@ import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
 
 const SLUG = "app-store-screenshot-localization-guide";
 
-export const meta: Route.MetaFunction = ({ matches }) =>
-  buildBlogPostMeta(SLUG, matches);
+export async function loader({ params }: Route.LoaderArgs) {
+  const locale = params.locale;
+  if (locale && !isLocaleCode(locale)) {
+    throw data("Not Found", { status: 404 });
+  }
+  return { locale: (locale || "en") as LocaleCode };
+}
+
+export const meta: Route.MetaFunction = ({ matches, params }) =>
+  buildBlogPostMeta(SLUG, matches, (params.locale || "en") as LocaleCode);
 
 export const links: Route.LinksFunction = () => buildBlogPostLinks(SLUG);
 
 export default function BlogPost() {
+  const { locale } = useLoaderData<typeof loader>();
   return (
     <ContentLayout>
       <div className="max-w-3xl mx-auto">
         <article className="prose-policy">
-          <BlogPostHeader slug={SLUG} />
+          <BlogPostHeader slug={SLUG} locale={locale} />
           <ContentEn />
         </article>
 
         <BlogCTA message="Localize App Store screenshots without duplicating every design file: manage locales, captions, device rows, batch exports, and upload-ready folders in Screenshot Bro." homeLinkLabel="the App Store screenshot tool built for localization" />
-        <RelatedPosts currentSlug={SLUG} />
+        <RelatedPosts currentSlug={SLUG} locale={locale} />
       </div>
     </ContentLayout>
   );
