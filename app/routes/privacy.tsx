@@ -414,7 +414,10 @@ export default function Privacy() {
               <code>purchase_restored</code>
             </li>
             <li>
-              <code>mcp_server_toggled</code>, <code>mcp_tool_called</code> —
+              <code>mcp_server_toggled</code>, <code>mcp_server_started</code>,{" "}
+              <code>mcp_server_start_failed</code>,{" "}
+              <code>mcp_session_started</code>,{" "}
+              <code>mcp_session_finished</code>, <code>mcp_tool_called</code> —
               only if you turn on the optional local automation server
             </li>
           </ul>
@@ -423,7 +426,8 @@ export default function Privacy() {
             outcomes</strong>: how many rows, templates, languages or images were
             involved, the export format, which destination was chosen, whether an
             upload succeeded or was cancelled, the identifier of one of{" "}
-            {SITE_NAME}&apos;s own bundled templates. Alongside them, the
+            {SITE_NAME}&apos;s own bundled templates, the name of one of the
+            automation server&apos;s own tools. Alongside them, the
             analytics service records the App version and build, the platform,
             your device model, operating system version, language, time zone and
             screen size — the same class of technical context as a crash report.
@@ -444,8 +448,13 @@ export default function Privacy() {
             if you have made a purchase — the anonymous RevenueCat identifier, so
             that a purchase can be attributed to the installation that made it.
             The App sets the reported IP address to zero, so PostHog does not
-            derive your city, region, or country from it. Nothing sent is linked
-            to your name, email address, or Apple Account, none of which we hold.
+            derive your city, region, or country from it. If you use the optional
+            local automation server, its events also carry a random identifier
+            generated for that working session and discarded afterwards, so that
+            the tools an agent used can be counted as one session rather than as
+            unrelated events; it is not tied to you or to your installation
+            across sessions. Nothing sent is linked to your name, email address,
+            or Apple Account, none of which we hold.
           </p>
           <p>
             Product analytics is enabled by default and is currently not
