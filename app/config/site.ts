@@ -491,6 +491,16 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
     icon: "/showcase/kiddo-routine.jpg",
     url: "https://apps.apple.com/ua/app/kiddo-routine/id6777069731",
   },
+  {
+    name: "Rankor",
+    icon: "/showcase/rankor.jpg",
+    url: "https://apps.apple.com/us/app/app-ratings-ranks-rankor/id6758963944",
+  },
+  {
+    name: "ImageTracker",
+    icon: "/showcase/imagetracker.jpg",
+    url: "https://apps.apple.com/ua/app/webcam-widgets-imagetracker/id6466650127",
+  },
 ];
 
 export type AppScreenshot = {
