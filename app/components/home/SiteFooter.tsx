@@ -77,6 +77,20 @@ export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
                 />
               </a>
             </div>
+            <a
+              href="https://trustmrr.com/startup/screenshot-bro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <img
+                src="https://trustmrr.com/api/embed/screenshot-bro?format=svg&theme=light"
+                alt="TrustMRR verified revenue badge"
+                width="220"
+                height="90"
+                className="opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </a>
           </div>
 
           <FooterColumn
