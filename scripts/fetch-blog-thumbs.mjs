@@ -26,6 +26,7 @@ const MIN_BYTES = 5_000; // anything smaller is an error page or dead photo ID
 // slug -> Unsplash photo base URL (query string is appended from PARAMS)
 const THUMBS = {
   "best-app-store-screenshot-tools-for-mac": "https://images.unsplash.com/photo-1541462608143-67571c6738dd",
+  "butterkit-alternative": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8",
   "best-app-screenshot-localization-tools": "https://images.unsplash.com/photo-1524661135-423995f22d0b",
   "best-google-play-screenshot-tools": "https://images.unsplash.com/photo-1598327105666-5b89351aff97",
   "screenshot-bro-alternatives": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c",

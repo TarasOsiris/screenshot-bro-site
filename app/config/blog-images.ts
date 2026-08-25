@@ -9,6 +9,7 @@ export type BlogThumb = { src: string; alt: string };
 // renders a category-tinted placeholder on the blog index.
 const BLOG_THUMB_ALT: Record<string, string> = {
   "best-app-store-screenshot-tools-for-mac": "iMac and MacBook on a white desk with phone wireframe sketches",
+  "butterkit-alternative": "Close-up of a MacBook keyboard and trackpad lit in purple and blue",
   "best-app-screenshot-localization-tools": "Colorful illustrated world map",
   "best-google-play-screenshot-tools": "Android phone home screen with app icons and widgets",
   "screenshot-bro-alternatives": "Space gray iPhone showing its home screen apps",

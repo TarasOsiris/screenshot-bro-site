@@ -20,6 +20,23 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "butterkit-alternative",
+    title: "ButterKit Alternative: Two Native Mac Screenshot Apps",
+    description:
+      "ButterKit and Screenshot Bro are both native Mac App Store screenshot apps. How they differ on macOS version, translation, Google Play and free tiers.",
+    date: "2026-08-25",
+    readTime: "10 min read",
+    category: "Comparison",
+    keywords: [
+      "butterkit alternative",
+      "butterkit vs screenshot bro",
+      "native mac app store screenshot app",
+      "app store screenshot tool macos 15",
+      "google play screenshot upload mac",
+      "app screenshot localization without api key",
+    ],
+  },
+  {
     slug: "best-app-store-screenshot-tools-for-mac",
     title: "Best App Store Screenshot Tools for Mac (2026)",
     description:

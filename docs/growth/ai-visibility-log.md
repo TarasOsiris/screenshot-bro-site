@@ -87,9 +87,19 @@ attributed to something.
 
 - 2026-08-20 — while writing the ten `/vs/` pages: **ScreenKit** (screenkit.tools —
   publishes its own `/vs/shotbot`-style pages), **AppShots** (App Store
-  id6760330087), **Butterkit** (named in AppLaunchpad's comparison posts). Plus the
-  earlier SERP set: Nuvex, Screenhance, AppDrift, ScreenFast, AppScreenshotStudio,
-  and Hotpot. Check each domain resolves before writing (LaunchMatic precedent).
+  id6760330087). Plus the earlier SERP set: Nuvex, Screenhance, AppDrift, ScreenFast,
+  AppScreenshotStudio, and Hotpot. Check each domain resolves before writing
+  (LaunchMatic precedent).
+- 2026-08-25 — **ButterKit** done: `/vs/butterkit` + `/blog/butterkit-alternative`,
+  verified against butterkit.app's site, docs, pricing and Mac App Store listing.
+  It is the closest competitor we have — native Mac, no account, one-time price,
+  ASC upload, MCP server — so the pages turn on three real differences: it needs
+  macOS 26 (we need 15), it reaches 50 languages only with the user's own AI key,
+  and it has no Google Play upload. Two claims deliberately left out: its stated
+  "4.7 stars on the Mac App Store" (the US storefront says it has too few ratings
+  to show an average and the iTunes API returns 0) and "thousands of developers"
+  (no number published anywhere). Its own free tier is the *more* generous one on
+  projects and artboards — both pages say so, because that is the honest read.
 - 2026-08-20 — `/vs/` now has 11 pages (fastlane + 10 rivals). Shotbot's website
   `shotbot.io` did not resolve on writing day; its page cites the App Store listing.
   Placeit's pricing page blocks automated fetches (HTTP 403) — re-verify by hand.

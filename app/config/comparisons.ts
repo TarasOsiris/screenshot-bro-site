@@ -105,6 +105,26 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     alternativeHref: "/blog/screenshot-studio-alternative",
   },
   {
+    slug: "butterkit",
+    competitor: "ButterKit",
+    competitorUrl: "https://butterkit.app/",
+    heading: `${SITE_NAME} vs ButterKit`,
+    title: `${SITE_NAME} vs ButterKit — which to use?`,
+    description:
+      "ButterKit needs macOS 26 and your own AI key for 50 languages; Screenshot Bro runs on macOS 15, ships 81 locale presets and uploads to Google Play too.",
+    readTime: "12 min read",
+    datePublished: "2026-08-25",
+    lastVerified: "2026-08-25",
+    checkedAgainst:
+      "ButterKit's own site, documentation and pricing page, and its Mac App Store listing",
+    group: "native",
+    type: "Native Mac app, macOS 26+",
+    free: "Unlimited, but watermarked",
+    localization: "19 on-device; 50 with your API key",
+    upload: "App Store Connect only",
+    alternativeHref: "/blog/butterkit-alternative",
+  },
+  {
     slug: "shotbot",
     competitor: "Shotbot",
     competitorUrl:

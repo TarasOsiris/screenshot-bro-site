@@ -4,6 +4,15 @@ import type { LocaleCode } from "./localization";
 export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, BlogPost[]>> = {
   es: [
     {
+      slug: "butterkit-alternative",
+      title: "Alternativa a ButterKit: dos apps nativas para Mac",
+      description: "ButterKit y Screenshot Bro son apps nativas de Mac para capturas de App Store. Diferencias en versión de macOS, traducción, Google Play y plan gratuito.",
+      date: "2026-08-25",
+      readTime: "Lectura de 10 min",
+      category: "Comparison",
+      keywords: ["alternativa a butterkit","app capturas app store mac"],
+    },
+    {
       slug: "best-app-store-screenshot-tools-for-mac",
       title: "Las mejores herramientas de capturas de App Store para Mac (2026)",
       description: "Analizamos las mejores aplicaciones nativas y herramientas de Mac para diseñar capturas de App Store y Google Play más rápido.",
@@ -528,6 +537,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   zh: [
+    {
+      slug: "butterkit-alternative",
+      title: "ButterKit 替代方案：两款原生 Mac 截图应用",
+      description: "ButterKit 与 Screenshot Bro 都是原生 Mac 应用商店截图工具。对比 macOS 版本要求、翻译、Google Play 上传与免费版的差异。",
+      date: "2026-08-25",
+      readTime: "10 分钟阅读",
+      category: "Comparison",
+      keywords: ["butterkit 替代方案","mac 应用商店截图工具"],
+    },
     {
       slug: "best-app-store-screenshot-tools-for-mac",
       title: "Mac 平台最佳 App Store 截图制作工具精选 (2026)",
@@ -1054,6 +1072,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   ja: [
     {
+      slug: "butterkit-alternative",
+      title: "ButterKitの代替：ネイティブMacスクリーンショットアプリ",
+      description: "ButterKitとScreenshot Broはどちらもネイティブの Mac 用 App Store スクリーンショットアプリです。macOS要件、翻訳、Google Play、無料枠の違いを解説。",
+      date: "2026-08-25",
+      readTime: "読了目安 10分",
+      category: "Comparison",
+      keywords: ["butterkit 代替","mac app store スクリーンショット"],
+    },
+    {
       slug: "best-app-store-screenshot-tools-for-mac",
       title: "Mac向けApp Storeスクリーンショット作成ツールおすすめ (2026年版)",
       description: "Mac専用のネイティブアプリからWebツールまで、App StoreとGoogle Play向け画像を素早く作成できるおすすめソフトを比較。",
@@ -1578,6 +1605,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   de: [
+    {
+      slug: "butterkit-alternative",
+      title: "ButterKit-Alternative: Zwei native Mac-Screenshot-Apps",
+      description: "ButterKit und Screenshot Bro sind native Mac-Apps für App-Store-Screenshots. Die Unterschiede bei macOS-Version, Übersetzung, Google Play und Gratis-Tarif.",
+      date: "2026-08-25",
+      readTime: "10 Min. Lesezeit",
+      category: "Comparison",
+      keywords: ["butterkit alternative","mac app store screenshot app"],
+    },
     {
       slug: "best-app-store-screenshot-tools-for-mac",
       title: "Die besten App Store Screenshot-Tools für den Mac (2026)",
@@ -2104,6 +2140,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   fr: [
     {
+      slug: "butterkit-alternative",
+      title: "Alternative à ButterKit : deux apps Mac natives",
+      description: "ButterKit et Screenshot Bro sont des apps Mac natives pour les captures App Store. Différences de macOS, traduction, Google Play et offre gratuite.",
+      date: "2026-08-25",
+      readTime: "10 min de lecture",
+      category: "Comparison",
+      keywords: ["alternative butterkit","app captures app store mac"],
+    },
+    {
       slug: "best-app-store-screenshot-tools-for-mac",
       title: "Les meilleurs outils de capture d'écran App Store pour Mac (2026)",
       description: "Découvrez les meilleures applications Mac natives pour concevoir des captures d'écran pour l'App Store et Google Play.",
@@ -2628,6 +2673,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   pt: [
+    {
+      slug: "butterkit-alternative",
+      title: "Alternativa ao ButterKit: dois apps nativos de Mac",
+      description: "ButterKit e Screenshot Bro são apps nativos de Mac para capturas da App Store. Diferenças em versão do macOS, tradução, Google Play e plano gratuito.",
+      date: "2026-08-25",
+      readTime: "Leitura de 10 min",
+      category: "Comparison",
+      keywords: ["alternativa ao butterkit","app de capturas app store mac"],
+    },
     {
       slug: "best-app-store-screenshot-tools-for-mac",
       title: "Melhores ferramentas de capturas da App Store para Mac (2026)",
@@ -3154,6 +3208,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   it: [
     {
+      slug: "butterkit-alternative",
+      title: "Alternativa a ButterKit: due app native per Mac",
+      description: "ButterKit e Screenshot Bro sono app native per gli screenshot App Store su Mac. Differenze su macOS, traduzione, Google Play e piano gratuito.",
+      date: "2026-08-25",
+      readTime: "10 min di lettura",
+      category: "Comparison",
+      keywords: ["alternativa a butterkit","app screenshot app store mac"],
+    },
+    {
       slug: "best-app-store-screenshot-tools-for-mac",
       title: "I migliori strumenti di screenshot per App Store su Mac (2026)",
       description: "Guida alle migliori applicazioni native per Mac per realizzare screenshot per App Store e Google Play in pochi minuti.",
@@ -3678,6 +3741,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   ko: [
+    {
+      slug: "butterkit-alternative",
+      title: "ButterKit 대안: 네이티브 Mac 스크린샷 앱 두 가지",
+      description: "ButterKit과 Screenshot Bro는 모두 네이티브 Mac용 App Store 스크린샷 앱입니다. macOS 버전, 번역, Google Play, 무료 플랜의 차이를 정리했습니다.",
+      date: "2026-08-25",
+      readTime: "10분 소요",
+      category: "Comparison",
+      keywords: ["butterkit 대안","mac 앱스토어 스크린샷 앱"],
+    },
     {
       slug: "best-app-store-screenshot-tools-for-mac",
       title: "Mac 사용자를 위한 최고의 App Store 스크린샷 제작 도구 (2026)",
@@ -4204,6 +4276,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   ar: [
     {
+      slug: "butterkit-alternative",
+      title: "بديل ButterKit: تطبيقان أصليان للقطات الشاشة على Mac",
+      description: "ButterKit و Screenshot Bro تطبيقان أصليان على Mac للقطات App Store. الفروق في إصدار macOS والترجمة و Google Play والخطة المجانية.",
+      date: "2026-08-25",
+      readTime: "10 دقائق للقراءة",
+      category: "Comparison",
+      keywords: ["بديل butterkit","تطبيق لقطات شاشة app store"],
+    },
+    {
       slug: "best-app-store-screenshot-tools-for-mac",
       title: "أفضل أدوات تصميم لقطات شاشة App Store لنظام Mac (2026)",
       description: "مقارنة لأفضل تطبيقات Mac الأصلية لتصميم لقطات شاشة متجري App Store و Google Play بأعلى كفاءة.",
@@ -4728,6 +4809,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   hi: [
+    {
+      slug: "butterkit-alternative",
+      title: "ButterKit विकल्प: दो नेटिव Mac स्क्रीनशॉट ऐप",
+      description: "ButterKit और Screenshot Bro दोनों नेटिव Mac App Store स्क्रीनशॉट ऐप हैं। macOS संस्करण, अनुवाद, Google Play और फ्री प्लान में अंतर।",
+      date: "2026-08-25",
+      readTime: "10 मिनट में पढ़ें",
+      category: "Comparison",
+      keywords: ["butterkit विकल्प","mac app store स्क्रीनशॉट ऐप"],
+    },
     {
       slug: "best-app-store-screenshot-tools-for-mac",
       title: "Mac के लिए सर्वश्रेष्ठ App Store स्क्रीनशॉट टूल्स (2026)",
