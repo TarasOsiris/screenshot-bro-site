@@ -60,65 +60,69 @@ export function ComparisonShell({
 
   return (
     <ContentLayout>
-      <article className="max-w-3xl mx-auto prose-policy">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: buildComparisonArticleJsonLd(slug, locale) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: breadcrumb }}
-        />
+      {/* The CTA lives outside <article>: `.prose-policy a` is specificity
+          0-1-1 and would repaint the store button's white label accent-blue,
+          on top of the blue gradient. BlogArticleShell has the same shape. */}
+      <div className="max-w-3xl mx-auto">
+        <article className="prose-policy">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: buildComparisonArticleJsonLd(slug, locale) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: breadcrumb }}
+          />
 
-        <p className="meta">
-          Comparison · {page.readTime} · Checked {checked}
-        </p>
-        <h1>{page.heading}</h1>
-        {tldr ? (
-          <p>
-            <strong>Short answer:</strong> {tldr}
+          <p className="meta">
+            Comparison · {page.readTime} · Checked {checked}
           </p>
-        ) : null}
-        <p>
-          Details about {page.competitor} were checked in {checked} on{" "}
-          {page.checkedAgainst}; pricing and features change, so verify there
-          before deciding. If something here is out of date,{" "}
-          <a href="/support">tell us</a> and we will fix it.
-        </p>
+          <h1>{page.heading}</h1>
+          {tldr ? (
+            <p>
+              <strong>Short answer:</strong> {tldr}
+            </p>
+          ) : null}
+          <p>
+            Details about {page.competitor} were checked in {checked} on{" "}
+            {page.checkedAgainst}; pricing and features change, so verify there
+            before deciding. If something here is out of date,{" "}
+            <a href="/support">tell us</a> and we will fix it.
+          </p>
 
-        {children}
+          {children}
 
-        {faqs.length > 0 ? (
-          <section>
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{ __html: buildFaqJsonLd(faqs) }}
-            />
-            <h2>FAQ</h2>
-            {faqs.map((faq) => (
-              <div key={faq.question}>
-                <h3>{faq.question}</h3>
-                <p>{faq.answer}</p>
-              </div>
-            ))}
-          </section>
-        ) : null}
-
-        {related.length > 0 ? (
-          <section>
-            <h2>Related reading</h2>
-            <ul>
-              {related.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href}>{link.label}</a> — {link.description}
-                </li>
+          {faqs.length > 0 ? (
+            <section>
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: buildFaqJsonLd(faqs) }}
+              />
+              <h2>FAQ</h2>
+              {faqs.map((faq) => (
+                <div key={faq.question}>
+                  <h3>{faq.question}</h3>
+                  <p>{faq.answer}</p>
+                </div>
               ))}
-            </ul>
-          </section>
-        ) : null}
+            </section>
+          ) : null}
 
+          {related.length > 0 ? (
+            <section>
+              <h2>Related reading</h2>
+              <ul>
+                {related.map((link) => (
+                  <li key={link.href}>
+                    <a href={link.href}>{link.label}</a> — {link.description}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
+        </article>
         <BlogCTA message={ctaMessage} buttonLabel={ctaButtonLabel} />
-      </article>
+      </div>
     </ContentLayout>
   );
 }
