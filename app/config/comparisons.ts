@@ -6,8 +6,8 @@ import {
 
 // Single source of truth for the /vs section. One entry here drives the hub
 // matrix, its group lists and ItemList schema, the sitemap, llms.txt, and the
-// ComparisonShell lookup. Adding a page = one entry + the route file + one
-// routes.ts line. Re-verifying a competitor = bump `lastVerified` only.
+// ComparisonShell lookup. Adding a page = one entry + the route file + a pair
+// of routes.ts lines (base and `:locale`). Re-verifying = bump `lastVerified`.
 
 export type ComparisonGroup = "native" | "browser" | "automation" | "design";
 

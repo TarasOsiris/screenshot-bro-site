@@ -1,5 +1,5 @@
 import { isLocaleCode, type LocaleCode } from "~/config/localization";
-import { data, useLoaderData } from "react-router";
+import { data } from "react-router";
 import type { Route } from "./+types/vs.butterkit";
 import {
   ComparisonShell,
@@ -32,7 +32,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) =>
 const ROWS: ComparisonRow[] = [
   {
     factor: "Platform & install",
-    them: "Native Mac app only — macOS 26 (Tahoe) or later, Apple silicon recommended and Intel supported, 8 GB RAM minimum. Installed from a direct .dmg, the Mac App Store, or the Homebrew cask. No iPad, iPhone, Windows or web version, and the roadmap rules out the last two",
+    them: "Native Mac app only, macOS 26 (Tahoe) or later; Apple silicon recommended, Intel supported. Direct .dmg, Mac App Store or Homebrew cask. No iPad, iPhone, Windows or web version",
     us: SCREENSHOT_BRO_FACTS.platform,
   },
   {
@@ -42,12 +42,12 @@ const ROWS: ComparisonRow[] = [
   },
   {
     factor: "Price model",
-    them: "Published on the site: Pro is $99 one-time, listed down from $149, valid on 5 Macs, with a 14-day money-back guarantee and a 50% discount for students, teachers, veterans and first responders. An optional Supporter plan is $10/month or $39/year. The Mac App Store build sells its own unlocks instead, including a $99.99 lifetime (August 2026)",
+    them: "Published: Pro is $99 one-time (down from $149), good for 5 Macs, with a 14-day refund; an optional Supporter plan is $10/month or $39/year. The Mac App Store build sells its own unlocks (August 2026)",
     us: SCREENSHOT_BRO_FACTS.priceModel,
   },
   {
     factor: "Free tier limits",
-    them: "Unlimited projects and artboards, on-device translation, templates and the Simulator capture tool. Note that its pricing page lists “All 50 App Store languages” and “Upload to App Store Connect” under Free while its Pro documentation scopes cloud translation and App Store Connect management to Pro — the two pages do not quite agree",
+    them: "Unlimited projects and artboards, on-device translation, templates and Simulator capture. Its pricing page and its Pro docs disagree on whether all 50 languages and App Store Connect upload are included",
     us: SCREENSHOT_BRO_FACTS.freeTier,
   },
   {
@@ -57,7 +57,7 @@ const ROWS: ComparisonRow[] = [
   },
   {
     factor: "Device frames",
-    them: "Real-time 3D models rendered in Metal, freely rotatable and angle-adjustable, with show/hide notch and custom bezels: iPhone 17 Pro Max, iPhone 15 Pro Max “and more”, iPad Pro 11\" and 12.9\", Apple Watch Series 11 and Ultra, MacBook Pro 16\", Pixel 10 Pro, and a generic device",
+    them: "Real-time 3D rendered in Metal, freely rotatable, with show/hide notch: iPhone 17 Pro Max, iPhone 15 Pro Max “and more”, iPad Pro 11\" and 12.9\", Apple Watch Series 11 and Ultra, MacBook Pro 16\", Pixel 10 Pro",
     us: SCREENSHOT_BRO_FACTS.frames,
   },
   {
@@ -77,12 +77,12 @@ const ROWS: ComparisonRow[] = [
   },
   {
     factor: "Localization",
-    them: "About 19 languages free on-device through Apple's Translation framework. Reaching all 50 App Store languages needs a cloud model and your own API key — OpenAI, Gemini, Claude, OpenRouter, or any OpenAI-compatible endpoint including local models. Adds custom translation instructions for brand voice, per-block “do not translate”, and delta re-translation of only what changed",
+    them: "About 19 languages free on-device; all 50 App Store languages need a cloud model and your own API key (OpenAI, Gemini, Claude, OpenRouter or a local endpoint), with custom translation instructions and delta re-translation",
     us: SCREENSHOT_BRO_FACTS.localization,
   },
   {
     factor: "App Store Connect upload",
-    them: "Built in through the official App Store Connect API, using a Team Key with the App Manager role stored in the macOS Keychain. Uploads each artboard into the right display-size and localization slot, and sends listing metadata — description, keywords, subtitle, what's new, promotional text — skipping any field left empty",
+    them: "Built in through the official API, with a Team Key in the Keychain; uploads each artboard into the right display-size and locale slot, and sends the listing metadata fields you filled in",
     us: SCREENSHOT_BRO_FACTS.ascUpload,
   },
   {
@@ -92,7 +92,7 @@ const ROWS: ComparisonRow[] = [
   },
   {
     factor: "Export formats & modes",
-    them: "PNG or JPG, with a per-export scale (1x recommended), optional multisample anti-aliasing, and a choice of including the background plane or exporting transparent. Batch export selected artboards, or upload straight to App Store Connect",
+    them: "PNG or JPG, with a per-export scale (1x recommended), optional anti-aliasing, and a choice of background plane or transparent. Batch export, or upload straight to App Store Connect",
     us: SCREENSHOT_BRO_FACTS.export,
   },
   {
@@ -102,12 +102,12 @@ const ROWS: ComparisonRow[] = [
   },
   {
     factor: "Automation / API",
-    them: "An MCP server with 42 tools across five namespaces (Document, Design, Export, Localization, App Store Connect) documented for Cursor, Claude Code and OpenAI Codex — the app has to be running with a document open. Plus a built-in Xcode Simulator capture tool that reads localizations from your String Catalog, and folder linking that stays in sync with a Fastlane screenshots directory. No CLI",
+    them: "MCP server with 42 tools across five namespaces, for Cursor, Claude Code and Codex, with the app running and a document open. Plus Xcode Simulator capture and fastlane folder linking. No CLI",
     us: SCREENSHOT_BRO_FACTS.automation,
   },
   {
     factor: "Offline & file ownership",
-    them: "Runs locally; the internet is only needed for licence activation, cloud translation and uploads. Documents are .butterkit packages saved anywhere on disk, but the format is not publicly documented. Sandboxed, with App Store Connect and AI keys in the Keychain; analytics are opt-out",
+    them: "Offline apart from cloud translation and uploads; .butterkit packages anywhere on disk, format not publicly documented; sandboxed, keys in the Keychain",
     us: SCREENSHOT_BRO_FACTS.offlineFiles,
   },
   {
@@ -129,9 +129,9 @@ const FAQS: BlogFaqItem[] = [
       "There is a permanent free tier with unlimited projects and artboards, but every export carries a “Made with ButterKit” watermark until you buy Pro. Pro is $99 one-time on ButterKit's site (listed down from $149), covers 5 Macs and comes with a 14-day money-back guarantee; the Mac App Store build sells its own unlocks. One thing to check yourself: the pricing page lists all 50 languages and App Store Connect upload under Free, while the Pro documentation scopes cloud translation and App Store Connect management to Pro.",
   },
   {
-    question: "Does ButterKit upload to Google Play?",
+    question: "Is Screenshot Bro free?",
     answer:
-      "No. ButterKit has Google Play size presets and a Pixel 10 Pro device model, so you can design and export Play assets from it, but there is no Play upload — its own roadmap lists “Google Play Store support” under Exploring. Screenshot Bro uploads to Google Play through the Play Developer API with a service account, staged as a Play edit you confirm, and that is included on the free tier.",
+      "Yes, with count limits rather than a time limit. The free tier gives you one project, three rows and five templates per row, with every device frame, shape and locale, no watermark, and App Store Connect and Google Play upload included. Pro removes the count limits and is sold as a lifetime purchase or a subscription; the price is shown in the app.",
   },
   {
     question: "Can Screenshot Bro capture screenshots from the Xcode Simulator?",

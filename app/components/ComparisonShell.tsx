@@ -60,9 +60,12 @@ export function ComparisonShell({
 
   return (
     <ContentLayout>
-      {/* The CTA lives outside <article>: `.prose-policy a` is specificity
-          0-1-1 and would repaint the store button's white label accent-blue,
-          on top of the blue gradient. BlogArticleShell has the same shape. */}
+      {/* The CTA lives outside <article>: app.css is unlayered, so
+          `.prose-policy a` beats anything Tailwind emits into @layer utilities
+          no matter the specificity — inside, it repaints the store button's
+          white label accent-blue on the blue gradient. Lowering the rule's
+          specificity (`:where()`) therefore does not help; only not matching
+          the element does. BlogArticleShell and vs._index have the same shape. */}
       <div className="max-w-3xl mx-auto">
         <article className="prose-policy">
           <script
