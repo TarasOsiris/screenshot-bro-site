@@ -58,7 +58,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
   ]);
 };
 
-export const EFFECTIVE_DATE = "August 21, 2026";
+export const EFFECTIVE_DATE = "August 25, 2026";
 const DEVELOPER_NAME = "Nineva Studios";
 const DEVELOPER_EMAIL = "tleskiv@ninevastudios.com";
 
@@ -387,6 +387,21 @@ export default function Privacy() {
               / background lifecycle records
             </li>
             <li>
+              <code>$screen</code> — one record each time you open one of the
+              App&apos;s own windows or full-screen panels, carrying that
+              window&apos;s fixed internal name but nothing about what is in it.
+              The complete list of names is{" "}
+              <code>editor</code>, <code>no_project</code>,{" "}
+              <code>new_project</code>, <code>projects</code>,{" "}
+              <code>settings</code>, <code>help</code>,{" "}
+              <code>onboarding</code>, <code>paywall</code>,{" "}
+              <code>purchase_celebration</code>,{" "}
+              <code>export_destination</code>, <code>showcase_export</code>,{" "}
+              <code>asc_upload</code>, <code>asc_metadata</code>,{" "}
+              <code>google_play_upload</code>, <code>manage_locales</code>, and{" "}
+              <code>translation_overview</code>
+            </li>
+            <li>
               <code>onboarding_started</code>, <code>onboarding_completed</code>,{" "}
               <code>onboarding_skipped</code>
             </li>
@@ -427,20 +442,26 @@ export default function Privacy() {
             involved, the export format, which destination was chosen, whether an
             upload succeeded or was cancelled, the identifier of one of{" "}
             {SITE_NAME}&apos;s own bundled templates, the name of one of the
-            automation server&apos;s own tools. Alongside them, the
-            analytics service records the App version and build, the platform,
-            your device model, operating system version, language, time zone and
-            screen size — the same class of technical context as a crash report.
+            automation server&apos;s own tools. Each event also carries the name
+            of the window you were on when it happened, taken from the same fixed
+            list above, so that a milestone can be read in context. Alongside
+            them, the analytics service records the App version and build, the
+            platform, your device model, operating system version, language, time
+            zone and screen size — the same class of technical context as a crash
+            report.
           </p>
           <p>
             <strong>What is never sent.</strong> No project, row, or language
             names. No screenshots, imported images, custom fonts, or any text you
-            write. No file names or file paths. No record of what you click,
-            type, select, scroll, or hover over. No screen recordings or session
-            replay. The App enforces this in code rather than by convention: an
-            event property must be one of a fixed list of names, and any free
-            text on a property outside a small allow-list of {SITE_NAME}&apos;s
-            own vocabulary is discarded before the event leaves your device.
+            write. No file names or file paths. No record of what you type,
+            select, scroll, or hover over, and no record of the individual
+            buttons, menus, or controls you click — only which of the App&apos;s
+            own windows and panels were opened, by the fixed internal names
+            listed above. No screen recordings or session replay. The App
+            enforces this in code rather than by convention: an event property
+            must be one of a fixed list of names, and any free text on a property
+            outside a small allow-list of {SITE_NAME}&apos;s own vocabulary is
+            discarded before the event leaves your device.
           </p>
           <p>
             <strong>Identifiers and location.</strong> Events are labelled with
