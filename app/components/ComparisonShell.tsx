@@ -27,9 +27,20 @@ export type ComparisonRow = {
 const DEFAULT_CTA =
   "Try Screenshot Bro on one real listing — the free tier exports watermark-free, so you can judge it against any tool here.";
 
-// Shell for every /vs page: meta comes from buildComparisonMeta in the route,
-// everything else (JSON-LD, breadcrumb, verification stamp, FAQ, related
-// reading, CTA) is derived here from the page's entry in comparisons.ts.
+const COMPARISON_BREADCRUMB_NAMES: Record<LocaleCode, string> = {
+  en: "Comparisons",
+  es: "Comparativas",
+  zh: "对比评测",
+  ja: "ツール比較",
+  de: "Vergleiche",
+  fr: "Comparatifs",
+  pt: "Comparações",
+  it: "Confronti",
+  ko: "비교",
+  ar: "المقارنات",
+  hi: "तुलना",
+};
+
 export function ComparisonShell({
   slug,
   children,
@@ -54,7 +65,7 @@ export function ComparisonShell({
   const page = getComparisonPage(slug);
   const checked = formatMonthYear(page.lastVerified);
   const breadcrumb = buildBreadcrumbJsonLd([
-    { name: locale === "es" ? "Comparativas" : locale === "zh" ? "对比评测" : locale === "ja" ? "ツール比較" : "Comparisons", path: localizedPath(locale, "/vs") },
+    { name: COMPARISON_BREADCRUMB_NAMES[locale] || COMPARISON_BREADCRUMB_NAMES.en, path: localizedPath(locale, "/vs") },
     { name: page.heading, path: localizedPath(locale, comparisonPath(slug)) },
   ]);
 
@@ -90,7 +101,7 @@ export function ComparisonShell({
             Details about {page.competitor} were checked in {checked} on{" "}
             {page.checkedAgainst}; pricing and features change, so verify there
             before deciding. If something here is out of date,{" "}
-            <a href="/support">tell us</a> and we will fix it.
+            <a href={localizedPath(locale, "/support")}>tell us</a> and we will fix it.
           </p>
 
           {children}
@@ -117,14 +128,14 @@ export function ComparisonShell({
               <ul>
                 {related.map((link) => (
                   <li key={link.href}>
-                    <a href={link.href}>{link.label}</a> — {link.description}
+                    <a href={localizedPath(locale, link.href)}>{link.label}</a> — {link.description}
                   </li>
                 ))}
               </ul>
             </section>
           ) : null}
         </article>
-        <BlogCTA message={ctaMessage} buttonLabel={ctaButtonLabel} />
+        <BlogCTA message={ctaMessage} buttonLabel={ctaButtonLabel} locale={locale} />
       </div>
     </ContentLayout>
   );

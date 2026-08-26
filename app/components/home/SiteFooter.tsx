@@ -23,10 +23,7 @@ const DEFAULT_COPY = getHomeCopy("en");
 
 function getSecondaryLinkHref(locale: LocaleCode, link: SecondaryLink): string {
   if (link.external) return link.href;
-  if (link.uiKey === "blog" || link.uiKey === "docs") {
-    return localizedPath(locale, link.href);
-  }
-  return link.href;
+  return localizedPath(locale, link.href);
 }
 
 export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {

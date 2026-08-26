@@ -15,6 +15,20 @@ const KEEP_READING_COPIES: Record<LocaleCode, string> = {
   ko: "계속 읽기"
 };
 
+const CATEGORY_NAMES: Record<LocaleCode, Record<string, string>> = {
+  en: { Guide: "Guide", Reference: "Reference", Comparison: "Comparison" },
+  es: { Guide: "Guía", Reference: "Referencia", Comparison: "Comparativa" },
+  zh: { Guide: "指南", Reference: "参考", Comparison: "对比" },
+  hi: { Guide: "गाइड", Reference: "संदर्भ", Comparison: "तुलना" },
+  fr: { Guide: "Guide", Reference: "Référence", Comparison: "Comparatif" },
+  ar: { Guide: "دليل", Reference: "مرجع", Comparison: "مقارنة" },
+  de: { Guide: "Leitfaden", Reference: "Referenz", Comparison: "Vergleich" },
+  ja: { Guide: "ガイド", Reference: "リファレンス", Comparison: "比較" },
+  pt: { Guide: "Guia", Reference: "Referência", Comparison: "Comparação" },
+  it: { Guide: "Guida", Reference: "Riferimento", Comparison: "Confronto" },
+  ko: { Guide: "가이드", Reference: "참고자료", Comparison: "비교" },
+};
+
 export function RelatedPosts({
   currentSlug,
   locale = "en",
@@ -47,6 +61,7 @@ export function RelatedPosts({
       <ul className="space-y-4">
         {related.map((post) => {
           const href = locale === "en" ? `/blog/${post.slug}` : `/${locale}/blog/${post.slug}`;
+          const categoryLabel = CATEGORY_NAMES[locale]?.[post.category] || post.category;
           return (
             <li key={post.slug}>
               <a
@@ -55,7 +70,7 @@ export function RelatedPosts({
               >
                 <div className="flex items-center gap-3 mb-2">
                   <span className="px-2 py-0.5 rounded bg-accent/10 text-accent-light text-[11px] font-medium">
-                    {post.category}
+                    {categoryLabel}
                   </span>
                   <span className="text-[11px] text-white/60 font-mono">
                     {post.readTime}

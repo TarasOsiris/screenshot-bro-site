@@ -14,7 +14,7 @@ const DEFAULT_HOME_LINK_LABEL = "See what Screenshot Bro does on Mac and iPad";
 
 export function BlogCTA({
   message,
-  buttonLabel = PRIMARY_CTA_LABEL,
+  buttonLabel,
   homeLinkLabel,
   locale = "en",
 }: {
@@ -24,6 +24,7 @@ export function BlogCTA({
   locale?: LocaleCode;
 }) {
   const copy = getHomeCopy(locale);
+  const resolvedButtonLabel = buttonLabel ?? copy.primaryCtaLabel;
   // Descriptive anchors are authored in English, so only use them on the
   // English pages; translated posts fall back to already-translated UI copy
   // and link to their own locale's homepage rather than across the hreflang
@@ -41,7 +42,7 @@ export function BlogCTA({
         className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-sm transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
       >
         <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
-        {buttonLabel}
+        {resolvedButtonLabel}
       </a>
       <p className="mt-4 text-sm">
         <a

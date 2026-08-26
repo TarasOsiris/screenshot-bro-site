@@ -761,7 +761,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
     socialImageAlt: "Screenshot Bro — native Mac- und iPad-App für App Store- und Google Play-Screenshots mit Geräterahmen, Verläufen und Lokalisierung",
     ui: { docs: "Dokumentation", redditCommunity: "Reddit-Community", followOnX: "Auf X folgen", followOnThreads: "Auf Threads folgen", homeLabel: `${SITE_NAME} Startseite`, read: "Lesen", watchOnInstagram: "Auf Instagram ansehen", productLabel: "Produkt", resourcesLabel: "Ressourcen", appScreenshots: "App-Screenshots", productHuntAlt: "ScreenshotBro App - Schöne App-Store-Screenshots gestalten und exportieren. | Product Hunt" },
     reel: { eyebrow: "Auf Instagram", title: "Eine 60-Sekunden-Tour durch die App.", description: "Sieh, wie Geräterahmen, Ebenen, lokalisierte Exporte und App Store Connect Upload in Screenshot Bro zusammenkommen." },
-    featureTitles: ["Multi-Template-Bearbeitung", "Geräterahmen", "Hintergründe & Spanning", "Formwerkzeuge + SVG", "Intelligente Ausrichtung", "Lokalisierter Export", "Upload zu App Store Connect", "Lokalisierung integriert", "Nativ für Mac & iPad", "iCloud Sync", "Eigene Schriften", "Projektvorlagen", "Tastaturkürzel", "Datenschutz zuerst", "Batch-Bildimport", "Kostenlos dauerhaft"],
+    featureTitles: ["Multi-Template-Bearbeitung", "Geräterahmen", "Hintergründe & Spanning", "Formwerkzeuge + SVG", "Intelligente Ausrichtung", "Lokalisierter Export", "Upload zu App Store Connect", "Lokalisierung integriert", "Nativ für Mac & iPad", "iCloud-Synchronisierung", "Eigene Schriften", "Projektvorlagen", "Tastaturkürzel", "Datenschutz zuerst", "Batch-Bildimport", "Kostenlos dauerhaft"],
     featureDescription: "Fokussierte Werkzeuge für mehrsprachige Store-Screenshots mit nativer Performance, wiederverwendbaren Templates und uploadfertigen Exporten.",
     withoutBroPoints: ["Jeden Screenshot manuell skalieren", "Geräterahmen einzeln kopieren", "Alles wegen einer Farbe neu exportieren", "Alles pro Sprache duplizieren", "Jedes PNG manuell hochladen"],
     withBroPoints: ["Ein Template aktualisiert alle Varianten", "Geräterahmen per Klick hinzufügen", "Texte pro Locale und Form pflegen", "Alle Sprachen mit einem Klick exportieren", "Direkt zu App Store Connect hochladen"],
@@ -904,27 +904,47 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "¿Screenshot Bro es gratis?",
         answer:
-          "Sí. El nivel gratuito no caduca: 1 proyecto con hasta 3 filas y 5 plantillas por fila, con acceso completo a todos los marcos, formas y locales y exportaciones sin marca de agua. Pro elimina esos límites y habilita la subida a App Store Connect y la sincronización por iCloud.",
+          "Sí. El nivel gratuito no caduca: 1 proyecto con hasta 3 filas y 5 plantillas por fila, con acceso completo a todos los marcos de dispositivos, formas y locales, exportaciones sin marca de agua, subida a App Store Connect y Google Play, y sincronización por iCloud. Pro elimina los límites de proyectos, filas y plantillas.",
+      },
+      {
+        question: "¿En qué se diferencia de un generador de capturas de App Store basado en web?",
+        answer:
+          "Screenshot Bro es una aplicación nativa para Mac, iPad e iPhone en lugar de una herramienta de navegador, por lo que los proyectos, capturas y tipografías se guardan en el disco y la edición diaria no requiere cuenta ni conexión a internet. El renderizado y la exportación por lotes se ejecutan en tu propio hardware en lugar de un servidor. Si estás en Windows o Linux, deseas colaborar en una sesión de navegador compartida o solo necesitas una o dos imágenes, una herramienta web es una mejor opción; nuestra página de alternativas cubre esos casos.",
       },
       {
         question: "¿Qué necesito para usarlo?",
         answer:
-          "macOS 15 (Sequoia) o posterior en Mac, o iPadOS 18 o posterior en iPad. No hace falta dispositivo acompañante, cuenta ni conexión a internet para editar.",
+          "macOS 15 (Sequoia) o posterior en Mac, iPadOS 18 o posterior en iPad, o iOS 18 o posterior en iPhone. No hace falta dispositivo acompañante, cuenta ni conexión a internet para la edición diaria.",
       },
       {
         question: "¿Mis datos salen de mi dispositivo?",
         answer:
-          "Por defecto, no. Los proyectos, capturas y tipografías se guardan localmente. La traducción automática usa el framework Translation de Apple en el dispositivo: sin claves API y sin servidores externos. La sincronización iCloud Drive es opcional y va por tu cuenta personal de iCloud. Lo que sí se envía son informes de fallos anónimos y recuentos anónimos de hitos como «una exportación finalizada», para saber qué corregir y mejorar: nunca tus proyectos, imágenes ni el texto que escribes.",
+          "Tu trabajo no. Los proyectos, capturas y tipografías se guardan en tu disco. La traducción automática se ejecuta en el dispositivo a través del framework Translation de Apple: sin claves API ni servidores externos. La sincronización opcional con iCloud Drive usa tu cuenta personal de iCloud; no gestionamos servidores intermediarios. Lo único que se envía es un informe de fallos anónimo cuando algo se rompe, además de recuentos anónimos de hitos como «una exportación finalizada» para saber qué mejorar: nunca tus proyectos, imágenes ni el texto que escribes.",
       },
       {
         question: "¿Cómo funciona la localización?",
         answer:
-          "Elige entre 30 idiomas predefinidos o añade el tuyo. La traducción automática rellena el texto que falte en el dispositivo. Las traducciones se guardan como sobreescrituras por locale, así diseñas una vez y se aplica a todos los idiomas. La exportación organiza las carpetas por locale para subir directo a App Store Connect.",
+          "Elige entre 30 idiomas predefinidos o añade tu propio código. La traducción automática en el dispositivo rellena el texto que falte. Las traducciones se guardan como modificaciones de texto por idioma, por lo que el diseño, color e imágenes se comparten entre todos los idiomas: diseña una vez y publica en cualquier idioma. Las exportaciones se organizan en carpetas por idioma listas para App Store Connect.",
       },
       {
-        question: "¿Puedo subir directo a App Store Connect?",
+        question: "¿Puedo crear capturas para Google Play también?",
         answer:
-          "Sí. Conecta tu clave API de App Store Connect una vez (Issuer ID, Key ID y archivo .p8) y Screenshot Bro detecta el display type correcto, casa los locales con las localizaciones de App Store Connect y reemplaza las capturas en una sola pasada — sin arrastrar archivos en el navegador.",
+          "Sí. Las filas para teléfonos y tablets Android se renderizan junto a las de iPhone, iPad y Mac en el mismo proyecto. Cada categoría de dispositivo viene preconfigurada con las dimensiones exactas en píxeles que acepta la tienda correspondiente.",
+      },
+      {
+        question: "¿Puedo arrastrar capturas de simuladores y dispositivos directamente?",
+        answer:
+          "Sí. Arrastra una carpeta de capturas y Screenshot Bro dirigirá cada una a la fila correcta según su tamaño en píxeles: las de iPhone a la fila de iPhone, iPad a iPad y Android a Android. Un botón de captura de un clic en cada plantilla también inserta la captura de simulador más reciente directamente en el lienzo.",
+      },
+      {
+        question: "¿Puedo subir directo a App Store Connect desde la app?",
+        answer:
+          "Sí. Configura tu clave API de App Store Connect una vez (Issuer ID, Key ID y archivo .p8). Screenshot Bro detecta automáticamente el display type correcto para cada fila, casa los idiomas del proyecto con las localizaciones de App Store Connect y reemplaza las capturas existentes en una sola pasada, sin arrastrar archivos en el navegador.",
+      },
+      {
+        question: "¿Se sincroniza entre dispositivos?",
+        answer:
+          "Sí: la sincronización opcional con iCloud Drive mantiene los proyectos, capturas y fuentes disponibles en cada Mac e iPad con tu misma cuenta de Apple. Los conflictos se resuelven campo por campo con la regla del último cambio (last-writer-wins), por lo que editar el mismo proyecto en varios dispositivos se sincroniza a la perfección.",
       },
     ],
     ui: {
@@ -1055,27 +1075,47 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Screenshot Bro 是免费的吗？",
         answer:
-          "是的。免费版没有时间限制：1 个项目，最多 3 行、每行 5 个模板，可使用全部设备外框、形状和语言，导出无水印。Pro 版解除这些限制，并启用 App Store Connect 上传与 iCloud 同步。",
+          "是的。免费版本没有时间限制，支持保留 1 个项目、最多 3 行及每行 5 个模版，可无限制使用所有机型框架、图形与多语言，导出绝无水印，且包含 App Store Connect 和 Google Play 上传以及 iCloud 同步功能。升级至 Pro 版可解锁项目、行数和模版数量限制。",
       },
       {
-        question: "运行需要什么？",
+        question: "它与基于网页的 App Store 截图生成器有何不同？",
         answer:
-          "Mac 需要 macOS 15（Sequoia）或更新版本，iPad 需要 iPadOS 18 或更新版本。日常编辑无需配套设备、账号或网络连接。",
+          "Screenshot Bro 是一款专为 Mac、iPad 和 iPhone 打造的原生应用，而不是网页工具。因此项目、截图和字体完全保存在本地磁盘上，日常编辑无需注册账号，也无需联网。渲染和批量导出均利用你本地设备的硬件性能，而非远端服务器。如果你使用 Windows 或 Linux、需要多人网页协同，或者只需要制作一两张图片，网页版截图工具可能更适合——替代方案页面涵盖了这些场景。",
       },
       {
-        question: "我的数据会离开设备吗？",
+        question: "运行需要什么系统环境？",
         answer:
-          "默认不会。项目、截图和字体都保存在本地。自动翻译通过苹果的 Translation 框架在设备本地运行——无 API key、无第三方服务器。可选的 iCloud Drive 同步使用你自己的 iCloud 账号，我们没有任何中间服务器。确实会发送的是匿名崩溃报告，以及诸如“导出完成”这类里程碑的匿名计数，以便我们知道该修复和改进什么——绝不包括你的项目、图片或你撰写的文字。",
+          "Mac 需运行 macOS 15 (Sequoia) 或更高版本，iPad 需 iPadOS 18 或更高版本，iPhone 需 iOS 18 或更高版本。日常编辑无需辅助设备、无需注册账号，也无需网络连接。",
       },
       {
-        question: "本地化是怎么运作的？",
+        question: "我的数据会离开本地设备吗？",
         answer:
-          "可从 30 种语言预设中选择，也可以添加自定义语言代码。自动翻译在本地补齐缺失文案。翻译保存为按语言的文本覆盖，所以布局、颜色、图片在所有语言中共用——设计一次，多语言交付。导出按语言分文件夹，可直接上传到 App Store Connect。",
+          "你的创作内容绝不会离开设备。项目、截图和字体均保存在本地磁盘中。自动翻译完全通过 Apple 本地端 Translation 框架运行，无需 API 密钥或第三方服务器。可选的 iCloud Drive 同步直接使用你的个人 iCloud 账户，我们不架设任何中间服务器。我们仅在应用崩溃时接收匿名错误报告，以及诸如「完成了一次导出」等匿名里程碑计数以持续改进产品，绝不会收集你的项目、图片或输入的文字。",
       },
       {
-        question: "可以直接上传到 App Store Connect 吗？",
+        question: "多语言本地化是如何运作的？",
         answer:
-          "可以。一次配置 App Store Connect API Key（Issuer ID、Key ID 和 .p8 文件）。Screenshot Bro 会自动识别每行的显示类型，把项目语言匹配到 App Store Connect 的本地化，并一次性替换所有截图——无需在浏览器里拖拽。",
+          "你可以从 30 种预设语言中选择，也可以自定义语言代码。设备端自动翻译会补全缺失的文案。翻译内容以每种语言的文本覆盖形式保存，因此排版、配色和图像在所有语言之间共享——只需设计一次，即可发布所有语言版本。导出时会自动按语言建立文件夹，App Store Connect 可以直接读取。",
+      },
+      {
+        question: "我可以制作 Google Play 截图吗？",
+        answer:
+          "可以。Android 手机和平板截图行可以与 iPhone、iPad 和 Mac 放在同一个项目中并排设计。每个设备分类均预设了对应商店官方认可的像素尺寸。",
+      },
+      {
+        question: "可以直接拖入模拟器和真机截图吗？",
+        answer:
+          "可以。直接拖入包含截图的文件夹，Screenshot Bro 会根据像素尺寸自动将每张截图分配到正确的行——iPhone 截图进 iPhone 行，iPad 进 iPad 行，Android 进 Android 行。每个模版上的一键截取按钮还可以直接将最新的模拟器截图提取到画布中。",
+      },
+      {
+        question: "可以在应用内直接上传到 App Store Connect 吗？",
+        answer:
+          "可以。只需配置一次 App Store Connect API 密钥（Issuer ID、Key ID 及 .p8 密钥文件），Screenshot Bro 就会自动识别每行的正确展示类型（display type），将项目语言与 App Store Connect 语言设置精准匹配，并一键替换已有截图——彻底告别在浏览器中手动拖拽文件的繁琐。",
+      },
+      {
+        question: "它能在多台设备之间同步吗？",
+        answer:
+          "可以——开启可选的 iCloud Drive 同步后，登录同一 Apple 账户的所有 Mac 和 iPad 都可以无缝访问项目、截图和字体。冲突采用字段级“以最后写入为准”规则合并，因此在多台设备上编辑同一项目也能平滑收敛。",
       },
     ],
     navItems: [
@@ -1203,29 +1243,49 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ],
     faqs: [
       {
-        question: "क्या Screenshot Bro फ्री है?",
+        question: "क्या Screenshot Bro मुफ़्त है?",
         answer:
-          "हां। Free tier की कोई time limit नहीं है: 1 project, अधिकतम 3 rows और हर row में 5 templates, सभी device frames, shapes और locales तक पूरी पहुंच, बिना watermark exports। Pro इन limits को हटाता है और App Store Connect upload व iCloud sync unlock करता है।",
+          "हाँ। मुफ़्त टियर असीमित समय के लिए है और आपको प्रति पंक्ति 5 टेम्प्लेट तक 3 पंक्तियों के साथ 1 प्रोजेक्ट रखने की अनुमति देता है — हर डिवाइस फ़्रेम, आकार और भाषा तक पूरी पहुँच, वॉटरमार्क-मुक्त निर्यात, App Store Connect और Google Play अपलोड, तथा iCloud सिंक शामिल है। Pro वर्ज़न प्रोजेक्ट, पंक्ति और टेम्प्लेट की सीमाओं को हटा देता है।",
       },
       {
-        question: "इसे चलाने के लिए क्या चाहिए?",
+        question: "यह वेब-आधारित App Store स्क्रीनशॉट जेनरेटर से कैसे अलग है?",
         answer:
-          "Mac पर macOS 15 (Sequoia) या उससे नया, या iPad पर iPadOS 18 या उससे नया। Editing के लिए न companion device चाहिए, न account, न internet connection।",
+          "Screenshot Bro ब्राउज़र टूल के बजाय एक नेटिव Mac, iPad और iPhone ऐप है, इसलिए प्रोजेक्ट, स्क्रीनशॉट और फ़ॉन्ट डिस्क पर रहते हैं और रोज़मर्रा के संपादन के लिए किसी खाते या इंटरनेट कनेक्शन की आवश्यकता नहीं होती है। रेंडरिंग और बैच निर्यात सर्वर के बजाय आपके अपने हार्डवेयर पर चलते हैं। यदि आप Windows या Linux पर हैं, किसी ब्राउज़र सत्र में सहयोग करना चाहते हैं, या केवल एक या दो छवियों की आवश्यकता है, तो एक वेब टूल बेहतर विकल्प है — विकल्प पृष्ठ उन मामलों को कवर करता है।",
       },
       {
-        question: "क्या मेरा data device से बाहर जाता है?",
+        question: "इसे चलाने के लिए क्या आवश्यकता है?",
         answer:
-          "Default रूप से नहीं। Projects, screenshots और fonts local में रहते हैं। Auto-translate Apple के on-device Translation framework से चलता है — कोई API key नहीं, कोई third-party server नहीं। Optional iCloud Drive sync आपके personal iCloud account से होता है; हमारा कोई intermediate server नहीं है। जो भेजा जाता है वह है anonymous crash reports और “एक export पूरा हुआ” जैसे milestones की anonymous गिनती, ताकि हमें पता चले क्या ठीक और बेहतर करना है — आपके projects, images या आपके लिखे text कभी नहीं।",
+          "Mac पर macOS 15 (Sequoia) या बाद का वर्ज़न, iPad पर iPadOS 18 या बाद का, या iPhone पर iOS 18 या बाद का। रोज़मर्रा के संपादन के लिए किसी साथी डिवाइस, खाते या इंटरनेट कनेक्शन की आवश्यकता नहीं है।",
       },
       {
-        question: "Localization कैसे काम करती है?",
+        question: "क्या मेरा डेटा मेरे डिवाइस से बाहर जाता है?",
         answer:
-          "30 language presets में से चुनें, या custom code define करें। Auto-translate missing text on-device भर देता है। Translations per-locale text overrides के रूप में save होती हैं, इसलिए layout, color और images सभी locales में share रहते हैं — design एक बार, deploy हर भाषा में। Exports locale folders में organize होते हैं जिन्हें App Store Connect सीधे ले लेता है।",
+          "आपका काम नहीं जाता। प्रोजेक्ट, स्क्रीनशॉट और फ़ॉन्ट डिस्क पर रहते हैं। स्वचालित अनुवाद Apple के ऑन-डिवाइस Translation फ़्रेमवर्क के माध्यम से चलता है — कोई API कुंजी या तृतीय-पक्ष सर्वर नहीं। वैकल्पिक iCloud Drive सिंक आपके व्यक्तिगत iCloud खाते का उपयोग करता है; हम कोई मध्यस्थ सर्वर संचालित नहीं करते हैं। जब कोई समस्या आती है तो केवल एक अनाम क्रैश रिपोर्ट भेजी जाती है, साथ ही सुधार के लिए 'एक निर्यात पूरा हुआ' जैसे अनाम माइलस्टोन काउंट — कभी भी आपके प्रोजेक्ट, छवियां या आपके द्वारा लिखा गया टेक्स्ट नहीं।",
       },
       {
-        question: "क्या App Store Connect पर direct upload हो सकता है?",
+        question: "स्थानीयकरण (Localization) कैसे काम करता है?",
         answer:
-          "हां। App Store Connect API key एक बार configure करें (Issuer ID, Key ID और .p8 file)। Screenshot Bro हर row के लिए सही display type detect करता है, project locales को App Store Connect localizations से match करता है और एक pass में मौजूदा screenshots replace कर देता है — browser में drag-drop की जरूरत नहीं।",
+          "30 भाषा प्रीसेट में से चुनें, या अपना स्वयं का कोड परिभाषित करें। ऑटो-ट्रांसलेट डिवाइस पर छूटे हुए टेक्स्ट को भरता है। अनुवाद प्रति-भाषा टेक्स्ट ओवरराइड के रूप में सहेजते हैं, इसलिए लेआउट, रंग और छवियां हर भाषा में साझा रहती हैं — एक बार डिज़ाइन करें, हर भाषा में शिप करें। निर्यात भाषा फ़ोल्डरों में व्यवस्थित होते हैं जिन्हें App Store Connect सीधे ले सकता है।",
+      },
+      {
+        question: "क्या मैं Google Play स्क्रीनशॉट भी बना सकता हूँ?",
+        answer:
+          "हाँ। एक ही प्रोजेक्ट में iPhone, iPad और Mac के साथ Android फ़ोन और टैबलेट पंक्तियाँ भी रेंडर होती हैं। प्रत्येक डिवाइस श्रेणी संबंधित स्टोर द्वारा स्वीकृत पिक्सेल आयामों पर पहले से सेट होती है।",
+      },
+      {
+        question: "क्या मैं सिम्युलेटर और डिवाइस स्क्रीनशॉट सीधे ड्रॉप कर सकता हूँ?",
+        answer:
+          "हाँ। स्क्रीनशॉट का एक फ़ोल्डर ड्रॉप करें और Screenshot Bro प्रत्येक को उसके पिक्सेल आकार के अनुसार सही पंक्ति में भेजता है — iPhone शॉट्स iPhone पंक्ति में, iPad शॉट्स iPad में, Android शॉट्स Android में। प्रत्येक टेम्प्लेट पर एक-क्लिक कैप्चर बटन सबसे हालिया सिम्युलेटर स्क्रीनशॉट को सीधे कैनवास में खींचता है।",
+      },
+      {
+        question: "क्या मैं ऐप के भीतर से सीधे App Store Connect पर अपलोड कर सकता हूँ?",
+        answer:
+          "हाँ। अपनी App Store Connect API कुंजी को एक बार कॉन्फ़िगर करें (Issuer ID, Key ID, और .p8 फ़ाइल)। Screenshot Bro प्रत्येक पंक्ति के लिए सही डिस्प्ले प्रकार का स्वतः पता लगाता है, आपके प्रोजेक्ट की भाषाओं को App Store Connect स्थानीयकरण से मिलाता है, और एक ही बार में मौजूदा स्क्रीनशॉट को बदल देता है — ब्राउज़र में ड्रैग-एंड-ड्रॉप की कोई आवश्यकता नहीं।",
+      },
+      {
+        question: "क्या यह विभिन्न डिवाइसों के बीच सिंक होता है?",
+        answer:
+          "हाँ — ऑप्ट-इन iCloud Drive सिंक आपके Apple खाते में साइन इन किए गए प्रत्येक Mac और iPad पर प्रोजेक्ट, स्क्रीनशॉट और फ़ॉन्ट उपलब्ध रखता है। विवादों को फ़ील्ड-दर-फ़ील्ड लास्ट-राइटर-विन्स के साथ सुचारू रूप से मर्ज किया जाता है।",
       },
     ],
     navItems: [
@@ -1360,27 +1420,47 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Screenshot Bro est-il gratuit ?",
         answer:
-          "Oui. La version gratuite n'expire jamais : 1 projet, jusqu'à 3 rangées et 5 templates par rangée, accès complet à tous les cadres, formes et locales, exports sans filigrane. Pro lève ces limites et active l'envoi vers App Store Connect et la sync iCloud.",
+          "Oui. L'offre gratuite est illimitée dans le temps et vous permet de conserver 1 projet avec jusqu'à 3 rangées et 5 modèles par rangée — accès complet à tous les gabarits d'appareils, formes et langues, exports sans filigrane, envoi direct vers App Store Connect et Google Play, et synchronisation iCloud inclus. La version Pro lève les limites de projets, rangées et modèles.",
+      },
+      {
+        question: "En quoi est-ce différent d'un générateur de captures App Store en ligne ?",
+        answer:
+          "Screenshot Bro est une application native pour Mac, iPad et iPhone et non un outil web dans le navigateur : vos projets, captures et polices restent sur votre disque, et l'édition quotidienne ne nécessite aucun compte ni connexion internet. Le rendu et l'export par lot s'exécutent sur votre propre matériel au lieu d'un serveur. Si vous travaillez sur Windows ou Linux, souhaitez collaborer dans le navigateur ou n'avez besoin que d'une ou deux images, un outil web sera plus adapté — notre page d'alternatives détaille ces cas.",
       },
       {
         question: "Que faut-il pour l'utiliser ?",
         answer:
-          "macOS 15 (Sequoia) ou plus récent sur Mac, ou iPadOS 18 ou plus récent sur iPad. Aucun appareil compagnon, compte ou connexion internet n'est requis pour éditer.",
+          "macOS 15 (Sequoia) ou version ultérieure sur Mac, iPadOS 18 ou ultérieur sur iPad, ou iOS 18 ou ultérieur sur iPhone. Aucun appareil compagnon, compte ou connexion internet requis pour l'édition quotidienne.",
       },
       {
         question: "Mes données quittent-elles mon appareil ?",
         answer:
-          "Par défaut, non. Projets, captures et polices restent en local. La traduction automatique passe par le framework Translation d'Apple sur l'appareil — pas de clé API, pas de serveur tiers. La sync iCloud Drive est optionnelle et utilise votre compte iCloud personnel ; nous n'opérons aucun serveur intermédiaire. Ce qui est envoyé : des rapports de plantage anonymes et des comptages anonymes d'étapes comme « un export terminé », pour savoir quoi corriger et améliorer — jamais vos projets, vos images ni le texte que vous écrivez.",
+          "Vos créations restent chez vous. Projets, captures et polices restent stockés sur votre disque. La traduction automatique utilise le framework Translation d'Apple directement sur l'appareil : sans clés API ni serveurs tiers. La synchronisation iCloud Drive facultative passe par votre compte personnel iCloud ; nous n'exploitons aucun serveur intermédiaire. Seul un rapport de plantage anonyme est envoyé en cas d'erreur, ainsi que des compteurs anonymes d'étapes clés comme « un export terminé » pour améliorer l'application — jamais vos projets, images ou textes saisis.",
       },
       {
         question: "Comment fonctionne la localisation ?",
         answer:
-          "Choisissez parmi 30 langues prédéfinies, ou ajoutez votre propre code. La traduction automatique remplit le texte manquant sur l'appareil. Les traductions sont enregistrées comme des surcharges texte par locale : layout, couleurs et images sont partagés entre toutes les langues. Conception unique, livraison dans chaque langue. L'export crée un dossier par locale, prêt pour App Store Connect.",
+          "Choisissez parmi 30 langues prédéfinies ou définissez votre propre code. La traduction automatique sur l'appareil comble les textes manquants. Les traductions sont enregistrées sous forme de surcharges par langue : mise en page, couleurs et images restent partagées entre toutes les langues — concevez une fois, publiez dans toutes les langues. Les exports sont organisés en dossiers par langue prêts pour App Store Connect.",
       },
       {
-        question: "Puis-je envoyer directement vers App Store Connect ?",
+        question: "Puis-je aussi créer des captures pour Google Play ?",
         answer:
-          "Oui. Configurez votre clé API App Store Connect une fois (Issuer ID, Key ID et fichier .p8). Screenshot Bro détecte le bon display type pour chaque rangée, fait correspondre vos locales aux localisations App Store Connect et remplace les captures existantes en une seule passe — sans glisser-déposer dans le navigateur.",
+          "Oui. Les rangées pour téléphones et tablettes Android s'affichent aux côtés de l'iPhone, de l'iPad et du Mac dans le même projet. Chaque catégorie d'appareil est préconfigurée aux dimensions en pixels exactes acceptées par chaque store.",
+      },
+      {
+        question: "Puis-je glisser-déposer directement des captures de simulateurs ou d'appareils ?",
+        answer:
+          "Oui. Glissez un dossier de captures et Screenshot Bro achemine chaque fichier vers la bonne rangée selon sa résolution en pixels : les captures iPhone vers la rangée iPhone, iPad vers iPad, Android vers Android. Un bouton de capture en un clic sur chaque modèle permet aussi d'insérer directement la capture de simulateur la plus récente.",
+      },
+      {
+        question: "Puis-je envoyer directement vers App Store Connect depuis l'application ?",
+        answer:
+          "Oui. Configurez votre clé API App Store Connect une seule fois (Issuer ID, Key ID et fichier .p8). Screenshot Bro détecte automatiquement le type d'affichage approprié pour chaque rangée, associe vos langues de projet aux localisations App Store Connect et remplace les captures existantes en une seule passe, sans glisser-déposer dans le navigateur.",
+      },
+      {
+        question: "L'application se synchronise-t-elle entre plusieurs appareils ?",
+        answer:
+          "Oui — la synchronisation facultative via iCloud Drive garde vos projets, captures et polices accessibles sur chaque Mac et iPad connecté à votre compte Apple. Les conflits sont fusionnés champ par champ (dernier enregistrement prioritaire) pour une synchronisation fluide.",
       },
     ],
     navItems: [
@@ -1518,27 +1598,47 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "هل Screenshot Bro مجاني؟",
         answer:
-          "نعم. النسخة المجانية بلا حد زمني: مشروع واحد، حتى 3 صفوف و5 قوالب لكل صف، مع وصول كامل إلى جميع إطارات الأجهزة والأشكال واللغات وتصدير بدون علامة مائية. تزيل خطة Pro هذه الحدود وتُفعّل الرفع إلى App Store Connect ومزامنة iCloud.",
+          "نعم. الباقة المجانية غير محدودة بوقت وتتيح لك الاحتفاظ بمشروع واحد مع ما يصل إلى 3 صفوف و 5 قوالب لكل صف — وصول كامل إلى كل إطار جهاز وشكل ولغة، وتصدير بدون علامات مائية، مع دعم الرفع المباشر إلى App Store Connect و Google Play ومزامنة iCloud. بينما تلغي باقة Pro القيود على عدد المشاريع والصفوف والقوالب.",
+      },
+      {
+        question: "كيف يختلف هذا التطبيق عن أدوات تصميم لقطات شاشة App Store عبر المتصفح؟",
+        answer:
+          "Screenshot Bro هو تطبيق أصلي لأجهزة Mac و iPad و iPhone وليس أداة ويب، مما يعني أن المشاريع ولقطات الشاشة والخطوط تبقى على القرص المحلي ولا يتطلب التحرير اليومي أي حساب أو اتصال بالإنترنت. تتم المعالجة والتصدير الجماعي على جهازك الخاص بدلاً من خوادم خارجية. إذا كنت تستخدم Windows أو Linux أو ترغب في العمل التشاركي عبر المتصفح، فإن أدوات الويب تناسبك أكثر — وتوضح صفحة البدائل تلك الحالات.",
       },
       {
         question: "ما الذي أحتاجه لتشغيله؟",
         answer:
-          "macOS 15 (Sequoia) أو أحدث على Mac، أو iPadOS 18 أو أحدث على iPad. لا حاجة إلى جهاز مرافق ولا حساب ولا اتصال إنترنت للتعديل اليومي.",
+          "نظام macOS 15 (Sequoia) أو أحدث على Mac، أو iPadOS 18 أو أحدث على iPad، أو iOS 18 أو أحدث على iPhone. لا يلزم جهاز إضافي، ولا حساب، ولا اتصال بالإنترنت للتحرير اليومي.",
       },
       {
         question: "هل تغادر بياناتي جهازي؟",
         answer:
-          "افتراضياً لا. تبقى المشاريع واللقطات والخطوط على القرص. تعمل الترجمة التلقائية عبر إطار Translation من Apple على الجهاز — بدون مفاتيح API ولا خوادم خارجية ولا تتبع إعلاني. مزامنة iCloud Drive اختيارية وتستخدم حسابك الشخصي على iCloud؛ لا نشغّل أي خوادم وسيطة. ما يُرسل فعلاً هو تقارير أعطال مجهولة المصدر وأعداد مجهولة لمراحل مثل «اكتمل التصدير»، لنعرف ما يجب إصلاحه وتحسينه — وليس مشاريعك أو صورك أو النص الذي تكتبه أبداً.",
+          "أعمالك ومشاريعك لا تغادر جهازك أبداً. تُحفظ المشاريع ولقطات الشاشة والخطوط محلياً. وتتم الترجمة التلقائية عبر إطار عمل Translation من Apple داخل الجهاز مباشرة بدون مفاتيح API أو خوادم وسيطة. تستخدم مزامنة iCloud Drive الاختيارية حسابك الشخصي في iCloud، ونحن لا ندير أي خوادم وسيطة. الشيء الوحيد الذي يُرسل هو تقرير أعطال مجهول الهوية عند حدوث خطأ، بالإضافة إلى إحصاءات عامة ومجهولة للمساعدة في تحسين التطبيق — دون جمع أي من مشاريعك أو صورك أو نصوصك.",
       },
       {
-        question: "كيف يعمل التوطين؟",
+        question: "كيف تعمل ميزة التوطين وتعدد اللغات؟",
         answer:
-          "اختر من بين 30 لغة جاهزة، أو أضف رمزك الخاص. تملأ الترجمة التلقائية النصوص الناقصة على الجهاز. تُحفظ الترجمات كتجاوزات نصية لكل لغة، فيما يبقى التصميم واللون والصور مشتركة بين جميع اللغات — صمم مرة واحدة، انشر بكل اللغات. يُنظَّم التصدير في مجلدات حسب اللغة جاهزة لـ App Store Connect.",
+          "اختر من بين 30 لغة معدة مسبقاً أو أضف رمز لغتك المخصص. تملأ الترجمة التلقائية على الجهاز أي نصوص مفقودة. تُحفظ الترجمات كتعديلات نصية خاصة بكل لغة، بحيث تبقى التصاميم والألوان والصور مشتركة عبر كل اللغات — صمم مرة واحدة وانشر بجميع اللغات. يتم تنظيم الملفات المصدرة في مجلدات جاهزة للرفع المباشر إلى App Store Connect.",
       },
       {
-        question: "هل يمكن الرفع مباشرة إلى App Store Connect؟",
+        question: "هل يمكنني إنشاء لقطات شاشة لمتجر Google Play أيضاً؟",
         answer:
-          "نعم. اضبط مفتاح App Store Connect API مرة واحدة (Issuer ID وKey ID وملف .p8). يتعرّف Screenshot Bro تلقائياً على نوع الشاشة لكل صف، ويطابق لغات مشروعك مع توطينات App Store Connect، ويستبدل اللقطات الحالية في تمريرة واحدة — بدون السحب والإفلات في المتصفح.",
+          "نعم. تظهر صفوف هواتف وأجهزة Android اللوحية جنباً إلى جنب مع صفوف iPhone و iPad و Mac في نفس المشروع. تأتي كل فئة جهاز مجهزة مسبقاً بالأبعاد الدقيقة التي يقبلها كل متجر.",
+      },
+      {
+        question: "هل يمكنني سحب لقطات شاشة المحاكي والأجهزة مباشرة إلى التطبيق؟",
+        answer:
+          "نعم. اسحب مجلد لقطات الشاشة وسيوجه Screenshot Bro كل لقطة إلى الصف المناسب وفقاً لحجم أبعادها بالبكسل — صور iPhone إلى صف iPhone، و iPad إلى iPad، و Android إلى Android. كما يتيح زر الالتقاط بنقرة واحدة في كل قالب جلب أحدث لقطة شاشة من المحاكي إلى لوحة العمل مباشرة.",
+      },
+      {
+        question: "هل يمكن الرفع مباشرة إلى App Store Connect من داخل التطبيق؟",
+        answer:
+          "نعم. قم بتهيئة مفتاح API الخاص بـ App Store Connect لمرة واحدة (معرف Issuer ID و Key ID وملف .p8)، وسيقوم Screenshot Bro تلقائياً باكتشاف نوع العرض المناسب لكل صف ومطابقة لغات المشروع مع لغات المتجر واستبدال اللقطات الحالية دفعة واحدة — دون الحاجة إلى السحب والإفلات في المتصفح.",
+      },
+      {
+        question: "هل يتزامن التطبيق بين مختلف الأجهزة؟",
+        answer:
+          "نعم — تتيح مزامنة iCloud Drive الاختيارية إبقاء المشاريع ولقطات الشاشة والخطوط متاحة عبر جميع أجهزة Mac و iPad المسجلة بحساب Apple الخاص بك، مع دمج التعديلات بسلاسة وفقاً لآخر حفظ.",
       },
     ],
     navItems: [
@@ -1681,27 +1781,47 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Ist Screenshot Bro kostenlos?",
         answer:
-          "Ja. Die kostenlose Version läuft nicht ab: 1 Projekt mit bis zu 3 Zeilen und 5 Vorlagen pro Zeile, mit vollem Zugriff auf alle Geräterahmen, Formen und Lokalisierungen sowie wasserzeichenfreie Exporte. Pro hebt diese Limits auf und ermöglicht den Upload zu App Store Connect sowie iCloud-Synchronisierung.",
+          "Ja. Die kostenlose Version ist zeitlich unbegrenzt und ermöglicht es Ihnen, 1 Projekt mit bis zu 3 Zeilen und 5 Vorlagen pro Zeile zu verwalten — voller Zugriff auf alle Geräterahmen, Formen und Sprachen, wasserzeichenfreie Exporte, Upload zu App Store Connect und Google Play sowie iCloud-Synchronisierung inklusive. Pro hebt die Begrenzungen für Projekte, Zeilen und Vorlagen auf.",
+      },
+      {
+        question: "Wie unterscheidet sich dies von einem webbasierten App Store Screenshot-Generator?",
+        answer:
+          "Screenshot Bro ist eine native App für Mac, iPad und iPhone und kein Browser-Tool. Projekte, Screenshots und Schriftarten bleiben auf Ihrer Festplatte, und für die tägliche Bearbeitung sind weder ein Konto noch eine Internetverbindung erforderlich. Rendering und Batch-Export laufen auf Ihrer eigenen Hardware statt auf einem Server. Wenn Sie Windows oder Linux nutzen, im Browser zusammenarbeiten möchten oder nur ein oder zwei Bilder benötigen, ist ein Web-Tool die passendere Wahl — unsere Alternativen-Seite deckt diese Fälle ab.",
       },
       {
         question: "Was brauche ich, um die App zu nutzen?",
         answer:
-          "macOS 15 (Sequoia) oder neuer auf dem Mac, oder iPadOS 18 oder neuer auf dem iPad. Kein Begleitgerät, kein Account und keine Internetverbindung für das Bearbeiten erforderlich.",
+          "macOS 15 (Sequoia) oder neuer auf dem Mac, iPadOS 18 oder neuer auf dem iPad oder iOS 18 oder neuer auf dem iPhone. Für die alltägliche Bearbeitung ist kein Zusatzgerät, kein Konto und keine Internetverbindung erforderlich.",
       },
       {
         question: "Verlassen meine Daten mein Gerät?",
         answer:
-          "Standardmäßig nein. Projekte, Screenshots und Schriftarten werden lokal gespeichert. Die automatische Übersetzung läuft direkt auf dem Gerät über Apples Translation-Framework – keine API-Schlüssel, keine Drittanbieterserver. Die optionale Synchronisierung über iCloud Drive läuft über Ihren persönlichen iCloud-Account; wir betreiben keine zwischengeschalteten Server. Gesendet werden anonyme Absturzberichte sowie anonyme Zählungen von Meilensteinen wie „ein Export ist fertig“, damit wir wissen, was zu beheben und zu verbessern ist – niemals Ihre Projekte, Bilder oder der Text, den Sie schreiben.",
+          "Ihre Arbeitsdaten nicht. Projekte, Screenshots und Schriftarten verbleiben auf Ihrer Festplatte. Die automatische Übersetzung läuft direkt auf dem Gerät über Apples Translation-Framework — keine API-Schlüssel, keine Drittanbieter-Server. Die optionale iCloud Drive-Synchronisierung nutzt Ihr persönliches iCloud-Konto; wir betreiben keine Zwischenserver. Bei Fehlern wird lediglich ein anonymer Absturzbericht gesendet sowie anonyme Zähler für Meilensteine wie „ein Export wurde abgeschlossen“, um das Produkt zu verbessern — niemals Ihre Projekte, Bilder oder eingegebenen Texte.",
       },
       {
         question: "Wie funktioniert die Lokalisierung?",
         answer:
-          "Wählen Sie aus 30 vordefinierten Sprachen oder fügen Sie Ihren eigenen Sprachcode hinzu. Die automatische Übersetzung füllt fehlenden Text direkt auf dem Gerät aus. Übersetzungen werden als Text-Overrides pro Sprache gespeichert, sodass Layout, Farben und Bilder für alle Sprachen geteilt werden – einmal entwerfen, in jeder Sprache bereitstellen. Exporte werden in Ordnern nach Sprache organisiert, bereit für App Store Connect.",
+          "Wählen Sie aus 30 vordefinierten Sprachprofilen oder geben Sie eigene Sprachcodes ein. Die automatische Übersetzung füllt fehlende Texte direkt auf dem Gerät aus. Übersetzungen werden als sprachspezifische Textanpassungen gespeichert, sodass Layout, Farben und Bilder für alle Sprachen einheitlich bleiben — einmal gestalten, in allen Sprachen veröffentlichen. Die Exporte werden übersichtlich in Sprachordnern abgelegt, die App Store Connect direkt verarbeiten kann.",
       },
       {
-        question: "Kann ich direkt zu App Store Connect hochladen?",
+        question: "Kann ich auch Screenshots für Google Play erstellen?",
         answer:
-          "Ja. Konfigurieren Sie einmalig Ihren App Store Connect API-Schlüssel (Issuer ID, Key ID und .p8-Datei). Screenshot Bro erkennt automatisch den richtigen Display-Typ für jede Zeile, gleicht die Projekt-Sprachen mit den Lokalisierungen in App Store Connect ab und ersetzt die vorhandenen Screenshots in einem Rutsch – ganz ohne Drag-and-Drop im Browser.",
+          "Ja. Zeilen für Android-Smartphones und -Tablets können im selben Projekt neben iPhone, iPad und Mac angelegt werden. Jede Gerätekategorie ist auf die von den jeweiligen Stores geforderten Pixelabmessungen voreingestellt.",
+      },
+      {
+        question: "Kann ich Screenshots aus dem Simulator oder von Geräten direkt hineinziehen?",
+        answer:
+          "Ja. Ziehen Sie einfach einen Ordner mit Screenshots hinein: Screenshot Bro ordnet jedes Bild anhand seiner Pixelgröße automatisch der richtigen Zeile zu — iPhone-Bilder in die iPhone-Zeile, iPad zu iPad und Android zu Android. Eine 1-Klick-Aufnahmetaste an jeder Vorlage zieht zudem den neuesten Simulator-Screenshot direkt auf die Arbeitsfläche.",
+      },
+      {
+        question: "Kann ich direkt aus der App zu App Store Connect hochladen?",
+        answer:
+          "Ja. Richten Sie Ihren App Store Connect API-Schlüssel einmalig ein (Issuer ID, Key ID und .p8-Datei). Screenshot Bro erkennt automatisch den passenden Anzeigetyp für jede Zeile, gleicht die Projektsprachen mit den Lokalisierungen in App Store Connect ab und ersetzt vorhandene Screenshots in einem Durchgang — ganz ohne Drag-and-Drop im Browser.",
+      },
+      {
+        question: "Werden Daten zwischen verschiedenen Geräten synchronisiert?",
+        answer:
+          "Ja — die optionale iCloud Drive-Synchronisierung hält Projekte, Screenshots und Schriftarten auf jedem Mac und iPad bereit, der mit Ihrem Apple-Account angemeldet ist. Versionskonflikte werden feldweise nach dem Last-Writer-Wins-Prinzip zusammengeführt.",
       },
     ],
     ui: {
@@ -1839,27 +1959,47 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Screenshot Broは無料ですか？",
         answer:
-          "はい。無料版に期限はありません。最大3行、各行5つのテンプレートまでの1プロジェクトを作成でき、すべてのデバイスフレーム、図形、言語へのアクセスと、ウォーターマークなしの書き出しが可能です。Proプランではこれらの制限が解除され、App Store ConnectへのアップロードとiCloud同期が有効になります。",
+          "はい。無料プランには利用期限がなく、1プロジェクト（最大3行、各行5テンプレートまで）を管理できます。すべてのデバイスフレーム、図形、言語プリセットへのフルアクセス、透かし（ウォーターマーク）なしのエクスポート、App Store ConnectおよびGoogle Playへの直接アップロード、iCloud同期が含まれます。Proプランにアップグレードすると、プロジェクト数、行数、テンプレート数の上限が解除されます。",
+      },
+      {
+        question: "WebベースのApp Storeスクリーンショット作成ツールとは何が違いますか？",
+        answer:
+          "Screenshot Broはブラウザで動くツールではなく、Mac、iPad、iPhone専用のネイティブアプリケーションです。プロジェクト、画像、フォントはすべてローカルディスクに保存され、日常的な編集作業にアカウント登録やインターネット接続は一切不要です。レンダリングや一括書き出しもクラウドサーバーではなくご自身の端末ハードウェア上で高速に処理されます。WindowsやLinuxをお使いの場合や、Web上でリアルタイム共同編集を行いたい場合はWebツールが適しています（比較・代替ツールページで詳しく解説しています）。",
       },
       {
         question: "動作環境を教えてください。",
         answer:
-          "MacではmacOS 15（Sequoia）以降、iPadではiPadOS 18以降が必要です。編集作業に別のデバイスやアカウント作成、インターネット接続は必要ありません。",
+          "MacはmacOS 15（Sequoia）以降、iPadはiPadOS 18以降、iPhoneはiOS 18以降に対応しています。日常の編集作業に外部機器、アカウント登録、ネット接続は不要です。",
       },
       {
         question: "データがデバイスの外部に送信されることはありますか？",
         answer:
-          "デフォルトでは送信されません。プロジェクト、スクリーンショット、フォントはローカルに保存されます。自動翻訳はAppleのオンデバイスTranslationフレームワークを使用するため、APIキーや外部サーバーは一切使用しません。iCloud Driveの同期はオプションで、ユーザー自身の個人用iCloudアカウント経由で行われます。開発元が中間サーバーを運営することはありません。送信されるのは、匿名のクラッシュレポートと、「書き出しが完了した」といった節目の匿名の集計のみです。修正・改善すべき点を知るためのもので、プロジェクトや画像、入力したテキストが送られることはありません。",
+          "作成中のプロジェクトデータが外部に送信されることはありません。プロジェクト、スクリーンショット、フォントは端末内に安全に保存されます。自動翻訳はAppleのオンデバイスTranslationフレームワークを使用するため、APIキーや外部サーバーは不要です。任意のiCloud Drive同期はお客様個人のiCloudアカウントを使用し、中間サーバーは存在しません。不具合発生時の匿名のクラッシュレポートや、品質改善のための「書き出し完了」などの匿名マイルストーン統計のみが送信され、プロジェクトや画像、入力テキストが収集されることは決してありません。",
       },
       {
-        question: "ローカライズはどのように機能しますか？",
+        question: "ローカライズ（多言語対応）はどのように機能しますか？",
         answer:
-          "30以上のプリセット言語から選択するか、独自の言語コードを追加できます。自動翻訳機能により、不足しているテキストをデバイス上で補完します。翻訳は言語ごとのテキスト上書き（オーバーライド）として保存されるため、レイアウト、カラー、画像はすべての言語で共有されます。一度デザインすれば、すべての言語に展開可能です。書き出し時は言語ごとにフォルダが自動整理され、App Store Connectにそのままアップロードできます。",
+          "30言語のプリセットから選択するか、独自の言語コードを追加できます。オンデバイスの自動翻訳により未翻訳テキストをすばやく補完します。翻訳は言語ごとのテキスト上書きとして保存されるため、レイアウト、配色、画像は全言語共通で保持されます（1回デザインすれば全言語に展開可能）。書き出し時はApp Store Connectがそのまま読み込める言語別フォルダに整理されます。",
+      },
+      {
+        question: "Google Play用のスクリーンショットも作成できますか？",
+        answer:
+          "はい。同じプロジェクト内で、iPhone、iPad、Macの行と並んでAndroidスマートフォンやタブレットの行を同時に編集・レンダリングできます。各デバイスカテゴリは各ストアが指定する正確なピクセル寸法にあらかじめ設定されています。",
+      },
+      {
+        question: "シミュレータや実機のスクリーンショットを直接ドラッグ＆ドロップできますか？",
+        answer:
+          "はい。スクリーンショットが入ったフォルダをドラッグ＆ドロップするだけで、Screenshot Broがピクセル解像度を自動判別し、適切な行（iPhone用画像はiPhone行、iPad用はiPad行、Android用はAndroid行）へ振り分けます。各テンプレートのワンクリック取り込みボタンを使えば、最新のシミュレータ画像をキャンバスに直接読み込むことも可能です。",
       },
       {
         question: "App Store Connectに直接アップロードできますか？",
         answer:
-          "はい。App Store ConnectのAPIキー（Issuer ID、Key ID、および.p8ファイル）を一度設定すれば、Screenshot Broが各行の正しいディスプレイタイプを検出し、プロジェクトの言語をApp Store Connectのローカライズ設定と一致させて、一括でスクリーンショットを差し替えます。ブラウザでファイルを1つずつドラッグ＆ドロップする必要はありません。",
+          "はい。App Store Connect APIキー（Issuer ID、Key ID、.p8ファイル）を一度設定するだけで、Screenshot Broが各行の適切な表示タイプ（Display Type）を自動検出し、プロジェクトの言語とストアの言語設定をマッチングして既存スクリーンショットを一括更新します。ブラウザ上で1枚ずつドラッグ＆ドロップする手間は不要です。",
+      },
+      {
+        question: "複数デバイス間で同期できますか？",
+        answer:
+          "はい。任意のiCloud Drive同期を有効にすると、同一のApple AccountでサインインしているすべてのMacおよびiPadでプロジェクト、スクリーンショット、フォントを自動同期できます。競合が発生した場合はフィールド単位で最新の変更が自動統合されます。",
       },
     ],
     ui: {
@@ -1996,27 +2136,47 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "O Screenshot Bro é gratuito?",
         answer:
-          "Sim. A versão gratuita não expira: 1 projeto com até 3 linhas e 5 modelos por linha, com acesso total a todas as molduras de dispositivos, formas e idiomas, e exportações sem marca d'água. A versão Pro remove esses limites e ativa o envio para o App Store Connect e sincronização pelo iCloud.",
+          "Sim. O plano gratuito não expira e permite manter 1 projeto com até 3 linhas e 5 modelos por linha — acesso completo a todas as molduras de dispositivos, formas e idiomas, exportações sem marca d'água, envio para App Store Connect e Google Play e sincronização pelo iCloud inclusos. O Pro remove os limites de projetos, linhas e modelos.",
+      },
+      {
+        question: "Como ele se diferencia de um gerador de capturas de tela web?",
+        answer:
+          "O Screenshot Bro é um aplicativo nativo para Mac, iPad e iPhone, e não uma ferramenta no navegador. Seus projetos, capturas e fontes ficam no seu disco e a edição diária não requer conta nem conexão com a internet. A renderização e a exportação em lote rodam no seu próprio hardware em vez de um servidor. Se você usa Windows ou Linux, deseja colaborar em uma sessão compartilhada no navegador ou precisa de apenas uma ou duas imagens, uma ferramenta web é mais indicada — nossa página de alternativas detalha esses casos.",
       },
       {
         question: "O que preciso para usá-lo?",
         answer:
-          "macOS 15 (Sequoia) ou posterior no Mac, ou iPadOS 18 ou posterior no iPad. Não é necessário dispositivo complementar, conta ou conexão com a internet para editar.",
+          "macOS 15 (Sequoia) ou posterior no Mac, iPadOS 18 ou posterior no iPad, ou iOS 18 ou posterior no iPhone. Nenhum dispositivo adicional, conta ou conexão à internet é necessária para a edição diária.",
       },
       {
         question: "Meus dados saem do meu dispositivo?",
         answer:
-          "Por padrão, não. Projetos, capturas de tela e fontes são armazenados localmente. A tradução automática funciona no dispositivo usando o framework Translation da Apple — sem chaves de API e sem servidores de terceiros. A sincronização opcional do iCloud Drive é feita diretamente na sua conta pessoal do iCloud; não operamos servidores intermediários. O que é enviado são relatórios de falhas anônimos e contagens anônimas de marcos como «uma exportação concluída», para sabermos o que corrigir e melhorar — nunca seus projetos, imagens ou o texto que você escreve.",
+          "Seus trabalhos não. Projetos, capturas e fontes ficam gravados no seu disco. A tradução automática funciona diretamente no dispositivo usando o framework Translation da Apple — sem chaves de API nem servidores de terceiros. A sincronização opcional via iCloud Drive utiliza sua conta pessoal do iCloud; não operamos servidores intermediários. Apenas relatórios anônimos de falhas são enviados em caso de erro, além de contagens anônimas de marcos como «uma exportação concluída» para melhorarmos o app — nunca seus projetos, imagens ou textos.",
       },
       {
         question: "Como funciona a localização?",
         answer:
-          "Escolha entre 30 idiomas predefinidos ou adicione seu próprio código de idioma. A tradução automática preenche o texto ausente no dispositivo. As traduções são salvas como substituições de texto por idioma, de modo que o layout, as cores e as imagens são compartilhados entre todos os idiomas — crie uma vez, implante em qualquer idioma. As exportações são organizadas em pastas por idioma, prontas para o App Store Connect.",
+          "Escolha entre 30 idiomas pré-configurados ou adicione seu próprio código. A tradução automática no dispositivo preenche os textos que faltarem. As traduções são salvas como substituições de texto por idioma, mantendo layout, cores e imagens compartilhados entre todas as línguas — desenhe uma vez e publique em todos os idiomas. As exportações são organizadas em pastas por idioma prontas para o App Store Connect.",
       },
       {
-        question: "Posso enviar diretamente para o App Store Connect?",
+        question: "Posso criar capturas de tela para o Google Play também?",
         answer:
-          "Sim. Configure sua chave de API do App Store Connect uma vez (Issuer ID, Key ID e arquivo .p8). O Screenshot Bro detecta o tipo de exibição correto para cada linha, associa os idiomas do projeto com as localizações do App Store Connect e substitui as capturas existentes de uma só vez — sem arrastar arquivos no navegador.",
+          "Sim. As linhas para celulares e tablets Android são editadas lado a lado com iPhone, iPad e Mac no mesmo projeto. Cada categoria de dispositivo já vem pré-configurada nas dimensões exatas em pixels aceitas pelas respectivas lojas.",
+      },
+      {
+        question: "Posso arrastar capturas do simulador e de aparelhos diretamente?",
+        answer:
+          "Sim. Arraste uma pasta de capturas e o Screenshot Bro encaminhará cada uma para a linha correta de acordo com seu tamanho em pixels — imagens de iPhone para a linha do iPhone, iPad para iPad e Android para Android. Um botão de captura com um clique em cada modelo também puxa a captura mais recente do simulador diretamente para a tela.",
+      },
+      {
+        question: "Posso enviar diretamente para o App Store Connect a partir do aplicativo?",
+        answer:
+          "Sim. Configure sua chave de API do App Store Connect uma única vez (Issuer ID, Key ID e arquivo .p8) e o Screenshot Bro detectará automaticamente o display type correto para cada linha, associará os idiomas do projeto às localizações do App Store Connect e substituirá as capturas existentes em uma única etapa — sem arrastar e soltar no navegador.",
+      },
+      {
+        question: "Ele sincroniza entre diferentes dispositivos?",
+        answer:
+          "Sim — a sincronização opcional via iCloud Drive mantém projetos, capturas e fontes disponíveis em todos os Macs e iPads conectados com sua Conta Apple. Conflitos são mesclados campo a campo priorizando a última alteração.",
       },
     ],
     ui: {
@@ -2154,27 +2314,47 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Screenshot Bro è gratuito?",
         answer:
-          "Sì. La versione gratuita non ha scadenza: 1 progetto con un massimo di 3 righe e 5 modelli per riga, con accesso completo a tutte le cornici, forme e lingue ed esportazioni senza filigrana. La versione Pro rimuove questi limiti e abilita il caricamento su App Store Connect e la sincronizzazione iCloud.",
+          "Sì. Il piano gratuito non ha limiti di tempo e ti consente di gestire 1 progetto con un massimo di 3 righe e 5 modelli per riga: accesso completo a tutte le cornici dei dispositivi, forme e lingue, esportazioni senza filigrana, caricamento diretto su App Store Connect e Google Play e sincronizzazione iCloud inclusi. La versione Pro rimuove i limiti su progetti, righe e modelli.",
+      },
+      {
+        question: "In che modo si differenzia da un generatore di screenshot per App Store basato sul web?",
+        answer:
+          "Screenshot Bro è un'applicazione nativa per Mac, iPad e iPhone anziché uno strumento nel browser: progetti, screenshot e font rimangono sul tuo disco e l'editing quotidiano non richiede alcun account né connessione a Internet. Il rendering e l'esportazione in batch vengono eseguiti direttamente sul tuo hardware invece che su un server remoto. Se utilizzi Windows o Linux, desideri collaborare nel browser o hai bisogno solo di una o due immagini, uno strumento web rappresenta una scelta migliore: la nostra pagina delle alternative illustra questi casi.",
       },
       {
         question: "Di cosa ho bisogno per usarlo?",
         answer:
-          "macOS 15 (Sequoia) o successivo su Mac, oppure iPadOS 18 o successivo su iPad. Non è richiesto alcun dispositivo di supporto, account o connessione Internet per modificare.",
+          "macOS 15 (Sequoia) o versioni successive su Mac, iPadOS 18 o versioni successive su iPad, oppure iOS 18 o versioni successive su iPhone. Nessun dispositivo aggiuntivo, account o connessione internet richiesta per l'editing quotidiano.",
       },
       {
         question: "I miei dati lasciano il mio dispositivo?",
         answer:
-          "Per impostazione predefinita, no. Progetti, screenshot e font vengono memorizzati localmente. La traduzione automatica avviene sul dispositivo tramite il framework Translation di Apple: nessuna chiave API e nessun server di terze parti. La sincronizzazione opzionale tramite iCloud Drive utilizza il tuo account iCloud personale; non gestiamo alcun server intermediario. Ciò che viene inviato sono segnalazioni di crash anonime e conteggi anonimi di traguardi come «un'esportazione completata», per capire cosa correggere e migliorare: mai i tuoi progetti, le immagini o il testo che scrivi.",
+          "I tuoi progetti non lasciano mai il dispositivo. File di progetto, screenshot e font rimangono memorizzati in locale sul disco. La traduzione automatica si appoggia al framework Translation di Apple direttamente sul dispositivo: senza chiavi API né server di terze parti. La sincronizzazione facoltativa con iCloud Drive sfrutta il tuo account personale iCloud; non gestiamo server intermediari. L'unica cosa che viene trasmessa è un report di arresto anomalo quando qualcosa non funziona, insieme a statistiche anonime di utilizzo come «un'esportazione completata» per aiutarci a migliorare l'app: mai i tuoi progetti, le tue immagini o il testo che scrivi.",
       },
       {
         question: "Come funziona la localizzazione?",
         answer:
-          "Scegli tra 30 lingue predefinite o aggiungi il tuo codice lingua personalizzato. La traduzione automatica compila il testo mancante direttamente sul dispositivo. Le traduzioni sono salvate come modifiche testuali specifiche per locale, quindi layout, colori e immagini sono condivisi tra tutte le lingue: progetti una volta, distribuisci in ogni lingua. Le esportazioni sono organizzate in cartelle per lingua, pronte per App Store Connect.",
+          "Scegli tra 30 lingue preimpostate o definisci il tuo codice personalizzato. La traduzione automatica on-device completa i testi mancanti. Le traduzioni vengono salvate come modifiche testuali per ciascuna lingua, preservando layout, colori e immagini su tutti gli idiomi: progetta una volta sola e pubblica ovunque. I file esportati sono suddivisi in cartelle per lingua pronte per App Store Connect.",
       },
       {
-        question: "Posso caricare direttamente su App Store Connect?",
+        question: "Posso creare anche screenshot per Google Play?",
         answer:
-          "Sì. Configura la tua chiave API di App Store Connect una sola volta (Issuer ID, Key ID e file .p8). Screenshot Bro rileva automaticamente il tipo di visualizzazione corretto per ciascuna riga, associa le lingue del progetto con le localizzazioni di App Store Connect e sostituisce gli screenshot esistenti in un unico passaggio, senza dover trascinare file nel browser.",
+          "Sì. Le righe dedicate a smartphone e tablet Android vengono gestite affiancate a iPhone, iPad e Mac nello stesso progetto. Ogni categoria di dispositivo è preimpostata con le esatte dimensioni in pixel richieste dai rispettivi store.",
+      },
+      {
+        question: "Posso trascinare direttamente screenshot da simulatori e dispositivi reali?",
+        answer:
+          "Sì. Trascina una cartella di screenshot e Screenshot Bro smisterà ciascuna immagine nella riga corretta in base alla risoluzione in pixel: le immagini iPhone nella riga iPhone, iPad su iPad e Android su Android. Un pulsante di acquisizione a un clic su ciascun modello consente inoltre di inserire l'ultimo screenshot del simulatore direttamente nell'area di lavoro.",
+      },
+      {
+        question: "Posso caricare direttamente su App Store Connect dall'applicazione?",
+        answer:
+          "Sì. Configura la chiave API di App Store Connect una sola volta (Issuer ID, Key ID e file .p8). Screenshot Bro individua automaticamente il display type appropriato per ciascuna riga, abbina le lingue del progetto alle localizzazioni di App Store Connect e aggiorna gli screenshot esistenti in un solo passaggio, eliminando il trascinamento manuale nel browser.",
+      },
+      {
+        question: "Si sincronizza tra più dispositivi?",
+        answer:
+          "Sì: la sincronizzazione facoltativa via iCloud Drive mantiene progetti, screenshot e font disponibili su ogni Mac e iPad associato al tuo Apple Account. Le modifiche concorrenti vengono unite campo per campo con priorità all'ultima modifica.",
       },
     ],
     ui: {
@@ -2312,27 +2492,47 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Screenshot Bro는 무료인가요?",
         answer:
-          "네, 무료 버전은 기간 제한 없이 사용하실 수 있습니다. 최대 3개 행, 행당 5개 템플릿의 1개 프로젝트를 지원하며, 모든 디바이스 프레임, 도형, 다국어 설정을 제한 없이 사용하고 워터마크 없이 내보낼 수 있습니다. Pro 플랜은 이러한 제한을 해제하고 App Store Connect 업로드 및 iCloud 동기화 기능을 제공합니다.",
+          "네. 무료 버전은 기간 제한 없이 영구적으로 사용할 수 있으며, 1개 프로젝트(최대 3개 행, 행당 5개 템플릿)를 생성할 수 있습니다. 모든 디바이스 프레임, 도형, 다국어 프리셋 지원, 워터마크 없는 내보내기, App Store Connect 및 Google Play 직접 업로드, iCloud 동기화가 모두 포함됩니다. Pro 버전으로 업그레이드하면 프로젝트, 행, 템플릿 개수 제한이 모두 해제됩니다.",
       },
       {
-        question: "사용하려면 무엇이 필요한가요?",
+        question: "웹 기반 App Store 스크린샷 생성기와 어떤 점이 다른가요?",
         answer:
-          "Mac에서는 macOS 15(Sequoia) 이상, iPad에서는 iPadOS 18 이상이 필요합니다. 편집 시 별도의 기기 연결, 계정 가입 또는 인터넷 연결은 필요하지 않습니다.",
+          "Screenshot Bro는 브라우저 웹 도구가 아닌 Mac, iPad, iPhone용 전용 네이티브 앱입니다. 따라서 프로젝트, 이미지, 폰트가 로컬 디스크에 안전하게 보관되며 일상적인 편집에 계정 생성이나 인터넷 연결이 필요하지 않습니다. 렌더링과 일괄 내보내기 역시 원격 서버가 아닌 사용자 기기의 하드웨어에서 직접 실행됩니다. Windows나 Linux를 사용하시거나 브라우저에서 협업해야 하는 경우, 혹은 한두 장의 이미지만 필요한 경우에는 웹 기반 도구가 더 적합할 수 있으며 대안 페이지에서 관련 도구들을 안내하고 있습니다.",
+      },
+      {
+        question: "사용하려면 어떤 기기와 OS가 필요한가요?",
+        answer:
+          "Mac은 macOS 15(Sequoia) 이상, iPad는 iPadOS 18 이상, iPhone은 iOS 18 이상이 필요합니다. 일상적인 편집 작업에는 별도의 기기, 계정, 인터넷 연결이 필요하지 않습니다.",
       },
       {
         question: "내 데이터가 기기 외부로 전송되나요?",
         answer:
-          "기본적으로 전송되지 않습니다. 프로젝트, 스크린샷, 폰트는 모두 로컬에 저장됩니다. 자동 번역은 외부 API 키나 제3자 서버 없이 Apple의 온디바이스 Translation 프레임워크를 통해 기기 자체에서 실행됩니다. 선택 사항인 iCloud Drive 동기화는 사용자의 개인 iCloud 계정을 통해 진행되며, 개발사 측에서 중간 서버를 운영하지 않습니다. 실제로 전송되는 것은 익명 충돌 보고서와 '내보내기 완료'와 같은 주요 단계의 익명 집계뿐이며, 무엇을 고치고 개선할지 파악하는 데만 사용됩니다. 프로젝트나 이미지, 작성하신 텍스트는 절대 전송되지 않습니다.",
+          "작업하신 프로젝트 데이터는 절대 기기 외부로 유출되지 않습니다. 프로젝트, 스크린샷, 폰트는 모두 로컬 디스크에 보관됩니다. 자동 번역은 Apple의 온디바이스 Translation 프레임워크를 통해 기기 내에서 처리되므로 API 키나 외부 서버가 필요하지 않습니다. 선택적인 iCloud Drive 동기화는 사용자의 개인 iCloud 계정을 사용하며 당사는 중간 서버를 운영하지 않습니다. 오류 발생 시 문제 해결을 위한 익명 충돌 보고서와 서비스 개선을 위한 '내보내기 완료' 등의 익명 통계만 전송될 뿐, 프로젝트 내용, 이미지, 작성 텍스트는 일체 수집되지 않습니다.",
       },
       {
         question: "현지화(Localization)는 어떻게 작동하나요?",
         answer:
-          "30개의 미리 정의된 언어 중에서 선택하거나 사용자 지정 언어 코드를 추가할 수 있습니다. 자동 번역이 기기 내에서 누락된 텍스트를 채워줍니다. 번역은 언어별 텍스트 재정의(Override)로 저장되므로 레이아웃, 색상, 이미지는 모든 언어에서 공유됩니다. 즉, 한 번만 디자인하면 모든 언어로 배포할 수 있습니다. 내보내기는 언어별 폴더로 정리되어 App Store Connect에 바로 업로드할 수 있는 상태로 저장됩니다.",
+          "30개 사전 설정 언어 중에서 선택하거나 사용자 지정 언어 코드를 추가할 수 있습니다. 온디바이스 자동 번역이 누락된 텍스트를 기기 내에서 채워줍니다. 번역은 언어별 텍스트 오버라이드로 저장되므로 레이아웃, 색상, 이미지는 모든 언어에서 공유됩니다. 한 번만 디자인하면 모든 언어로 바로 출시할 수 있습니다. 내보내기 시 App Store Connect에서 즉시 인식할 수 있는 언어별 폴더로 자동 정리됩니다.",
       },
       {
-        question: "App Store Connect에 직접 업로드할 수 있나요?",
+        question: "Google Play용 스크린샷도 만들 수 있나요?",
         answer:
-          "네, 가능합니다. App Store Connect API 키(Issuer ID, Key ID 및 .p8 파일)를 한 번만 설정하면, Screenshot Bro가 각 행에 맞는 올바른 디스플레이 유형을 감지하고 프로젝트의 언어를 App Store Connect의 현지화 설정과 매칭하여 기존 스크린샷을 한 번에 교체합니다. 브라우저에서 하나씩 드래그 앤 드롭할 필요가 없습니다.",
+          "네. 동일한 프로젝트 내에서 iPhone, iPad, Mac과 함께 Android 스마트폰 및 태블릿 행을 나란히 배치하여 작업할 수 있습니다. 각 기기 카테고리는 해당 스토어에서 요구하는 정확한 픽셀 규격으로 사전 설정되어 있습니다.",
+      },
+      {
+        question: "시뮬레이터나 기기 스크린샷을 직접 드래그 앤 드롭할 수 있나요?",
+        answer:
+          "네. 스크린샷이 담긴 폴더를 드래그하기만 하면 Screenshot Bro가 픽셀 해상도를 인식하여 올바른 행(iPhone 이미지는 iPhone 행, iPad는 iPad 행, Android는 Android 행)으로 자동 배치합니다. 각 템플릿의 원클릭 캡처 버튼을 누르면 가장 최근 시뮬레이터 스크린샷을 캔버스로 바로 가져올 수도 있습니다.",
+      },
+      {
+        question: "앱 내에서 App Store Connect로 바로 업로드할 수 있나요?",
+        answer:
+          "네. App Store Connect API 키(Issuer ID, Key ID, .p8 파일)를 한 번만 등록해 두면, Screenshot Bro가 각 행에 맞는 올바른 디스플레이 유형(Display Type)을 자동 감지하고 프로젝트 언어와 App Store Connect 현지화 설정을 매칭하여 기존 스크린샷을 한 번에 교체합니다. 브라우저에서 일일이 드래그 앤 드롭할 필요가 없습니다.",
+      },
+      {
+        question: "여러 기기 간에 프로젝트가 동기화되나요?",
+        answer:
+          "네. 선택적 iCloud Drive 동기화를 사용하면 동일한 Apple 계정으로 로그인된 모든 Mac과 iPad에서 프로젝트, 스크린샷, 폰트를 동기화하여 사용할 수 있습니다. 충돌 발생 시 필드 단위로 최근 변경 내용이 자동 병합됩니다.",
       },
     ],
     ui: {

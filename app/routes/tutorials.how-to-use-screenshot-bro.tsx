@@ -82,9 +82,51 @@ function StepNumber({ index }: { index: number }) {
 export default function HowToUseGuide() {
   const { locale } = useLoaderData<typeof loader>();
 
+  const tutorialNames: Record<LocaleCode, string> = {
+    en: "Tutorials",
+    es: "Tutoriales",
+    zh: "教程",
+    ja: "チュートリアル",
+    de: "Tutorials",
+    fr: "Tutoriels",
+    pt: "Tutoriais",
+    it: "Tutorial",
+    ko: "튜토리얼",
+    ar: "الدروس",
+    hi: "ट्यूटोरियल",
+  };
+
+  const guideNames: Record<LocaleCode, string> = {
+    en: `How to use ${SITE_NAME}`,
+    es: `Cómo usar ${SITE_NAME}`,
+    zh: `如何使用 ${SITE_NAME}`,
+    ja: `${SITE_NAME} の使い方`,
+    de: `So verwenden Sie ${SITE_NAME}`,
+    fr: `Comment utiliser ${SITE_NAME}`,
+    pt: `Como usar o ${SITE_NAME}`,
+    it: `Come usare ${SITE_NAME}`,
+    ko: `${SITE_NAME} 사용 방법`,
+    ar: `كيفية استخدام ${SITE_NAME}`,
+    hi: `${SITE_NAME} का उपयोग कैसे करें`,
+  };
+
+  const eyebrows: Record<LocaleCode, string> = {
+    en: "Tutorial",
+    es: "Tutorial",
+    zh: "教程指南",
+    ja: "チュートリアル",
+    de: "Anleitung",
+    fr: "Tutoriel",
+    pt: "Tutorial",
+    it: "Guida",
+    ko: "가이드",
+    ar: "دليل إرشادي",
+    hi: "ट्यूटोरियल",
+  };
+
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
-    { name: locale === "es" ? "Tutoriales" : locale === "zh" ? "教程" : locale === "ja" ? "チュートリアル" : "Tutorials", path: localizedPath(locale, "/tutorials") },
-    { name: `How to use ${SITE_NAME}`, path: localizedPath(locale, "/tutorials/how-to-use-screenshot-bro") },
+    { name: tutorialNames[locale] || tutorialNames.en, path: localizedPath(locale, "/tutorials") },
+    { name: guideNames[locale] || guideNames.en, path: localizedPath(locale, "/tutorials/how-to-use-screenshot-bro") },
   ]);
 
   return (
@@ -96,7 +138,7 @@ export default function HowToUseGuide() {
       <div className="max-w-6xl mx-auto">
         <header className="prose-policy mb-12">
           <p className="text-xs uppercase tracking-[0.25em] text-accent-light font-mono mb-3">
-            {locale === "es" ? "Tutorial" : locale === "zh" ? "教程指南" : locale === "ja" ? "チュートリアル" : "Tutorial"}
+            {eyebrows[locale] || eyebrows.en}
           </p>
           <h1>How to use {SITE_NAME}</h1>
           <p className="meta">

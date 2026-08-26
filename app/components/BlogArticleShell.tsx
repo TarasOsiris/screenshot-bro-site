@@ -3,7 +3,7 @@ import { BlogPostHeader } from "~/components/BlogPostHeader";
 import { ContentLayout } from "~/components/ContentLayout";
 import { RelatedPosts } from "~/components/RelatedPosts";
 import { buildFaqJsonLd, type BlogFaqItem } from "~/config/blog-seo";
-import type { LocaleCode } from "~/config/localization";
+import { localizedPath, type LocaleCode } from "~/config/localization";
 import type { ReactNode } from "react";
 
 type SeoGuideLink = {
@@ -97,7 +97,7 @@ export function BlogArticleShell({
               <ul>
                 {seoLinks.map((link) => (
                   <li key={link.href}>
-                    <a href={link.href}>{link.label}</a>: {link.description}
+                    <a href={localizedPath(locale, link.href)}>{link.label}</a>: {link.description}
                   </li>
                 ))}
               </ul>

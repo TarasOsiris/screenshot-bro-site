@@ -135,10 +135,25 @@ export const links: Route.LinksFunction = () => {
   return [];
 };
 
-function CategoryPill({ category }: { category: BlogCategory }) {
+const CATEGORY_NAMES: Record<LocaleCode, Record<BlogCategory, string>> = {
+  en: { Guide: "Guide", Reference: "Reference", Comparison: "Comparison" },
+  es: { Guide: "Guía", Reference: "Referencia", Comparison: "Comparativa" },
+  zh: { Guide: "指南", Reference: "参考", Comparison: "对比" },
+  hi: { Guide: "गाइड", Reference: "संदर्भ", Comparison: "तुलना" },
+  fr: { Guide: "Guide", Reference: "Référence", Comparison: "Comparatif" },
+  ar: { Guide: "دليل", Reference: "مرجع", Comparison: "مقارنة" },
+  de: { Guide: "Leitfaden", Reference: "Referenz", Comparison: "Vergleich" },
+  ja: { Guide: "ガイド", Reference: "リファレンス", Comparison: "比較" },
+  pt: { Guide: "Guia", Reference: "Referência", Comparison: "Comparação" },
+  it: { Guide: "Guida", Reference: "Riferimento", Comparison: "Confronto" },
+  ko: { Guide: "가이드", Reference: "참고자료", Comparison: "비교" },
+};
+
+function CategoryPill({ category, locale = "en" }: { category: BlogCategory; locale?: LocaleCode }) {
+  const label = CATEGORY_NAMES[locale]?.[category] || category;
   return (
     <span className="px-2 py-0.5 rounded bg-accent/10 text-accent-light text-[11px] font-medium">
-      {category}
+      {label}
     </span>
   );
 }
@@ -186,7 +201,7 @@ function FeaturedCard({ post, locale, latestLabel }: { post: BlogPost; locale: L
           <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-accent-light">
             {latestLabel}
           </span>
-          <CategoryPill category={post.category} />
+          <CategoryPill category={post.category} locale={locale} />
         </div>
         <h2 className="font-display font-bold text-2xl sm:text-3xl text-white group-hover:text-accent-light transition-colors tracking-tight">
           {post.title}
@@ -226,7 +241,7 @@ function BlogCard({ post, locale }: { post: BlogPost; locale: LocaleCode }) {
       </div>
       <div className="p-5 flex flex-col flex-1">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2.5">
-          <CategoryPill category={post.category} />
+          <CategoryPill category={post.category} locale={locale} />
           <span className="text-[11px] text-white/60 font-mono">{formatBlogDate(post.date, locale)}</span>
           <span className="text-[11px] text-white/55">{post.readTime}</span>
         </div>
@@ -297,7 +312,7 @@ export default function BlogIndex() {
           {
             "@type": "ListItem",
             position: 2,
-            name: "Blog",
+            name: copy.eyebrow,
             item: blogIndexUrl,
           },
         ],
@@ -337,7 +352,7 @@ export default function BlogIndex() {
                   : "bg-surface-raised border-border text-white/60 hover:border-white/20 hover:text-white"
               }`}
             >
-              {tab === "All" ? copy.all : tab}
+              {tab === "All" ? copy.all : (CATEGORY_NAMES[locale]?.[tab] || tab)}
               <span className="ms-1.5 text-[11px] font-mono opacity-60">{counts[tab]}</span>
             </button>
           ))}

@@ -149,8 +149,21 @@ function GroupList({ group, locale }: { group: HubRow["group"]; locale: LocaleCo
 export default function ComparisonsIndex() {
   const { locale } = useLoaderData<typeof loader>();
   const LAST_CHECKED = formatMonthYear(LATEST_COMPARISON_VERIFIED);
+  const breadcrumbNames: Record<LocaleCode, string> = {
+    en: "Comparisons",
+    es: "Comparativas",
+    zh: "对比评测",
+    ja: "ツール比較",
+    de: "Vergleiche",
+    fr: "Comparatifs",
+    pt: "Comparações",
+    it: "Confronti",
+    ko: "비교",
+    ar: "المقارنات",
+    hi: "तुलना",
+  };
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
-    { name: locale === "es" ? "Comparativas" : locale === "zh" ? "对比评测" : locale === "ja" ? "ツール比較" : "Comparisons", path: localizedPath(locale, "/vs") },
+    { name: breadcrumbNames[locale] || breadcrumbNames.en, path: localizedPath(locale, "/vs") },
   ]);
 
   return (
