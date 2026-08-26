@@ -332,6 +332,17 @@ button:focus-visible {
   margin-bottom: 0.75rem;
 }
 
+/* Articles and the blog FAQ blocks use h3 under h2; without this it inherits
+   the body size from Tailwind's preflight and reads as a plain paragraph. */
+.prose-policy h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
 .prose-policy p {
   margin-bottom: 1rem;
 }

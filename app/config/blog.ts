@@ -20,6 +20,23 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "screenshot-bro-mcp-server",
+    title: "Screenshot Bro MCP: Automate App Store Screenshots",
+    description:
+      "Turn on the Screenshot Bro MCP server and let Claude Code, Claude Desktop or Cursor build, translate, preview and export your App Store screenshots.",
+    date: "2026-08-26",
+    readTime: "12 min read",
+    category: "Guide",
+    keywords: [
+      "screenshot bro mcp",
+      "mcp server app store screenshots",
+      "claude code app store screenshots",
+      "ai agent app store screenshots",
+      "automate app store screenshots mac",
+      "model context protocol screenshot tool",
+    ],
+  },
+  {
     slug: "butterkit-alternative",
     title: "ButterKit Alternative: Two Native Mac Screenshot Apps",
     description:

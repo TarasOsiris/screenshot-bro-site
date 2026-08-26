@@ -4,6 +4,15 @@ import type { LocaleCode } from "./localization";
 export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, BlogPost[]>> = {
   es: [
     {
+      slug: "screenshot-bro-mcp-server",
+      title: "MCP de Screenshot Bro: automatiza tus capturas",
+      description: "Activa el servidor MCP de Screenshot Bro y deja que Claude Code, Claude Desktop o Cursor cree, traduzca y exporte tus capturas de App Store.",
+      date: "2026-08-26",
+      readTime: "Lectura de 12 min",
+      category: "Guide",
+      keywords: ["screenshot bro mcp","automatizar capturas app store"],
+    },
+    {
       slug: "butterkit-alternative",
       title: "Alternativa a ButterKit: dos apps nativas para Mac",
       description: "ButterKit y Screenshot Bro son apps nativas de Mac para capturas de App Store. Diferencias en versión de macOS, traducción, Google Play y plan gratuito.",
@@ -537,6 +546,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   zh: [
+    {
+      slug: "screenshot-bro-mcp-server",
+      title: "Screenshot Bro MCP：用 AI 自动生成应用商店截图",
+      description: "开启 Screenshot Bro 的本地 MCP 服务器，让 Claude Code、Claude Desktop 或 Cursor 直接创建、翻译、预览并导出你的 App Store 截图。",
+      date: "2026-08-26",
+      readTime: "12 分钟阅读",
+      category: "Guide",
+      keywords: ["screenshot bro mcp","app store 截图自动化"],
+    },
     {
       slug: "butterkit-alternative",
       title: "ButterKit 替代方案：两款原生 Mac 截图应用",
@@ -1072,6 +1090,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   ja: [
     {
+      slug: "screenshot-bro-mcp-server",
+      title: "Screenshot Bro MCP：App Storeスクリーンショットを自動化",
+      description: "Screenshot BroのローカルMCPサーバーを有効にして、Claude Code・Claude Desktop・CursorにApp Storeスクリーンショットの作成、翻訳、書き出しを任せる方法。",
+      date: "2026-08-26",
+      readTime: "読了目安 12分",
+      category: "Guide",
+      keywords: ["screenshot bro mcp","app store スクリーンショット 自動化"],
+    },
+    {
       slug: "butterkit-alternative",
       title: "ButterKitの代替：ネイティブMacスクリーンショットアプリ",
       description: "ButterKitとScreenshot Broはどちらもネイティブの Mac 用 App Store スクリーンショットアプリです。macOS要件、翻訳、Google Play、無料枠の違いを解説。",
@@ -1605,6 +1632,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   de: [
+    {
+      slug: "screenshot-bro-mcp-server",
+      title: "Screenshot Bro MCP: App-Store-Screenshots automatisieren",
+      description: "Den MCP-Server von Screenshot Bro aktivieren und Claude Code, Claude Desktop oder Cursor die App-Store-Screenshots bauen und übersetzen lassen.",
+      date: "2026-08-26",
+      readTime: "12 Min. Lesezeit",
+      category: "Guide",
+      keywords: ["screenshot bro mcp","app store screenshots automatisieren"],
+    },
     {
       slug: "butterkit-alternative",
       title: "ButterKit-Alternative: Zwei native Mac-Screenshot-Apps",
@@ -2140,6 +2176,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   fr: [
     {
+      slug: "screenshot-bro-mcp-server",
+      title: "Screenshot Bro MCP : automatiser vos captures App Store",
+      description: "Activez le serveur MCP de Screenshot Bro et laissez Claude Code, Claude Desktop ou Cursor créer, traduire et exporter vos captures App Store.",
+      date: "2026-08-26",
+      readTime: "12 min de lecture",
+      category: "Guide",
+      keywords: ["screenshot bro mcp","automatiser captures app store"],
+    },
+    {
       slug: "butterkit-alternative",
       title: "Alternative à ButterKit : deux apps Mac natives",
       description: "ButterKit et Screenshot Bro sont des apps Mac natives pour les captures App Store. Différences de macOS, traduction, Google Play et offre gratuite.",
@@ -2673,6 +2718,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   pt: [
+    {
+      slug: "screenshot-bro-mcp-server",
+      title: "Screenshot Bro MCP: automatize capturas da App Store",
+      description: "Ative o servidor MCP do Screenshot Bro e deixe o Claude Code, Claude Desktop ou Cursor criar, traduzir e exportar suas capturas da App Store.",
+      date: "2026-08-26",
+      readTime: "Leitura de 12 min",
+      category: "Guide",
+      keywords: ["screenshot bro mcp","automatizar capturas app store"],
+    },
     {
       slug: "butterkit-alternative",
       title: "Alternativa ao ButterKit: dois apps nativos de Mac",
@@ -3208,6 +3262,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   it: [
     {
+      slug: "screenshot-bro-mcp-server",
+      title: "Screenshot Bro MCP: automatizzare gli screenshot App Store",
+      description: "Attiva il server MCP di Screenshot Bro e lascia che Claude Code, Claude Desktop o Cursor crei, traduca ed esporti i tuoi screenshot App Store.",
+      date: "2026-08-26",
+      readTime: "12 min di lettura",
+      category: "Guide",
+      keywords: ["screenshot bro mcp","automatizzare screenshot app store"],
+    },
+    {
       slug: "butterkit-alternative",
       title: "Alternativa a ButterKit: due app native per Mac",
       description: "ButterKit e Screenshot Bro sono app native per gli screenshot App Store su Mac. Differenze su macOS, traduzione, Google Play e piano gratuito.",
@@ -3741,6 +3804,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   ko: [
+    {
+      slug: "screenshot-bro-mcp-server",
+      title: "Screenshot Bro MCP: App Store 스크린샷 자동화",
+      description: "Screenshot Bro의 로컬 MCP 서버를 켜고 Claude Code, Claude Desktop, Cursor가 App Store 스크린샷을 만들고 번역하고 내보내게 하는 방법.",
+      date: "2026-08-26",
+      readTime: "12분 소요",
+      category: "Guide",
+      keywords: ["screenshot bro mcp","app store 스크린샷 자동화"],
+    },
     {
       slug: "butterkit-alternative",
       title: "ButterKit 대안: 네이티브 Mac 스크린샷 앱 두 가지",
@@ -4276,6 +4348,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   ar: [
     {
+      slug: "screenshot-bro-mcp-server",
+      title: "خادم MCP في Screenshot Bro: أتمتة لقطات App Store",
+      description: "فعّل خادم MCP المحلي في Screenshot Bro ودع Claude Code أو Claude Desktop أو Cursor ينشئ لقطات App Store ويترجمها ويعاينها ويصدّرها.",
+      date: "2026-08-26",
+      readTime: "12 دقيقة للقراءة",
+      category: "Guide",
+      keywords: ["screenshot bro mcp","أتمتة لقطات app store"],
+    },
+    {
       slug: "butterkit-alternative",
       title: "بديل ButterKit: تطبيقان أصليان للقطات الشاشة على Mac",
       description: "ButterKit و Screenshot Bro تطبيقان أصليان على Mac للقطات App Store. الفروق في إصدار macOS والترجمة و Google Play والخطة المجانية.",
@@ -4809,6 +4890,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   hi: [
+    {
+      slug: "screenshot-bro-mcp-server",
+      title: "Screenshot Bro MCP: App Store स्क्रीनशॉट स्वचालित करें",
+      description: "Screenshot Bro का MCP सर्वर चालू करें और Claude Code, Claude Desktop या Cursor से अपने App Store स्क्रीनशॉट बनवाएं, अनुवाद कराएं और एक्सपोर्ट करें।",
+      date: "2026-08-26",
+      readTime: "12 मिनट में पढ़ें",
+      category: "Guide",
+      keywords: ["screenshot bro mcp","app store स्क्रीनशॉट स्वचालन"],
+    },
     {
       slug: "butterkit-alternative",
       title: "ButterKit विकल्प: दो नेटिव Mac स्क्रीनशॉट ऐप",

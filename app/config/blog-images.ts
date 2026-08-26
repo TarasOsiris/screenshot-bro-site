@@ -8,6 +8,7 @@ export type BlogThumb = { src: string; alt: string };
 // (matching the untranslated category labels). A post without an entry
 // renders a category-tinted placeholder on the blog index.
 const BLOG_THUMB_ALT: Record<string, string> = {
+  "screenshot-bro-mcp-server": "Close-up of colorful code on a dark computer screen",
   "best-app-store-screenshot-tools-for-mac": "iMac and MacBook on a white desk with phone wireframe sketches",
   "butterkit-alternative": "Close-up of a MacBook keyboard and trackpad lit in purple and blue",
   "best-app-screenshot-localization-tools": "Colorful illustrated world map",

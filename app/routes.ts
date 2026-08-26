@@ -23,6 +23,8 @@ export default [
   ),
   route("blog", "routes/blog._index.tsx"),
   route(":locale/blog", "routes/blog._index.tsx", { id: "blog-locale" }),
+  route("blog/screenshot-bro-mcp-server", "routes/blog.screenshot-bro-mcp-server.tsx"),
+  route(":locale/blog/screenshot-bro-mcp-server", "routes/blog.screenshot-bro-mcp-server.tsx", { id: "blog-screenshot-bro-mcp-server-locale" }),
   route("blog/best-app-store-screenshot-tools-for-mac", "routes/blog.best-app-store-screenshot-tools-for-mac.tsx"),
   route(":locale/blog/best-app-store-screenshot-tools-for-mac", "routes/blog.best-app-store-screenshot-tools-for-mac.tsx", { id: "blog-best-app-store-screenshot-tools-for-mac-locale" }),
   route("blog/best-app-screenshot-localization-tools", "routes/blog.best-app-screenshot-localization-tools.tsx"),
