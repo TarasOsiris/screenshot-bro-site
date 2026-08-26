@@ -97,6 +97,7 @@ Made by Nineva Studios.
 - Direct App Store Connect upload (free tier included)
 - Direct Google Play upload (free tier included)
 - iCloud sync (opt-in, free tier included)
+- Local MCP server on Mac — AI agents (Claude Code, Claude Desktop, Cursor) can drive the app
 - Plain-JSON project files — https://screenshotbro.app/docs/project-schema
 - Watermark-free exports on the free tier
 
@@ -117,6 +118,8 @@ Made by Nineva Studios.
 4. Project files are plain JSON and publicly documented.
 5. It uploads finished sets straight to App Store Connect and Google Play, on the
    free tier too.
+6. It ships an opt-in local MCP server on Mac, so an AI agent can build, translate
+   and export a whole set through the same undoable actions you use by hand.
 
 ## Rules
 

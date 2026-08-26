@@ -40,6 +40,7 @@ function buildLlmsTxt(): string {
     "- Pro: lifts those limits — unlimited projects, rows and templates. Sold as a lifetime purchase or a subscription; the price is shown in the app.",
     "- Core workflow: import screenshots, arrange multi-row layouts on one continuous canvas, add device frames for iPhone, iPad, Mac and Android, style with text, shapes, gradients, images and SVG, then batch export PNG or JPEG organized by locale and row.",
     "- Localization: 81 language presets plus custom codes, on-device auto-translate for the languages Apple's Translation framework supports, per-shape text/position/image overrides, and translation progress tracking. Layout and art stay shared across locales.",
+    "- Automation: an opt-in local MCP server on macOS (http://127.0.0.1:8722/mcp, access-token protected) exposes 26 tools, so an MCP client such as Claude Code, Claude Desktop or Cursor can create projects, edit rows and shapes, import screenshots, set translations, render previews, export, and preview then apply an App Store Connect screenshot sync. There is no hosted API and no CLI; the Mac app must be running.",
     "- Project files are plain JSON, documented at " + `${SITE_URL}/docs/project-schema.`,
     `- Community: ${REDDIT_COMMUNITY_URL}`,
     "",

@@ -188,6 +188,16 @@ function IconFree({ size = 32 }: IconProps = {}) {
   );
 }
 
+export function IconAutomation({ size = 32 }: IconProps = {}) {
+  return (
+    <svg {...SVG_BASE} width={size} height={size}>
+      <rect x="2.5" y="4" width="19" height="16" rx="2.5" />
+      <path d="M7 10l2.5 2.5L7 15" />
+      <line x1="12.5" y1="15" x2="17" y2="15" />
+    </svg>
+  );
+}
+
 const ICONS: Record<FeatureIconKey, ReactElement> = {
   templates: <IconTemplates />,
   device: <IconDevice />,
@@ -205,6 +215,7 @@ const ICONS: Record<FeatureIconKey, ReactElement> = {
   privacy: <IconPrivacy />,
   batch: <IconBatch />,
   free: <IconFree />,
+  automation: <IconAutomation />,
 };
 
 export function FeatureIcon({ icon }: { icon: FeatureIconKey }) {

@@ -622,6 +622,7 @@ const SECTIONS: Section[] = [
       { kind: "li", text: "The server requires an **access token**: every request must present it, so another app on your Mac can't quietly drive Screenshot Bro." },
       { kind: "li", text: "Keep the token private — anyone who has it can control the app while the server is running." },
       { kind: "li", text: "**Regenerate Access Token** issues a fresh token and restarts the server; any client using the old token must be updated." },
+      { kind: "p", text: "For a full walkthrough — connecting Claude Code, Claude Desktop or Cursor, what each of the 26 tools does, the prompts that work, and how to feed it your own screenshots — see the [Screenshot Bro MCP guide](/blog/screenshot-bro-mcp-server)." },
       { kind: "tip", text: "If the server won't start, something else is usually holding its port — quit that program, then switch the server off and on again." },
     ],
   },

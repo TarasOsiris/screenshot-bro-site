@@ -56,6 +56,9 @@ export const SITE_KEYWORDS = [
   "macOS screenshot designer",
   "iPad screenshot designer",
   "iPad app screenshot maker",
+  "MCP server for App Store screenshots",
+  "AI agent app screenshots",
+  "Claude Code MCP screenshots",
 ].join(", ");
 
 export type NavItem = {
@@ -163,6 +166,11 @@ export const FAQS: FaqItem[] = [
       "Yes. Configure your App Store Connect API key once (Issuer ID, Key ID, and .p8). Screenshot Bro auto-detects the right display type for each row, matches your project locales to App Store Connect localizations, and replaces existing screenshots in a single pass — no drag-and-drop in the browser.",
   },
   {
+    question: "Can an AI agent build my screenshots?",
+    answer:
+      "Yes. Screenshot Bro hosts an opt-in local MCP server on Mac, so an assistant like Claude Code, Claude Desktop, or Cursor can create projects, lay out rows and shapes, import screenshots, translate copy, render previews it can actually look at, export, and sync a finished set to App Store Connect. The server listens on 127.0.0.1 only, every request needs an access token you copy from Settings, and every change the agent makes is undoable with ⌘Z.",
+  },
+  {
     question: "Does it sync between devices?",
     answer:
       "Yes — opt-in iCloud Drive sync keeps projects, screenshots, and fonts available on every Mac and iPad signed into your Apple Account. Conflicts merge field-by-field with last-writer-wins, so editing the same project on multiple devices converges cleanly.",
@@ -185,7 +193,8 @@ export type FeatureIconKey =
   | "keyboard"
   | "privacy"
   | "batch"
-  | "free";
+  | "free"
+  | "automation";
 
 export type FeatureItem = {
   icon: FeatureIconKey;
@@ -243,6 +252,13 @@ export const FEATURES: FeatureItem[] = [
     description:
       "One-click upload straight to App Store Connect. Auto-detect display types from row size, match project locales to App Store localizations, and replace existing screenshots with a preflight that catches problems before they reach Apple.",
     accent: "var(--color-warm)",
+  },
+  {
+    icon: "automation",
+    title: "AI Agents & MCP",
+    description:
+      "An opt-in local MCP server on Mac lets Claude Code, Claude Desktop, or Cursor drive the app — create projects, lay out rows and shapes, import screenshots, translate, render previews, export, and sync to App Store Connect. Loopback-only, token-protected, and every change is undoable.",
+    accent: "var(--color-accent-light)",
   },
   {
     icon: "project",
