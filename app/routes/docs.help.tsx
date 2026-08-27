@@ -21,7 +21,7 @@ import {
 } from "~/components/DocBlocks";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
 import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
-import { SITE_NAME, SITE_URL } from "~/config/site";
+import { DISCORD_INVITE_URL, SITE_NAME, SITE_URL } from "~/config/site";
 
 const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
   { name: "Docs", path: "/docs/help" },
@@ -786,7 +786,7 @@ const SECTIONS: Section[] = [
     title: "Support & Feedback",
     subtitle: "We read every message.",
     blocks: [
-      { kind: "p", text: `Questions, bug reports, or feature requests — email [${SUPPORT_EMAIL}](mailto:${SUPPORT_EMAIL}).` },
+      { kind: "p", text: `The fastest way to get help is the [Screenshot Bro Discord](${DISCORD_INVITE_URL}) — questions, bug reports, and feature requests all land in front of the maker there, and you can see what is shipping next. Prefer email? Write to [${SUPPORT_EMAIL}](mailto:${SUPPORT_EMAIL}).` },
       { kind: "h", text: "Reporting a bug" },
       { kind: "li", text: "Include your macOS or iPadOS version and the app version (Apple menu ▸ About Screenshot Bro)." },
       { kind: "li", text: "Describe the steps that reproduce the problem." },

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
-import { AppleLogo, RedditGlyph, ThreadsGlyph, XGlyph } from "~/components/home/icons";
+import { AppleLogo, DiscordGlyph, RedditGlyph, ThreadsGlyph, XGlyph } from "~/components/home/icons";
 import { NavLink } from "~/components/NavLink";
 import {
   APP_STORE_CTA_URL,
+  DISCORD_INVITE_URL,
   PRODUCT_LINKS,
   REDDIT_COMMUNITY_URL,
   SITE_NAME,
@@ -151,6 +152,11 @@ export function SiteNav({
 
           <div className="hidden md:flex items-center gap-2">
             <SocialIcon
+              href={DISCORD_INVITE_URL}
+              label={copy.ui.joinDiscord}
+              icon="discord"
+            />
+            <SocialIcon
               href={REDDIT_COMMUNITY_URL}
               label={copy.ui.redditCommunity}
               icon="reddit"
@@ -247,6 +253,12 @@ function MobileMenu({
         </MobileLinkGroup>
 
         <MobileLinkGroup label={copy.ui.community}>
+          <MobileLink
+            href={DISCORD_INVITE_URL}
+            onClick={onClose}
+            label={copy.ui.joinDiscord}
+            external
+          />
           <MobileLink
             href={REDDIT_COMMUNITY_URL}
             onClick={onClose}
@@ -348,7 +360,7 @@ function SocialIcon({
 }: {
   href: string;
   label: string;
-  icon: "reddit" | "x" | "threads";
+  icon: "discord" | "reddit" | "x" | "threads";
 }) {
   return (
     <a
@@ -358,7 +370,15 @@ function SocialIcon({
       className="flex items-center justify-center w-9 h-9 rounded-xl border border-white/10 bg-white/[0.06] text-white/60 hover:text-white/90 hover:border-white/20 hover:bg-white/10 transition-all"
       aria-label={label}
     >
-      {icon === "reddit" ? <RedditGlyph /> : icon === "threads" ? <ThreadsGlyph /> : <XGlyph />}
+      {icon === "discord" ? (
+        <DiscordGlyph />
+      ) : icon === "reddit" ? (
+        <RedditGlyph />
+      ) : icon === "threads" ? (
+        <ThreadsGlyph />
+      ) : (
+        <XGlyph />
+      )}
     </a>
   );
 }

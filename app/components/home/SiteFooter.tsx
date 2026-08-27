@@ -1,7 +1,8 @@
-import { RedditGlyph, ThreadsGlyph, XGlyph } from "~/components/home/icons";
+import { DiscordGlyph, RedditGlyph, ThreadsGlyph, XGlyph } from "~/components/home/icons";
 import {
   COMMUNITY_LINKS,
   COMPARISON_LINKS,
+  DISCORD_INVITE_URL,
   LEGAL_LINKS,
   NINEVA_STUDIOS_NAME,
   NINEVA_STUDIOS_URL,
@@ -45,6 +46,11 @@ export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
               {copy.footer.note}
             </p>
             <div className="flex items-center gap-3">
+              <SocialButton
+                href={DISCORD_INVITE_URL}
+                label={copy.ui.joinDiscord}
+                icon="discord"
+              />
               <SocialButton
                 href={REDDIT_COMMUNITY_URL}
                 label={copy.ui.redditCommunity}
@@ -176,7 +182,7 @@ function SocialButton({
 }: {
   href: string;
   label: string;
-  icon: "reddit" | "x" | "threads";
+  icon: "discord" | "reddit" | "x" | "threads";
 }) {
   return (
     <a
@@ -186,7 +192,15 @@ function SocialButton({
       aria-label={label}
       className="flex items-center justify-center w-9 h-9 rounded-xl border border-white/10 bg-white/[0.06] text-white/60 hover:text-white/90 hover:border-white/20 hover:bg-white/10 transition-all"
     >
-      {icon === "reddit" ? <RedditGlyph /> : icon === "threads" ? <ThreadsGlyph /> : <XGlyph />}
+      {icon === "discord" ? (
+        <DiscordGlyph />
+      ) : icon === "reddit" ? (
+        <RedditGlyph />
+      ) : icon === "threads" ? (
+        <ThreadsGlyph />
+      ) : (
+        <XGlyph />
+      )}
     </a>
   );
 }

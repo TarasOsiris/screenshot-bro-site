@@ -25,6 +25,7 @@ export function appStoreCampaignUrl(campaign: string): string {
 export const APP_STORE_CTA_URL = appStoreCampaignUrl("website");
 export const CONTACT_MAILTO = `mailto:${EARLY_ACCESS_EMAIL}`;
 export const REDDIT_COMMUNITY_URL = "https://www.reddit.com/r/ScreenshotBro/";
+export const DISCORD_INVITE_URL = "https://discord.com/invite/ahnDehd";
 export const NINEVA_STUDIOS_NAME = "Nineva Studios";
 export const NINEVA_STUDIOS_URL = "https://ninevastudios.com/";
 export const PRIMARY_CTA_LABEL = "Get on the App Store";
@@ -81,6 +82,7 @@ export type SecondaryLinkKey =
   | "comparisons"
   | "vsFastlane"
   | "community"
+  | "discord"
   | "contact"
   | "privacy"
   | "terms";
@@ -99,6 +101,7 @@ export const PRODUCT_LINKS: SecondaryLink[] = [
 ];
 
 export const COMMUNITY_LINKS: SecondaryLink[] = [
+  { uiKey: "discord", href: DISCORD_INVITE_URL, external: true },
   { uiKey: "community", href: REDDIT_COMMUNITY_URL, external: true },
   { uiKey: "contact", href: "/support" },
 ];
@@ -174,6 +177,11 @@ export const FAQS: FaqItem[] = [
     question: "Does it sync between devices?",
     answer:
       "Yes — opt-in iCloud Drive sync keeps projects, screenshots, and fonts available on every Mac and iPad signed into your Apple Account. Conflicts merge field-by-field with last-writer-wins, so editing the same project on multiple devices converges cleanly.",
+  },
+  {
+    question: "Where do I get support?",
+    answer:
+      "Join the Screenshot Bro Discord — it is the fastest way to reach the maker, report a bug, ask how something works, and see what is shipping next. Email works too for anything private or account-specific, and the help docs cover every part of the editor.",
   },
 ];
 

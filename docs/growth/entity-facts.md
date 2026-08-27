@@ -29,6 +29,7 @@ Last reviewed: 2026-08-20.
 | Contact | tleskiv@ninevastudios.com |
 | X | https://x.com/soycastic |
 | Threads | https://www.threads.com/@soycastic |
+| Support | https://discord.com/invite/ahnDehd (Discord, primary channel) |
 | Community | https://www.reddit.com/r/ScreenshotBro/ |
 | Sister product | Screenshot Bro Web — https://screenshotbro.com — **unverified (2026-08-20): nothing on screenshotbro.app links to it; confirm it exists or delete this row before using it anywhere** |
 

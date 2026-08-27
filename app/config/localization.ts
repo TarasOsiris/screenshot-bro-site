@@ -80,6 +80,8 @@ export type HomeCopy = {
     comparisons: string;
     vsFastlane: string;
     community: string;
+    discord: string;
+    joinDiscord: string;
     privacy: string;
     terms: string;
     contact: string;
@@ -203,6 +205,8 @@ const EN_HOME_COPY: HomeCopy = {
     comparisons: "All comparisons",
     vsFastlane: "Compare to Fastlane",
     community: "Community",
+    discord: "Discord",
+    joinDiscord: "Join the Discord",
     privacy: "Privacy",
     terms: "Terms",
     contact: "Contact",
@@ -957,6 +961,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         answer:
           "Sí. Screenshot Bro incluye un servidor MCP local y opcional en Mac, de modo que un asistente como Claude Code, Claude Desktop o Cursor puede crear proyectos, colocar filas y formas, importar capturas, traducir el texto, renderizar vistas previas que puede ver, exportar y sincronizar el set final con App Store Connect. El servidor solo escucha en 127.0.0.1, cada petición necesita un token de acceso que copias desde Ajustes y cualquier cambio del agente se deshace con ⌘Z.",
       },
+      {
+        question: "¿Dónde consigo ayuda?",
+        answer:
+          "Únete al Discord de Screenshot Bro: es la vía más rápida para hablar con el desarrollador, reportar un fallo, preguntar cómo funciona algo y ver qué está por llegar. El correo también sirve para cualquier asunto privado o relacionado con tu cuenta, y la documentación cubre cada parte del editor.",
+      },
     ],
     ui: {
       skipToContent: "Saltar al contenido",
@@ -966,6 +975,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       comparisons: "Todas las comparativas",
       vsFastlane: "Comparar con Fastlane",
       community: "Comunidad",
+      joinDiscord: "Únete al Discord",
       privacy: "Privacidad",
       terms: "Términos",
       contact: "Contacto",
@@ -1133,6 +1143,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         answer:
           "可以。Screenshot Bro 在 Mac 上内置了可选的本地 MCP 服务器，Claude Code、Claude Desktop 或 Cursor 等助手可以创建项目、排布行与图形、导入截图、翻译文案、渲染它能实际查看的预览、导出，并把完成的截图同步到 App Store Connect。服务器仅监听 127.0.0.1，每个请求都需要你在设置中复制的访问令牌，智能体的每一次改动都可以用 ⌘Z 撤销。",
       },
+      {
+        question: "我该去哪里获取支持？",
+        answer:
+          "加入 Screenshot Bro 的 Discord 社区——这是联系开发者、反馈 Bug、询问用法以及了解后续更新最快的方式。涉及隐私或账号的问题也可以直接发邮件，帮助文档则涵盖了编辑器的每个功能。",
+      },
     ],
     navItems: [
       { label: "演示", href: "#showcases" },
@@ -1148,6 +1163,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       comparisons: "全部对比",
       vsFastlane: "对比 Fastlane",
       community: "社区",
+      joinDiscord: "加入 Discord 社区",
       privacy: "隐私",
       terms: "条款",
       contact: "联系",
@@ -1308,6 +1324,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         answer:
           "हाँ। Screenshot Bro में Mac पर एक वैकल्पिक लोकल MCP सर्वर है, जिससे Claude Code, Claude Desktop या Cursor जैसे असिस्टेंट प्रोजेक्ट बना सकते हैं, रो और शेप लगा सकते हैं, स्क्रीनशॉट इंपोर्ट कर सकते हैं, टेक्स्ट का अनुवाद कर सकते हैं, प्रीव्यू रेंडर करके देख सकते हैं, एक्सपोर्ट कर सकते हैं और तैयार सेट को App Store Connect पर सिंक कर सकते हैं। सर्वर सिर्फ 127.0.0.1 पर सुनता है, हर अनुरोध के लिए सेटिंग्स से कॉपी किया गया एक्सेस टोकन चाहिए, और एजेंट का हर बदलाव ⌘Z से वापस लिया जा सकता है।",
       },
+      {
+        question: "मुझे सहायता कहाँ मिलेगी?",
+        answer:
+          "Screenshot Bro के Discord से जुड़ें — डेवलपर तक पहुँचने, बग रिपोर्ट करने, कुछ पूछने और आगे क्या आ रहा है यह जानने का यह सबसे तेज़ तरीका है। निजी या खाते से जुड़ी बातों के लिए ईमेल भी कर सकते हैं, और सहायता दस्तावेज़ एडिटर के हर हिस्से को कवर करते हैं।",
+      },
     ],
     navItems: [
       { label: "शोकेस", href: "#showcases" },
@@ -1324,6 +1345,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       comparisons: "सभी तुलनाएं",
       vsFastlane: "Fastlane से तुलना",
       community: "समुदाय",
+      joinDiscord: "Discord से जुड़ें",
       privacy: "प्राइवेसी",
       terms: "शर्तें",
       contact: "संपर्क",
@@ -1488,6 +1510,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         answer:
           "Oui. Screenshot Bro héberge un serveur MCP local et optionnel sur Mac : un assistant comme Claude Code, Claude Desktop ou Cursor peut créer des projets, disposer les lignes et les formes, importer vos captures, traduire le texte, générer des aperçus qu'il voit réellement, exporter et synchroniser le set final avec App Store Connect. Le serveur n'écoute que sur 127.0.0.1, chaque requête exige un jeton d'accès copié depuis les Réglages, et chaque modification de l'agent s'annule avec ⌘Z.",
       },
+      {
+        question: "Où obtenir de l'aide ?",
+        answer:
+          "Rejoignez le Discord de Screenshot Bro : c'est le moyen le plus rapide de joindre le développeur, signaler un bug, poser une question et voir ce qui arrive ensuite. L'e-mail reste disponible pour tout sujet privé ou lié à votre compte, et la documentation couvre chaque partie de l'éditeur.",
+      },
     ],
     navItems: [
       { label: "Démos", href: "#showcases" },
@@ -1504,6 +1531,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       comparisons: "Toutes les comparaisons",
       vsFastlane: "Comparer à Fastlane",
       community: "Communauté",
+      joinDiscord: "Rejoindre le Discord",
       privacy: "Confidentialité",
       terms: "Conditions",
       contact: "Contact",
@@ -1671,6 +1699,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         answer:
           "نعم. يشغّل Screenshot Bro خادم MCP محليًا اختياريًا على Mac، فيستطيع مساعد مثل Claude Code أو Claude Desktop أو Cursor إنشاء المشاريع وترتيب الصفوف والأشكال واستيراد اللقطات وترجمة النصوص وعرض معاينات يراها فعليًا والتصدير ومزامنة المجموعة النهائية مع App Store Connect. يستمع الخادم على 127.0.0.1 فقط، وتحتاج كل طلبية إلى رمز وصول تنسخه من الإعدادات، ويمكن التراجع عن أي تغيير بالضغط على ⌘Z.",
       },
+      {
+        question: "أين أحصل على الدعم؟",
+        answer:
+          "انضم إلى خادم Discord الخاص بـ Screenshot Bro — إنها أسرع طريقة للتواصل مع المطوّر والإبلاغ عن الأخطاء وطرح الأسئلة ومعرفة ما هو قادم. يمكنك أيضًا مراسلتنا عبر البريد الإلكتروني لأي أمر خاص أو متعلق بحسابك، كما تغطي وثائق المساعدة كل جزء من المحرر.",
+      },
     ],
     navItems: [
       { label: "العروض", href: "#showcases" },
@@ -1686,6 +1719,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       comparisons: "كل المقارنات",
       vsFastlane: "مقارنة مع Fastlane",
       community: "المجتمع",
+      joinDiscord: "انضم إلى Discord",
       privacy: "الخصوصية",
       terms: "الشروط",
       contact: "تواصل",
@@ -1859,6 +1893,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         answer:
           "Ja. Screenshot Bro betreibt auf dem Mac einen optionalen lokalen MCP-Server, sodass ein Assistent wie Claude Code, Claude Desktop oder Cursor Projekte anlegen, Zeilen und Formen setzen, Screenshots importieren, Texte übersetzen, Vorschauen rendern und ansehen, exportieren und das fertige Set mit App Store Connect abgleichen kann. Der Server lauscht nur auf 127.0.0.1, jede Anfrage braucht ein Zugriffstoken aus den Einstellungen, und jede Änderung lässt sich mit ⌘Z rückgängig machen.",
       },
+      {
+        question: "Wo bekomme ich Unterstützung?",
+        answer:
+          "Treten Sie dem Screenshot-Bro-Discord bei — das ist der schnellste Weg, den Entwickler zu erreichen, einen Fehler zu melden, eine Frage zu stellen und zu sehen, was als Nächstes kommt. Für Privates oder Kontofragen funktioniert weiterhin die E-Mail, und die Hilfe-Dokumentation deckt jeden Teil des Editors ab.",
+      },
     ],
     ui: {
       skipToContent: "Zum Inhalt springen",
@@ -1869,6 +1908,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       comparisons: "Alle Vergleiche",
       vsFastlane: "Vergleich mit Fastlane",
       community: "Community",
+      joinDiscord: "Discord beitreten",
       privacy: "Datenschutz",
       terms: "AGB",
       contact: "Kontakt",
@@ -2042,6 +2082,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         answer:
           "はい。Screenshot BroはMacで任意のローカルMCPサーバーを起動でき、Claude Code、Claude Desktop、Cursorなどのアシスタントがプロジェクト作成、行や図形の配置、スクリーンショットの読み込み、テキストの翻訳、実際に確認できるプレビューのレンダリング、書き出し、App Store Connectへの同期まで行えます。サーバーは127.0.0.1のみで待ち受け、リクエストごとに設定からコピーしたアクセストークンが必要で、エージェントの変更は⌘Zで取り消せます。",
       },
+      {
+        question: "サポートはどこで受けられますか？",
+        answer:
+          "Screenshot Bro の Discord にご参加ください。開発者に直接連絡し、不具合を報告し、使い方を質問し、次に来る機能を知るための一番早い方法です。プライバシーやアカウントに関わる内容はメールでも受け付けており、ヘルプドキュメントはエディタの各機能を網羅しています。",
+      },
     ],
     ui: {
       skipToContent: "コンテンツへスキップ",
@@ -2051,6 +2096,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       comparisons: "すべての比較",
       vsFastlane: "Fastlaneとの比較",
       community: "コミュニティ",
+      joinDiscord: "Discord に参加",
       privacy: "プライバシーポリシー",
       terms: "利用規約",
       contact: "お問い合わせ",
@@ -2224,6 +2270,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         answer:
           "Sim. O Screenshot Bro tem um servidor MCP local e opcional no Mac, então um assistente como Claude Code, Claude Desktop ou Cursor pode criar projetos, posicionar linhas e formas, importar capturas, traduzir o texto, renderizar prévias que ele realmente vê, exportar e sincronizar o conjunto final com o App Store Connect. O servidor escuta apenas em 127.0.0.1, cada requisição exige um token de acesso copiado dos Ajustes, e qualquer mudança do agente é desfeita com ⌘Z.",
       },
+      {
+        question: "Onde consigo suporte?",
+        answer:
+          "Entre no Discord do Screenshot Bro — é o caminho mais rápido para falar com o desenvolvedor, relatar um bug, tirar dúvidas e ver o que vem por aí. O e-mail continua valendo para assuntos privados ou de conta, e a documentação cobre cada parte do editor.",
+      },
     ],
     ui: {
       skipToContent: "Ir para o conteúdo",
@@ -2234,6 +2285,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       comparisons: "Todas as comparações",
       vsFastlane: "Comparar com Fastlane",
       community: "Comunidade",
+      joinDiscord: "Entrar no Discord",
       privacy: "Privacidade",
       terms: "Termos de Uso",
       contact: "Contato",
@@ -2407,6 +2459,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         answer:
           "Sì. Screenshot Bro include un server MCP locale e opzionale su Mac, così un assistente come Claude Code, Claude Desktop o Cursor può creare progetti, disporre righe e forme, importare screenshot, tradurre i testi, generare anteprime che vede davvero, esportare e sincronizzare il set finito con App Store Connect. Il server ascolta solo su 127.0.0.1, ogni richiesta richiede un token di accesso copiato dalle Impostazioni e ogni modifica dell'agente si annulla con ⌘Z.",
       },
+      {
+        question: "Dove posso ottenere assistenza?",
+        answer:
+          "Unisciti al Discord di Screenshot Bro: è il modo più rapido per raggiungere lo sviluppatore, segnalare un bug, chiedere come funziona qualcosa e scoprire cosa sta per arrivare. L'email resta valida per questioni private o legate all'account, e la documentazione copre ogni parte dell'editor.",
+      },
     ],
     ui: {
       skipToContent: "Vai al contenuto",
@@ -2417,6 +2474,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       comparisons: "Tutti i confronti",
       vsFastlane: "Confronta con Fastlane",
       community: "Community",
+      joinDiscord: "Unisciti al Discord",
       privacy: "Privacy",
       terms: "Termini",
       contact: "Contatti",
@@ -2590,6 +2648,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         answer:
           "네. Screenshot Bro는 Mac에서 선택적으로 켤 수 있는 로컬 MCP 서버를 제공합니다. Claude Code, Claude Desktop, Cursor 같은 어시스턴트가 프로젝트 생성, 행과 도형 배치, 스크린샷 가져오기, 텍스트 번역, 직접 확인할 수 있는 미리보기 렌더링, 내보내기, App Store Connect 동기화까지 처리합니다. 서버는 127.0.0.1에서만 대기하고 모든 요청에 설정에서 복사한 액세스 토큰이 필요하며, 에이전트의 변경은 ⌘Z로 되돌릴 수 있습니다.",
       },
+      {
+        question: "지원은 어디서 받을 수 있나요?",
+        answer:
+          "Screenshot Bro Discord에 참여해 보세요. 개발자에게 직접 연락하고, 버그를 제보하고, 사용법을 묻고, 다음에 무엇이 나올지 확인하는 가장 빠른 방법입니다. 개인적이거나 계정 관련 문의는 이메일로도 가능하며, 도움말 문서는 편집기의 모든 기능을 다룹니다.",
+      },
     ],
     ui: {
       skipToContent: "본문으로 건너뛰기",
@@ -2599,6 +2662,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       comparisons: "전체 비교",
       vsFastlane: "Fastlane과 비교",
       community: "커뮤니티",
+      joinDiscord: "Discord 참여하기",
       privacy: "개인정보 처리방침",
       terms: "이용약관",
       contact: "문의하기",

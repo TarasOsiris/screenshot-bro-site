@@ -25,6 +25,7 @@ import {
   SITE_KEYWORDS,
   SITE_NAME,
   SITE_URL,
+  DISCORD_INVITE_URL,
   REDDIT_COMMUNITY_URL,
   THREADS_URL,
   TWITTER_HANDLE,
@@ -98,7 +99,7 @@ const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
   isAccessibleForFree: true,
   softwareRequirements: `macOS ${MINIMUM_MACOS_VERSION} or later, iPadOS ${MINIMUM_IPADOS_VERSION} or later, or iOS ${MINIMUM_IPADOS_VERSION} or later`,
   keywords: SITE_KEYWORDS,
-  sameAs: [APP_STORE_URL, X_PROFILE_URL, THREADS_URL, REDDIT_COMMUNITY_URL],
+  sameAs: [APP_STORE_URL, X_PROFILE_URL, THREADS_URL, REDDIT_COMMUNITY_URL, DISCORD_INVITE_URL],
   featureList: FEATURES.map((feature) => feature.title),
 });
 
@@ -133,6 +134,7 @@ const ORGANIZATION_SCHEMA_JSON = JSON.stringify({
     X_PROFILE_URL,
     THREADS_URL,
     REDDIT_COMMUNITY_URL,
+    DISCORD_INVITE_URL,
   ],
 });
 
