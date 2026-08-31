@@ -86,4 +86,16 @@ export const FRIEND_APPS: FriendApp[] = [
     description:
       "A habit tracker styled like the terminal you already live in — monospaced, keyboard-first, and quiet about it. Five tracking modes, routines, streaks you can shield from one bad day, and a GitHub-style contribution graph of your whole history. There's an Apple Watch app, nine widgets, a browser version, and 23 themes if Tokyo Night is your thing. Local-first, works offline, and the core is free.",
   },
+  {
+    slug: "keepsake",
+    name: "Keepsake",
+    subtitle: "A quiet home for physical keepsakes",
+    developer: "Chaotic Good Creations",
+    storeUrl: "https://apps.apple.com/app/id6760719322",
+    websiteUrl: "https://chaoticgoodcreations.co/keepsake/",
+    rating: 5,
+    ratingCount: 2,
+    description:
+      "For the shoebox of children's drawings, birthday cards and handwritten letters you can't throw away but never actually look at. Photograph them, sort them into Memory Boxes, and revisit them properly instead of leaving them in a drawer. There's no account, no feed and nothing to share — it's a private archive that syncs through your own iCloud. Free to start, with one optional subscription for unlimited keepsakes.",
+  },
 ];
