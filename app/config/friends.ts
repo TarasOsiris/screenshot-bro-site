@@ -110,4 +110,28 @@ export const FRIEND_APPS: FriendApp[] = [
     description:
       "The packing list you keep retyping in Notes before every trip, except this one knows where you're going. It builds the list from your destination, dates and activities, using the forecast for trips that are close and historical weather for the ones that aren't. Baggage Check flags the power bank in your checked bag before airport security does, and there's a currency converter, reusable templates, Siri and Shortcuts, and a widget that turns your next trip into a boarding pass. No account, syncs through your own iCloud, and the first journeys are free.",
   },
+  {
+    slug: "reps",
+    name: "Reps",
+    subtitle: "HRV recovery and readiness score",
+    developer: "Siddharth Natamai",
+    storeUrl: "https://apps.apple.com/app/id6746460451",
+    websiteUrl: "https://reps.siddharthnatamai.com",
+    rating: 4,
+    ratingCount: 8,
+    description:
+      "Recovery scoring without buying a band or a ring — it reads HRV, resting heart rate, sleep and recent strain off the watch you already wear and turns them into one readiness number each morning, with a plain-English reason attached. Rex, the built-in coach, answers questions about your own training data, and the plan adapts to how recovered you actually are instead of following a fixed calendar. Logging a set takes a voice note or an NFC tap on the machine, and a muscle map shows what you've been neglecting. Free to start, with a Pro tier for unlimited coaching and full history.",
+  },
+  {
+    slug: "glu-sight",
+    name: "Glu Sight",
+    subtitle: "Blood sugar, insulin and medication log",
+    developer: "Seou B. Hounkanrin",
+    storeUrl: "https://apps.apple.com/app/id6479405901",
+    websiteUrl: "https://about.glusight.app/",
+    rating: 4.5,
+    ratingCount: 10,
+    description:
+      "A glucose log that bends to your therapy rather than the other way round: turn insulin or pill tracking off if they don't apply to you, and the app stops asking about fields you never fill in. Readings come straight from Apple Health, so anything writing there — Dexcom, Accu-Chek, InPen, OneTouch — lands without retyping, and manual entries take seconds. It turns all of it into time in range, estimated A1C, and 7-, 14-, 30- and 90-day trends you can actually take to an appointment. Free to download.",
+  },
 ];
