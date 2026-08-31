@@ -85,6 +85,7 @@ export type HomeCopy = {
     privacy: string;
     terms: string;
     contact: string;
+    friends: string;
     redditCommunity: string;
     followOnX: string;
     followOnThreads: string;
@@ -210,6 +211,7 @@ const EN_HOME_COPY: HomeCopy = {
     privacy: "Privacy",
     terms: "Terms",
     contact: "Contact",
+    friends: "Friends",
     redditCommunity: "Reddit community",
     followOnX: "Follow on X",
     followOnThreads: "Follow on Threads",
@@ -979,6 +981,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       privacy: "Privacidad",
       terms: "Términos",
       contact: "Contacto",
+      friends: "Amigos",
       followJourney: "Sigue mi progreso",
       madeWithLoveAt: "Hecho con ❤️ en",
       language: "Idioma",
@@ -1167,6 +1170,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       privacy: "隐私",
       terms: "条款",
       contact: "联系",
+      friends: "朋友的应用",
       followJourney: "关注我的进展",
       madeWithLoveAt: "用 ❤️ 制作于",
       language: "语言",
@@ -1349,6 +1353,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       privacy: "प्राइवेसी",
       terms: "शर्तें",
       contact: "संपर्क",
+      friends: "दोस्तों के ऐप्स",
       followJourney: "मेरी यात्रा देखें",
       madeWithLoveAt: "❤️ से बनाया, यहां:",
       language: "भाषा",
@@ -1535,6 +1540,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       privacy: "Confidentialité",
       terms: "Conditions",
       contact: "Contact",
+      friends: "Amis",
       followJourney: "Suivre mon parcours",
       madeWithLoveAt: "Fait avec ❤️ chez",
       language: "Langue",
@@ -1723,6 +1729,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       privacy: "الخصوصية",
       terms: "الشروط",
       contact: "تواصل",
+      friends: "تطبيقات الأصدقاء",
       followJourney: "تابع رحلتي",
       madeWithLoveAt: "صُنع بـ ❤️ في",
       language: "اللغة",
@@ -1912,6 +1919,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       privacy: "Datenschutz",
       terms: "AGB",
       contact: "Kontakt",
+      friends: "Freunde",
       followJourney: "Folge meiner Reise",
       madeWithLoveAt: "Mit ❤️ gemacht in",
       language: "Sprache",
@@ -2100,6 +2108,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       privacy: "プライバシーポリシー",
       terms: "利用規約",
       contact: "お問い合わせ",
+      friends: "友人のアプリ",
       followJourney: "開発プロセスをフォロー",
       madeWithLoveAt: "Made with ❤️ at",
       language: "言語",
@@ -2289,6 +2298,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       privacy: "Privacidade",
       terms: "Termos de Uso",
       contact: "Contato",
+      friends: "Amigos",
       followJourney: "Acompanhe minha jornada",
       madeWithLoveAt: "Feito com ❤️ em",
       language: "Idioma",
@@ -2478,6 +2488,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       privacy: "Privacy",
       terms: "Termini",
       contact: "Contatti",
+      friends: "Amici",
       followJourney: "Segui il mio percorso",
       madeWithLoveAt: "Fatto con ❤️ a",
       language: "Lingua",
@@ -2666,6 +2677,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       privacy: "개인정보 처리방침",
       terms: "이용약관",
       contact: "문의하기",
+      friends: "친구들의 앱",
       followJourney: "개발 여정 팔로우",
       madeWithLoveAt: "Made with ❤️ at",
       language: "언어",
@@ -2848,6 +2860,7 @@ export const GLOBAL_ROUTE_PATHS = [
   "/support",
   "/tutorials",
   "/vs",
+  "/friends",
   "/sitemap.xml",
   "/llms.txt",
 ];

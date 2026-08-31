@@ -75,6 +75,7 @@ function buildLlmsTxt(): string {
     ),
     link("/changelog", "Changelog", "what shipped in each release"),
     link("/support", "Support", "Discord invite, support email, and the community links"),
+    link("/friends", "Friends", "indie apps by developers we know, with no affiliate links or paid placements"),
     link("/blog", "Blog index", "every guide, reference and comparison"),
     "",
     "## Notes",

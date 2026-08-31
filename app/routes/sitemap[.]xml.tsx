@@ -158,6 +158,8 @@ function buildSitemap(): string {
       alternates: localeAlternates("/tutorials/how-to-use-screenshot-bro"),
     })),
     ...docsEntries,
+    // English only, like the docs pages: /{locale}/friends 301s back here.
+    { loc: "/friends", changefreq: "monthly", priority: "0.4", lastmod: homeLastmod },
     { loc: "/vs", changefreq: "monthly", priority: "0.7", lastmod: LATEST_COMPARISON_VERIFIED, alternates: localeAlternates("/vs") },
     ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
       loc: localizedPath(l.code, "/vs"),

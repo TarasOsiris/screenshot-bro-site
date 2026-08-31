@@ -173,6 +173,7 @@ export default [
   route(":locale/vs/mockuuups-studio", "routes/vs.mockuuups-studio.tsx", { id: "vs-mockuuups-studio-locale" }),
   route("vs/placeit", "routes/vs.placeit.tsx"),
   route(":locale/vs/placeit", "routes/vs.placeit.tsx", { id: "vs-placeit-locale" }),
+  route("friends", "routes/friends.tsx"),
   route("sitemap.xml", "routes/sitemap[.]xml.tsx"),
   route("llms.txt", "routes/llms[.]txt.tsx"),
   route(":locale", "routes/localized-home.tsx"),

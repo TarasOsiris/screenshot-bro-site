@@ -84,6 +84,7 @@ export type SecondaryLinkKey =
   | "community"
   | "discord"
   | "contact"
+  | "friends"
   | "privacy"
   | "terms";
 
@@ -103,6 +104,7 @@ export const PRODUCT_LINKS: SecondaryLink[] = [
 export const COMMUNITY_LINKS: SecondaryLink[] = [
   { uiKey: "discord", href: DISCORD_INVITE_URL, external: true },
   { uiKey: "community", href: REDDIT_COMMUNITY_URL, external: true },
+  { uiKey: "friends", href: "/friends" },
   { uiKey: "contact", href: "/support" },
 ];
 
