@@ -98,4 +98,16 @@ export const FRIEND_APPS: FriendApp[] = [
     description:
       "For the shoebox of children's drawings, birthday cards and handwritten letters you can't throw away but never actually look at. Photograph them, sort them into Memory Boxes, and revisit them properly instead of leaving them in a drawer. There's no account, no feed and nothing to share — it's a private archive that syncs through your own iCloud. Free to start, with one optional subscription for unlimited keepsakes.",
   },
+  {
+    slug: "journeybot",
+    name: "journeybot",
+    subtitle: "Trip planner and packing list",
+    developer: "Michal Ferak",
+    storeUrl: "https://apps.apple.com/app/id6756543673",
+    websiteUrl: "https://journeybot.app",
+    rating: 4.8,
+    ratingCount: 10,
+    description:
+      "The packing list you keep retyping in Notes before every trip, except this one knows where you're going. It builds the list from your destination, dates and activities, using the forecast for trips that are close and historical weather for the ones that aren't. Baggage Check flags the power bank in your checked bag before airport security does, and there's a currency converter, reusable templates, Siri and Shortcuts, and a widget that turns your next trip into a boarding pass. No account, syncs through your own iCloud, and the first journeys are free.",
+  },
 ];
