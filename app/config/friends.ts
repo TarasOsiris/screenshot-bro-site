@@ -1,12 +1,17 @@
 // The /friends list — indie apps we link to because we like them, not because
 // anyone paid for the spot. Single source of truth for the page; an entry here
-// plus an icon at public/friends/<slug>.jpg is all a new friend needs. The
-// surrounding registration (already done) is:
+// plus an icon at public/friend-icons/<slug>.jpg is all a new friend needs.
+// The surrounding registration (already done) is:
 //   - app/routes/friends.tsx      — the page that renders this array
 //   - app/routes.ts               — route("friends", …), English-only, no :locale
 //   - app/config/localization.ts  — "/friends" in GLOBAL_ROUTE_PATHS + ui.friends
 //   - app/config/site.ts          — the COMMUNITY_LINKS footer entry
 //   - app/routes/sitemap[.]xml.tsx and llms[.]txt.tsx
+//
+// The icon directory is public/friend-icons/, NOT public/friends/. A public/
+// directory whose name matches a route path is a redirect loop: react-router-
+// serve 301s /friends -> /friends/ for the directory, and root.tsx 301s the
+// trailing slash back off. See STATIC_DIR_SEGMENTS in app/root.tsx.
 
 export type FriendApp = {
   /** Lowercase, hyphenated. Also names the icon file and the analytics event. */
@@ -41,7 +46,7 @@ const UTM_CAMPAIGN = "friends";
 // Icons are 512×512 JPEGs downloaded from the store, never hotlinked. Deriving
 // the path from the slug means a rename can't leave a broken <img> behind.
 export function friendIconPath(app: FriendApp): string {
-  return `/friends/${app.slug}.jpg`;
+  return `/friend-icons/${app.slug}.jpg`;
 }
 
 /**
