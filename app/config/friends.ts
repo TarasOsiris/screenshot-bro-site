@@ -33,7 +33,7 @@ export type FriendApp = {
 // Ratings and review counts are copied by hand and go stale silently, so the
 // page prints the month they were last checked. Refresh with:
 //   curl -s "https://itunes.apple.com/lookup?id=<id>" | python3 -m json.tool
-export const FRIENDS_RATINGS_VERIFIED = "2026-08-31";
+export const FRIENDS_RATINGS_VERIFIED = "2026-09-01";
 
 // What our friends see in their own analytics when traffic arrives from here.
 // The App Store campaign token lands in their App Analytics → Acquisition →
@@ -133,5 +133,52 @@ export const FRIEND_APPS: FriendApp[] = [
     ratingCount: 10,
     description:
       "A glucose log that bends to your therapy rather than the other way round: turn insulin or pill tracking off if they don't apply to you, and the app stops asking about fields you never fill in. Readings come straight from Apple Health, so anything writing there — Dexcom, Accu-Chek, InPen, OneTouch — lands without retyping, and manual entries take seconds. It turns all of it into time in range, estimated A1C, and 7-, 14-, 30- and 90-day trends you can actually take to an appointment. Free to download.",
+  },
+  {
+    slug: "screeny",
+    name: "Screeny",
+    subtitle: "Device mockups from screenshots and recordings",
+    developer: "Lazare Kolebka",
+    storeUrl: "https://apps.apple.com/app/id6757925827",
+    websiteUrl: "https://getscreeny.app",
+    rating: 4.61904,
+    ratingCount: 21,
+    description:
+      "Drop in a screenshot or a screen recording and it comes back framed in a device, with the status bar rebuilt to a clean 9:41 and full battery — on every frame of a video, not just the first. Zoom keyframes let you punch in on the tap you actually want people to notice, so a flat screen recording turns into something worth watching. It runs on iPhone, iPad and Mac, and the Mac app ships an MCP server, so Claude Code or Cursor can frame a whole folder for you. Free to try.",
+  },
+  {
+    slug: "timo",
+    name: "Timo",
+    subtitle: "World clock and time zone comparison",
+    developer: "Michal Ferak",
+    storeUrl: "https://apps.apple.com/app/id6762064286",
+    websiteUrl: "https://trytimo.com",
+    rating: 5,
+    ratingCount: 2,
+    description:
+      "A world clock that answers the question you actually have — is it a reasonable hour to message this person? Each city shows the time, the offset and the phase of day, so morning, night and who's inside working hours read at a glance instead of after mental math. Cities group into Work, Family or Travel, and the widgets put the ones you check most on the Home Screen. Free.",
+  },
+  {
+    slug: "lentico",
+    name: "Lentico",
+    subtitle: "Profile picture maker",
+    developer: "Martin Siptak",
+    storeUrl: "https://apps.apple.com/app/id6761939076",
+    rating: 5,
+    ratingCount: 4,
+    description:
+      "For the once-a-year afternoon lost to making a profile picture that doesn't look like a snapshot. It cuts your portrait out in a tap, then lets you build around it — a colour, a gradient or your own image behind, liquid glass over the top, light overlays to tie it together. Everything happens on the phone and the work syncs through your own iCloud. Free.",
+  },
+  {
+    slug: "loggd",
+    name: "Loggd",
+    subtitle: "Habits, tasks and focus in one place",
+    developer: "Eusebiu Balan",
+    storeUrl: "https://apps.apple.com/app/id6760266106",
+    websiteUrl: "https://loggd.life",
+    rating: 5,
+    ratingCount: 5,
+    description:
+      "A habit tracker, to-do list and focus timer that share one score, so a finished task, a checked habit and half an hour of deep work all count toward the same XP and the same year grid. Habits take flexible schedules and let you skip a planned day off without losing the streak; tasks parse plain language like \"call dentist tomorrow at 3pm\". The gamification is the point — 100 levels, badges, monthly leaderboards — and there's a web app and an Android app on the same account. Generous free plan, Pro for unlimited habits and tasks.",
   },
 ];
