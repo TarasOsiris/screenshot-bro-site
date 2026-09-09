@@ -244,9 +244,9 @@ const EN_HOME_COPY: HomeCopy = {
       "macOS 15+ and iPadOS 18+ app | Swift & SwiftUI | Available on the App Store",
   },
   hero: {
-    titleLead: "Design and ship",
+    titleLead: "Create & Localize",
     titleAccent: "App Store",
-    titleRest: " screenshots.",
+    titleRest: " Screenshots in Minutes",
     descriptionLead:
       "Import your shots, wrap them in device frames, localize the copy, auto-translate missing text, and",
     descriptionStrong: "upload straight to App Store Connect",
