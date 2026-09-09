@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react";
 
-import { AppleLogo, DiscordGlyph, RedditGlyph, ThreadsGlyph, XGlyph } from "~/components/home/icons";
+import { AppleLogo } from "~/components/home/icons";
 import { NavLink } from "~/components/NavLink";
 import {
   APP_STORE_CTA_URL,
-  DISCORD_INVITE_URL,
   PRODUCT_LINKS,
-  REDDIT_COMMUNITY_URL,
   SITE_NAME,
-  THREADS_URL,
-  X_PROFILE_URL,
   type SecondaryLink,
 } from "~/config/site";
 import {
@@ -150,29 +146,6 @@ export function SiteNav({
             </>
           ) : null}
 
-          <div className="hidden md:flex items-center gap-2">
-            <SocialIcon
-              href={DISCORD_INVITE_URL}
-              label={copy.ui.joinDiscord}
-              icon="discord"
-            />
-            <SocialIcon
-              href={REDDIT_COMMUNITY_URL}
-              label={copy.ui.redditCommunity}
-              icon="reddit"
-            />
-            <SocialIcon
-              href={X_PROFILE_URL}
-              label={copy.ui.followOnX}
-              icon="x"
-            />
-            <SocialIcon
-              href={THREADS_URL}
-              label={copy.ui.followOnThreads}
-              icon="threads"
-            />
-          </div>
-
           <a
             href={href}
             className="hidden sm:inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white transition-all hover:border-white/25 hover:bg-white/15"
@@ -252,33 +225,6 @@ function MobileMenu({
           ))}
         </MobileLinkGroup>
 
-        <MobileLinkGroup label={copy.ui.community}>
-          <MobileLink
-            href={DISCORD_INVITE_URL}
-            onClick={onClose}
-            label={copy.ui.joinDiscord}
-            external
-          />
-          <MobileLink
-            href={REDDIT_COMMUNITY_URL}
-            onClick={onClose}
-            label={copy.ui.redditCommunity}
-            external
-          />
-          <MobileLink
-            href={X_PROFILE_URL}
-            onClick={onClose}
-            label={copy.ui.followOnX}
-            external
-          />
-          <MobileLink
-            href={THREADS_URL}
-            onClick={onClose}
-            label={copy.ui.followOnThreads}
-            external
-          />
-        </MobileLinkGroup>
-
         {showLocaleSwitcher ? (
           <MobileLinkGroup label={copy.ui.language}>
             <select
@@ -352,37 +298,6 @@ function MobileLink({
     </a>
   );
 }
-
-function SocialIcon({
-  href,
-  label,
-  icon,
-}: {
-  href: string;
-  label: string;
-  icon: "discord" | "reddit" | "x" | "threads";
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center justify-center w-9 h-9 rounded-xl border border-white/10 bg-white/[0.06] text-white/60 hover:text-white/90 hover:border-white/20 hover:bg-white/10 transition-all"
-      aria-label={label}
-    >
-      {icon === "discord" ? (
-        <DiscordGlyph />
-      ) : icon === "reddit" ? (
-        <RedditGlyph />
-      ) : icon === "threads" ? (
-        <ThreadsGlyph />
-      ) : (
-        <XGlyph />
-      )}
-    </a>
-  );
-}
-
 
 function MenuIcon() {
   return (
