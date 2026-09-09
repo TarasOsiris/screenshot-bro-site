@@ -187,7 +187,7 @@ const EN_HOME_COPY: HomeCopy = {
   siteDescription: SITE_DESCRIPTION,
   socialImageAlt:
     "Screenshot Bro — native Mac and iPad app for designing App Store and Google Play screenshots with device frames, gradients, and localization",
-  primaryCtaLabel: "Get on the App Store",
+  primaryCtaLabel: "Get Screenshot Bro",
   navItems: NAV_ITEMS,
   benefits: BETA_BENEFITS,
   faqs: FAQS,
@@ -248,10 +248,10 @@ const EN_HOME_COPY: HomeCopy = {
     titleAccent: "App Store",
     titleRest: " Screenshots in Minutes",
     descriptionLead:
-      "Import your shots, wrap them in device frames, localize the copy, auto-translate missing text, and",
-    descriptionStrong: "upload straight to App Store Connect",
+      "Design once. Localize into 70+ languages, generate every device size, and",
+    descriptionStrong: "upload directly to App Store Connect",
     descriptionTail:
-      "— all in one fast, native App Store screenshot tool for Mac and iPad.",
+      "without rebuilding screenshots by hand. All in one native app.",
     videoLabel:
       "Screenshot Bro app demo - designing App Store screenshots with device frames, gradients, and batch export",
   },
