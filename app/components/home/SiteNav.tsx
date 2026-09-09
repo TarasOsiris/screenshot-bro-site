@@ -175,7 +175,7 @@ export function SiteNav({
 
           <a
             href={href}
-            className="hidden sm:inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white transition-all hover:border-white/25 hover:bg-white/15"
+            className="hidden sm:inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white transition-all hover:border-white/25 hover:bg-white/15"
           >
             <AppleLogo />
             <span>{copy.primaryCtaLabel}</span>
@@ -302,7 +302,7 @@ function MobileMenu({
         <a
           href={ctaHref}
           onClick={onClose}
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-light px-5 py-3.5 text-sm font-semibold text-white"
+          className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-gradient-to-r from-accent to-accent-light px-5 py-3.5 text-sm font-semibold text-white"
         >
           <AppleLogo />
           {copy.primaryCtaLabel}
