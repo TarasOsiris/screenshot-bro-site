@@ -527,6 +527,11 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
     icon: "/showcase/imagetracker.jpg",
     url: "https://apps.apple.com/ua/app/webcam-widgets-imagetracker/id6466650127",
   },
+  {
+    name: "Under My Roof",
+    icon: "/showcase/under-my-roof.jpg",
+    url: "https://apps.apple.com/ua/app/under-my-roof-home-inventory/id1524335878?l=uk",
+  },
 ];
 
 export type AppScreenshot = {
