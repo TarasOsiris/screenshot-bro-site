@@ -41,6 +41,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ko: `프로젝트 파일 스키마 규격 — ${SITE_NAME}`,
     ar: `مخطط ملف المشروع (Schema) — ${SITE_NAME}`,
     hi: `प्रोजेक्ट फ़ाइल स्कीमा — ${SITE_NAME}`,
+    uk: `Схема файлу проекту — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -55,6 +56,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ko: "Screenshot Bro project.json 파일 형식을 위한 JSON Schema. AI 또는 스크립트로 프로젝트를 자동 생성·검증하세요.",
     ar: "مخطط JSON لتنسيق ملفات Screenshot Bro لتوليد المشاريع وتعديلها برمجياً.",
     hi: "Screenshot Bro प्रोजेक्ट फ़ाइल स्वरूप के लिए JSON स्कीमा।",
+    uk: "JSON Schema для формату файлу проекту Screenshot Bro. Генеруйте, перевіряйте та змінюйте project.json за допомогою ШІ-асистентів, скриптів чи інших інструментів.",
   };
 
   const title = titles[locale] || titles.en;

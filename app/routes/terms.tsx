@@ -27,6 +27,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ko: `이용약관 및 EULA — ${SITE_NAME}`,
     ar: `شروط الاستخدام — ${SITE_NAME}`,
     hi: `उपयोग की शर्तें — ${SITE_NAME}`,
+    uk: `Умови використання — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -41,6 +42,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ko: `${SITE_NAME} 이용약관, EULA 및 구독/평생 라이선스 조건 안내.`,
     ar: `شروط الاستخدام واتفاقية الترخيص وسياسة الاشتراكات لتطبيق ${SITE_NAME}.`,
     hi: `${SITE_NAME} के उपयोग की शर्तें, EULA और सदस्यता की शर्तें।`,
+    uk: `Умови використання, EULA та умови підписки для ${SITE_NAME} — підписки з автопродовженням, довічна покупка, скасування та повернення коштів.`,
   };
 
   const title = titles[locale] || titles.en;

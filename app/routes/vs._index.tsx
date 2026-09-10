@@ -34,6 +34,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ko: `${SITE_NAME}와 주요 App Store 스크린샷 툴 비교`,
     ar: `مقارنة ${SITE_NAME} مع أدوات لقطات شاشة App Store الأخرى`,
     hi: `${SITE_NAME} बनाम अन्य App Store स्क्रीनशॉट टूल्स`,
+    uk: `${SITE_NAME} проти інших інструментів для скриншотів App Store`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -48,6 +49,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ko: "Screenshot Bro와 주요 App Store 스크린샷 제작 도구의 기능, 무료 제공 범위, 번역 및 스토어 업로드 지원 비교.",
     ar: "مقارنة شاملة بين Screenshot Bro وأبرز أدوات تصميم لقطات شاشة المتاجر.",
     hi: "Screenshot Bro और अन्य ऐप स्टोर स्क्रीनशॉट टूल्स की विस्तृत तुलना।",
+    uk: "Порівняння всіх інструментів для скриншотів App Store і Google Play зі Screenshot Bro: платформа, безкоштовний тариф, локалізація та завантаження в магазини — з окремою сторінкою для кожного.",
   };
 
   const title = titles[locale] || titles.en;
@@ -161,6 +163,7 @@ export default function ComparisonsIndex() {
     ko: "비교",
     ar: "المقارنات",
     hi: "तुलना",
+    uk: "Порівняння",
   };
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
     { name: breadcrumbNames[locale] || breadcrumbNames.en, path: localizedPath(locale, "/vs") },

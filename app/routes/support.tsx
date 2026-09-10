@@ -36,6 +36,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ko: `고객 지원 및 문의 — ${SITE_NAME}`,
     ar: `الدعم الفني والمساعدة — ${SITE_NAME}`,
     hi: `सहायता और संपर्क — ${SITE_NAME}`,
+    uk: `Підтримка — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -50,6 +51,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ko: `${SITE_NAME} 고객 지원. Discord가 가장 빠른 창구이며, 이메일이나 커뮤니티로도 문의할 수 있습니다.`,
     ar: `احصل على المساعدة بخصوص ${SITE_NAME}. خادم Discord هو أسرع قناة للدعم، ويمكنك أيضًا مراسلتنا عبر البريد الإلكتروني أو وسائل التواصل.`,
     hi: `${SITE_NAME} के लिए सहायता प्राप्त करें। सबसे तेज़ जवाब के लिए Discord से जुड़ें, या हमें ईमेल करें।`,
+    uk: `Отримайте допомогу зі ${SITE_NAME}. Приєднуйтесь до Discord, щоб найшвидше отримати відповіді про помилки, запитання та побажання — або напишіть нам на пошту чи знайдіть нас у Reddit, X і Threads.`,
   };
 
   const title = titles[locale] || titles.en;

@@ -13,7 +13,8 @@ export function formatBlogDate(iso: string, locale: LocaleCode): string {
     ja: "ja-JP",
     pt: "pt-BR",
     it: "it-IT",
-    ko: "ko-KR"
+    ko: "ko-KR",
+    uk: "uk-UA"
   };
   return new Date(year, month - 1, day).toLocaleDateString(localesMap[locale] || "en-US", {
     year: "numeric",

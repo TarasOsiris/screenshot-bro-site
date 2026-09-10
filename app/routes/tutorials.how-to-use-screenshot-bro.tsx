@@ -38,6 +38,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ko: `${SITE_NAME} 사용 방법 — 단계별 완전 가이드`,
     ar: `كيفية استخدام ${SITE_NAME} — دليل خطوة بخطوة`,
     hi: `${SITE_NAME} का उपयोग कैसे करें — चरण-दर-चरण गाइड`,
+    uk: `Як користуватися ${SITE_NAME} — покроковий посібник`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -52,6 +53,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ko: `Screenshot Bro로 App Store 및 Google Play 스크린샷을 디자인, 번역, 내보내는 10단계 가이드.`,
     ar: `دليل خطوة بخطوة لتصميم وتوطين وتصدير لقطات شاشة المتاجر عبر Screenshot Bro.`,
     hi: `Screenshot Bro के साथ स्क्रीनशॉट डिज़ाइन, अनुवाद और निर्यात करने की चरण-दर-चरण गाइड।`,
+    uk: `Покроковий посібник зі створення, локалізації та експорту скриншотів App Store і Google Play у Screenshot Bro.`,
   };
 
   const title = titles[locale] || titles.en;
@@ -94,6 +96,7 @@ export default function HowToUseGuide() {
     ko: "튜토리얼",
     ar: "الدروس",
     hi: "ट्यूटोरियल",
+    uk: "Посібники",
   };
 
   const guideNames: Record<LocaleCode, string> = {
@@ -108,6 +111,7 @@ export default function HowToUseGuide() {
     ko: `${SITE_NAME} 사용 방법`,
     ar: `كيفية استخدام ${SITE_NAME}`,
     hi: `${SITE_NAME} का उपयोग कैसे करें`,
+    uk: `Як користуватися ${SITE_NAME}`,
   };
 
   const eyebrows: Record<LocaleCode, string> = {
@@ -122,6 +126,7 @@ export default function HowToUseGuide() {
     ko: "가이드",
     ar: "دليل إرشادي",
     hi: "ट्यूटोरियल",
+    uk: "Посібник",
   };
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([

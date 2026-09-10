@@ -27,6 +27,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ko: `업데이트 내역 및 릴리즈 노트 — ${SITE_NAME}`,
     ar: `سجل التحديثات والإصدارات — ${SITE_NAME}`,
     hi: `अपडेट इतिहास और बदलाव — ${SITE_NAME}`,
+    uk: `Історія змін — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -41,6 +42,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ko: `${SITE_NAME}의 새로운 소식. Mac 및 iPad용 App Store 스크린샷 디자이너의 최신 릴리즈 노트와 개선 사항.`,
     ar: `كل جديد في ${SITE_NAME}. ملاحظات الإصدارات والميزات الجديدة والتحسينات لنظامي Mac و iPad.`,
     hi: `${SITE_NAME} में क्या नया है। Mac और iPad के लिए ऐप स्टोर स्क्रीनशॉट डिज़ाइनर की नई सुविधाएँ और सुधार।`,
+    uk: `Що нового в ${SITE_NAME}. Нотатки до релізів, нові функції та покращення дизайнера скриншотів App Store для Mac та iPad.`,
   };
 
   const title = titles[locale] || titles.en;
@@ -474,6 +476,11 @@ export default function Changelog() {
       eyebrow: "परिवर्तन लॉग",
       title: "Screenshot Bro में क्या नया है",
       subtitle: "प्रत्येक रिलीज़ के साथ जोड़ी गई नई सुविधाएँ, सुधार और बग समाधान।",
+    },
+    uk: {
+      eyebrow: "Історія змін",
+      title: "Що нового в Screenshot Bro",
+      subtitle: "Нові функції, покращення та виправлення помилок у кожному релізі.",
     },
   };
 

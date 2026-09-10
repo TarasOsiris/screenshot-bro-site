@@ -102,6 +102,14 @@ const INDEX_COPY: Record<
     all: "전체",
     filterLabel: "카테고리별로 글 필터링",
   },
+  uk: {
+    eyebrow: "Блог",
+    title: "Посібники та ресурси",
+    description: "Практичні посібники зі створення та локалізації скриншотів для App Store і Google Play, які конвертують.",
+    latest: "Останнє",
+    all: "Усі",
+    filterLabel: "Фільтрувати статті за категорією",
+  },
 };
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -147,6 +155,7 @@ const CATEGORY_NAMES: Record<LocaleCode, Record<BlogCategory, string>> = {
   pt: { Guide: "Guia", Reference: "Referência", Comparison: "Comparação" },
   it: { Guide: "Guida", Reference: "Riferimento", Comparison: "Confronto" },
   ko: { Guide: "가이드", Reference: "참고자료", Comparison: "비교" },
+  uk: { Guide: "Посібник", Reference: "Довідник", Comparison: "Порівняння" },
 };
 
 function CategoryPill({ category, locale = "en" }: { category: BlogCategory; locale?: LocaleCode }) {

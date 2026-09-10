@@ -34,6 +34,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ko: `튜토리얼 및 사용 가이드 — ${SITE_NAME}`,
     ar: `الدروس والشروحات — ${SITE_NAME}`,
     hi: `ट्यूटोरियल और गाइड — ${SITE_NAME}`,
+    uk: `Посібники — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -48,6 +49,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ko: `단계별 가이드와 동영상으로 ${SITE_NAME} 마스터하기: 프로젝트 생성부터 디바이스 프레임, 다국어 번역, 스토어 업로드까지.`,
     ar: `تعلم استخدام ${SITE_NAME} عبر دليل خطوة بخطوة وفيديوهات قصيرة توضيحية.`,
     hi: `चरण-दर-चरण गाइड और लघु वीडियो के साथ ${SITE_NAME} का उपयोग करना सीखें।`,
+    uk: `Вивчайте ${SITE_NAME} за покроковим посібником і короткими відео — створюйте проекти, додавайте рамки пристроїв, локалізуйте та експортуйте скриншоти для магазинів.`,
   };
 
   const title = titles[locale] || titles.en;
