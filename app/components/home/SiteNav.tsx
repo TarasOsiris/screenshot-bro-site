@@ -95,21 +95,18 @@ export function SiteNav({
           />
         </a>
 
+        {/* Section anchors stay out of the bar and live in the drawer instead —
+            four product links plus the flag and the CTA is already as much as
+            this row can carry without the CTA getting lost. */}
         <div className="hidden lg:flex items-center gap-6">
-          {sectionAnchors.map((item) => (
-            <NavLink key={item.href} item={item} />
-          ))}
-          {sectionAnchors.length > 0 ? (
-            <span aria-hidden="true" className="h-4 w-px bg-white/10" />
-          ) : null}
           {PRODUCT_LINKS.map((link) => (
-            <a
+            <NavLink
               key={link.uiKey}
-              href={getSecondaryLinkHref(copy.locale.code, link)}
-              className="text-sm text-white/55 hover:text-white/90 transition-colors"
-            >
-              {copy.ui[link.uiKey]}
-            </a>
+              item={{
+                label: copy.ui[link.uiKey],
+                href: getSecondaryLinkHref(copy.locale.code, link),
+              }}
+            />
           ))}
         </div>
 
