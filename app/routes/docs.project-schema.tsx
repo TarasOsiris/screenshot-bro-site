@@ -2,7 +2,8 @@ import type { Route } from "./+types/docs.project-schema";
 import { data, useLoaderData } from "react-router";
 import { ContentLayout } from "~/components/ContentLayout";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
-import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { isLocaleCode, type LocaleCode } from "~/config/localization";
+import { localeHref } from "~/config/localized-routes";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 
 const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
@@ -61,7 +62,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
 
   const title = titles[locale] || titles.en;
   const description = descriptions[locale] || descriptions.en;
-  const pageUrl = `${SITE_URL}${localizedPath(locale, "/docs/project-schema")}`;
+  const pageUrl = `${SITE_URL}${localeHref(locale, "/docs/project-schema")}`;
 
   return mergeMeta(matches, [
     { title },

@@ -10,12 +10,13 @@ import {
 } from "~/config/site";
 import {
   getHomeCopy,
-  isGlobalPath,
   LOCALES,
   localizedPath,
+  stripLocale,
   type HomeCopy,
   type LocaleCode,
 } from "~/config/localization";
+import { hasTranslations, localeHref } from "~/config/localized-routes";
 
 type SiteNavProps = {
   copy?: HomeCopy;
@@ -28,23 +29,16 @@ const DEFAULT_COPY = getHomeCopy("en");
 
 function getSecondaryLinkHref(locale: LocaleCode, link: SecondaryLink): string {
   if (link.external) return link.href;
-  if (link.uiKey === "blog" || link.uiKey === "docs") {
-    return localizedPath(locale, link.href);
-  }
-  return link.href;
+  return localeHref(locale, link.href);
 }
 
-// Where the language switcher should send the visitor. Global pages (privacy,
-// terms, support, ...) exist only at their canonical unprefixed URL, so there is
-// no translated counterpart to switch to — offer the localized home rather than
-// a /{locale}/privacy that 301s straight back to where they already are.
+// Where the language switcher should send the visitor. Untranslated pages
+// (terms, changelog, the /vs comparisons, the docs) have no counterpart to
+// switch to — offer the localized home rather than a locale-prefixed URL that
+// serves the same English text and canonicalizes back to where they already are.
 function localeSwitchTarget(targetLocale: LocaleCode): string {
-  const segments = window.location.pathname.split("/").filter(Boolean);
-  if (segments.length > 0 && LOCALES.some((l) => l.code === segments[0] && l.code !== "en")) {
-    segments.shift();
-  }
-  const cleanPath = "/" + segments.join("/");
-  return localizedPath(targetLocale, isGlobalPath(cleanPath) ? "/" : cleanPath);
+  const cleanPath = stripLocale(window.location.pathname);
+  return localizedPath(targetLocale, hasTranslations(cleanPath) ? cleanPath : "/");
 }
 
 export function SiteNav({

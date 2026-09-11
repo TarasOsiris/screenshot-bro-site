@@ -2,7 +2,8 @@ import type { Route } from "./+types/changelog";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 import { ContentLayout } from "~/components/ContentLayout";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
-import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { isLocaleCode, type LocaleCode } from "~/config/localization";
+import { localeHref } from "~/config/localized-routes";
 import { data, useLoaderData } from "react-router";
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -47,7 +48,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
 
   const title = titles[locale] || titles.en;
   const description = descriptions[locale] || descriptions.en;
-  const url = `${SITE_URL}${localizedPath(locale, "/changelog")}`;
+  const url = `${SITE_URL}${localeHref(locale, "/changelog")}`;
 
   return mergeMeta(matches, [
     { title },
@@ -418,7 +419,7 @@ const TYPE_STYLES = {
 export default function Changelog() {
   const { locale } = useLoaderData<typeof loader>();
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
-    { name: locale === "es" ? "Historial de cambios" : locale === "zh" ? "更新日志" : locale === "ja" ? "更新履歴" : "Changelog", path: localizedPath(locale, "/changelog") },
+    { name: locale === "es" ? "Historial de cambios" : locale === "zh" ? "更新日志" : locale === "ja" ? "更新履歴" : "Changelog", path: localeHref(locale, "/changelog") },
   ]);
 
   const titles: Record<LocaleCode, { eyebrow: string; title: string; subtitle: string }> = {

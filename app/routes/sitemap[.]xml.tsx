@@ -6,6 +6,7 @@ import {
   comparisonPath,
 } from "~/config/comparisons";
 import { DEFAULT_LOCALE, LOCALES, localizedPath } from "~/config/localization";
+import { isBlogPostLocalized } from "~/config/localized-routes";
 import { GUIDE_UPDATED } from "~/config/tutorial-guide";
 import { CHANGELOG } from "~/routes/changelog";
 import { EFFECTIVE_DATE as TERMS_EFFECTIVE_DATE } from "~/routes/terms";
@@ -103,30 +104,13 @@ function buildSitemap(): string {
         alternates: localeAlternates("/blog"),
       }),
     ),
-    { loc: "/changelog", changefreq: "monthly", priority: "0.6", lastmod: latestChangelogDate, alternates: localeAlternates("/changelog") },
-    ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
-      loc: localizedPath(l.code, "/changelog"),
-      changefreq: "monthly",
-      priority: "0.6",
-      lastmod: latestChangelogDate,
-      alternates: localeAlternates("/changelog"),
-    })),
-    { loc: "/privacy", changefreq: "yearly", priority: "0.3", lastmod: privacyDate, alternates: localeAlternates("/privacy") },
-    ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
-      loc: localizedPath(l.code, "/privacy"),
-      changefreq: "yearly",
-      priority: "0.3",
-      lastmod: privacyDate,
-      alternates: localeAlternates("/privacy"),
-    })),
-    { loc: "/terms", changefreq: "yearly", priority: "0.3", lastmod: termsDate, alternates: localeAlternates("/terms") },
-    ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
-      loc: localizedPath(l.code, "/terms"),
-      changefreq: "yearly",
-      priority: "0.3",
-      lastmod: termsDate,
-      alternates: localeAlternates("/terms"),
-    })),
+    // English only. /{locale}/changelog, /terms and /privacy are real routes,
+    // but they render the English body with a translated <title>, so root.tsx
+    // canonicalizes them back here. Submitting a URL that canonicals elsewhere
+    // is what Ahrefs reports as "Non-canonical page in sitemap".
+    { loc: "/changelog", changefreq: "monthly", priority: "0.6", lastmod: latestChangelogDate },
+    { loc: "/privacy", changefreq: "yearly", priority: "0.3", lastmod: privacyDate },
+    { loc: "/terms", changefreq: "yearly", priority: "0.3", lastmod: termsDate },
     { loc: "/support", changefreq: "yearly", priority: "0.4", lastmod: homeLastmod, alternates: localeAlternates("/support") },
     ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
       loc: localizedPath(l.code, "/support"),
@@ -143,58 +127,34 @@ function buildSitemap(): string {
       lastmod: homeLastmod,
       alternates: localeAlternates("/tutorials"),
     })),
+    // English only: the walkthrough itself is written once in English, even
+    // though the /tutorials index that links to it is translated.
     {
       loc: "/tutorials/how-to-use-screenshot-bro",
       changefreq: "monthly",
       priority: "0.7",
       lastmod: GUIDE_UPDATED,
-      alternates: localeAlternates("/tutorials/how-to-use-screenshot-bro"),
     },
-    ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
-      loc: localizedPath(l.code, "/tutorials/how-to-use-screenshot-bro"),
-      changefreq: "monthly",
-      priority: "0.7",
-      lastmod: GUIDE_UPDATED,
-      alternates: localeAlternates("/tutorials/how-to-use-screenshot-bro"),
-    })),
     ...docsEntries,
     // English only, like the docs pages: /{locale}/friends 301s back here.
     { loc: "/friends", changefreq: "monthly", priority: "0.4", lastmod: homeLastmod },
-    { loc: "/vs", changefreq: "monthly", priority: "0.7", lastmod: LATEST_COMPARISON_VERIFIED, alternates: localeAlternates("/vs") },
-    ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
-      loc: localizedPath(l.code, "/vs"),
-      changefreq: "monthly",
-      priority: "0.7",
-      lastmod: LATEST_COMPARISON_VERIFIED,
-      alternates: localeAlternates("/vs"),
-    })),
-    ...COMPARISON_PAGES.flatMap(
-      (page): SitemapEntry[] => {
-        const path = comparisonPath(page.slug);
-        return [
-          {
-            loc: path,
-            changefreq: "monthly",
-            priority: "0.7",
-            lastmod: page.lastVerified,
-            alternates: localeAlternates(path),
-          },
-          ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
-            loc: localizedPath(l.code, path),
-            changefreq: "monthly",
-            priority: "0.7",
-            lastmod: page.lastVerified,
-            alternates: localeAlternates(path),
-          })),
-        ];
-      },
+    // English only: the comparison copy is English on every locale prefix.
+    { loc: "/vs", changefreq: "monthly", priority: "0.7", lastmod: LATEST_COMPARISON_VERIFIED },
+    ...COMPARISON_PAGES.map(
+      (page): SitemapEntry => ({
+        loc: comparisonPath(page.slug),
+        changefreq: "monthly",
+        priority: "0.7",
+        lastmod: page.lastVerified,
+      }),
     ),
   ];
 
   const blogEntries: SitemapEntry[] = [];
   BLOG_POSTS.forEach((post) => {
     const path = `/blog/${post.slug}`;
-    const alternates = post.localized === false ? undefined : localeAlternates(path);
+    const localized = isBlogPostLocalized(post.slug);
+    const alternates = localized ? localeAlternates(path) : undefined;
     blogEntries.push({
       loc: path,
       changefreq: "monthly",
@@ -202,7 +162,7 @@ function buildSitemap(): string {
       lastmod: post.dateModified ?? post.date,
       alternates,
     });
-    if (post.localized !== false) {
+    if (localized) {
       LOCALES.filter((locale) => locale.code !== DEFAULT_LOCALE).forEach((locale) => {
         blogEntries.push({
           loc: localizedPath(locale.code, path),

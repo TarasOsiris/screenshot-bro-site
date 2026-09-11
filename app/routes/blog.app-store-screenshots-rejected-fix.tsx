@@ -1,7 +1,7 @@
 import type { Route } from "./+types/blog.app-store-screenshots-rejected-fix";
 import { BlogArticleShell } from "~/components/BlogArticleShell";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
-import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { isLocaleCode, type LocaleCode } from "~/config/localization";
 import { data, useLoaderData } from "react-router";
 
 const SLUG = "app-store-screenshots-rejected-fix";
@@ -65,12 +65,12 @@ function getCTAMessage(locale: LocaleCode): string {
 function getSeoLinks(locale: LocaleCode) {
   return [
     {
-      href: localizedPath(locale, "/blog/upload-screenshots-to-app-store-connect"),
+      href: "/blog/upload-screenshots-to-app-store-connect",
       label: locale === "es" ? "Subir capturas a App Store Connect" : locale === "zh" ? "上传截图至 App Store Connect" : locale === "ja" ? "App Store Connectへのアップロード" : "Upload screenshots to App Store Connect",
       description: locale === "es" ? "sustituye los recursos rechazados y prepara el nuevo envío." : locale === "zh" ? "替换被拒素材并准备干净的重新提交。" : "replace rejected assets and prepare a clean resubmission.",
     },
     {
-      href: localizedPath(locale, "/blog/app-store-screenshot-localization-guide"),
+      href: "/blog/app-store-screenshot-localization-guide",
       label: locale === "es" ? "Guía de localización de capturas" : locale === "zh" ? "截图多语言本地化指南" : locale === "ja" ? "スクリーンショット多言語化ガイド" : "Screenshot localization guide",
       description: locale === "es" ? "asegura la coherencia de textos en todos los idiomas." : locale === "zh" ? "确保所有支持语言的文案合规且准确。" : "ensure text accuracy across every supported language.",
     },

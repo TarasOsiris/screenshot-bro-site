@@ -1,5 +1,6 @@
 import { getLocalizedBlogPosts } from "~/config/blog";
 import type { LocaleCode } from "~/config/localization";
+import { localeHref } from "~/config/localized-routes";
 
 const KEEP_READING_COPIES: Record<LocaleCode, string> = {
   en: "Keep reading",
@@ -62,7 +63,7 @@ export function RelatedPosts({
       </h2>
       <ul className="space-y-4">
         {related.map((post) => {
-          const href = locale === "en" ? `/blog/${post.slug}` : `/${locale}/blog/${post.slug}`;
+          const href = localeHref(locale, `/blog/${post.slug}`);
           const categoryLabel = CATEGORY_NAMES[locale]?.[post.category] || post.category;
           return (
             <li key={post.slug}>

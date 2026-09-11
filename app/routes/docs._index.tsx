@@ -1,7 +1,8 @@
 import { redirect } from "react-router";
 
 import type { Route } from "./+types/docs._index";
-import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { isLocaleCode, type LocaleCode } from "~/config/localization";
+import { localeHref } from "~/config/localized-routes";
 
 function getRouteLocale(locale?: string): LocaleCode {
   return isLocaleCode(locale) ? locale : "en";
@@ -13,7 +14,7 @@ export function loader({ params }: Route.LoaderArgs) {
     throw new Response("Not Found", { status: 404 });
   }
 
-  return redirect(localizedPath(getRouteLocale(locale), "/docs/help"));
+  return redirect(localeHref(getRouteLocale(locale), "/docs/help"));
 }
 
 export default function DocsIndex() {

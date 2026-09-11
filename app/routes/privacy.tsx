@@ -2,7 +2,8 @@ import type { Route } from "./+types/privacy";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 import { ContentLayout } from "~/components/ContentLayout";
 import { mergeMeta } from "~/config/meta";
-import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { isLocaleCode, type LocaleCode } from "~/config/localization";
+import { localeHref } from "~/config/localized-routes";
 import { data } from "react-router";
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -47,7 +48,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
 
   const title = titles[locale] || titles.en;
   const description = descriptions[locale] || descriptions.en;
-  const url = `${SITE_URL}${localizedPath(locale, "/privacy")}`;
+  const url = `${SITE_URL}${localeHref(locale, "/privacy")}`;
 
   return mergeMeta(matches, [
     { title },

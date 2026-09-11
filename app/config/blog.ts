@@ -15,7 +15,6 @@ export type BlogPost = {
   readTime: string;
   category: BlogCategory;
   keywords?: string[];
-  localized?: boolean;
 };
 
 export const BLOG_POSTS: BlogPost[] = [

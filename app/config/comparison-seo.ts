@@ -3,7 +3,8 @@ import { AUTHOR_NAME, AUTHOR_URL } from "~/config/blog-seo";
 import { comparisonPath, getComparisonPage } from "~/config/comparisons";
 import { mergeMeta, type MetaMatchLike } from "~/config/meta";
 import { SITE_URL, TWITTER_HANDLE, SITE_NAME } from "~/config/site";
-import { localizedPath, type LocaleCode } from "~/config/localization";
+import { type LocaleCode } from "~/config/localization";
+import { localeHref } from "~/config/localized-routes";
 
 const OG_IMAGE = `${SITE_URL}/og-image.png`;
 
@@ -13,7 +14,7 @@ export function buildComparisonMeta(
   locale: LocaleCode = "en",
 ): MetaDescriptor[] {
   const page = getComparisonPage(slug);
-  const url = `${SITE_URL}${localizedPath(locale, comparisonPath(slug))}`;
+  const url = `${SITE_URL}${localeHref(locale, comparisonPath(slug))}`;
   const title = page.title;
   const description = page.description;
 
@@ -43,7 +44,7 @@ export function buildComparisonMeta(
 // SoftwareApplication node root.tsx already emits plus the competitor.
 export function buildComparisonArticleJsonLd(slug: string, locale: LocaleCode = "en"): string {
   const page = getComparisonPage(slug);
-  const url = `${SITE_URL}${localizedPath(locale, comparisonPath(slug))}`;
+  const url = `${SITE_URL}${localeHref(locale, comparisonPath(slug))}`;
   const person = { "@type": "Person", name: AUTHOR_NAME, url: AUTHOR_URL };
   return JSON.stringify({
     "@context": "https://schema.org",

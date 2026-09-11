@@ -15,16 +15,19 @@ import {
 } from "~/config/site";
 import {
   getHomeCopy,
-  localizedPath,
   type HomeCopy,
   type LocaleCode,
 } from "~/config/localization";
+import { localeHref } from "~/config/localized-routes";
 
 const DEFAULT_COPY = getHomeCopy("en");
 
+// localeHref prefixes only the paths that actually have a translation, so the
+// footer stops emitting /{locale}/friends (no such route — a 301 on every page)
+// and /{locale}/terms (a 200 that canonicalizes straight back to /terms).
 function getSecondaryLinkHref(locale: LocaleCode, link: SecondaryLink): string {
   if (link.external) return link.href;
-  return localizedPath(locale, link.href);
+  return localeHref(locale, link.href);
 }
 
 export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {

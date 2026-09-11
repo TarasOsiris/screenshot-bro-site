@@ -1,7 +1,7 @@
 import type { Route } from "./+types/blog.submit-app-to-app-store";
 import { BlogArticleShell } from "~/components/BlogArticleShell";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
-import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { isLocaleCode, type LocaleCode } from "~/config/localization";
 import { data, useLoaderData } from "react-router";
 
 const SLUG = "submit-app-to-app-store";
@@ -65,17 +65,17 @@ function getCTAMessage(locale: LocaleCode): string {
 function getSeoLinks(locale: LocaleCode) {
   return [
     {
-      href: localizedPath(locale, "/blog/upload-screenshots-to-app-store-connect"),
+      href: "/blog/upload-screenshots-to-app-store-connect",
       label: locale === "es" ? "Subir capturas a App Store Connect" : locale === "zh" ? "上传截图至 App Store Connect" : locale === "ja" ? "App Store Connectへのスクリーンショットアップロード" : "Upload screenshots to App Store Connect",
       description: locale === "es" ? "guía detallada para el paso de recursos visuales." : locale === "zh" ? "素材准备与上传的详细步骤指南。" : "the detailed how-to for the assets step of submission.",
     },
     {
-      href: localizedPath(locale, "/blog/app-store-screenshots-rejected-fix"),
+      href: "/blog/app-store-screenshots-rejected-fix",
       label: locale === "es" ? "Por qué se rechazan las capturas" : locale === "zh" ? "截图被拒原因与修复" : locale === "ja" ? "スクリーンショットのリジェクト理由と修正" : "Why screenshots get rejected",
       description: locale === "es" ? "evita problemas de metadatos que retrasen la revisión." : locale === "zh" ? "避免因元数据合规问题耽误审核进度。" : "avoid the metadata problems that delay review.",
     },
     {
-      href: localizedPath(locale, "/blog/app-store-optimization-aso-guide"),
+      href: "/blog/app-store-optimization-aso-guide",
       label: locale === "es" ? "Guía de ASO" : locale === "zh" ? "ASO 实战指南" : locale === "ja" ? "ASO完全ガイド" : "ASO guide",
       description: locale === "es" ? "optimiza la ficha de tu app antes de publicarla." : locale === "zh" ? "在提交前优化你的应用商店页面。" : "optimize the listing you are about to submit.",
     },

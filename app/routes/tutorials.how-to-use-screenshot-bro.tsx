@@ -13,7 +13,8 @@ import {
   GUIDE_UPDATED,
 } from "~/config/tutorial-guide";
 import { formatBlogDate } from "~/lib/format-blog-date";
-import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { isLocaleCode, type LocaleCode } from "~/config/localization";
+import { localeHref } from "~/config/localized-routes";
 import { data, useLoaderData } from "react-router";
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -58,7 +59,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
 
   const title = titles[locale] || titles.en;
   const description = descriptions[locale] || descriptions.en;
-  const pageUrl = `${SITE_URL}${localizedPath(locale, "/tutorials/how-to-use-screenshot-bro")}`;
+  const pageUrl = `${SITE_URL}${localeHref(locale, "/tutorials/how-to-use-screenshot-bro")}`;
 
   return mergeMeta(matches, [
     { title },
@@ -130,8 +131,8 @@ export default function HowToUseGuide() {
   };
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
-    { name: tutorialNames[locale] || tutorialNames.en, path: localizedPath(locale, "/tutorials") },
-    { name: guideNames[locale] || guideNames.en, path: localizedPath(locale, "/tutorials/how-to-use-screenshot-bro") },
+    { name: tutorialNames[locale] || tutorialNames.en, path: localeHref(locale, "/tutorials") },
+    { name: guideNames[locale] || guideNames.en, path: localeHref(locale, "/tutorials/how-to-use-screenshot-bro") },
   ]);
 
   return (

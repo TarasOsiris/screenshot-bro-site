@@ -11,7 +11,6 @@ import {
 
 import type { Route } from "./+types/root";
 import {
-  APP_CATEGORY,
   APP_SCREENSHOTS,
   APP_STORE_APP_ID,
   APP_STORE_URL,
@@ -32,7 +31,6 @@ import {
   WORKFLOW_STEPS,
   X_PROFILE_URL,
 } from "~/config/site";
-import { BLOG_POSTS } from "~/config/blog";
 import {
   LOCALES,
   buildOgLocaleMeta,
@@ -40,7 +38,9 @@ import {
   getLocaleInfo,
   isLocaleCode,
   localizedPath,
+  stripLocale,
 } from "~/config/localization";
+import { hasTranslations } from "~/config/localized-routes";
 import "./app.css";
 
 export const SITE_TITLE = `${SITE_NAME} — App Store & Google Play Screenshots`;
@@ -63,7 +63,6 @@ const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
   ],
   applicationCategory: "DesignApplication",
   applicationSubCategory: "App Store screenshot generator",
-  category: APP_CATEGORY,
   description: SITE_DESCRIPTION,
   url: SITE_URL,
   downloadUrl: APP_STORE_URL,
@@ -261,43 +260,10 @@ const isLocalizedHome = (pathname: string): boolean => {
   return segments.length === 0 || (segments.length === 1 && isLocaleCode(segments[0]));
 };
 
-const isLocalizedPath = (pathname: string): boolean => {
-  const segments = pathname.split("/").filter(Boolean);
-  if (segments.length === 0 || (segments.length === 1 && isLocaleCode(segments[0]))) {
-    return true;
-  }
-  if (
-    (segments.length === 1 && segments[0] === "blog") ||
-    (segments.length === 2 && isLocaleCode(segments[0]) && segments[1] === "blog")
-  ) {
-    return true;
-  }
-  // /docs is deliberately absent: the help and schema pages are written once in
-  // English and only their nav and footer are translated, so a locale-prefixed
-  // docs URL is a duplicate of the English one, not a translation of it. They
-  // canonicalize to the unprefixed URL below and emit no hreflang cluster.
-  if (
-    (segments.length === 2 && segments[0] === "blog") ||
-    (segments.length === 3 && isLocaleCode(segments[0]) && segments[1] === "blog")
-  ) {
-    const slug = segments[0] === "blog" ? segments[1] : segments[2];
-    const post = BLOG_POSTS.find((entry) => entry.slug === slug);
-    return post?.localized !== false;
-  }
-  return false;
-};
-
-const getCleanPath = (pathname: string): string => {
-  const segments = pathname.split("/").filter(Boolean);
-  if (segments.length > 0 && isLocaleCode(segments[0])) {
-    segments.shift();
-  }
-  return "/" + segments.join("/");
-};
-
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const locale = getLocaleInfo(getLocaleFromPath(location.pathname));
+  const cleanPath = stripLocale(location.pathname);
 
   return (
     <html lang={locale.htmlLang} dir={locale.dir}>
@@ -309,33 +275,35 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="apple-itunes-app" content={`app-id=${APP_STORE_APP_ID}`} />
         <Meta />
         <Links />
-        {isLocalizedPath(location.pathname) ? (
+        {hasTranslations(cleanPath) ? (
           <>
             <link
               rel="canonical"
-              href={`${SITE_URL}${localizedPath(locale.code, getCleanPath(location.pathname))}`}
+              href={`${SITE_URL}${localizedPath(locale.code, cleanPath)}`}
             />
             {LOCALES.map((alternateLocale) => (
               <link
                 key={alternateLocale.code}
                 rel="alternate"
                 hrefLang={alternateLocale.htmlLang}
-                href={`${SITE_URL}${localizedPath(alternateLocale.code, getCleanPath(location.pathname))}`}
+                href={`${SITE_URL}${localizedPath(alternateLocale.code, cleanPath)}`}
               />
             ))}
             <link
               rel="alternate"
               hrefLang="x-default"
-              href={`${SITE_URL}${getCleanPath(location.pathname)}`}
+              href={`${SITE_URL}${cleanPath}`}
             />
           </>
         ) : (
-          // Untranslated routes reached under a locale prefix (the docs pages)
-          // point at the one English URL rather than declaring themselves
-          // canonical, so the same content is not indexed eleven times.
+          // Routes that render an English body under a locale prefix (docs,
+          // terms, changelog, the /vs comparisons) point at the one English URL
+          // rather than declaring themselves canonical, so the same content is
+          // not indexed once per locale. They emit no hreflang cluster and
+          // sitemap.xml lists only their English URL — see config/localized-routes.
           <link
             rel="canonical"
-            href={`${SITE_URL}${getCleanPath(location.pathname)}`}
+            href={`${SITE_URL}${cleanPath}`}
           />
         )}
         <script

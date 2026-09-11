@@ -3050,25 +3050,33 @@ export function getHomeCopy(locale: LocaleCode): HomeCopy {
   };
 }
 
+// Drops a leading /{locale} segment so a path is always locale-neutral before
+// anything prefixes it again. Callers that already hold a clean slug lose
+// nothing; callers that pass an already-localized path stop producing
+// /pt/pt/blog/... , which is a hard 404 on every locale-prefixed route.
+export function stripLocale(path: string): string {
+  const segments = path.split("/").filter(Boolean);
+  if (segments.length > 0 && isLocaleCode(segments[0])) segments.shift();
+  return "/" + segments.join("/");
+}
+
 export function localizedPath(locale: LocaleCode, path = "/"): string {
-  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  const withSlash = path.startsWith("/") ? path : `/${path}`;
+  const normalizedPath = stripLocale(withSlash);
   if (locale === DEFAULT_LOCALE) return normalizedPath;
   if (normalizedPath === "/") return `/${locale}`;
   return `/${locale}${normalizedPath}`;
 }
 
-// Routes that have no per-locale variant — they always live at the canonical,
-// unprefixed URL. Content links to these must NOT be locale-prefixed, otherwise
-// crawlers hit 404s like /es/privacy. Matching is by first path segment, so the
-// "/vs" entry covers every /vs/<slug> comparison page (see config/comparisons.ts).
-// Keep the top-level entries in sync with routes.ts.
+// Routes routes.ts mounts only at the unprefixed URL — there is no `:locale`
+// variant, so /es/friends is a 404 rather than a page. Matching is by first path
+// segment. Keep in sync with routes.ts.
+//
+// This is about which URLs *exist*, not about which pages are translated: plenty
+// of locale-prefixed routes do exist and still serve English (terms, changelog,
+// /vs/...). config/localized-routes.ts is the authority on that, and it is what
+// link builders, canonicals and the sitemap consult.
 export const GLOBAL_ROUTE_PATHS = [
-  "/privacy",
-  "/terms",
-  "/changelog",
-  "/support",
-  "/tutorials",
-  "/vs",
   "/friends",
   "/sitemap.xml",
   "/llms.txt",
@@ -3083,7 +3091,22 @@ export function isGlobalPath(path: string): boolean {
   return GLOBAL_PATH_SEGMENTS.has(segment);
 }
 
-// /{locale}/privacy and friends were never real routes, but crawlers and the
+// Safety net for the doubled prefixes (/pt/pt/blog/...) that a link-building bug
+// put into crawler indexes before it was fixed. Collapses every leading locale
+// segment down to the first one in a single hop, so /pt/pt/pt/... never turns
+// into a redirect chain. Returns null when the path has at most one.
+export function dedupedLocalePath(pathname: string): string | null {
+  const segments = pathname.split("/").filter(Boolean);
+  if (segments.length < 2 || !isLocaleCode(segments[0]) || !isLocaleCode(segments[1])) {
+    return null;
+  }
+  const locale = segments[0];
+  let rest = segments.slice(1);
+  while (rest.length > 0 && isLocaleCode(rest[0])) rest = rest.slice(1);
+  return "/" + [locale, ...rest].join("/");
+}
+
+// /es/friends and its kin were never real routes, but crawlers and an older
 // locale switcher found them anyway. Map them back to the one canonical URL so
 // they 301 instead of 404. Returns null when the path isn't a locale-prefixed
 // global route (so callers keep serving their normal 404).
@@ -3091,8 +3114,8 @@ export function canonicalGlobalPath(pathname: string): string | null {
   const segments = pathname.split("/").filter(Boolean);
   if (segments.length < 2 || !isLocaleCode(segments[0])) return null;
   const canonical = "/" + segments.slice(1).join("/");
-  // Segment match, same rule as isGlobalPath: /es/vs/<slug> → /vs/<slug>. An
-  // unknown leaf still ends in a 404 after one hop, never a loop.
+  // Segment match, same rule as isGlobalPath: /es/friends/<x> → /friends/<x>.
+  // An unknown leaf still ends in a 404 after one hop, never a loop.
   return isGlobalPath(canonical) ? canonical : null;
 }
 

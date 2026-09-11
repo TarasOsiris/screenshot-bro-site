@@ -10,7 +10,8 @@ import {
 } from "~/config/comparisons";
 import { buildBreadcrumbJsonLd } from "~/config/meta";
 import { SITE_NAME } from "~/config/site";
-import { localizedPath, type LocaleCode } from "~/config/localization";
+import { type LocaleCode } from "~/config/localization";
+import { localeHref } from "~/config/localized-routes";
 
 export type RelatedLink = {
   href: string;
@@ -66,8 +67,8 @@ export function ComparisonShell({
   const page = getComparisonPage(slug);
   const checked = formatMonthYear(page.lastVerified);
   const breadcrumb = buildBreadcrumbJsonLd([
-    { name: COMPARISON_BREADCRUMB_NAMES[locale] || COMPARISON_BREADCRUMB_NAMES.en, path: localizedPath(locale, "/vs") },
-    { name: page.heading, path: localizedPath(locale, comparisonPath(slug)) },
+    { name: COMPARISON_BREADCRUMB_NAMES[locale] || COMPARISON_BREADCRUMB_NAMES.en, path: localeHref(locale, "/vs") },
+    { name: page.heading, path: localeHref(locale, comparisonPath(slug)) },
   ]);
 
   return (
@@ -102,7 +103,7 @@ export function ComparisonShell({
             Details about {page.competitor} were checked in {checked} on{" "}
             {page.checkedAgainst}; pricing and features change, so verify there
             before deciding. If something here is out of date,{" "}
-            <a href={localizedPath(locale, "/support")}>tell us</a> and we will fix it.
+            <a href={localeHref(locale, "/support")}>tell us</a> and we will fix it.
           </p>
 
           {children}
@@ -129,7 +130,7 @@ export function ComparisonShell({
               <ul>
                 {related.map((link) => (
                   <li key={link.href}>
-                    <a href={localizedPath(locale, link.href)}>{link.label}</a> — {link.description}
+                    <a href={localeHref(locale, link.href)}>{link.label}</a> — {link.description}
                   </li>
                 ))}
               </ul>

@@ -9,7 +9,8 @@ import {
 } from "~/config/comparisons";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
 import { SITE_NAME, SITE_URL } from "~/config/site";
-import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { isLocaleCode, type LocaleCode } from "~/config/localization";
+import { localeHref } from "~/config/localized-routes";
 import { data, useLoaderData } from "react-router";
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -54,7 +55,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
 
   const title = titles[locale] || titles.en;
   const description = descriptions[locale] || descriptions.en;
-  const pageUrl = `${SITE_URL}${localizedPath(locale, "/vs")}`;
+  const pageUrl = `${SITE_URL}${localeHref(locale, "/vs")}`;
 
   return mergeMeta(matches, [
     { title },
@@ -131,7 +132,7 @@ function GroupList({ group, locale }: { group: HubRow["group"]; locale: LocaleCo
     <ul>
       {HUB_ROWS.filter((row) => row.group === group).map((row) => (
         <li key={row.href}>
-          <a href={localizedPath(locale, row.href)}>
+          <a href={localeHref(locale, row.href)}>
             {row.tool} vs {SITE_NAME}
           </a>{" "}
           — {row.type.toLowerCase()}, {row.free.toLowerCase()}.
@@ -139,7 +140,7 @@ function GroupList({ group, locale }: { group: HubRow["group"]; locale: LocaleCo
             <>
               {" "}
               Thinking of switching? See the{" "}
-              <a href={localizedPath(locale, row.alternativeHref)}>{row.tool} alternative</a> guide.
+              <a href={localeHref(locale, row.alternativeHref)}>{row.tool} alternative</a> guide.
             </>
           ) : null}
         </li>
@@ -166,7 +167,7 @@ export default function ComparisonsIndex() {
     uk: "Порівняння",
   };
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
-    { name: breadcrumbNames[locale] || breadcrumbNames.en, path: localizedPath(locale, "/vs") },
+    { name: breadcrumbNames[locale] || breadcrumbNames.en, path: localeHref(locale, "/vs") },
   ]);
 
   return (
@@ -229,7 +230,7 @@ export default function ComparisonsIndex() {
               {HUB_ROWS.map((row) => (
                 <tr key={row.href}>
                   <td>
-                    <a href={localizedPath(locale, row.href)}>{row.tool}</a>
+                    <a href={localeHref(locale, row.href)}>{row.tool}</a>
                   </td>
                   <td>{row.type}</td>
                   <td>{row.free}</td>

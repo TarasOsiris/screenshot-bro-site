@@ -1,7 +1,7 @@
 import type { Route } from "./+types/blog.app-store-optimization-aso-guide";
 import { BlogArticleShell } from "~/components/BlogArticleShell";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
-import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { isLocaleCode, type LocaleCode } from "~/config/localization";
 import { data, useLoaderData } from "react-router";
 
 const SLUG = "app-store-optimization-aso-guide";
@@ -65,17 +65,17 @@ function getCTAMessage(locale: LocaleCode): string {
 function getSeoLinks(locale: LocaleCode) {
   return [
     {
-      href: localizedPath(locale, "/blog/screenshots-that-convert"),
+      href: "/blog/screenshots-that-convert",
       label: locale === "es" ? "Capturas que convierten" : locale === "zh" ? "高转化率截图设计" : locale === "ja" ? "コンバージョン率を高めるスクリーンショット" : locale === "de" ? "Screenshots, die konvertieren" : locale === "fr" ? "Captures qui convertissent" : "Screenshots that convert",
       description: locale === "es" ? "convierte la mitad de ASO en una secuencia visual sólida." : locale === "zh" ? "将 ASO 转化环节落地为具体的截图序列。" : locale === "ja" ? "ASOのコンバージョン改善を実践的なスクリーンショット構成に落とし込む。" : "turn the conversion half of ASO into a concrete screenshot sequence.",
     },
     {
-      href: localizedPath(locale, "/blog/app-store-screenshot-localization-guide"),
+      href: "/blog/app-store-screenshot-localization-guide",
       label: locale === "es" ? "Guía de localización de capturas" : locale === "zh" ? "截图本地化指南" : locale === "ja" ? "スクリーンショット多言語化ガイド" : "Screenshot localization guide",
       description: locale === "es" ? "extiende tu ASO a cada mercado internacional." : locale === "zh" ? "将 ASO 扩展至你发布的每个全球市场。" : locale === "ja" ? "海外展開するすべての市場に合わせてASOを最適化。" : "extend ASO into every market you ship to.",
     },
     {
-      href: localizedPath(locale, "/blog/ab-test-app-store-screenshots"),
+      href: "/blog/ab-test-app-store-screenshots",
       label: locale === "es" ? "Test A/B de capturas" : locale === "zh" ? "A/B 测试应用截图" : locale === "ja" ? "スクリーンショットのA/Bテスト" : "A/B test your screenshots",
       description: locale === "es" ? "mide el impacto real en conversiones en lugar de adivinar." : locale === "zh" ? "通过数据测量转化变化，告别盲目猜测。" : locale === "ja" ? "推測ではなく実データでコンバージョン変化を測定。" : "measure conversion changes instead of guessing.",
     },

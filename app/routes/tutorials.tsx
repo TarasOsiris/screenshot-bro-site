@@ -10,6 +10,7 @@ import {
   youtubeWatchUrl,
 } from "~/config/tutorials";
 import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { localeHref } from "~/config/localized-routes";
 import { data, useLoaderData } from "react-router";
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -68,7 +69,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
 };
 
 function GuideCard({ locale }: { locale: LocaleCode }) {
-  const guidePath = localizedPath(locale, "/tutorials/how-to-use-screenshot-bro");
+  const guidePath = localeHref(locale, "/tutorials/how-to-use-screenshot-bro");
   const copy = getTutorialsCopy(locale);
 
   return (
@@ -127,7 +128,7 @@ export default function Tutorials() {
   });
 
   return (
-    <ContentLayout>
+    <ContentLayout locale={locale}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }}

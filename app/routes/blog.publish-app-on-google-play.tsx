@@ -1,7 +1,7 @@
 import type { Route } from "./+types/blog.publish-app-on-google-play";
 import { BlogArticleShell } from "~/components/BlogArticleShell";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
-import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { isLocaleCode, type LocaleCode } from "~/config/localization";
 import { data, useLoaderData } from "react-router";
 
 const SLUG = "publish-app-on-google-play";
@@ -65,12 +65,12 @@ function getCTAMessage(locale: LocaleCode): string {
 function getSeoLinks(locale: LocaleCode) {
   return [
     {
-      href: localizedPath(locale, "/blog/google-play-screenshot-sizes-requirements"),
+      href: "/blog/google-play-screenshot-sizes-requirements",
       label: locale === "es" ? "Requisitos de capturas de Google Play" : locale === "zh" ? "Google Play 截图尺寸与要求" : locale === "ja" ? "Google Playスクリーンショット要件" : "Google Play screenshot requirements",
       description: locale === "es" ? "tamaños exactos para subir a la ficha de la tienda." : locale === "zh" ? "上传所需截图的精确像素规格与设备尺寸。" : "exact sizes for the screenshots you upload.",
     },
     {
-      href: localizedPath(locale, "/blog/ab-test-app-store-screenshots"),
+      href: "/blog/ab-test-app-store-screenshots",
       label: locale === "es" ? "Tests A/B de capturas" : locale === "zh" ? "A/B 测试应用截图" : locale === "ja" ? "スクリーンショットのA/Bテスト" : "A/B test your screenshots",
       description: locale === "es" ? "aprende a optimizar la ficha con experimentos de Google Play." : locale === "zh" ? "利用 Google Play 商店商品详情实验提升转化。" : "learn how to test and optimize with store listing experiments.",
     },

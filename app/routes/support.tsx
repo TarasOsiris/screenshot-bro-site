@@ -12,6 +12,7 @@ import {
   X_PROFILE_URL,
 } from "~/config/site";
 import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { localeHref } from "~/config/localized-routes";
 import { data, useLoaderData } from "react-router";
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -100,7 +101,7 @@ export default function Support() {
   const copy = getSupportCopy(locale);
 
   return (
-    <ContentLayout>
+    <ContentLayout locale={locale}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }}
@@ -187,7 +188,7 @@ export default function Support() {
         <p className="mt-12 text-center text-sm text-white/45">
           {copy.docsPrompt}{" "}
           <a
-            href={localizedPath(locale, "/docs/help")}
+            href={localeHref(locale, "/docs/help")}
             className="text-white/70 hover:text-white/95 transition-colors underline underline-offset-4"
           >
             {copy.docsLink}

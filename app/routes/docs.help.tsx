@@ -20,7 +20,8 @@ import {
   type SectionImage,
 } from "~/components/DocBlocks";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
-import { isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
+import { isLocaleCode, type LocaleCode } from "~/config/localization";
+import { localeHref } from "~/config/localized-routes";
 import { DISCORD_INVITE_URL, SITE_NAME, SITE_URL } from "~/config/site";
 
 const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
@@ -78,7 +79,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
 
   const title = titles[locale] || titles.en;
   const description = descriptions[locale] || descriptions.en;
-  const pageUrl = `${SITE_URL}${localizedPath(locale, "/docs/help")}`;
+  const pageUrl = `${SITE_URL}${localeHref(locale, "/docs/help")}`;
 
   return mergeMeta(matches, [
     { title },
@@ -969,7 +970,7 @@ export default function Help() {
               {NAV_ENTRIES.map((entry) => (
                 <a
                   key={entry.id}
-                  href={entry.href ? localizedPath(locale, entry.href) : `#${entry.id}`}
+                  href={entry.href ? localeHref(locale, entry.href) : `#${entry.id}`}
                   className="flex items-center gap-2.5 text-sm text-white/60 hover:text-white/95 transition-colors"
                 >
                   <span className="text-white/40 shrink-0">

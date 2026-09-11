@@ -1,8 +1,5 @@
-import {
-  isGlobalPath,
-  localizedPath,
-  type LocaleCode,
-} from "~/config/localization";
+import type { LocaleCode } from "~/config/localization";
+import { localeHref } from "~/config/localized-routes";
 
 // The block DSL shared by the help docs (/docs/help) and the written tutorial
 // (/tutorials/how-to-use-screenshot-bro). Content lives as data; these are the
@@ -47,7 +44,7 @@ export function MD({ text, locale }: { text: string; locale: LocaleCode }) {
       const href = match[4];
       const external = /^https?:\/\//.test(href);
       const localizedHref =
-        href.startsWith("/") && !isGlobalPath(href) ? localizedPath(locale, href) : href;
+        href.startsWith("/") ? localeHref(locale, href) : href;
       parts.push(
         <a
           key={key++}
