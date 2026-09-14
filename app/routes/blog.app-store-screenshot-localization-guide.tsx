@@ -63,7 +63,7 @@ function ArticleImage({
         decoding="async"
         className="w-full h-auto rounded-lg border border-border-subtle bg-surface-raised"
       />
-      <figcaption className="mt-2 text-center text-xs leading-relaxed text-white/45">
+      <figcaption className="mt-2 text-center text-xs leading-relaxed text-ink/58">
         {caption}
       </figcaption>
     </figure>

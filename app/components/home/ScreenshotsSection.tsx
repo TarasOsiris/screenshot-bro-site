@@ -120,7 +120,7 @@ export function ScreenshotsSection({ copy }: { copy: HomeCopy }) {
                 </div>
                 <figcaption
                   className={`mt-3 text-center text-sm transition-colors duration-300 ${
-                    isActive ? "text-white/70" : "text-white/55"
+                    isActive ? "text-ink/70" : "text-ink/55"
                   }`}
                 >
                   {shot.caption}
@@ -135,7 +135,7 @@ export function ScreenshotsSection({ copy }: { copy: HomeCopy }) {
           onClick={() => scrollTo(activeIndex - 1)}
           disabled={atStart}
           aria-label={copy.ui.previousScreenshot}
-          className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-4 lg:left-8 items-center justify-center w-11 h-11 rounded-full bg-surface-raised/80 backdrop-blur-md border border-border-subtle text-white/80 hover:text-white hover:bg-surface-raised hover:border-white/20 transition-all disabled:opacity-0 disabled:pointer-events-none"
+          className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-4 lg:left-8 items-center justify-center w-11 h-11 rounded-full bg-surface-raised/80 backdrop-blur-md border border-border-subtle text-ink/80 hover:text-ink hover:bg-surface-raised hover:border-ink/20 transition-all disabled:opacity-0 disabled:pointer-events-none"
         >
           <ChevronLeftIcon />
         </button>
@@ -144,7 +144,7 @@ export function ScreenshotsSection({ copy }: { copy: HomeCopy }) {
           onClick={() => scrollTo(activeIndex + 1)}
           disabled={atEnd}
           aria-label={copy.ui.nextScreenshot}
-          className="hidden md:flex absolute top-1/2 -translate-y-1/2 right-4 lg:right-8 items-center justify-center w-11 h-11 rounded-full bg-surface-raised/80 backdrop-blur-md border border-border-subtle text-white/80 hover:text-white hover:bg-surface-raised hover:border-white/20 transition-all disabled:opacity-0 disabled:pointer-events-none"
+          className="hidden md:flex absolute top-1/2 -translate-y-1/2 right-4 lg:right-8 items-center justify-center w-11 h-11 rounded-full bg-surface-raised/80 backdrop-blur-md border border-border-subtle text-ink/80 hover:text-ink hover:bg-surface-raised hover:border-ink/20 transition-all disabled:opacity-0 disabled:pointer-events-none"
         >
           <ChevronRightIcon />
         </button>
@@ -164,14 +164,14 @@ export function ScreenshotsSection({ copy }: { copy: HomeCopy }) {
               className={`block h-2 rounded-full transition-all ${
                 i === activeIndex
                   ? "bg-accent w-6"
-                  : "bg-white/20 group-hover:bg-white/40 w-2"
+                  : "bg-ink/20 group-hover:bg-ink/40 w-2"
               }`}
             />
           </button>
         ))}
       </div>
 
-      <p className="mt-3 text-center text-xs text-white/60 tabular-nums">
+      <p className="mt-3 text-center text-xs text-ink/60 tabular-nums">
         {activeIndex + 1} / {screenshots.length}
       </p>
     </section>

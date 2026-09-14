@@ -933,7 +933,7 @@ function SectionView({ section, locale }: { section: Section; locale: LocaleCode
     <section>
       <h2 id={section.id}>{section.title}</h2>
       {section.subtitle && (
-        <p className="-mt-2 mb-4 text-white/55 italic">{section.subtitle}</p>
+        <p className="-mt-2 mb-4 text-ink/55 italic">{section.subtitle}</p>
       )}
       {image && imageSrc && (
         <DocFigure image={image} src={imageSrc} locale={locale} />
@@ -963,7 +963,7 @@ export default function Help() {
 
         <div className="grid gap-12 lg:grid-cols-[200px_minmax(0,1fr)]">
           <aside className="lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-auto">
-            <p className="text-[11px] uppercase tracking-[0.25em] text-white/40 font-mono mb-4">
+            <p className="text-[11px] uppercase tracking-[0.25em] text-ink/55 font-mono mb-4">
               On this page
             </p>
             <nav className="flex flex-col gap-2">
@@ -971,9 +971,9 @@ export default function Help() {
                 <a
                   key={entry.id}
                   href={entry.href ? localeHref(locale, entry.href) : `#${entry.id}`}
-                  className="flex items-center gap-2.5 text-sm text-white/60 hover:text-white/95 transition-colors"
+                  className="flex items-center gap-2.5 text-sm text-ink/60 hover:text-ink/95 transition-colors"
                 >
-                  <span className="text-white/40 shrink-0">
+                  <span className="text-ink/55 shrink-0">
                     {ICON_MAP[entry.id]}
                   </span>
                   <span>{entry.navTitle}</span>

@@ -75,18 +75,18 @@ function GuideCard({ locale }: { locale: LocaleCode }) {
   return (
     <a
       href={guidePath}
-      className="group block rounded-2xl border border-border bg-surface-raised p-8 transition-all hover:border-white/20"
+      className="group block rounded-2xl border border-border bg-surface-raised p-8 transition-all hover:border-ink/20"
     >
       <p className="text-xs uppercase tracking-[0.25em] text-accent-light font-mono">
         {copy.guideEyebrow}
       </p>
-      <h2 className="mt-3 font-display font-bold text-2xl text-white leading-snug">
+      <h2 className="mt-3 font-display font-bold text-2xl text-ink leading-snug">
         {copy.guideTitle}
       </h2>
-      <p className="mt-3 text-sm text-white/55 leading-relaxed max-w-2xl">
+      <p className="mt-3 text-sm text-ink/55 leading-relaxed max-w-2xl">
         {copy.guideDesc}
       </p>
-      <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-white/85 group-hover:text-white transition-colors">
+      <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-ink/85 group-hover:text-ink transition-colors">
         {copy.guideCta}
         <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">
           →
@@ -142,17 +142,17 @@ export default function Tutorials() {
           <p className="text-xs uppercase tracking-[0.25em] text-accent-light font-mono mb-3">
             {copy.eyebrow}
           </p>
-          <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white tracking-tight">
+          <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-ink tracking-tight">
             {copy.heading}
           </h1>
-          <p className="mt-4 text-base text-white/55 leading-relaxed">
+          <p className="mt-4 text-base text-ink/55 leading-relaxed">
             {copy.subheading}
           </p>
         </header>
 
         <GuideCard locale={locale} />
 
-        <h2 className="mt-16 mb-8 font-display font-bold text-2xl text-white">
+        <h2 className="mt-16 mb-8 font-display font-bold text-2xl text-ink">
           {copy.videosHeading}
         </h2>
         <div className="grid gap-8 sm:grid-cols-2">

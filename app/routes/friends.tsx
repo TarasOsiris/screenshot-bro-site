@@ -91,7 +91,7 @@ function FriendCard({ app }: { app: FriendApp }) {
   const websiteHref = friendWebsiteUrl(app);
 
   return (
-    <article className="rounded-2xl border border-border bg-surface-raised p-6 sm:p-8 transition-all hover:border-white/20">
+    <article className="rounded-2xl border border-border bg-surface-raised p-6 sm:p-8 transition-all hover:border-ink/20">
       <div className="flex flex-col sm:flex-row gap-5 sm:gap-6">
         <img
           src={friendIconPath(app)}
@@ -100,36 +100,36 @@ function FriendCard({ app }: { app: FriendApp }) {
           height="512"
           loading="lazy"
           decoding="async"
-          className="w-16 h-16 shrink-0 rounded-[22%] border border-white/10 shadow-lg"
+          className="w-16 h-16 shrink-0 rounded-[22%] border border-ink/10 shadow-lg"
         />
 
         <div className="min-w-0">
-          <h2 className="font-display font-bold text-xl sm:text-2xl text-white tracking-tight">
+          <h2 className="font-display font-bold text-xl sm:text-2xl text-ink tracking-tight">
             {app.name}
           </h2>
 
-          <p className="mt-1 text-sm text-white/45">
+          <p className="mt-1 text-sm text-ink/58">
             {app.subtitle}
-            <span aria-hidden="true" className="mx-2 text-white/25">
+            <span aria-hidden="true" className="mx-2 text-ink/25">
               ·
             </span>
             by {app.developer}
           </p>
 
-          <p className="mt-2 flex items-center gap-2 text-sm text-white/55">
+          <p className="mt-2 flex items-center gap-2 text-sm text-ink/55">
             <span className="text-warm">
               <StarGlyph />
             </span>
-            <span className="font-medium text-white/80">
+            <span className="font-medium text-ink/80">
               {app.rating.toFixed(1)}
             </span>
-            <span aria-hidden="true" className="text-white/25">
+            <span aria-hidden="true" className="text-ink/25">
               ·
             </span>
             {app.ratingCount} ratings
           </p>
 
-          <p className="mt-4 text-sm text-white/60 leading-relaxed">
+          <p className="mt-4 text-sm text-ink/60 leading-relaxed">
             {app.description}
           </p>
 
@@ -155,7 +155,7 @@ function FriendCard({ app }: { app: FriendApp }) {
                 data-destination="website"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.06] px-5 py-3 text-sm font-medium text-white/[0.72] transition-all hover:border-white/20 hover:bg-white/10 hover:text-white/[0.92]"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-ink/10 bg-ink/[0.06] px-5 py-3 text-sm font-medium text-ink/[0.72] transition-all hover:border-ink/20 hover:bg-ink/10 hover:text-ink/[0.92]"
               >
                 Website
                 <span aria-hidden="true" className="opacity-60">
@@ -217,10 +217,10 @@ export default function Friends() {
           <p className="text-xs uppercase tracking-[0.25em] text-accent-light font-mono mb-3">
             Friends
           </p>
-          <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white tracking-tight">
+          <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-ink tracking-tight">
             Apps by people we know.
           </h1>
-          <p className="mt-4 text-base text-white/55 leading-relaxed">
+          <p className="mt-4 text-base text-ink/55 leading-relaxed">
             Indie apps built by developers we know. No affiliate links, no paid
             placements, no revenue share — we just think they're good, and this
             page is where we say so.
@@ -233,29 +233,29 @@ export default function Friends() {
           ))}
         </div>
 
-        <p className="mt-6 text-xs text-white/35">
+        <p className="mt-6 text-xs text-ink/55">
           Ratings and review counts checked{" "}
           {formatVerified(FRIENDS_RATINGS_VERIFIED)}. The App Store has the
           current numbers.
         </p>
 
         <section className="mt-14 rounded-2xl border border-border bg-surface-raised p-6 sm:p-8">
-          <h2 className="font-display font-bold text-2xl text-white tracking-tight">
+          <h2 className="font-display font-bold text-2xl text-ink tracking-tight">
             Your app here
           </h2>
-          <p className="mt-3 text-sm text-white/60 leading-relaxed">
+          <p className="mt-3 text-sm text-ink/60 leading-relaxed">
             Building something good on your own? If your app would fit this
             list, come say hello on Discord or on X and we can talk about
             pointing at each other's work. Email works too:{" "}
             <a
               href={CONTACT_MAILTO}
-              className="text-white/85 underline underline-offset-4 decoration-white/25 hover:decoration-white/60 transition-colors"
+              className="text-ink/85 underline underline-offset-4 decoration-ink/25 hover:decoration-ink/60 transition-colors"
             >
               {EARLY_ACCESS_EMAIL}
             </a>
             .
           </p>
-          <p className="mt-3 text-sm text-white/60 leading-relaxed">
+          <p className="mt-3 text-sm text-ink/60 leading-relaxed">
             It's an indie app made by an actual person, it isn't a subscription
             trap, and you're happy to link back — that's the whole bar. You
             don't have to use {SITE_NAME} for your screenshots.
@@ -274,7 +274,7 @@ export default function Friends() {
               href={X_PROFILE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.06] px-5 py-3 text-sm font-medium text-white/[0.72] transition-all hover:border-white/20 hover:bg-white/10 hover:text-white/[0.92]"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-ink/10 bg-ink/[0.06] px-5 py-3 text-sm font-medium text-ink/[0.72] transition-all hover:border-ink/20 hover:bg-ink/10 hover:text-ink/[0.92]"
             >
               Message us on X
             </a>

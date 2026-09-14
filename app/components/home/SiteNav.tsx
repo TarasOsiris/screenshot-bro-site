@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 
 import { AppleLogo } from "~/components/home/icons";
 import { NavLink } from "~/components/NavLink";
+import { SiteLogo } from "~/components/SiteLogo";
+import { ThemeToggle, themeLabel } from "~/components/ThemeToggle";
 import {
   APP_STORE_CTA_URL,
   PRODUCT_LINKS,
-  SITE_NAME,
   type SecondaryLink,
 } from "~/config/site";
 import {
@@ -80,13 +81,7 @@ export function SiteNav({
           aria-label={copy.ui.homeLabel}
           className="flex items-center shrink-0 rounded-md"
         >
-          <img
-            src="/logo-light.svg"
-            alt={SITE_NAME}
-            width="150"
-            height="24"
-            className="h-6 w-auto"
-          />
+          <SiteLogo />
         </a>
 
         {/* Section anchors stay out of the bar and live in the drawer instead —
@@ -105,12 +100,14 @@ export function SiteNav({
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3">
+          <ThemeToggle locale={copy.locale.code} className="h-9 w-9" />
+
           {showLocaleSwitcher ? (
             <>
               <label className="sr-only" htmlFor="locale-switcher">
                 {copy.ui.language}
               </label>
-              <div className="relative hidden sm:block h-9 w-11 rounded-xl border border-white/10 bg-white/[0.06] transition-all hover:border-white/20 hover:bg-white/10 focus-within:border-accent/60">
+              <div className="relative hidden sm:block h-9 w-11 rounded-xl border border-ink/10 bg-ink/[0.06] transition-all hover:border-ink/20 hover:bg-ink/10 focus-within:border-accent/60">
                 <span
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0 flex items-center justify-center text-base"
@@ -139,7 +136,7 @@ export function SiteNav({
 
           <a
             href={href}
-            className="hidden sm:inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white transition-all hover:border-white/25 hover:bg-white/15"
+            className="hidden sm:inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-ink/15 bg-ink/10 px-4 py-2 text-sm font-medium text-ink transition-all hover:border-ink/25 hover:bg-ink/15"
           >
             <AppleLogo />
             <span>{copy.primaryCtaLabel}</span>
@@ -151,7 +148,7 @@ export function SiteNav({
             aria-expanded={menuOpen}
             aria-controls="mobile-nav"
             onClick={() => setMenuOpen((open) => !open)}
-            className="lg:hidden flex items-center justify-center w-9 h-9 rounded-xl border border-white/10 bg-white/[0.06] text-white/80 hover:text-white hover:border-white/20 hover:bg-white/10 transition-all"
+            className="lg:hidden flex items-center justify-center w-9 h-9 rounded-xl border border-ink/10 bg-ink/[0.06] text-ink/80 hover:text-ink hover:border-ink/20 hover:bg-ink/10 transition-all"
           >
             {menuOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
@@ -225,7 +222,7 @@ function MobileMenu({
                 const targetLocale = event.currentTarget.value as LocaleCode;
                 window.location.href = localeSwitchTarget(targetLocale);
               }}
-              className="w-full h-11 rounded-xl border border-white/10 bg-white/[0.06] px-3 text-sm font-medium text-white/80 outline-none transition-all focus:border-accent/60"
+              className="w-full h-11 rounded-xl border border-ink/10 bg-ink/[0.06] px-3 text-sm font-medium text-ink/80 outline-none transition-all focus:border-accent/60"
             >
               {LOCALES.map((locale) => (
                 <option key={locale.code} value={locale.code}>
@@ -235,6 +232,14 @@ function MobileMenu({
             </select>
           </MobileLinkGroup>
         ) : null}
+
+        <MobileLinkGroup label={themeLabel(copy.locale.code)}>
+          <ThemeToggle
+            locale={copy.locale.code}
+            className="h-11 w-full gap-2.5 text-sm font-medium"
+            showLabel
+          />
+        </MobileLinkGroup>
 
         <a
           href={ctaHref}
@@ -258,7 +263,7 @@ function MobileLinkGroup({
 }) {
   return (
     <div className="flex flex-col gap-3">
-      <p className="text-[11px] uppercase tracking-[0.25em] text-white/40 font-mono">
+      <p className="text-[11px] uppercase tracking-[0.25em] text-ink/55 font-mono">
         {label}
       </p>
       <div className="flex flex-col gap-1">{children}</div>
@@ -283,7 +288,7 @@ function MobileLink({
       onClick={onClick}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
-      className="text-base text-white/85 hover:text-white py-2 transition-colors"
+      className="text-base text-ink/85 hover:text-ink py-2 transition-colors"
     >
       {label}
     </a>

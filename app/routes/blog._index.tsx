@@ -178,7 +178,7 @@ function CategoryPlaceholder({ category }: { category: BlogCategory }) {
     <div
       className={`absolute inset-0 flex items-center justify-center bg-gradient-to-br ${PLACEHOLDER_GRADIENTS[category]}`}
     >
-      <span className="font-mono text-xs uppercase tracking-widest text-white/30">{category}</span>
+      <span className="font-mono text-xs uppercase tracking-widest text-ink/55">{category}</span>
     </div>
   );
 }
@@ -188,7 +188,7 @@ function FeaturedCard({ post, locale, latestLabel }: { post: BlogPost; locale: L
   return (
     <a
       href={localizedPath(locale, `/blog/${post.slug}`)}
-      className="group grid md:grid-cols-2 rounded-2xl border border-border bg-surface-raised overflow-hidden transition-all hover:border-white/20 hover:bg-surface-overlay mb-10"
+      className="group grid md:grid-cols-2 rounded-2xl border border-border bg-surface-raised overflow-hidden transition-all hover:border-ink/20 hover:bg-surface-overlay mb-10"
     >
       <div className="relative aspect-video md:aspect-auto md:h-full md:min-h-72 overflow-hidden bg-surface-overlay">
         {thumb ? (
@@ -212,11 +212,11 @@ function FeaturedCard({ post, locale, latestLabel }: { post: BlogPost; locale: L
           </span>
           <CategoryPill category={post.category} locale={locale} />
         </div>
-        <h2 className="font-display font-bold text-2xl sm:text-3xl text-white group-hover:text-accent-light transition-colors tracking-tight">
+        <h2 className="font-display font-bold text-2xl sm:text-3xl text-ink group-hover:text-accent-light transition-colors tracking-tight">
           {post.title}
         </h2>
-        <p className="mt-3 text-sm sm:text-base text-white/55 leading-relaxed">{post.description}</p>
-        <div className="mt-5 flex items-center gap-3 text-xs text-white/60">
+        <p className="mt-3 text-sm sm:text-base text-ink/55 leading-relaxed">{post.description}</p>
+        <div className="mt-5 flex items-center gap-3 text-xs text-ink/60">
           <span className="font-mono">{formatBlogDate(post.date, locale)}</span>
           <span>{post.readTime}</span>
         </div>
@@ -230,7 +230,7 @@ function BlogCard({ post, locale }: { post: BlogPost; locale: LocaleCode }) {
   return (
     <a
       href={localizedPath(locale, `/blog/${post.slug}`)}
-      className="group flex flex-col rounded-2xl border border-border bg-surface-raised overflow-hidden transition-all hover:border-white/20 hover:bg-surface-overlay"
+      className="group flex flex-col rounded-2xl border border-border bg-surface-raised overflow-hidden transition-all hover:border-ink/20 hover:bg-surface-overlay"
     >
       <div className="relative aspect-video overflow-hidden bg-surface-overlay">
         {thumb ? (
@@ -251,13 +251,13 @@ function BlogCard({ post, locale }: { post: BlogPost; locale: LocaleCode }) {
       <div className="p-5 flex flex-col flex-1">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2.5">
           <CategoryPill category={post.category} locale={locale} />
-          <span className="text-[11px] text-white/60 font-mono">{formatBlogDate(post.date, locale)}</span>
-          <span className="text-[11px] text-white/55">{post.readTime}</span>
+          <span className="text-[11px] text-ink/60 font-mono">{formatBlogDate(post.date, locale)}</span>
+          <span className="text-[11px] text-ink/55">{post.readTime}</span>
         </div>
-        <h2 className="font-display font-semibold text-base text-white leading-snug group-hover:text-accent-light transition-colors">
+        <h2 className="font-display font-semibold text-base text-ink leading-snug group-hover:text-accent-light transition-colors">
           {post.title}
         </h2>
-        <p className="mt-2 text-sm text-white/50 leading-relaxed line-clamp-3">{post.description}</p>
+        <p className="mt-2 text-sm text-ink/60 leading-relaxed line-clamp-3">{post.description}</p>
       </div>
     </a>
   );
@@ -340,10 +340,10 @@ export default function BlogIndex() {
           <p className="text-xs uppercase tracking-[0.25em] text-accent-light font-mono mb-3">
             {copy.eyebrow}
           </p>
-          <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white tracking-tight">
+          <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-ink tracking-tight">
             {copy.title}
           </h1>
-          <p className="mt-4 text-base text-white/55 leading-relaxed">
+          <p className="mt-4 text-base text-ink/55 leading-relaxed">
             {copy.description}
           </p>
         </div>
@@ -358,7 +358,7 @@ export default function BlogIndex() {
               className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-all cursor-pointer ${
                 filter === tab
                   ? "bg-accent/15 border-accent/40 text-accent-light"
-                  : "bg-surface-raised border-border text-white/60 hover:border-white/20 hover:text-white"
+                  : "bg-surface-raised border-border text-ink/60 hover:border-ink/20 hover:text-ink"
               }`}
             >
               {tab === "All" ? copy.all : (CATEGORY_NAMES[locale]?.[tab] || tab)}

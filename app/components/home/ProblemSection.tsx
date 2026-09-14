@@ -12,7 +12,7 @@ export function ProblemSection({ copy }: { copy: HomeCopy }) {
         />
 
         <div className="soft-panel rounded-3xl p-8 sm:p-10 mb-10">
-          <p className="max-w-3xl text-base text-white/[0.62] leading-relaxed">
+          <p className="max-w-3xl text-base text-ink/[0.62] leading-relaxed">
             {copy.problem.story}
           </p>
         </div>
@@ -40,9 +40,9 @@ export function ProblemSection({ copy }: { copy: HomeCopy }) {
               {copy.withoutBroPoints.map((text) => (
                 <li
                   key={text}
-                  className="flex items-start gap-3 text-sm text-white/50 leading-relaxed"
+                  className="flex items-start gap-3 text-sm text-ink/60 leading-relaxed"
                 >
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/30 shrink-0" />
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-ink/30 shrink-0" />
                   {text}
                 </li>
               ))}
@@ -72,7 +72,7 @@ export function ProblemSection({ copy }: { copy: HomeCopy }) {
                 {copy.withBroPoints.map((text) => (
                   <li
                     key={text}
-                    className="flex items-start gap-3 text-sm text-white/60 leading-relaxed"
+                    className="flex items-start gap-3 text-sm text-ink/60 leading-relaxed"
                   >
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-mint shrink-0" />
                     {text}

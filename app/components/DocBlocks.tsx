@@ -65,11 +65,11 @@ export function MD({ text, locale }: { text: string; locale: LocaleCode }) {
 
 export function Tip({ children }: { children: React.ReactNode }) {
   return (
-    <div className="not-prose my-5 rounded-lg border border-yellow-300/25 bg-yellow-300/[0.06] px-4 py-3">
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-yellow-300/80">
+    <div className="not-prose my-5 rounded-lg border border-warm/30 bg-warm/[0.08] px-4 py-3">
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-warm">
         Tip
       </span>
-      <p className="mt-1 mb-0 text-white/75">{children}</p>
+      <p className="mt-1 mb-0 text-ink/75">{children}</p>
     </div>
   );
 }
@@ -166,7 +166,7 @@ export function DocFigure({
         className="w-full h-auto rounded-lg border border-border-subtle bg-surface-raised"
       />
       {image.caption && (
-        <figcaption className="mt-2 text-center text-xs text-white/55 italic">
+        <figcaption className="mt-2 text-center text-xs text-ink/55 italic">
           <MD text={image.caption} locale={locale} />
         </figcaption>
       )}

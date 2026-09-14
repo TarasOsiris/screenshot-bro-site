@@ -32,10 +32,10 @@ export function FeaturesSection({ copy }: { copy: HomeCopy }) {
                 <FeatureIcon icon={feature.icon} />
               </div>
               <div className="space-y-3">
-                <h3 className="font-display font-semibold text-white text-base">
+                <h3 className="font-display font-semibold text-ink text-base">
                   {feature.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-white/[0.52]">
+                <p className="text-sm leading-relaxed text-ink/[0.62]">
                   {feature.description}
                 </p>
               </div>

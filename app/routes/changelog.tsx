@@ -498,10 +498,10 @@ export default function Changelog() {
           <p className="text-xs uppercase tracking-[0.25em] text-accent-light font-mono mb-3">
             {copy.eyebrow}
           </p>
-          <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white tracking-tight">
+          <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-ink tracking-tight">
             {copy.title}
           </h1>
-          <p className="mt-4 text-base text-white/55 leading-relaxed">
+          <p className="mt-4 text-base text-ink/55 leading-relaxed">
             {copy.subtitle}
           </p>
         </div>
@@ -518,10 +518,10 @@ export default function Changelog() {
                 <span className="font-mono text-sm font-medium text-accent-light">
                   v{entry.version}
                 </span>
-                <span className="text-sm text-white/60">{entry.date}</span>
+                <span className="text-sm text-ink/60">{entry.date}</span>
               </div>
 
-              <h2 className="font-display font-bold text-xl text-white mb-4">
+              <h2 className="font-display font-bold text-xl text-ink mb-4">
                 {entry.title}
               </h2>
 
@@ -535,7 +535,7 @@ export default function Changelog() {
                       >
                         {style.label}
                       </span>
-                      <span className="text-sm text-white/60 leading-relaxed">
+                      <span className="text-sm text-ink/60 leading-relaxed">
                         {change.text}
                       </span>
                     </li>

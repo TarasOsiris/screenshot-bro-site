@@ -24,7 +24,7 @@ function ToolCell({
         width={24}
         height={24}
         loading="lazy"
-        className="h-6 w-6 rounded-md border border-white/10 bg-white/5 object-contain"
+        className="h-6 w-6 rounded-md border border-ink/10 bg-ink/5 object-contain"
       />
       <span>{name}</span>
     </span>

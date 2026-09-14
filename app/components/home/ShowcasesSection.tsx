@@ -28,10 +28,10 @@ function FeatureShowcaseBlock({
             <p className="text-sm uppercase tracking-[0.25em] text-accent font-mono mb-4">
               {showcase.label}
             </p>
-            <h3 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.06]">
+            <h3 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-ink tracking-tight leading-[1.06]">
               {showcase.title}
             </h3>
-            <p className="mt-5 text-lg text-white/[0.58] leading-relaxed max-w-xl">
+            <p className="mt-5 text-lg text-ink/[0.58] leading-relaxed max-w-xl">
               {showcase.description}
             </p>
           </div>
@@ -39,13 +39,13 @@ function FeatureShowcaseBlock({
           <div className="flex flex-wrap items-center gap-3">
             <a
               href={href}
-              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.06] px-4 py-2.5 text-sm font-medium text-white/[0.88] transition-all hover:border-white/20 hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-xl border border-ink/10 bg-ink/[0.06] px-4 py-2.5 text-sm font-medium text-ink/[0.88] transition-all hover:border-ink/20 hover:bg-ink/10"
             >
               {copy.ui.tryItNow}
             </a>
             <a
               href="#early-access"
-              className="text-sm text-white/[0.52] hover:text-white/[0.88] transition-colors"
+              className="text-sm text-ink/[0.62] hover:text-ink/[0.88] transition-colors"
             >
               {copy.ui.seeDetails}
             </a>
@@ -106,7 +106,7 @@ export function ShowcasesSection({
             <a
               key={showcase.id}
               href={`#${showcase.id}`}
-              className="soft-pill rounded-full px-4 py-2 text-sm text-white/[0.68] hover:text-white/[0.92] transition-colors"
+              className="soft-pill rounded-full px-4 py-2 text-sm text-ink/[0.68] hover:text-ink/[0.92] transition-colors"
             >
               {showcase.label}
             </a>

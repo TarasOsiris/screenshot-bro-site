@@ -20,10 +20,10 @@ export function WorkflowSection({ copy }: { copy: HomeCopy }) {
               <div className="font-mono text-4xl font-bold text-accent/50 mb-4">
                 {step.step}
               </div>
-              <h3 className="font-display font-semibold text-white text-lg mb-2.5">
+              <h3 className="font-display font-semibold text-ink text-lg mb-2.5">
                 {step.title}
               </h3>
-              <p className="text-sm text-white/55 leading-relaxed">
+              <p className="text-sm text-ink/55 leading-relaxed">
                 {step.description}
               </p>
             </div>

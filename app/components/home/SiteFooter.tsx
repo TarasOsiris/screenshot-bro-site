@@ -18,6 +18,7 @@ import {
   type HomeCopy,
   type LocaleCode,
 } from "~/config/localization";
+import { SiteLogo } from "~/components/SiteLogo";
 import { localeHref } from "~/config/localized-routes";
 
 const DEFAULT_COPY = getHomeCopy("en");
@@ -38,14 +39,8 @@ export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
       <div className="max-w-6xl mx-auto px-6 py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div className="flex flex-col gap-5 max-w-sm">
-            <img
-              src="/logo-light.svg"
-              alt={SITE_NAME}
-              width="150"
-              height="24"
-              className="h-6 w-auto opacity-80"
-            />
-            <p className="text-sm text-white/55 leading-relaxed">
+            <SiteLogo className="h-6 w-auto opacity-80" />
+            <p className="text-sm text-ink/55 leading-relaxed">
               {copy.footer.note}
             </p>
             <div className="flex items-center gap-3">
@@ -75,11 +70,18 @@ export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
                 rel="noopener noreferrer"
               >
                 <img
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1106959&theme=neutral&t=1775116842049"
+                  alt={copy.ui.productHuntAlt}
+                  width="200"
+                  height="43"
+                  className="theme-light-only opacity-80 hover:opacity-100 transition-opacity"
+                />
+                <img
                   src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1106959&theme=dark&t=1775116842049"
                   alt={copy.ui.productHuntAlt}
                   width="200"
                   height="43"
-                  className="opacity-80 hover:opacity-100 transition-opacity"
+                  className="theme-dark-only opacity-80 hover:opacity-100 transition-opacity"
                 />
               </a>
             </div>
@@ -94,7 +96,14 @@ export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
                 alt="TrustMRR verified revenue badge"
                 width="220"
                 height="90"
-                className="opacity-80 hover:opacity-100 transition-opacity"
+                className="theme-light-only opacity-80 hover:opacity-100 transition-opacity"
+              />
+              <img
+                src="https://trustmrr.com/api/embed/screenshot-bro?format=svg&theme=dark"
+                alt="TrustMRR verified revenue badge"
+                width="220"
+                height="90"
+                className="theme-dark-only opacity-80 hover:opacity-100 transition-opacity"
               />
             </a>
           </div>
@@ -112,11 +121,11 @@ export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
         </div>
 
         <div className="mt-12 pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex flex-col sm:flex-row items-center gap-x-3 gap-y-1 text-xs text-white/45">
+          <div className="flex flex-col sm:flex-row items-center gap-x-3 gap-y-1 text-xs text-ink/58">
             <span>
               © {year} {SITE_NAME}
             </span>
-            <span className="hidden sm:inline text-white/25" aria-hidden="true">
+            <span className="hidden sm:inline text-ink/25" aria-hidden="true">
               ·
             </span>
             <span>
@@ -125,7 +134,7 @@ export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
                 href={NINEVA_STUDIOS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/65 hover:text-white/95 transition-colors"
+                className="text-ink/65 hover:text-ink/95 transition-colors"
               >
                 {NINEVA_STUDIOS_NAME}
               </a>
@@ -135,7 +144,7 @@ export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
             href={X_PROFILE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs text-white/55 hover:text-white/90 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs text-ink/55 hover:text-ink/90 transition-colors"
           >
             <XGlyph />
             {copy.ui.followJourney}
@@ -157,7 +166,7 @@ function FooterColumn({
 }) {
   return (
     <div className="flex flex-col gap-4">
-      <p className="text-[11px] uppercase tracking-[0.25em] text-white/40 font-mono">
+      <p className="text-[11px] uppercase tracking-[0.25em] text-ink/55 font-mono">
         {label}
       </p>
       <ul className="flex flex-col gap-2.5">
@@ -167,7 +176,7 @@ function FooterColumn({
               href={getSecondaryLinkHref(copy.locale.code, link)}
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noopener noreferrer" : undefined}
-              className="text-sm text-white/65 hover:text-white/95 transition-colors"
+              className="text-sm text-ink/65 hover:text-ink/95 transition-colors"
             >
               {copy.ui[link.uiKey]}
             </a>
@@ -193,7 +202,7 @@ function SocialButton({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="flex items-center justify-center w-9 h-9 rounded-xl border border-white/10 bg-white/[0.06] text-white/60 hover:text-white/90 hover:border-white/20 hover:bg-white/10 transition-all"
+      className="flex items-center justify-center w-9 h-9 rounded-xl border border-ink/10 bg-ink/[0.06] text-ink/60 hover:text-ink/90 hover:border-ink/20 hover:bg-ink/10 transition-all"
     >
       {icon === "discord" ? (
         <DiscordGlyph />

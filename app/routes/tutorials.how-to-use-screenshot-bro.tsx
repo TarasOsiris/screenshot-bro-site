@@ -154,22 +154,22 @@ export default function HowToUseGuide() {
 
         <div className="grid gap-12 lg:grid-cols-[220px_minmax(0,1fr)]">
           <aside className="lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-auto">
-            <p className="text-[11px] uppercase tracking-[0.25em] text-white/40 font-mono mb-4">
+            <p className="text-[11px] uppercase tracking-[0.25em] text-ink/55 font-mono mb-4">
               {locale === "es" ? "En esta página" : locale === "zh" ? "本页目录" : locale === "ja" ? "目次" : "On this page"}
             </p>
             <nav className="flex flex-col gap-2">
               <a
                 href="#before"
-                className="flex items-baseline gap-2.5 text-sm text-white/60 hover:text-white/95 transition-colors"
+                className="flex items-baseline gap-2.5 text-sm text-ink/60 hover:text-ink/95 transition-colors"
               >
-                <span className="font-mono text-xs text-white/40">·</span>
+                <span className="font-mono text-xs text-ink/55">·</span>
                 <span>Before you start</span>
               </a>
               {GUIDE_STEPS.map((guideStep, index) => (
                 <a
                   key={guideStep.id}
                   href={`#${guideStep.id}`}
-                  className="flex items-baseline gap-2.5 text-sm text-white/60 hover:text-white/95 transition-colors"
+                  className="flex items-baseline gap-2.5 text-sm text-ink/60 hover:text-ink/95 transition-colors"
                 >
                   <StepNumber index={index} />
                   <span>{guideStep.navTitle}</span>
@@ -177,9 +177,9 @@ export default function HowToUseGuide() {
               ))}
               <a
                 href="#next"
-                className="flex items-baseline gap-2.5 text-sm text-white/60 hover:text-white/95 transition-colors"
+                className="flex items-baseline gap-2.5 text-sm text-ink/60 hover:text-ink/95 transition-colors"
               >
-                <span className="font-mono text-xs text-white/40">→</span>
+                <span className="font-mono text-xs text-ink/55">→</span>
                 <span>Where to go next</span>
               </a>
             </nav>
@@ -191,7 +191,7 @@ export default function HowToUseGuide() {
               {renderBlocks(GUIDE_INTRO, locale)}
               {INTRO_VIDEO && (
                 <div className="not-prose my-8">
-                  <p className="mb-4 text-sm text-white/55">
+                  <p className="mb-4 text-sm text-ink/55">
                     Prefer to watch first? This video covers the first two steps.
                   </p>
                   <VideoCard video={INTRO_VIDEO} headingLevel="h3" />
@@ -205,7 +205,7 @@ export default function HowToUseGuide() {
                   <StepNumber index={index} />{" "}
                   <span className="ml-1">{guideStep.title}</span>
                 </h2>
-                <p className="-mt-2 mb-4 text-white/55 italic">
+                <p className="-mt-2 mb-4 text-ink/55 italic">
                   {guideStep.summary}
                 </p>
                 {guideStep.images?.map((image) => (
@@ -218,7 +218,7 @@ export default function HowToUseGuide() {
                 ))}
                 {renderBlocks(guideStep.blocks, locale)}
                 {guideStep.learnMore && (
-                  <p className="text-sm text-white/55">
+                  <p className="text-sm text-ink/55">
                     Full reference:{" "}
                     {guideStep.learnMore.map((link, i) => (
                       <span key={link.href}>

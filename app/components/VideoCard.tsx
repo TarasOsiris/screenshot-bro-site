@@ -18,7 +18,7 @@ export function VideoCard({
   const Heading = headingLevel;
 
   return (
-    <div className="group rounded-2xl border border-border bg-surface-raised overflow-hidden transition-all hover:border-white/20">
+    <div className="group rounded-2xl border border-border bg-surface-raised overflow-hidden transition-all hover:border-ink/20">
       <div className="relative aspect-video bg-black">
         {playing ? (
           <iframe
@@ -54,10 +54,10 @@ export function VideoCard({
         )}
       </div>
       <div className="p-6">
-        <Heading className="font-display font-bold text-lg text-white leading-snug">
+        <Heading className="font-display font-bold text-lg text-ink leading-snug">
           {video.title}
         </Heading>
-        <p className="mt-2 text-sm text-white/55 leading-relaxed">
+        <p className="mt-2 text-sm text-ink/55 leading-relaxed">
           {video.description}
         </p>
       </div>

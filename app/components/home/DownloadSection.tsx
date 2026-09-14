@@ -22,19 +22,19 @@ export function DownloadSection({
       </div>
 
       <div className="relative max-w-4xl mx-auto text-center">
-        <h2 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight mb-6">
+        <h2 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl text-ink tracking-tight leading-tight mb-6">
           {copy.download.titleLine1}
           <br />
           {copy.download.titleLine2}
         </h2>
-        <p className="text-base text-white/[0.58] mb-10 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base text-ink/[0.58] mb-10 max-w-2xl mx-auto leading-relaxed">
           {copy.download.description}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10 text-left">
           {copy.benefits.map((item) => (
             <div key={item} className="soft-panel rounded-2xl p-5">
-              <p className="text-sm text-white/[0.62] leading-relaxed">{item}</p>
+              <p className="text-sm text-ink/[0.62] leading-relaxed">{item}</p>
             </div>
           ))}
         </div>
@@ -49,13 +49,13 @@ export function DownloadSection({
           </a>
           <a
             href={CONTACT_MAILTO}
-            className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-sm font-medium text-white/[0.8] transition-all hover:border-white/20 hover:bg-white/10"
+            className="inline-flex items-center gap-2 rounded-2xl border border-ink/10 bg-ink/5 px-6 py-4 text-sm font-medium text-ink/[0.8] transition-all hover:border-ink/20 hover:bg-ink/10"
           >
             {copy.ui.contactDeveloper}
           </a>
         </div>
 
-        <p className="mt-4 text-xs text-white/60 font-mono">
+        <p className="mt-4 text-xs text-ink/60 font-mono">
           {copy.ui.availabilityNote}
         </p>
       </div>

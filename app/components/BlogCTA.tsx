@@ -36,7 +36,7 @@ export function BlogCTA({
 
   return (
     <div className="mt-10 p-6 rounded-2xl bg-surface-raised border border-border text-center">
-      <p className="text-sm text-white/60 mb-4">{message}</p>
+      <p className="text-sm text-ink/60 mb-4">{message}</p>
       <a
         href={APP_STORE_CTA_URL}
         className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-sm transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
@@ -47,7 +47,7 @@ export function BlogCTA({
       <p className="mt-4 text-sm">
         <a
           href={localizedPath(locale)}
-          className="text-white/55 underline underline-offset-4 decoration-white/20 hover:text-white/80 hover:decoration-white/40 transition-colors"
+          className="text-ink/55 underline underline-offset-4 decoration-ink/20 hover:text-ink/80 hover:decoration-ink/40 transition-colors"
         >
           {linkLabel} →
         </a>

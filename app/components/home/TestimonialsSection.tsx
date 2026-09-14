@@ -18,7 +18,7 @@ export function TestimonialsSection({ copy }: { copy: HomeCopy }) {
               className="rounded-3xl bg-surface-raised border border-border p-7 flex flex-col"
             >
               <blockquote className="flex-1 mb-6">
-                <p className="text-sm text-white/[0.62] leading-relaxed italic">
+                <p className="text-sm text-ink/[0.62] leading-relaxed italic">
                   "{t.quote}"
                 </p>
               </blockquote>
@@ -30,13 +30,13 @@ export function TestimonialsSection({ copy }: { copy: HomeCopy }) {
                   height="40"
                   loading="lazy"
                   decoding="async"
-                  className="w-10 h-10 rounded-[22%] border border-white/10"
+                  className="w-10 h-10 rounded-[22%] border border-ink/10"
                 />
                 <div>
-                  <p className="text-sm font-medium text-white/80">
+                  <p className="text-sm font-medium text-ink/80">
                     {t.name}
                   </p>
-                  <p className="text-xs text-white/60">{t.app}</p>
+                  <p className="text-xs text-ink/60">{t.app}</p>
                 </div>
               </figcaption>
             </figure>

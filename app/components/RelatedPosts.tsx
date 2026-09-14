@@ -57,7 +57,7 @@ export function RelatedPosts({
     >
       <h2
         id="related-posts-heading"
-        className="font-display font-bold text-xl text-white mb-6"
+        className="font-display font-bold text-xl text-ink mb-6"
       >
         {keepReadingText}
       </h2>
@@ -69,20 +69,20 @@ export function RelatedPosts({
             <li key={post.slug}>
               <a
                 href={href}
-                className="block group rounded-2xl bg-surface-raised border border-border p-5 transition-all hover:border-white/20 hover:bg-surface-overlay"
+                className="block group rounded-2xl bg-surface-raised border border-border p-5 transition-all hover:border-ink/20 hover:bg-surface-overlay"
               >
                 <div className="flex items-center gap-3 mb-2">
                   <span className="px-2 py-0.5 rounded bg-accent/10 text-accent-light text-[11px] font-medium">
                     {categoryLabel}
                   </span>
-                  <span className="text-[11px] text-white/60 font-mono">
+                  <span className="text-[11px] text-ink/60 font-mono">
                     {post.readTime}
                   </span>
                 </div>
-                <p className="font-display font-semibold text-base text-white group-hover:text-accent-light transition-colors mb-1">
+                <p className="font-display font-semibold text-base text-ink group-hover:text-accent-light transition-colors mb-1">
                   {post.title}
                 </p>
-                <p className="text-sm text-white/50 leading-relaxed">
+                <p className="text-sm text-ink/60 leading-relaxed">
                   {post.description}
                 </p>
               </a>

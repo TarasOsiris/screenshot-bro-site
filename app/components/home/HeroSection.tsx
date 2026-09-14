@@ -43,18 +43,18 @@ export function HeroSection({
             className="animate-fade-up mt-6 font-display font-extrabold text-5xl sm:text-6xl md:text-7xl tracking-tight leading-[0.98]"
             style={{ animationDelay: "0.12s" }}
           >
-            <span className="text-white">{copy.hero.titleLead}</span>
+            <span className="text-ink">{copy.hero.titleLead}</span>
             <br />
             <span className="text-accent">{copy.hero.titleAccent}</span>
-            <span className="text-white">{copy.hero.titleRest}</span>
+            <span className="text-ink">{copy.hero.titleRest}</span>
           </h1>
 
           <p
-            className="animate-fade-up max-w-2xl mx-auto mt-6 text-lg sm:text-xl text-white/[0.62] leading-relaxed"
+            className="animate-fade-up max-w-2xl mx-auto mt-6 text-lg sm:text-xl text-ink/[0.62] leading-relaxed"
             style={{ animationDelay: "0.2s" }}
           >
             {copy.hero.descriptionLead}{" "}
-            <span className="text-white/[0.85]">
+            <span className="text-ink/[0.85]">
               {copy.hero.descriptionStrong}
             </span>{" "}
             {copy.hero.descriptionTail}
@@ -73,7 +73,7 @@ export function HeroSection({
             </a>
             <a
               href="#showcases"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/[0.03] border border-border text-white/[0.72] hover:text-white/[0.92] hover:border-white/20 text-sm transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-ink/[0.03] border border-border text-ink/[0.72] hover:text-ink/[0.92] hover:border-ink/20 text-sm transition-all"
             >
               {copy.ui.seeInAction}
               <ArrowDownIcon />

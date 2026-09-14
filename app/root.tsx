@@ -10,6 +10,7 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
+import { SiteLogo } from "~/components/SiteLogo";
 import {
   APP_SCREENSHOTS,
   APP_STORE_APP_ID,
@@ -44,6 +45,8 @@ import { hasTranslations } from "~/config/localized-routes";
 import "./app.css";
 
 export const SITE_TITLE = `${SITE_NAME} — App Store & Google Play Screenshots`;
+// Kept in step with --color-surface in app.css; ThemeToggle carries the same pair.
+const THEME_COLORS = { light: "#fbfaf8", dark: "#08080c" } as const;
 export const SOCIAL_IMAGE = `${SITE_URL}/og-image.png`;
 const GA_ID =
   import.meta.env.PROD && import.meta.env.VITE_GA_ID
@@ -121,7 +124,7 @@ const ORGANIZATION_SCHEMA_JSON = JSON.stringify({
   url: NINEVA_STUDIOS_URL,
   logo: {
     "@type": "ImageObject",
-    url: `${SITE_URL}/logo-light.svg`,
+    url: `${SITE_URL}/logo-dark.svg`,
   },
   founder: {
     "@type": "Person",
@@ -266,11 +269,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const cleanPath = stripLocale(location.pathname);
 
   return (
-    <html lang={locale.htmlLang} dir={locale.dir}>
+    // The boot script below sets data-theme on <html>, which the server never
+    // renders — React would otherwise flag the mismatch on hydration.
+    <html lang={locale.htmlLang} dir={locale.dir} suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#08080c" />
+        <meta name="theme-color" content={THEME_COLORS.light} />
+        {/* Light is the default, so the server markup already is the light theme
+            and costs zero JS. Only a stored "dark" needs applying, and it has to
+            happen before first paint. Runs after the theme-color meta above so
+            its querySelector finds the tag. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem("theme")==="dark"){document.documentElement.dataset.theme="dark";var m=document.querySelector('meta[name="theme-color"]');if(m)m.content="${THEME_COLORS.dark}";}}catch(e){}`,
+          }}
+        />
         <meta name="application-name" content={SITE_NAME} />
         <meta name="apple-itunes-app" content={`app-id=${APP_STORE_APP_ID}`} />
         <Meta />
@@ -393,13 +407,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       <nav className="border-b border-border-subtle bg-surface/78 backdrop-blur-2xl">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center">
           <a href="/" className="flex items-center shrink-0">
-            <img
-              src="/logo-light.svg"
-              alt={SITE_NAME}
-              width="150"
-              height="24"
-              className="h-6 w-auto"
-            />
+            <SiteLogo />
           </a>
         </div>
       </nav>
@@ -409,10 +417,10 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
           <p className="font-mono text-8xl font-bold text-accent/40 mb-6">
             {status}
           </p>
-          <h1 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h1 className="font-display text-3xl sm:text-4xl font-bold text-ink mb-4">
             {message}
           </h1>
-          <p className="text-base text-white/55 mb-10 leading-relaxed">
+          <p className="text-base text-ink/55 mb-10 leading-relaxed">
             {details}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -424,14 +432,14 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
             </a>
             <a
               href="/blog"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/[0.03] border border-border text-white/[0.72] hover:text-white/[0.92] hover:border-white/20 text-sm transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-ink/[0.03] border border-border text-ink/[0.72] hover:text-ink/[0.92] hover:border-ink/20 text-sm transition-all"
             >
               Read the blog
             </a>
           </div>
           {stack && (
             <pre className="w-full p-4 overflow-x-auto mt-10 bg-surface-raised rounded-lg text-left">
-              <code className="font-mono text-sm text-white/60">{stack}</code>
+              <code className="font-mono text-sm text-ink/60">{stack}</code>
             </pre>
           )}
         </div>

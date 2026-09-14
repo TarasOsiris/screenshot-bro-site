@@ -5,12 +5,12 @@ import type { HomeCopy } from "~/config/localization";
 function FaqItemBlock({ item }: { item: FaqItem }) {
   return (
     <details className="faq-item rounded-2xl">
-      <summary className="cursor-pointer list-none px-6 py-5 font-display text-lg font-semibold text-white flex items-center justify-between gap-4">
+      <summary className="cursor-pointer list-none px-6 py-5 font-display text-lg font-semibold text-ink flex items-center justify-between gap-4">
         <span>{item.question}</span>
-        <span className="text-white/55 text-2xl leading-none">+</span>
+        <span className="text-ink/55 text-2xl leading-none">+</span>
       </summary>
       <div className="px-6 pb-5">
-        <p className="text-sm text-white/[0.58] leading-relaxed">{item.answer}</p>
+        <p className="text-sm text-ink/[0.58] leading-relaxed">{item.answer}</p>
       </div>
     </details>
   );
