@@ -101,7 +101,6 @@ export type HomeCopy = {
     browseGuides: string;
     submitApp: string;
     contactDeveloper: string;
-    watchOnInstagram: string;
     productLabel: string;
     resourcesLabel: string;
     sectionsLabel: string;
@@ -131,7 +130,6 @@ export type HomeCopy = {
     workflow: SectionCopy;
     features: SectionCopy;
     screenshots: SectionCopy;
-    reel: SectionCopy;
     testimonials: SectionCopy;
     blog: SectionCopy;
     faq: SectionCopy;
@@ -227,7 +225,6 @@ const EN_HOME_COPY: HomeCopy = {
     browseGuides: "Browse all guides",
     submitApp: "Submit your app",
     contactDeveloper: "Contact the developer",
-    watchOnInstagram: "Watch on Instagram",
     productLabel: "Product",
     resourcesLabel: "Resources",
     sectionsLabel: "Sections",
@@ -288,12 +285,6 @@ const EN_HOME_COPY: HomeCopy = {
       title: "See it in action.",
       description:
         "App Store screenshots of Screenshot Bro itself - the same editor you use for App Store and Google Play screenshot sets.",
-    },
-    reel: {
-      eyebrow: "On Instagram",
-      title: "A 60-second tour of the app.",
-      description:
-        "Watch device frames, layers, localized exports, and one-click App Store Connect upload come together inside Screenshot Bro.",
     },
     testimonials: {
       eyebrow: "Developers",
@@ -394,13 +385,11 @@ type CompactLandingCopy = {
     | "followOnThreads"
     | "homeLabel"
     | "read"
-    | "watchOnInstagram"
     | "productLabel"
     | "resourcesLabel"
     | "appScreenshots"
     | "productHuntAlt"
   >;
-  reel: SectionCopy;
   featureTitles: string[];
   featureDescription: string;
   withoutBroPoints: string[];
@@ -420,7 +409,6 @@ function compactLandingContent(copy: CompactLandingCopy): HomeCopyOverrides {
   return {
     socialImageAlt: copy.socialImageAlt,
     ui: copy.ui,
-    sections: { reel: copy.reel },
     features: FEATURES.map((feature, index) => ({
       ...feature,
       title: copy.featureTitles[index] ?? feature.title,
@@ -464,20 +452,11 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
       followOnThreads: "Seguir en Threads",
       homeLabel: `Inicio de ${SITE_NAME}`,
       read: "Leer",
-      watchOnInstagram: "Ver en Instagram",
       productLabel: "Producto",
       resourcesLabel: "Recursos",
       appScreenshots: "Capturas de la app",
       productHuntAlt:
         "ScreenshotBro App - Diseña y exporta capturas bonitas para App Store. | Product Hunt",
-    },
-    sections: {
-      reel: {
-        eyebrow: "En Instagram",
-        title: "Un tour de 60 segundos por la app.",
-        description:
-          "Mira cómo se combinan marcos de dispositivo, capas, exportaciones localizadas y subida a App Store Connect dentro de Screenshot Bro.",
-      },
     },
     features: localizeFeatures([
       {
@@ -699,8 +678,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
   },
   zh: compactLandingContent({
     socialImageAlt: "Screenshot Bro — 用设备边框、渐变和本地化制作 App Store 与 Google Play 截图的 Mac 和 iPad 原生应用",
-    ui: { docs: "文档", redditCommunity: "Reddit 社区", followOnX: "在 X 上关注", followOnThreads: "在 Threads 上关注", homeLabel: `${SITE_NAME} 首页`, read: "阅读", watchOnInstagram: "在 Instagram 观看", productLabel: "产品", resourcesLabel: "资源", appScreenshots: "应用截图", productHuntAlt: "ScreenshotBro App - 设计并导出精美 App Store 截图。| Product Hunt" },
-    reel: { eyebrow: "Instagram", title: "60 秒快速了解应用。", description: "观看设备边框、图层、本地化导出和一键上传 App Store Connect 如何在 Screenshot Bro 中串联起来。" },
+    ui: { docs: "文档", redditCommunity: "Reddit 社区", followOnX: "在 X 上关注", followOnThreads: "在 Threads 上关注", homeLabel: `${SITE_NAME} 首页`, read: "阅读", productLabel: "产品", resourcesLabel: "资源", appScreenshots: "应用截图", productHuntAlt: "ScreenshotBro App - 设计并导出精美 App Store 截图。| Product Hunt" },
     featureTitles: ["多模板编辑", "设备边框", "背景与跨模板背景", "形状工具 + SVG", "智能对齐", "本地化导出", "上传到 App Store Connect", "AI 智能体与 MCP", "内建本地化", "原生 Mac 与 iPad", "iCloud 同步", "自定义字体", "项目模板", "键盘快捷键", "隐私优先", "批量图片导入", "永久免费层级"],
     featureDescription: "为多语言商店截图准备的专注工具，保留原生性能、可重复模板和可直接提交的导出结果。",
     withoutBroPoints: ["手动调整每张截图尺寸", "逐个复制设备边框", "改一个颜色就重新导出所有文件", "为每种语言复制全部内容", "手动上传每个 PNG"],
@@ -717,8 +695,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
   }),
   hi: compactLandingContent({
     socialImageAlt: "Screenshot Bro — Mac और iPad के लिए App Store और Google Play screenshots बनाने वाला native ऐप",
-    ui: { docs: "दस्तावेज़", redditCommunity: "Reddit समुदाय", followOnX: "X पर follow करें", followOnThreads: "Threads पर follow करें", homeLabel: `${SITE_NAME} होम`, read: "पढ़ें", watchOnInstagram: "Instagram पर देखें", productLabel: "उत्पाद", resourcesLabel: "संसाधन", appScreenshots: "ऐप स्क्रीनशॉट", productHuntAlt: "ScreenshotBro App - सुंदर App Store screenshots design और export करें. | Product Hunt" },
-    reel: { eyebrow: "Instagram पर", title: "ऐप का 60-second tour.", description: "डिवाइस फ्रेम, लेयर्स, localized exports और one-click App Store Connect upload को Screenshot Bro में साथ काम करते देखें।" },
+    ui: { docs: "दस्तावेज़", redditCommunity: "Reddit समुदाय", followOnX: "X पर follow करें", followOnThreads: "Threads पर follow करें", homeLabel: `${SITE_NAME} होम`, read: "पढ़ें", productLabel: "उत्पाद", resourcesLabel: "संसाधन", appScreenshots: "ऐप स्क्रीनशॉट", productHuntAlt: "ScreenshotBro App - सुंदर App Store screenshots design और export करें. | Product Hunt" },
     featureTitles: ["मल्टी-टेम्पलेट एडिटिंग", "डिवाइस फ्रेम", "बैकग्राउंड और स्पैनिंग", "शेप टूल्स + SVG", "स्मार्ट अलाइनमेंट", "लोकलाइज्ड एक्सपोर्ट", "App Store Connect अपलोड", "AI एजेंट और MCP", "बिल्ट-इन लोकलाइजेशन", "नेटिव Mac और iPad", "iCloud सिंक", "कस्टम फॉन्ट", "प्रोजेक्ट टेम्पलेट", "कीबोर्ड शॉर्टकट", "प्राइवेसी-फर्स्ट", "बैच इमेज इंपोर्ट", "हमेशा फ्री प्लान"],
     featureDescription: "Multi-language store screenshots के लिए focused tools, native performance, reusable templates और upload-ready exports के साथ।",
     withoutBroPoints: ["हर screenshot manually resize करना", "डिवाइस फ्रेम एक-एक करके copy करना", "एक color बदलने पर सब export करना", "हर language के लिए सब duplicate करना", "हर PNG manually upload करना"],
@@ -735,8 +712,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
   }),
   fr: compactLandingContent({
     socialImageAlt: "Screenshot Bro — app native Mac et iPad pour créer des captures App Store et Google Play avec cadres, dégradés et localisation",
-    ui: { docs: "Documentation", redditCommunity: "Communauté Reddit", followOnX: "Suivre sur X", followOnThreads: "Suivre sur Threads", homeLabel: `Accueil ${SITE_NAME}`, read: "Lire", watchOnInstagram: "Regarder sur Instagram", productLabel: "Produit", resourcesLabel: "Ressources", appScreenshots: "Captures de l'app", productHuntAlt: "ScreenshotBro App - Créez et exportez de belles captures App Store. | Product Hunt" },
-    reel: { eyebrow: "Sur Instagram", title: "Une visite de l'app en 60 secondes.", description: "Voyez les cadres, calques, exports localisés et l'envoi App Store Connect en un clic dans Screenshot Bro." },
+    ui: { docs: "Documentation", redditCommunity: "Communauté Reddit", followOnX: "Suivre sur X", followOnThreads: "Suivre sur Threads", homeLabel: `Accueil ${SITE_NAME}`, read: "Lire", productLabel: "Produit", resourcesLabel: "Ressources", appScreenshots: "Captures de l'app", productHuntAlt: "ScreenshotBro App - Créez et exportez de belles captures App Store. | Product Hunt" },
     featureTitles: ["Édition multi-template", "Cadres d'appareils", "Arrière-plans étendus", "Outils de formes + SVG", "Alignement intelligent", "Export localisé", "Envoi App Store Connect", "Agents IA et MCP", "Localisation intégrée", "Natif Mac et iPad", "Sync iCloud", "Polices personnalisées", "Templates de projet", "Raccourcis clavier", "Confidentialité d'abord", "Import d'images groupé", "Version gratuite permanente"],
     featureDescription: "Des outils ciblés pour des captures de store multilingues, avec performances natives, templates réutilisables et exports prêts à envoyer.",
     withoutBroPoints: ["Redimensionner chaque capture à la main", "Copier les cadres un par un", "Réexporter tout pour une couleur", "Tout dupliquer pour chaque langue", "Envoyer chaque PNG manuellement"],
@@ -753,8 +729,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
   }),
   ar: compactLandingContent({
     socialImageAlt: "Screenshot Bro — تطبيق أصلي على Mac و iPad لتصميم لقطات App Store و Google Play بإطارات وتدرجات وتوطين",
-    ui: { docs: "الوثائق", redditCommunity: "مجتمع Reddit", followOnX: "تابع على X", followOnThreads: "تابع على Threads", homeLabel: `صفحة ${SITE_NAME} الرئيسية`, read: "اقرأ", watchOnInstagram: "شاهد على Instagram", productLabel: "المنتج", resourcesLabel: "الموارد", appScreenshots: "لقطات التطبيق", productHuntAlt: "ScreenshotBro App - صمّم وصدّر لقطات App Store جميلة. | Product Hunt" },
-    reel: { eyebrow: "على Instagram", title: "جولة في التطبيق خلال 60 ثانية.", description: "شاهد إطارات الأجهزة والطبقات والتصدير الموطّن والرفع إلى App Store Connect بنقرة واحدة." },
+    ui: { docs: "الوثائق", redditCommunity: "مجتمع Reddit", followOnX: "تابع على X", followOnThreads: "تابع على Threads", homeLabel: `صفحة ${SITE_NAME} الرئيسية`, read: "اقرأ", productLabel: "المنتج", resourcesLabel: "الموارد", appScreenshots: "لقطات التطبيق", productHuntAlt: "ScreenshotBro App - صمّم وصدّر لقطات App Store جميلة. | Product Hunt" },
     featureTitles: ["تحرير متعدد القوالب", "إطارات الأجهزة", "الخلفيات والامتداد", "أدوات الأشكال + SVG", "محاذاة ذكية", "تصدير موطّن", "رفع إلى App Store Connect", "وكلاء الذكاء الاصطناعي و MCP", "توطين مدمج", "أصلي على Mac و iPad", "مزامنة iCloud", "خطوط مخصصة", "قوالب المشاريع", "اختصارات لوحة المفاتيح", "الخصوصية أولاً", "استيراد صور جماعي", "خطة مجانية دائماً"],
     featureDescription: "أدوات مركزة للقطات متجر متعددة اللغات مع أداء أصلي وقوالب قابلة لإعادة الاستخدام وتصدير جاهز للرفع.",
     withoutBroPoints: ["تغيير حجم كل لقطة يدوياً", "نسخ الإطارات واحداً تلو الآخر", "إعادة تصدير كل شيء بسبب لون واحد", "تكرار كل شيء لكل لغة", "رفع كل PNG يدوياً"],
@@ -771,8 +746,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
   }),
   de: compactLandingContent({
     socialImageAlt: "Screenshot Bro — native Mac- und iPad-App für App Store- und Google Play-Screenshots mit Geräterahmen, Verläufen und Lokalisierung",
-    ui: { docs: "Dokumentation", redditCommunity: "Reddit-Community", followOnX: "Auf X folgen", followOnThreads: "Auf Threads folgen", homeLabel: `${SITE_NAME} Startseite`, read: "Lesen", watchOnInstagram: "Auf Instagram ansehen", productLabel: "Produkt", resourcesLabel: "Ressourcen", appScreenshots: "App-Screenshots", productHuntAlt: "ScreenshotBro App - Schöne App-Store-Screenshots gestalten und exportieren. | Product Hunt" },
-    reel: { eyebrow: "Auf Instagram", title: "Eine 60-Sekunden-Tour durch die App.", description: "Sieh, wie Geräterahmen, Ebenen, lokalisierte Exporte und App Store Connect Upload in Screenshot Bro zusammenkommen." },
+    ui: { docs: "Dokumentation", redditCommunity: "Reddit-Community", followOnX: "Auf X folgen", followOnThreads: "Auf Threads folgen", homeLabel: `${SITE_NAME} Startseite`, read: "Lesen", productLabel: "Produkt", resourcesLabel: "Ressourcen", appScreenshots: "App-Screenshots", productHuntAlt: "ScreenshotBro App - Schöne App-Store-Screenshots gestalten und exportieren. | Product Hunt" },
     featureTitles: ["Multi-Template-Bearbeitung", "Geräterahmen", "Hintergründe & Spanning", "Formwerkzeuge + SVG", "Intelligente Ausrichtung", "Lokalisierter Export", "Upload zu App Store Connect", "KI-Agenten & MCP", "Lokalisierung integriert", "Nativ für Mac & iPad", "iCloud-Synchronisierung", "Eigene Schriften", "Projektvorlagen", "Tastaturkürzel", "Datenschutz zuerst", "Batch-Bildimport", "Kostenlos dauerhaft"],
     featureDescription: "Fokussierte Werkzeuge für mehrsprachige Store-Screenshots mit nativer Performance, wiederverwendbaren Templates und uploadfertigen Exporten.",
     withoutBroPoints: ["Jeden Screenshot manuell skalieren", "Geräterahmen einzeln kopieren", "Alles wegen einer Farbe neu exportieren", "Alles pro Sprache duplizieren", "Jedes PNG manuell hochladen"],
@@ -789,8 +763,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
   }),
   ja: compactLandingContent({
     socialImageAlt: "Screenshot Bro — App Store・Google Playスクリーンショットをデバイスフレーム、グラデーション、ローカライズ付きで作成するMac/iPadネイティブアプリ",
-    ui: { docs: "ドキュメント", redditCommunity: "Redditコミュニティ", followOnX: "Xでフォロー", followOnThreads: "Threadsでフォロー", homeLabel: `${SITE_NAME} ホーム`, read: "読む", watchOnInstagram: "Instagramで見る", productLabel: "製品", resourcesLabel: "リソース", appScreenshots: "アプリのスクリーンショット", productHuntAlt: "ScreenshotBro App - 美しいApp Storeスクリーンショットを作成・書き出し。| Product Hunt" },
-    reel: { eyebrow: "Instagram", title: "アプリを60秒で紹介。", description: "デバイスフレーム、レイヤー、ローカライズ書き出し、App Store Connectへのアップロードがつながる様子をご覧ください。" },
+    ui: { docs: "ドキュメント", redditCommunity: "Redditコミュニティ", followOnX: "Xでフォロー", followOnThreads: "Threadsでフォロー", homeLabel: `${SITE_NAME} ホーム`, read: "読む", productLabel: "製品", resourcesLabel: "リソース", appScreenshots: "アプリのスクリーンショット", productHuntAlt: "ScreenshotBro App - 美しいApp Storeスクリーンショットを作成・書き出し。| Product Hunt" },
     featureTitles: ["マルチテンプレート編集", "デバイスフレーム", "背景とスパン", "図形ツール + SVG", "スマート整列", "ローカライズ書き出し", "App Store Connectアップロード", "AIエージェントとMCP", "内蔵ローカライズ", "MacとiPadにネイティブ対応", "iCloud同期", "カスタムフォント", "プロジェクトテンプレート", "キーボードショートカット", "プライバシー重視", "画像の一括読み込み", "ずっと無料のプラン"],
     featureDescription: "多言語ストア用スクリーンショットに特化したツール群。ネイティブ性能、再利用可能なテンプレート、提出しやすい書き出しを備えています。",
     withoutBroPoints: ["各スクリーンショットを手動でリサイズ", "フレームを一つずつコピー", "色変更だけで全ファイルを書き出し直し", "言語ごとにすべて複製", "各PNGを手動アップロード"],
@@ -807,8 +780,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
   }),
   pt: compactLandingContent({
     socialImageAlt: "Screenshot Bro — app nativo para Mac e iPad para criar capturas da App Store e Google Play com molduras, gradientes e localização",
-    ui: { docs: "Documentação", redditCommunity: "Comunidade Reddit", followOnX: "Seguir no X", followOnThreads: "Seguir no Threads", homeLabel: `Início do ${SITE_NAME}`, read: "Ler", watchOnInstagram: "Assistir no Instagram", productLabel: "Produto", resourcesLabel: "Recursos", appScreenshots: "Capturas de tela do app", productHuntAlt: "ScreenshotBro App - Crie e exporte belas capturas da App Store. | Product Hunt" },
-    reel: { eyebrow: "No Instagram", title: "Um tour de 60 segundos pelo app.", description: "Veja molduras, camadas, exportações localizadas e envio ao App Store Connect em um clique no Screenshot Bro." },
+    ui: { docs: "Documentação", redditCommunity: "Comunidade Reddit", followOnX: "Seguir no X", followOnThreads: "Seguir no Threads", homeLabel: `Início do ${SITE_NAME}`, read: "Ler", productLabel: "Produto", resourcesLabel: "Recursos", appScreenshots: "Capturas de tela do app", productHuntAlt: "ScreenshotBro App - Crie e exporte belas capturas da App Store. | Product Hunt" },
     featureTitles: ["Edição multi-template", "Molduras de dispositivos", "Fundos e expansão", "Formas + SVG", "Alinhamento inteligente", "Exportação localizada", "Envio ao App Store Connect", "Agentes de IA e MCP", "Localização integrada", "Nativo para Mac e iPad", "Sincronização iCloud", "Fontes personalizadas", "Modelos de projeto", "Atalhos de teclado", "Privacidade primeiro", "Importação em lote", "Plano grátis para sempre"],
     featureDescription: "Ferramentas focadas para capturas de loja em vários idiomas, com desempenho nativo, modelos reutilizáveis e exportações prontas para envio.",
     withoutBroPoints: ["Redimensionar cada captura manualmente", "Copiar molduras uma por uma", "Reexportar tudo por uma cor", "Duplicar tudo para cada idioma", "Enviar cada PNG manualmente"],
@@ -825,8 +797,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
   }),
   it: compactLandingContent({
     socialImageAlt: "Screenshot Bro — app nativa per Mac e iPad per creare screenshot App Store e Google Play con cornici, gradienti e localizzazione",
-    ui: { docs: "Documentazione", redditCommunity: "Community Reddit", followOnX: "Segui su X", followOnThreads: "Segui su Threads", homeLabel: `Home di ${SITE_NAME}`, read: "Leggi", watchOnInstagram: "Guarda su Instagram", productLabel: "Prodotto", resourcesLabel: "Risorse", appScreenshots: "Screenshot dell'app", productHuntAlt: "ScreenshotBro App - Progetta ed esporta splendidi screenshot App Store. | Product Hunt" },
-    reel: { eyebrow: "Su Instagram", title: "Un tour dell'app in 60 secondi.", description: "Guarda cornici, livelli, export localizzati e upload su App Store Connect in un clic dentro Screenshot Bro." },
+    ui: { docs: "Documentazione", redditCommunity: "Community Reddit", followOnX: "Segui su X", followOnThreads: "Segui su Threads", homeLabel: `Home di ${SITE_NAME}`, read: "Leggi", productLabel: "Prodotto", resourcesLabel: "Risorse", appScreenshots: "Screenshot dell'app", productHuntAlt: "ScreenshotBro App - Progetta ed esporta splendidi screenshot App Store. | Product Hunt" },
     featureTitles: ["Modifica multi-template", "Cornici dispositivo", "Sfondi estesi", "Strumenti forme + SVG", "Allineamento intelligente", "Export localizzato", "Upload App Store Connect", "Agenti IA e MCP", "Localizzazione integrata", "Nativa Mac e iPad", "Sync iCloud", "Font personalizzati", "Template progetto", "Scorciatoie da tastiera", "Privacy prima di tutto", "Import batch", "Piano gratis per sempre"],
     featureDescription: "Strumenti mirati per screenshot store multilingue, con prestazioni native, template riutilizzabili ed export pronti per l'upload.",
     withoutBroPoints: ["Ridimensionare ogni screenshot manualmente", "Copiare cornici una alla volta", "Riesportare tutto per un colore", "Duplicare tutto per ogni lingua", "Caricare ogni PNG manualmente"],
@@ -843,8 +814,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
   }),
   ko: {
     socialImageAlt: "Screenshot Bro — Mac 및 iPad용 네이티브 앱으로 App Store와 Google Play 스크린샷을 디바이스 프레임, 그라디언트, 현지화와 함께 제작",
-    ui: { docs: "문서", redditCommunity: "Reddit 커뮤니티", followOnX: "X에서 팔로우", followOnThreads: "Threads에서 팔로우", homeLabel: `${SITE_NAME} 홈`, read: "읽기", watchOnInstagram: "Instagram에서 보기", productLabel: "제품", resourcesLabel: "리소스", appScreenshots: "앱 스크린샷", productHuntAlt: "ScreenshotBro App - 아름다운 App Store 스크린샷을 디자인하고 내보내세요. | Product Hunt" },
-    sections: { reel: { eyebrow: "Instagram", title: "앱을 60초 안에 둘러보기.", description: "Screenshot Bro 안에서 디바이스 프레임, 레이어, 현지화 내보내기, App Store Connect 원클릭 업로드가 함께 작동하는 모습을 확인하세요." } },
+    ui: { docs: "문서", redditCommunity: "Reddit 커뮤니티", followOnX: "X에서 팔로우", followOnThreads: "Threads에서 팔로우", homeLabel: `${SITE_NAME} 홈`, read: "읽기", productLabel: "제품", resourcesLabel: "리소스", appScreenshots: "앱 스크린샷", productHuntAlt: "ScreenshotBro App - 아름다운 App Store 스크린샷을 디자인하고 내보내세요. | Product Hunt" },
     features: localizeFeatures([
       { title: "멀티 템플릿 편집", description: "한 번 편집하면 모든 변형이 업데이트됩니다. 도형이나 텍스트를 바꾸면 모든 스크린샷에 동시에 반영됩니다." },
       { title: "디바이스 프레임", description: "iPhone, iPad, MacBook, iMac, Android 프레임으로 App Store와 Google Play 스크린샷을 만들 수 있습니다. 정확한 베젤과 색상 설정을 지원합니다." },
@@ -896,8 +866,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
   },
   uk: compactLandingContent({
     socialImageAlt: "Screenshot Bro — нативний додаток для Mac та iPad для дизайну скриншотів App Store і Google Play з рамками пристроїв, градієнтами та локалізацією",
-    ui: { docs: "Документація", redditCommunity: "Спільнота в Reddit", followOnX: "Стежити в X", followOnThreads: "Стежити в Threads", homeLabel: `${SITE_NAME} Головна`, read: "Читати", watchOnInstagram: "Дивитися в Instagram", productLabel: "Продукт", resourcesLabel: "Ресурси", appScreenshots: "Скриншоти додатку", productHuntAlt: "ScreenshotBro App - Створюйте та експортуйте красиві скриншоти для App Store. | Product Hunt" },
-    reel: { eyebrow: "В Instagram", title: "60-секундний огляд додатку.", description: "Подивіться, як рамки пристроїв, шари, локалізований експорт та завантаження в App Store Connect в один клік працюють разом у Screenshot Bro." },
+    ui: { docs: "Документація", redditCommunity: "Спільнота в Reddit", followOnX: "Стежити в X", followOnThreads: "Стежити в Threads", homeLabel: `${SITE_NAME} Головна`, read: "Читати", productLabel: "Продукт", resourcesLabel: "Ресурси", appScreenshots: "Скриншоти додатку", productHuntAlt: "ScreenshotBro App - Створюйте та експортуйте красиві скриншоти для App Store. | Product Hunt" },
     featureTitles: ["Мульти-шаблонне редагування", "Рамки пристроїв", "Фони та розтягування", "Інструменти фігур + SVG", "Розумне вирівнювання", "Локалізований експорт", "Завантаження в App Store Connect", "ШІ-агенти та MCP", "Вбудована локалізація", "Нативно для Mac та iPad", "Синхронізація iCloud", "Власні шрифти", "Шаблони проектів", "Гарячі клавіші", "Конфіденційність понад усе", "Пакетний імпорт зображень", "Назавжди безкоштовний тариф"],
     featureDescription: "Спеціалізовані інструменти для багатомовних скриншотів магазинів із нативною швидкістю, шаблонами для повторного використання та експортом, готовим до завантаження.",
     withoutBroPoints: ["Ручна зміна розміру кожного скриншота у Figma або Photoshop", "Копіювання рамок пристроїв по одній між артбордами", "Повторний експорт усіх файлів через зміну одного кольору", "Дублювання всього для кожної мови та втрата контролю над перекладами", "Ручне перетягування кожного PNG в App Store Connect"],

@@ -32,9 +32,6 @@ export const PRIMARY_CTA_LABEL = "Get Screenshot Bro";
 export const TWITTER_HANDLE = "@soycastic";
 export const X_PROFILE_URL = "https://x.com/soycastic";
 export const THREADS_URL = "https://www.threads.com/@soycastic";
-export const INSTAGRAM_REEL_URL = "https://www.instagram.com/reels/DXtwyWMDHxF/";
-export const INSTAGRAM_REEL_EMBED_URL =
-  "https://www.instagram.com/reel/DXtwyWMDHxF/embed/";
 export const APP_CATEGORY = "Graphics & Design";
 export const MINIMUM_MACOS_VERSION = "15.0";
 export const MINIMUM_IPADOS_VERSION = "18.0";
