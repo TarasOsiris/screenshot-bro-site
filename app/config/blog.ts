@@ -567,6 +567,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "App preview video specs for the App Store in 2026: dimensions, length, format, poster frame, and a step-by-step guide to record and upload one.",
     date: "2026-06-18",
+    dateModified: "2026-09-15",
     readTime: "9 min read",
     category: "Reference",
     keywords: [
@@ -585,6 +586,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "How to wrap app screenshots in realistic device frames — iPhone, iPad, MacBook, and Android — plus free frame sources and export tips.",
     date: "2026-06-18",
+    dateModified: "2026-09-15",
     readTime: "9 min read",
     category: "Guide",
     keywords: [
@@ -596,6 +598,8 @@ export const BLOG_POSTS: BlogPost[] = [
       "ipad mockup",
       "android phone mockup",
       "app store mockup",
+      "iphone duo mockup",
+      "iphone 18 pro mockup",
     ],
   },
   {
@@ -762,6 +766,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "A practical ASO upload plan for iPhone and iPad App Store screenshots, including display classes, scaling behavior, and design workflow.",
     date: "2026-06-17",
+    dateModified: "2026-09-15",
     readTime: "9 min read",
     category: "Reference",
     keywords: [
@@ -771,6 +776,8 @@ export const BLOG_POSTS: BlogPost[] = [
       "iPhone screenshot App Store",
       "App Store screenshot upload iPhone iPad",
       "App Store screenshot display sizes",
+      "iPhone Duo App Store screenshots",
+      "iPhone 18 Pro Max screenshot size",
     ],
   },
   {
@@ -967,6 +974,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Four ways to upload App Store screenshots: the web uploader, Transporter, fastlane, the App Store Connect API, and a Mac/iPad app workflow.",
     date: "2026-04-20",
+    dateModified: "2026-09-15",
     readTime: "10 min read",
     category: "Guide",
   },
@@ -976,6 +984,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Every screenshot dimension for the Apple App Store and Google Play in 2026 — iPhone, iPad, Mac, Apple Watch, Apple TV, Vision Pro, and Android.",
     date: "2026-04-18",
+    dateModified: "2026-09-15",
     readTime: "9 min read",
     category: "Reference",
   },
@@ -985,6 +994,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "A complete reference of accepted screenshot dimensions for iPhone, iPad, Mac, Apple Watch, Apple TV, and Apple Vision Pro.",
     date: "2026-04-08",
+    dateModified: "2026-09-15",
     readTime: "5 min read",
     category: "Reference",
   },

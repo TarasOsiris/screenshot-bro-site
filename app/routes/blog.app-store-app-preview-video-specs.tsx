@@ -8,33 +8,33 @@ const SLUG = "app-store-app-preview-video-specs";
 
 const VIDEO_SPECS = [
   {
-    device: "iPhone 6.9\" (iPhone 17 Pro Max, 16 Pro Max)",
-    resolution: "886 × 1920 or 1290 × 2796 (portrait)",
-    note: "Accepted for the 6.9-inch display family.",
+    device: "iPhone Duo (inner and outer displays)",
+    resolution: "886 × 1920 (portrait) or 1920 × 886 (landscape)",
+    note: "Listed by Apple, but App Store Connect accepts Duo uploads only later in 2026.",
+  },
+  {
+    device: "iPhone 6.9\" (iPhone 18 Pro Max, 17 Pro Max, Air, 16 Pro Max)",
+    resolution: "886 × 1920 (portrait) or 1920 × 886 (landscape)",
+    note: "The largest uploadable iPhone class; start here.",
   },
   {
     device: "iPhone 6.5\" (older Plus / Pro Max)",
-    resolution: "886 × 1920 or 1242 × 2688 (portrait)",
-    note: "Still accepted for older 6.5-inch listings.",
+    resolution: "886 × 1920 (portrait) or 1920 × 886 (landscape)",
+    note: "Scaled from your 6.9-inch preview if you skip it.",
   },
   {
-    device: "iPhone 6.1\"–6.3\" (standard / Pro)",
-    resolution: "886 × 1920 or 1170 × 2532 (portrait)",
-    note: "Matches the standard iPhone display size.",
+    device: "iPhone 6.3\" and 6.1\" (iPhone 18 Pro, 17 Pro, 17, 17e)",
+    resolution: "886 × 1920 (portrait) or 1920 × 886 (landscape)",
+    note: "Scaled from your 6.5-inch preview if you skip it.",
   },
   {
-    device: "iPad 13\" / 12.9\"",
-    resolution: "1200 × 1600 or 2048 × 2732 (portrait)",
-    note: "Use the largest iPad size you support.",
-  },
-  {
-    device: "iPad 11\"",
-    resolution: "1200 × 1600 or 1668 × 2388 (portrait)",
-    note: "Landscape variants are also accepted.",
+    device: "iPad 13\" and 11\"",
+    resolution: "1200 × 1600 (portrait) or 1600 × 1200 (landscape)",
+    note: "The same frame for both classes.",
   },
   {
     device: "Mac",
-    resolution: "1920 × 1080 or 3840 × 2160 (16:9)",
+    resolution: "1920 × 1080 (landscape only)",
     note: "Mac previews are widescreen, not device-shaped.",
   },
 ] as const;
@@ -110,10 +110,10 @@ export default function BlogPost() {
       </p>
       <p>
         Spec numbers below reflect Apple&apos;s published requirements at the time
-        of writing (checked June 18, 2026). Always confirm against Apple&apos;s
+        of writing (checked September 15, 2026). Always confirm against Apple&apos;s
         current{" "}
         <a
-          href="https://developer.apple.com/help/app-store-connect/reference/app-preview-specifications/"
+          href="https://developer.apple.com/help/app-store-connect/reference/app-information/app-preview-specifications"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -140,9 +140,10 @@ export default function BlogPost() {
 
       <h2>2026 App Preview Specs</h2>
       <p>
-        Previews use H.264 or Apple ProRes in a <code>.mov</code>,{" "}
-        <code>.m4v</code>, or <code>.mp4</code> container, at 30 fps, with a
-        length of 15–30 seconds. The accepted frame resolutions depend on the
+        Previews use H.264 in a <code>.mov</code>, <code>.m4v</code>, or{" "}
+        <code>.mp4</code> container, or ProRes 422 (HQ) in a{" "}
+        <code>.mov</code>, at up to 30 fps, with a length of 15–30 seconds
+        and a 500 MB file limit. The accepted frame resolutions depend on the
         target display:
       </p>
       <table>
@@ -164,10 +165,13 @@ export default function BlogPost() {
         </tbody>
       </table>
       <p>
-        The lower resolutions in each row (for example 886 × 1920 for iPhone)
-        are the historical preview targets; the higher numbers match the
-        device&apos;s native screenshot resolution. When in doubt, capture at the
-        device&apos;s native resolution and let App Store Connect validate it.
+        Every iPhone class from 6.1-inch up takes the same 886 × 1920 frame,
+        including iPhone 18 Pro, 18 Pro Max, and both iPhone Duo displays. Apple also lists
+        each device&apos;s native resolution, but those are not upload sizes:
+        a screen recording at 1320 × 2868 has to be scaled to 886 × 1920
+        before App Store Connect will take it. A new phone rarely means a new
+        preview; the 18 Pro models slot into the existing 6.3-inch and 6.9-inch
+        families, and the Duo will reuse the same frame once uploads open.
       </p>
 
       <h2>Where the Preview Appears and Why the Poster Frame Matters</h2>
@@ -225,7 +229,7 @@ export default function BlogPost() {
         </a>{" "}
         and{" "}
         <a
-          href="https://developer.apple.com/help/app-store-connect/reference/app-preview-specifications/"
+          href="https://developer.apple.com/help/app-store-connect/reference/app-information/app-preview-specifications"
           target="_blank"
           rel="noopener noreferrer"
         >

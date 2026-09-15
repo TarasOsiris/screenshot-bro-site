@@ -56,6 +56,11 @@ export default function BlogPost() {
             "Apple allows one to ten screenshots per supported display size and localization.",
         },
         {
+          question: "Do I need separate screenshots for iPhone 18 Pro, 18 Pro Max, or iPhone Duo?",
+          answer:
+            "Not for iPhone 18 Pro or 18 Pro Max: Apple lists them under the existing 6.3-inch and 6.9-inch display classes, at the same resolutions as the 17 Pro and 17 Pro Max. iPhone Duo has its own sizes, 1398 x 2034 for the outer display and 2007 x 2853 for the inner display, but Apple says App Store Connect will only accept Duo uploads later in 2026.",
+        },
+        {
           question: "Can App Store Connect scale screenshots for smaller devices?",
           answer:
             "Yes. Apple says you can provide only the highest resolution screenshots required if the UI is the same across device sizes and localizations, and those screenshots can scale down for other sizes.",
@@ -69,7 +74,7 @@ export default function BlogPost() {
         you can safely reuse.
       </p>
       <p>
-        This guide was fact-checked on June 17, 2026 against Apple&apos;s{" "}
+        This guide was fact-checked on September 15, 2026 against Apple&apos;s{" "}
         <a
           href="https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/"
           target="_blank"
@@ -92,6 +97,8 @@ export default function BlogPost() {
       <ul>
         <li>Apple accepts one to ten screenshots in JPEG, JPG, or PNG formats.</li>
         <li>If your app runs on iPhone, plan for the current largest iPhone display class first.</li>
+        <li>iPhone 18 Pro and 18 Pro Max need nothing new: they sit in the 6.3-inch and 6.9-inch classes at the same resolutions as the 17 Pro and 17 Pro Max.</li>
+        <li>iPhone Duo is the first iPhone with its own two screenshot sizes, one per screen, but App Store Connect does not accept Duo uploads yet.</li>
         <li>If your app runs on iPad, Apple lists 13-inch iPad screenshots as required.</li>
         <li>If your UI is the same across device sizes and localizations, Apple says you can provide only the highest resolution screenshots required and let them scale down.</li>
         <li>If you want different assets by display size or localization, use Media Manager.</li>
@@ -108,9 +115,14 @@ export default function BlogPost() {
         </thead>
         <tbody>
           <tr>
+            <td>iPhone Duo</td>
+            <td>2007 x 2853 (inner display) or 1398 x 2034 (outer display)</td>
+            <td>Apple lists the sizes, but upload support in App Store Connect arrives later in 2026.</td>
+          </tr>
+          <tr>
             <td>6.9 inch</td>
             <td>1260 x 2736, 1290 x 2796, or 1320 x 2868</td>
-            <td>Start here for modern iPhone exports.</td>
+            <td>Start here for modern iPhone exports. Covers iPhone 18 Pro Max at 1320 x 2868.</td>
           </tr>
           <tr>
             <td>6.5 inch</td>
@@ -120,7 +132,7 @@ export default function BlogPost() {
           <tr>
             <td>6.3 inch</td>
             <td>1179 x 2556 or 1206 x 2622</td>
-            <td>Apple can scale from 6.5-inch screenshots if accepted sizes are not provided.</td>
+            <td>Covers iPhone 18 Pro at 1206 x 2622. Apple can scale from 6.5-inch screenshots if accepted sizes are not provided.</td>
           </tr>
           <tr>
             <td>6.1 inch</td>

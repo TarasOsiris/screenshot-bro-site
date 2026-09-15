@@ -9,8 +9,13 @@ const SLUG = "device-mockup-generator-app-screenshots";
 const FRAME_CATALOG = [
   {
     device: "iPhone",
-    models: "iPhone 17, iPhone Air, 17 Pro, 17 Pro Max",
+    models: "iPhone 18 Pro, 18 Pro Max, iPhone 17, iPhone Air, 17 Pro, 17 Pro Max",
     use: "Primary App Store screenshots and marketing-site hero shots.",
+  },
+  {
+    device: "iPhone foldable",
+    models: "iPhone Duo: open, closed, and open seen from the back",
+    use: "Launch posts, marketing sites, and Duo screenshots once App Store Connect accepts them.",
   },
   {
     device: "iPad",
@@ -83,6 +88,11 @@ export default function BlogPost() {
           question: "Should App Store screenshots use device frames?",
           answer:
             "It depends on the category. Framed mockups add context and look premium, but Apple shows real UI well without frames, and a frame shrinks the usable screen area. Test both: framed mockups often win on marketing sites, while full-bleed screenshots can convert better in the App Store gallery.",
+        },
+        {
+          question: "Is there an iPhone Duo mockup frame?",
+          answer:
+            "Yes. An iPhone Duo mockup needs three views: the open phone with its inner display, the closed phone with its cover screen, and the open phone seen from the back. Screenshot Bro includes all three in Night Sky and Star White, alongside iPhone 18 Pro and 18 Pro Max frames. App Store Connect lists Duo screenshot sizes but does not accept Duo uploads yet, so for now Duo mockups are mostly for launch posts and marketing sites.",
         },
         {
           question: "What resolution should a framed mockup be?",
@@ -163,6 +173,66 @@ export default function BlogPost() {
           ))}
         </tbody>
       </table>
+
+      <p>
+        iPhone 18 Pro and 18 Pro Max change less than their names suggest:
+        their screens use the same resolutions as the 17 Pro and 17 Pro Max,
+        so an existing layout drops straight into the new frames, which come
+        in Black, Silver, Glacier, and Burgundy.
+      </p>
+
+      <h2>Mockups for a Foldable: iPhone Duo</h2>
+      <p>
+        iPhone Duo is Apple&apos;s first foldable, and it is the first iPhone
+        where one mockup is not enough. The same phone gives you three
+        distinct shots, each suited to a different message:
+      </p>
+      <ul>
+        <li>
+          <strong>Open, inner display</strong> — the 7.6-inch screen. Use it
+          for layouts that make real use of the extra width: dashboards,
+          editors, reading views, anything that looks cramped on a normal
+          phone.
+        </li>
+        <li>
+          <strong>Closed, cover screen</strong> — the 5.4-inch outer display.
+          Use it for quick glances and one-handed flows, the things people do
+          without unfolding.
+        </li>
+        <li>
+          <strong>Open, seen from the back</strong> — the unfolded phone from
+          the outside, with the cover screen showing. It is the shot that
+          makes the hardware unmistakable, so it works best as a hero image.
+        </li>
+      </ul>
+      <p>
+        Two details catch people out. First, do not drop an ordinary phone
+        screenshot into the inner-display frame: stretched phone UI on a
+        foldable reads the same way phone screenshots do inside an iPad frame.
+        Capture the unfolded layout your app actually shows. Second, the cover
+        screen is not a symmetric rounded rectangle. Its corners are almost
+        square on the hinge edge and well rounded on the free edge, so a
+        generic rounded mask either leaves gaps or clips your UI.
+      </p>
+      <p>
+        Apple&apos;s{" "}
+        <a
+          href="https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          screenshot specifications
+        </a>{" "}
+        already list Duo sizes, 1398 × 2034 for the outer display and
+        2007 × 2853 for the inner display, but App Store Connect will only
+        accept Duo uploads later in 2026 (checked September 15, 2026). Until
+        then, Duo mockups belong on your website, in launch posts, and in
+        press kits. Screenshot Bro ships the three Duo frames in Night Sky and
+        Star White, plus a Duo Showcase template that lays out all three views
+        across one row. See the{" "}
+        <a href="/blog/app-store-screenshot-sizes">App Store screenshot sizes</a>{" "}
+        reference for the full list.
+      </p>
 
       <h2>How to Generate a Framed Mockup</h2>
       <ol>

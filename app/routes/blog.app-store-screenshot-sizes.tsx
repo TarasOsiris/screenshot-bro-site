@@ -115,10 +115,20 @@ function ContentEn() {
         </thead>
         <tbody>
           <tr>
+            <td>7.6&quot; (inner)</td>
+            <td>2007 x 2853</td>
+            <td>iPhone Duo, unfolded</td>
+          </tr>
+          <tr>
+            <td>5.4&quot; (outer)</td>
+            <td>1398 x 2034</td>
+            <td>iPhone Duo, folded</td>
+          </tr>
+          <tr>
             <td>6.9&quot;</td>
             <td>1260 x 2736, 1290 x 2796, or 1320 x 2868</td>
             <td>
-              iPhone Air, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
+              iPhone Air, 18 Pro Max, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
               Plus, 14 Pro Max
             </td>
           </tr>
@@ -133,7 +143,7 @@ function ContentEn() {
           <tr>
             <td>6.3&quot;</td>
             <td>1179 x 2556 or 1206 x 2622</td>
-            <td>iPhone 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
+            <td>iPhone 18 Pro, 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
           </tr>
           <tr>
             <td>6.1&quot;</td>
@@ -150,6 +160,9 @@ function ContentEn() {
           </tr>
         </tbody>
       </table>
+      <p>
+        iPhone 18 Pro and 18 Pro Max use the same resolutions as the 17 Pro and 17 Pro Max, so an existing 6.3&quot; or 6.9&quot; set already covers them. iPhone Duo is the exception: Apple lists a separate screenshot size for each of its two screens (landscape versions of both are accepted), but App Store Connect does not take Duo uploads yet. Apple says support is coming later in 2026, so until then the 6.9&quot; set is still the one to get right.
+      </p>
 
       <h2>iPad Screenshots</h2>
       <table>
@@ -255,9 +268,7 @@ function ContentEn() {
           eliminates it.
         </li>
         <li>
-          <strong>Screenshot Bro handles all of this.</strong> Set up your
-          rows with the device sizes you need, design once, and export every
-          size at 1x, 2x, or 3x with one click.
+          <strong>Screenshot Bro handles all of this.</strong> Set up your rows with the device sizes you need, design once, and export every size at its exact App Store pixel dimensions in one batch. The frame library already includes iPhone 18 Pro, 18 Pro Max and iPhone Duo (open, closed, and open seen from the back), and the Duo&apos;s two resolutions can be entered as a custom row size.
         </li>
       </ul>
     </>
@@ -285,10 +296,20 @@ function ContentEs() {
         </thead>
         <tbody>
           <tr>
+            <td>7.6&quot; (interior)</td>
+            <td>2007 x 2853</td>
+            <td>iPhone Duo, desplegado</td>
+          </tr>
+          <tr>
+            <td>5.4&quot; (exterior)</td>
+            <td>1398 x 2034</td>
+            <td>iPhone Duo, plegado</td>
+          </tr>
+          <tr>
             <td>6.9&quot;</td>
             <td>1260 x 2736, 1290 x 2796 o 1320 x 2868</td>
             <td>
-              iPhone Air, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
+              iPhone Air, 18 Pro Max, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
               Plus, 14 Pro Max
             </td>
           </tr>
@@ -303,7 +324,7 @@ function ContentEs() {
           <tr>
             <td>6.3&quot;</td>
             <td>1179 x 2556 o 1206 x 2622</td>
-            <td>iPhone 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
+            <td>iPhone 18 Pro, 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
           </tr>
           <tr>
             <td>6.1&quot;</td>
@@ -320,6 +341,9 @@ function ContentEs() {
           </tr>
         </tbody>
       </table>
+      <p>
+        El iPhone 18 Pro y el 18 Pro Max usan las mismas resoluciones que el 17 Pro y el 17 Pro Max, así que un set de 6.3&quot; o 6.9&quot; que ya tengas los cubre. El iPhone Duo es la excepción: Apple indica un tamaño de captura distinto para cada una de sus dos pantallas (también acepta ambas en horizontal), pero App Store Connect todavía no admite subidas para el Duo. Apple dice que el soporte llegará más adelante en 2026, así que hasta entonces el set de 6.9&quot; sigue siendo el que hay que cuidar.
+      </p>
 
       <h2>Capturas de pantalla de iPad</h2>
       <table>
@@ -425,9 +449,7 @@ function ContentEs() {
           trabajo de exportación por lotes lo elimina.
         </li>
         <li>
-          <strong>Screenshot Bro se encarga de todo esto.</strong> Configura tus
-          filas con los tamaños de dispositivo que necesitas, diseña una vez y exporta cada
-          tamaño a 1x, 2x o 3x con un solo clic.
+          <strong>Screenshot Bro se encarga de todo esto.</strong> Configura tus filas con los tamaños de dispositivo que necesitas, diseña una vez y exporta cada tamaño con sus píxeles exactos de App Store en un solo lote. La biblioteca de marcos ya incluye el iPhone 18 Pro, el 18 Pro Max y el iPhone Duo (abierto, cerrado y abierto visto por detrás), y las dos resoluciones del Duo se pueden introducir como tamaño de fila personalizado.
         </li>
       </ul>
     </>
@@ -453,10 +475,20 @@ function ContentZh() {
         </thead>
         <tbody>
           <tr>
+            <td>7.6&quot;（内屏）</td>
+            <td>2007 x 2853</td>
+            <td>iPhone Duo（展开）</td>
+          </tr>
+          <tr>
+            <td>5.4&quot;（外屏）</td>
+            <td>1398 x 2034</td>
+            <td>iPhone Duo（折叠）</td>
+          </tr>
+          <tr>
             <td>6.9&quot;</td>
             <td>1260 x 2736、1290 x 2796 或 1320 x 2868</td>
             <td>
-              iPhone Air、17 Pro Max、16 Pro Max、16 Plus、15 Pro Max、15
+              iPhone Air、18 Pro Max、17 Pro Max、16 Pro Max、16 Plus、15 Pro Max、15
               Plus、14 Pro Max
             </td>
           </tr>
@@ -471,7 +503,7 @@ function ContentZh() {
           <tr>
             <td>6.3&quot;</td>
             <td>1179 x 2556 或 1206 x 2622</td>
-            <td>iPhone 17 Pro、17、16 Pro、16、15 Pro、15、14 Pro</td>
+            <td>iPhone 18 Pro、17 Pro、17、16 Pro、16、15 Pro、15、14 Pro</td>
           </tr>
           <tr>
             <td>6.1&quot;</td>
@@ -488,6 +520,9 @@ function ContentZh() {
           </tr>
         </tbody>
       </table>
+      <p>
+        iPhone 18 Pro 和 18 Pro Max 的分辨率与 17 Pro 和 17 Pro Max 相同，因此现有的 6.3&quot; 或 6.9&quot; 截图集已经适用。iPhone Duo 是例外：Apple 为它的两块屏幕分别列出了独立的截图尺寸（两者也都接受横屏版本），但 App Store Connect 目前还不支持上传 Duo 截图。Apple 表示将在 2026 年晚些时候提供支持，在此之前，6.9&quot; 截图集仍然是重点。
+      </p>
 
       <h2>iPad 屏幕截图</h2>
       <table>
@@ -589,8 +624,7 @@ function ContentZh() {
           解决这个问题。
         </li>
         <li>
-          <strong>Screenshot Bro 可以处理所有这些工作。</strong> 根据需要的设备尺寸设置行，设计一次，
-          然后一键导出 1x、2x 或 3x 的各种尺寸。
+          <strong>Screenshot Bro 可以处理所有这些工作。</strong> 根据需要的设备尺寸设置行，设计一次，然后按 App Store 要求的精确像素尺寸批量导出所有尺寸。设备框架库已包含 iPhone 18 Pro、18 Pro Max 以及 iPhone Duo（展开、折叠和展开后的背面），Duo 的两种分辨率可以通过自定义行尺寸来设置。
         </li>
       </ul>
     </>
@@ -615,10 +649,20 @@ function ContentHi() {
         </thead>
         <tbody>
           <tr>
+            <td>7.6&quot; (अंदरूनी)</td>
+            <td>2007 x 2853</td>
+            <td>iPhone Duo, खुला हुआ</td>
+          </tr>
+          <tr>
+            <td>5.4&quot; (बाहरी)</td>
+            <td>1398 x 2034</td>
+            <td>iPhone Duo, मुड़ा हुआ</td>
+          </tr>
+          <tr>
             <td>6.9&quot;</td>
             <td>1260 x 2736, 1290 x 2796, या 1320 x 2868</td>
             <td>
-              iPhone Air, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
+              iPhone Air, 18 Pro Max, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
               Plus, 14 Pro Max
             </td>
           </tr>
@@ -633,7 +677,7 @@ function ContentHi() {
           <tr>
             <td>6.3&quot;</td>
             <td>1179 x 2556 या 1206 x 2622</td>
-            <td>iPhone 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
+            <td>iPhone 18 Pro, 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
           </tr>
           <tr>
             <td>6.1&quot;</td>
@@ -650,6 +694,9 @@ function ContentHi() {
           </tr>
         </tbody>
       </table>
+      <p>
+        iPhone 18 Pro और 18 Pro Max, 17 Pro और 17 Pro Max वाले ही रिज़ॉल्यूशन इस्तेमाल करते हैं, इसलिए आपका मौजूदा 6.3&quot; या 6.9&quot; सेट इन्हें पहले से कवर करता है। iPhone Duo अपवाद है: Apple इसकी दोनों स्क्रीन के लिए अलग-अलग स्क्रीनशॉट आकार बताता है (दोनों के लैंडस्केप संस्करण भी स्वीकार होते हैं), लेकिन App Store Connect अभी Duo के लिए अपलोड नहीं लेता। Apple के अनुसार यह सुविधा 2026 में आगे चलकर आएगी, इसलिए तब तक 6.9&quot; सेट को सही रखना ही सबसे ज़रूरी है।
+      </p>
 
       <h2>iPad स्क्रीनशॉट</h2>
       <table>
@@ -751,8 +798,7 @@ function ContentHi() {
           समय की सबसे बड़ी बर्बादी है। एक बैच निर्यात वर्कफ़्लो इसे समाप्त करता है।
         </li>
         <li>
-          <strong>Screenshot Bro यह सब संभालता है।</strong> जिन डिवाइस आकारों की आपको आवश्यकता है, उनके साथ
-          अपनी पंक्तियाँ सेट करें, एक बार डिज़ाइन करें, और एक क्लिक में हर आकार को 1x, 2x, या 3x पर निर्यात करें।
+          <strong>Screenshot Bro यह सब संभालता है।</strong> जिन डिवाइस आकारों की आपको आवश्यकता है, उनके साथ अपनी पंक्तियाँ सेट करें, एक बार डिज़ाइन करें, और हर आकार को App Store के सटीक पिक्सेल आयामों पर एक ही बैच में निर्यात करें। फ़्रेम लाइब्रेरी में iPhone 18 Pro, 18 Pro Max और iPhone Duo (खुला, बंद, और खुला हुआ पीछे से) पहले से शामिल हैं, और Duo के दोनों रिज़ॉल्यूशन कस्टम पंक्ति आकार के रूप में डाले जा सकते हैं।
         </li>
       </ul>
     </>
@@ -780,10 +826,20 @@ function ContentFr() {
         </thead>
         <tbody>
           <tr>
+            <td>7.6&quot; (intérieur)</td>
+            <td>2007 x 2853</td>
+            <td>iPhone Duo, déplié</td>
+          </tr>
+          <tr>
+            <td>5.4&quot; (extérieur)</td>
+            <td>1398 x 2034</td>
+            <td>iPhone Duo, plié</td>
+          </tr>
+          <tr>
             <td>6.9&quot;</td>
             <td>1260 x 2736, 1290 x 2796 ou 1320 x 2868</td>
             <td>
-              iPhone Air, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
+              iPhone Air, 18 Pro Max, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
               Plus, 14 Pro Max
             </td>
           </tr>
@@ -798,7 +854,7 @@ function ContentFr() {
           <tr>
             <td>6.3&quot;</td>
             <td>1179 x 2556 ou 1206 x 2622</td>
-            <td>iPhone 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
+            <td>iPhone 18 Pro, 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
           </tr>
           <tr>
             <td>6.1&quot;</td>
@@ -815,6 +871,9 @@ function ContentFr() {
           </tr>
         </tbody>
       </table>
+      <p>
+        Les iPhone 18 Pro et 18 Pro Max utilisent les mêmes résolutions que les 17 Pro et 17 Pro Max : un lot 6.3&quot; ou 6.9&quot; existant les couvre déjà. L&apos;iPhone Duo fait exception : Apple indique une taille de capture distincte pour chacun de ses deux écrans (les versions paysage sont aussi acceptées), mais App Store Connect n&apos;accepte pas encore les envois pour le Duo. Apple annonce une prise en charge plus tard en 2026 ; d&apos;ici là, c&apos;est toujours le lot 6.9&quot; qu&apos;il faut soigner.
+      </p>
 
       <h2>Captures d&apos;écran iPad</h2>
       <table>
@@ -919,9 +978,7 @@ function ContentFr() {
           chaque appareil est la tâche la plus chronophage. Un flux d&apos;exportation par lots l&apos;élimine.
         </li>
         <li>
-          <strong>Screenshot Bro gère tout cela.</strong> Configurez vos
-          lignes avec les tailles d&apos;appareils requises, concevez une seule fois et exportez chaque
-          taille en 1x, 2x ou 3x d&apos;un simple clic.
+          <strong>Screenshot Bro gère tout cela.</strong> Configurez vos lignes avec les tailles d&apos;appareils requises, concevez une seule fois et exportez chaque taille aux dimensions exactes exigées par l&apos;App Store, en un seul lot. La bibliothèque de cadres inclut déjà les iPhone 18 Pro et 18 Pro Max ainsi que l&apos;iPhone Duo (ouvert, fermé et ouvert vu de dos), et les deux résolutions du Duo se saisissent comme taille de ligne personnalisée.
         </li>
       </ul>
     </>
@@ -947,10 +1004,20 @@ function ContentAr() {
         </thead>
         <tbody>
           <tr>
+            <td>7.6&quot; (الداخلية)</td>
+            <td>2007 x 2853</td>
+            <td>iPhone Duo مفتوحًا</td>
+          </tr>
+          <tr>
+            <td>5.4&quot; (الخارجية)</td>
+            <td>1398 x 2034</td>
+            <td>iPhone Duo مطويًا</td>
+          </tr>
+          <tr>
             <td>6.9&quot;</td>
             <td>1260 x 2736 أو 1290 x 2796 أو 1320 x 2868</td>
             <td>
-              iPhone Air, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
+              iPhone Air, 18 Pro Max, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
               Plus, 14 Pro Max
             </td>
           </tr>
@@ -965,7 +1032,7 @@ function ContentAr() {
           <tr>
             <td>6.3&quot;</td>
             <td>1179 x 2556 أو 1206 x 2622</td>
-            <td>iPhone 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
+            <td>iPhone 18 Pro, 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
           </tr>
           <tr>
             <td>6.1&quot;</td>
@@ -982,6 +1049,9 @@ function ContentAr() {
           </tr>
         </tbody>
       </table>
+      <p>
+        يستخدم iPhone 18 Pro و18 Pro Max نفس دقة 17 Pro و17 Pro Max، لذا فإن مجموعتك الحالية بمقاس 6.3&quot; أو 6.9&quot; تغطيهما بالفعل. أما iPhone Duo فهو الاستثناء: تحدد Apple مقاسًا مستقلًا للقطات الشاشة لكل شاشة من شاشتيه (وتقبل النسخ الأفقية لكلتيهما)، لكن App Store Connect لا يقبل رفع لقطات Duo بعد. تقول Apple إن الدعم سيتوفر لاحقًا في 2026، وحتى ذلك الحين تبقى مجموعة 6.9&quot; هي الأهم.
+      </p>
 
       <h2>لقطات شاشة iPad</h2>
       <table>
@@ -1080,7 +1150,7 @@ function ContentAr() {
           <strong>تصدير جميع الأحجام في خطوة واحدة.</strong> تغيير الحجم يدويًا لكل جهاز هو المستهلك الرئيسي للوقت. يلغي سير العمل للتصدير المجمّع هذا الأمر.
         </li>
         <li>
-          <strong>Screenshot Bro يعالج كل هذا.</strong> قم بإعداد الصفوف الخاصة بك بمقاسات الأجهزة التي تحتاجها، وصمم مرة واحدة، وصمّب كل مقاس بدقة 1x أو 2x أو 3x بنقرة واحدة.
+          <strong>Screenshot Bro يعالج كل هذا.</strong> قم بإعداد الصفوف بمقاسات الأجهزة التي تحتاجها، وصمم مرة واحدة، ثم صدّر كل مقاس بأبعاد البكسل الدقيقة التي يطلبها App Store دفعة واحدة. تضم مكتبة الإطارات بالفعل iPhone 18 Pro و18 Pro Max وiPhone Duo (مفتوحًا ومطويًا ومفتوحًا من الخلف)، ويمكن إدخال دقتي Duo كمقاس صف مخصص.
         </li>
       </ul>
     </>
@@ -1108,10 +1178,20 @@ function ContentDe() {
         </thead>
         <tbody>
           <tr>
+            <td>7.6&quot; (innen)</td>
+            <td>2007 x 2853</td>
+            <td>iPhone Duo, aufgeklappt</td>
+          </tr>
+          <tr>
+            <td>5.4&quot; (außen)</td>
+            <td>1398 x 2034</td>
+            <td>iPhone Duo, zugeklappt</td>
+          </tr>
+          <tr>
             <td>6.9&quot;</td>
             <td>1260 x 2736, 1290 x 2796 oder 1320 x 2868</td>
             <td>
-              iPhone Air, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
+              iPhone Air, 18 Pro Max, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
               Plus, 14 Pro Max
             </td>
           </tr>
@@ -1126,7 +1206,7 @@ function ContentDe() {
           <tr>
             <td>6.3&quot;</td>
             <td>1179 x 2556 oder 1206 x 2622</td>
-            <td>iPhone 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
+            <td>iPhone 18 Pro, 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
           </tr>
           <tr>
             <td>6.1&quot;</td>
@@ -1143,6 +1223,9 @@ function ContentDe() {
           </tr>
         </tbody>
       </table>
+      <p>
+        iPhone 18 Pro und 18 Pro Max nutzen dieselben Auflösungen wie 17 Pro und 17 Pro Max – ein vorhandenes 6.3&quot;- oder 6.9&quot;-Set deckt sie also bereits ab. Das iPhone Duo ist die Ausnahme: Apple nennt für jeden seiner beiden Bildschirme eine eigene Screenshot-Größe (jeweils auch im Querformat), doch App Store Connect nimmt noch keine Duo-Uploads an. Laut Apple folgt die Unterstützung später im Jahr 2026 – bis dahin bleibt das 6.9&quot;-Set das entscheidende.
+      </p>
 
       <h2>iPad-Screenshots</h2>
       <table>
@@ -1245,9 +1328,7 @@ function ContentDe() {
           für jedes Gerät ist der größte Zeitfresser. Ein Batch-Export-Workflow macht dies überflüssig.
         </li>
         <li>
-          <strong>Screenshot Bro erledigt all dies für Sie.</strong> Richten Sie Ihre
-          Zeilen mit den benötigten Gerätegrößen ein, gestalten Sie einmalig und exportieren Sie jede
-          Größe mit einem Klick in 1x, 2x oder 3x.
+          <strong>Screenshot Bro erledigt all dies für Sie.</strong> Richten Sie Ihre Zeilen mit den benötigten Gerätegrößen ein, gestalten Sie einmalig und exportieren Sie jede Größe in einem Durchgang mit exakt den Pixelmaßen des App Store. Die Rahmenbibliothek enthält bereits iPhone 18 Pro, 18 Pro Max und das iPhone Duo (aufgeklappt, zugeklappt und aufgeklappt von hinten); die beiden Duo-Auflösungen legen Sie als benutzerdefinierte Zeilengröße an.
         </li>
       </ul>
     </>
@@ -1272,10 +1353,20 @@ function ContentJa() {
         </thead>
         <tbody>
           <tr>
+            <td>7.6&quot;（内側）</td>
+            <td>2007 x 2853</td>
+            <td>iPhone Duo（開いた状態）</td>
+          </tr>
+          <tr>
+            <td>5.4&quot;（外側）</td>
+            <td>1398 x 2034</td>
+            <td>iPhone Duo（閉じた状態）</td>
+          </tr>
+          <tr>
             <td>6.9&quot;</td>
             <td>1260 x 2736、1290 x 2796、または 1320 x 2868</td>
             <td>
-              iPhone Air、17 Pro Max、16 Pro Max、16 Plus、15 Pro Max、15
+              iPhone Air、18 Pro Max、17 Pro Max、16 Pro Max、16 Plus、15 Pro Max、15
               Plus、14 Pro Max
             </td>
           </tr>
@@ -1290,7 +1381,7 @@ function ContentJa() {
           <tr>
             <td>6.3&quot;</td>
             <td>1179 x 2556 または 1206 x 2622</td>
-            <td>iPhone 17 Pro、17、16 Pro、16、15 Pro、15、14 Pro</td>
+            <td>iPhone 18 Pro、17 Pro、17、16 Pro、16、15 Pro、15、14 Pro</td>
           </tr>
           <tr>
             <td>6.1&quot;</td>
@@ -1307,6 +1398,9 @@ function ContentJa() {
           </tr>
         </tbody>
       </table>
+      <p>
+        iPhone 18 Proと18 Pro Maxの解像度は17 Proと17 Pro Maxと同じなので、既存の6.3&quot;または6.9&quot;のセットでそのまま対応できます。例外はiPhone Duoです。Appleは2つの画面それぞれに専用のスクリーンショットサイズを定めていますが（どちらも横向きも可）、App Store ConnectはまだDuo向けのアップロードを受け付けていません。Appleによると対応は2026年中に始まる予定なので、それまでは6.9&quot;のセットを整えることが最優先です。
+      </p>
 
       <h2>iPadのスクリーンショット</h2>
       <table>
@@ -1405,7 +1499,7 @@ function ContentJa() {
           <strong>すべてのサイズをワンステップで書き出します。</strong> デバイスごとに手動でサイズを変更するのは、主な時間の無駄です。一括書き出しのワークフローを使用すれば、この手間を省くことができます。
         </li>
         <li>
-          <strong>Screenshot Broがこれらすべてを処理します。</strong> 必要なデバイスサイズで行を設定し、一度デザインすれば、ワンクリックで1x、2x、または3xのすべてのサイズを書き出すことができます。
+          <strong>Screenshot Broがこれらすべてを処理します。</strong> 必要なデバイスサイズで行を設定し、一度デザインすれば、すべてのサイズをApp Storeが求める正確なピクセル寸法で一括書き出しできます。フレームライブラリにはiPhone 18 Pro、18 Pro Max、iPhone Duo（開いた状態、閉じた状態、開いた状態の背面）がすでに含まれており、Duoの2つの解像度はカスタムの行サイズとして入力できます。
         </li>
       </ul>
     </>
@@ -1433,10 +1527,20 @@ function ContentPt() {
         </thead>
         <tbody>
           <tr>
+            <td>7.6&quot; (interna)</td>
+            <td>2007 x 2853</td>
+            <td>iPhone Duo, aberto</td>
+          </tr>
+          <tr>
+            <td>5.4&quot; (externa)</td>
+            <td>1398 x 2034</td>
+            <td>iPhone Duo, fechado</td>
+          </tr>
+          <tr>
             <td>6.9&quot;</td>
             <td>1260 x 2736, 1290 x 2796 ou 1320 x 2868</td>
             <td>
-              iPhone Air, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
+              iPhone Air, 18 Pro Max, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
               Plus, 14 Pro Max
             </td>
           </tr>
@@ -1451,7 +1555,7 @@ function ContentPt() {
           <tr>
             <td>6.3&quot;</td>
             <td>1179 x 2556 ou 1206 x 2622</td>
-            <td>iPhone 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
+            <td>iPhone 18 Pro, 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
           </tr>
           <tr>
             <td>6.1&quot;</td>
@@ -1468,6 +1572,9 @@ function ContentPt() {
           </tr>
         </tbody>
       </table>
+      <p>
+        O iPhone 18 Pro e o 18 Pro Max usam as mesmas resoluções do 17 Pro e do 17 Pro Max, então um conjunto de 6.3&quot; ou 6.9&quot; que você já tenha os cobre. O iPhone Duo é a exceção: a Apple lista um tamanho de captura próprio para cada uma das duas telas (as versões em paisagem também são aceitas), mas o App Store Connect ainda não aceita envios para o Duo. A Apple diz que o suporte chega ainda em 2026; até lá, o conjunto de 6.9&quot; continua sendo o que mais importa.
+      </p>
 
       <h2>Capturas de Tela do iPad</h2>
       <table>
@@ -1571,9 +1678,7 @@ function ContentPt() {
           cada dispositivo é a principal perda de tempo. Um fluxo de trabalho de exportação em lote elimina isso.
         </li>
         <li>
-          <strong>O Screenshot Bro cuida de tudo isso.</strong> Configure suas
-          linhas com os tamanhos de dispositivos necessários, desenhe uma vez e exporte cada
-          tamanho em 1x, 2x ou 3x com um único clique.
+          <strong>O Screenshot Bro cuida de tudo isso.</strong> Configure suas linhas com os tamanhos de dispositivos necessários, desenhe uma vez e exporte cada tamanho nas dimensões exatas em pixels da App Store, em um único lote. A biblioteca de molduras já inclui o iPhone 18 Pro, o 18 Pro Max e o iPhone Duo (aberto, fechado e aberto visto por trás), e as duas resoluções do Duo podem ser digitadas como tamanho de linha personalizado.
         </li>
       </ul>
     </>
@@ -1601,10 +1706,20 @@ function ContentIt() {
         </thead>
         <tbody>
           <tr>
+            <td>7.6&quot; (interno)</td>
+            <td>2007 x 2853</td>
+            <td>iPhone Duo, aperto</td>
+          </tr>
+          <tr>
+            <td>5.4&quot; (esterno)</td>
+            <td>1398 x 2034</td>
+            <td>iPhone Duo, chiuso</td>
+          </tr>
+          <tr>
             <td>6.9&quot;</td>
             <td>1260 x 2736, 1290 x 2796 o 1320 x 2868</td>
             <td>
-              iPhone Air, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
+              iPhone Air, 18 Pro Max, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
               Plus, 14 Pro Max
             </td>
           </tr>
@@ -1619,7 +1734,7 @@ function ContentIt() {
           <tr>
             <td>6.3&quot;</td>
             <td>1179 x 2556 o 1206 x 2622</td>
-            <td>iPhone 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
+            <td>iPhone 18 Pro, 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
           </tr>
           <tr>
             <td>6.1&quot;</td>
@@ -1636,6 +1751,9 @@ function ContentIt() {
           </tr>
         </tbody>
       </table>
+      <p>
+        iPhone 18 Pro e 18 Pro Max usano le stesse risoluzioni di 17 Pro e 17 Pro Max, quindi un set da 6.3&quot; o 6.9&quot; già pronto li copre. L&apos;eccezione è iPhone Duo: Apple indica una dimensione di screenshot distinta per ciascuno dei suoi due schermi (accettate anche in orizzontale), ma App Store Connect non accetta ancora caricamenti per Duo. Apple dice che il supporto arriverà più avanti nel 2026; fino ad allora il set da 6.9&quot; resta quello da curare.
+      </p>
 
       <h2>Screenshot per iPad</h2>
       <table>
@@ -1739,9 +1857,7 @@ function ContentIt() {
           ciascun dispositivo è la principale perdita di tempo. Un flusso di lavoro di esportazione in batch lo elimina.
         </li>
         <li>
-          <strong>Screenshot Bro gestisce tutto questo.</strong> Imposta le
-          righe con le dimensioni dei dispositivi che desideri, crea il design una sola volta
-          ed esporta ogni dimensione a 1x, 2x o 3x con un solo clic.
+          <strong>Screenshot Bro gestisce tutto questo.</strong> Imposta le righe con le dimensioni dei dispositivi che desideri, crea il design una sola volta ed esporta ogni dimensione in un unico batch, con i pixel esatti richiesti dall&apos;App Store. La libreria di cornici include già iPhone 18 Pro, 18 Pro Max e iPhone Duo (aperto, chiuso e aperto visto da dietro), e le due risoluzioni di Duo si inseriscono come dimensione personalizzata della riga.
         </li>
       </ul>
     </>
@@ -1766,10 +1882,20 @@ function ContentKo() {
         </thead>
         <tbody>
           <tr>
+            <td>7.6&quot; (내부)</td>
+            <td>2007 x 2853</td>
+            <td>iPhone Duo, 펼친 상태</td>
+          </tr>
+          <tr>
+            <td>5.4&quot; (외부)</td>
+            <td>1398 x 2034</td>
+            <td>iPhone Duo, 접은 상태</td>
+          </tr>
+          <tr>
             <td>6.9&quot;</td>
             <td>1260 x 2736, 1290 x 2796 또는 1320 x 2868</td>
             <td>
-              iPhone Air, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
+              iPhone Air, 18 Pro Max, 17 Pro Max, 16 Pro Max, 16 Plus, 15 Pro Max, 15
               Plus, 14 Pro Max
             </td>
           </tr>
@@ -1784,7 +1910,7 @@ function ContentKo() {
           <tr>
             <td>6.3&quot;</td>
             <td>1179 x 2556 또는 1206 x 2622</td>
-            <td>iPhone 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
+            <td>iPhone 18 Pro, 17 Pro, 17, 16 Pro, 16, 15 Pro, 15, 14 Pro</td>
           </tr>
           <tr>
             <td>6.1&quot;</td>
@@ -1801,6 +1927,9 @@ function ContentKo() {
           </tr>
         </tbody>
       </table>
+      <p>
+        iPhone 18 Pro와 18 Pro Max는 17 Pro 및 17 Pro Max와 해상도가 같으므로 기존 6.3&quot; 또는 6.9&quot; 세트로 그대로 대응할 수 있습니다. 예외는 iPhone Duo입니다. Apple은 두 화면 각각에 별도의 스크린샷 크기를 지정했지만(둘 다 가로 방향도 허용), App Store Connect는 아직 Duo용 업로드를 받지 않습니다. Apple에 따르면 지원은 2026년 중에 제공될 예정이므로, 그때까지는 6.9&quot; 세트를 제대로 준비하는 것이 가장 중요합니다.
+      </p>
 
       <h2>iPad 스크린샷</h2>
       <table>
@@ -1899,7 +2028,7 @@ function ContentKo() {
           <strong>한 번에 모든 크기를 내보내세요.</strong> 각 기기별로 수동으로 크기를 조절하는 것이 가장 많은 시간이 소요되는 작업입니다. 일괄 내보내기 워크플로우를 사용하면 이 과정을 생략할 수 있습니다.
         </li>
         <li>
-          <strong>Screenshot Bro가 이 모든 것을 대신 해결해 드립니다.</strong> 필요한 기기 크기로 행을 설정하고 디자인을 한 번만 마친 후, 클릭 한 번으로 모든 크기를 1x, 2x, 3x 배율로 내보낼 수 있습니다.
+          <strong>Screenshot Bro가 이 모든 것을 대신 해결해 드립니다.</strong> 필요한 기기 크기로 행을 설정하고 디자인을 한 번만 마친 후, 모든 크기를 App Store가 요구하는 정확한 픽셀 크기로 한 번에 일괄 내보낼 수 있습니다. 프레임 라이브러리에는 iPhone 18 Pro, 18 Pro Max, iPhone Duo(펼친 상태, 접은 상태, 펼친 상태의 뒷면)가 이미 포함되어 있으며, Duo의 두 해상도는 사용자 지정 행 크기로 입력할 수 있습니다.
         </li>
       </ul>
     </>

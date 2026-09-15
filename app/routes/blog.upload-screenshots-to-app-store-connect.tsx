@@ -125,8 +125,11 @@ function ContentEn() {
       <ul>
         <li>
           Wrong display type. If your exported file is 1320 × 2868 (iPhone
-          16/17 Pro Max, 6.9&quot;) and you drop it into the 6.5&quot; bucket, App
+          16/17/18 Pro Max, 6.9&quot;) and you drop it into the 6.5&quot; bucket, App
           Store Connect rejects the upload.
+        </li>
+        <li>
+          No iPhone Duo slot yet. Apple lists Duo screenshot sizes (1398 × 2034 for the outer display, 2007 × 2853 for the inner display), but App Store Connect will only accept Duo uploads later in 2026. iPhone 18 Pro and 18 Pro Max need no new slot: they use the existing 6.3&quot; and 6.9&quot; sizes.
         </li>
         <li>
           Locked versions. Once a version is &quot;In Review&quot; or &quot;Pending
@@ -397,8 +400,11 @@ function ContentEs() {
       <ul>
         <li>
           Tipo de pantalla incorrecto. Si tu archivo exportado mide 1320 × 2868 (iPhone
-          16/17 Pro Max, de 6.9&quot;) y lo sueltas en el contenedor de 6.5&quot;, App
+          16/17/18 Pro Max, de 6.9&quot;) y lo sueltas en el contenedor de 6.5&quot;, App
           Store Connect rechazará la subida.
+        </li>
+        <li>
+          Todavía no hay espacio para el iPhone Duo. Apple indica los tamaños de captura del Duo (1398 × 2034 para la pantalla exterior y 2007 × 2853 para la interior), pero App Store Connect no aceptará subidas para el Duo hasta más adelante en 2026. El iPhone 18 Pro y el 18 Pro Max no necesitan un espacio nuevo: usan los tamaños de 6.3&quot; y 6.9&quot; de siempre.
         </li>
         <li>
           Versiones bloqueadas. Una vez que una versión está &quot;En revisión&quot; o &quot;Pendiente de
@@ -652,7 +658,10 @@ function ContentZh() {
       </p>
       <ul>
         <li>
-          显示类型错误。如果导出的文件尺寸是 1320 × 2868（iPhone 16/17 Pro Max，6.9&quot;）并且您将其放入 6.5&quot; 分区，App Store Connect 将拒绝该上传。
+          显示类型错误。如果导出的文件尺寸是 1320 × 2868（iPhone 16/17/18 Pro Max，6.9&quot;）并且您将其放入 6.5&quot; 分区，App Store Connect 将拒绝该上传。
+        </li>
+        <li>
+          iPhone Duo 暂无上传分区。Apple 已列出 Duo 的截图尺寸（外屏 1398 × 2034，内屏 2007 × 2853），但 App Store Connect 要到 2026 年晚些时候才接受 Duo 上传。iPhone 18 Pro 和 18 Pro Max 不需要新的分区：它们沿用现有的 6.3&quot; 和 6.9&quot; 尺寸。
         </li>
         <li>
           版本已锁定。一旦版本进入“正在审核”或“等待开发者发布”状态，屏幕截图将变为只读。请先创建一个新版本。
@@ -854,7 +863,10 @@ function ContentHi() {
       </p>
       <ul>
         <li>
-          गलत डिस्प्ले प्रकार। यदि आपकी एक्सपोर्ट की गई फ़ाइल 1320 × 2868 (iPhone 16/17 Pro Max, 6.9&quot;) है और आप इसे 6.5&quot; बकेट में डालते हैं, तो ऐप स्टोर कनेक्ट अपलोड को अस्वीकार कर देता है।
+          गलत डिस्प्ले प्रकार। यदि आपकी एक्सपोर्ट की गई फ़ाइल 1320 × 2868 (iPhone 16/17/18 Pro Max, 6.9&quot;) है और आप इसे 6.5&quot; बकेट में डालते हैं, तो ऐप स्टोर कनेक्ट अपलोड को अस्वीकार कर देता है।
+        </li>
+        <li>
+          iPhone Duo के लिए अभी कोई स्लॉट नहीं है। Apple ने Duo के स्क्रीनशॉट आकार बता दिए हैं (बाहरी डिस्प्ले के लिए 1398 × 2034, अंदरूनी डिस्प्ले के लिए 2007 × 2853), लेकिन ऐप स्टोर कनेक्ट Duo अपलोड 2026 में आगे चलकर ही स्वीकार करेगा। iPhone 18 Pro और 18 Pro Max के लिए नए स्लॉट की ज़रूरत नहीं है: वे मौजूदा 6.3&quot; और 6.9&quot; आकार इस्तेमाल करते हैं।
         </li>
         <li>
           लॉक किए गए वर्शन। एक बार जब कोई संस्करण &quot;In Review&quot; या &quot;Pending Developer Release&quot; में चला जाता है, तो स्क्रीनशॉट केवल पढ़ने के लिए (read-only) रह जाते हैं। पहले एक नया संस्करण बनाएं।
@@ -1069,8 +1081,11 @@ function ContentFr() {
       <ul>
         <li>
           Mauvais type d&apos;affichage. Si votre fichier exporté mesure 1320 × 2868 (iPhone
-          16/17 Pro Max, 6.9&quot;) et que vous le déposez dans la catégorie 6.5&quot;, App
+          16/17/18 Pro Max, 6.9&quot;) et que vous le déposez dans la catégorie 6.5&quot;, App
           Store Connect rejettera le fichier.
+        </li>
+        <li>
+          Pas encore d&apos;emplacement pour l&apos;iPhone Duo. Apple indique les tailles de capture du Duo (1398 × 2034 pour l&apos;écran extérieur, 2007 × 2853 pour l&apos;écran intérieur), mais App Store Connect n&apos;acceptera les envois pour le Duo que plus tard en 2026. Les iPhone 18 Pro et 18 Pro Max ne demandent aucun nouvel emplacement : ils utilisent les tailles 6.3&quot; et 6.9&quot; existantes.
         </li>
         <li>
           Versions verrouillées. Dès qu&apos;une version passe en statut « En cours de vérification » ou « En attente de
@@ -1323,7 +1338,10 @@ function ContentAr() {
       </p>
       <ul>
         <li>
-          نوع عرض خاطئ. إذا كان ملفك المصدر بمقاس 1320 × 2868 (iPhone 16/17 Pro Max، 6.9&quot;) وقمت بإسقاطه في مربع 6.5&quot;، سيرفض App Store Connect عملية الرفع.
+          نوع عرض خاطئ. إذا كان ملفك المصدر بمقاس 1320 × 2868 (iPhone 16/17/18 Pro Max، 6.9&quot;) وقمت بإسقاطه في مربع 6.5&quot;، سيرفض App Store Connect عملية الرفع.
+        </li>
+        <li>
+          لا توجد خانة لـ iPhone Duo بعد. حددت Apple مقاسات لقطات شاشة Duo (1398 × 2034 للشاشة الخارجية و2007 × 2853 للشاشة الداخلية)، لكن App Store Connect لن يقبل رفع لقطات Duo إلا لاحقًا في 2026. أما iPhone 18 Pro و18 Pro Max فلا يحتاجان إلى خانة جديدة، إذ يستخدمان مقاسي 6.3&quot; و6.9&quot; الحاليين.
         </li>
         <li>
           الإصدارات المقفلة. بمجرد أن يصبح الإصدار &quot;قيد المراجعة&quot; أو &quot;بانتظار إصدار المطور&quot;، تكون لقطات الشاشة للقراءة فقط. أنشئ إصدارًا جديدًا أولاً.
