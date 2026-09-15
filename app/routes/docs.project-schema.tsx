@@ -168,7 +168,7 @@ Use UUIDs for all \`id\` fields. Use Swift reference-date timestamps
           <h2>File structure overview</h2>
 
           <p>
-            A project file has three top-level fields:
+            A project file has four top-level fields:
           </p>
 
           <table>
@@ -194,6 +194,11 @@ Use UUIDs for all \`id\` fields. Use Swift reference-date timestamps
                 <td><code>m</code></td>
                 <td>number</td>
                 <td>Last-modified timestamp (seconds since 2001-01-01)</td>
+              </tr>
+              <tr>
+                <td><code>n</code></td>
+                <td>string</td>
+                <td>Project display name, mirrored from the projects.json index so a lost index can be rebuilt (absent in projects last saved before 4.9 on Mac or 4.10 on iPad and iPhone)</td>
               </tr>
             </tbody>
           </table>
