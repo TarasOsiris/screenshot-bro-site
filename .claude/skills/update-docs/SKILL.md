@@ -122,6 +122,26 @@ Write the page to a file before grepping. Piping through `sed` or `grep -o` with
 silently matched nothing before. If a port answers with stale content, another server is still
 bound to it, so use a different port.
 
+## Adding a screenshot the user supplies
+
+Sections take an optional `image` whose file defaults to `public/docs-help/<section id>.webp`
+(pass `src` only for a different name). Convert at the capture's native size, lossy, and keep
+the real dimensions so the page doesn't shift while the image loads:
+
+```bash
+cwebp -q 82 -m 6 "<capture>.png" -o public/docs-help/<section-id>.webp   # prints the dimensions
+```
+
+```ts
+image: {
+  alt: "<what the screenshot shows, naming the visible controls>",
+  width: 1404, height: 1062,              // from cwebp's "Dimension:" line
+  caption: "The **<UI name>** sheet — <what you do there>.",
+},
+```
+
+Put it right after `subtitle`. Check the capture's control names against the text of that section.
+
 ## 6. Commit and push
 
 Straight to `main` (the site deploys from it):

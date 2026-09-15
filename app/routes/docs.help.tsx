@@ -570,6 +570,12 @@ const SECTIONS: Section[] = [
     navTitle: "Showcase Export",
     title: "Showcase Export",
     subtitle: "Turn a row of screenshots into one marketing image.",
+    image: {
+      alt: "Showcase export sheet with live previews of two rows beside the Rows, Format, Output Size, and Background settings",
+      width: 1404,
+      height: 1062,
+      caption: "The **Showcase** sheet — pick rows and individual screenshots, an aspect ratio, an output size, and a background, with a live preview of every row.",
+    },
     blocks: [
       { kind: "p", text: "A showcase arranges a row's screenshots side by side on a styled background and renders them as a single image — for a product page, a launch post, a README, or an ad. It doesn't replace store screenshots; it's the picture you post *about* them." },
       { kind: "h", text: "Opening it" },
