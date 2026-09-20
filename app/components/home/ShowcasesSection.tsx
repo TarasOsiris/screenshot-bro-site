@@ -1,8 +1,7 @@
 import { useLazyLoopVideo } from "~/components/home/hooks";
 import { SectionIntro } from "~/components/home/SectionIntro";
-import { APP_STORE_CTA_URL } from "~/config/site";
 import type { FeatureShowcase } from "~/config/site";
-import type { HomeCopy } from "~/config/localization";
+import { appStoreCtaUrl, type HomeCopy } from "~/config/localization";
 
 function FeatureShowcaseBlock({
   showcase,
@@ -84,11 +83,13 @@ function FeatureShowcaseBlock({
 
 export function ShowcasesSection({
   copy,
-  href = APP_STORE_CTA_URL,
+  href,
 }: {
   copy: HomeCopy;
   href?: string;
 }) {
+  const ctaHref = href ?? appStoreCtaUrl(copy.locale.code);
+
   return (
     <section
       id="showcases"
@@ -118,7 +119,7 @@ export function ShowcasesSection({
             <FeatureShowcaseBlock
               key={showcase.id}
               showcase={showcase}
-              href={href}
+              href={ctaHref}
               copy={copy}
             />
           ))}

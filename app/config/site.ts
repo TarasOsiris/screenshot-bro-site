@@ -14,19 +14,26 @@ export const APP_STORE_URL = "https://apps.apple.com/us/app/screenshot-bro/id676
 // App Store Connect provider token (identifies us as the campaign provider).
 export const APP_STORE_PROVIDER_TOKEN = "117277360";
 
+// Storefront used when we have no locale to go on. Apple does NOT geo-redirect
+// a country-less /app/id… URL — it 301s everyone to /us/ — so the country
+// segment is always written explicitly. See appStoreCtaUrl() in
+// config/localization.ts for the per-locale storefront.
+export const DEFAULT_APP_STORE_COUNTRY = "us";
+
 // Builds an App Store campaign-tracking link. The `ct` value surfaces under
 // App Analytics → Acquisition → Campaigns as the traffic source, so use this
 // for clickable CTAs (not for SEO/structured-data, which keep the bare URL).
 // `platform=mac` opens the Mac variant of the universal app's product page —
 // without it the page defaults to iPhone. (The legacy `mt=12` hint is dropped
 // by Apple's redirect, and the /app/apple-store/ short path always lands on
-// iOS, so the canonical product path is required here.)
-export function appStoreCampaignUrl(campaign: string): string {
-  return `https://apps.apple.com/us/app/screenshot-bro-mockup-maker/id${APP_STORE_APP_ID}?platform=mac&pt=${APP_STORE_PROVIDER_TOKEN}&ct=${campaign}`;
+// iOS, so the canonical product path is required here.) The English slug
+// resolves in every storefront; Apple matches on the id and rewrites it.
+export function appStoreCampaignUrl(
+  campaign: string,
+  country: string = DEFAULT_APP_STORE_COUNTRY,
+): string {
+  return `https://apps.apple.com/${country}/app/screenshot-bro-mockup-maker/id${APP_STORE_APP_ID}?platform=mac&pt=${APP_STORE_PROVIDER_TOKEN}&ct=${campaign}`;
 }
-
-// Default CTA link for organic website traffic.
-export const APP_STORE_CTA_URL = appStoreCampaignUrl("website");
 export const CONTACT_MAILTO = `mailto:${EARLY_ACCESS_EMAIL}`;
 export const REDDIT_COMMUNITY_URL = "https://www.reddit.com/r/ScreenshotBro/";
 export const DISCORD_INVITE_URL = "https://discord.com/invite/ahnDehd";

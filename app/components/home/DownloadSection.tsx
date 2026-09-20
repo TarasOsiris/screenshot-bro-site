@@ -1,17 +1,16 @@
 import { AppleLogo } from "~/components/home/icons";
-import {
-  APP_STORE_CTA_URL,
-  CONTACT_MAILTO,
-} from "~/config/site";
-import type { HomeCopy } from "~/config/localization";
+import { CONTACT_MAILTO } from "~/config/site";
+import { appStoreCtaUrl, type HomeCopy } from "~/config/localization";
 
 export function DownloadSection({
   copy,
-  href = APP_STORE_CTA_URL,
+  href,
 }: {
   copy: HomeCopy;
   href?: string;
 }) {
+  const ctaHref = href ?? appStoreCtaUrl(copy.locale.code);
+
   return (
     <section
       id="early-access"
@@ -41,7 +40,7 @@ export function DownloadSection({
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href={href}
+            href={ctaHref}
             className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-base transition-all hover:shadow-[0_0_48px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
           >
             <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />

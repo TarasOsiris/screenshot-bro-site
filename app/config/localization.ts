@@ -7,6 +7,7 @@ import type {
   WorkflowStep,
 } from "~/config/site";
 import {
+  appStoreCampaignUrl,
   APP_SCREENSHOTS,
   BETA_BENEFITS,
   FAQS,
@@ -30,23 +31,27 @@ export type LocaleInfo = {
   htmlLang: string;
   ogLocale: string;
   dir: "ltr" | "rtl";
+  // App Store storefront to send this locale's visitors to. A language is not
+  // a country, so this is a deliberate pick per locale, not derived from
+  // `ogLocale` (which carries no real country for Arabic).
+  storefront: string;
 };
 
 export const DEFAULT_LOCALE: LocaleCode = "en";
 
 export const LOCALES: LocaleInfo[] = [
-  { code: "en", flag: "🇺🇸", label: "English", nativeLabel: "English", htmlLang: "en", ogLocale: "en_US", dir: "ltr" },
-  { code: "es", flag: "🇪🇸", label: "Spanish", nativeLabel: "Español", htmlLang: "es", ogLocale: "es_ES", dir: "ltr" },
-  { code: "zh", flag: "🇨🇳", label: "Chinese", nativeLabel: "简体中文", htmlLang: "zh-Hans", ogLocale: "zh_CN", dir: "ltr" },
-  { code: "hi", flag: "🇮🇳", label: "Hindi", nativeLabel: "हिन्दी", htmlLang: "hi", ogLocale: "hi_IN", dir: "ltr" },
-  { code: "fr", flag: "🇫🇷", label: "French", nativeLabel: "Français", htmlLang: "fr", ogLocale: "fr_FR", dir: "ltr" },
-  { code: "ar", flag: "🇸🇦", label: "Arabic", nativeLabel: "العربية", htmlLang: "ar", ogLocale: "ar_AR", dir: "rtl" },
-  { code: "de", flag: "🇩🇪", label: "German", nativeLabel: "Deutsch", htmlLang: "de", ogLocale: "de_DE", dir: "ltr" },
-  { code: "ja", flag: "🇯🇵", label: "Japanese", nativeLabel: "日本語", htmlLang: "ja", ogLocale: "ja_JP", dir: "ltr" },
-  { code: "pt", flag: "🇧🇷", label: "Portuguese", nativeLabel: "Português", htmlLang: "pt-BR", ogLocale: "pt_BR", dir: "ltr" },
-  { code: "it", flag: "🇮🇹", label: "Italian", nativeLabel: "Italiano", htmlLang: "it", ogLocale: "it_IT", dir: "ltr" },
-  { code: "ko", flag: "🇰🇷", label: "Korean", nativeLabel: "한국어", htmlLang: "ko", ogLocale: "ko_KR", dir: "ltr" },
-  { code: "uk", flag: "🇺🇦", label: "Ukrainian", nativeLabel: "Українська", htmlLang: "uk", ogLocale: "uk_UA", dir: "ltr" },
+  { code: "en", flag: "🇺🇸", label: "English", nativeLabel: "English", htmlLang: "en", ogLocale: "en_US", dir: "ltr", storefront: "us" },
+  { code: "es", flag: "🇪🇸", label: "Spanish", nativeLabel: "Español", htmlLang: "es", ogLocale: "es_ES", dir: "ltr", storefront: "es" },
+  { code: "zh", flag: "🇨🇳", label: "Chinese", nativeLabel: "简体中文", htmlLang: "zh-Hans", ogLocale: "zh_CN", dir: "ltr", storefront: "cn" },
+  { code: "hi", flag: "🇮🇳", label: "Hindi", nativeLabel: "हिन्दी", htmlLang: "hi", ogLocale: "hi_IN", dir: "ltr", storefront: "in" },
+  { code: "fr", flag: "🇫🇷", label: "French", nativeLabel: "Français", htmlLang: "fr", ogLocale: "fr_FR", dir: "ltr", storefront: "fr" },
+  { code: "ar", flag: "🇸🇦", label: "Arabic", nativeLabel: "العربية", htmlLang: "ar", ogLocale: "ar_AR", dir: "rtl", storefront: "sa" },
+  { code: "de", flag: "🇩🇪", label: "German", nativeLabel: "Deutsch", htmlLang: "de", ogLocale: "de_DE", dir: "ltr", storefront: "de" },
+  { code: "ja", flag: "🇯🇵", label: "Japanese", nativeLabel: "日本語", htmlLang: "ja", ogLocale: "ja_JP", dir: "ltr", storefront: "jp" },
+  { code: "pt", flag: "🇧🇷", label: "Portuguese", nativeLabel: "Português", htmlLang: "pt-BR", ogLocale: "pt_BR", dir: "ltr", storefront: "br" },
+  { code: "it", flag: "🇮🇹", label: "Italian", nativeLabel: "Italiano", htmlLang: "it", ogLocale: "it_IT", dir: "ltr", storefront: "it" },
+  { code: "ko", flag: "🇰🇷", label: "Korean", nativeLabel: "한국어", htmlLang: "ko", ogLocale: "ko_KR", dir: "ltr", storefront: "kr" },
+  { code: "uk", flag: "🇺🇦", label: "Ukrainian", nativeLabel: "Українська", htmlLang: "uk", ogLocale: "uk_UA", dir: "ltr", storefront: "ua" },
 ];
 
 const LOCALE_CODES = new Set(LOCALES.map((locale) => locale.code));
@@ -2967,6 +2972,18 @@ export function isLocaleCode(value: string | undefined): value is LocaleCode {
 
 export function getLocaleInfo(locale: LocaleCode): LocaleInfo {
   return LOCALES.find((entry) => entry.code === locale) ?? LOCALES[0];
+}
+
+// The one way to build a clickable App Store CTA. Sends visitors to the
+// storefront for the locale they are reading, so prices, language and ratings
+// on the product page match the page they came from. (On a Mac or iPad the
+// link hands off to the App Store app, which resolves the app id against the
+// signed-in Apple Account instead — the country only shapes the web page.)
+export function appStoreCtaUrl(
+  locale: LocaleCode = DEFAULT_LOCALE,
+  campaign = "website",
+): string {
+  return appStoreCampaignUrl(campaign, getLocaleInfo(locale).storefront);
 }
 
 export function getLocaleFromPath(pathname: string): LocaleCode {

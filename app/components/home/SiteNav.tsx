@@ -4,12 +4,9 @@ import { AppleLogo } from "~/components/home/icons";
 import { NavLink } from "~/components/NavLink";
 import { SiteLogo } from "~/components/SiteLogo";
 import { ThemeToggle, themeLabel } from "~/components/ThemeToggle";
+import { PRODUCT_LINKS, type SecondaryLink } from "~/config/site";
 import {
-  APP_STORE_CTA_URL,
-  PRODUCT_LINKS,
-  type SecondaryLink,
-} from "~/config/site";
-import {
+  appStoreCtaUrl,
   getHomeCopy,
   LOCALES,
   localizedPath,
@@ -44,10 +41,11 @@ function localeSwitchTarget(targetLocale: LocaleCode): string {
 
 export function SiteNav({
   copy = DEFAULT_COPY,
-  href = APP_STORE_CTA_URL,
+  href,
   showSectionAnchors = true,
   showLocaleSwitcher = true,
 }: SiteNavProps) {
+  const ctaHref = href ?? appStoreCtaUrl(copy.locale.code);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -135,7 +133,7 @@ export function SiteNav({
           ) : null}
 
           <a
-            href={href}
+            href={ctaHref}
             className="hidden sm:inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-ink/15 bg-ink/10 px-4 py-2 text-sm font-medium text-ink transition-all hover:border-ink/25 hover:bg-ink/15"
           >
             <AppleLogo />
@@ -159,7 +157,7 @@ export function SiteNav({
         open={menuOpen}
         onClose={() => setMenuOpen(false)}
         copy={copy}
-        ctaHref={href}
+        ctaHref={ctaHref}
         sectionAnchors={sectionAnchors}
         showLocaleSwitcher={showLocaleSwitcher}
       />

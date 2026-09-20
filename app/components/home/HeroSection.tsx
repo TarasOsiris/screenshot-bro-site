@@ -1,8 +1,7 @@
 import { AppleLogo } from "~/components/home/icons";
 import { ArrowDownIcon } from "~/components/home/small-icons";
 import { useDeferredLoopVideo } from "~/components/home/hooks";
-import { APP_STORE_CTA_URL } from "~/config/site";
-import type { HomeCopy } from "~/config/localization";
+import { appStoreCtaUrl, type HomeCopy } from "~/config/localization";
 
 function AppPreview({ label }: { label: string }) {
   const videoRef = useDeferredLoopVideo("/demo-main.mp4");
@@ -27,11 +26,13 @@ function AppPreview({ label }: { label: string }) {
 
 export function HeroSection({
   copy,
-  href = APP_STORE_CTA_URL,
+  href,
 }: {
   copy: HomeCopy;
   href?: string;
 }) {
+  const ctaHref = href ?? appStoreCtaUrl(copy.locale.code);
+
   return (
     <section className="relative pt-32 pb-20 px-6 overflow-hidden">
       <div className="hero-gradient" />
@@ -65,7 +66,7 @@ export function HeroSection({
             style={{ animationDelay: "0.28s" }}
           >
             <a
-              href={href}
+              href={ctaHref}
               className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-sm transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
             >
               <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />

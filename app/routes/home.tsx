@@ -8,9 +8,10 @@ import { useEffect, useState } from "react";
 import { data } from "react-router";
 
 import type { Route } from "./+types/home";
-import { SITE_URL, appStoreCampaignUrl } from "~/config/site";
+import { SITE_URL } from "~/config/site";
 import { mergeMeta } from "~/config/meta";
 import {
+  appStoreCtaUrl,
   buildOgLocaleMeta,
   getHomeCopy,
   isLocaleCode,
@@ -81,9 +82,7 @@ function useScrollFade(threshold = 100) {
   return visible;
 }
 
-const GADS_APP_STORE_URL = appStoreCampaignUrl("gadsmay25");
-
-function useGadsConversion() {
+function useGadsConversion(locale: LocaleCode) {
   const [isFromGads, setIsFromGads] = useState(false);
 
   useEffect(() => {
@@ -109,13 +108,13 @@ function useGadsConversion() {
     return () => document.removeEventListener("click", handleClick);
   }, [isFromGads]);
 
-  return isFromGads ? GADS_APP_STORE_URL : undefined;
+  return isFromGads ? appStoreCtaUrl(locale, "gadsmay25") : undefined;
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
   const showBackToTop = useScrollFade(600);
   const copy = getHomeCopy(loaderData.locale);
-  const gadsHref = useGadsConversion();
+  const gadsHref = useGadsConversion(loaderData.locale);
 
   return (
     <div className="min-h-screen">
