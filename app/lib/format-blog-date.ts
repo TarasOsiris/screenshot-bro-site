@@ -16,6 +16,12 @@ export function formatBlogDate(iso: string, locale: LocaleCode): string {
     ko: "ko-KR",
     uk: "uk-UA",
     pl: "pl-PL",
+    tr: "tr-TR",
+    nl: "nl-NL",
+    id: "id-ID",
+    vi: "vi-VN",
+    th: "th-TH",
+    sv: "sv-SE",
   };
   return new Date(year, month - 1, day).toLocaleDateString(localesMap[locale] || "en-US", {
     year: "numeric",

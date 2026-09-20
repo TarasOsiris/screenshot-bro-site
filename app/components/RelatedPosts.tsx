@@ -16,6 +16,12 @@ const KEEP_READING_COPIES: Record<LocaleCode, string> = {
   ko: "계속 읽기",
   uk: "Читати далі",
   pl: "Czytaj dalej",
+  tr: "Okumaya devam et",
+  nl: "Lees verder",
+  id: "Lanjut membaca",
+  vi: "Đọc tiếp",
+  th: "อ่านต่อ",
+  sv: "Läs vidare",
 };
 
 const CATEGORY_NAMES: Record<LocaleCode, Record<string, string>> = {
@@ -32,6 +38,12 @@ const CATEGORY_NAMES: Record<LocaleCode, Record<string, string>> = {
   ko: { Guide: "가이드", Reference: "참고자료", Comparison: "비교" },
   uk: { Guide: "Посібник", Reference: "Довідник", Comparison: "Порівняння" },
   pl: { Guide: "Poradnik", Reference: "Przewodnik", Comparison: "Porównanie" },
+  tr: { Guide: "Rehber", Reference: "Kaynak", Comparison: "Karşılaştırma" },
+  nl: { Guide: "Gids", Reference: "Referentie", Comparison: "Vergelijking" },
+  id: { Guide: "Panduan", Reference: "Referensi", Comparison: "Perbandingan" },
+  vi: { Guide: "Hướng dẫn", Reference: "Tham khảo", Comparison: "So sánh" },
+  th: { Guide: "คู่มือ", Reference: "ข้อมูลอ้างอิง", Comparison: "การเปรียบเทียบ" },
+  sv: { Guide: "Guide", Reference: "Referens", Comparison: "Jämförelse" },
 };
 
 export function RelatedPosts({

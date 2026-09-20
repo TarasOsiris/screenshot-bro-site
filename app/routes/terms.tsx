@@ -30,6 +30,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     hi: `उपयोग की शर्तें — ${SITE_NAME}`,
     uk: `Умови використання — ${SITE_NAME}`,
     pl: `Warunki korzystania — ${SITE_NAME}`,
+    tr: `Kullanım Koşulları — ${SITE_NAME}`,
+    nl: `Gebruiksvoorwaarden — ${SITE_NAME}`,
+    id: `Syarat Penggunaan — ${SITE_NAME}`,
+    vi: `Điều khoản sử dụng — ${SITE_NAME}`,
+    th: `ข้อกำหนดการใช้งาน — ${SITE_NAME}`,
+    sv: `Användarvillkor — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -46,6 +52,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     hi: `${SITE_NAME} के उपयोग की शर्तें, EULA और सदस्यता की शर्तें।`,
     uk: `Умови використання, EULA та умови підписки для ${SITE_NAME} — підписки з автопродовженням, довічна покупка, скасування та повернення коштів.`,
     pl: `Warunki korzystania, EULA i zasady subskrypcji dla ${SITE_NAME} — subskrypcje z automatycznym odnawianiem, zakup dożywotni, anulowanie i zwroty.`,
+    tr: `${SITE_NAME} için Kullanım Koşulları, EULA ve abonelik şartları — otomatik yenilenen abonelikler, ömür boyu satın alma, iptal ve para iadeleri.`,
+    nl: `Gebruiksvoorwaarden, EULA en abonnementsvoorwaarden voor ${SITE_NAME} — automatisch verlengende abonnementen, levenslange aankoop, annulering en terugbetalingen.`,
+    id: `Syarat Penggunaan, EULA, dan ketentuan langganan untuk ${SITE_NAME} — langganan perpanjangan otomatis, pembelian seumur hidup, pembatalan, dan pengembalian dana.`,
+    vi: `Điều khoản sử dụng, EULA và điều khoản đăng ký cho ${SITE_NAME} — đăng ký tự động gia hạn, mua trọn đời, hủy và hoàn tiền.`,
+    th: `ข้อกำหนดการใช้งาน EULA และเงื่อนไขการสมัครสมาชิกสำหรับ ${SITE_NAME} — การต่ออายุอัตโนมัติ การซื้อตลอดชีพ การยกเลิก และการคืนเงิน`,
+    sv: `Användarvillkor, EULA och prenumerationsvillkor för ${SITE_NAME} — automatiskt förnyade prenumerationer, livstidslicens, uppsägning och återbetalning.`,
   };
 
   const title = titles[locale] || titles.en;

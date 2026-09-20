@@ -37,6 +37,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     hi: `ट्यूटोरियल और गाइड — ${SITE_NAME}`,
     uk: `Посібники — ${SITE_NAME}`,
     pl: `Poradniki — ${SITE_NAME}`,
+    tr: `Rehberler — ${SITE_NAME}`,
+    nl: `Handleidingen — ${SITE_NAME}`,
+    id: `Tutorial — ${SITE_NAME}`,
+    vi: `Hướng dẫn — ${SITE_NAME}`,
+    th: `คู่มือการใช้งาน — ${SITE_NAME}`,
+    sv: `Guider — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -53,6 +59,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     hi: `चरण-दर-चरण गाइड और लघु वीडियो के साथ ${SITE_NAME} का उपयोग करना सीखें।`,
     uk: `Вивчайте ${SITE_NAME} за покроковим посібником і короткими відео — створюйте проекти, додавайте рамки пристроїв, локалізуйте та експортуйте скриншоти для магазинів.`,
     pl: `Poznaj ${SITE_NAME} dzięki przewodnikowi krok po kroku i krótkim filmom wideo — twórz projekty, dodawaj ramki urządzeń, lokalizuj i eksportuj zrzuty ekranu do sklepów.`,
+    tr: `Adım adım rehber ve kısa videolarla ${SITE_NAME} kullanımını öğrenin — projeler oluşturun, cihaz çerçevesi ekleyin, yerelleştirin ve ekran görüntülerini dışa aktarın.`,
+    nl: `Leer ${SITE_NAME} kennen met een stapsgewijze gids en korte video's — maak projecten, voeg kaders toe, lokaliseer en exporteer screenshots.`,
+    id: `Pelajari ${SITE_NAME} dengan panduan langkah demi langkah dan video singkat — buat proyek, bingkai perangkat, lokalkan, dan ekspor tangkapan layar toko.`,
+    vi: `Tìm hiểu cách sử dụng ${SITE_NAME} với hướng dẫn từng bước và video ngắn — tạo dự án, tạo khung thiết bị, bản địa hóa và xuất ảnh chụp màn hình.`,
+    th: `เรียนรู้การใช้งาน ${SITE_NAME} ด้วยคู่มือทีละขั้นตอนและวิดีโอสั้น — สร้างโปรเจกต์ ใส่กรอบอุปกรณ์ แปลภาษา และส่งออกภาพหน้าจอ`,
+    sv: `Lär dig ${SITE_NAME} med en steg-för-steg-guide och korta videor — skapa projekt, rama in enheter, lokalisera och exportera skärmdumpar.`,
   };
 
   const title = titles[locale] || titles.en;
@@ -279,6 +291,17 @@ function getTutorialsCopy(locale: LocaleCode) {
         guideCta: "गाइड पढ़ें",
         videosHeading: "वीडियो",
       };
+    case "uk":
+      return {
+        eyebrow: "Посібники",
+        heading: "Посібники",
+        subheading: `Покроковий посібник і короткі відео про те, як створювати та публікувати скриншоти для App Store і Google Play за допомогою ${SITE_NAME}.`,
+        guideEyebrow: "Повний посібник",
+        guideTitle: `Як користуватися ${SITE_NAME}`,
+        guideDesc: "Весь робочий процес у десяти кроках із реальними скриншотами програми: від першого проекту до завантаження в App Store Connect і Google Play.",
+        guideCta: "Читати посібник",
+        videosHeading: "Відео",
+      };
     case "pl":
       return {
         eyebrow: "Poradniki",
@@ -289,6 +312,72 @@ function getTutorialsCopy(locale: LocaleCode) {
         guideDesc: "Cały przepływ pracy w dziesięciu krokach z rzeczywistymi zrzutami ekranu z aplikacji: od pierwszego projektu po przesyłanie do App Store Connect i Google Play.",
         guideCta: "Przeczytaj przewodnik",
         videosHeading: "Wideo",
+      };
+    case "tr":
+      return {
+        eyebrow: "Rehberler",
+        heading: "Rehberler",
+        subheading: `${SITE_NAME} ile App Store ve Google Play ekran görüntüleri tasarlamak ve yayınlamak için adım adım rehber ve kısa videolar.`,
+        guideEyebrow: "Detaylı Rehber",
+        guideTitle: `${SITE_NAME} Nasıl Kullanılır`,
+        guideDesc: "On adımda tüm iş akışı: İlk projenizden cihaz çerçevelerine, başlıklardan çok dilli yerelleştirmeye ve mağaza yüklemesine kadar.",
+        guideCta: "Rehberi oku",
+        videosHeading: "Videolar",
+      };
+    case "nl":
+      return {
+        eyebrow: "Handleidingen",
+        heading: "Handleidingen",
+        subheading: `Een stapsgewijze handleiding en korte video's waarin wordt getoond hoe u App Store- en Google Play-screenshots ontwerpt en publiceert met ${SITE_NAME}.`,
+        guideEyebrow: "Uitgebreide gids",
+        guideTitle: `Hoe u ${SITE_NAME} gebruikt`,
+        guideDesc: "De volledige workflow in tien stappen met screenshots: van uw eerste project tot het uploaden naar App Store Connect of Google Play.",
+        guideCta: "Lees de gids",
+        videosHeading: "Video's",
+      };
+    case "id":
+      return {
+        eyebrow: "Tutorial",
+        heading: "Tutorial",
+        subheading: `Panduan tertulis dan video singkat yang menunjukkan cara mendesain dan merilis tangkapan layar App Store dan Google Play dengan ${SITE_NAME}.`,
+        guideEyebrow: "Panduan tertulis",
+        guideTitle: `Cara menggunakan ${SITE_NAME}`,
+        guideDesc: "Seluruh alur kerja dalam sepuluh langkah dengan tangkapan layar aplikasi di setiap langkahnya: dari proyek pertama hingga ekspor ke toko.",
+        guideCta: "Baca panduan",
+        videosHeading: "Video",
+      };
+    case "vi":
+      return {
+        eyebrow: "Hướng dẫn",
+        heading: "Hướng dẫn",
+        subheading: `Hướng dẫn chi tiết và video ngắn chỉ ra cách thiết kế và xuất ảnh chụp màn hình App Store và Google Play với ${SITE_NAME}.`,
+        guideEyebrow: "Hướng dẫn chi tiết",
+        guideTitle: `Cách sử dụng ${SITE_NAME}`,
+        guideDesc: "Toàn bộ quy trình trong 10 bước với ảnh chụp màn hình ứng dụng: từ dự án đầu tiên đến khi tải lên App Store Connect hoặc Google Play.",
+        guideCta: "Đọc hướng dẫn",
+        videosHeading: "Video",
+      };
+    case "th":
+      return {
+        eyebrow: "คู่มือ",
+        heading: "คู่มือการใช้งาน",
+        subheading: `คำแนะนำทีละขั้นตอนและวิดีโอสั้นเพื่อแสดงวิธีออกแบบและเผยแพร่ภาพหน้าจอ App Store และ Google Play ด้วย ${SITE_NAME}`,
+        guideEyebrow: "คู่มือฉบับเต็ม",
+        guideTitle: `วิธีใช้งาน ${SITE_NAME}`,
+        guideDesc: "กระบวนการทำงานทั้งหมดใน 10 ขั้นตอน: ตั้งแต่โปรเจกต์แรก กรอบอุปกรณ์ ข้อความ การแปลภาษา ไปจนถึงการส่งออกสำหรับสโตร์",
+        guideCta: "อ่านคู่มือ",
+        videosHeading: "วิดีโอ",
+      };
+    case "sv":
+      return {
+        eyebrow: "Guider",
+        heading: "Guider",
+        subheading: `En steg-för-steg-guide och korta videor som visar hur du designar och publicerar skärmdumpar för App Store och Google Play med ${SITE_NAME}.`,
+        guideEyebrow: "Skriftlig guide",
+        guideTitle: `Hur du använder ${SITE_NAME}`,
+        guideDesc: "Hela arbetsflödet i tio steg: från ditt första projekt till enhetsramar, rubriker, lokalisering och färdig export till butikerna.",
+        guideCta: "Läs guiden",
+        videosHeading: "Videor",
       };
     default:
       return {

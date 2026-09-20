@@ -37,6 +37,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     hi: `${SITE_NAME} बनाम अन्य App Store स्क्रीनशॉट टूल्स`,
     uk: `${SITE_NAME} проти інших інструментів для скриншотів App Store`,
     pl: `${SITE_NAME} a inne narzędzia do zrzutów ekranu App Store`,
+    tr: `${SITE_NAME} ve Diğer App Store Ekran Görüntüsü Araçları Karşılaştırması`,
+    nl: `${SITE_NAME} vergeleken met andere App Store-screenshottools`,
+    id: `${SITE_NAME} vs alat tangkapan layar App Store lainnya`,
+    vi: `${SITE_NAME} so với các công cụ chụp ảnh màn hình App Store khác`,
+    th: `${SITE_NAME} เปรียบเทียบกับเครื่องมือสร้างภาพหน้าจอ App Store อื่นๆ`,
+    sv: `${SITE_NAME} jämfört med andra verktyg för App Store-skärmdumpar`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -53,6 +59,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     hi: "Screenshot Bro और अन्य ऐप स्टोर स्क्रीनशॉट टूल्स की विस्तृत तुलना।",
     uk: "Порівняння всіх інструментів для скриншотів App Store і Google Play зі Screenshot Bro: платформа, безкоштовний тариф, локалізація та завантаження в магазини — з окремою сторінкою для кожного.",
     pl: "Porównanie każdego narzędzia do zrzutów ekranu App Store i Google Play ze Screenshot Bro: platformy, darmowy pakiet, lokalizacja i przesyłanie do sklepów.",
+    tr: "Tüm App Store ve Google Play ekran görüntüsü araçlarının Screenshot Bro ile karşılaştırması: platform, ücretsiz plan, yerelleştirme ve mağaza yükleme.",
+    nl: "Elke App Store- en Google Play-screenshottool vergeleken met Screenshot Bro: platform, gratis niveau, lokalisatie en winkelupload.",
+    id: "Setiap alat tangkapan layar App Store dan Google Play dibandingkan dengan Screenshot Bro: platform, paket gratis, pelokalan, dan unggah ke toko.",
+    vi: "Mọi công cụ chụp ảnh màn hình App Store và Google Play được so sánh với Screenshot Bro: nền tảng, gói miễn phí, bản địa hóa và tải lên cửa hàng.",
+    th: "เปรียบเทียบเครื่องมือภาพหน้าจอ App Store และ Google Play ทุกตัวกับ Screenshot Bro: แพลตฟอร์ม แพ็กเกจฟรี การแปลภาษา และการอัปโหลดขึ้นสโตร์",
+    sv: "Varje skärmdumpsverktyg för App Store och Google Play jämfört med Screenshot Bro: plattform, gratisnivå, lokalisering och butiksuppladdning.",
   };
 
   const title = titles[locale] || titles.en;
@@ -168,6 +180,12 @@ export default function ComparisonsIndex() {
     hi: "तुलना",
     uk: "Порівняння",
     pl: "Porównania",
+    tr: "Karşılaştırmalar",
+    nl: "Vergelijkingen",
+    id: "Perbandingan",
+    vi: "So sánh",
+    th: "การเปรียบเทียบ",
+    sv: "Jämförelser",
   };
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
     { name: breadcrumbNames[locale] || breadcrumbNames.en, path: localeHref(locale, "/vs") },

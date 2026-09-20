@@ -61,6 +61,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     hi: `सहायता और दस्तावेज़ीकरण — ${SITE_NAME}`,
     uk: `Довідка та документація — ${SITE_NAME}`,
     pl: `Pomoc i dokumentacja — ${SITE_NAME}`,
+    tr: `Yardım ve Belgeler — ${SITE_NAME}`,
+    nl: `Hulp en documentatie — ${SITE_NAME}`,
+    id: `Bantuan & Dokumentasi — ${SITE_NAME}`,
+    vi: `Trợ giúp & Tài liệu — ${SITE_NAME}`,
+    th: `ความช่วยเหลือและเอกสาร — ${SITE_NAME}`,
+    sv: `Hjälp & Dokumentation — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -77,6 +83,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     hi: "Screenshot Bro की पूरी गाइड: प्रोजेक्ट, टेम्प्लेट, डिवाइस फ़्रेम, बैकग्राउंड, भाषाएँ और स्टोर अपलोड।",
     uk: "Повний посібник зі Screenshot Bro для Mac, iPad та iPhone: проекти, рядки, шаблони, рамки пристроїв, фони, мови, експорт і завантаження в магазини.",
     pl: "Kompletny przewodnik po Screenshot Bro dla systemów Mac, iPad i iPhone: projekty, wiersze, szablony, ramki urządzeń, tła, języki, eksport i przesyłanie do sklepów.",
+    tr: "Mac, iPad ve iPhone için Screenshot Bro kullanım rehberi: projeler, şablonlar, cihaz çerçeveleri, arka planlar, diller, dışa aktarma ve mağaza yüklemeleri.",
+    nl: "Volledige gids voor Screenshot Bro voor Mac, iPad en iPhone: projecten, rijen, sjablonen, apparaatkaders, achtergronden, talen, exporteren en winkel-uploads.",
+    id: "Panduan lengkap Screenshot Bro untuk Mac, iPad, dan iPhone: proyek, baris, templat, bingkai perangkat, latar belakang, bahasa, ekspor, dan unggahan toko.",
+    vi: "Hướng dẫn toàn diện về Screenshot Bro cho Mac, iPad và iPhone: dự án, mẫu, khung thiết bị, nền, ngôn ngữ, xuất và tải lên cửa hàng.",
+    th: "คู่มือฉบับสมบูรณ์สำหรับ Screenshot Bro บน Mac, iPad และ iPhone: โปรเจกต์ เทมเพลต กรอบอุปกรณ์ พื้นหลัง ภาษา การส่งออก และการอัปโหลดขึ้นสโตร์",
+    sv: "Komplett guide till Screenshot Bro för Mac, iPad och iPhone: projekt, rader, mallar, enhetsramar, bakgrunder, språk, export och butiksuppladdningar.",
   };
 
   const title = titles[locale] || titles.en;

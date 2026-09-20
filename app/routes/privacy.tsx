@@ -30,6 +30,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     hi: `गोपनीयता नीति — ${SITE_NAME}`,
     uk: `Політика конфіденційності — ${SITE_NAME}`,
     pl: `Polityka prywatności — ${SITE_NAME}`,
+    tr: `Gizlilik Politikası — ${SITE_NAME}`,
+    nl: `Privacybeleid — ${SITE_NAME}`,
+    id: `Kebijakan Privasi — ${SITE_NAME}`,
+    vi: `Chính sách quyền riêng tư — ${SITE_NAME}`,
+    th: `นโยบายความเป็นส่วนตัว — ${SITE_NAME}`,
+    sv: `Integritetspolicy — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -46,6 +52,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     hi: `${SITE_NAME} की गोपनीयता नीति। कोई विज्ञापन या क्रॉस-ऐप ट्रैकिंग नहीं — आपके प्रोजेक्ट आपके डिवाइस पर सुरक्षित रहते हैं।`,
     uk: `Політика конфіденційності ${SITE_NAME}. Дізнайтеся, як ми поводимося з вашими даними — без реклами, без міжпрограмного відстеження, а ваші проекти залишаються на пристрої.`,
     pl: `Polityka prywatności dla ${SITE_NAME}. Dowiedz się, jak przetwarzamy Twoje dane — bez reklam, bez śledzenia między aplikacjami, a Twoje projekty pozostają na Twoim urządzeniu.`,
+    tr: `${SITE_NAME} için gizlilik politikası. Verilerinizi nasıl işlediğimizi öğrenin: reklam yok, uygulamalar arası takip yok ve projeleriniz cihazınızda kalır.`,
+    nl: `Privacybeleid voor ${SITE_NAME}. Ontdek hoe we met uw gegevens omgaan — geen advertenties, geen tracking tussen apps en uw projecten blijven op uw apparaat.`,
+    id: `Kebijakan privasi untuk ${SITE_NAME}. Pelajari cara kami menangani data Anda — tanpa iklan, tanpa pelacakan lintas aplikasi, dan proyek Anda tetap ada di perangkat Anda.`,
+    vi: `Chính sách quyền riêng tư cho ${SITE_NAME}. Tìm hiểu cách chúng tôi xử lý dữ liệu của bạn: không quảng cáo, không theo dõi và dự án lưu trên thiết bị của bạn.`,
+    th: `นโยบายความเป็นส่วนตัวสำหรับ ${SITE_NAME} เรียนรู้วิธีที่เราจัดการข้อมูลของคุณ — ไม่มีโฆษณา ไม่มีการติดตามข้ามแอป และโปรเจกต์ของคุณจะอยู่บนอุปกรณ์ของคุณ`,
+    sv: `Integritetspolicy för ${SITE_NAME}. Lär dig hur vi hanterar dina uppgifter — inga annonser, ingen spårning mellan appar och dina projekt stannar på din enhet.`,
   };
 
   const title = titles[locale] || titles.en;

@@ -44,6 +44,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     hi: `प्रोजेक्ट फ़ाइल स्कीमा — ${SITE_NAME}`,
     uk: `Схема файлу проекту — ${SITE_NAME}`,
     pl: `Schemat pliku projektu — ${SITE_NAME}`,
+    tr: `Proje Dosyası Şeması — ${SITE_NAME}`,
+    nl: `Projectbestandsschema — ${SITE_NAME}`,
+    id: `Skema File Proyek — ${SITE_NAME}`,
+    vi: `Sơ đồ tệp dự án — ${SITE_NAME}`,
+    th: `สกีมาไฟล์โปรเจกต์ — ${SITE_NAME}`,
+    sv: `Projektfilsschema — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -60,6 +66,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     hi: "Screenshot Bro प्रोजेक्ट फ़ाइल स्वरूप के लिए JSON स्कीमा।",
     uk: "JSON Schema для формату файлу проекту Screenshot Bro. Генеруйте, перевіряйте та змінюйте project.json за допомогою ШІ-асистентів, скриптів чи інших інструментів.",
     pl: "Schemat JSON dla formatu pliku projektu Screenshot Bro. Generuj, weryfikuj i przekształcaj project.json za pomocą asystentów AI, skryptów lub narzędzi.",
+    tr: "Screenshot Bro proje dosyası formatı için JSON Şeması. Yapay zeka asistanları veya komut dosyaları ile project.json dosyalarını oluşturun ve doğrulayın.",
+    nl: "JSON-schema voor het Screenshot Bro-projectbestandsformaat. Genereer, valideer en transformeer project.json met AI of scripts.",
+    id: "Skema JSON untuk format file proyek Screenshot Bro. Gunakan untuk membuat, memvalidasi, atau mengubah project.json dengan AI atau skrip.",
+    vi: "JSON Schema cho định dạng tệp dự án Screenshot Bro. Sử dụng để tạo, xác thực hoặc chuyển đổi project.json bằng AI hoặc tập lệnh.",
+    th: "JSON Schema สำหรับรูปแบบไฟล์โปรเจกต์ Screenshot Bro ใช้สร้าง ตรวจสอบความถูกต้อง หรือแปลง project.json ด้วย AI หรือสคริปต์",
+    sv: "JSON-schema för projektfilsformatet i Screenshot Bro. Skapa, validera och transformera project.json med AI eller skript.",
   };
 
   const title = titles[locale] || titles.en;

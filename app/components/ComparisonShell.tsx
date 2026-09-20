@@ -42,6 +42,12 @@ const COMPARISON_BREADCRUMB_NAMES: Record<LocaleCode, string> = {
   hi: "तुलना",
   uk: "Порівняння",
   pl: "Porównania",
+  tr: "Karşılaştırmalar",
+  nl: "Vergelijkingen",
+  id: "Perbandingan",
+  vi: "So sánh",
+  th: "การเปรียบเทียบ",
+  sv: "Jämförelser",
 };
 
 export function ComparisonShell({

@@ -118,6 +118,54 @@ const INDEX_COPY: Record<
     all: "Wszystkie",
     filterLabel: "Filtruj artykuły według kategorii",
   },
+  tr: {
+    eyebrow: "Blog",
+    title: "Rehberler ve Kaynaklar",
+    description: "Dönüşüm sağlayan App Store ve Google Play ekran görüntüleri tasarlamak, yerelleştirmek ve yayınlamak için pratik rehberler.",
+    latest: "En Yeni",
+    all: "Tümü",
+    filterLabel: "Makaleleri kategoriye göre filtrele",
+  },
+  nl: {
+    eyebrow: "Blog",
+    title: "Gidsen & Bronnen",
+    description: "Praktische gidsen voor het ontwerpen, lokaliseren en publiceren van App Store- en Google Play-screenshots die converteren.",
+    latest: "Nieuwste",
+    all: "Alles",
+    filterLabel: "Artikelen filteren op categorie",
+  },
+  id: {
+    eyebrow: "Blog",
+    title: "Panduan & Sumber Daya",
+    description: "Panduan praktis untuk mendesain, melokalkan, dan merilis tangkapan layar App Store dan Google Play yang berkonversi tinggi.",
+    latest: "Terbaru",
+    all: "Semua",
+    filterLabel: "Filter artikel berdasarkan kategori",
+  },
+  vi: {
+    eyebrow: "Blog",
+    title: "Hướng dẫn & Tài nguyên",
+    description: "Hướng dẫn thực tế để thiết kế, bản địa hóa và phát hành ảnh chụp màn hình App Store và Google Play có tỷ lệ chuyển đổi cao.",
+    latest: "Mới nhất",
+    all: "Tất cả",
+    filterLabel: "Lọc bài viết theo danh mục",
+  },
+  th: {
+    eyebrow: "บล็อก",
+    title: "คู่มือและแหล่งข้อมูล",
+    description: "คู่มือเชิงปฏิบัติสำหรับการออกแบบ แปลภาษา และเผยแพร่ภาพหน้าจอ App Store และ Google Play ที่ช่วยเพิ่มยอดดาวน์โหลด",
+    latest: "ล่าสุด",
+    all: "ทั้งหมด",
+    filterLabel: "กรองบทความตามหมวดหมู่",
+  },
+  sv: {
+    eyebrow: "Blogg",
+    title: "Guider & Resurser",
+    description: "Praktiska guider för att designa, lokalisera och publicera skärmdumpar för App Store och Google Play som konverterar.",
+    latest: "Senaste",
+    all: "Alla",
+    filterLabel: "Filtrera artiklar efter kategori",
+  },
 };
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -165,6 +213,12 @@ const CATEGORY_NAMES: Record<LocaleCode, Record<BlogCategory, string>> = {
   ko: { Guide: "가이드", Reference: "참고자료", Comparison: "비교" },
   uk: { Guide: "Посібник", Reference: "Довідник", Comparison: "Порівняння" },
   pl: { Guide: "Poradnik", Reference: "Przewodnik", Comparison: "Porównanie" },
+  tr: { Guide: "Rehber", Reference: "Kaynak", Comparison: "Karşılaştırma" },
+  nl: { Guide: "Gids", Reference: "Referentie", Comparison: "Vergelijking" },
+  id: { Guide: "Panduan", Reference: "Referensi", Comparison: "Perbandingan" },
+  vi: { Guide: "Hướng dẫn", Reference: "Tham khảo", Comparison: "So sánh" },
+  th: { Guide: "คู่มือ", Reference: "ข้อมูลอ้างอิง", Comparison: "การเปรียบเทียบ" },
+  sv: { Guide: "Guide", Reference: "Referens", Comparison: "Jämförelse" },
 };
 
 function CategoryPill({ category, locale = "en" }: { category: BlogCategory; locale?: LocaleCode }) {

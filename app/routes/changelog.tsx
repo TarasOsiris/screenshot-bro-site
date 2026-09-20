@@ -30,6 +30,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     hi: `अपडेट इतिहास और बदलाव — ${SITE_NAME}`,
     uk: `Історія змін — ${SITE_NAME}`,
     pl: `Historia zmian — ${SITE_NAME}`,
+    tr: `Değişiklik Günlüğü — ${SITE_NAME}`,
+    nl: `Changelog — ${SITE_NAME}`,
+    id: `Log Perubahan — ${SITE_NAME}`,
+    vi: `Nhật ký thay đổi — ${SITE_NAME}`,
+    th: `บันทึกการเปลี่ยนแปลง — ${SITE_NAME}`,
+    sv: `Ändringslogg — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -46,6 +52,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     hi: `${SITE_NAME} में क्या नया है। Mac और iPad के लिए ऐप स्टोर स्क्रीनशॉट डिज़ाइनर की नई सुविधाएँ और सुधार।`,
     uk: `Що нового в ${SITE_NAME}. Нотатки до релізів, нові функції та покращення дизайнера скриншотів App Store для Mac та iPad.`,
     pl: `Co nowego w ${SITE_NAME}. Informacje o wydaniach, nowe funkcje i ulepszenia projektanta zrzutów ekranu App Store dla Maca i iPada.`,
+    tr: `${SITE_NAME} yenilikleri. Mac ve iPad için App Store ekran görüntüsü tasarımcısına yönelik sürüm notları, yeni özellikler ve iyileştirmeler.`,
+    nl: `Wat is er nieuw in ${SITE_NAME}. Release-opmerkingen, nieuwe functies en verbeteringen voor de App Store-screenshotdesigner voor Mac en iPad.`,
+    id: `Apa yang baru di ${SITE_NAME}. Catatan rilis, fitur baru, dan peningkatan untuk desainer tangkapan layar App Store untuk Mac dan iPad.`,
+    vi: `Có gì mới trong ${SITE_NAME}. Ghi chú phát hành, tính năng mới và cải tiến cho trình thiết kế ảnh chụp màn hình App Store cho Mac và iPad.`,
+    th: `มีอะไรใหม่ใน ${SITE_NAME} บันทึกประจำรุ่น คุณสมบัติใหม่ และการปรับปรุงสำหรับเครื่องมือออกแบบภาพหน้าจอ App Store บน Mac และ iPad`,
+    sv: `Vad är nytt i ${SITE_NAME}. Versionsinformation, nya funktioner och förbättringar för App Store-skärmdumpsverktyget för Mac och iPad.`,
   };
 
   const title = titles[locale] || titles.en;
@@ -585,10 +597,6 @@ const TYPE_STYLES = {
 
 export default function Changelog() {
   const { locale } = useLoaderData<typeof loader>();
-  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
-    { name: locale === "es" ? "Historial de cambios" : locale === "zh" ? "更新日志" : locale === "ja" ? "更新履歴" : locale === "uk" ? "Історія змін" : locale === "pl" ? "Historia zmian" : "Changelog", path: localeHref(locale, "/changelog") },
-  ]);
-
   const titles: Record<LocaleCode, { eyebrow: string; title: string; subtitle: string }> = {
     en: {
       eyebrow: "Changelog",
@@ -633,7 +641,7 @@ export default function Changelog() {
     ko: {
       eyebrow: "업데이트 로그",
       title: "Screenshot Bro 최신 변경 사항",
-      subtitle: "각 버전별로 추가된 새로운 기능, 성능 개선 및 버グ 수정 내역입니다.",
+      subtitle: "각 버전별로 추가된 새로운 기능, 성능 개선 및 버그 수정 내역입니다.",
     },
     ar: {
       eyebrow: "سجل التغييرات",
@@ -655,9 +663,43 @@ export default function Changelog() {
       title: "Co nowego w Screenshot Bro",
       subtitle: "Nowe funkcje, ulepszenia i poprawki błędów w każdym wydaniu.",
     },
+    tr: {
+      eyebrow: "Değişiklik Günlüğü",
+      title: "Screenshot Bro'daki Yenilikler",
+      subtitle: "Her sürümle birlikte sunulan yeni özellikler, iyileştirmeler ve hata düzeltmeleri.",
+    },
+    nl: {
+      eyebrow: "Changelog",
+      title: "Wat is er nieuw in Screenshot Bro",
+      subtitle: "Nieuwe functies, verbeteringen en bugfixes die bij elke release zijn uitgebracht.",
+    },
+    id: {
+      eyebrow: "Log Perubahan",
+      title: "Apa yang baru di Screenshot Bro",
+      subtitle: "Fitur baru, peningkatan, dan perbaikan bug yang dirilis di setiap versi.",
+    },
+    vi: {
+      eyebrow: "Nhật ký thay đổi",
+      title: "Có gì mới trong Screenshot Bro",
+      subtitle: "Các tính năng mới, cải tiến và sửa lỗi được cập nhật trong từng bản phát hành.",
+    },
+    th: {
+      eyebrow: "บันทึกการเปลี่ยนแปลง",
+      title: "มีอะไรใหม่ใน Screenshot Bro",
+      subtitle: "คุณสมบัติใหม่ การปรับปรุง และการแก้ไขข้อผิดพลาดในแต่ละรุ่น",
+    },
+    sv: {
+      eyebrow: "Ändringslogg",
+      title: "Vad är nytt i Screenshot Bro",
+      subtitle: "Nya funktioner, förbättringar och buggfixar som släpps med varje version.",
+    },
   };
 
   const copy = titles[locale] || titles.en;
+
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: copy.eyebrow, path: localeHref(locale, "/changelog") },
+  ]);
 
   return (
     <ContentLayout>

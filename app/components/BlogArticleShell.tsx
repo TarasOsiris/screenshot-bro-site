@@ -27,6 +27,12 @@ const SHORT_ANSWER_LABELS: Record<LocaleCode, string> = {
   ko: "요약:",
   uk: "Коротка відповідь:",
   pl: "Krótka odpowiedź:",
+  tr: "Kısa cevap:",
+  nl: "Kort antwoord:",
+  id: "Jawaban singkat:",
+  vi: "Câu trả lời ngắn:",
+  th: "คำตอบสั้นๆ:",
+  sv: "Kort svar:",
 };
 
 const RELATED_GUIDES_LABELS: Record<LocaleCode, string> = {
@@ -43,6 +49,12 @@ const RELATED_GUIDES_LABELS: Record<LocaleCode, string> = {
   ko: "관련 ASO 가이드",
   uk: "Схожі ASO посібники",
   pl: "Powiązane poradniki ASO",
+  tr: "İlgili ASO Rehberleri",
+  nl: "Gerelateerde ASO-gidsen",
+  id: "Panduan ASO Terkait",
+  vi: "Hướng dẫn ASO liên quan",
+  th: "คู่มือ ASO ที่เกี่ยวข้อง",
+  sv: "Relaterade ASO-guider",
 };
 
 const FAQ_LABELS: Record<LocaleCode, string> = {
@@ -59,6 +71,12 @@ const FAQ_LABELS: Record<LocaleCode, string> = {
   ko: "자주 묻는 질문",
   uk: "Часті запитання",
   pl: "Często zadawane pytania",
+  tr: "SSS",
+  nl: "Veelgestelde vragen",
+  id: "FAQ",
+  vi: "Câu hỏi thường gặp",
+  th: "คำถามที่พบบ่อย",
+  sv: "Vanliga frågor",
 };
 
 export function BlogArticleShell({

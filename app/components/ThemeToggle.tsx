@@ -19,6 +19,12 @@ const THEME_LABELS: Record<LocaleCode, string> = {
   ko: "테마 전환",
   uk: "Змінити тему",
   pl: "Przełącz motyw",
+  tr: "Temayı değiştir",
+  nl: "Thema wisselen",
+  id: "Ganti tema",
+  vi: "Đổi giao diện",
+  th: "เปลี่ยนธีม",
+  sv: "Växla tema",
 };
 
 const THEME_COLORS = { light: "#fbfaf8", dark: "#08080c" } as const;
