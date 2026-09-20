@@ -110,6 +110,14 @@ const INDEX_COPY: Record<
     all: "Усі",
     filterLabel: "Фільтрувати статті за категорією",
   },
+  pl: {
+    eyebrow: "Blog",
+    title: "Poradniki i materiały",
+    description: "Praktyczne poradniki dotyczące projektowania, lokalizowania i publikowania zrzutów ekranu do App Store i Google Play, które konwertują.",
+    latest: "Najnowsze",
+    all: "Wszystkie",
+    filterLabel: "Filtruj artykuły według kategorii",
+  },
 };
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -156,6 +164,7 @@ const CATEGORY_NAMES: Record<LocaleCode, Record<BlogCategory, string>> = {
   it: { Guide: "Guida", Reference: "Riferimento", Comparison: "Confronto" },
   ko: { Guide: "가이드", Reference: "참고자료", Comparison: "비교" },
   uk: { Guide: "Посібник", Reference: "Довідник", Comparison: "Порівняння" },
+  pl: { Guide: "Poradnik", Reference: "Przewodnik", Comparison: "Porównanie" },
 };
 
 function CategoryPill({ category, locale = "en" }: { category: BlogCategory; locale?: LocaleCode }) {

@@ -21,11 +21,10 @@ import {
   WITH_BRO_POINTS,
 } from "~/config/site";
 
-export type LocaleCode = "en" | "es" | "zh" | "hi" | "fr" | "ar" | "de" | "ja" | "pt" | "it" | "ko" | "uk";
+export type LocaleCode = "en" | "es" | "zh" | "hi" | "fr" | "ar" | "de" | "ja" | "pt" | "it" | "ko" | "uk" | "pl";
 
 export type LocaleInfo = {
   code: LocaleCode;
-  flag: string;
   label: string;
   nativeLabel: string;
   htmlLang: string;
@@ -40,18 +39,19 @@ export type LocaleInfo = {
 export const DEFAULT_LOCALE: LocaleCode = "en";
 
 export const LOCALES: LocaleInfo[] = [
-  { code: "en", flag: "🇺🇸", label: "English", nativeLabel: "English", htmlLang: "en", ogLocale: "en_US", dir: "ltr", storefront: "us" },
-  { code: "es", flag: "🇪🇸", label: "Spanish", nativeLabel: "Español", htmlLang: "es", ogLocale: "es_ES", dir: "ltr", storefront: "es" },
-  { code: "zh", flag: "🇨🇳", label: "Chinese", nativeLabel: "简体中文", htmlLang: "zh-Hans", ogLocale: "zh_CN", dir: "ltr", storefront: "cn" },
-  { code: "hi", flag: "🇮🇳", label: "Hindi", nativeLabel: "हिन्दी", htmlLang: "hi", ogLocale: "hi_IN", dir: "ltr", storefront: "in" },
-  { code: "fr", flag: "🇫🇷", label: "French", nativeLabel: "Français", htmlLang: "fr", ogLocale: "fr_FR", dir: "ltr", storefront: "fr" },
-  { code: "ar", flag: "🇸🇦", label: "Arabic", nativeLabel: "العربية", htmlLang: "ar", ogLocale: "ar_AR", dir: "rtl", storefront: "sa" },
-  { code: "de", flag: "🇩🇪", label: "German", nativeLabel: "Deutsch", htmlLang: "de", ogLocale: "de_DE", dir: "ltr", storefront: "de" },
-  { code: "ja", flag: "🇯🇵", label: "Japanese", nativeLabel: "日本語", htmlLang: "ja", ogLocale: "ja_JP", dir: "ltr", storefront: "jp" },
-  { code: "pt", flag: "🇧🇷", label: "Portuguese", nativeLabel: "Português", htmlLang: "pt-BR", ogLocale: "pt_BR", dir: "ltr", storefront: "br" },
-  { code: "it", flag: "🇮🇹", label: "Italian", nativeLabel: "Italiano", htmlLang: "it", ogLocale: "it_IT", dir: "ltr", storefront: "it" },
-  { code: "ko", flag: "🇰🇷", label: "Korean", nativeLabel: "한국어", htmlLang: "ko", ogLocale: "ko_KR", dir: "ltr", storefront: "kr" },
-  { code: "uk", flag: "🇺🇦", label: "Ukrainian", nativeLabel: "Українська", htmlLang: "uk", ogLocale: "uk_UA", dir: "ltr", storefront: "ua" },
+  { code: "en", label: "English", nativeLabel: "English", htmlLang: "en", ogLocale: "en_US", dir: "ltr", storefront: "us" },
+  { code: "es", label: "Spanish", nativeLabel: "Español", htmlLang: "es", ogLocale: "es_ES", dir: "ltr", storefront: "es" },
+  { code: "zh", label: "Chinese", nativeLabel: "简体中文", htmlLang: "zh-Hans", ogLocale: "zh_CN", dir: "ltr", storefront: "cn" },
+  { code: "hi", label: "Hindi", nativeLabel: "हिन्दी", htmlLang: "hi", ogLocale: "hi_IN", dir: "ltr", storefront: "in" },
+  { code: "fr", label: "French", nativeLabel: "Français", htmlLang: "fr", ogLocale: "fr_FR", dir: "ltr", storefront: "fr" },
+  { code: "ar", label: "Arabic", nativeLabel: "العربية", htmlLang: "ar", ogLocale: "ar_AR", dir: "rtl", storefront: "sa" },
+  { code: "de", label: "German", nativeLabel: "Deutsch", htmlLang: "de", ogLocale: "de_DE", dir: "ltr", storefront: "de" },
+  { code: "ja", label: "Japanese", nativeLabel: "日本語", htmlLang: "ja", ogLocale: "ja_JP", dir: "ltr", storefront: "jp" },
+  { code: "pt", label: "Portuguese", nativeLabel: "Português", htmlLang: "pt-BR", ogLocale: "pt_BR", dir: "ltr", storefront: "br" },
+  { code: "it", label: "Italian", nativeLabel: "Italiano", htmlLang: "it", ogLocale: "it_IT", dir: "ltr", storefront: "it" },
+  { code: "ko", label: "Korean", nativeLabel: "한국어", htmlLang: "ko", ogLocale: "ko_KR", dir: "ltr", storefront: "kr" },
+  { code: "uk", label: "Ukrainian", nativeLabel: "Українська", htmlLang: "uk", ogLocale: "uk_UA", dir: "ltr", storefront: "ua" },
+  { code: "pl", label: "Polish", nativeLabel: "Polski", htmlLang: "pl", ogLocale: "pl_PL", dir: "ltr", storefront: "pl" },
 ];
 
 const LOCALE_CODES = new Set(LOCALES.map((locale) => locale.code));
@@ -885,6 +885,23 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
     workflowDescription: "Від розмірів пристроїв до багатомовного експорту та завантаження — увесь робочий процес залишається в одному нативному додатку.",
     testimonialQuotes: ["Раніше після кожного релізу я витрачав цілий день на скриншоти. У Screenshot Bro я налаштував шаблони один раз — тепер просто підставляю нові кадри й тисну експорт.", "Локалізація — це просто порятунок. Я підтримую 6 мов, і експорт усіх версій був найгіршою частиною оновлень. Тепер це один клік.", "Нарешті інструмент, який не заважає. Жодних плагінів для Figma, жодних вкладок браузера — лише швидкий нативний додаток, який робить свою справу."],
     developerLabel: "Розробник",
+  }),
+  pl: compactLandingContent({
+    socialImageAlt: "Screenshot Bro — natywna aplikacja na Maca i iPada do projektowania zrzutów ekranu dla App Store i Google Play z ramkami urządzeń, gradientami i lokalizacją",
+    ui: { docs: "Dokumentacja", redditCommunity: "Społeczność Reddit", followOnX: "Obserwuj na X", followOnThreads: "Obserwuj na Threads", homeLabel: `${SITE_NAME} Strona główna`, read: "Czytaj", productLabel: "Produkt", resourcesLabel: "Zasoby", appScreenshots: "Zrzuty ekranu aplikacji", productHuntAlt: "ScreenshotBro App - Projektuj i eksportuj piękne zrzuty ekranu dla App Store. | Product Hunt" },
+    featureTitles: ["Edycja wielu szablonów", "Ramki urządzeń", "Tła i rozciąganie", "Narzędzia kształtów + SVG", "Inteligentne wyrównanie", "Zlokalizowany eksport", "Przesyłanie do App Store Connect", "Agenci AI i MCP", "Wbudowana lokalizacja", "Natywna na Maca i iPada", "Synchronizacja iCloud", "Własne czcionki", "Szablony projektów", "Skróty klawiszowe", "Prywatność przede wszystkim", "Masowy import obrazów", "Zawsze darmowy plan"],
+    featureDescription: "Dedykowane narzędzia do wielojęzycznych zrzutów ekranu w sklepach z natywną wydajnością, szablonami wielokrotnego użytku i eksportem gotowym do przesłania.",
+    withoutBroPoints: ["Ręczna zmiana rozmiaru każdego zrzutu ekranu w Figma lub Photoshopie", "Kopiowanie ramek urządzeń pojedynczo między obszarami roboczymi", "Ponowny eksport wszystkich plików po zmianie jednego koloru", "Duplikowanie wszystkiego dla każdego języka i utrata kontroli nad tłumaczeniami", "Ręczne przeciąganie każdego pliku PNG do App Store Connect"],
+    withBroPoints: ["Jeden szablon aktualizuje wszystkie warianty natychmiast", "Dodawanie ramek urządzeń jednym kliknięciem z wyborem modelu i koloru", "Dodawanie wersji językowych z nadpisywaniem tekstu dla każdego kształtu", "Eksport wszystkich zrzutów, języków i rozmiarów jednym kliknięciem", "Bezpośrednie przesyłanie do App Store Connect bez przeglądarki"],
+    showcaseLabels: ["Masowy import", "Automatyczne przesyłanie", "Kształty i warstwy", "Tła", "Ramki urządzeń"],
+    showcaseTitles: ["Przeciągnij, upuść, gotowe.", "Przesyłaj do App Store Connect jednym kliknięciem.", "Buduj warstwa po warstwie.", "Twórz atrakcyjne tła.", "Dostosuj ramki urządzeń."],
+    showcaseDescription: "Główny przepływ pracy pokazuje, jak Screenshot Bro eliminuje powtarzalne projektowanie, eksport i przesyłanie.",
+    screenshotCaptions: ["Projektuj piękne zrzuty ekranu dla App Store", "Eksportuj cały projekt za jednym razem", "Wybieraj spośród wbudowanych szablonów", "Łatwo lokalizuj zrzuty ekranu", "Dodawaj realistyczne ramki urządzeń", "Twórz piękne tła", "Dodawaj pliki SVG, kształty i obrazy"],
+    screenshotAltSuffix: "zrzut ekranu interfejsu Screenshot Bro",
+    workflowTitles: ["Skonfiguruj wiersze", "Zaprojektuj i zlokalizuj", "Wyeksportuj wszystko", "Prześlij do App Store Connect"],
+    workflowDescription: "Od rozmiarów urządzeń po wielojęzyczny eksport i przesyłanie — cały proces pozostaje w jednej natywnej aplikacji.",
+    testimonialQuotes: ["Kiedyś spędzałem całe popołudnie na zrzutach ekranu po każdym wydaniu. W Screenshot Bro konfiguruję szablony raz, a teraz tylko podmieniam nowe ujęcia i klikam eksport.", "Funkcja lokalizacji to zbawienie. Obsługuję 6 języków i eksportowanie ich wszystkich było najgorszą częścią każdej aktualizacji. Teraz to jedno kliknięcie.", "Wreszcie narzędzie, które nie przeszkadza w pracy. Żadnych wtyczek do Figmy, żadnych kart w przeglądarce — po prostu natywna aplikacja, która działa szybko."],
+    developerLabel: "Twórca",
   }),
 };
 
@@ -2962,6 +2979,196 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     footer: {
       note:
         "Створено на SwiftUI. Створено для розробників, які регулярно випускають оновлення в App Store.",
+    },
+  },
+  pl: {
+    siteTitle: `${SITE_NAME} — Zrzuty ekranu do App Store i Google Play na Maca`,
+    siteDescription:
+      "Projektuj zrzuty ekranu dla App Store i Google Play w natywnej aplikacji na Maca, iPada i iPhone'a. Ramki urządzeń, lokalizacja i bezpośrednie przesyłanie do App Store Connect.",
+    primaryCtaLabel: "Pobierz w App Store",
+    navItems: [
+      { label: "Przykłady", href: "#showcases" },
+      { label: "Funkcje", href: "#features" },
+      { label: "Przepływ pracy", href: "#workflow" },
+      { label: "FAQ", href: "#faq" },
+    ],
+    benefits: [
+      "Dostępne w App Store na Maca i iPada",
+      "Pełny przepływ pracy: import, projektowanie, automatyczne tłumaczenie, lokalizacja i eksport",
+      "Bezpośrednie przesyłanie do App Store Connect bez ręcznego przeciągania plików w przeglądarce",
+    ],
+    faqs: [
+      {
+        question: "Czy Screenshot Bro jest darmowy?",
+        answer:
+          "Tak. Plan darmowy nie wygasa: 1 projekt z maksymalnie 3 wierszami i 5 szablonami na wiersz, z pełnym dostępem do wszystkich ramek urządzeń, kształtów i 30 wersji językowych, eksportem bez znaku wodnego, przesyłaniem do App Store Connect i Google Play oraz synchronizacją iCloud. Wersja Pro usuwa limity projektów, wierszy i szablonów.",
+      },
+      {
+        question: "Czym różni się od generatorów zrzutów ekranu w przeglądarce?",
+        answer:
+          "Screenshot Bro to natywna aplikacja na Maca, iPada i iPhone'a, a nie narzędzie w przeglądarce. Projekty, zrzuty ekranu i czcionki są zapisywane na Twoim dysku, a codzienna edycja nie wymaga konta ani połączenia z internetem. Renderowanie i masowy eksport działają na Twoim własnym sprzęcie, a nie na serwerze. Jeśli używasz systemu Windows lub Linux, potrzebujesz współpracy zespołowej w czasie rzeczywistym lub tylko jednego czy dwóch obrazów, narzędzie przeglądarkowe może być lepszym wyborem — nasza strona z alternatywami opisuje te przypadki.",
+      },
+      {
+        question: "Czego potrzebuję, aby go używać?",
+        answer:
+          "macOS 15 (Sequoia) lub nowszego na Macu, iPadOS 18 lub nowszego na iPadzie lub iOS 18 lub nowszego na iPhonie. Do codziennej pracy nie są wymagane żadne dodatkowe urządzenia, konta ani połączenie z internetem.",
+      },
+      {
+        question: "Czy moje dane opuszczają moje urządzenie?",
+        answer:
+          "Twoja praca nie. Projekty, zrzuty ekranu i czcionki są przechowywane lokalnie na Twoim dysku. Automatyczne tłumaczenie działa bezpośrednio na urządzeniu za pośrednictwem frameworka Apple Translation — bez kluczy API i zewnętrznych serwerów. Opcjonalna synchronizacja z iCloud Drive korzysta z Twojego osobistego konta iCloud; nie prowadzimy żadnych serwerów pośredniczących. Jedyne, co jest wysyłane, to anonimowe raporty o awariach oraz anonimowe liczniki zdarzeń (np. «zakończono eksport»), aby wiedzieć, co ulepszyć — nigdy Twoje projekty, obrazy ani wpisywany tekst.",
+      },
+      {
+        question: "Jak działa lokalizacja?",
+        answer:
+          "Wybieraj spośród 30 predefiniowanych języków lub dodaj własny kod lokalizacji. Automatyczne tłumaczenie na urządzeniu uzupełnia brakujący tekst. Tłumaczenia są zapisywane jako nadpisania tekstu dla poszczególnych języków, więc układ, kolory i obrazy są współdzielone: projektujesz raz i publikujesz w dowolnym języku. Wyeksportowane pliki są automatycznie organizowane w foldery według języków, gotowe dla App Store Connect.",
+      },
+      {
+        question: "Czy mogę tworzyć zrzuty ekranu również dla Google Play?",
+        answer:
+          "Tak. Wiersze dla telefonów i tabletów z Androidem renderują się obok wierszy dla iPhone'a, iPada i Maca w tym samym projekcie. Każda kategoria urządzeń jest wstępnie skonfigurowana pod kątem dokładnych wymiarów w pikselach wymaganych przez dany sklep.",
+      },
+      {
+        question: "Czy mogę przeciągać zrzuty ekranu bezpośrednio z symulatorów i urządzeń?",
+        answer:
+          "Tak. Przeciągnij folder ze zrzutami ekranu, a Screenshot Bro automatycznie przypisze każdy plik do właściwego wiersza na podstawie jego wymiarów w pikselach: zrzuty z iPhone'a do wiersza iPhone, z iPada do iPada, a z Androida do Androida. Przycisk przechwytywania jednym kliknięciem na każdym szablonie wstawia również najnowszy zrzut z symulatora bezpośrednio na płótno.",
+      },
+      {
+        question: "Czy mogę przesyłać bezpośrednio do App Store Connect z aplikacji?",
+        answer:
+          "Tak. Skonfiguruj klucz API App Store Connect raz (Issuer ID, Key ID i plik .p8). Screenshot Bro automatycznie wykrywa właściwy typ ekranu dla każdego wiersza, dopasowuje języki projektu do lokalizacji w App Store Connect i podmienia istniejące zrzuty ekranu w jednym przebiegu — bez przeciągania plików w przeglądarce.",
+      },
+      {
+        question: "Czy synchronizuje się między urządzeniami?",
+        answer:
+          "Tak. Opcjonalna synchronizacja z iCloud Drive sprawia, że Twoje projekty, zrzuty ekranu i czcionki są dostępne na każdym Macu i iPadzie zalogowanym na Twoje konto Apple. Konflikty są rozwiązywane bezpiecznie na poziomie pól według zasady ostatniej zmiany.",
+      },
+      {
+        question: "Czy agent AI może stworzyć moje zrzuty ekranu?",
+        answer:
+          "Tak. Screenshot Bro zawiera opcjonalny lokalny serwer MCP na Macu, dzięki czemu asystenci tacy jak Claude Code, Claude Desktop lub Cursor mogą tworzyć projekty, układać wiersze i kształty, importować zrzuty ekranu, tłumaczyć teksty, renderować podglądy, eksportować i przesyłać gotowy zestaw do App Store Connect. Serwer nasłuchuje tylko na 127.0.0.1, każde żądanie wymaga tokenu dostępu z Ustawień, a wszelkie zmiany wykonane przez agenta można cofnąć za pomocą ⌘Z.",
+      },
+      {
+        question: "Gdzie mogę uzyskać pomoc i wsparcie?",
+        answer:
+          "Dołącz do serwera Discord Screenshot Bro — to najszybszy sposób na kontakt z twórcą, zgłoszenie błędu, zadanie pytania lub sprawdzenie nadchodzących funkcji. E-mail jest również świetną opcją w sprawach prywatnych, a dokumentacja szczegółowo opisuje wszystkie możliwości edytora.",
+      },
+    ],
+    ui: {
+      skipToContent: "Przejdź do treści",
+      blog: "Blog",
+      tutorials: "Poradniki",
+      docs: "Dokumentacja",
+      changelog: "Historia zmian",
+      comparisons: "Wszystkie porównania",
+      vsFastlane: "Porównaj z Fastlane",
+      community: "Społeczność",
+      joinDiscord: "Dołącz do Discorda",
+      privacy: "Prywatność",
+      terms: "Regulamin",
+      contact: "Kontakt",
+      friends: "Aplikacje znajomych",
+      followJourney: "Śledź moją drogę",
+      madeWithLoveAt: "Stworzone z ❤️ w",
+      language: "Język",
+      sectionsLabel: "Sekcje",
+      openMenu: "Otwórz menu",
+      closeMenu: "Zamknij menu",
+      seeInAction: "Zobacz w akcji",
+      tryItNow: "Wypróbuj teraz",
+      seeDetails: "Zobacz szczegóły",
+      browseGuides: "Wszystkie poradniki",
+      submitApp: "Zgłoś aplikację",
+      contactDeveloper: "Napisz do twórcy",
+      backToTop: "W górę",
+      previousScreenshot: "Poprzedni zrzut ekranu",
+      nextScreenshot: "Następny zrzut ekranu",
+      goToScreenshot: (index) => `Przejdź do zrzutu ekranu ${index}`,
+      slideCount: (index, total) => `${index} z ${total}`,
+      availabilityNote:
+        "Aplikacja na macOS 15+ i iPadOS 18+ | Swift i SwiftUI | Dostępna w App Store",
+    },
+    hero: {
+      titleLead: "Twórz i publikuj",
+      titleAccent: "App Store",
+      titleRest: " zrzuty ekranu.",
+      descriptionLead:
+        "Importuj zrzuty, oprawiaj je w ramki urządzeń, lokalizuj tekst, automatycznie tłumacz brakujące fragmenty i",
+      descriptionStrong: "przesyłaj bezpośrednio do App Store Connect",
+      descriptionTail: " — wszystko w jednej szybkiej, natywnej aplikacji na Maca i iPada.",
+    },
+    sections: {
+      showcases: {
+        eyebrow: "Prezentacja",
+        title: "Zobacz, jak działa generator zrzutów ekranu, zanim zainstalujesz.",
+        description:
+          "Masowy import, przesyłanie do App Store Connect jednym kliknięciem, warstwy, tła i ramki urządzeń — to, co pozwala zaoszczędzić najwięcej czasu.",
+      },
+      problem: {
+        eyebrow: "Dlaczego powstał",
+        title:
+          "Wydanie jednej nowej funkcji nie powinno oznaczać projektowania wszystkich zrzutów od nowa.",
+        description:
+          "Screenshot Bro powstał z problemu, który zna każdy: pojawia się aktualizacja, a zestaw zrzutów ekranu znowu staje się monotonnym miniprojektem.",
+      },
+      workflow: {
+        eyebrow: "Przepływ pracy",
+        title: "Krótsza droga od surowych zrzutów do gotowych materiałów dla App Store.",
+        description:
+          "Produkt jest stworzony do jednego zadania: tworzenia dopracowanych zrzutów bez konieczności utrzymywania wielu jednorazowych plików graficznych.",
+      },
+      features: {
+        eyebrow: "Możliwości",
+        title: "Wszystko, co powinien robić generator zrzutów ekranu. I nic zbędnego.",
+        description:
+          "Szybkość układania, spójność zrzutów i bezproblemowy eksport. Bez kart w przeglądarce, skomplikowanych programów graficznych i żmudnej zmiany rozmiarów.",
+      },
+      screenshots: {
+        eyebrow: "Zrzuty ekranu",
+        title: "Zobacz w akcji.",
+        description:
+          "Zrzuty ekranu samej aplikacji Screenshot Bro w App Store — ten sam edytor, którego używasz do swoich zrzutów ekranu.",
+      },
+      testimonials: {
+        eyebrow: "Twórcy",
+        title: "Co mówią deweloperzy.",
+        description:
+          "Prawdziwe opinie niezależnych deweloperów korzystających ze Screenshot Bro na co dzień.",
+      },
+      blog: {
+        eyebrow: "Z bloga",
+        title: "Poradniki dotyczące tworzenia lepszych zrzutów ekranu dla App Store.",
+        description:
+          "Przewodniki i wskazówki dotyczące wymiarów, lokalizacji, przesyłania i projektowania zrzutów, które naprawdę konwertują.",
+      },
+      faq: {
+        eyebrow: "FAQ",
+        title: "Pytania, które najczęściej padają przed wypróbowaniem.",
+        description:
+          "Odpowiedzi na najważniejsze pytania dotyczące kompatybilności, eksportu i podstawowego przepływu pracy.",
+      },
+      appShowcase: {
+        eyebrow: "Stworzone za pomocą Screenshot Bro",
+        title: "Jesteś w świetnym towarzystwie.",
+        description:
+          "Aplikacje niezależnych twórców, które już używają Screenshot Bro do zrzutów w App Store i Google Play.",
+      },
+    },
+    problem: {
+      story:
+        "Stworzyłem go po spędzeniu zbyt wielu godzin w Figmie na poprawianiu zrzutów ekranu dla App Store za każdym razem, gdy zmieniał się tekst, gradienty lub języki. Cel jest prosty: zaprojektuj system raz, a powtarzalne czynności zostaw aplikacji.",
+      withoutLabel: "Bez Screenshot Bro",
+      withLabel: "Ze Screenshot Bro",
+    },
+    download: {
+      titleLine1: "Gotowy na publikację",
+      titleLine2: "lepszych zrzutów ekranu?",
+      description:
+        "Pobierz z App Store i korzystaj z pełnego przepływu pracy na Macu lub iPadzie: konfiguracja, projektowanie, automatyczne tłumaczenie, lokalizacja i eksport dla App Store i Google Play.",
+    },
+    footer: {
+      note:
+        "Stworzone w SwiftUI. Zaprojektowane dla twórców aplikacji regularnie publikujących aktualizacje w App Store.",
     },
   },
 };

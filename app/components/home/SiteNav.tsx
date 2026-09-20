@@ -83,8 +83,8 @@ export function SiteNav({
         </a>
 
         {/* Section anchors stay out of the bar and live in the drawer instead —
-            four product links plus the flag and the CTA is already as much as
-            this row can carry without the CTA getting lost. */}
+            four product links plus the language picker and the CTA is already
+            as much as this row can carry without the CTA getting lost. */}
         <div className="hidden lg:flex items-center gap-6">
           {PRODUCT_LINKS.map((link) => (
             <NavLink
@@ -108,9 +108,9 @@ export function SiteNav({
               <div className="relative hidden sm:block h-9 w-11 rounded-xl border border-ink/10 bg-ink/[0.06] transition-all hover:border-ink/20 hover:bg-ink/10 focus-within:border-accent/60">
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 flex items-center justify-center text-base"
+                  className="pointer-events-none absolute inset-0 flex items-center justify-center text-xs font-semibold uppercase tracking-wide text-ink/70"
                 >
-                  {copy.locale.flag}
+                  {copy.locale.code}
                 </span>
                 <select
                   id="locale-switcher"
@@ -124,7 +124,7 @@ export function SiteNav({
                 >
                   {LOCALES.map((locale) => (
                     <option key={locale.code} value={locale.code}>
-                      {locale.flag} {locale.nativeLabel}
+                      {locale.nativeLabel}
                     </option>
                   ))}
                 </select>
@@ -224,7 +224,7 @@ function MobileMenu({
             >
               {LOCALES.map((locale) => (
                 <option key={locale.code} value={locale.code}>
-                  {locale.flag} {locale.nativeLabel}
+                  {locale.nativeLabel}
                 </option>
               ))}
             </select>

@@ -29,6 +29,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ar: `سياسة الخصوصية — ${SITE_NAME}`,
     hi: `गोपनीयता नीति — ${SITE_NAME}`,
     uk: `Політика конфіденційності — ${SITE_NAME}`,
+    pl: `Polityka prywatności — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -44,6 +45,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ar: `سياسة الخصوصية لتطبيق ${SITE_NAME}. لا إعلانات ولا تتبع بين التطبيقات، وتبقى جميع مشاريعك مخزنة محلياً على جهازك.`,
     hi: `${SITE_NAME} की गोपनीयता नीति। कोई विज्ञापन या क्रॉस-ऐप ट्रैकिंग नहीं — आपके प्रोजेक्ट आपके डिवाइस पर सुरक्षित रहते हैं।`,
     uk: `Політика конфіденційності ${SITE_NAME}. Дізнайтеся, як ми поводимося з вашими даними — без реклами, без міжпрограмного відстеження, а ваші проекти залишаються на пристрої.`,
+    pl: `Polityka prywatności dla ${SITE_NAME}. Dowiedz się, jak przetwarzamy Twoje dane — bez reklam, bez śledzenia między aplikacjami, a Twoje projekty pozostają na Twoim urządzeniu.`,
   };
 
   const title = titles[locale] || titles.en;

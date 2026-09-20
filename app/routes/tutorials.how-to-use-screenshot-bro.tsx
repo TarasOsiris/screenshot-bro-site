@@ -40,6 +40,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ar: `كيفية استخدام ${SITE_NAME} — دليل خطوة بخطوة`,
     hi: `${SITE_NAME} का उपयोग कैसे करें — चरण-दर-चरण गाइड`,
     uk: `Як користуватися ${SITE_NAME} — покроковий посібник`,
+    pl: `Jak korzystać z ${SITE_NAME} — Przewodnik krok po kroku`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -55,6 +56,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ar: `دليل خطوة بخطوة لتصميم وتوطين وتصدير لقطات شاشة المتاجر عبر Screenshot Bro.`,
     hi: `Screenshot Bro के साथ स्क्रीनशॉट डिज़ाइन, अनुवाद और निर्यात करने की चरण-दर-चरण गाइड।`,
     uk: `Покроковий посібник зі створення, локалізації та експорту скриншотів App Store і Google Play у Screenshot Bro.`,
+    pl: `Przewodnik krok po kroku po projektowaniu, lokalizowaniu i eksportowaniu zrzutów ekranu do App Store i Google Play w Screenshot Bro.`,
   };
 
   const title = titles[locale] || titles.en;
@@ -98,6 +100,7 @@ export default function HowToUseGuide() {
     ar: "الدروس",
     hi: "ट्यूटोरियल",
     uk: "Посібники",
+    pl: "Poradniki",
   };
 
   const guideNames: Record<LocaleCode, string> = {
@@ -113,6 +116,7 @@ export default function HowToUseGuide() {
     ar: `كيفية استخدام ${SITE_NAME}`,
     hi: `${SITE_NAME} का उपयोग कैसे करें`,
     uk: `Як користуватися ${SITE_NAME}`,
+    pl: `Jak korzystać z ${SITE_NAME}`,
   };
 
   const eyebrows: Record<LocaleCode, string> = {
@@ -128,6 +132,7 @@ export default function HowToUseGuide() {
     ar: "دليل إرشادي",
     hi: "ट्यूटोरियल",
     uk: "Посібник",
+    pl: "Poradnik",
   };
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([

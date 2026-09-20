@@ -15,6 +15,7 @@ const KEEP_READING_COPIES: Record<LocaleCode, string> = {
   it: "Continua a leggere",
   ko: "계속 읽기",
   uk: "Читати далі",
+  pl: "Czytaj dalej",
 };
 
 const CATEGORY_NAMES: Record<LocaleCode, Record<string, string>> = {
@@ -30,6 +31,7 @@ const CATEGORY_NAMES: Record<LocaleCode, Record<string, string>> = {
   it: { Guide: "Guida", Reference: "Riferimento", Comparison: "Confronto" },
   ko: { Guide: "가이드", Reference: "참고자료", Comparison: "비교" },
   uk: { Guide: "Посібник", Reference: "Довідник", Comparison: "Порівняння" },
+  pl: { Guide: "Poradnik", Reference: "Przewodnik", Comparison: "Porównanie" },
 };
 
 export function RelatedPosts({

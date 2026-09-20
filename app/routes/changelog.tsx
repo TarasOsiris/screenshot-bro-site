@@ -29,6 +29,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ar: `سجل التحديثات والإصدارات — ${SITE_NAME}`,
     hi: `अपडेट इतिहास और बदलाव — ${SITE_NAME}`,
     uk: `Історія змін — ${SITE_NAME}`,
+    pl: `Historia zmian — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -44,6 +45,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ar: `كل جديد في ${SITE_NAME}. ملاحظات الإصدارات والميزات الجديدة والتحسينات لنظامي Mac و iPad.`,
     hi: `${SITE_NAME} में क्या नया है। Mac और iPad के लिए ऐप स्टोर स्क्रीनशॉट डिज़ाइनर की नई सुविधाएँ और सुधार।`,
     uk: `Що нового в ${SITE_NAME}. Нотатки до релізів, нові функції та покращення дизайнера скриншотів App Store для Mac та iPad.`,
+    pl: `Co nowego w ${SITE_NAME}. Informacje o wydaniach, nowe funkcje i ulepszenia projektanta zrzutów ekranu App Store dla Maca i iPada.`,
   };
 
   const title = titles[locale] || titles.en;
@@ -584,7 +586,7 @@ const TYPE_STYLES = {
 export default function Changelog() {
   const { locale } = useLoaderData<typeof loader>();
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
-    { name: locale === "es" ? "Historial de cambios" : locale === "zh" ? "更新日志" : locale === "ja" ? "更新履歴" : "Changelog", path: localeHref(locale, "/changelog") },
+    { name: locale === "es" ? "Historial de cambios" : locale === "zh" ? "更新日志" : locale === "ja" ? "更新履歴" : locale === "uk" ? "Історія змін" : locale === "pl" ? "Historia zmian" : "Changelog", path: localeHref(locale, "/changelog") },
   ]);
 
   const titles: Record<LocaleCode, { eyebrow: string; title: string; subtitle: string }> = {
@@ -631,7 +633,7 @@ export default function Changelog() {
     ko: {
       eyebrow: "업데이트 로그",
       title: "Screenshot Bro 최신 변경 사항",
-      subtitle: "각 버전별로 추가된 새로운 기능, 성능 개선 및 버그 수정 내역입니다.",
+      subtitle: "각 버전별로 추가된 새로운 기능, 성능 개선 및 버グ 수정 내역입니다.",
     },
     ar: {
       eyebrow: "سجل التغييرات",
@@ -647,6 +649,11 @@ export default function Changelog() {
       eyebrow: "Історія змін",
       title: "Що нового в Screenshot Bro",
       subtitle: "Нові функції, покращення та виправлення помилок у кожному релізі.",
+    },
+    pl: {
+      eyebrow: "Historia zmian",
+      title: "Co nowego w Screenshot Bro",
+      subtitle: "Nowe funkcje, ulepszenia i poprawki błędów w każdym wydaniu.",
     },
   };
 

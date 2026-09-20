@@ -14,7 +14,8 @@ export function formatBlogDate(iso: string, locale: LocaleCode): string {
     pt: "pt-BR",
     it: "it-IT",
     ko: "ko-KR",
-    uk: "uk-UA"
+    uk: "uk-UA",
+    pl: "pl-PL",
   };
   return new Date(year, month - 1, day).toLocaleDateString(localesMap[locale] || "en-US", {
     year: "numeric",

@@ -36,6 +36,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ar: `الدروس والشروحات — ${SITE_NAME}`,
     hi: `ट्यूटोरियल और गाइड — ${SITE_NAME}`,
     uk: `Посібники — ${SITE_NAME}`,
+    pl: `Poradniki — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -51,6 +52,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ar: `تعلم استخدام ${SITE_NAME} عبر دليل خطوة بخطوة وفيديوهات قصيرة توضيحية.`,
     hi: `चरण-दर-चरण गाइड और लघु वीडियो के साथ ${SITE_NAME} का उपयोग करना सीखें।`,
     uk: `Вивчайте ${SITE_NAME} за покроковим посібником і короткими відео — створюйте проекти, додавайте рамки пристроїв, локалізуйте та експортуйте скриншоти для магазинів.`,
+    pl: `Poznaj ${SITE_NAME} dzięki przewodnikowi krok po kroku i krótkim filmom wideo — twórz projekty, dodawaj ramki urządzeń, lokalizuj i eksportuj zrzuty ekranu do sklepów.`,
   };
 
   const title = titles[locale] || titles.en;
@@ -273,9 +275,20 @@ function getTutorialsCopy(locale: LocaleCode) {
         subheading: `${SITE_NAME} के साथ App Store और Google Play स्क्रीनशॉट डिज़ाइन और शिप करने की पूरी गाइड।`,
         guideEyebrow: "लिखित गाइड",
         guideTitle: `${SITE_NAME} का उपयोग कैसे करें`,
-        guideDesc: "दस चरणों में पूरी कार्यप्रणाली: पहले प्रोजेक्ट से लेकर डिवाइस फ़्रेम, अनुवाद और स्टोर अपलोड तक।",
+        guideDesc: "दस चरणों में पूरी कार्यप्रणाली: पहले प्रोजेक्ट से लेकर डिवाइस फ़्रेम, अनुवाद और स्टोर अपलोड तक。",
         guideCta: "गाइड पढ़ें",
         videosHeading: "वीडियो",
+      };
+    case "pl":
+      return {
+        eyebrow: "Poradniki",
+        heading: "Poradniki",
+        subheading: `Przewodnik krok po kroku i filmy wideo pokazujące, jak projektować i publikować zrzuty ekranu dla App Store i Google Play za pomocą ${SITE_NAME}.`,
+        guideEyebrow: "Kompletny przewodnik",
+        guideTitle: `Jak korzystać z ${SITE_NAME}`,
+        guideDesc: "Cały przepływ pracy w dziesięciu krokach z rzeczywistymi zrzutami ekranu z aplikacji: od pierwszego projektu po przesyłanie do App Store Connect i Google Play.",
+        guideCta: "Przeczytaj przewodnik",
+        videosHeading: "Wideo",
       };
     default:
       return {

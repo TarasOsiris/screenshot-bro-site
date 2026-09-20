@@ -18,6 +18,7 @@ const THEME_LABELS: Record<LocaleCode, string> = {
   it: "Cambia tema",
   ko: "테마 전환",
   uk: "Змінити тему",
+  pl: "Przełącz motyw",
 };
 
 const THEME_COLORS = { light: "#fbfaf8", dark: "#08080c" } as const;

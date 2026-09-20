@@ -26,6 +26,7 @@ const SHORT_ANSWER_LABELS: Record<LocaleCode, string> = {
   it: "Risposta breve:",
   ko: "요약:",
   uk: "Коротка відповідь:",
+  pl: "Krótka odpowiedź:",
 };
 
 const RELATED_GUIDES_LABELS: Record<LocaleCode, string> = {
@@ -41,6 +42,7 @@ const RELATED_GUIDES_LABELS: Record<LocaleCode, string> = {
   it: "Guide ASO correlate",
   ko: "관련 ASO 가이드",
   uk: "Схожі ASO посібники",
+  pl: "Powiązane poradniki ASO",
 };
 
 const FAQ_LABELS: Record<LocaleCode, string> = {
@@ -56,6 +58,7 @@ const FAQ_LABELS: Record<LocaleCode, string> = {
   it: "Domande frequenti",
   ko: "자주 묻는 질문",
   uk: "Часті запитання",
+  pl: "Często zadawane pytania",
 };
 
 export function BlogArticleShell({

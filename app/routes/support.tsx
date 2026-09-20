@@ -38,6 +38,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ar: `الدعم الفني والمساعدة — ${SITE_NAME}`,
     hi: `सहायता और संपर्क — ${SITE_NAME}`,
     uk: `Підтримка — ${SITE_NAME}`,
+    pl: `Wsparcie — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -53,6 +54,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ar: `احصل على المساعدة بخصوص ${SITE_NAME}. خادم Discord هو أسرع قناة للدعم، ويمكنك أيضًا مراسلتنا عبر البريد الإلكتروني أو وسائل التواصل.`,
     hi: `${SITE_NAME} के लिए सहायता प्राप्त करें। सबसे तेज़ जवाब के लिए Discord से जुड़ें, या हमें ईमेल करें।`,
     uk: `Отримайте допомогу зі ${SITE_NAME}. Приєднуйтесь до Discord, щоб найшвидше отримати відповіді про помилки, запитання та побажання — або напишіть нам на пошту чи знайдіть нас у Reddit, X і Threads.`,
+    pl: `Uzyskaj pomoc dotyczącą ${SITE_NAME}. Dołącz do Discorda, aby najszybciej uzyskać odpowiedzi na pytania o błędy i propozycje funkcji — lub napisz do nas e-mail.`,
   };
 
   const title = titles[locale] || titles.en;
@@ -341,6 +343,20 @@ function getSupportCopy(locale: LocaleCode) {
         findOnline: "या हमसे ऑनलाइन जुड़ें",
         docsPrompt: "क्या आप उपयोग मार्गदर्शिकाएँ खोज रहे हैं?",
         docsLink: "सहायता और दस्तावेज़ीकरण",
+      };
+    case "pl":
+      return {
+        heading: "Wsparcie",
+        intro: "Znalazłeś błąd, masz pytanie lub chcesz podzielić się opinią? Discord to najszybszy sposób na kontakt z nami — czytamy każdą wiadomość.",
+        discordLabel: "Najszybszy sposób na uzyskanie pomocy",
+        discordHeading: "Dołącz do Discorda Screenshot Bro",
+        discordPitch: "Zadawaj pytania, zgłaszaj błędy, sugeruj funkcje i sprawdzaj, co nowego się pojawi — bezpośrednio od twórcy.",
+        discordCta: "Dołącz do Discorda",
+        emailUs: "Wolisz e-mail?",
+        emailNote: "W sprawach prywatnych lub związanych z kontem napisz do nas bezpośrednio. Aby pomóc nam szybciej rozwiązać problem, podaj wersję systemu macOS oraz zrzut ekranu.",
+        findOnline: "Lub znajdź nas w sieci",
+        docsPrompt: "Szukasz poradników krok po kroku? Sprawdź naszą",
+        docsLink: "Pomoc i dokumentację",
       };
     default:
       return {

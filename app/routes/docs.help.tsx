@@ -60,6 +60,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ar: `المساعدة والتوثيق الرسمي — ${SITE_NAME}`,
     hi: `सहायता और दस्तावेज़ीकरण — ${SITE_NAME}`,
     uk: `Довідка та документація — ${SITE_NAME}`,
+    pl: `Pomoc i dokumentacja — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -75,6 +76,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     ar: "دليل شامل لتطبيق Screenshot Bro: المشاريع، القوالب، إطارات الأجهزة، الخلفيات، اللغات، والتصدير للمتاجر.",
     hi: "Screenshot Bro की पूरी गाइड: प्रोजेक्ट, टेम्प्लेट, डिवाइस फ़्रेम, बैकग्राउंड, भाषाएँ और स्टोर अपलोड।",
     uk: "Повний посібник зі Screenshot Bro для Mac, iPad та iPhone: проекти, рядки, шаблони, рамки пристроїв, фони, мови, експорт і завантаження в магазини.",
+    pl: "Kompletny przewodnik po Screenshot Bro dla systemów Mac, iPad i iPhone: projekty, wiersze, szablony, ramki urządzeń, tła, języki, eksport i przesyłanie do sklepów.",
   };
 
   const title = titles[locale] || titles.en;
