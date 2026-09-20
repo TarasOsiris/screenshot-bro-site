@@ -43,6 +43,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: `Hướng dẫn — ${SITE_NAME}`,
     th: `คู่มือการใช้งาน — ${SITE_NAME}`,
     sv: `Guider — ${SITE_NAME}`,
+    da: `Vejledninger — ${SITE_NAME}`,
+    fi: `Oppaat — ${SITE_NAME}`,
+    no: `Veiledninger — ${SITE_NAME}`,
+    cs: `Návody — ${SITE_NAME}`,
+    ro: `Ghiduri — ${SITE_NAME}`,
+    ms: `Tutorial — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -65,6 +71,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: `Tìm hiểu cách sử dụng ${SITE_NAME} với hướng dẫn từng bước và video ngắn — tạo dự án, tạo khung thiết bị, bản địa hóa và xuất ảnh chụp màn hình.`,
     th: `เรียนรู้การใช้งาน ${SITE_NAME} ด้วยคู่มือทีละขั้นตอนและวิดีโอสั้น — สร้างโปรเจกต์ ใส่กรอบอุปกรณ์ แปลภาษา และส่งออกภาพหน้าจอ`,
     sv: `Lär dig ${SITE_NAME} med en steg-för-steg-guide och korta videor — skapa projekt, rama in enheter, lokalisera och exportera skärmdumpar.`,
+    da: `Lær ${SITE_NAME} at kende med en trin-for-trin guide og korte videoer — opret projekter, tilføj enhedsrammer, lokaliser og eksportér butiksskærmbilleder.`,
+    fi: `Opi käyttämään ${SITE_NAME}ä vaiheittaisen oppaan ja lyhyiden videoiden avulla — luo projekteja, kehystä laitteita, lokalisoi ja vie kuvakaappauksia kauppoihin.`,
+    no: `Lær ${SITE_NAME} med en trinnvis veiledning og korte videoer — lag prosjekter, ram inn enheter, lokaliser og eksporter butikkskjermbilder.`,
+    cs: `Naučte se pracovat s ${SITE_NAME} pomocí podrobného návodu a krátkých videí — vytvářejte projekty, přidávejte rámečky, lokalizujte a exportujte snímky.`,
+    ro: `Învață să folosești ${SITE_NAME} cu un ghid pas cu pas și videoclipuri scurte — creează proiecte, adaugă rame, localizează și exportă capturi de ecran.`,
+    ms: `Ketahui cara menggunakan ${SITE_NAME} dengan panduan langkah demi langkah dan video pendek — cipta projek, masukkan bingkai peranti, setempatkan dan eksport tangkapan skrin.`,
   };
 
   const title = titles[locale] || titles.en;
@@ -378,6 +390,72 @@ function getTutorialsCopy(locale: LocaleCode) {
         guideDesc: "Hela arbetsflödet i tio steg: från ditt första projekt till enhetsramar, rubriker, lokalisering och färdig export till butikerna.",
         guideCta: "Läs guiden",
         videosHeading: "Videor",
+      };
+    case "da":
+      return {
+        eyebrow: "Vejledninger",
+        heading: "Vejledninger",
+        subheading: `En trin-for-trin guide og korte videoer, der viser, hvordan du designer og udgiver App Store- og Google Play-skærmbilleder med ${SITE_NAME}.`,
+        guideEyebrow: "Skriftlig guide",
+        guideTitle: `Sådan bruger du ${SITE_NAME}`,
+        guideDesc: "Hele arbejdsgangen i ti trin: fra dit første projekt til enhedsrammer, overskrifter, lokalisering og færdig eksport til butikkerne.",
+        guideCta: "Læs vejledningen",
+        videosHeading: "Videoer",
+      };
+    case "fi":
+      return {
+        eyebrow: "Oppaat",
+        heading: "Oppaat",
+        subheading: `Vaiheittainen opas ja lyhyet videot, jotka näyttävät miten suunnittelet ja julkaiset App Store- ja Google Play -kuvakaappauksia ${SITE_NAME}llä.`,
+        guideEyebrow: "Kirjallinen opas",
+        guideTitle: `Miten ${SITE_NAME}ä käytetään`,
+        guideDesc: "Koko työnkulku kymmenessä vaiheessa: ensimmäisestä projektista laitekehyksiin, otsikoihin, lokalisointiin ja valmiiseen vientiin kauppoihin.",
+        guideCta: "Lue opas",
+        videosHeading: "Videot",
+      };
+    case "no":
+      return {
+        eyebrow: "Veiledninger",
+        heading: "Veiledninger",
+        subheading: `En trinnvis veiledning og korte videoer som viser hvordan du designer og publiserer skjermbilder for App Store og Google Play med ${SITE_NAME}.`,
+        guideEyebrow: "Skriftlig veiledning",
+        guideTitle: `Slik bruker du ${SITE_NAME}`,
+        guideDesc: "Hele arbeidsflyten i ti trinn: fra ditt første prosjekt til enhetsrammer, overskrifter, lokalisering og ferdig eksport til butikkene.",
+        guideCta: "Les veiledningen",
+        videosHeading: "Videoer",
+      };
+    case "cs":
+      return {
+        eyebrow: "Návody",
+        heading: "Návody",
+        subheading: `Podrobný průvodce a krátká videa ukazující, jak navrhovat a publikovat snímky pro App Store a Google Play pomocí ${SITE_NAME}.`,
+        guideEyebrow: "Písemný průvodce",
+        guideTitle: `Jak používat ${SITE_NAME}`,
+        guideDesc: "Celý pracovní postup v deseti krocích: od vašeho prvního projektu přes rámečky zařízení, titulky, lokalizaci až po hotový export pro obchody.",
+        guideCta: "Přečíst průvodce",
+        videosHeading: "Videa",
+      };
+    case "ro":
+      return {
+        eyebrow: "Ghiduri",
+        heading: "Ghiduri",
+        subheading: `Un ghid pas cu pas și videoclipuri scurte care arată cum să proiectezi și să publici capturi de ecran pentru App Store și Google Play cu ${SITE_NAME}.`,
+        guideEyebrow: "Ghid scris",
+        guideTitle: `Cum se utilizează ${SITE_NAME}`,
+        guideDesc: "Întregul flux de lucru în zece pași: de la primul proiect până la rame de dispozitive, titluri, localizare și exportul final pentru magazine.",
+        guideCta: "Citește ghidul",
+        videosHeading: "Videoclipuri",
+      };
+    case "ms":
+      return {
+        eyebrow: "Tutorial",
+        heading: "Tutorial",
+        subheading: `Panduan bertulis dan video pendek yang menunjukkan cara mereka bentuk dan menerbitkan tangkapan skrin App Store dan Google Play dengan ${SITE_NAME}.`,
+        guideEyebrow: "Panduan bertulis",
+        guideTitle: `Cara menggunakan ${SITE_NAME}`,
+        guideDesc: "Seluruh aliran kerja dalam sepuluh langkah: daripada projek pertama hingga bingkai peranti, tajuk, penyetempatan dan eksport siap ke gedung.",
+        guideCta: "Baca panduan",
+        videosHeading: "Video",
       };
     default:
       return {

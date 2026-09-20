@@ -45,6 +45,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: `Hỗ trợ — ${SITE_NAME}`,
     th: `ฝ่ายสนับสนุน — ${SITE_NAME}`,
     sv: `Support — ${SITE_NAME}`,
+    da: `Support — ${SITE_NAME}`,
+    fi: `Tuki — ${SITE_NAME}`,
+    no: `Support — ${SITE_NAME}`,
+    cs: `Podpora — ${SITE_NAME}`,
+    ro: `Suport — ${SITE_NAME}`,
+    ms: `Sokongan — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -67,6 +73,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: `Nhận trợ giúp về ${SITE_NAME}. Tham gia Discord để nhận câu trả lời nhanh nhất về lỗi, câu hỏi và yêu cầu tính năng — hoặc gửi email cho chúng tôi.`,
     th: `รับความช่วยเหลือเกี่ยวกับ ${SITE_NAME} เข้าร่วม Discord เพื่อรับคำตอบที่เร็วที่สุดเกี่ยวกับข้อผิดพลาด คำถาม และคำขอคุณสมบัติ หรือส่งอีเมลถึงเรา`,
     sv: `Få hjälp med ${SITE_NAME}. Gå med i Discord för de snabbaste svaren på buggar, frågor och funktionsförfrågningar — eller mejla oss.`,
+    da: `Få hjælp til ${SITE_NAME}. Deltag i Discord for hurtigst svar på spørgsmål og fejl — eller send os en e-mail.`,
+    fi: `Hanki apua ${SITE_NAME}n käyttöön. Liity Discordiin saadaksesi nopeimmat vastaukset virheisiin ja kysymyksiin — tai lähetä sähköpostia.`,
+    no: `Få hjelp med ${SITE_NAME}. Bli med i Discord for raskeste svar på feil og spørsmål — eller send oss en e-post.`,
+    cs: `Získejte pomoc s ${SITE_NAME}. Připojte se k Discordu pro nejrychlejší odpovědi na chyby a dotazy — nebo nám napište e-mail.`,
+    ro: `Primește ajutor pentru ${SITE_NAME}. Alătură-te pe Discord pentru cele mai rapide răspunsuri la erori și întrebări — sau trimite-ne un e-mail.`,
+    ms: `Dapatkan bantuan untuk ${SITE_NAME}. Sertai Discord untuk respons terpantas mengenai pepijat dan pertanyaan — atau emel kepada kami.`,
   };
 
   const title = titles[locale] || titles.en;
@@ -466,6 +478,90 @@ function getSupportCopy(locale: LocaleCode) {
         findOnline: "Eller hitta oss online",
         docsPrompt: "Letar du efter guider? Kolla in",
         docsLink: "Hjälp & Dokumentation",
+      };
+    case "da":
+      return {
+        heading: "Support",
+        intro: "Fundet en fejl, har et spørgsmål eller vil dele feedback? Discord er den hurtigste måde at kontakte os på — og vi læser alle beskeder.",
+        discordLabel: "Hurtigste måde at få hjælp på",
+        discordHeading: "Deltag i Screenshot Bro Discord",
+        discordPitch: "Stil spørgsmål, rapporter fejl, anmod om funktioner og se hvad der kommer næste gang — direkte fra udvikleren.",
+        discordCta: "Deltag i Discord",
+        emailUs: "Foretrækker du e-mail?",
+        emailNote: "For private eller kontospecifikke henvendelser, send os en e-mail direkte. Angiv gerne din macOS-version og et skærmbillede ved fejlrapportering.",
+        findOnline: "Eller find os online",
+        docsPrompt: "Leder du efter vejledninger? Se",
+        docsLink: "Hjælp & Dokumentation",
+      };
+    case "fi":
+      return {
+        heading: "Tuki",
+        intro: "Löysitkö virheen, onko kysyttävää tai haluatko antaa palautetta? Discord on nopein tapa tavoittaa meidät — ja luemme jokaisen viestin.",
+        discordLabel: "Nopein tapa saada apua",
+        discordHeading: "Liity Screenshot Bro Discordiin",
+        discordPitch: "Kysy kysymyksiä, ilmoita virheistä, pyydä ominaisuuksia ja näe tulevat päivitykset — suoraan kehittäjältä.",
+        discordCta: "Liity Discordiin",
+        emailUs: "Suositko sähköpostia?",
+        emailNote: "Yksityisasioissa tai tiliasioissa lähetä meille sähköpostia suoraan. Liitä mukaan macOS-versiosi ja kuvakaappaus nopeuttaaksesi selvitystä.",
+        findOnline: "Tai löydä meidät verkosta",
+        docsPrompt: "Etsitkö oppaita? Tutustu",
+        docsLink: "Ohje & Dokumentaatio",
+      };
+    case "no":
+      return {
+        heading: "Support",
+        intro: "Funnet en feil, har et spørsmål eller vil dele tilbakemelding? Discord er den raskeste måten å nå oss på — og vi leser hver melding.",
+        discordLabel: "Raskeste måte å få hjelp på",
+        discordHeading: "Bli med i Screenshot Bro Discord",
+        discordPitch: "Still spørsmål, meld fra om feil, be om funksjoner og se hva som kommer — direkte fra utvikleren.",
+        discordCta: "Bli med i Discord",
+        emailUs: "Foretrekker du e-post?",
+        emailNote: "For private eller kontospesifikke henvendelser, send oss en e-post direkte. Oppgi gjerne macOS-versjonen din og et skjermbilde ved feilrapportering.",
+        findOnline: "Eller finn oss på nett",
+        docsPrompt: "Leter du etter veiledninger? Sjekk",
+        docsLink: "Hjelp & Dokumentasjon",
+      };
+    case "cs":
+      return {
+        heading: "Podpora",
+        intro: "Našli jste chybu, máte dotaz nebo chcete sdílet zpětnou vazbu? Discord je nejrychlejší způsob, jak nás kontaktovat — a čteme každou zprávu.",
+        discordLabel: "Nejrychlejší způsob, jak získat pomoc",
+        discordHeading: "Připojte se k Discordu Screenshot Bro",
+        discordPitch: "Ptejte se, hlašte chyby, žádejte funkce a sledujte, co se chystá — přímo od vývojáře.",
+        discordCta: "Připojit se k Discordu",
+        emailUs: "Preferujete e-mail?",
+        emailNote: "Pro soukromé nebo účetní záležitosti nám napište přímo. Pro rychlejší vyřešení uveďte verzi macOS a snímek obrazovky.",
+        findOnline: "Nebo nás najděte online",
+        docsPrompt: "Hledáte návody? Podívejte se na",
+        docsLink: "Nápověda a dokumentace",
+      };
+    case "ro":
+      return {
+        heading: "Suport",
+        intro: "Ai găsit o eroare, ai o întrebare sau vrei să trimiți feedback? Discord este cel mai rapid mod de a ne contacta — și citim fiecare mesaj.",
+        discordLabel: "Cea mai rapidă cale de a primi ajutor",
+        discordHeading: "Alătură-te pe Discord Screenshot Bro",
+        discordPitch: "Pune întrebări, raportează erori, propune funcționalități și află noutățile — direct de la creator.",
+        discordCta: "Alătură-te pe Discord",
+        emailUs: "Preferi e-mailul?",
+        emailNote: "Pentru chestiuni private sau legate de cont, trimite-ne un e-mail direct. Pentru a ne ajuta să rezolvăm mai repede, include versiunea de macOS și o captură.",
+        findOnline: "Sau găsește-ne online",
+        docsPrompt: "Cauți ghiduri practice? Vezi",
+        docsLink: "Ajutor și documentație",
+      };
+    case "ms":
+      return {
+        heading: "Sokongan",
+        intro: "Menjumpai pepijat, ada soalan atau ingin berkongsi maklum balas? Discord ialah saluran terpantas untuk menghubungi kami — dan kami membaca setiap mesej.",
+        discordLabel: "Cara terpantas untuk mendapatkan bantuan",
+        discordHeading: "Sertai Discord Screenshot Bro",
+        discordPitch: "Tanya soalan, lapor pepijat, cadang ciri baharu dan lihat apa yang bakal dilancarkan — terus daripada pembangun.",
+        discordCta: "Sertai Discord",
+        emailUs: "Lebih suka e-mel?",
+        emailNote: "Untuk urusan peribadi atau akaun, emel kepada kami secara terus. Untuk membantu kami menyelesaikannya lebih cepat, sertakan versi macOS dan tangkapan skrin.",
+        findOnline: "Atau cari kami dalam talian",
+        docsPrompt: "Mencari panduan penggunaan? Lihat",
+        docsLink: "Bantuan & Dokumentasi",
       };
     default:
       return {

@@ -67,6 +67,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: `Trợ giúp & Tài liệu — ${SITE_NAME}`,
     th: `ความช่วยเหลือและเอกสาร — ${SITE_NAME}`,
     sv: `Hjälp & Dokumentation — ${SITE_NAME}`,
+    da: `Hjælp & Dokumentation — ${SITE_NAME}`,
+    fi: `Ohje & Dokumentaatio — ${SITE_NAME}`,
+    no: `Hjelp & Dokumentasjon — ${SITE_NAME}`,
+    cs: `Nápověda a dokumentace — ${SITE_NAME}`,
+    ro: `Ajutor și documentație — ${SITE_NAME}`,
+    ms: `Bantuan & Dokumentasi — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -89,6 +95,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: "Hướng dẫn toàn diện về Screenshot Bro cho Mac, iPad và iPhone: dự án, mẫu, khung thiết bị, nền, ngôn ngữ, xuất và tải lên cửa hàng.",
     th: "คู่มือฉบับสมบูรณ์สำหรับ Screenshot Bro บน Mac, iPad และ iPhone: โปรเจกต์ เทมเพลต กรอบอุปกรณ์ พื้นหลัง ภาษา การส่งออก และการอัปโหลดขึ้นสโตร์",
     sv: "Komplett guide till Screenshot Bro för Mac, iPad och iPhone: projekt, rader, mallar, enhetsramar, bakgrunder, språk, export och butiksuppladdningar.",
+    da: "Komplet guide til Screenshot Bro til Mac, iPad og iPhone: projekter, rækker, skabeloner, enhedsrammer, baggrunde, sprog, eksport og butiksuploads.",
+    fi: "Kattava opas Screenshot Brohon Macille, iPadille ja iPhonelle: projektit, rivit, mallit, laitekehykset, taustat, kielet, vienti ja lataus kauppoihin.",
+    no: "Komplett guide til Screenshot Bro for Mac, iPad og iPhone: prosjekter, rader, maler, enhetsrammer, bakgrunner, språk, eksport og butikkopplastinger.",
+    cs: "Kompletní průvodce Screenshot Bro pro Mac, iPad a iPhone: projekty, řádky, šablony, rámečky zařízení, pozadí, jazyky, export a nahrávání do obchodů.",
+    ro: "Ghid complet pentru Screenshot Bro pe Mac, iPad și iPhone: proiecte, rânduri, șabloane, rame de dispozitive, fundaluri, limbi, export și încărcare în magazine.",
+    ms: "Panduan lengkap untuk Screenshot Bro bagi Mac, iPad dan iPhone: projek, baris, templat, bingkai peranti, latar belakang, bahasa, eksport dan muat naik gedung.",
   };
 
   const title = titles[locale] || titles.en;

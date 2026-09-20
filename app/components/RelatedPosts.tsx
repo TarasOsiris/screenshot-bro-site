@@ -22,6 +22,12 @@ const KEEP_READING_COPIES: Record<LocaleCode, string> = {
   vi: "Đọc tiếp",
   th: "อ่านต่อ",
   sv: "Läs vidare",
+  da: "Læs videre",
+  fi: "Jatka lukemista",
+  no: "Les videre",
+  cs: "Čtěte dále",
+  ro: "Citește mai departe",
+  ms: "Teruskan membaca",
 };
 
 const CATEGORY_NAMES: Record<LocaleCode, Record<string, string>> = {
@@ -44,6 +50,12 @@ const CATEGORY_NAMES: Record<LocaleCode, Record<string, string>> = {
   vi: { Guide: "Hướng dẫn", Reference: "Tham khảo", Comparison: "So sánh" },
   th: { Guide: "คู่มือ", Reference: "ข้อมูลอ้างอิง", Comparison: "การเปรียบเทียบ" },
   sv: { Guide: "Guide", Reference: "Referens", Comparison: "Jämförelse" },
+  da: { Guide: "Guide", Reference: "Reference", Comparison: "Sammenligning" },
+  fi: { Guide: "Opas", Reference: "Viite", Comparison: "Vertailu" },
+  no: { Guide: "Guide", Reference: "Referanse", Comparison: "Sammenligning" },
+  cs: { Guide: "Průvodce", Reference: "Přehled", Comparison: "Srovnání" },
+  ro: { Guide: "Ghid", Reference: "Referință", Comparison: "Comparație" },
+  ms: { Guide: "Panduan", Reference: "Rujukan", Comparison: "Perbandingan" },
 };
 
 export function RelatedPosts({

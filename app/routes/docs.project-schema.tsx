@@ -50,6 +50,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: `Sơ đồ tệp dự án — ${SITE_NAME}`,
     th: `สกีมาไฟล์โปรเจกต์ — ${SITE_NAME}`,
     sv: `Projektfilsschema — ${SITE_NAME}`,
+    da: `Projektfilskema — ${SITE_NAME}`,
+    fi: `Projektitiedoston skeema — ${SITE_NAME}`,
+    no: `Prosjektfilskjema — ${SITE_NAME}`,
+    cs: `Schéma souboru projektu — ${SITE_NAME}`,
+    ro: `Schema fișierului de proiect — ${SITE_NAME}`,
+    ms: `Skema Fail Projek — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -72,6 +78,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: "JSON Schema cho định dạng tệp dự án Screenshot Bro. Sử dụng để tạo, xác thực hoặc chuyển đổi project.json bằng AI hoặc tập lệnh.",
     th: "JSON Schema สำหรับรูปแบบไฟล์โปรเจกต์ Screenshot Bro ใช้สร้าง ตรวจสอบความถูกต้อง หรือแปลง project.json ด้วย AI หรือสคริปต์",
     sv: "JSON-schema för projektfilsformatet i Screenshot Bro. Skapa, validera och transformera project.json med AI eller skript.",
+    da: "JSON-skema for Screenshot Bro projektfilformatet. Opret, valider og transformer project.json med AI eller scripts.",
+    fi: "JSON-skeema Screenshot Bron projektitiedostomuodolle. Luo, validoi ja muokkaa project.json-tiedostoa tekoälyllä tai skripteillä.",
+    no: "JSON-skjema for prosjektfilformatet i Screenshot Bro. Opprett, valider og transformer project.json med AI eller skript.",
+    cs: "JSON Schema pro formát souboru projektu Screenshot Bro. Vytvářejte, validujte a transformujte project.json pomocí AI nebo skriptů.",
+    ro: "Schema JSON pentru formatul fișierului de proiect Screenshot Bro. Generează, validează și transformă project.json cu AI sau scripturi.",
+    ms: "Skema JSON untuk format fail projek Screenshot Bro. Cipta, sahkan dan ubah project.json dengan AI atau skrip.",
   };
 
   const title = titles[locale] || titles.en;

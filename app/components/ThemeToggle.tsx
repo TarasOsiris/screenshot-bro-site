@@ -25,6 +25,12 @@ const THEME_LABELS: Record<LocaleCode, string> = {
   vi: "Đổi giao diện",
   th: "เปลี่ยนธีม",
   sv: "Växla tema",
+  da: "Skift tema",
+  fi: "Vaihda teema",
+  no: "Bytt tema",
+  cs: "Přepnout motiv",
+  ro: "Schimbă tema",
+  ms: "Tukar tema",
 };
 
 const THEME_COLORS = { light: "#fbfaf8", dark: "#08080c" } as const;

@@ -166,6 +166,54 @@ const INDEX_COPY: Record<
     all: "Alla",
     filterLabel: "Filtrera artiklar efter kategori",
   },
+  da: {
+    eyebrow: "Blog",
+    title: "Guides & Ressourcer",
+    description: "Praktiske guides til at designe, lokalisere og udgive App Store- og Google Play-skærmbilleder, der konverterer.",
+    latest: "Seneste",
+    all: "Alle",
+    filterLabel: "Filtrer artikler efter kategori",
+  },
+  fi: {
+    eyebrow: "Blogi",
+    title: "Oppaat & Resurssit",
+    description: "Käytännön oppaita konvertoivien App Store- ja Google Play -kuvakaappausten suunnitteluun, lokalisointiin ja julkaisuun.",
+    latest: "Uusin",
+    all: "Kaikki",
+    filterLabel: "Suodata artikkeleita kategorian mukaan",
+  },
+  no: {
+    eyebrow: "Blogg",
+    title: "Guider & Ressurser",
+    description: "Praktiske guider for å designe, lokalisere og publisere skjermbilder for App Store og Google Play som konverterer.",
+    latest: "Siste",
+    all: "Alle",
+    filterLabel: "Filtrer artikler etter kategori",
+  },
+  cs: {
+    eyebrow: "Blog",
+    title: "Průvodci & Zdroje",
+    description: "Praktické návody pro navrhování, lokalizaci a publikování snímků pro App Store a Google Play, které konvertují.",
+    latest: "Nejnovější",
+    all: "Vše",
+    filterLabel: "Filtrovat články podle kategorie",
+  },
+  ro: {
+    eyebrow: "Blog",
+    title: "Ghiduri & Resurse",
+    description: "Ghiduri practice pentru crearea, localizarea și publicarea de capturi de ecran pentru App Store și Google Play cu conversie ridicată.",
+    latest: "Cele mai noi",
+    all: "Toate",
+    filterLabel: "Filtrează articolele după categorie",
+  },
+  ms: {
+    eyebrow: "Blog",
+    title: "Panduan & Sumber",
+    description: "Panduan praktikal untuk mereka bentuk, menyetempatkan dan menerbitkan tangkapan skrin App Store dan Google Play yang berkesan.",
+    latest: "Terkini",
+    all: "Semua",
+    filterLabel: "Tapis artikel mengikut kategori",
+  },
 };
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -219,6 +267,12 @@ const CATEGORY_NAMES: Record<LocaleCode, Record<BlogCategory, string>> = {
   vi: { Guide: "Hướng dẫn", Reference: "Tham khảo", Comparison: "So sánh" },
   th: { Guide: "คู่มือ", Reference: "ข้อมูลอ้างอิง", Comparison: "การเปรียบเทียบ" },
   sv: { Guide: "Guide", Reference: "Referens", Comparison: "Jämförelse" },
+  da: { Guide: "Guide", Reference: "Reference", Comparison: "Sammenligning" },
+  fi: { Guide: "Opas", Reference: "Viite", Comparison: "Vertailu" },
+  no: { Guide: "Guide", Reference: "Referanse", Comparison: "Sammenligning" },
+  cs: { Guide: "Průvodce", Reference: "Přehled", Comparison: "Srovnání" },
+  ro: { Guide: "Ghid", Reference: "Referință", Comparison: "Comparație" },
+  ms: { Guide: "Panduan", Reference: "Rujukan", Comparison: "Perbandingan" },
 };
 
 function CategoryPill({ category, locale = "en" }: { category: BlogCategory; locale?: LocaleCode }) {

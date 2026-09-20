@@ -36,6 +36,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: `Chính sách quyền riêng tư — ${SITE_NAME}`,
     th: `นโยบายความเป็นส่วนตัว — ${SITE_NAME}`,
     sv: `Integritetspolicy — ${SITE_NAME}`,
+    da: `Privatlivspolitik — ${SITE_NAME}`,
+    fi: `Tietosuojakäytäntö — ${SITE_NAME}`,
+    no: `Personvernerklæring — ${SITE_NAME}`,
+    cs: `Zásady ochrany osobních údajů — ${SITE_NAME}`,
+    ro: `Politica de confidențialitate — ${SITE_NAME}`,
+    ms: `Dasar Privasi — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -58,6 +64,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: `Chính sách quyền riêng tư cho ${SITE_NAME}. Tìm hiểu cách chúng tôi xử lý dữ liệu của bạn: không quảng cáo, không theo dõi và dự án lưu trên thiết bị của bạn.`,
     th: `นโยบายความเป็นส่วนตัวสำหรับ ${SITE_NAME} เรียนรู้วิธีที่เราจัดการข้อมูลของคุณ — ไม่มีโฆษณา ไม่มีการติดตามข้ามแอป และโปรเจกต์ของคุณจะอยู่บนอุปกรณ์ของคุณ`,
     sv: `Integritetspolicy för ${SITE_NAME}. Lär dig hur vi hanterar dina uppgifter — inga annonser, ingen spårning mellan appar och dina projekt stannar på din enhet.`,
+    da: `Privatlivspolitik for ${SITE_NAME}. Lær hvordan vi håndterer dine data — ingen reklamer, ingen sporing på tværs af apps, og dine projekter forbliver på din enhed.`,
+    fi: `Tietosuojakäytäntö sovellukselle ${SITE_NAME}. Lue miten käsittelemme tietojasi — ei mainoksia, ei sovellusten välistä seurantaa ja projektisi pysyvät laitteellasi.`,
+    no: `Personvernerklæring for ${SITE_NAME}. Lær hvordan vi behandler dine data — ingen annonser, ingen sporing på tvers av apper, og prosjektene dine forblir på enheten din.`,
+    cs: `Zásady ochrany osobních údajů pro ${SITE_NAME}. Zjistěte, jak nakládáme s vašimi údaji — žádné reklamy, žádné sledování napříč aplikacemi a vaše projekty zůstávají ve vašem zařízení.`,
+    ro: `Politica de confidențialitate pentru ${SITE_NAME}. Află cum gestionăm datele tale — fără reclame, fără urmărire între aplicații, iar proiectele tale rămân pe dispozitivul tău.`,
+    ms: `Dasar privasi untuk ${SITE_NAME}. Ketahui cara kami mengendalikan data anda — tiada iklan, tiada penjejakan merentas aplikasi dan projek anda kekal pada peranti anda.`,
   };
 
   const title = titles[locale] || titles.en;

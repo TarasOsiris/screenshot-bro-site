@@ -43,6 +43,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: `${SITE_NAME} so với các công cụ chụp ảnh màn hình App Store khác`,
     th: `${SITE_NAME} เปรียบเทียบกับเครื่องมือสร้างภาพหน้าจอ App Store อื่นๆ`,
     sv: `${SITE_NAME} jämfört med andra verktyg för App Store-skärmdumpar`,
+    da: `${SITE_NAME} mod andre værktøjer til App Store-skærmbilleder`,
+    fi: `${SITE_NAME} verrattuna muihin App Store -kuvakaappaustyökaluihin`,
+    no: `${SITE_NAME} mot andre verktøy for App Store-skjermbilder`,
+    cs: `${SITE_NAME} ve srovnání s ostatními nástroji pro snímky App Store`,
+    ro: `${SITE_NAME} comparat cu alte instrumente de capturi pentru App Store`,
+    ms: `${SITE_NAME} berbanding alat tangkapan skrin App Store yang lain`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -65,6 +71,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: "Mọi công cụ chụp ảnh màn hình App Store và Google Play được so sánh với Screenshot Bro: nền tảng, gói miễn phí, bản địa hóa và tải lên cửa hàng.",
     th: "เปรียบเทียบเครื่องมือภาพหน้าจอ App Store และ Google Play ทุกตัวกับ Screenshot Bro: แพลตฟอร์ม แพ็กเกจฟรี การแปลภาษา และการอัปโหลดขึ้นสโตร์",
     sv: "Varje skärmdumpsverktyg för App Store och Google Play jämfört med Screenshot Bro: plattform, gratisnivå, lokalisering och butiksuppladdning.",
+    da: "Alle værktøjer til App Store- og Google Play-skærmbilleder sammenlignet med Screenshot Bro: platform, gratisniveau, lokalisering og upload til butikker.",
+    fi: "Kaikki App Store- ja Google Play -kuvakaappaustyökalut verrattuna Screenshot Brohon: alusta, ilmainen versio, lokalisointi ja lataus kauppoihin.",
+    no: "Alle verktøy for App Store- og Google Play-skjermbilder sammenlignet med Screenshot Bro: plattform, gratisnivå, lokalisering og butikkopplasting.",
+    cs: "Všechny nástroje pro snímky obrazovky App Store a Google Play ve srovnání se Screenshot Bro: platforma, bezplatná verze, lokalizace a nahrávání.",
+    ro: "Toate instrumentele de capturi de ecran pentru App Store și Google Play comparate cu Screenshot Bro: platformă, plan gratuit, localizare și încărcare.",
+    ms: "Setiap alat tangkapan skrin App Store dan Google Play dibandingkan dengan Screenshot Bro: platform, pelan percuma, penyetempatan dan muat naik gedung.",
   };
 
   const title = titles[locale] || titles.en;
@@ -186,6 +198,12 @@ export default function ComparisonsIndex() {
     vi: "So sánh",
     th: "การเปรียบเทียบ",
     sv: "Jämförelser",
+    da: "Sammenligninger",
+    fi: "Vertailut",
+    no: "Sammenligninger",
+    cs: "Srovnání",
+    ro: "Comparații",
+    ms: "Perbandingan",
   };
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
     { name: breadcrumbNames[locale] || breadcrumbNames.en, path: localeHref(locale, "/vs") },

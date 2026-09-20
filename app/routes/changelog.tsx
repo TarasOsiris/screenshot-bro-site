@@ -36,6 +36,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: `Nhật ký thay đổi — ${SITE_NAME}`,
     th: `บันทึกการเปลี่ยนแปลง — ${SITE_NAME}`,
     sv: `Ändringslogg — ${SITE_NAME}`,
+    da: `Ændringslog — ${SITE_NAME}`,
+    fi: `Muutosloki — ${SITE_NAME}`,
+    no: `Endringslogg — ${SITE_NAME}`,
+    cs: `Seznam změn — ${SITE_NAME}`,
+    ro: `Istoric versiuni — ${SITE_NAME}`,
+    ms: `Log Perubahan — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -58,6 +64,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: `Có gì mới trong ${SITE_NAME}. Ghi chú phát hành, tính năng mới và cải tiến cho trình thiết kế ảnh chụp màn hình App Store cho Mac và iPad.`,
     th: `มีอะไรใหม่ใน ${SITE_NAME} บันทึกประจำรุ่น คุณสมบัติใหม่ และการปรับปรุงสำหรับเครื่องมือออกแบบภาพหน้าจอ App Store บน Mac และ iPad`,
     sv: `Vad är nytt i ${SITE_NAME}. Versionsinformation, nya funktioner och förbättringar för App Store-skärmdumpsverktyget för Mac och iPad.`,
+    da: `Hvad er nyt i ${SITE_NAME}. Udgivelsesnoter, nye funktioner og forbedringer til App Store-skærmbilledeværktøjet til Mac og iPad.`,
+    fi: `Mitä uutta ${SITE_NAME}ssä. Julkaisutiedot, uudet ominaisuudet ja parannukset App Store -kuvakaappaustyökaluun Macille ja iPadille.`,
+    no: `Hva er nytt i ${SITE_NAME}. Utgivelsesnotater, nye funksjoner og forbedringer for App Store-skjermbildeverktøyet for Mac og iPad.`,
+    cs: `Co je nového v ${SITE_NAME}. Poznámky k verzi, nové funkce a vylepšení nástroje pro snímky obrazovky App Store pro Mac a iPad.`,
+    ro: `Ce este nou în ${SITE_NAME}. Note de versiune, funcții noi și îmbunătățiri pentru instrumentul de capturi de ecran App Store pentru Mac și iPad.`,
+    ms: `Apa yang baharu dalam ${SITE_NAME}. Nota keluaran, ciri baharu dan penambahbaikan untuk pereka bentuk tangkapan skrin App Store bagi Mac dan iPad.`,
   };
 
   const title = titles[locale] || titles.en;
@@ -692,6 +704,36 @@ export default function Changelog() {
       eyebrow: "Ändringslogg",
       title: "Vad är nytt i Screenshot Bro",
       subtitle: "Nya funktioner, förbättringar och buggfixar som släpps med varje version.",
+    },
+    da: {
+      eyebrow: "Ændringslog",
+      title: "Hvad er nyt i Screenshot Bro",
+      subtitle: "Nye funktioner, forbedringer og fejlrettelser udgivet med hver version.",
+    },
+    fi: {
+      eyebrow: "Muutosloki",
+      title: "Mitä uutta Screenshot Brossa",
+      subtitle: "Uudet ominaisuudet, parannukset ja virheenkorjaukset jokaisessa julkaisussa.",
+    },
+    no: {
+      eyebrow: "Endringslogg",
+      title: "Hva er nytt i Screenshot Bro",
+      subtitle: "Nye funksjoner, forbedringer og feilrettinger utgitt med hver versjon.",
+    },
+    cs: {
+      eyebrow: "Seznam změn",
+      title: "Co je nového ve Screenshot Bro",
+      subtitle: "Nové funkce, vylepšení a opravy chyb vydané s každou verzí.",
+    },
+    ro: {
+      eyebrow: "Istoric versiuni",
+      title: "Ce este nou în Screenshot Bro",
+      subtitle: "Funcții noi, îmbunătățiri și remedieri de erori incluse în fiecare versiune.",
+    },
+    ms: {
+      eyebrow: "Log Perubahan",
+      title: "Apa yang baharu dalam Screenshot Bro",
+      subtitle: "Ciri baharu, penambahbaikan dan pembaikan pepijat yang dikeluarkan dengan setiap versi.",
     },
   };
 

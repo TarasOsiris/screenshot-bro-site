@@ -36,6 +36,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: `Điều khoản sử dụng — ${SITE_NAME}`,
     th: `ข้อกำหนดการใช้งาน — ${SITE_NAME}`,
     sv: `Användarvillkor — ${SITE_NAME}`,
+    da: `Brugervilkår — ${SITE_NAME}`,
+    fi: `Käyttöehdot — ${SITE_NAME}`,
+    no: `Brukervilkår — ${SITE_NAME}`,
+    cs: `Podmínky použití — ${SITE_NAME}`,
+    ro: `Termeni de utilizare — ${SITE_NAME}`,
+    ms: `Syarat Penggunaan — ${SITE_NAME}`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -58,6 +64,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: `Điều khoản sử dụng, EULA và điều khoản đăng ký cho ${SITE_NAME} — đăng ký tự động gia hạn, mua trọn đời, hủy và hoàn tiền.`,
     th: `ข้อกำหนดการใช้งาน EULA และเงื่อนไขการสมัครสมาชิกสำหรับ ${SITE_NAME} — การต่ออายุอัตโนมัติ การซื้อตลอดชีพ การยกเลิก และการคืนเงิน`,
     sv: `Användarvillkor, EULA och prenumerationsvillkor för ${SITE_NAME} — automatiskt förnyade prenumerationer, livstidslicens, uppsägning och återbetalning.`,
+    da: `Brugervilkår, EULA og abonnementsbetingelser for ${SITE_NAME} — automatiskt fornyede abonnementer, livstidsadgang, opsigelse og refusion.`,
+    fi: `Käyttöehdot, EULA ja tilaussopimukset sovellukselle ${SITE_NAME} — automaattisesti uusiutuvat tilaukset, elinikäinen ostos, peruminen ja hyvitykset.`,
+    no: `Brukervilkår, EULA og abonnementsvilkår for ${SITE_NAME} — automatisk fornyende abonnementer, livstidskjøp, kansellering og refusjoner.`,
+    cs: `Podmínky použití, EULA a podmínky předplatného pro ${SITE_NAME} — automatické obnovování, doživotní nákup, zrušení a refundace.`,
+    ro: `Termeni de utilizare, EULA și condiții de abonament pentru ${SITE_NAME} — abonamente cu reînnoire automată, achiziție pe viață, anulare și rambursări.`,
+    ms: `Syarat Penggunaan, EULA dan terma langganan untuk ${SITE_NAME} — langganan pembaharuan automatik, pembelian seumur hidup, pembatalan dan bayaran balik.`,
   };
 
   const title = titles[locale] || titles.en;

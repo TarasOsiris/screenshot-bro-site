@@ -47,6 +47,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: `Cách sử dụng ${SITE_NAME} — Hướng dẫn từng bước`,
     th: `วิธีใช้งาน ${SITE_NAME} — คู่มือทีละขั้นตอน`,
     sv: `Hur du använder ${SITE_NAME} — Steg-för-steg-guide`,
+    da: `Sådan bruger du ${SITE_NAME} — Trin-for-trin guide`,
+    fi: `Miten ${SITE_NAME}ä käytetään — Vaiheittainen opas`,
+    no: `Slik bruker du ${SITE_NAME} — Trinnvis veiledning`,
+    cs: `Jak používat ${SITE_NAME} — Podrobný průvodce`,
+    ro: `Cum se utilizează ${SITE_NAME} — Ghid pas cu pas`,
+    ms: `Cara Menggunakan ${SITE_NAME} — Panduan Langkah demi Langkah`,
   };
 
   const descriptions: Record<LocaleCode, string> = {
@@ -69,6 +75,12 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
     vi: `Hướng dẫn từng bước để thiết kế, bản địa hóa và xuất ảnh chụp màn hình App Store và Google Play bằng Screenshot Bro.`,
     th: `คู่มือทีละขั้นตอนสำหรับการออกแบบ แปลภาษา และส่งออกภาพหน้าจอ App Store และ Google Play ด้วย Screenshot Bro`,
     sv: `Steg-för-steg-guide för att designa, lokalisera och exportera skärmdumpar för App Store och Google Play med Screenshot Bro.`,
+    da: `Trin-for-trin guide til at designe, lokalisere og eksportere App Store- og Google Play-skærmbilleder med Screenshot Bro.`,
+    fi: `Vaiheittainen opas App Store- ja Google Play -kuvakaappausten suunnitteluun, lokalisointiin ja vientiin Screenshot Brolla.`,
+    no: `Trinnvis veiledning for å designe, lokalisere og eksportere skjermbilder for App Store og Google Play med Screenshot Bro.`,
+    cs: `Podrobný průvodce navrhováním, lokalizací a exportem snímků obrazovky pro App Store a Google Play pomocí aplikace Screenshot Bro.`,
+    ro: `Ghid pas cu pas pentru proiectarea, localizarea și exportul capturilor de ecran pentru App Store și Google Play cu Screenshot Bro.`,
+    ms: `Panduan langkah demi langkah untuk mereka bentuk, menyetempatkan dan mengeksport tangkapan skrin App Store dan Google Play dengan Screenshot Bro.`,
   };
 
   const title = titles[locale] || titles.en;
@@ -119,6 +131,12 @@ export default function HowToUseGuide() {
     vi: "Hướng dẫn",
     th: "คู่มือการใช้งาน",
     sv: "Guider",
+    da: "Vejledninger",
+    fi: "Oppaat",
+    no: "Veiledninger",
+    cs: "Návody",
+    ro: "Ghiduri",
+    ms: "Tutorial",
   };
 
   const guideNames: Record<LocaleCode, string> = {
@@ -141,6 +159,12 @@ export default function HowToUseGuide() {
     vi: `Cách sử dụng ${SITE_NAME}`,
     th: `วิธีใช้งาน ${SITE_NAME}`,
     sv: `Hur du använder ${SITE_NAME}`,
+    da: `Sådan bruger du ${SITE_NAME}`,
+    fi: `Miten ${SITE_NAME}ä käytetään`,
+    no: `Slik bruker du ${SITE_NAME}`,
+    cs: `Jak používat ${SITE_NAME}`,
+    ro: `Cum se utilizează ${SITE_NAME}`,
+    ms: `Cara menggunakan ${SITE_NAME}`,
   };
 
   const eyebrows: Record<LocaleCode, string> = {
@@ -163,6 +187,12 @@ export default function HowToUseGuide() {
     vi: "Hướng dẫn",
     th: "คู่มือ",
     sv: "Guide",
+    da: "Vejledning",
+    fi: "Opas",
+    no: "Veiledning",
+    cs: "Návod",
+    ro: "Ghid",
+    ms: "Tutorial",
   };
 
   const breadcrumbJsonLd = buildBreadcrumbJsonLd([
