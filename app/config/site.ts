@@ -17,8 +17,12 @@ export const APP_STORE_PROVIDER_TOKEN = "117277360";
 // Builds an App Store campaign-tracking link. The `ct` value surfaces under
 // App Analytics → Acquisition → Campaigns as the traffic source, so use this
 // for clickable CTAs (not for SEO/structured-data, which keep the bare URL).
+// `platform=mac` opens the Mac variant of the universal app's product page —
+// without it the page defaults to iPhone. (The legacy `mt=12` hint is dropped
+// by Apple's redirect, and the /app/apple-store/ short path always lands on
+// iOS, so the canonical product path is required here.)
 export function appStoreCampaignUrl(campaign: string): string {
-  return `https://apps.apple.com/app/apple-store/id${APP_STORE_APP_ID}?pt=${APP_STORE_PROVIDER_TOKEN}&ct=${campaign}&mt=8`;
+  return `https://apps.apple.com/us/app/screenshot-bro-mockup-maker/id${APP_STORE_APP_ID}?platform=mac&pt=${APP_STORE_PROVIDER_TOKEN}&ct=${campaign}`;
 }
 
 // Default CTA link for organic website traffic.
