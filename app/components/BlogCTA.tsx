@@ -11,7 +11,7 @@ import {
 // page that has to rank for "App Store screenshot tool" — with almost no
 // internal links. The store button is unchanged; the text link underneath
 // passes topical anchor text along without adding a step to the download.
-const DEFAULT_HOME_LINK_LABEL = "See what Screenshot Bro does on Mac and iPad";
+const DEFAULT_HOME_LINK_LABEL = "See what Screenshot Bro does on Mac, iPad and iPhone";
 
 export function BlogCTA({
   message,

@@ -32,7 +32,7 @@ export default function BlogPost() {
           <ContentEn />
         </article>
 
-        <BlogCTA message="Use Figma templates for visual direction, then build the repeatable screenshot workflow in Screenshot Bro: frames, captions, localization, batch export, and App Store Connect upload." homeLinkLabel="a native App Store screenshot tool for Mac and iPad" />
+        <BlogCTA message="Use Figma templates for visual direction, then build the repeatable screenshot workflow in Screenshot Bro: frames, captions, localization, batch export, and App Store Connect upload." homeLinkLabel="a native App Store screenshot tool for Mac, iPad and iPhone" />
         <RelatedPosts currentSlug={SLUG} locale={locale} />
       </div>
     </ContentLayout>

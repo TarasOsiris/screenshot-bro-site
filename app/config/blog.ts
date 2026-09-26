@@ -24,6 +24,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Turn on the Screenshot Bro MCP server and let Claude Code, Claude Desktop or Cursor build, translate, preview and export your App Store screenshots.",
     date: "2026-08-26",
+    dateModified: "2026-09-26",
     readTime: "12 min read",
     category: "Guide",
     keywords: [
@@ -274,7 +275,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Looking for an AppLaunchpad alternative? How Screenshot Bro compares: native Mac app, device frames, localization, direct App Store Connect upload.",
     date: "2026-06-18",
-    dateModified: "2026-08-20",
+    dateModified: "2026-09-26",
     readTime: "6 min read",
     category: "Comparison",
     keywords: [
@@ -839,6 +840,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "A practical shortlist of Figma templates and device mockup kits for App Store screenshots, plus when to move from Figma to a dedicated Screenshot Bro workflow.",
     date: "2026-05-28",
+    dateModified: "2026-09-26",
     readTime: "9 min read",
     category: "Guide",
     keywords: [
@@ -857,6 +859,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "A practical follow list for indie developers looking for App Store screenshot design inspiration, ASO creative teardown accounts, and better visual references.",
     date: "2026-05-28",
+    dateModified: "2026-09-26",
     readTime: "8 min read",
     category: "Guide",
     keywords: [
@@ -875,6 +878,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "A practical guide to Google Play screenshot sizes, formats, and device-specific requirements for phone, tablet, Chromebook, Wear OS, TV, and more.",
     date: "2026-05-17",
+    dateModified: "2026-09-26",
     readTime: "10 min read",
     category: "Reference",
     keywords: [
@@ -927,6 +931,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "A practical Figma tutorial for designing App Store screenshots: file setup, device frames, reusable components, localization, and export.",
     date: "2026-05-17",
+    dateModified: "2026-09-26",
     readTime: "11 min read",
     category: "Guide",
     keywords: [
@@ -945,6 +950,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Compare Screenshot Bro with AppScreens, AppLaunchpad, Rotato, Placeit, Figma, and other tools for App Store and Google Play screenshots.",
     date: "2026-05-17",
+    dateModified: "2026-09-26",
     readTime: "12 min read",
     category: "Guide",
     keywords: [
@@ -965,6 +971,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "End-to-end fastlane screenshot pipeline for iOS in 2026: snapshot, frameit, and deliver — with Fastfile, Deliverfile, and a GitHub Actions workflow.",
     date: "2026-04-30",
+    dateModified: "2026-09-26",
     readTime: "15 min read",
     category: "Guide",
   },
@@ -972,9 +979,9 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "upload-screenshots-to-app-store-connect",
     title: "How to Upload Screenshots to App Store Connect (2026 Guide)",
     description:
-      "Four ways to upload App Store screenshots: the web uploader, Transporter, fastlane, the App Store Connect API, and a Mac/iPad app workflow.",
+      "Four ways to upload App Store screenshots: the web uploader, Transporter, fastlane, the App Store Connect API, and a Mac, iPad and iPhone app workflow.",
     date: "2026-04-20",
-    dateModified: "2026-09-15",
+    dateModified: "2026-09-26",
     readTime: "10 min read",
     category: "Guide",
   },
@@ -984,7 +991,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Every screenshot dimension for the Apple App Store and Google Play in 2026 — iPhone, iPad, Mac, Apple Watch, Apple TV, Vision Pro, and Android.",
     date: "2026-04-18",
-    dateModified: "2026-09-15",
+    dateModified: "2026-09-26",
     readTime: "9 min read",
     category: "Reference",
   },

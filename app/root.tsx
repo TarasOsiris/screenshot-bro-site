@@ -158,7 +158,7 @@ const HOW_TO_SCHEMA_JSON = JSON.stringify({
   "@type": "HowTo",
   name: "How to create App Store and Google Play screenshots with Screenshot Bro",
   description:
-    "A four-step workflow for designing, localizing, exporting, and uploading App Store and Google Play screenshots from a native Mac and iPad app.",
+    "A four-step workflow for designing, localizing, exporting, and uploading App Store and Google Play screenshots from a native Mac, iPad and iPhone app.",
   totalTime: "PT20M",
   tool: [{ "@type": "HowToTool", name: SITE_NAME }],
   supply: [
@@ -175,7 +175,7 @@ const HOW_TO_SCHEMA_JSON = JSON.stringify({
 });
 
 const SOCIAL_IMAGE_ALT =
-  "Screenshot Bro — native Mac and iPad app for designing App Store and Google Play screenshots with device frames, gradients, and localization";
+  "Screenshot Bro — native Mac, iPad and iPhone app for designing App Store and Google Play screenshots with device frames, gradients, and localization";
 
 export const meta: Route.MetaFunction = () => [
   { title: SITE_TITLE },

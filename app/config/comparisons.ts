@@ -59,7 +59,7 @@ export const SCREENSHOT_BRO_FACTS = {
     "1 project, 3 rows, 5 templates per row; every device frame, shape and locale; store uploads included",
   watermark: "None on any export, free tier included",
   frames:
-    'iPhone 17 / 17 Pro / 17 Pro Max / Air, iPad Pro 11" and 13", MacBook Air and Pro, iMac, Apple Watch Ultra 3, abstract Android phone and tablet',
+    'iPhone 18 Pro and 18 Pro Max, iPhone Duo, iPhone 17 / 17 Pro / 17 Pro Max / Air, iPad Pro 11" and 13", MacBook Air and Pro, iMac, Apple Watch Ultra 3, abstract Android phone and tablet',
   sizes:
     "Presets for every App Store iPhone, iPad and Mac size and Google Play phone and tablet; custom row sizes; no Watch, TV or Vision Pro presets",
   layout:
@@ -75,7 +75,7 @@ export const SCREENSHOT_BRO_FACTS = {
     "PNG or JPEG at exact store pixel sizes, one folder per locale and row; Continuous and Showcase modes",
   threeDVideo: "Two 3D iPhone frames; no video or App Preview export",
   automation:
-    "Opt-in local MCP server on Mac — 26 tools let Claude Code, Claude Desktop or Cursor build, translate, preview, export and sync a set; no hosted API or CLI",
+    "Opt-in local MCP server on Mac — 28 tools let Claude Code, Claude Desktop or Cursor build, translate, preview, export and sync a set; no hosted API or CLI",
   offlineFiles:
     "Fully offline; plain-JSON project files with a public schema; opt-in iCloud sync",
   collaboration:

@@ -51,8 +51,8 @@ const TOOL_GROUPS = [
   },
   {
     area: "App Store Connect",
-    tools: "get_app_store_metadata, update_app_store_description, preview_app_store_screenshot_sync, apply_app_store_screenshot_sync",
-    what: "Read every version's per-locale description, write new descriptions back, and preview then apply a checksum-matched screenshot sync to a version.",
+    tools: "get_app_store_metadata, update_app_store_description, preview_app_store_screenshot_sync, apply_app_store_screenshot_sync, get_sync_job_status, cancel_sync_job",
+    what: "Read every version's per-locale description, write new descriptions back, preview then apply a checksum-matched screenshot sync to a version, and poll or cancel a large sync that runs as a background job.",
   },
 ] as const;
 
@@ -196,7 +196,7 @@ export default function BlogPost() {
     <BlogArticleShell
       slug={SLUG}
       locale={locale}
-      tldr="Open Screenshot Bro on your Mac, switch on Settings ▸ Automation ▸ Enable MCP server, then paste the Copy Agent Prompt into Claude Code, Claude Desktop or Cursor. The client connects to a local server at http://127.0.0.1:8722/mcp with a bearer token, and your agent gets 26 tools that create projects, lay out rows and shapes, import screenshots, translate text, render previews it can actually see, export PNGs, and sync a finished set to App Store Connect — all through the same undoable actions you use by hand."
+      tldr="Open Screenshot Bro on your Mac, switch on Settings ▸ Automation ▸ Enable MCP server, then paste the Copy Agent Prompt into Claude Code, Claude Desktop or Cursor. The client connects to a local server at http://127.0.0.1:8722/mcp with a bearer token, and your agent gets 28 tools that create projects, lay out rows and shapes, import screenshots, translate text, render previews it can actually see, export PNGs, and sync a finished set to App Store Connect — all through the same undoable actions you use by hand."
       ctaMessage="Want an AI agent to build your App Store screenshots while you watch? Turn on the MCP server in Screenshot Bro — it's free to try."
       ctaHomeLinkLabel="a native App Store screenshot app for Mac with a built-in MCP server"
       seoLinks={[
@@ -230,7 +230,7 @@ export default function BlogPost() {
         {
           question: "What is the Screenshot Bro MCP server?",
           answer:
-            "It is a local Model Context Protocol server built into the Screenshot Bro Mac app. When you enable it at Settings ▸ Automation, the app listens on http://127.0.0.1:8722/mcp and exposes 26 tools that let an AI assistant create and edit screenshot projects, import screenshots, translate text, render previews, export images, and sync sets to App Store Connect. It runs on your Mac only, requires an access token, and is off by default.",
+            "It is a local Model Context Protocol server built into the Screenshot Bro Mac app. When you enable it at Settings ▸ Automation, the app listens on http://127.0.0.1:8722/mcp and exposes 28 tools that let an AI assistant create and edit screenshot projects, import screenshots, translate text, render previews, export images, and sync sets to App Store Connect. It runs on your Mac only, requires an access token, and is off by default.",
         },
         {
           question: "Which AI clients can connect to it?",
@@ -270,7 +270,7 @@ export default function BlogPost() {
       </p>
       <p>
         This guide covers the whole thing: what the server is, how to turn it on,
-        how to connect each client, what all 26 tools do, the prompts that get
+        how to connect each client, what all 28 tools do, the prompts that get
         good results, the sandbox rule that trips up screenshot imports, and what
         the server deliberately cannot do. Everything below was checked against
         Screenshot Bro 4.2 in August 2026.
@@ -392,12 +392,12 @@ export default function BlogPost() {
       <h3>Check that it worked</h3>
       <p>
         Ask the assistant to <em>list your screenshot-bro tools</em>. You should
-        get 26 of them, starting with <code>list_templates</code> and{" "}
+        get 28 of them, starting with <code>list_templates</code> and{" "}
         <code>list_projects</code>. If the list is empty, the client connected to
         nothing — see the troubleshooting table at the end.
       </p>
 
-      <h2>The 26 Tools, Grouped</h2>
+      <h2>The 28 Tools, Grouped</h2>
       <p>
         You never call these by hand; the agent picks them. But knowing what
         exists is what lets you write a prompt that maps cleanly onto them

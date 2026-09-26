@@ -99,7 +99,7 @@ export default function Terms() {
         <p className="meta">Effective date: {EFFECTIVE_DATE}</p>
         <p>
           These Terms of Use ("Terms") govern your use of the{" "}
-          <strong>{SITE_NAME}</strong> application for macOS and iPadOS (the
+          <strong>{SITE_NAME}</strong> application for macOS, iOS and iPadOS (the
           "App") provided by {DEVELOPER_NAME} ("we", "us", or "our"). By
           downloading, installing, or using the App, you agree to these Terms.
           If you do not agree, do not use the App.

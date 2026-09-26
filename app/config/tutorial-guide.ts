@@ -285,7 +285,7 @@ export const GUIDE_STEPS: GuideStep[] = [
       { kind: "h", text: "What's available" },
       {
         kind: "li",
-        text: "**iPhone** — iPhone 17, iPhone Air, iPhone 17 Pro and iPhone 17 Pro Max, in the current colours.",
+        text: "**iPhone** — iPhone 18 Pro and iPhone 18 Pro Max, iPhone Duo (inner screen, closed and open-back), iPhone 17, iPhone Air, iPhone 17 Pro and iPhone 17 Pro Max, in the current colours.",
       },
       { kind: "li", text: "**iPad Pro 11\"** and **iPad Pro 13\"**, portrait and landscape." },
       { kind: "li", text: "**Mac** — MacBook Air 13\", MacBook Pro 14\" and 16\", and iMac 24\"." },

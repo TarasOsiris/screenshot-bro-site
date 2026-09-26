@@ -102,7 +102,7 @@ export default function Privacy() {
           <p>
             This Privacy Policy describes how {DEVELOPER_NAME} ("we", "us", or
             "our") handles information in connection with the{" "}
-            <strong>{SITE_NAME}</strong> application for macOS and iPadOS (the
+            <strong>{SITE_NAME}</strong> application for macOS, iOS and iPadOS (the
             "App"). We are committed to protecting your privacy and being
             transparent about our practices.
           </p>
@@ -178,7 +178,7 @@ export default function Privacy() {
             <li>
               Your project files and imported images are synchronized to your
               personal iCloud Drive account so they are available across your
-              Macs and iPads.
+              Macs, iPads and iPhones.
             </li>
             <li>
               Data is transmitted and stored using Apple's iCloud infrastructure.
@@ -616,7 +616,7 @@ export default function Privacy() {
 
           <h2>10. Security</h2>
           <p>
-            The App runs inside Apple's app sandbox on macOS and iPadOS, which
+            The App runs inside Apple's app sandbox on macOS, iOS and iPadOS, which
             restricts file system access and network capabilities. All data at
             rest is protected by platform storage encryption and iCloud
             encryption when applicable. The limited data the App does send —

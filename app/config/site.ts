@@ -127,7 +127,7 @@ export const LEGAL_LINKS: SecondaryLink[] = [
 ];
 
 export const BETA_BENEFITS = [
-  "Available now on the App Store for Mac and iPad",
+  "Available now on the App Store for Mac, iPad and iPhone",
   "Full workflow: import, design, auto-translate, localize, export",
   "Upload direct to App Store Connect — no more drag-and-drop in a browser tab",
 ];
@@ -161,7 +161,7 @@ export const FAQS: FaqItem[] = [
   {
     question: "How does localization work?",
     answer:
-      "Pick from 30 language presets, or define your own code. Auto-translate fills in missing copy on-device. Translations save as per-locale text overrides, so layout, color, and images stay shared across every locale — design once, ship in every language. Exports are organized into locale folders App Store Connect can pick up directly.",
+      "Pick from 81 language presets, or define your own code. Auto-translate fills in missing copy on-device. Translations save as per-locale text overrides, so layout, color, and images stay shared across every locale — design once, ship in every language. Exports are organized into locale folders App Store Connect can pick up directly.",
   },
   {
     question: "Can I make Google Play screenshots too?",
@@ -186,7 +186,7 @@ export const FAQS: FaqItem[] = [
   {
     question: "Does it sync between devices?",
     answer:
-      "Yes — opt-in iCloud Drive sync keeps projects, screenshots, and fonts available on every Mac and iPad signed into your Apple Account. Conflicts merge field-by-field with last-writer-wins, so editing the same project on multiple devices converges cleanly.",
+      "Yes — opt-in iCloud Drive sync keeps projects, screenshots, and fonts available on every Mac, iPad and iPhone signed into your Apple Account. Conflicts merge field-by-field with last-writer-wins, so editing the same project on multiple devices converges cleanly.",
   },
   {
     question: "Where do I get support?",
@@ -233,7 +233,7 @@ export const FEATURES: FeatureItem[] = [
     icon: "device",
     title: "Device Frames",
     description:
-      'iPhone 17 series, iPad Pro 11" & 13", MacBook, iMac, and Android phone & tablet frames for App Store and Google Play screenshots. Accurate bezels, configurable body colors, and per-row defaults.',
+      'iPhone 18 Pro, the iPhone 17 series, iPhone Duo, iPad Pro 11" & 13", MacBook, iMac, Apple Watch Ultra 3, and Android phone & tablet frames for App Store and Google Play screenshots. Accurate bezels, configurable body colors, and per-row defaults.',
     accent: "var(--color-mint)",
   },
   {
@@ -282,21 +282,21 @@ export const FEATURES: FeatureItem[] = [
     icon: "project",
     title: "Localization Built In",
     description:
-      "30 language presets from English to Arabic, Hindi, and CJK. Auto-translate missing copy, then fine-tune per-shape text, position, and image overrides with translation progress tracking.",
+      "81 language presets from English to Arabic, Hindi, and CJK. Auto-translate missing copy, then fine-tune per-shape text, position, and image overrides with translation progress tracking.",
     accent: "var(--color-mint)",
   },
   {
     icon: "native",
-    title: "Native Mac & iPad",
+    title: "Native Mac, iPad & iPhone",
     description:
-      "Built with Swift and SwiftUI for Mac and iPad. No Electron, no browser tab. Instant launch, native performance, auto-save, full undo/redo.",
+      "Built with Swift and SwiftUI for Mac, iPad and iPhone. No Electron, no browser tab. Instant launch, native performance, auto-save, full undo/redo.",
     accent: "var(--color-accent)",
   },
   {
     icon: "cloud",
     title: "iCloud Sync",
     description:
-      "Opt-in iCloud Drive sync keeps projects available across your Macs and iPads. Last-writer-wins merge with tombstone-aware conflict resolution.",
+      "Opt-in iCloud Drive sync keeps projects available across your Macs, iPads and iPhones. Last-writer-wins merge with tombstone-aware conflict resolution.",
     accent: "var(--color-mint)",
   },
   {
@@ -338,7 +338,7 @@ export const FEATURES: FeatureItem[] = [
     icon: "free",
     title: "Free Forever Tier",
     description:
-      "1 project, 3 rows, 5 templates per row — with every device frame, all 30 locales, and every export format. No watermark, no trial expiry, no signup.",
+      "1 project, 3 rows, 5 templates per row — with every device frame, all 81 locales, and every export format. No watermark, no trial expiry, no signup.",
     accent: "var(--color-rose)",
   },
 ];

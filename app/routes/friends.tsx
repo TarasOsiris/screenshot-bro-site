@@ -30,7 +30,7 @@ import {
 const PAGE_PATH = "/friends";
 const TITLE = `Friends — ${SITE_NAME}`;
 const DESCRIPTION =
-  "Indie apps built by developers we know. No affiliate links, no paid placements — we just think they're good.";
+  "Indie Mac, iPad and iPhone apps built by developers we know. No affiliate links, no paid placements — we just think they're good.";
 
 export const meta: Route.MetaFunction = ({ matches }) =>
   mergeMeta(matches, [

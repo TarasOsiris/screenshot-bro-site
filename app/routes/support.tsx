@@ -54,7 +54,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
   };
 
   const descriptions: Record<LocaleCode, string> = {
-    en: `Get help with ${SITE_NAME}. Join the Discord for the fastest answers on bugs, questions, and feature requests — or email us, or find us on Reddit, X, and Threads.`,
+    en: `Get help with ${SITE_NAME}. Join the Discord for the fastest answers on bugs and feature requests — or email us, or find us on Reddit, X, and Threads.`,
     es: `Obtén ayuda con ${SITE_NAME}. Únete al Discord para respuestas rápidas, o escríbenos por correo o en Reddit, X y Threads.`,
     zh: `获取 ${SITE_NAME} 的技术支持与帮助。加入 Discord 可最快获得答复，也可以发邮件或在 Reddit、X 等社区与我们互动。`,
     ja: `${SITE_NAME}のサポート情報。Discord が最速の窓口です。メールや公式コミュニティからもお気軽にどうぞ。`,

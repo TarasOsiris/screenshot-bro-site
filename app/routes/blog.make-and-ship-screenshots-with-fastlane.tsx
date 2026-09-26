@@ -376,17 +376,17 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
 function getCTAMessage(locale: LocaleCode): string {
   switch (locale) {
     case "es":
-      return "¿Quieres el mismo flujo de subida sin la pipeline de XCUITest? Diseña y envía capturas de la App Store desde una sola aplicación para Mac y iPad.";
+      return "¿Quieres el mismo flujo de subida sin la pipeline de XCUITest? Diseña y envía capturas de la App Store desde una sola aplicación para Mac, iPad y iPhone.";
     case "zh":
-      return "想要无需 XCUITest 流水线的相同上传流程？只需一款 Mac 和 iPad 应用即可设计并交付 App Store 截图。";
+      return "想要无需 XCUITest 流水线的相同上传流程？只需一款 Mac、iPad 和 iPhone 应用即可设计并交付 App Store 截图。";
     case "hi":
-      return "क्या आप XCUITest पाइपलाइन के बिना समान अपलोड फ्लो चाहते हैं? एक ही Mac और iPad ऐप से App Store screenshots डिज़ाइन करें और भेजें।";
+      return "क्या आप XCUITest पाइपलाइन के बिना समान अपलोड फ्लो चाहते हैं? एक ही Mac, iPad और iPhone ऐप से App Store screenshots डिज़ाइन करें और भेजें।";
     case "fr":
-      return "Vous voulez le même flux d'envoi sans le pipeline XCUITest ? Concevez et livrez vos captures App Store depuis une seule application Mac et iPad.";
+      return "Vous voulez le même flux d'envoi sans le pipeline XCUITest ? Concevez et livrez vos captures App Store depuis une seule application Mac, iPad et iPhone.";
     case "ar":
-      return "هل تريد نفس تدفق الرفع بدون خط أنابيب XCUITest؟ صمم واشحن لقطات شاشة App Store من تطبيق واحد على Mac و iPad.";
+      return "هل تريد نفس تدفق الرفع بدون خط أنابيب XCUITest؟ صمم واشحن لقطات شاشة App Store من تطبيق واحد على Mac و iPad و iPhone.";
     default:
-      return "Want the same upload flow without the XCUITest pipeline? Design and ship App Store screenshots from one Mac and iPad app.";
+      return "Want the same upload flow without the XCUITest pipeline? Design and ship App Store screenshots from one Mac, iPad and iPhone app.";
   }
 }
 
@@ -978,7 +978,7 @@ function ContentEn({ blocks }: { blocks: any }) {
         files above — and once they are written, they barely change.
       </p>
       <p>
-        Wondering whether to set this up at all, or to use a Mac/iPad app for
+        Wondering whether to set this up at all, or to use a Mac, iPad or iPhone app for
         the same job? See{" "}
         <a href="/vs/fastlane-snapshot">
           Fastlane snapshot vs Screenshot Bro

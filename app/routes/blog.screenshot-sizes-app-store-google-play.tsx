@@ -43,17 +43,17 @@ export default function BlogPost() {
 function getCTAMessage(locale: LocaleCode): string {
   switch (locale) {
     case "es":
-      return "Una sola aplicación para Mac y iPad para capturas de App Store y Google Play.";
+      return "Una sola aplicación para Mac, iPad y iPhone para capturas de App Store y Google Play.";
     case "zh":
-      return "一款适用于 Mac 和 iPad 的 App Store 与 Google Play 截图应用。";
+      return "一款适用于 Mac、iPad 和 iPhone 的 App Store 与 Google Play 截图应用。";
     case "hi":
-      return "Mac और iPad पर App Store और Google Play स्क्रीनशॉट के लिए एक ऐप।";
+      return "Mac, iPad और iPhone पर App Store और Google Play स्क्रीनशॉट के लिए एक ऐप।";
     case "fr":
-      return "Une seule application pour Mac et iPad pour les captures d'écran App Store et Google Play.";
+      return "Une seule application pour Mac, iPad et iPhone pour les captures d'écran App Store et Google Play.";
     case "ar":
-      return "تطبيق واحد على Mac و iPad للقطات شاشة App Store و Google Play.";
+      return "تطبيق واحد على Mac و iPad و iPhone للقطات شاشة App Store و Google Play.";
     default:
-      return "One Mac and iPad app for App Store and Google Play screenshots.";
+      return "One Mac, iPad and iPhone app for App Store and Google Play screenshots.";
   }
 }
 

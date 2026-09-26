@@ -15,7 +15,7 @@ const COMPARISON = [
   {
     factor: "Templates",
     applaunchpad: "Very large template and asset library",
-    screenshotBro: "35+ starter templates plus a full editor",
+    screenshotBro: "50+ starter templates plus a full editor",
   },
   {
     factor: "Auto-resize to all sizes",

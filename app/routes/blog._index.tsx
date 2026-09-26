@@ -17,7 +17,7 @@ const INDEX_COPY: Record<
     eyebrow: "Blog",
     title: "Guides & Resources",
     description:
-      "Practical guides for designing, localizing, and shipping App Store and Google Play screenshots that convert.",
+      "Practical guides and references for designing, localizing, and shipping App Store and Google Play screenshots that actually convert.",
     latest: "Latest",
     all: "All",
     filterLabel: "Filter articles by category",
