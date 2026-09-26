@@ -9,11 +9,26 @@ Usage (from the site repo root):
 are not diffed here — compare them with ShortcutsContent.swift by eye.
 """
 import difflib
+import os
 import re
 import subprocess
 import sys
+from pathlib import Path
 
-APP_REPO = "/Users/taras/repo/experiments/screenshot-mac"
+
+def find_app_repo():
+    """The app checkout: $SCREENSHOT_MAC_REPO, else a sibling of the site repo."""
+    candidates = []
+    if os.environ.get("SCREENSHOT_MAC_REPO"):
+        candidates.append(Path(os.environ["SCREENSHOT_MAC_REPO"]))
+    candidates.append(Path(__file__).resolve().parents[3].parent / "screenshot-mac")
+    for c in candidates:
+        if (c / ".git").exists():
+            return str(c)
+    sys.exit(f"No screenshot-mac checkout at {candidates[-1]}; set SCREENSHOT_MAC_REPO.")
+
+
+APP_REPO = find_app_repo()
 APP_HELP = "screenshot/Code/Views/Help/HelpSection+Content.swift"
 SITE_HELP = "app/routes/docs.help.tsx"
 SWIFT_TO_SITE_ID = {
