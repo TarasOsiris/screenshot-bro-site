@@ -27,6 +27,13 @@
     "n": {
       "description": "name — the project's display name, mirrored from the projects.json index so a lost index can be rebuilt from the project directories. Absent in projects last saved before this field shipped.",
       "type": "string"
+    },
+    "v": {
+      "description": "variants — A/B variants in display order; omitted when the project has none.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ScreenshotVariant"
+      }
     }
   },
   "$defs": {
@@ -641,6 +648,36 @@
         "exasc": {
           "description": "excludeFromAppStoreConnect — hide this row from the App Store Connect upload wizard; omitted when false.",
           "type": "boolean"
+        },
+        "vr": {
+          "description": "variantId — the A/B variant (an id from the root `v` list) this row belongs to; omitted for Original rows.",
+          "$ref": "#/$defs/UUID"
+        },
+        "vo": {
+          "description": "originRowId — for a variant copy, the row it was copied from; while that row exists this row's label follows it. Omitted otherwise.",
+          "$ref": "#/$defs/UUID"
+        }
+      }
+    },
+    "ScreenshotVariant": {
+      "description": "An A/B alternative to the Original rows; rows opt in via `vr`.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/UUID"
+        },
+        "n": {
+          "description": "name — user-facing variant name, also the App Store experiment treatment name.",
+          "type": "string"
+        },
+        "c": {
+          "description": "colorIndex — badge colour slot, kept so deleting a variant doesn't recolour the rest; absent on variants saved before it shipped.",
+          "type": "integer",
+          "minimum": 0
         }
       }
     },
