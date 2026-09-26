@@ -224,7 +224,7 @@ const EN_TESTIMONIALS = [
 
 const EN_HOME_COPY: HomeCopy = {
   locale: LOCALES[0],
-  siteTitle: `${SITE_NAME} — App Store Screenshots on Mac, iPad & iPhone`,
+  siteTitle: "App Store Screenshot Tool for Mac, iPad & iPhone",
   siteDescription: SITE_DESCRIPTION,
   socialImageAlt:
     "Screenshot Bro — native Mac, iPad and iPhone app for designing App Store and Google Play screenshots with device frames, gradients, and localization",
