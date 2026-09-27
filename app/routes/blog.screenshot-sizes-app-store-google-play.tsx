@@ -234,9 +234,9 @@ function ContentEn() {
         </thead>
         <tbody>
           <tr>
-            <td>49mm Ultra 3</td>
+            <td>49mm Ultra 4 / 3</td>
             <td>422 x 514</td>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4, Ultra 3</td>
           </tr>
           <tr>
             <td>49mm Ultra</td>
@@ -246,7 +246,7 @@ function ContentEn() {
           <tr>
             <td>46mm</td>
             <td>416 x 496</td>
-            <td>Series 11, Series 10</td>
+            <td>Series 12, Series 11, Series 10</td>
           </tr>
           <tr>
             <td>45mm / 41mm</td>
@@ -256,12 +256,12 @@ function ContentEn() {
           <tr>
             <td>44mm / 40mm</td>
             <td>368 x 448</td>
-            <td>Series 6, 5, 4, SE 3, SE</td>
+            <td>Series 6, 5, 4, SE 3, SE 2, SE</td>
           </tr>
           <tr>
             <td>42mm / 38mm</td>
             <td>312 x 390</td>
-            <td>Series 3</td>
+            <td>Series 3, 2, 1</td>
           </tr>
         </tbody>
       </table>
@@ -400,7 +400,7 @@ function ContentEn() {
           </tr>
           <tr>
             <td>Wearable</td>
-            <td>422 x 514 (Watch Ultra 3)</td>
+            <td>422 x 514 (Watch Ultra 4/3)</td>
             <td>384 x 384 (Wear OS)</td>
           </tr>
           <tr>
@@ -607,9 +607,9 @@ function ContentEs() {
         </thead>
         <tbody>
           <tr>
-            <td>49mm Ultra 3</td>
+            <td>49mm Ultra 4 / 3</td>
             <td>422 x 514</td>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4, Ultra 3</td>
           </tr>
           <tr>
             <td>49mm Ultra</td>
@@ -619,7 +619,7 @@ function ContentEs() {
           <tr>
             <td>46mm</td>
             <td>416 x 496</td>
-            <td>Series 11, Series 10</td>
+            <td>Series 12, Series 11, Series 10</td>
           </tr>
           <tr>
             <td>45mm / 41mm</td>
@@ -629,12 +629,12 @@ function ContentEs() {
           <tr>
             <td>44mm / 40mm</td>
             <td>368 x 448</td>
-            <td>Series 6, 5, 4, SE 3, SE</td>
+            <td>Series 6, 5, 4, SE 3, SE 2, SE</td>
           </tr>
           <tr>
             <td>42mm / 38mm</td>
             <td>312 x 390</td>
-            <td>Series 3</td>
+            <td>Series 3, 2, 1</td>
           </tr>
         </tbody>
       </table>
@@ -752,7 +752,7 @@ function ContentEs() {
           </tr>
           <tr>
             <td>Wearable</td>
-            <td>422 x 514 (Watch Ultra 3)</td>
+            <td>422 x 514 (Watch Ultra 4/3)</td>
             <td>384 x 384 (Wear OS)</td>
           </tr>
           <tr>
@@ -944,9 +944,9 @@ function ContentZh() {
         </thead>
         <tbody>
           <tr>
-            <td>49mm Ultra 3</td>
+            <td>49mm Ultra 4 / 3</td>
             <td>422 x 514</td>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4, Ultra 3</td>
           </tr>
           <tr>
             <td>49mm Ultra</td>
@@ -956,7 +956,7 @@ function ContentZh() {
           <tr>
             <td>46mm</td>
             <td>416 x 496</td>
-            <td>Series 11, Series 10</td>
+            <td>Series 12, Series 11, Series 10</td>
           </tr>
           <tr>
             <td>45mm / 41mm</td>
@@ -966,12 +966,12 @@ function ContentZh() {
           <tr>
             <td>44mm / 40mm</td>
             <td>368 x 448</td>
-            <td>Series 6, 5, 4, SE 3, SE</td>
+            <td>Series 6, 5, 4, SE 3, SE 2, SE</td>
           </tr>
           <tr>
             <td>42mm / 38mm</td>
             <td>312 x 390</td>
-            <td>Series 3</td>
+            <td>Series 3, 2, 1</td>
           </tr>
         </tbody>
       </table>
@@ -1089,7 +1089,7 @@ function ContentZh() {
           </tr>
           <tr>
             <td>可穿戴设备</td>
-            <td>422 x 514 (Watch Ultra 3)</td>
+            <td>422 x 514 (Watch Ultra 4/3)</td>
             <td>384 x 384 (Wear OS)</td>
           </tr>
           <tr>
@@ -1281,9 +1281,9 @@ function ContentHi() {
         </thead>
         <tbody>
           <tr>
-            <td>49mm Ultra 3</td>
+            <td>49mm Ultra 4 / 3</td>
             <td>422 x 514</td>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4, Ultra 3</td>
           </tr>
           <tr>
             <td>49mm Ultra</td>
@@ -1293,7 +1293,7 @@ function ContentHi() {
           <tr>
             <td>46mm</td>
             <td>416 x 496</td>
-            <td>Series 11, Series 10</td>
+            <td>Series 12, Series 11, Series 10</td>
           </tr>
           <tr>
             <td>45mm / 41mm</td>
@@ -1303,12 +1303,12 @@ function ContentHi() {
           <tr>
             <td>44mm / 40mm</td>
             <td>368 x 448</td>
-            <td>Series 6, 5, 4, SE 3, SE</td>
+            <td>Series 6, 5, 4, SE 3, SE 2, SE</td>
           </tr>
           <tr>
             <td>42mm / 38mm</td>
             <td>312 x 390</td>
-            <td>Series 3</td>
+            <td>Series 3, 2, 1</td>
           </tr>
         </tbody>
       </table>
@@ -1426,7 +1426,7 @@ function ContentHi() {
           </tr>
           <tr>
             <td>वियरेबल</td>
-            <td>422 x 514 (Watch Ultra 3)</td>
+            <td>422 x 514 (Watch Ultra 4/3)</td>
             <td>384 x 384 (Wear OS)</td>
           </tr>
           <tr>
@@ -1618,9 +1618,9 @@ function ContentFr() {
         </thead>
         <tbody>
           <tr>
-            <td>49mm Ultra 3</td>
+            <td>49mm Ultra 4 / 3</td>
             <td>422 x 514</td>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4, Ultra 3</td>
           </tr>
           <tr>
             <td>49mm Ultra</td>
@@ -1630,7 +1630,7 @@ function ContentFr() {
           <tr>
             <td>46mm</td>
             <td>416 x 496</td>
-            <td>Series 11, Series 10</td>
+            <td>Series 12, Series 11, Series 10</td>
           </tr>
           <tr>
             <td>45mm / 41mm</td>
@@ -1640,12 +1640,12 @@ function ContentFr() {
           <tr>
             <td>44mm / 40mm</td>
             <td>368 x 448</td>
-            <td>Series 6, 5, 4, SE 3, SE</td>
+            <td>Series 6, 5, 4, SE 3, SE 2, SE</td>
           </tr>
           <tr>
             <td>42mm / 38mm</td>
             <td>312 x 390</td>
-            <td>Series 3</td>
+            <td>Series 3, 2, 1</td>
           </tr>
         </tbody>
       </table>
@@ -1763,7 +1763,7 @@ function ContentFr() {
           </tr>
           <tr>
             <td>Montre connectée</td>
-            <td>422 x 514 (Watch Ultra 3)</td>
+            <td>422 x 514 (Watch Ultra 4/3)</td>
             <td>384 x 384 (Wear OS)</td>
           </tr>
           <tr>
@@ -1955,9 +1955,9 @@ function ContentAr() {
         </thead>
         <tbody>
           <tr>
-            <td>49mm Ultra 3</td>
+            <td>49mm Ultra 4 / 3</td>
             <td>422 x 514</td>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4, Ultra 3</td>
           </tr>
           <tr>
             <td>49mm Ultra</td>
@@ -1967,7 +1967,7 @@ function ContentAr() {
           <tr>
             <td>46mm</td>
             <td>416 x 496</td>
-            <td>Series 11, Series 10</td>
+            <td>Series 12, Series 11, Series 10</td>
           </tr>
           <tr>
             <td>45mm / 41mm</td>
@@ -1977,12 +1977,12 @@ function ContentAr() {
           <tr>
             <td>44mm / 40mm</td>
             <td>368 x 448</td>
-            <td>Series 6, 5, 4, SE 3, SE</td>
+            <td>Series 6, 5, 4, SE 3, SE 2, SE</td>
           </tr>
           <tr>
             <td>42mm / 38mm</td>
             <td>312 x 390</td>
-            <td>Series 3</td>
+            <td>Series 3, 2, 1</td>
           </tr>
         </tbody>
       </table>
@@ -2100,7 +2100,7 @@ function ContentAr() {
           </tr>
           <tr>
             <td>الأجهزة القابلة للارتداء</td>
-            <td>422 x 514 (Watch Ultra 3)</td>
+            <td>422 x 514 (Watch Ultra 4/3)</td>
             <td>384 x 384 (Wear OS)</td>
           </tr>
           <tr>

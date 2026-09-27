@@ -19,6 +19,22 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "app-store-creative-assets",
+    title: "App Store Creative Assets: Headers and Search Results",
+    description:
+      "Apple is adding product page headers, search result assets and an Asset Library to the App Store. What is confirmed, what it changes for your screenshots, and what to do now.",
+    date: "2026-09-27",
+    readTime: "10 min read",
+    category: "Guide",
+    keywords: [
+      "app store creative assets",
+      "app store product page header",
+      "app store search result asset",
+      "app store connect asset library",
+      "app store product page 2026",
+    ],
+  },
+  {
     slug: "screenshot-bro-mcp-server",
     title: "Screenshot Bro MCP: Automate App Store Screenshots",
     description:
@@ -991,7 +1007,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Every screenshot dimension for the Apple App Store and Google Play in 2026 — iPhone, iPad, Mac, Apple Watch, Apple TV, Vision Pro, and Android.",
     date: "2026-04-18",
-    dateModified: "2026-09-26",
+    dateModified: "2026-09-27",
     readTime: "9 min read",
     category: "Reference",
   },
@@ -1001,7 +1017,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "A complete reference of accepted screenshot dimensions for iPhone, iPad, Mac, Apple Watch, Apple TV, and Apple Vision Pro.",
     date: "2026-04-08",
-    dateModified: "2026-09-15",
+    dateModified: "2026-09-27",
     readTime: "5 min read",
     category: "Reference",
   },

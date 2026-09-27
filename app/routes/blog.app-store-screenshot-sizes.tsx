@@ -214,7 +214,7 @@ function ContentEn() {
         </thead>
         <tbody>
           <tr>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4 / Ultra 3</td>
             <td>422 x 514</td>
           </tr>
           <tr>
@@ -222,7 +222,7 @@ function ContentEn() {
             <td>410 x 502</td>
           </tr>
           <tr>
-            <td>Series 11 / Series 10</td>
+            <td>Series 12 / Series 11 / Series 10</td>
             <td>416 x 496</td>
           </tr>
           <tr>
@@ -230,11 +230,11 @@ function ContentEn() {
             <td>396 x 484</td>
           </tr>
           <tr>
-            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>Series 6 / 5 / 4, SE 3 / SE 2 / SE</td>
             <td>368 x 448</td>
           </tr>
           <tr>
-            <td>Series 3</td>
+            <td>Series 3 / 2 / 1</td>
             <td>312 x 390</td>
           </tr>
         </tbody>
@@ -395,7 +395,7 @@ function ContentEs() {
         </thead>
         <tbody>
           <tr>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4 / Ultra 3</td>
             <td>422 x 514</td>
           </tr>
           <tr>
@@ -403,7 +403,7 @@ function ContentEs() {
             <td>410 x 502</td>
           </tr>
           <tr>
-            <td>Series 11 / Series 10</td>
+            <td>Series 12 / Series 11 / Series 10</td>
             <td>416 x 496</td>
           </tr>
           <tr>
@@ -411,11 +411,11 @@ function ContentEs() {
             <td>396 x 484</td>
           </tr>
           <tr>
-            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>Series 6 / 5 / 4, SE 3 / SE 2 / SE</td>
             <td>368 x 448</td>
           </tr>
           <tr>
-            <td>Series 3</td>
+            <td>Series 3 / 2 / 1</td>
             <td>312 x 390</td>
           </tr>
         </tbody>
@@ -573,7 +573,7 @@ function ContentZh() {
         </thead>
         <tbody>
           <tr>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4 / Ultra 3</td>
             <td>422 x 514</td>
           </tr>
           <tr>
@@ -581,7 +581,7 @@ function ContentZh() {
             <td>410 x 502</td>
           </tr>
           <tr>
-            <td>Series 11 / Series 10</td>
+            <td>Series 12 / Series 11 / Series 10</td>
             <td>416 x 496</td>
           </tr>
           <tr>
@@ -589,11 +589,11 @@ function ContentZh() {
             <td>396 x 484</td>
           </tr>
           <tr>
-            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>Series 6 / 5 / 4, SE 3 / SE 2 / SE</td>
             <td>368 x 448</td>
           </tr>
           <tr>
-            <td>Series 3</td>
+            <td>Series 3 / 2 / 1</td>
             <td>312 x 390</td>
           </tr>
         </tbody>
@@ -747,7 +747,7 @@ function ContentHi() {
         </thead>
         <tbody>
           <tr>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4 / Ultra 3</td>
             <td>422 x 514</td>
           </tr>
           <tr>
@@ -755,7 +755,7 @@ function ContentHi() {
             <td>410 x 502</td>
           </tr>
           <tr>
-            <td>Series 11 / Series 10</td>
+            <td>Series 12 / Series 11 / Series 10</td>
             <td>416 x 496</td>
           </tr>
           <tr>
@@ -763,11 +763,11 @@ function ContentHi() {
             <td>396 x 484</td>
           </tr>
           <tr>
-            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>Series 6 / 5 / 4, SE 3 / SE 2 / SE</td>
             <td>368 x 448</td>
           </tr>
           <tr>
-            <td>Series 3</td>
+            <td>Series 3 / 2 / 1</td>
             <td>312 x 390</td>
           </tr>
         </tbody>
@@ -925,7 +925,7 @@ function ContentFr() {
         </thead>
         <tbody>
           <tr>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4 / Ultra 3</td>
             <td>422 x 514</td>
           </tr>
           <tr>
@@ -933,7 +933,7 @@ function ContentFr() {
             <td>410 x 502</td>
           </tr>
           <tr>
-            <td>Series 11 / Series 10</td>
+            <td>Series 12 / Series 11 / Series 10</td>
             <td>416 x 496</td>
           </tr>
           <tr>
@@ -941,11 +941,11 @@ function ContentFr() {
             <td>396 x 484</td>
           </tr>
           <tr>
-            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>Series 6 / 5 / 4, SE 3 / SE 2 / SE</td>
             <td>368 x 448</td>
           </tr>
           <tr>
-            <td>Series 3</td>
+            <td>Series 3 / 2 / 1</td>
             <td>312 x 390</td>
           </tr>
         </tbody>
@@ -1102,7 +1102,7 @@ function ContentAr() {
         </thead>
         <tbody>
           <tr>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4 / Ultra 3</td>
             <td>422 x 514</td>
           </tr>
           <tr>
@@ -1110,7 +1110,7 @@ function ContentAr() {
             <td>410 x 502</td>
           </tr>
           <tr>
-            <td>Series 11 / Series 10</td>
+            <td>Series 12 / Series 11 / Series 10</td>
             <td>416 x 496</td>
           </tr>
           <tr>
@@ -1118,11 +1118,11 @@ function ContentAr() {
             <td>396 x 484</td>
           </tr>
           <tr>
-            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>Series 6 / 5 / 4, SE 3 / SE 2 / SE</td>
             <td>368 x 448</td>
           </tr>
           <tr>
-            <td>Series 3</td>
+            <td>Series 3 / 2 / 1</td>
             <td>312 x 390</td>
           </tr>
         </tbody>
@@ -1277,7 +1277,7 @@ function ContentDe() {
         </thead>
         <tbody>
           <tr>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4 / Ultra 3</td>
             <td>422 x 514</td>
           </tr>
           <tr>
@@ -1285,7 +1285,7 @@ function ContentDe() {
             <td>410 x 502</td>
           </tr>
           <tr>
-            <td>Series 11 / Series 10</td>
+            <td>Series 12 / Series 11 / Series 10</td>
             <td>416 x 496</td>
           </tr>
           <tr>
@@ -1293,11 +1293,11 @@ function ContentDe() {
             <td>396 x 484</td>
           </tr>
           <tr>
-            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>Series 6 / 5 / 4, SE 3 / SE 2 / SE</td>
             <td>368 x 448</td>
           </tr>
           <tr>
-            <td>Series 3</td>
+            <td>Series 3 / 2 / 1</td>
             <td>312 x 390</td>
           </tr>
         </tbody>
@@ -1451,7 +1451,7 @@ function ContentJa() {
         </thead>
         <tbody>
           <tr>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4 / Ultra 3</td>
             <td>422 x 514</td>
           </tr>
           <tr>
@@ -1459,7 +1459,7 @@ function ContentJa() {
             <td>410 x 502</td>
           </tr>
           <tr>
-            <td>Series 11 / Series 10</td>
+            <td>Series 12 / Series 11 / Series 10</td>
             <td>416 x 496</td>
           </tr>
           <tr>
@@ -1467,11 +1467,11 @@ function ContentJa() {
             <td>396 x 484</td>
           </tr>
           <tr>
-            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>Series 6 / 5 / 4, SE 3 / SE 2 / SE</td>
             <td>368 x 448</td>
           </tr>
           <tr>
-            <td>Series 3</td>
+            <td>Series 3 / 2 / 1</td>
             <td>312 x 390</td>
           </tr>
         </tbody>
@@ -1626,7 +1626,7 @@ function ContentPt() {
         </thead>
         <tbody>
           <tr>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4 / Ultra 3</td>
             <td>422 x 514</td>
           </tr>
           <tr>
@@ -1634,7 +1634,7 @@ function ContentPt() {
             <td>410 x 502</td>
           </tr>
           <tr>
-            <td>Series 11 / Series 10</td>
+            <td>Series 12 / Series 11 / Series 10</td>
             <td>416 x 496</td>
           </tr>
           <tr>
@@ -1642,11 +1642,11 @@ function ContentPt() {
             <td>396 x 484</td>
           </tr>
           <tr>
-            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>Series 6 / 5 / 4, SE 3 / SE 2 / SE</td>
             <td>368 x 448</td>
           </tr>
           <tr>
-            <td>Series 3</td>
+            <td>Series 3 / 2 / 1</td>
             <td>312 x 390</td>
           </tr>
         </tbody>
@@ -1805,7 +1805,7 @@ function ContentIt() {
         </thead>
         <tbody>
           <tr>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4 / Ultra 3</td>
             <td>422 x 514</td>
           </tr>
           <tr>
@@ -1813,7 +1813,7 @@ function ContentIt() {
             <td>410 x 502</td>
           </tr>
           <tr>
-            <td>Series 11 / Series 10</td>
+            <td>Series 12 / Series 11 / Series 10</td>
             <td>416 x 496</td>
           </tr>
           <tr>
@@ -1821,11 +1821,11 @@ function ContentIt() {
             <td>396 x 484</td>
           </tr>
           <tr>
-            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>Series 6 / 5 / 4, SE 3 / SE 2 / SE</td>
             <td>368 x 448</td>
           </tr>
           <tr>
-            <td>Series 3</td>
+            <td>Series 3 / 2 / 1</td>
             <td>312 x 390</td>
           </tr>
         </tbody>
@@ -1980,7 +1980,7 @@ function ContentKo() {
         </thead>
         <tbody>
           <tr>
-            <td>Apple Watch Ultra 3</td>
+            <td>Apple Watch Ultra 4 / Ultra 3</td>
             <td>422 x 514</td>
           </tr>
           <tr>
@@ -1988,7 +1988,7 @@ function ContentKo() {
             <td>410 x 502</td>
           </tr>
           <tr>
-            <td>Series 11 / Series 10</td>
+            <td>Series 12 / Series 11 / Series 10</td>
             <td>416 x 496</td>
           </tr>
           <tr>
@@ -1996,11 +1996,11 @@ function ContentKo() {
             <td>396 x 484</td>
           </tr>
           <tr>
-            <td>Series 6 / 5 / 4, SE 3 / SE</td>
+            <td>Series 6 / 5 / 4, SE 3 / SE 2 / SE</td>
             <td>368 x 448</td>
           </tr>
           <tr>
-            <td>Series 3</td>
+            <td>Series 3 / 2 / 1</td>
             <td>312 x 390</td>
           </tr>
         </tbody>
