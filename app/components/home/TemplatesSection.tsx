@@ -5,7 +5,7 @@ import { appStoreCtaUrl, type HomeCopy } from "~/config/localization";
 import {
   DEFAULT_STARTER_TEMPLATE_ID,
   STARTER_TEMPLATES,
-  starterTemplateImage,
+  starterTemplateShots,
   starterTemplateThumb,
 } from "~/config/templates";
 
@@ -40,16 +40,28 @@ export function TemplatesSection({
         />
 
         <figure className="showcase-panel overflow-hidden">
-          <div className="template-stage">
-            <img
-              key={selected.id}
-              src={starterTemplateImage(selected.id)}
-              alt={copy.ui.templateAlt(selected.name)}
-              width={selected.imageWidth}
-              height={selected.imageHeight}
-              className="template-stage-image"
-              decoding="async"
-            />
+          <div
+            key={selected.id}
+            className="template-shots"
+            role="list"
+          >
+            {starterTemplateShots(selected).map((src, index) => (
+              <img
+                key={src}
+                role="listitem"
+                src={src}
+                alt={
+                  index === 0
+                    ? copy.ui.templateAlt(selected.name)
+                    : ""
+                }
+                width={selected.shotWidth}
+                height={selected.shotHeight}
+                className="template-shot"
+                decoding="async"
+                loading={index < 4 ? "eager" : "lazy"}
+              />
+            ))}
           </div>
           <figcaption className="flex flex-wrap items-center justify-between gap-4 px-6 py-5 sm:px-8 border-t border-border-subtle">
             <div>
