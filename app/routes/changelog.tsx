@@ -97,13 +97,14 @@ type ChangelogEntry = {
 export const CHANGELOG: ChangelogEntry[] = [
   {
     version: "4.18",
-    date: "September 25, 2026",
+    date: "September 27, 2026",
     title: "A/B Testing Beta and Snapping Resize Handles",
     changes: [
       { type: "added", text: "A/B testing beta — turn it on in Settings ▸ Beta to build variants of your rows and upload them as an App Store product page experiment, or export them for a Google Play store listing experiment" },
       { type: "added", text: "About pane in Settings with links to rate the app, contact support, the website, X, Threads, and Discord, plus More Apps from the same developer" },
       { type: "added", text: "Reset button on the Letter Spacing control" },
       { type: "improved", text: "Resize handles snap to other shapes' edges and centers and to the template bounds, showing the same guides a move does" },
+      { type: "fixed", text: "Deleting unused screenshot files from a project stored in iCloud no longer silently fails, leaving them behind to take up space" },
     ],
   },
   {
