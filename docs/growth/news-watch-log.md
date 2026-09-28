@@ -77,3 +77,98 @@ recorded here.
     types or for creative assets.
   - April 2027 SDK floor (iOS 27 SDK required for uploads to App Store Connect).
     Far out, no action yet.
+
+## 2026-09-28
+
+Note: the previous run was 2026-09-27, so the genuinely new window here is one
+day. Scanning still covered the full 7–10 day window to catch anything the last
+run missed, and it caught one item (Apple's Sep 18 iPhone Duo resources).
+
+- **Scanned:** developer.apple.com/news (all September 2026 items),
+  developer.apple.com/news/releases (Xcode 27 / 27.1 beta / 27.2 beta, iOS 27.0
+  and 27.2 beta 2, App Store Connect 3.3, App Store Connect API 4.5, TestFlight
+  4.4.0), the App Store Connect screenshot specifications reference,
+  developer.apple.com/help/app-store-connect/release-notes,
+  developer.apple.com/app-store/whats-new, developer.apple.com/design/resources,
+  the App Review Guidelines (section 2.3.x), the App Store Connect API 4.5 and
+  4.4.1 release notes (via Apple's tutorials JSON endpoint), fastlane versions on
+  RubyGems, Google Play graphic-asset requirements, plus searches on ASO
+  screenshot research and competitor pricing.
+
+- **Findings:** nothing material enough to publish.
+  - **Apple shipped an official iPhone Duo product bezel** in Apple Design
+    Resources — Photoshop + PNG, ~331 MB, confirmed HTTP 200 at
+    <https://devimages-cdn.apple.com/design/resources/download/Bezel-iPhone-Duo.dmg>
+    (linked from <https://developer.apple.com/design/resources/> under Product
+    Bezels). Announced in "Build for iPhone Duo with new resources",
+    <https://developer.apple.com/news/?id=nyuppv9r> (Sep 18), alongside Xcode
+    27.1 beta and iOS/iPadOS 27 Figma and Sketch UI kits. The last run missed
+    this item. It is real and relevant — official device art for the foldable —
+    but it is one download link, not an article, and it contradicts nothing on
+    the site: `blog.device-mockup-generator-app-screenshots` already lists Apple
+    Design Resources as a free frame source and already covers the three Duo
+    views. Not published, not edited (the post is localized inline across ten
+    locales; a single optional sentence is not worth that churn). Worth folding
+    into the Duo section the next time that post is edited for another reason.
+  - **App Store Connect API 4.5** (Sep 22) —
+    <https://developer.apple.com/documentation/appstoreconnectapi/app-store-connect-api-4-5-release-notes>.
+    Nothing screenshot-facing: app performance overview data, subscription
+    `marketSettings` / `multiSeatStatus`, Game Center score moderation, Korean
+    age-rating overrides; deprecates the `territories` relationship on app tags.
+    Notably **no Asset Library or creative-asset endpoints yet** — so the
+    creative-assets feature is still not automatable.
+  - **App Store Connect 3.3** (Sep 23) —
+    <https://developer.apple.com/help/app-store-connect/release-notes/>. The
+    iPhone/iPad app only: landscape orientation on iPhone, iPhone Mirroring
+    resizing, faster internal-tester invites. Nothing about assets.
+  - **Creative assets unchanged.** Product page headers, search results assets,
+    the Asset Library and the product page preview are all still listed as
+    "coming this fall" on <https://developer.apple.com/app-store/whats-new/>.
+    No pixel spec published; the article shipped on 2026-09-27 remains accurate.
+  - **Screenshot specifications unchanged** since the last run — re-verified the
+    full table at
+    <https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications>.
+    iPhone Duo still outer 1398x2034 / inner 2007x2853 with "support for
+    uploading assets available later this year". Apple Watch device lists
+    (Ultra 4 / Series 12 / SE 3) match what the two size posts now say after
+    last run's fix. No corrections needed.
+  - **App Review Guidelines** — 2.3.3 (screenshots must show the app in use;
+    text and image overlays allowed) and 2.3.7 (no prices or non-specific terms
+    in screenshots and previews) are verbatim unchanged. No new screenshot or
+    metadata rule.
+  - **fastlane** — still 2.240.1, built 2026-09-15 (RubyGems version index). No
+    release since the last run. Still no frameit Duo frames and no deliver
+    support for Duo display types or creative assets.
+  - **Google Play** — nothing material. No Play Console announcement in this
+    window touching graphic assets; requirements unchanged.
+  - **ASO research** — searches surfaced only secondary SEO blog posts recycling
+    unattributed conversion percentages (20–35% lift, "first three frames carry
+    70% of conversion weight", and similar). No primary study from AppTweak,
+    Sensor Tower, Appfigures or Apple behind any of them. Dropped per the
+    primary-source rule; nothing published.
+  - **Competitors** — no launches, pricing changes or shutdowns surfaced for the
+    tools the site has alternative pages for. A one-day window makes this a weak
+    check; nothing to act on either way.
+
+- **Published:** none — quiet week, correctly so. The substantive item of this
+  10-day window (creative assets) was published yesterday.
+
+- **Updated:** none. No existing post is contradicted by anything found.
+
+- **Watching:**
+  - Asset Library, product page headers, search result assets and the product
+    page preview going live in App Store Connect ("this fall"). Still not in the
+    API as of 4.5 — watch both the App Store Connect release notes and the next
+    API release notes. When it ships, `app-store-creative-assets` needs the real
+    upload flow, and Apple may finally publish quotable dimensions.
+  - iPhone Duo ships Oct 23; App Store Connect accepting Duo uploads "later this
+    year". `app-store-screenshot-sizes` and
+    `device-mockup-generator-app-screenshots` both currently say uploads are not
+    accepted yet, in all locales — both go wrong the day that ships. Highest
+    priority correction on the list.
+  - Apple's Duo product bezel (above) — fold into the mockup post's Duo section
+    on its next edit.
+  - fastlane: frameit Duo frames, deliver support for Duo display types or
+    creative assets. No release since 2.240.1.
+  - April 2027 SDK floor (iOS 27 SDK required for App Store Connect uploads).
+    Far out, no action yet.
