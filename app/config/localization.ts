@@ -154,6 +154,10 @@ export type HomeCopy = {
     nextScreenshot: string;
     goToScreenshot: (index: number) => string;
     slideCount: (index: number, total: number) => string;
+    templateAlt: (name: string) => string;
+    templateMeta: (columns: number, width: number, height: number) => string;
+    startWithTemplate: string;
+    templatePickerLabel: string;
     productHuntAlt: string;
     availabilityNote: string;
   };
@@ -168,6 +172,7 @@ export type HomeCopy = {
   };
   sections: {
     showcases: SectionCopy;
+    templates: SectionCopy;
     problem: SectionCopy;
     workflow: SectionCopy;
     features: SectionCopy;
@@ -278,6 +283,12 @@ const EN_HOME_COPY: HomeCopy = {
     nextScreenshot: "Next screenshot",
     goToScreenshot: (index) => `Go to screenshot ${index}`,
     slideCount: (index, total) => `${index} of ${total}`,
+    templateAlt: (name) =>
+      `${name} template exported from Screenshot Bro: a row of App Store screenshots with headlines and iPhone frames`,
+    templateMeta: (columns, width, height) =>
+      `${columns} screenshots, ${width}×${height} px each`,
+    startWithTemplate: "Start with this template",
+    templatePickerLabel: "Choose a template to preview",
     productHuntAlt:
       "ScreenshotBro App - Design and export beautiful App Store screenshots. | Product Hunt",
     availabilityNote:
@@ -301,6 +312,12 @@ const EN_HOME_COPY: HomeCopy = {
       title: "See how the screenshot generator works before you install.",
       description:
         "Batch import, one-click App Store Connect upload, layers, backgrounds, and device frames — the moments most people use to judge whether this saves them time.",
+    },
+    templates: {
+      eyebrow: "Templates",
+      title: "{count} templates. Pick one, drop in your screenshots.",
+      description:
+        "Every project can start from a finished design: headlines, backgrounds, and device frames already laid out. Each preview below is a real export from the app, with only the screenshots swapped in. Change any color, font, or line of copy afterwards.",
     },
     problem: {
       eyebrow: "Why It Exists",
@@ -4903,22 +4920,386 @@ export function getLocaleFromPath(pathname: string): LocaleCode {
   return isLocaleCode(segment) ? segment : DEFAULT_LOCALE;
 }
 
+// The Templates section's copy, kept apart from the per-locale overrides so the
+// whole feature's strings sit in one place. `{count}` is filled in from the
+// template list, so the number never drifts from what the gallery shows.
+type TemplatesCopy = {
+  nav: string;
+  section: SectionCopy;
+  ui: Pick<
+    HomeCopy["ui"],
+    "templateAlt" | "templateMeta" | "startWithTemplate" | "templatePickerLabel"
+  >;
+};
+
+const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy> = {
+  es: {
+    nav: "Plantillas",
+    section: {
+      eyebrow: "Plantillas",
+      title: "{count} plantillas. Elige una y añade tus capturas.",
+      description: "Cada proyecto puede empezar con un diseño terminado: titulares, fondos y marcos de dispositivo ya colocados. Cada vista previa es una exportación real de la app, solo con las capturas cambiadas. Después puedes cambiar cualquier color, fuente o texto.",
+    },
+    ui: {
+      templateAlt: (name) => `Plantilla ${name} exportada desde Screenshot Bro: una fila de capturas de App Store con titulares y marcos de iPhone`,
+      templateMeta: (columns, width, height) => `${columns} capturas, ${width}×${height} px cada una`,
+      startWithTemplate: "Empezar con esta plantilla",
+      templatePickerLabel: "Elige una plantilla para verla",
+    },
+  },
+  zh: {
+    nav: "模板",
+    section: {
+      eyebrow: "模板",
+      title: "{count} 套模板。选一套，放入你的截图。",
+      description: "每个项目都可以从成品设计开始：标题、背景和设备边框都已排好。下面的每个预览都是应用真实导出的结果，只替换了截图。之后可以随意修改颜色、字体和文案。",
+    },
+    ui: {
+      templateAlt: (name) => `从 Screenshot Bro 导出的 ${name} 模板：一行带标题和 iPhone 边框的 App Store 截图`,
+      templateMeta: (columns, width, height) => `${columns} 张截图，每张 ${width}×${height} 像素`,
+      startWithTemplate: "使用此模板开始",
+      templatePickerLabel: "选择要预览的模板",
+    },
+  },
+  hi: {
+    nav: "टेम्पलेट",
+    section: {
+      eyebrow: "टेम्पलेट",
+      title: "{count} टेम्पलेट। एक चुनें, अपने स्क्रीनशॉट डालें।",
+      description: "हर प्रोजेक्ट एक तैयार डिज़ाइन से शुरू हो सकता है: हेडलाइन, बैकग्राउंड और डिवाइस फ्रेम पहले से सेट। नीचे हर प्रीव्यू ऐप का असली एक्सपोर्ट है, बस स्क्रीनशॉट बदले गए हैं। बाद में कोई भी रंग, फ़ॉन्ट या टेक्स्ट बदलें।",
+    },
+    ui: {
+      templateAlt: (name) => `Screenshot Bro से एक्सपोर्ट किया गया ${name} टेम्पलेट: हेडलाइन और iPhone फ्रेम के साथ App Store स्क्रीनशॉट की एक पंक्ति`,
+      templateMeta: (columns, width, height) => `${columns} स्क्रीनशॉट, हर एक ${width}×${height} px`,
+      startWithTemplate: "इस टेम्पलेट से शुरू करें",
+      templatePickerLabel: "प्रीव्यू के लिए टेम्पलेट चुनें",
+    },
+  },
+  fr: {
+    nav: "Modèles",
+    section: {
+      eyebrow: "Modèles",
+      title: "{count} modèles. Choisissez-en un, ajoutez vos captures.",
+      description: "Chaque projet peut partir d'un design fini : titres, arrière-plans et cadres d'appareil déjà en place. Chaque aperçu ci-dessous est un vrai export de l'app, seules les captures ont changé. Modifiez ensuite n'importe quelle couleur, police ou texte.",
+    },
+    ui: {
+      templateAlt: (name) => `Modèle ${name} exporté depuis Screenshot Bro : une rangée de captures App Store avec titres et cadres d'iPhone`,
+      templateMeta: (columns, width, height) => `${columns} captures, ${width}×${height} px chacune`,
+      startWithTemplate: "Commencer avec ce modèle",
+      templatePickerLabel: "Choisissez un modèle à prévisualiser",
+    },
+  },
+  ar: {
+    nav: "القوالب",
+    section: {
+      eyebrow: "القوالب",
+      title: "{count} قالبًا. اختر واحدًا وأضف لقطاتك.",
+      description: "يمكن أن يبدأ كل مشروع من تصميم جاهز: العناوين والخلفيات وإطارات الأجهزة في أماكنها. كل معاينة أدناه تصدير حقيقي من التطبيق مع تبديل اللقطات فقط. غيّر أي لون أو خط أو نص لاحقًا.",
+    },
+    ui: {
+      templateAlt: (name) => `قالب ${name} مُصدَّر من Screenshot Bro: صف من لقطات App Store مع عناوين وإطارات iPhone`,
+      templateMeta: (columns, width, height) => `${columns} لقطات، كل منها ${width}×${height} بكسل`,
+      startWithTemplate: "ابدأ بهذا القالب",
+      templatePickerLabel: "اختر قالبًا لمعاينته",
+    },
+  },
+  de: {
+    nav: "Vorlagen",
+    section: {
+      eyebrow: "Vorlagen",
+      title: "{count} Vorlagen. Eine wählen, Screenshots einsetzen.",
+      description: "Jedes Projekt kann mit einem fertigen Design starten: Überschriften, Hintergründe und Geräterahmen sind schon gesetzt. Jede Vorschau unten ist ein echter Export aus der App, nur die Screenshots sind ausgetauscht. Farben, Schriften und Texte lassen sich danach frei ändern.",
+    },
+    ui: {
+      templateAlt: (name) => `Vorlage ${name}, exportiert aus Screenshot Bro: eine Reihe App-Store-Screenshots mit Überschriften und iPhone-Rahmen`,
+      templateMeta: (columns, width, height) => `${columns} Screenshots, je ${width}×${height} px`,
+      startWithTemplate: "Mit dieser Vorlage starten",
+      templatePickerLabel: "Vorlage für die Vorschau wählen",
+    },
+  },
+  ja: {
+    nav: "テンプレート",
+    section: {
+      eyebrow: "テンプレート",
+      title: "{count} 種類のテンプレート。選んでスクリーンショットを入れるだけ。",
+      description: "どのプロジェクトも完成したデザインから始められます。見出し、背景、デバイスフレームは配置済み。下のプレビューはすべてアプリからの実際の書き出しで、差し替えたのはスクリーンショットだけです。色やフォント、文言は後から自由に変更できます。",
+    },
+    ui: {
+      templateAlt: (name) => `Screenshot Bro から書き出した ${name} テンプレート：見出しと iPhone フレーム付きの App Store スクリーンショット 1 行`,
+      templateMeta: (columns, width, height) => `スクリーンショット ${columns} 枚、各 ${width}×${height} px`,
+      startWithTemplate: "このテンプレートで始める",
+      templatePickerLabel: "プレビューするテンプレートを選択",
+    },
+  },
+  pt: {
+    nav: "Modelos",
+    section: {
+      eyebrow: "Modelos",
+      title: "{count} modelos. Escolha um e coloque suas capturas.",
+      description: "Todo projeto pode começar de um design pronto: títulos, fundos e molduras de dispositivo já posicionados. Cada prévia abaixo é uma exportação real do app, só com as capturas trocadas. Depois, mude qualquer cor, fonte ou texto.",
+    },
+    ui: {
+      templateAlt: (name) => `Modelo ${name} exportado do Screenshot Bro: uma fileira de capturas da App Store com títulos e molduras de iPhone`,
+      templateMeta: (columns, width, height) => `${columns} capturas, ${width}×${height} px cada`,
+      startWithTemplate: "Começar com este modelo",
+      templatePickerLabel: "Escolha um modelo para visualizar",
+    },
+  },
+  it: {
+    nav: "Modelli",
+    section: {
+      eyebrow: "Modelli",
+      title: "{count} modelli. Scegline uno e inserisci i tuoi screenshot.",
+      description: "Ogni progetto può partire da un design finito: titoli, sfondi e cornici dei dispositivi già al loro posto. Ogni anteprima qui sotto è una vera esportazione dall'app, con i soli screenshot sostituiti. Poi cambia qualsiasi colore, font o testo.",
+    },
+    ui: {
+      templateAlt: (name) => `Modello ${name} esportato da Screenshot Bro: una fila di screenshot per l'App Store con titoli e cornici iPhone`,
+      templateMeta: (columns, width, height) => `${columns} screenshot, ${width}×${height} px ciascuno`,
+      startWithTemplate: "Inizia con questo modello",
+      templatePickerLabel: "Scegli un modello da visualizzare",
+    },
+  },
+  ko: {
+    nav: "템플릿",
+    section: {
+      eyebrow: "템플릿",
+      title: "템플릿 {count}종. 하나 고르고 스크린샷만 넣으세요.",
+      description: "모든 프로젝트를 완성된 디자인에서 시작할 수 있습니다. 헤드라인, 배경, 기기 프레임이 이미 배치되어 있습니다. 아래 미리보기는 모두 앱에서 실제로 내보낸 결과이며 스크린샷만 바꿨습니다. 색상, 글꼴, 문구는 나중에 자유롭게 바꾸세요.",
+    },
+    ui: {
+      templateAlt: (name) => `Screenshot Bro에서 내보낸 ${name} 템플릿: 헤드라인과 iPhone 프레임이 있는 App Store 스크린샷 한 줄`,
+      templateMeta: (columns, width, height) => `스크린샷 ${columns}장, 각 ${width}×${height}px`,
+      startWithTemplate: "이 템플릿으로 시작",
+      templatePickerLabel: "미리 볼 템플릿 선택",
+    },
+  },
+  uk: {
+    nav: "Шаблони",
+    section: {
+      eyebrow: "Шаблони",
+      title: "{count} шаблонів. Оберіть один і додайте свої скриншоти.",
+      description: "Кожен проєкт може стартувати з готового дизайну: заголовки, фони й рамки пристроїв уже на місцях. Кожне прев'ю нижче — справжній експорт із застосунку, змінено лише скриншоти. Потім змінюйте будь-який колір, шрифт чи текст.",
+    },
+    ui: {
+      templateAlt: (name) => `Шаблон ${name}, експортований зі Screenshot Bro: ряд скриншотів для App Store із заголовками та рамками iPhone`,
+      templateMeta: (columns, width, height) => `Скриншотів: ${columns}, кожен ${width}×${height} px`,
+      startWithTemplate: "Почати з цього шаблону",
+      templatePickerLabel: "Оберіть шаблон для перегляду",
+    },
+  },
+  pl: {
+    nav: "Szablony",
+    section: {
+      eyebrow: "Szablony",
+      title: "{count} szablonów. Wybierz jeden i wstaw swoje zrzuty.",
+      description: "Każdy projekt może zacząć się od gotowego projektu: nagłówki, tła i ramki urządzeń są już na miejscu. Każdy podgląd poniżej to prawdziwy eksport z aplikacji, podmieniono tylko zrzuty ekranu. Potem zmień dowolny kolor, czcionkę lub tekst.",
+    },
+    ui: {
+      templateAlt: (name) => `Szablon ${name} wyeksportowany ze Screenshot Bro: rząd zrzutów do App Store z nagłówkami i ramkami iPhone`,
+      templateMeta: (columns, width, height) => `Zrzuty: ${columns}, każdy ${width}×${height} px`,
+      startWithTemplate: "Zacznij od tego szablonu",
+      templatePickerLabel: "Wybierz szablon do podglądu",
+    },
+  },
+  tr: {
+    nav: "Şablonlar",
+    section: {
+      eyebrow: "Şablonlar",
+      title: "{count} şablon. Birini seçin, ekran görüntülerinizi ekleyin.",
+      description: "Her proje hazır bir tasarımla başlayabilir: başlıklar, arka planlar ve cihaz çerçeveleri yerinde. Aşağıdaki her önizleme uygulamadan alınmış gerçek bir dışa aktarımdır; yalnızca ekran görüntüleri değiştirildi. Sonra istediğiniz rengi, yazı tipini veya metni değiştirin.",
+    },
+    ui: {
+      templateAlt: (name) => `Screenshot Bro'dan dışa aktarılan ${name} şablonu: başlıklı ve iPhone çerçeveli bir sıra App Store ekran görüntüsü`,
+      templateMeta: (columns, width, height) => `${columns} ekran görüntüsü, her biri ${width}×${height} px`,
+      startWithTemplate: "Bu şablonla başla",
+      templatePickerLabel: "Önizlemek için bir şablon seçin",
+    },
+  },
+  nl: {
+    nav: "Sjablonen",
+    section: {
+      eyebrow: "Sjablonen",
+      title: "{count} sjablonen. Kies er een en zet je screenshots erin.",
+      description: "Elk project kan beginnen met een kant-en-klaar ontwerp: koppen, achtergronden en apparaatframes staan al klaar. Elke preview hieronder is een echte export uit de app, alleen de screenshots zijn vervangen. Pas daarna elke kleur, elk lettertype of elke tekst aan.",
+    },
+    ui: {
+      templateAlt: (name) => `Sjabloon ${name} geëxporteerd uit Screenshot Bro: een rij App Store-screenshots met koppen en iPhone-frames`,
+      templateMeta: (columns, width, height) => `${columns} screenshots, elk ${width}×${height} px`,
+      startWithTemplate: "Begin met dit sjabloon",
+      templatePickerLabel: "Kies een sjabloon om te bekijken",
+    },
+  },
+  id: {
+    nav: "Templat",
+    section: {
+      eyebrow: "Templat",
+      title: "{count} templat. Pilih satu, masukkan tangkapan layar Anda.",
+      description: "Setiap proyek bisa dimulai dari desain jadi: judul, latar, dan bingkai perangkat sudah tertata. Setiap pratinjau di bawah adalah ekspor asli dari aplikasi, hanya tangkapan layarnya yang diganti. Ubah warna, font, atau teks apa pun setelahnya.",
+    },
+    ui: {
+      templateAlt: (name) => `Templat ${name} yang diekspor dari Screenshot Bro: satu baris tangkapan layar App Store dengan judul dan bingkai iPhone`,
+      templateMeta: (columns, width, height) => `${columns} tangkapan layar, masing-masing ${width}×${height} px`,
+      startWithTemplate: "Mulai dengan templat ini",
+      templatePickerLabel: "Pilih templat untuk pratinjau",
+    },
+  },
+  vi: {
+    nav: "Mẫu",
+    section: {
+      eyebrow: "Mẫu",
+      title: "{count} mẫu. Chọn một mẫu, thả ảnh chụp màn hình vào.",
+      description: "Mỗi dự án có thể bắt đầu từ một thiết kế hoàn chỉnh: tiêu đề, nền và khung thiết bị đã sắp sẵn. Mỗi bản xem trước bên dưới là bản xuất thật từ ứng dụng, chỉ thay ảnh chụp màn hình. Sau đó đổi bất kỳ màu, phông chữ hay nội dung nào.",
+    },
+    ui: {
+      templateAlt: (name) => `Mẫu ${name} xuất từ Screenshot Bro: một hàng ảnh chụp App Store có tiêu đề và khung iPhone`,
+      templateMeta: (columns, width, height) => `${columns} ảnh chụp, mỗi ảnh ${width}×${height} px`,
+      startWithTemplate: "Bắt đầu với mẫu này",
+      templatePickerLabel: "Chọn mẫu để xem trước",
+    },
+  },
+  th: {
+    nav: "เทมเพลต",
+    section: {
+      eyebrow: "เทมเพลต",
+      title: "{count} เทมเพลต เลือกหนึ่งแบบ แล้วใส่ภาพหน้าจอของคุณ",
+      description: "ทุกโปรเจกต์เริ่มจากดีไซน์ที่เสร็จแล้วได้ ทั้งหัวข้อ พื้นหลัง และกรอบอุปกรณ์จัดวางไว้ให้ ตัวอย่างด้านล่างทุกภาพคือไฟล์ที่ส่งออกจริงจากแอป เปลี่ยนแค่ภาพหน้าจอเท่านั้น จากนั้นปรับสี ฟอนต์ หรือข้อความได้ตามต้องการ",
+    },
+    ui: {
+      templateAlt: (name) => `เทมเพลต ${name} ที่ส่งออกจาก Screenshot Bro: แถวภาพหน้าจอ App Store พร้อมหัวข้อและกรอบ iPhone`,
+      templateMeta: (columns, width, height) => `ภาพหน้าจอ ${columns} ภาพ ภาพละ ${width}×${height} px`,
+      startWithTemplate: "เริ่มด้วยเทมเพลตนี้",
+      templatePickerLabel: "เลือกเทมเพลตเพื่อดูตัวอย่าง",
+    },
+  },
+  sv: {
+    nav: "Mallar",
+    section: {
+      eyebrow: "Mallar",
+      title: "{count} mallar. Välj en och lägg in dina skärmbilder.",
+      description: "Varje projekt kan börja från en färdig design: rubriker, bakgrunder och enhetsramar är redan på plats. Varje förhandsvisning nedan är en riktig export från appen där bara skärmbilderna bytts ut. Ändra sedan valfri färg, typsnitt eller text.",
+    },
+    ui: {
+      templateAlt: (name) => `Mallen ${name} exporterad från Screenshot Bro: en rad App Store-skärmbilder med rubriker och iPhone-ramar`,
+      templateMeta: (columns, width, height) => `${columns} skärmbilder, ${width}×${height} px vardera`,
+      startWithTemplate: "Börja med den här mallen",
+      templatePickerLabel: "Välj en mall att förhandsgranska",
+    },
+  },
+  da: {
+    nav: "Skabeloner",
+    section: {
+      eyebrow: "Skabeloner",
+      title: "{count} skabeloner. Vælg én, og sæt dine skærmbilleder ind.",
+      description: "Hvert projekt kan starte fra et færdigt design: overskrifter, baggrunde og enhedsrammer er allerede på plads. Hver forhåndsvisning nedenfor er en rigtig eksport fra appen, hvor kun skærmbillederne er skiftet ud. Ret bagefter enhver farve, skrifttype eller tekst.",
+    },
+    ui: {
+      templateAlt: (name) => `Skabelonen ${name} eksporteret fra Screenshot Bro: en række App Store-skærmbilleder med overskrifter og iPhone-rammer`,
+      templateMeta: (columns, width, height) => `${columns} skærmbilleder, ${width}×${height} px hver`,
+      startWithTemplate: "Start med denne skabelon",
+      templatePickerLabel: "Vælg en skabelon at se",
+    },
+  },
+  fi: {
+    nav: "Mallit",
+    section: {
+      eyebrow: "Mallit",
+      title: "{count} mallia. Valitse yksi ja lisää kuvakaappauksesi.",
+      description: "Jokainen projekti voi alkaa valmiista suunnittelusta: otsikot, taustat ja laitekehykset ovat jo paikoillaan. Jokainen alla oleva esikatselu on aito vienti sovelluksesta, vain kuvakaappaukset on vaihdettu. Muuta sen jälkeen mitä tahansa väriä, fonttia tai tekstiä.",
+    },
+    ui: {
+      templateAlt: (name) => `Malli ${name} vietynä Screenshot Brosta: rivi App Store -kuvakaappauksia otsikoilla ja iPhone-kehyksillä`,
+      templateMeta: (columns, width, height) => `${columns} kuvakaappausta, kukin ${width}×${height} px`,
+      startWithTemplate: "Aloita tällä mallilla",
+      templatePickerLabel: "Valitse esikatseltava malli",
+    },
+  },
+  no: {
+    nav: "Maler",
+    section: {
+      eyebrow: "Maler",
+      title: "{count} maler. Velg én, og legg inn skjermbildene dine.",
+      description: "Hvert prosjekt kan starte fra et ferdig design: overskrifter, bakgrunner og enhetsrammer er allerede på plass. Hver forhåndsvisning nedenfor er en ekte eksport fra appen, der bare skjermbildene er byttet ut. Endre deretter hvilken som helst farge, skrift eller tekst.",
+    },
+    ui: {
+      templateAlt: (name) => `Malen ${name} eksportert fra Screenshot Bro: en rad App Store-skjermbilder med overskrifter og iPhone-rammer`,
+      templateMeta: (columns, width, height) => `${columns} skjermbilder, ${width}×${height} px hver`,
+      startWithTemplate: "Start med denne malen",
+      templatePickerLabel: "Velg en mal å forhåndsvise",
+    },
+  },
+  cs: {
+    nav: "Šablony",
+    section: {
+      eyebrow: "Šablony",
+      title: "{count} šablon. Vyberte jednu a vložte své snímky.",
+      description: "Každý projekt může začít hotovým návrhem: nadpisy, pozadí a rámečky zařízení jsou už rozmístěné. Každý náhled níže je skutečný export z aplikace, vyměněny jsou jen snímky obrazovky. Potom změňte libovolnou barvu, písmo nebo text.",
+    },
+    ui: {
+      templateAlt: (name) => `Šablona ${name} exportovaná ze Screenshot Bro: řada snímků pro App Store s nadpisy a rámečky iPhonu`,
+      templateMeta: (columns, width, height) => `Snímků: ${columns}, každý ${width}×${height} px`,
+      startWithTemplate: "Začít s touto šablonou",
+      templatePickerLabel: "Vyberte šablonu k náhledu",
+    },
+  },
+  ro: {
+    nav: "Șabloane",
+    section: {
+      eyebrow: "Șabloane",
+      title: "{count} șabloane. Alege unul și adaugă capturile tale.",
+      description: "Orice proiect poate porni de la un design gata făcut: titluri, fundaluri și rame de dispozitiv deja așezate. Fiecare previzualizare de mai jos este un export real din aplicație, doar capturile au fost înlocuite. Apoi schimbă orice culoare, font sau text.",
+    },
+    ui: {
+      templateAlt: (name) => `Șablonul ${name} exportat din Screenshot Bro: un rând de capturi App Store cu titluri și rame de iPhone`,
+      templateMeta: (columns, width, height) => `${columns} capturi, fiecare ${width}×${height} px`,
+      startWithTemplate: "Începe cu acest șablon",
+      templatePickerLabel: "Alege un șablon de previzualizat",
+    },
+  },
+  ms: {
+    nav: "Templat",
+    section: {
+      eyebrow: "Templat",
+      title: "{count} templat. Pilih satu, masukkan tangkapan skrin anda.",
+      description: "Setiap projek boleh bermula daripada reka bentuk siap: tajuk, latar dan bingkai peranti sudah tersusun. Setiap pratonton di bawah ialah eksport sebenar daripada aplikasi, hanya tangkapan skrin yang ditukar. Kemudian ubah apa-apa warna, fon atau teks.",
+    },
+    ui: {
+      templateAlt: (name) => `Templat ${name} dieksport daripada Screenshot Bro: satu baris tangkapan skrin App Store dengan tajuk dan bingkai iPhone`,
+      templateMeta: (columns, width, height) => `${columns} tangkapan skrin, setiap satu ${width}×${height} px`,
+      startWithTemplate: "Mula dengan templat ini",
+      templatePickerLabel: "Pilih templat untuk pratonton",
+    },
+  },
+};
+
+// Slots the Templates link in after Showcases, where the section sits on the page.
+function withTemplatesNav(items: HomeCopy["navItems"], label: string): HomeCopy["navItems"] {
+  if (items.some((item) => item.href === "#templates")) return items;
+  const at = items.findIndex((item) => item.href === "#showcases") + 1;
+  return [...items.slice(0, at), { label, href: "#templates" }, ...items.slice(at)];
+}
+
 export function getHomeCopy(locale: LocaleCode): HomeCopy {
   if (locale === DEFAULT_LOCALE) return EN_HOME_COPY;
 
   const localeInfo = getLocaleInfo(locale);
   const landingContent = LOCALIZED_LANDING_CONTENT[locale as Exclude<LocaleCode, "en">];
   const overrides = LOCALIZED_OVERRIDES[locale as Exclude<LocaleCode, "en">];
+  const templates = LOCALIZED_TEMPLATES_COPY[locale as Exclude<LocaleCode, "en">];
 
   return {
     ...EN_HOME_COPY,
     ...landingContent,
     ...overrides,
     locale: localeInfo,
+    navItems: withTemplatesNav(
+      overrides.navItems ?? landingContent.navItems ?? EN_HOME_COPY.navItems,
+      templates.nav,
+    ),
     ui: {
       ...EN_HOME_COPY.ui,
       ...landingContent.ui,
       ...overrides.ui,
+      ...templates.ui,
     },
     hero: {
       ...EN_HOME_COPY.hero,
@@ -4929,6 +5310,7 @@ export function getHomeCopy(locale: LocaleCode): HomeCopy {
       ...EN_HOME_COPY.sections,
       ...landingContent.sections,
       ...overrides.sections,
+      templates: templates.section,
     },
     problem: {
       ...EN_HOME_COPY.problem,

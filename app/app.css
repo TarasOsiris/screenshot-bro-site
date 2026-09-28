@@ -255,6 +255,76 @@ button:focus-visible {
   background: var(--color-surface-overlay);
 }
 
+/* Templates gallery: the stage shows one exported template row at its true
+   aspect ratio; the picker scrolls sideways on phones and wraps on desktop. */
+.template-stage {
+  aspect-ratio: 1848 / 1000;
+  background: var(--color-surface-overlay);
+}
+
+/* Templates ship with 3 to 10 columns; the stage shows up to four, so a
+   three-column template sits centred instead of changing the section's height. */
+.template-stage-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: template-swap 0.35s ease;
+}
+
+@keyframes template-swap {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.template-picker {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 148px;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+}
+
+@media (min-width: 1024px) {
+  .template-picker {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    overflow: visible;
+  }
+}
+
+.template-chip {
+  scroll-snap-align: start;
+  min-width: 0;
+}
+
+.template-chip-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 276 / 200;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: outline-color 0.15s ease;
+}
+
+.template-chip:hover .template-chip-image {
+  outline-color: color-mix(in srgb, var(--color-ink) 25%, transparent);
+}
+
+.template-chip[aria-pressed="true"] .template-chip-image {
+  outline-color: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .template-stage-image { animation: none; }
+}
+
 .workflow-card {
   background:
     linear-gradient(180deg, var(--sheen), transparent),

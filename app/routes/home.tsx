@@ -58,6 +58,7 @@ import { SiteNav } from "~/components/home/SiteNav";
 import { HeroSection } from "~/components/home/HeroSection";
 import { AppShowcaseSection } from "~/components/home/AppShowcaseSection";
 import { ShowcasesSection } from "~/components/home/ShowcasesSection";
+import { TemplatesSection } from "~/components/home/TemplatesSection";
 import { WorkflowSection } from "~/components/home/WorkflowSection";
 import { FeaturesSection } from "~/components/home/FeaturesSection";
 import { ScreenshotsSection } from "~/components/home/ScreenshotsSection";
@@ -130,6 +131,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
       <main id="main-content">
         <HeroSection copy={copy} href={gadsHref} />
         <ShowcasesSection copy={copy} href={gadsHref} />
+        <TemplatesSection copy={copy} href={gadsHref} />
         <ProblemSection copy={copy} />
         <WorkflowSection copy={copy} />
         <FeaturesSection copy={copy} />

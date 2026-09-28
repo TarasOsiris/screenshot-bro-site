@@ -1,6 +1,7 @@
 export { SiteNav } from "~/components/home/SiteNav";
 export { HeroSection } from "~/components/home/HeroSection";
 export { ShowcasesSection } from "~/components/home/ShowcasesSection";
+export { TemplatesSection } from "~/components/home/TemplatesSection";
 export { WorkflowSection } from "~/components/home/WorkflowSection";
 export { FeaturesSection } from "~/components/home/FeaturesSection";
 export { ScreenshotsSection } from "~/components/home/ScreenshotsSection";
