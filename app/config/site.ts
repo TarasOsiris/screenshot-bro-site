@@ -413,7 +413,7 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     label: "Backgrounds",
     title: "Make cool backgrounds.",
     description:
-      "Choose from 12 gradient presets, build your own with the multi-stop editor, or drop in images with fill, fit, stretch, and tile modes. Backgrounds can span across multiple templates in a row for seamless, edge-to-edge designs. Adjust angle, opacity, and color stops — everything updates live.",
+      "Choose from 16 gradient presets, build your own with the multi-stop editor, or drop in images with fill, fit, stretch, and tile modes. Backgrounds can span across multiple templates in a row for seamless, edge-to-edge designs. Adjust angle, opacity, and color stops — everything updates live.",
     media: "/showcases/backgrounds.mp4",
     mediaWidth: 1280,
     mediaHeight: 804,

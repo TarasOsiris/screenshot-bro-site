@@ -647,7 +647,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
         label: "Fondos",
         title: "Crea fondos atractivos.",
         description:
-          "Usa 12 presets de degradado, crea los tuyos con el editor multipunto o añade imágenes. Los fondos pueden extenderse por varias plantillas y actualizarse en vivo.",
+          "Usa 16 presets de degradado, crea los tuyos con el editor multipunto o añade imágenes. Los fondos pueden extenderse por varias plantillas y actualizarse en vivo.",
         mediaAlt:
           "Cambio entre presets de degradado, colores sólidos y fondos extendidos en varias plantillas",
       },
