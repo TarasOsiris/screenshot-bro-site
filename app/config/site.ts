@@ -20,6 +20,12 @@ export const APP_STORE_PROVIDER_TOKEN = "117277360";
 // config/localization.ts for the per-locale storefront.
 export const DEFAULT_APP_STORE_COUNTRY = "us";
 
+// Direct (Developer ID) distribution, outside the Mac App Store. Pro is sold through a
+// RevenueCat Web Purchase Link (Stripe); its success redirect is /thanks?redeem_url=…
+export const DIRECT_DOWNLOAD_URL = "/releases/ScreenshotBro.dmg";
+export const APPCAST_URL = "/appcast.xml";
+export const REDEMPTION_URL_SCHEME = "rc-6cc0af703b";
+
 // Builds an App Store campaign-tracking link. The `ct` value surfaces under
 // App Analytics → Acquisition → Campaigns as the traffic source, so use this
 // for clickable CTAs (not for SEO/structured-data, which keep the bare URL).

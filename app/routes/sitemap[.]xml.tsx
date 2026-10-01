@@ -111,6 +111,7 @@ function buildSitemap(): string {
     { loc: "/changelog", changefreq: "monthly", priority: "0.6", lastmod: latestChangelogDate },
     { loc: "/privacy", changefreq: "yearly", priority: "0.3", lastmod: privacyDate },
     { loc: "/terms", changefreq: "yearly", priority: "0.3", lastmod: termsDate },
+    { loc: "/download", changefreq: "monthly", priority: "0.6", lastmod: homeLastmod },
     { loc: "/support", changefreq: "yearly", priority: "0.4", lastmod: homeLastmod, alternates: localeAlternates("/support") },
     ...LOCALES.filter((l) => l.code !== DEFAULT_LOCALE).map((l): SitemapEntry => ({
       loc: localizedPath(l.code, "/support"),

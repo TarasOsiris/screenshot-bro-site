@@ -87,7 +87,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
   ]);
 };
 
-export const EFFECTIVE_DATE = "August 25, 2026";
+export const EFFECTIVE_DATE = "October 1, 2026";
 const DEVELOPER_NAME = "Nineva Studios";
 const DEVELOPER_EMAIL = "tleskiv@ninevastudios.com";
 
@@ -251,6 +251,25 @@ export default function Privacy() {
               .
             </li>
           </ul>
+          <p>
+            <strong>Purchases on our website.</strong> If you use the version
+            of {SITE_NAME} downloaded from our website, Pro is bought through a
+            checkout page hosted by RevenueCat, with payments processed by{" "}
+            <a
+              href="https://stripe.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Stripe
+            </a>
+            . The checkout collects your email address and payment details;
+            Stripe handles the payment details and we never see your card
+            number. RevenueCat and Stripe share the email address with us so we
+            can send your receipt and activation link and help with refunds or
+            moving a purchase. When you open the activation link, the App links
+            the purchase to its anonymous RevenueCat identifier — no account is
+            created.
+          </p>
           <p>
             If you do not make a purchase, no data is sent to RevenueCat
             beyond an initial anonymous entitlement check. Subscription terms,
@@ -474,7 +493,8 @@ export default function Privacy() {
             automation server&apos;s own tools. Each event also carries the name
             of the window you were on when it happened, taken from the same fixed
             list above, so that a milestone can be read in context. Alongside
-            them, the analytics service records the App version and build, the
+            them, the analytics service records the App version and build,
+            whether the copy came from the App Store or our website, the
             platform, your device model, operating system version, language, time
             zone and screen size — the same class of technical context as a crash
             report.

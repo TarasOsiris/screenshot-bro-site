@@ -57,6 +57,11 @@ export function DownloadSection({
         <p className="mt-4 text-xs text-ink/60 font-mono">
           {copy.ui.availabilityNote}
         </p>
+        <p className="mt-2 text-xs text-ink/60">
+          <a href="/download" className="underline hover:text-ink">
+            Prefer a direct download?
+          </a>
+        </p>
       </div>
     </section>
   );

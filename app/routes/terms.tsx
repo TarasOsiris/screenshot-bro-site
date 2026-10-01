@@ -1,5 +1,5 @@
 import type { Route } from "./+types/terms";
-import { SITE_NAME, SITE_URL } from "~/config/site";
+import { EARLY_ACCESS_EMAIL, SITE_NAME, SITE_URL } from "~/config/site";
 import { ContentLayout } from "~/components/ContentLayout";
 import { mergeMeta } from "~/config/meta";
 import { isLocaleCode, type LocaleCode } from "~/config/localization";
@@ -87,7 +87,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
   ]);
 };
 
-export const EFFECTIVE_DATE = "June 13, 2026";
+export const EFFECTIVE_DATE = "October 1, 2026";
 const DEVELOPER_NAME = "Nineva Studios";
 const DEVELOPER_EMAIL = "tleskiv@ninevastudios.com";
 
@@ -197,7 +197,7 @@ export default function Terms() {
 
         <h3>2.3 Refunds</h3>
         <p>
-          All purchases are processed by Apple. Refunds are handled by Apple
+          Purchases made in the App Store version are processed by Apple. Refunds are handled by Apple
           and governed by the App Store policies. To request a refund, visit{" "}
           <a
             href="https://reportaproblem.apple.com"
@@ -215,6 +215,23 @@ export default function Terms() {
           the same Apple Account by using the "Restore Purchases" action inside
           the App. Restored entitlements are validated against the App Store and
           our purchase processor (RevenueCat).
+        </p>
+
+        <h3>2.5 Purchases on Our Website (Direct Download)</h3>
+        <p>
+          The version of {SITE_NAME} downloaded from our website is not sold
+          through the App Store. Its Pro lifetime purchase is made on our
+          website: RevenueCat hosts the checkout and Stripe processes the
+          payment. No account is required. After checkout you receive a
+          single-use activation link (on the confirmation page and by email)
+          that unlocks Pro in the copy of the App that opens it.
+        </p>
+        <p>
+          A web purchase unlocks the direct-download version only; App Store
+          purchases unlock the App Store version only. To move a web purchase to
+          another Mac, or to request a refund for one, email{" "}
+          <a href={`mailto:${EARLY_ACCESS_EMAIL}`}>{EARLY_ACCESS_EMAIL}</a>{" "}
+          with the email address used at checkout.
         </p>
 
         <h2>3. Acceptable Use</h2>
