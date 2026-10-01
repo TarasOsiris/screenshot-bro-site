@@ -3,5 +3,14 @@
     <channel>
         <title>Screenshot Bro</title>
         <link>https://screenshotbro.app</link>
+        <item>
+            <title>4.19</title>
+            <pubDate>Thu, 01 Oct 2026 18:06:19 +0300</pubDate>
+            <link>https://screenshotbro.app</link>
+            <sparkle:version>152</sparkle:version>
+            <sparkle:shortVersionString>4.19</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://screenshotbro.app/releases/ScreenshotBro-4.19-152.dmg" length="55923251" type="application/octet-stream" sparkle:edSignature="m5QsvycFVM6bSbC7kSJozfehGTXaMiLlkp1ugPFZ3Vh4rodo87SFTLbG4RE2fRO5cJwD6rOh/UTkEbwaisnbBg=="/>
+        </item>
     </channel>
 </rss>
