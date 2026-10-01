@@ -4,3 +4,7 @@ build
 .react-router
 .DS_Store
 *.local
+
+# Direct-download DMGs are never committed
+public/releases/
+*.dmg
