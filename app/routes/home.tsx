@@ -11,7 +11,6 @@ import type { Route } from "./+types/home";
 import { SITE_URL } from "~/config/site";
 import { mergeMeta } from "~/config/meta";
 import {
-  appStoreCtaUrl,
   buildOgLocaleMeta,
   getHomeCopy,
   isLocaleCode,
@@ -83,7 +82,7 @@ function useScrollFade(threshold = 100) {
   return visible;
 }
 
-function useGadsConversion(locale: LocaleCode) {
+function useGadsConversion() {
   const [isFromGads, setIsFromGads] = useState(false);
 
   useEffect(() => {
@@ -109,13 +108,12 @@ function useGadsConversion(locale: LocaleCode) {
     return () => document.removeEventListener("click", handleClick);
   }, [isFromGads]);
 
-  return isFromGads ? appStoreCtaUrl(locale, "gadsmay25") : undefined;
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
   const showBackToTop = useScrollFade(600);
   const copy = getHomeCopy(loaderData.locale);
-  const gadsHref = useGadsConversion(loaderData.locale);
+  useGadsConversion();
 
   return (
     <div className="min-h-screen">
@@ -126,12 +124,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         {copy.ui.skipToContent}
       </a>
 
-      <SiteNav copy={copy} href={gadsHref} />
+      <SiteNav copy={copy} />
 
       <main id="main-content">
-        <HeroSection copy={copy} href={gadsHref} />
-        <ShowcasesSection copy={copy} href={gadsHref} />
-        <TemplatesSection copy={copy} href={gadsHref} />
+        <HeroSection copy={copy} />
+        <ShowcasesSection copy={copy} />
+        <TemplatesSection copy={copy} />
         <ProblemSection copy={copy} />
         <WorkflowSection copy={copy} />
         <FeaturesSection copy={copy} />
@@ -139,7 +137,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <TestimonialsSection copy={copy} />
         <BlogPreviewSection copy={copy} />
         <FaqSection copy={copy} />
-        <DownloadSection copy={copy} href={gadsHref} />
+        <DownloadSection copy={copy} />
         <AppShowcaseSection copy={copy} />
       </main>
 

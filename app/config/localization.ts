@@ -7,7 +7,7 @@ import type {
   WorkflowStep,
 } from "~/config/site";
 import {
-  appStoreCampaignUrl,
+  appStoreProductUrl,
   APP_SCREENSHOTS,
   BETA_BENEFITS,
   FAQS,
@@ -4908,11 +4908,8 @@ export function getLocaleInfo(locale: LocaleCode): LocaleInfo {
 // on the product page match the page they came from. (On a Mac or iPad the
 // link hands off to the App Store app, which resolves the app id against the
 // signed-in Apple Account instead — the country only shapes the web page.)
-export function appStoreCtaUrl(
-  locale: LocaleCode = DEFAULT_LOCALE,
-  campaign = "website",
-): string {
-  return appStoreCampaignUrl(campaign, getLocaleInfo(locale).storefront);
+export function appStoreCtaUrl(locale: LocaleCode = DEFAULT_LOCALE): string {
+  return appStoreProductUrl(getLocaleInfo(locale).storefront);
 }
 
 export function getLocaleFromPath(pathname: string): LocaleCode {

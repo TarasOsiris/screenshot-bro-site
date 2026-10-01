@@ -13,9 +13,6 @@ export const WEB_PURCHASE_EMAIL = "info@ninevastudios.com";
 export const APP_STORE_APP_ID = "6760177675";
 export const APP_STORE_URL = "https://apps.apple.com/us/app/screenshot-bro/id6760177675";
 
-// App Store Connect provider token (identifies us as the campaign provider).
-export const APP_STORE_PROVIDER_TOKEN = "117277360";
-
 // Storefront used when we have no locale to go on. Apple does NOT geo-redirect
 // a country-less /app/id… URL — it 301s everyone to /us/ — so the country
 // segment is always written explicitly. See appStoreCtaUrl() in
@@ -28,19 +25,14 @@ export const DIRECT_DOWNLOAD_URL = "https://downloads.screenshotbro.app/Screensh
 export const APPCAST_URL = "/appcast.xml";
 export const REDEMPTION_URL_SCHEME = "rc-6cc0af703b";
 
-// Builds an App Store campaign-tracking link. The `ct` value surfaces under
-// App Analytics → Acquisition → Campaigns as the traffic source, so use this
-// for clickable CTAs (not for SEO/structured-data, which keep the bare URL).
-// `platform=mac` opens the Mac variant of the universal app's product page —
-// without it the page defaults to iPhone. (The legacy `mt=12` hint is dropped
-// by Apple's redirect, and the /app/apple-store/ short path always lands on
-// iOS, so the canonical product path is required here.) The English slug
-// resolves in every storefront; Apple matches on the id and rewrites it.
-export function appStoreCampaignUrl(
-  campaign: string,
+// Builds the clickable App Store product link. Deliberately carries no query
+// params: campaign/platform params (`pt`, `ct`, `platform=mac`) sometimes broke
+// the hand-off to the App Store app on mobile. The English slug resolves in
+// every storefront; Apple matches on the id and rewrites it.
+export function appStoreProductUrl(
   country: string = DEFAULT_APP_STORE_COUNTRY,
 ): string {
-  return `https://apps.apple.com/${country}/app/screenshot-bro-mockup-maker/id${APP_STORE_APP_ID}?platform=mac&pt=${APP_STORE_PROVIDER_TOKEN}&ct=${campaign}`;
+  return `https://apps.apple.com/${country}/app/screenshot-bro-mockup-maker/id${APP_STORE_APP_ID}`;
 }
 export const CONTACT_MAILTO = `mailto:${EARLY_ACCESS_EMAIL}`;
 export const REDDIT_COMMUNITY_URL = "https://www.reddit.com/r/ScreenshotBro/";

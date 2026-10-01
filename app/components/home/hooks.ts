@@ -1,5 +1,16 @@
 import { useEffect, useRef } from "react";
 
+// React doesn't reliably reflect the `muted` prop onto the DOM after SSR +
+// hydration, and mobile browsers reject play() on a video they consider
+// unmuted. Force muted/inline state before starting playback.
+function playMuted(el: HTMLVideoElement) {
+  el.muted = true;
+  el.defaultMuted = true;
+  el.setAttribute("muted", "");
+  el.playsInline = true;
+  void el.play().catch(() => {});
+}
+
 export function useLoopWithPause(delayMs = 2000) {
   const ref = useRef<HTMLVideoElement>(null);
 
@@ -10,7 +21,7 @@ export function useLoopWithPause(delayMs = 2000) {
     const handler = () => {
       window.setTimeout(() => {
         el.currentTime = 0;
-        void el.play();
+        void el.play().catch(() => {});
       }, delayMs);
     };
 
@@ -35,13 +46,15 @@ export function useDeferredLoopVideo(src: string, delayMs = 2000, deferMs = 250)
     const onEnded = () => {
       window.setTimeout(() => {
         el.currentTime = 0;
-        void el.play();
+        void el.play().catch(() => {});
       }, delayMs);
     };
     el.addEventListener("ended", onEnded);
 
     const timer = window.setTimeout(() => {
-      if (!el.src) el.src = src;
+      if (el.src) return;
+      el.src = src;
+      playMuted(el);
     }, deferMs);
 
     return () => {
@@ -68,7 +81,7 @@ export function useLazyLoopVideo(src: string, delayMs = 2000, rootMargin = "300p
     const onEnded = () => {
       window.setTimeout(() => {
         el.currentTime = 0;
-        void el.play();
+        void el.play().catch(() => {});
       }, delayMs);
     };
     el.addEventListener("ended", onEnded);
@@ -79,7 +92,7 @@ export function useLazyLoopVideo(src: string, delayMs = 2000, rootMargin = "300p
     const start = () => {
       if (el.src) return;
       el.src = src;
-      void el.play().catch(() => {});
+      playMuted(el);
     };
 
     let io: IntersectionObserver | null = null;
