@@ -8,6 +8,8 @@ export const SITE_URL =
   "https://screenshotbro.app";
 
 export const EARLY_ACCESS_EMAIL = "tleskiv@ninevastudios.com";
+// Transfers and refunds for purchases made on the website (direct-download version).
+export const WEB_PURCHASE_EMAIL = "info@ninevastudios.com";
 export const APP_STORE_APP_ID = "6760177675";
 export const APP_STORE_URL = "https://apps.apple.com/us/app/screenshot-bro/id6760177675";
 

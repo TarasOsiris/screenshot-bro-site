@@ -1,5 +1,5 @@
 import type { Route } from "./+types/privacy";
-import { SITE_NAME, SITE_URL } from "~/config/site";
+import { SITE_NAME, SITE_URL, WEB_PURCHASE_EMAIL } from "~/config/site";
 import { ContentLayout } from "~/components/ContentLayout";
 import { mergeMeta } from "~/config/meta";
 import { isLocaleCode, type LocaleCode } from "~/config/localization";
@@ -113,7 +113,11 @@ export default function Privacy() {
             <strong>not</strong> collect, transmit, or store:
           </p>
           <ul>
-            <li>Personal information (name, email address, phone number)</li>
+            <li>
+              Personal information (name, email address, phone number) — the
+              one exception is the email address you enter if you buy Pro on our
+              website (Section 4)
+            </li>
             <li>
               What you click, type, select, or scroll through — the App records
               no keystrokes, no pointer activity, and no session replay
@@ -139,7 +143,9 @@ export default function Privacy() {
             counts a short, fixed list of milestones such as &ldquo;an export
             finished&rdquo; so we can tell which parts of the App people
             actually reach (<strong>Section 6</strong>). Neither carries the
-            contents of your work.
+            contents of your work. The version of {SITE_NAME} downloaded from
+            our website also checks our website for updates
+            (<strong>Section 7</strong>).
           </p>
 
           <h2>2. Data Stored on Your Device</h2>
@@ -268,7 +274,9 @@ export default function Privacy() {
             can send your receipt and activation link and help with refunds or
             moving a purchase. When you open the activation link, the App links
             the purchase to its anonymous RevenueCat identifier — no account is
-            created.
+            created. For refunds or to move a website purchase to another Mac,
+            email{" "}
+            <a href={`mailto:${WEB_PURCHASE_EMAIL}`}>{WEB_PURCHASE_EMAIL}</a>.
           </p>
           <p>
             If you do not make a purchase, no data is sent to RevenueCat
@@ -353,8 +361,10 @@ export default function Privacy() {
             triggered it, and the two anonymous identifiers are associated with
             one another in our analytics tool (Section 6) so that a purchase can
             be attributed to the installation that made it. Neither identifier is
-            joined to anything that identifies you personally, because we hold no
-            such data. Both values are shown
+            joined to anything that identifies you personally, with one
+            exception: if you bought Pro on our website, RevenueCat keeps the
+            email address you entered at checkout with that purchase, and
+            therefore with its anonymous identifier. Both values are shown
             in the App under Settings ▸ General ▸ Copy Diagnostics, alongside
             your App version, storage mode, language, and project counts; that
             information is placed on your clipboard and is sent to us only if you
@@ -523,8 +533,11 @@ export default function Privacy() {
             generated for that working session and discarded afterwards, so that
             the tools an agent used can be counted as one session rather than as
             unrelated events; it is not tied to you or to your installation
-            across sessions. Nothing sent is linked to your name, email address,
-            or Apple Account, none of which we hold.
+            across sessions. Nothing sent is linked to your name or Apple
+            Account, which we do not hold. If you bought Pro on our website, the
+            anonymous RevenueCat identifier is associated in RevenueCat with the
+            email address you entered at checkout (Section 4); the events
+            themselves never contain it.
           </p>
           <p>
             Product analytics is enabled by default and is currently not
@@ -541,7 +554,36 @@ export default function Privacy() {
             . We use it only to decide what to build and fix next.
           </p>
 
-          <h2>7. Third-Party Services Summary</h2>
+          <h2>7. Software Updates (Direct-Download Version)</h2>
+          <p>
+            The App Store version is updated by the App Store, and this section
+            does not apply to it. The version of {SITE_NAME} downloaded from our
+            website uses{" "}
+            <a
+              href="https://sparkle-project.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Sparkle
+            </a>
+            , an open-source updater built into the App, to check for new
+            versions. It periodically downloads a list of available versions
+            from <code>screenshotbro.app</code>, and when you choose to install
+            an update, the update itself.
+          </p>
+          <p>
+            These requests carry only what any web request does: your IP
+            address and a user agent naming the App and its version. The App
+            does not send Sparkle&apos;s optional system profile, so no device
+            model, hardware, or operating system details are included, and no
+            identifier, purchase information, or project data is sent.
+            Automatic update checks are enabled by default and are currently
+            not configurable in the App&apos;s settings. Sparkle asks before
+            installing an update unless you have chosen to have it install
+            updates automatically.
+          </p>
+
+          <h2>8. Third-Party Services Summary</h2>
           <table>
             <thead>
               <tr>
@@ -558,8 +600,19 @@ export default function Privacy() {
               </tr>
               <tr>
                 <td>RevenueCat</td>
-                <td>Purchase validation</td>
-                <td>Anonymous ID, transaction receipt</td>
+                <td>Purchase validation; website checkout</td>
+                <td>
+                  Anonymous ID, transaction receipt; for website purchases, the
+                  email address entered at checkout
+                </td>
+              </tr>
+              <tr>
+                <td>Stripe</td>
+                <td>Payment processing for website purchases</td>
+                <td>
+                  Email address and payment details entered at checkout (only
+                  if you buy on our website)
+                </td>
               </tr>
               <tr>
                 <td>Sentry</td>
@@ -585,6 +638,11 @@ export default function Privacy() {
                 <td>In-app purchases</td>
                 <td>Standard App Store transaction data</td>
               </tr>
+              <tr>
+                <td>screenshotbro.app</td>
+                <td>Update checks (direct-download version only)</td>
+                <td>IP address and App name and version, as in any web request</td>
+              </tr>
             </tbody>
           </table>
           <p>
@@ -592,7 +650,7 @@ export default function Privacy() {
             the App.
           </p>
 
-          <h2>8. Data Retention and Deletion</h2>
+          <h2>9. Data Retention and Deletion</h2>
           <ul>
             <li>
               <strong>Local data</strong> — all project data and preferences are
@@ -607,8 +665,13 @@ export default function Privacy() {
             </li>
             <li>
               <strong>Purchase records</strong> — managed by Apple and
-              RevenueCat. You can contact RevenueCat to request deletion of any
-              anonymous records associated with your transactions.
+              RevenueCat, and by Stripe for website purchases. You can contact
+              RevenueCat to request deletion of any anonymous records associated
+              with your transactions. For a website purchase, email{" "}
+              <a href={`mailto:${WEB_PURCHASE_EMAIL}`}>{WEB_PURCHASE_EMAIL}</a>{" "}
+              to request deletion of the email address kept with it; payment
+              records that the law requires us or Stripe to keep are retained
+              for as long as required.
             </li>
             <li>
               <strong>Crash and error reports</strong> — reports and app run
@@ -626,25 +689,26 @@ export default function Privacy() {
             </li>
           </ul>
 
-          <h2>9. Children&apos;s Privacy</h2>
+          <h2>10. Children&apos;s Privacy</h2>
           <p>
             {SITE_NAME} is not directed at children under the age of 13 and does
-            not knowingly collect personal information from children. Since we do
-            not collect personal information from any user, no special
-            provisions are necessary.
+            not knowingly collect personal information from children. The only
+            personal information we receive from any user is the email address
+            entered when buying Pro on our website.
           </p>
 
-          <h2>10. Security</h2>
+          <h2>11. Security</h2>
           <p>
             The App runs inside Apple's app sandbox on macOS, iOS and iPadOS, which
             restricts file system access and network capabilities. All data at
             rest is protected by platform storage encryption and iCloud
             encryption when applicable. The limited data the App does send —
-            purchase validation and crash reports — is transmitted over
+            purchase validation, crash reports, analytics events, and update
+            checks — is transmitted over
             encrypted HTTPS connections.
           </p>
 
-          <h2>11. Changes to This Policy</h2>
+          <h2>12. Changes to This Policy</h2>
           <p>
             We may update this Privacy Policy from time to time. The updated
             version will be posted at{" "}
@@ -653,7 +717,7 @@ export default function Privacy() {
             periodically.
           </p>
 
-          <h2>12. Contact Us</h2>
+          <h2>13. Contact Us</h2>
           <p>
             If you have questions or concerns about this Privacy Policy or the
             App's data practices, please contact us:

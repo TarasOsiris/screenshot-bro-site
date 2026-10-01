@@ -1,5 +1,5 @@
 import type { Route } from "./+types/terms";
-import { EARLY_ACCESS_EMAIL, SITE_NAME, SITE_URL } from "~/config/site";
+import { SITE_NAME, SITE_URL, WEB_PURCHASE_EMAIL } from "~/config/site";
 import { ContentLayout } from "~/components/ContentLayout";
 import { mergeMeta } from "~/config/meta";
 import { isLocaleCode, type LocaleCode } from "~/config/localization";
@@ -100,9 +100,13 @@ export default function Terms() {
         <p>
           These Terms of Use ("Terms") govern your use of the{" "}
           <strong>{SITE_NAME}</strong> application for macOS, iOS and iPadOS (the
-          "App") provided by {DEVELOPER_NAME} ("we", "us", or "our"). By
-          downloading, installing, or using the App, you agree to these Terms.
-          If you do not agree, do not use the App.
+          "App") provided by {DEVELOPER_NAME} ("we", "us", or "our"). The App
+          is distributed through the App Store (the "App Store version") and,
+          for Mac, as a direct download from{" "}
+          <a href={`${SITE_URL}/download`}>our website</a> (the
+          "direct-download version"). By downloading, installing, or using
+          either version, you agree to these Terms. If you do not agree, do not
+          use the App.
         </p>
 
         <h2>1. License (EULA)</h2>
@@ -122,6 +126,12 @@ export default function Terms() {
           . Where these Terms conflict with the Standard EULA, these Terms
           apply to the extent permitted by Apple.
         </p>
+        <p>
+          The Standard EULA applies to the App Store version only. The
+          direct-download version is licensed under these Terms alone, on the
+          same scope: a limited, non-exclusive, non-transferable, revocable
+          license to install and use it on Macs that you own or control.
+        </p>
 
         <h2>2. In-App Purchases</h2>
         <p>
@@ -137,7 +147,9 @@ export default function Terms() {
         <ul>
           <li>
             The lifetime purchase is a one-time, non-recurring payment that
-            unlocks the Pro entitlement for the Apple Account that bought it.
+            unlocks the Pro entitlement — for the Apple Account that bought it
+            in the App Store version, or as described in Section 2.5 for a
+            purchase made on our website.
           </li>
           <li>
             It does not auto-renew and is not a subscription. Future major
@@ -147,8 +159,9 @@ export default function Terms() {
 
         <h3>2.2 Auto-Renewing Subscriptions</h3>
         <p>
-          Subscriptions to {SITE_NAME} Pro are{" "}
-          <strong>auto-renewing</strong>. The following terms apply, in
+          Subscriptions are offered in the App Store version only. Subscriptions
+          to {SITE_NAME} Pro are <strong>auto-renewing</strong>. The following
+          terms apply, in
           accordance with Apple's App Store guidelines:
         </p>
         <ul>
@@ -206,13 +219,14 @@ export default function Terms() {
           >
             reportaproblem.apple.com
           </a>
-          .
+          . Refunds for purchases made on our website are covered in Section
+          2.5.
         </p>
 
         <h3>2.4 Restoring Purchases</h3>
         <p>
-          You can restore previous purchases on a new Mac or iPad signed in to
-          the same Apple Account by using the "Restore Purchases" action inside
+          In the App Store version, you can restore previous purchases on a new
+          Mac or iPad signed in to the same Apple Account by using the "Restore Purchases" action inside
           the App. Restored entitlements are validated against the App Store and
           our purchase processor (RevenueCat).
         </p>
@@ -230,7 +244,7 @@ export default function Terms() {
           A web purchase unlocks the direct-download version only; App Store
           purchases unlock the App Store version only. To move a web purchase to
           another Mac, or to request a refund for one, email{" "}
-          <a href={`mailto:${EARLY_ACCESS_EMAIL}`}>{EARLY_ACCESS_EMAIL}</a>{" "}
+          <a href={`mailto:${WEB_PURCHASE_EMAIL}`}>{WEB_PURCHASE_EMAIL}</a>{" "}
           with the email address used at checkout.
         </p>
 
@@ -261,9 +275,15 @@ export default function Terms() {
 
         <h2>5. Updates</h2>
         <p>
-          We may release updates to the App through the App Store. Some
+          We may release updates to the App. The App Store version is updated
+          through the App Store. The direct-download version checks our website
+          for updates using its built-in updater (Sparkle) and offers to
+          install them; each update is signed by us and notarized by Apple, and
+          the updater refuses an update whose signature does not match. You can
+          also check manually with "Check for Updates…" in the App menu. Some
           updates may add, change, or remove features. Pro entitlements remain
-          tied to your Apple Account.
+          tied to your Apple Account in the App Store version, and to the
+          activated copy of the App in the direct-download version.
         </p>
 
         <h2>6. Disclaimers</h2>
