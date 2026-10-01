@@ -10,7 +10,7 @@ export default [
   route(":locale/changelog", "routes/changelog.tsx", { id: "changelog-locale" }),
   route("support", "routes/support.tsx"),
   route("download", "routes/download.tsx"),
-  route("buy", "routes/buy.ts"),
+  route("buy", "routes/buy.tsx"),
   route("thanks", "routes/thanks.tsx"),
   route(":locale/support", "routes/support.tsx", { id: "support-locale" }),
   route("tutorials", "routes/tutorials.tsx"),

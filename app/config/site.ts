@@ -24,7 +24,7 @@ export const DEFAULT_APP_STORE_COUNTRY = "us";
 
 // Direct (Developer ID) distribution, outside the Mac App Store. Pro is sold through a
 // RevenueCat Web Purchase Link (Stripe); its success redirect is /thanks?redeem_url=…
-export const DIRECT_DOWNLOAD_URL = "/releases/ScreenshotBro.dmg";
+export const DIRECT_DOWNLOAD_URL = "https://downloads.screenshotbro.app/ScreenshotBro.dmg";
 export const APPCAST_URL = "/appcast.xml";
 export const REDEMPTION_URL_SCHEME = "rc-6cc0af703b";
 
