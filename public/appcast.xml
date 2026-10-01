@@ -5,6 +5,15 @@
         <link>https://screenshotbro.app</link>
         <item>
             <title>4.19</title>
+            <pubDate>Thu, 01 Oct 2026 19:59:19 +0300</pubDate>
+            <link>https://screenshotbro.app</link>
+            <sparkle:version>153</sparkle:version>
+            <sparkle:shortVersionString>4.19</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://downloads.screenshotbro.app/ScreenshotBro-4.19-153.dmg" length="56035441" type="application/octet-stream" sparkle:edSignature="hxBFJK8IsBwlNkoARFabSrDyBapH9g5pqAIpRi5Mzp/WeWZdHi8VaoGvmlvPVOeRMoA0CwaLg8JIFD+LTQXHAg=="/>
+        </item>
+        <item>
+            <title>4.19</title>
             <pubDate>Thu, 01 Oct 2026 18:06:19 +0300</pubDate>
             <link>https://screenshotbro.app</link>
             <sparkle:version>152</sparkle:version>
