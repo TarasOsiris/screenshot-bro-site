@@ -210,7 +210,7 @@ export default function ComparisonsIndex() {
   ]);
 
   return (
-    <ContentLayout>
+    <ContentLayout locale={locale}>
       <div className="max-w-3xl mx-auto">
         <article className="prose-policy">
           <script

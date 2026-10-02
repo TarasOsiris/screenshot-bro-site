@@ -85,7 +85,7 @@ export function ComparisonShell({
   ]);
 
   return (
-    <ContentLayout>
+    <ContentLayout locale={locale}>
       {/* The CTA lives outside <article>: app.css is unlayered, so
           `.prose-policy a` beats anything Tailwind emits into @layer utilities
           no matter the specificity — inside, it repaints the store button's

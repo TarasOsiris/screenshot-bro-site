@@ -1,4 +1,5 @@
 import { AppleLogo } from "~/components/home/icons";
+import { ButtonLink } from "~/components/ui/Button";
 import { PRIMARY_CTA_LABEL } from "~/config/site";
 import {
   appStoreCtaUrl,
@@ -36,15 +37,20 @@ export function BlogCTA({
       : copy.ui.seeInAction;
 
   return (
-    <div className="mt-10 p-6 rounded-2xl bg-surface-raised border border-border text-center">
+    <div className="soft-panel mt-10 p-7 rounded-3xl text-center">
       <p className="text-sm text-ink/60 mb-4">{message}</p>
-      <a
-        href={appStoreCtaUrl(locale)}
-        className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-sm transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
-      >
+      <ButtonLink href={appStoreCtaUrl(locale)}>
         <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
         {resolvedButtonLabel}
-      </a>
+      </ButtonLink>
+      <p className="mt-3 text-xs">
+        <a
+          href="/download"
+          className="text-ink/55 hover:text-ink/80 transition-colors"
+        >
+          {copy.ui.directDownload}
+        </a>
+      </p>
       <p className="mt-4 text-sm">
         <a
           href={localizedPath(locale)}

@@ -175,7 +175,7 @@ export function TemplatesSection({
     <section
       ref={sectionRef}
       id="templates"
-      className="py-28 px-6 border-t border-border-subtle scroll-mt-24"
+      className="py-24 px-6 border-t border-border-subtle scroll-mt-24"
     >
       <div className="max-w-6xl mx-auto">
         <SectionIntro

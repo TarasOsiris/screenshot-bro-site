@@ -101,7 +101,7 @@ function GuideCard({ locale }: { locale: LocaleCode }) {
   return (
     <a
       href={guidePath}
-      className="group block rounded-2xl border border-border bg-surface-raised p-8 transition-all hover:border-ink/20"
+      className="soft-panel group block rounded-3xl p-8 transition-all hover:-translate-y-0.5 hover:border-ink/20"
     >
       <p className="text-xs uppercase tracking-[0.25em] text-accent-light font-mono">
         {copy.guideEyebrow}

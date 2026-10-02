@@ -1,4 +1,6 @@
 import { getLocalizedBlogPosts } from "~/config/blog";
+import { getBlogThumb } from "~/config/blog-images";
+import { buttonClass } from "~/components/ui/Button";
 import { SectionIntro } from "~/components/home/SectionIntro";
 import { localizedPath, type HomeCopy } from "~/config/localization";
 
@@ -18,37 +20,49 @@ export function BlogPreviewSection({ copy }: { copy: HomeCopy }) {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {highlight.map((post) => (
-            <a
-              key={post.slug}
-              href={localizedPath(copy.locale.code, `/blog/${post.slug}`)}
-              className="group rounded-2xl bg-surface-raised border border-border p-6 transition-all hover:border-ink/20 hover:bg-surface-overlay flex flex-col"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <span className="px-2 py-0.5 rounded bg-accent/10 text-accent-light text-[11px] font-medium">
-                  {post.category}
-                </span>
-                <span className="text-[11px] text-ink/60 font-mono">
-                  {post.readTime}
-                </span>
-              </div>
-              <h3 className="font-display font-semibold text-base text-ink group-hover:text-accent-light transition-colors mb-2 leading-snug">
-                {post.title}
-              </h3>
-              <p className="text-sm text-ink/60 leading-relaxed flex-1">
-                {post.description}
-              </p>
-              <span className="mt-5 text-xs font-mono text-accent-light group-hover:text-ink transition-colors">
-                {copy.ui.read} →
-              </span>
-            </a>
-          ))}
+          {highlight.map((post) => {
+            const thumb = getBlogThumb(post.slug);
+            return (
+              <a
+                key={post.slug}
+                href={localizedPath(copy.locale.code, `/blog/${post.slug}`)}
+                className="group rounded-3xl bg-surface-raised border border-border overflow-hidden transition-all hover:border-ink/20 flex flex-col"
+              >
+                <div className="relative aspect-video overflow-hidden bg-surface-overlay">
+                  {thumb ? (
+                    <img
+                      src={thumb.src}
+                      alt={thumb.alt}
+                      width={800}
+                      height={450}
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                  ) : null}
+                </div>
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="px-2 py-0.5 rounded bg-accent/10 text-accent-light text-[11px] font-medium">
+                      {post.category}
+                    </span>
+                    <span className="text-[11px] text-ink/60 font-mono">
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <h3 className="font-display font-semibold text-base text-ink group-hover:text-accent-light transition-colors leading-snug">
+                    {post.title}
+                  </h3>
+                </div>
+              </a>
+            );
+          })}
         </div>
 
         <div className="mt-10 text-center">
           <a
             href={localizedPath(copy.locale.code, "/blog")}
-            className="inline-flex items-center gap-2 rounded-xl border border-ink/10 bg-ink/[0.04] px-5 py-2.5 text-sm font-medium text-ink/[0.76] transition-all hover:border-ink/20 hover:bg-ink/10 hover:text-ink"
+            className={buttonClass("secondary", "sm", "font-medium")}
           >
             {copy.ui.browseGuides}
             <span aria-hidden="true">→</span>

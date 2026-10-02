@@ -1,17 +1,12 @@
+import { AppleLogo } from "~/components/home/icons";
 import { useLazyLoopVideo } from "~/components/home/hooks";
+import { McpSessionVisual } from "~/components/home/McpSessionVisual";
+import { ButtonLink } from "~/components/ui/Button";
 import { SectionIntro } from "~/components/home/SectionIntro";
 import type { FeatureShowcase } from "~/config/site";
 import { appStoreCtaUrl, type HomeCopy } from "~/config/localization";
 
-function FeatureShowcaseBlock({
-  showcase,
-  href,
-  copy,
-}: {
-  showcase: FeatureShowcase;
-  href: string;
-  copy: HomeCopy;
-}) {
+function FeatureShowcaseBlock({ showcase }: { showcase: FeatureShowcase }) {
   const isVideo =
     showcase.media.endsWith(".mp4") || showcase.media.endsWith(".webm");
   const videoRef = useLazyLoopVideo(showcase.media);
@@ -22,9 +17,9 @@ function FeatureShowcaseBlock({
       className="showcase-panel overflow-hidden scroll-mt-24"
     >
       <div className="grid lg:grid-cols-[0.65fr_1.35fr]">
-        <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-between gap-8">
+        <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-center">
           <div>
-            <p className="text-sm uppercase tracking-[0.25em] text-accent font-mono mb-4">
+            <p className="text-xs uppercase tracking-[0.25em] text-accent-light font-mono mb-4">
               {showcase.label}
             </p>
             <h3 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-ink tracking-tight leading-[1.06]">
@@ -34,25 +29,12 @@ function FeatureShowcaseBlock({
               {showcase.description}
             </p>
           </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <a
-              href={href}
-              className="inline-flex items-center gap-2 rounded-xl border border-ink/10 bg-ink/[0.06] px-4 py-2.5 text-sm font-medium text-ink/[0.88] transition-all hover:border-ink/20 hover:bg-ink/10"
-            >
-              {copy.ui.tryItNow}
-            </a>
-            <a
-              href="#early-access"
-              className="text-sm text-ink/[0.62] hover:text-ink/[0.88] transition-colors"
-            >
-              {copy.ui.seeDetails}
-            </a>
-          </div>
         </div>
 
         <div className="min-w-0">
-          {isVideo ? (
+          {showcase.visual === "mcp" ? (
+            <McpSessionVisual label={showcase.mediaAlt} />
+          ) : isVideo ? (
             <video
               ref={videoRef as React.RefObject<HTMLVideoElement>}
               autoPlay
@@ -93,7 +75,7 @@ export function ShowcasesSection({
   return (
     <section
       id="showcases"
-      className="py-28 px-6 border-t border-border-subtle scroll-mt-24"
+      className="py-24 px-6 border-t border-border-subtle scroll-mt-24"
     >
       <div className="max-w-6xl mx-auto">
         <SectionIntro
@@ -116,13 +98,15 @@ export function ShowcasesSection({
 
         <div className="space-y-8">
           {copy.featureShowcases.map((showcase) => (
-            <FeatureShowcaseBlock
-              key={showcase.id}
-              showcase={showcase}
-              href={ctaHref}
-              copy={copy}
-            />
+            <FeatureShowcaseBlock key={showcase.id} showcase={showcase} />
           ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <ButtonLink href={ctaHref} size="lg">
+            <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
+            {copy.primaryCtaLabel}
+          </ButtonLink>
         </div>
       </div>
     </section>

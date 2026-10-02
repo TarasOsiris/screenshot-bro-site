@@ -5,6 +5,7 @@ declare global {
 }
 
 import { useEffect } from "react";
+import { buttonClass } from "~/components/ui/Button";
 
 import type { Route } from "./+types/friends";
 import { ContentLayout } from "~/components/ContentLayout";
@@ -91,7 +92,7 @@ function FriendCard({ app }: { app: FriendApp }) {
   const websiteHref = friendWebsiteUrl(app);
 
   return (
-    <article className="rounded-2xl border border-border bg-surface-raised p-6 sm:p-8 transition-all hover:border-ink/20">
+    <article className="soft-panel rounded-3xl p-6 sm:p-8 transition-all hover:border-ink/20">
       <div className="flex flex-col sm:flex-row gap-5 sm:gap-6">
         <img
           src={friendIconPath(app)}
@@ -140,7 +141,7 @@ function FriendCard({ app }: { app: FriendApp }) {
               data-destination="app-store"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-accent to-accent-light px-5 py-3 text-sm font-semibold text-white transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
+              className={buttonClass("primary", "md")}
             >
               <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
               App Store
@@ -155,7 +156,7 @@ function FriendCard({ app }: { app: FriendApp }) {
                 data-destination="website"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-ink/10 bg-ink/[0.06] px-5 py-3 text-sm font-medium text-ink/[0.72] transition-all hover:border-ink/20 hover:bg-ink/10 hover:text-ink/[0.92]"
+                className={buttonClass("secondary", "md", "font-medium")}
               >
                 Website
                 <span aria-hidden="true" className="opacity-60">
@@ -239,7 +240,7 @@ export default function Friends() {
           current numbers.
         </p>
 
-        <section className="mt-14 rounded-2xl border border-border bg-surface-raised p-6 sm:p-8">
+        <section className="soft-panel mt-14 rounded-3xl p-6 sm:p-8">
           <h2 className="font-display font-bold text-2xl text-ink tracking-tight">
             Your app here
           </h2>
@@ -266,7 +267,7 @@ export default function Friends() {
               href={DISCORD_INVITE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-light px-5 py-3 text-sm font-semibold text-white transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
+              className={buttonClass("primary", "md")}
             >
               Join the Discord
             </a>
@@ -274,7 +275,7 @@ export default function Friends() {
               href={X_PROFILE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-ink/10 bg-ink/[0.06] px-5 py-3 text-sm font-medium text-ink/[0.72] transition-all hover:border-ink/20 hover:bg-ink/10 hover:text-ink/[0.92]"
+              className={buttonClass("secondary", "md", "font-medium")}
             >
               Message us on X
             </a>

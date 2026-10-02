@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { buttonClass } from "~/components/ui/Button";
 import { useLoaderData } from "react-router";
 import type { Route } from "./+types/download";
 import { ContentLayout } from "~/components/ContentLayout";
@@ -81,10 +82,8 @@ function Check() {
   );
 }
 
-const primaryButton =
-  "inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-base transition-all hover:shadow-[0_0_48px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]";
-const secondaryButton =
-  "inline-flex items-center justify-center gap-2 rounded-xl border border-ink/15 bg-ink/5 px-6 py-3 font-semibold text-ink transition-colors hover:bg-ink/10";
+const primaryButton = buttonClass("primary", "lg");
+const secondaryButton = buttonClass("secondary", "md", "text-base");
 
 function OptionCard({ title, rows, children }: { title: string; rows: string[]; children: React.ReactNode }) {
   return (

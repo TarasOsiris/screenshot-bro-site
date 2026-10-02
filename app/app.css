@@ -469,89 +469,6 @@ button:focus-visible {
   animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* Shimmer effect for CTA */
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
-.btn-shimmer {
-  background-size: 200% 100%;
-  animation: shimmer 3s linear infinite;
-}
-
-/* Gradient text */
-.text-gradient {
-  background: linear-gradient(135deg, var(--color-body) 0%, var(--color-accent-light) 50%, var(--color-warm) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Floating badge pulse */
-@keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 var(--color-accent-glow); }
-  70% { box-shadow: 0 0 0 8px transparent; }
-  100% { box-shadow: 0 0 0 0 transparent; }
-}
-
-.pulse-ring {
-  animation: pulse-ring 2.5s infinite;
-}
-
-/* Horizontal scroll for preview */
-.scroll-snap {
-  scroll-snap-type: x mandatory;
-}
-
-.scroll-snap > * {
-  scroll-snap-align: center;
-}
-
-/* macOS window chrome */
-.macos-window {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow:
-    0 0 0 1px var(--color-border-subtle),
-    var(--shadow-card);
-}
-
-.macos-titlebar {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
-  background: var(--color-surface-overlay);
-  border-bottom: 1px solid var(--color-border-subtle);
-}
-
-.macos-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-
-/* Animated gradient placeholder for showcase media */
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.showcase-placeholder {
-  background: linear-gradient(
-    135deg,
-    var(--color-surface-raised),
-    var(--color-accent-glow),
-    var(--color-surface-overlay),
-    var(--color-accent-glow),
-    var(--color-surface-raised)
-  );
-  background-size: 300% 300%;
-  animation: gradient-shift 6s ease infinite;
-}
-
 /* Privacy policy prose */
 .prose-policy {
   color: color-mix(in srgb, var(--color-ink) 62%, transparent);
@@ -762,6 +679,13 @@ button:focus-visible {
     #000 90%,
     transparent
   );
+}
+
+/* Single-row strip under the hero: tighter, no checkerboard stagger. */
+.marquee--flat {
+  --marquee-gap: 1.75rem;
+  --marquee-stagger: 0rem;
+  padding-block: 0.5rem;
 }
 
 .marquee-track {

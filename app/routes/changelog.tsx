@@ -1,4 +1,5 @@
 import type { Route } from "./+types/changelog";
+import { Panel } from "~/components/ui/Panel";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 import { ContentLayout } from "~/components/ContentLayout";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
@@ -45,31 +46,31 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
   };
 
   const descriptions: Record<LocaleCode, string> = {
-    en: `What's new in ${SITE_NAME}. Release notes, new features, and improvements for the App Store screenshot designer for Mac and iPad.`,
+    en: `What's new in ${SITE_NAME}. Release notes, new features, and improvements for the App Store screenshot designer for Mac, iPad and iPhone.`,
     es: `Novedades en ${SITE_NAME}. Notas de versión, nuevas funciones y mejoras para el diseñador de capturas de pantalla de App Store.`,
-    zh: `${SITE_NAME} 最新更新动态。查看 Mac 与 iPad 端 App Store 截图设计器的版本说明、新功能与性能改进。`,
+    zh: `${SITE_NAME} 最新更新动态。查看 Mac、iPad 与 iPhone 端 App Store 截图设计器的版本说明、新功能与性能改进。`,
     ja: `${SITE_NAME}の最新リリース情報。新機能、改善点、バグ修正などアップデート履歴を掲載しています。`,
-    de: `Neuigkeiten in ${SITE_NAME}. Versionshinweise, neue Funktionen und Verbesserungen für macOS und iPadOS.`,
-    fr: `Quoi de neuf dans ${SITE_NAME} ? Notes de version, fonctionnalités et correctifs pour Mac et iPad.`,
-    pt: `Novidades no ${SITE_NAME}. Notas de lançamento, novos recursos e melhorias para Mac e iPad.`,
-    it: `Novità in ${SITE_NAME}. Note di rilascio, nuove funzionalità e miglioramenti per Mac e iPad.`,
-    ko: `${SITE_NAME}의 새로운 소식. Mac 및 iPad용 App Store 스크린샷 디자이너의 최신 릴리즈 노트와 개선 사항.`,
-    ar: `كل جديد في ${SITE_NAME}. ملاحظات الإصدارات والميزات الجديدة والتحسينات لنظامي Mac و iPad.`,
-    hi: `${SITE_NAME} में क्या नया है। Mac और iPad के लिए ऐप स्टोर स्क्रीनशॉट डिज़ाइनर की नई सुविधाएँ और सुधार।`,
-    uk: `Що нового в ${SITE_NAME}. Нотатки до релізів, нові функції та покращення дизайнера скриншотів App Store для Mac та iPad.`,
-    pl: `Co nowego w ${SITE_NAME}. Informacje o wydaniach, nowe funkcje i ulepszenia projektanta zrzutów ekranu App Store dla Maca i iPada.`,
-    tr: `${SITE_NAME} yenilikleri. Mac ve iPad için App Store ekran görüntüsü tasarımcısına yönelik sürüm notları, yeni özellikler ve iyileştirmeler.`,
-    nl: `Wat is er nieuw in ${SITE_NAME}. Release-opmerkingen, nieuwe functies en verbeteringen voor de App Store-screenshotdesigner voor Mac en iPad.`,
-    id: `Apa yang baru di ${SITE_NAME}. Catatan rilis, fitur baru, dan peningkatan untuk desainer tangkapan layar App Store untuk Mac dan iPad.`,
-    vi: `Có gì mới trong ${SITE_NAME}. Ghi chú phát hành, tính năng mới và cải tiến cho trình thiết kế ảnh chụp màn hình App Store cho Mac và iPad.`,
-    th: `มีอะไรใหม่ใน ${SITE_NAME} บันทึกประจำรุ่น คุณสมบัติใหม่ และการปรับปรุงสำหรับเครื่องมือออกแบบภาพหน้าจอ App Store บน Mac และ iPad`,
-    sv: `Vad är nytt i ${SITE_NAME}. Versionsinformation, nya funktioner och förbättringar för App Store-skärmdumpsverktyget för Mac och iPad.`,
-    da: `Hvad er nyt i ${SITE_NAME}. Udgivelsesnoter, nye funktioner og forbedringer til App Store-skærmbilledeværktøjet til Mac og iPad.`,
-    fi: `Mitä uutta ${SITE_NAME}ssä. Julkaisutiedot, uudet ominaisuudet ja parannukset App Store -kuvakaappaustyökaluun Macille ja iPadille.`,
-    no: `Hva er nytt i ${SITE_NAME}. Utgivelsesnotater, nye funksjoner og forbedringer for App Store-skjermbildeverktøyet for Mac og iPad.`,
-    cs: `Co je nového v ${SITE_NAME}. Poznámky k verzi, nové funkce a vylepšení nástroje pro snímky obrazovky App Store pro Mac a iPad.`,
-    ro: `Ce este nou în ${SITE_NAME}. Note de versiune, funcții noi și îmbunătățiri pentru instrumentul de capturi de ecran App Store pentru Mac și iPad.`,
-    ms: `Apa yang baharu dalam ${SITE_NAME}. Nota keluaran, ciri baharu dan penambahbaikan untuk pereka bentuk tangkapan skrin App Store bagi Mac dan iPad.`,
+    de: `Neuigkeiten in ${SITE_NAME}. Versionshinweise, neue Funktionen und Verbesserungen für macOS, iPadOS und iOS.`,
+    fr: `Quoi de neuf dans ${SITE_NAME} ? Notes de version, fonctionnalités et correctifs pour Mac, iPad et iPhone.`,
+    pt: `Novidades no ${SITE_NAME}. Notas de lançamento, novos recursos e melhorias para Mac, iPad e iPhone.`,
+    it: `Novità in ${SITE_NAME}. Note di rilascio, nuove funzionalità e miglioramenti per Mac, iPad e iPhone.`,
+    ko: `${SITE_NAME}의 새로운 소식. Mac, iPad 및 iPhone용 App Store 스크린샷 디자이너의 최신 릴리즈 노트와 개선 사항.`,
+    ar: `كل جديد في ${SITE_NAME}. ملاحظات الإصدارات والميزات الجديدة والتحسينات لأجهزة Mac و iPad و iPhone.`,
+    hi: `${SITE_NAME} में क्या नया है। Mac, iPad और iPhone के लिए ऐप स्टोर स्क्रीनशॉट डिज़ाइनर की नई सुविधाएँ और सुधार।`,
+    uk: `Що нового в ${SITE_NAME}. Нотатки до релізів, нові функції та покращення дизайнера скриншотів App Store для Mac, iPad та iPhone.`,
+    pl: `Co nowego w ${SITE_NAME}. Informacje o wydaniach, nowe funkcje i ulepszenia projektanta zrzutów ekranu App Store dla Maca, iPada i iPhone’a.`,
+    tr: `${SITE_NAME} yenilikleri. Mac, iPad ve iPhone için App Store ekran görüntüsü tasarımcısına yönelik sürüm notları, yeni özellikler ve iyileştirmeler.`,
+    nl: `Wat is er nieuw in ${SITE_NAME}. Release-opmerkingen, nieuwe functies en verbeteringen voor de App Store-screenshotdesigner voor Mac, iPad en iPhone.`,
+    id: `Apa yang baru di ${SITE_NAME}. Catatan rilis, fitur baru, dan peningkatan untuk desainer tangkapan layar App Store untuk Mac, iPad, dan iPhone.`,
+    vi: `Có gì mới trong ${SITE_NAME}. Ghi chú phát hành, tính năng mới và cải tiến cho trình thiết kế ảnh chụp màn hình App Store cho Mac, iPad và iPhone.`,
+    th: `มีอะไรใหม่ใน ${SITE_NAME} บันทึกประจำรุ่น คุณสมบัติใหม่ และการปรับปรุงสำหรับเครื่องมือออกแบบภาพหน้าจอ App Store บน Mac, iPad และ iPhone`,
+    sv: `Vad är nytt i ${SITE_NAME}. Versionsinformation, nya funktioner och förbättringar för App Store-skärmdumpsverktyget för Mac, iPad och iPhone.`,
+    da: `Hvad er nyt i ${SITE_NAME}. Udgivelsesnoter, nye funktioner og forbedringer til App Store-skærmbilledeværktøjet til Mac, iPad og iPhone.`,
+    fi: `Mitä uutta ${SITE_NAME}ssä. Julkaisutiedot, uudet ominaisuudet ja parannukset App Store -kuvakaappaustyökaluun Macille, iPadille ja iPhonelle.`,
+    no: `Hva er nytt i ${SITE_NAME}. Utgivelsesnotater, nye funksjoner og forbedringer for App Store-skjermbildeverktøyet for Mac, iPad og iPhone.`,
+    cs: `Co je nového v ${SITE_NAME}. Poznámky k verzi, nové funkce a vylepšení nástroje pro snímky obrazovky App Store pro Mac, iPad a iPhone.`,
+    ro: `Ce este nou în ${SITE_NAME}. Note de versiune, funcții noi și îmbunătățiri pentru instrumentul de capturi de ecran App Store pentru Mac, iPad și iPhone.`,
+    ms: `Apa yang baharu dalam ${SITE_NAME}. Nota keluaran, ciri baharu dan penambahbaikan untuk pereka bentuk tangkapan skrin App Store bagi Mac, iPad dan iPhone.`,
   };
 
   const title = titles[locale] || titles.en;
@@ -782,7 +783,7 @@ export default function Changelog() {
   ]);
 
   return (
-    <ContentLayout>
+    <ContentLayout locale={locale}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }}
@@ -801,43 +802,58 @@ export default function Changelog() {
         </div>
 
         <div className="space-y-12">
-          {CHANGELOG.map((entry) => (
-            <article
-              key={entry.version}
-              className="relative pl-8 border-l border-border"
-            >
-              <div className="absolute left-0 top-0 -translate-x-1/2 w-3 h-3 rounded-full bg-accent border-2 border-surface" />
+          {CHANGELOG.map((entry, index) => {
+            const latest = index === 0;
+            const body = (
+              <>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="font-mono text-sm font-medium text-accent-light">
+                    v{entry.version}
+                  </span>
+                  <span className="text-sm text-ink/60">{entry.date}</span>
+                </div>
 
-              <div className="flex items-center gap-3 mb-4">
-                <span className="font-mono text-sm font-medium text-accent-light">
-                  v{entry.version}
-                </span>
-                <span className="text-sm text-ink/60">{entry.date}</span>
-              </div>
+                <h2 className="font-display font-bold text-xl text-ink mb-4">
+                  {entry.title}
+                </h2>
 
-              <h2 className="font-display font-bold text-xl text-ink mb-4">
-                {entry.title}
-              </h2>
-
-              <ul className="space-y-3">
-                {entry.changes.map((change) => {
-                  const style = TYPE_STYLES[change.type];
-                  return (
-                    <li key={change.text} className="flex items-start gap-3">
-                      <span
-                        className={`shrink-0 mt-0.5 px-2 py-0.5 rounded text-[11px] font-medium ${style.bg} ${style.text}`}
-                      >
-                        {style.label}
-                      </span>
-                      <span className="text-sm text-ink/60 leading-relaxed">
-                        {change.text}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </article>
-          ))}
+                <ul className="space-y-3">
+                  {entry.changes.map((change) => {
+                    const style = TYPE_STYLES[change.type];
+                    return (
+                      <li key={change.text} className="flex items-start gap-3">
+                        <span
+                          className={`shrink-0 mt-0.5 px-2 py-0.5 rounded text-[11px] font-medium ${style.bg} ${style.text}`}
+                        >
+                          {style.label}
+                        </span>
+                        <span className="text-sm text-ink/[0.66] leading-relaxed">
+                          {change.text}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </>
+            );
+            return (
+              <article
+                key={entry.version}
+                className="relative pl-8 border-l border-border"
+              >
+                <div
+                  className={`absolute left-0 top-0 -translate-x-1/2 w-3 h-3 rounded-full bg-accent border-2 border-surface ${latest ? "ring-4 ring-accent/20" : ""}`}
+                />
+                {latest ? (
+                  <Panel tone="accent" className="-mt-2">
+                    {body}
+                  </Panel>
+                ) : (
+                  body
+                )}
+              </article>
+            );
+          })}
         </div>
       </div>
     </ContentLayout>

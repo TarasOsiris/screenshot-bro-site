@@ -1,12 +1,31 @@
 import { FeatureIcon } from "~/components/home/icons";
 import { SectionIntro } from "~/components/home/SectionIntro";
+import type { FeatureIconKey } from "~/config/site";
 import type { HomeCopy } from "~/config/localization";
 
+// The showcases above already demo batch import, upload, shapes, backgrounds,
+// frames and MCP, so the grid only carries what they don't — eight cards, two
+// even rows. Picked by key so every locale's translated list still lines up.
+const HOME_FEATURES: FeatureIconKey[] = [
+  "templates",
+  "project",
+  "export",
+  "cloud",
+  "native",
+  "fonts",
+  "privacy",
+  "free",
+];
+
 export function FeaturesSection({ copy }: { copy: HomeCopy }) {
+  const features = HOME_FEATURES.map((key) =>
+    copy.features.find((feature) => feature.icon === key),
+  ).filter((feature) => feature !== undefined);
+
   return (
     <section
       id="features"
-      className="relative py-28 px-6 border-t border-border-subtle scroll-mt-24"
+      className="relative py-24 px-6 border-t border-border-subtle scroll-mt-24"
     >
       <div className="max-w-6xl mx-auto">
         <SectionIntro
@@ -16,22 +35,15 @@ export function FeaturesSection({ copy }: { copy: HomeCopy }) {
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {copy.features.map((feature, index) => (
+          {features.map((feature) => (
             <div
-              key={feature.title}
-              className="feature-card rounded-3xl p-6 flex flex-col gap-4 min-h-[220px]"
-              style={{ animationDelay: `${index * 0.05}s` }}
+              key={feature.icon}
+              className="feature-card rounded-3xl p-6 flex flex-col gap-4"
             >
-              <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center"
-                style={{
-                  background: `color-mix(in srgb, ${feature.accent} 12%, transparent)`,
-                  color: feature.accent,
-                }}
-              >
+              <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-accent/10 text-accent-light">
                 <FeatureIcon icon={feature.icon} />
               </div>
-              <div className="space-y-3">
+              <div className="space-y-2.5">
                 <h3 className="font-display font-semibold text-ink text-base">
                   {feature.title}
                 </h3>

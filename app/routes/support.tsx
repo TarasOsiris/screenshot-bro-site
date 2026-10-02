@@ -1,4 +1,6 @@
 import type { Route } from "./+types/support";
+import { buttonClass } from "~/components/ui/Button";
+import { Panel } from "~/components/ui/Panel";
 import { ContentLayout } from "~/components/ContentLayout";
 import { DiscordGlyph, RedditGlyph, ThreadsGlyph, XGlyph } from "~/components/home/icons";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
@@ -133,15 +135,22 @@ export default function Support() {
       />
       <div className="max-w-3xl mx-auto">
         <header className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-ink">
+          <img
+            src="/web-app-manifest-192x192.png"
+            alt=""
+            width={88}
+            height={88}
+            className="mx-auto mb-8 h-22 w-22 rounded-[22%] shadow-[0_20px_60px_-20px_var(--color-accent-glow)]"
+          />
+          <h1 className="font-display font-extrabold text-4xl sm:text-5xl tracking-tight text-ink">
             {copy.heading}
           </h1>
-          <p className="mt-4 text-lg text-ink/60 leading-relaxed">
+          <p className="mt-4 text-lg text-ink/60 leading-relaxed text-balance">
             {copy.intro}
           </p>
         </header>
 
-        <section className="relative overflow-hidden rounded-2xl border border-accent/25 bg-accent/[0.07] p-8 sm:p-10 text-center">
+        <Panel as="section" tone="accent" padding="lg" className="relative overflow-hidden text-center">
           <div
             aria-hidden="true"
             className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-accent/20 blur-[100px]"
@@ -150,7 +159,7 @@ export default function Support() {
             <p className="text-[11px] uppercase tracking-[0.25em] text-accent-light font-mono">
               {copy.discordLabel}
             </p>
-            <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-ink">
+            <h2 className="mt-4 font-display text-2xl sm:text-3xl font-bold tracking-tight text-ink">
               {copy.discordHeading}
             </h2>
             <p className="mt-3 text-sm text-ink/60 leading-relaxed max-w-md mx-auto">
@@ -160,15 +169,15 @@ export default function Support() {
               href={DISCORD_INVITE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-medium text-white transition-all hover:bg-accent-light"
+              className={buttonClass("primary", "md", "mt-7")}
             >
               <DiscordGlyph />
               {copy.discordCta}
             </a>
           </div>
-        </section>
+        </Panel>
 
-        <section className="mt-6 rounded-2xl border border-ink/10 bg-ink/[0.04] p-8 sm:p-10 text-center">
+        <Panel as="section" padding="lg" className="mt-6 text-center">
           <p className="text-[11px] uppercase tracking-[0.25em] text-ink/55 font-mono">
             {copy.emailUs}
           </p>
@@ -183,7 +192,7 @@ export default function Support() {
           <p className="mt-4 text-sm text-ink/55 leading-relaxed max-w-md mx-auto">
             {copy.emailNote}
           </p>
-        </section>
+        </Panel>
 
         <section className="mt-10">
           <h2 className="text-sm uppercase tracking-[0.25em] text-ink/55 font-mono text-center">
@@ -196,7 +205,7 @@ export default function Support() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 rounded-2xl border border-ink/10 bg-ink/[0.04] px-4 py-6 text-center hover:border-ink/20 hover:bg-ink/[0.07] transition-all"
+                className="soft-panel flex flex-col items-center gap-3 rounded-3xl px-4 py-6 text-center transition-all hover:-translate-y-0.5 hover:border-ink/20"
               >
                 <span className="flex items-center justify-center w-11 h-11 rounded-xl border border-ink/10 bg-ink/[0.06] text-ink/75">
                   {social.icon}

@@ -60,9 +60,6 @@ import { ShowcasesSection } from "~/components/home/ShowcasesSection";
 import { TemplatesSection } from "~/components/home/TemplatesSection";
 import { WorkflowSection } from "~/components/home/WorkflowSection";
 import { FeaturesSection } from "~/components/home/FeaturesSection";
-import { ScreenshotsSection } from "~/components/home/ScreenshotsSection";
-import { TestimonialsSection } from "~/components/home/TestimonialsSection";
-import { ProblemSection } from "~/components/home/ProblemSection";
 import { FaqSection } from "~/components/home/FaqSection";
 import { DownloadSection } from "~/components/home/DownloadSection";
 import { BlogPreviewSection } from "~/components/home/BlogPreviewSection";
@@ -128,17 +125,14 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 
       <main id="main-content">
         <HeroSection copy={copy} />
+        <AppShowcaseSection copy={copy} />
         <ShowcasesSection copy={copy} />
         <TemplatesSection copy={copy} />
-        <ProblemSection copy={copy} />
         <WorkflowSection copy={copy} />
         <FeaturesSection copy={copy} />
-        <ScreenshotsSection copy={copy} />
-        <TestimonialsSection copy={copy} />
         <BlogPreviewSection copy={copy} />
         <FaqSection copy={copy} />
         <DownloadSection copy={copy} />
-        <AppShowcaseSection copy={copy} />
       </main>
 
       <SiteFooter copy={copy} />

@@ -79,7 +79,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Showcases", href: "#showcases" },
   { label: "Templates", href: "#templates" },
   { label: "Features", href: "#features" },
-  { label: "Workflow", href: "#workflow" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -127,7 +126,7 @@ export const LEGAL_LINKS: SecondaryLink[] = [
   { uiKey: "terms", href: "/terms" },
 ];
 
-export const BETA_BENEFITS = [
+export const DOWNLOAD_BENEFITS = [
   "Available now on the App Store for Mac, iPad and iPhone",
   "Full workflow: import, design, auto-translate, localize, export",
   "Upload direct to App Store Connect — no more drag-and-drop in a browser tab",
@@ -172,7 +171,7 @@ export const FAQS: FaqItem[] = [
   {
     question: "Can I drop simulator and device screenshots straight in?",
     answer:
-      "Yes. Drop a folder of screenshots and Screenshot Bro routes each one to the right row by its pixel size — iPhone shots to the iPhone row, iPad to iPad, Android to Android. A one-click capture button on each template also pulls the most recent simulator screenshot directly into the canvas.",
+      "Yes. Drop a folder of screenshots and Screenshot Bro routes each one to the right row by its pixel size — iPhone shots to the iPhone row, iPad to iPad, Android to Android.",
   },
   {
     question: "Can I upload to App Store Connect from inside the app?",
@@ -262,7 +261,7 @@ export const FEATURES: FeatureItem[] = [
     icon: "export",
     title: "Localized Export",
     description:
-      "Export PNG or JPEG at 1x-3x for multiple locales. Auto-organized folders by locale and row for App Store Connect, Google Play, and launch assets.",
+      "Export PNG or JPEG at the exact pixel size of each row, for every locale at once. Auto-organized folders by locale and row for App Store Connect, Google Play, and launch assets.",
     accent: "var(--color-warm-light)",
   },
   {
@@ -344,24 +343,10 @@ export const FEATURES: FeatureItem[] = [
   },
 ];
 
-export const WITHOUT_BRO_POINTS = [
-  "Manually resize each screenshot in Figma or Photoshop",
-  "Copy-paste device frames one by one across artboards",
-  "Re-export every file when you change a single color",
-  "Duplicate everything for each language, lose track of translations",
-  "Drag and drop every PNG into App Store Connect by hand",
-];
-
-export const WITH_BRO_POINTS = [
-  "Design one template - all variants update instantly",
-  "Drop in device frames with a click, pick your model and color",
-  "Add multiple locales with per-shape text overrides",
-  "Export every screenshot, every language, every size - one click",
-  "Upload direct to App Store Connect — no browser, no drag-and-drop",
-];
-
 export type FeatureShowcase = {
   id: string;
+  // Rendered in place of `media` by a built-in illustration instead of a video.
+  visual?: "mcp";
   label: string;
   title: string;
   description: string;
@@ -431,6 +416,19 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     mediaHeight: 794,
     mediaAlt:
       "Selecting and customizing device frames around app screenshots",
+  },
+  {
+    id: "ai-agents",
+    label: "AI Agents & MCP",
+    title: "Let your AI agent do the busywork.",
+    description:
+      "Turn on the local MCP server and Claude Code, Claude Desktop, or Cursor can drive Screenshot Bro: create a project, lay out rows and shapes, import screenshots, translate copy, look at rendered previews, export, and sync the set to App Store Connect. It listens on 127.0.0.1 only, needs a token from Settings, and every change undoes with ⌘Z.",
+    media: "",
+    visual: "mcp",
+    mediaWidth: 1280,
+    mediaHeight: 820,
+    mediaAlt:
+      "An AI agent session calling Screenshot Bro MCP tools to build, translate, render and upload App Store screenshots",
   },
 ];
 
@@ -598,7 +596,7 @@ export const WORKFLOW_STEPS: WorkflowStep[] = [
     step: "01",
     title: "Set Up Rows",
     description:
-      'Pick your device sizes — iPhone 17, iPad Pro 11" or 13", MacBook, or iMac. Add as many rows as you need.',
+      'Pick your device sizes — iPhone, iPad, Mac, or Android phone and tablet, each preset to the pixels its store expects. Add as many rows as you need.',
   },
   {
     step: "02",
@@ -610,7 +608,7 @@ export const WORKFLOW_STEPS: WorkflowStep[] = [
     step: "03",
     title: "Export All",
     description:
-      "Hit export. Get organized folders by locale and row with every screenshot at your chosen scale. One click.",
+      "Hit export. Get organized folders by locale and row, every screenshot at the exact size the store expects. One click.",
   },
   {
     step: "04",

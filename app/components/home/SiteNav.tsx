@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import { AppleLogo } from "~/components/home/icons";
 import { NavLink } from "~/components/NavLink";
+import { buttonClass } from "~/components/ui/Button";
 import { SiteLogo } from "~/components/SiteLogo";
 import { ThemeToggle, themeLabel } from "~/components/ThemeToggle";
 import { PRODUCT_LINKS, type SecondaryLink } from "~/config/site";
@@ -134,7 +135,7 @@ export function SiteNav({
 
           <a
             href={ctaHref}
-            className="hidden sm:inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl border border-ink/15 bg-ink/10 px-4 py-2 text-sm font-medium text-ink transition-all hover:border-ink/25 hover:bg-ink/15"
+            className="hidden sm:inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl bg-gradient-to-r from-accent to-accent-light px-4 py-2 text-sm font-semibold text-white transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)]"
           >
             <AppleLogo />
             <span>{copy.primaryCtaLabel}</span>
@@ -242,7 +243,7 @@ function MobileMenu({
         <a
           href={ctaHref}
           onClick={onClose}
-          className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-gradient-to-r from-accent to-accent-light px-5 py-3.5 text-sm font-semibold text-white"
+          className={buttonClass("primary", "md")}
         >
           <AppleLogo />
           {copy.primaryCtaLabel}

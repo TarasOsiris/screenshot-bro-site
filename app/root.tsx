@@ -10,7 +10,9 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import { SiteLogo } from "~/components/SiteLogo";
+import { SiteNav } from "~/components/home/SiteNav";
+import { SiteFooter } from "~/components/home/SiteFooter";
+import { ButtonLink } from "~/components/ui/Button";
 import {
   APP_SCREENSHOTS,
   APP_STORE_APP_ID,
@@ -404,15 +406,9 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <nav className="border-b border-border-subtle bg-surface/78 backdrop-blur-2xl">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center">
-          <a href="/" className="flex items-center shrink-0">
-            <SiteLogo />
-          </a>
-        </div>
-      </nav>
+      <SiteNav showSectionAnchors={false} />
 
-      <main className="flex-1 flex items-center justify-center px-6">
+      <main className="flex-1 flex items-center justify-center px-6 pt-32 pb-24">
         <div className="text-center max-w-lg">
           <p className="font-mono text-8xl font-bold text-accent/40 mb-6">
             {status}
@@ -424,18 +420,10 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
             {details}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="/"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-sm transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
-            >
-              Go to homepage
-            </a>
-            <a
-              href="/blog"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-ink/[0.03] border border-border text-ink/[0.72] hover:text-ink/[0.92] hover:border-ink/20 text-sm transition-all"
-            >
+            <ButtonLink href="/">Go to homepage</ButtonLink>
+            <ButtonLink href="/blog" variant="secondary">
               Read the blog
-            </a>
+            </ButtonLink>
           </div>
           {stack && (
             <pre className="w-full p-4 overflow-x-auto mt-10 bg-surface-raised rounded-lg text-left">
@@ -444,6 +432,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
           )}
         </div>
       </main>
+      <SiteFooter />
     </div>
   );
 }

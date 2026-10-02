@@ -201,7 +201,7 @@ export default function HowToUseGuide() {
   ]);
 
   return (
-    <ContentLayout>
+    <ContentLayout locale={locale}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }}

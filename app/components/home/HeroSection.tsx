@@ -1,4 +1,5 @@
 import { AppleLogo } from "~/components/home/icons";
+import { ButtonLink } from "~/components/ui/Button";
 import { ArrowDownIcon } from "~/components/home/small-icons";
 import { useDeferredLoopVideo } from "~/components/home/hooks";
 import { appStoreCtaUrl, type HomeCopy } from "~/config/localization";
@@ -34,7 +35,7 @@ export function HeroSection({
   const ctaHref = href ?? appStoreCtaUrl(copy.locale.code);
 
   return (
-    <section className="relative pt-32 pb-20 px-6 overflow-hidden">
+    <section className="relative pt-32 pb-14 px-6 overflow-hidden">
       <div className="hero-gradient" />
       <div className="grid-bg absolute inset-0 opacity-40" />
 
@@ -65,22 +66,15 @@ export function HeroSection({
             className="animate-fade-up mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
             style={{ animationDelay: "0.28s" }}
           >
-            <a
-              href={ctaHref}
-              className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-sm transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
-            >
+            <ButtonLink href={ctaHref}>
               <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
               {copy.primaryCtaLabel}
-            </a>
-            <a
-              href="#showcases"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-ink/[0.03] border border-border text-ink/[0.72] hover:text-ink/[0.92] hover:border-ink/20 text-sm transition-all"
-            >
+            </ButtonLink>
+            <ButtonLink href="#showcases" variant="secondary">
               {copy.ui.seeInAction}
               <ArrowDownIcon />
-            </a>
+            </ButtonLink>
           </div>
-
         </div>
 
         <div

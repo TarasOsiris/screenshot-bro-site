@@ -20,7 +20,7 @@ export function FaqSection({ copy }: { copy: HomeCopy }) {
   return (
     <section
       id="faq"
-      className="py-28 px-6 border-t border-border-subtle scroll-mt-24"
+      className="py-24 px-6 border-t border-border-subtle scroll-mt-24"
     >
       <div className="max-w-4xl mx-auto">
         <SectionIntro

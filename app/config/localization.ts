@@ -1,15 +1,14 @@
 import type {
-  AppScreenshot,
   FaqItem,
   FeatureItem,
   FeatureShowcase,
   NavItem,
   WorkflowStep,
 } from "~/config/site";
+import { HOME_DESCRIPTIONS } from "~/config/home-descriptions";
 import {
   appStoreProductUrl,
-  APP_SCREENSHOTS,
-  BETA_BENEFITS,
+  DOWNLOAD_BENEFITS,
   FAQS,
   FEATURE_SHOWCASES,
   FEATURES,
@@ -17,8 +16,6 @@ import {
   SITE_DESCRIPTION,
   SITE_NAME,
   WORKFLOW_STEPS,
-  WITHOUT_BRO_POINTS,
-  WITH_BRO_POINTS,
 } from "~/config/site";
 
 export type LocaleCode =
@@ -109,10 +106,7 @@ export type HomeCopy = {
   benefits: string[];
   faqs: FaqItem[];
   features: FeatureItem[];
-  withoutBroPoints: string[];
-  withBroPoints: string[];
   featureShowcases: FeatureShowcase[];
-  appScreenshots: AppScreenshot[];
   workflowSteps: WorkflowStep[];
   ui: {
     skipToContent: string;
@@ -137,8 +131,7 @@ export type HomeCopy = {
     language: string;
     homeLabel: string;
     seeInAction: string;
-    tryItNow: string;
-    seeDetails: string;
+    directDownload: string;
     read: string;
     browseGuides: string;
     submitApp: string;
@@ -149,11 +142,6 @@ export type HomeCopy = {
     openMenu: string;
     closeMenu: string;
     backToTop: string;
-    appScreenshots: string;
-    previousScreenshot: string;
-    nextScreenshot: string;
-    goToScreenshot: (index: number) => string;
-    slideCount: (index: number, total: number) => string;
     templateAlt: (name: string) => string;
     templateMeta: (columns: number, width: number, height: number) => string;
     startWithTemplate: string;
@@ -179,26 +167,15 @@ export type HomeCopy = {
   sections: {
     showcases: SectionCopy;
     templates: SectionCopy;
-    problem: SectionCopy;
     workflow: SectionCopy;
     features: SectionCopy;
-    screenshots: SectionCopy;
-    testimonials: SectionCopy;
     blog: SectionCopy;
     faq: SectionCopy;
     appShowcase: SectionCopy;
   };
   problem: {
     story: string;
-    withoutLabel: string;
-    withLabel: string;
   };
-  testimonials: {
-    quote: string;
-    name: string;
-    app: string;
-    icon: string;
-  }[];
   download: {
     titleLine1: string;
     titleLine2: string;
@@ -209,30 +186,6 @@ export type HomeCopy = {
   };
 };
 
-const EN_TESTIMONIALS = [
-  {
-    quote:
-      "I used to spend a whole afternoon on screenshots after every release. With Screenshot Bro, I set up templates once and now I just swap the new shots in and hit export.",
-    name: "Refuells Developer",
-    app: "Refuells",
-    icon: "/showcase/refuells.jpg",
-  },
-  {
-    quote:
-      "The localization feature is a lifesaver. I support 6 languages and exporting all of them used to be the worst part of any update. Now it takes one click.",
-    name: "AdRadar Developer",
-    app: "AdRadar",
-    icon: "/showcase/adradar.jpg",
-  },
-  {
-    quote:
-      "Finally a tool that gets out of the way. No Figma plugins, no browser tabs — just a native app that does the job fast.",
-    name: "TT Tracker Developer",
-    app: "TT Tracker",
-    icon: "/showcase/tt-tracker.jpg",
-  },
-];
-
 const EN_HOME_COPY: HomeCopy = {
   locale: LOCALES[0],
   siteTitle: "App Store Screenshot Tool for Mac, iPad & iPhone",
@@ -241,13 +194,10 @@ const EN_HOME_COPY: HomeCopy = {
     "Screenshot Bro — native Mac, iPad and iPhone app for designing App Store and Google Play screenshots with device frames, gradients, and localization",
   primaryCtaLabel: "Get Screenshot Bro",
   navItems: NAV_ITEMS,
-  benefits: BETA_BENEFITS,
+  benefits: DOWNLOAD_BENEFITS,
   faqs: FAQS,
   features: FEATURES,
-  withoutBroPoints: WITHOUT_BRO_POINTS,
-  withBroPoints: WITH_BRO_POINTS,
   featureShowcases: FEATURE_SHOWCASES,
-  appScreenshots: APP_SCREENSHOTS,
   workflowSteps: WORKFLOW_STEPS,
   ui: {
     skipToContent: "Skip to content",
@@ -272,8 +222,7 @@ const EN_HOME_COPY: HomeCopy = {
     language: "Language",
     homeLabel: `${SITE_NAME} home`,
     seeInAction: "See it in action",
-    tryItNow: "Try it now",
-    seeDetails: "See details",
+    directDownload: "Prefer a direct download? Get the Mac DMG",
     read: "Read",
     browseGuides: "Browse all guides",
     submitApp: "Submit your app",
@@ -284,11 +233,6 @@ const EN_HOME_COPY: HomeCopy = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     backToTop: "Back to top",
-    appScreenshots: "App screenshots",
-    previousScreenshot: "Previous screenshot",
-    nextScreenshot: "Next screenshot",
-    goToScreenshot: (index) => `Go to screenshot ${index}`,
-    slideCount: (index, total) => `${index} of ${total}`,
     templateAlt: (name) =>
       `${name} template exported from Screenshot Bro: a row of App Store screenshots with headlines and iPhone frames`,
     templateMeta: (columns, width, height) =>
@@ -311,7 +255,7 @@ const EN_HOME_COPY: HomeCopy = {
     titleAccent: "App Store",
     titleRest: " Screenshots in Minutes",
     descriptionLead:
-      "Design once. Localize into 70+ languages, generate every device size, and",
+      "Design once. Localize into 81 languages, generate every device size, and",
     descriptionStrong: "upload directly to App Store Connect",
     descriptionTail:
       "without rebuilding screenshots by hand. All in one native app.",
@@ -331,13 +275,6 @@ const EN_HOME_COPY: HomeCopy = {
       description:
         "Every project can start from a finished design: headlines, backgrounds, and device frames already laid out. Each preview below is a real export from the app, with only the screenshots swapped in. Change any color, font, or line of copy afterwards.",
     },
-    problem: {
-      eyebrow: "Why It Exists",
-      title:
-        "Because shipping one new feature should not mean rebuilding every screenshot.",
-      description:
-        "Screenshot Bro came from the same loop most app teams hit: a product update lands, then the screenshot file set turns into a repetitive mini-project again.",
-    },
     workflow: {
       eyebrow: "Workflow",
       title: "A shorter path from raw screenshots to App Store-ready assets.",
@@ -351,18 +288,6 @@ const EN_HOME_COPY: HomeCopy = {
       description:
         "The feature set stays focused on layout speed, screenshot consistency, and export sanity. No browser tab, no general-purpose design suite, no repetitive resize work.",
     },
-    screenshots: {
-      eyebrow: "Screenshots",
-      title: "See it in action.",
-      description:
-        "App Store screenshots of Screenshot Bro itself - the same editor you use for App Store and Google Play screenshot sets.",
-    },
-    testimonials: {
-      eyebrow: "Developers",
-      title: "What developers are saying.",
-      description:
-        "Real feedback from indie developers using Screenshot Bro in production.",
-    },
     blog: {
       eyebrow: "From the Blog",
       title: "Guides for shipping better App Store screenshots.",
@@ -373,7 +298,7 @@ const EN_HOME_COPY: HomeCopy = {
       eyebrow: "FAQ",
       title: "The questions most people ask before trying it.",
       description:
-        "The product is early, but the core workflow is already there. These answers handle the main compatibility and export questions.",
+        "Pricing, requirements, privacy, and how the workflow fits with App Store Connect.",
     },
     appShowcase: {
       eyebrow: "Shipped with Screenshot Bro",
@@ -385,15 +310,12 @@ const EN_HOME_COPY: HomeCopy = {
   problem: {
     story:
       "I built it after spending too much time in Figma redoing App Store screenshots every time copy, gradients, or languages changed. The goal is simple: design the system once, then let the app handle the repetitive parts.",
-    withoutLabel: "Without Screenshot Bro",
-    withLabel: "With Screenshot Bro",
   },
-  testimonials: EN_TESTIMONIALS,
   download: {
     titleLine1: "Ready to ship",
     titleLine2: "better screenshots?",
     description:
-      "Download from the App Store and use the full screenshot workflow on Mac or iPad: setup, design, auto-translation, localization, and export for App Store and Google Play assets.",
+      "Download from the App Store and use the full screenshot workflow on Mac, iPad, or iPhone: setup, design, auto-translation, localization, and export for App Store and Google Play assets.",
   },
   footer: {
     note:
@@ -428,15 +350,6 @@ function localizeFeatureShowcases(
   }));
 }
 
-function localizeAppScreenshots(
-  copy: Pick<AppScreenshot, "alt" | "caption">[],
-): AppScreenshot[] {
-  return APP_SCREENSHOTS.map((screenshot, index) => ({
-    ...screenshot,
-    ...copy[index],
-  }));
-}
-
 function localizeWorkflowSteps(
   copy: Pick<WorkflowStep, "title" | "description">[],
 ): WorkflowStep[] {
@@ -458,56 +371,43 @@ type CompactLandingCopy = {
     | "read"
     | "productLabel"
     | "resourcesLabel"
-    | "appScreenshots"
     | "productHuntAlt"
   >;
   featureTitles: string[];
   featureDescription: string;
-  withoutBroPoints: string[];
-  withBroPoints: string[];
   showcaseLabels: string[];
   showcaseTitles: string[];
   showcaseDescription: string;
-  screenshotCaptions: string[];
   screenshotAltSuffix: string;
   workflowTitles: string[];
   workflowDescription: string;
-  testimonialQuotes: string[];
-  developerLabel: string;
 };
 
-function compactLandingContent(copy: CompactLandingCopy): HomeCopyOverrides {
+function compactLandingContent(
+  locale: Exclude<LocaleCode, "en">,
+  copy: CompactLandingCopy,
+): HomeCopyOverrides {
+  // Per-card descriptions where translated; the shared one-liner is only the fallback.
+  const described = HOME_DESCRIPTIONS[locale];
   return {
     socialImageAlt: copy.socialImageAlt,
     ui: copy.ui,
     features: FEATURES.map((feature, index) => ({
       ...feature,
       title: copy.featureTitles[index] ?? feature.title,
-      description: copy.featureDescription,
+      description: described?.features[feature.icon] ?? copy.featureDescription,
     })),
-    withoutBroPoints: copy.withoutBroPoints,
-    withBroPoints: copy.withBroPoints,
     featureShowcases: FEATURE_SHOWCASES.map((showcase, index) => ({
       ...showcase,
       label: copy.showcaseLabels[index] ?? showcase.label,
       title: copy.showcaseTitles[index] ?? showcase.title,
-      description: copy.showcaseDescription,
+      description: described?.showcases[index] ?? copy.showcaseDescription,
       mediaAlt: `${copy.showcaseTitles[index] ?? showcase.title} — ${copy.screenshotAltSuffix}`,
-    })),
-    appScreenshots: APP_SCREENSHOTS.map((screenshot, index) => ({
-      ...screenshot,
-      caption: copy.screenshotCaptions[index] ?? screenshot.caption,
-      alt: `${copy.screenshotCaptions[index] ?? screenshot.caption} — ${copy.screenshotAltSuffix}`,
     })),
     workflowSteps: WORKFLOW_STEPS.map((step, index) => ({
       ...step,
       title: copy.workflowTitles[index] ?? step.title,
-      description: copy.workflowDescription,
-    })),
-    testimonials: EN_TESTIMONIALS.map((testimonial, index) => ({
-      ...testimonial,
-      quote: copy.testimonialQuotes[index] ?? testimonial.quote,
-      name: `${testimonial.app} ${copy.developerLabel}`,
+      description: described?.workflow[index] ?? copy.workflowDescription,
     })),
   };
 }
@@ -525,7 +425,6 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
       read: "Leer",
       productLabel: "Producto",
       resourcesLabel: "Recursos",
-      appScreenshots: "Capturas de la app",
       productHuntAlt:
         "ScreenshotBro App - Diseña y exporta capturas bonitas para App Store. | Product Hunt",
     },
@@ -558,7 +457,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
       {
         title: "Exportación localizada",
         description:
-          "Exporta PNG o JPEG a 1x-3x para múltiples locales. Carpetas organizadas automáticamente por locale y fila para App Store Connect, Google Play y assets de lanzamiento.",
+          "Exporta PNG o JPEG al tamaño exacto en píxeles de cada fila, para todos los locales a la vez. Carpetas organizadas automáticamente por locale y fila para App Store Connect, Google Play y assets de lanzamiento.",
       },
       {
         title: "Subida a App Store Connect",
@@ -616,20 +515,6 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
           "1 proyecto, 3 filas y 5 plantillas por fila, con todos los marcos, los 81 locales y todos los formatos de exportación. Sin marca de agua, caducidad ni registro.",
       },
     ]),
-    withoutBroPoints: [
-      "Redimensionar cada captura manualmente en Figma o Photoshop",
-      "Copiar y pegar marcos de dispositivo uno por uno entre mesas de trabajo",
-      "Reexportar todos los archivos al cambiar un solo color",
-      "Duplicarlo todo para cada idioma y perder el control de traducciones",
-      "Arrastrar cada PNG a App Store Connect a mano",
-    ],
-    withBroPoints: [
-      "Diseña una plantilla y todas las variantes se actualizan al instante",
-      "Añade marcos de dispositivo con un clic y elige modelo y color",
-      "Añade varios locales con sobreescrituras de texto por forma",
-      "Exporta cada captura, idioma y tamaño con un clic",
-      "Sube directo a App Store Connect, sin navegador ni arrastrar archivos",
-    ],
     featureShowcases: localizeFeatureShowcases([
       {
         label: "Importación por lotes",
@@ -670,42 +555,20 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
           "Elige entre iPhone, iPad, MacBook, iMac y Android. Cambia marcos, elige colores y adapta la composición a tu marca sin reimportar capturas.",
         mediaAlt: "Selección y personalización de marcos alrededor de capturas de apps",
       },
-    ]),
-    appScreenshots: localizeAppScreenshots([
       {
-        alt: "Editor de Screenshot Bro con diseño de capturas App Store en varias plantillas y marcos de dispositivo",
-        caption: "Diseña capturas bonitas para App Store",
-      },
-      {
-        alt: "Vista de exportación por lotes con todas las capturas listas para subir a App Store",
-        caption: "Exporta todo el proyecto de una vez",
-      },
-      {
-        alt: "Selector de plantillas con layouts integrados para iPhone y iPad",
-        caption: "Elige entre plantillas integradas",
-      },
-      {
-        alt: "Editor de localización con locale alemán y sobreescrituras de texto por forma",
-        caption: "Localiza capturas fácilmente",
-      },
-      {
-        alt: "Selección de marcos con MacBook, iPad e iPhone en el lienzo",
-        caption: "Añade marcos de dispositivo reales",
-      },
-      {
-        alt: "Editor de fondos con presets de degradado, selector de color y ángulo",
-        caption: "Crea fondos bonitos",
-      },
-      {
-        alt: "Herramientas de formas con SVG, estrellas y elementos vectoriales de colores",
-        caption: "Añade SVG, formas e imágenes",
+        label: "Agentes de IA y MCP",
+        title: "Deja el trabajo pesado a tu agente de IA.",
+        description:
+          "Activa el servidor MCP local y Claude Code, Claude Desktop o Cursor podrán manejar Screenshot Bro: crear un proyecto, colocar filas y formas, importar capturas, traducir el texto, revisar las vistas previas renderizadas, exportar y sincronizar el set con App Store Connect. Solo escucha en 127.0.0.1, necesita un token de Ajustes y cada cambio se deshace con ⌘Z.",
+        mediaAlt:
+          "Sesión de un agente de IA que llama a las herramientas MCP de Screenshot Bro para crear, traducir, renderizar y subir capturas de App Store",
       },
     ]),
     workflowSteps: localizeWorkflowSteps([
       {
         title: "Configura filas",
         description:
-          'Elige tamaños de dispositivo: iPhone 17, iPad Pro de 11" o 13", MacBook o iMac. Añade tantas filas como necesites.',
+          "Elige tus tamaños de dispositivo: iPhone, iPad, Mac o teléfono y tablet Android, cada uno preconfigurado con los píxeles que exige su tienda. Añade tantas filas como necesites.",
       },
       {
         title: "Diseña y localiza",
@@ -715,7 +578,7 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
       {
         title: "Exporta todo",
         description:
-          "Pulsa exportar y obtén carpetas organizadas por locale y fila con cada captura a la escala elegida. Un clic.",
+          "Pulsa exportar y obtén carpetas organizadas por locale y fila, con cada captura al tamaño exacto que pide la tienda. Un clic.",
       },
       {
         title: "Sube a App Store Connect",
@@ -723,181 +586,118 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
           "Conecta tu clave API una vez y envía capturas al app, versión, tipo de pantalla y locale correctos sin arrastrar archivos en el navegador.",
       },
     ]),
-    testimonials: [
-      {
-        quote:
-          "Antes pasaba toda una tarde con capturas después de cada release. Con Screenshot Bro configuro plantillas una vez, cambio las nuevas capturas y exporto.",
-        name: "Desarrollador de Refuells",
-        app: "Refuells",
-        icon: "/showcase/refuells.jpg",
-      },
-      {
-        quote:
-          "La localización me salvó. Mantengo 6 idiomas y exportarlos todos era lo peor de cada actualización. Ahora es un clic.",
-        name: "Desarrollador de AdRadar",
-        app: "AdRadar",
-        icon: "/showcase/adradar.jpg",
-      },
-      {
-        quote:
-          "Por fin una herramienta que no estorba. Sin plugins de Figma ni pestañas del navegador: una app nativa que hace el trabajo rápido.",
-        name: "Desarrollador de TT Tracker",
-        app: "TT Tracker",
-        icon: "/showcase/tt-tracker.jpg",
-      },
-    ],
   },
-  zh: compactLandingContent({
+  zh: compactLandingContent("zh", {
     socialImageAlt: "Screenshot Bro — 用设备边框、渐变和本地化制作 App Store 与 Google Play 截图的 Mac、iPad 和 iPhone 原生应用",
-    ui: { docs: "文档", redditCommunity: "Reddit 社区", followOnX: "在 X 上关注", followOnThreads: "在 Threads 上关注", homeLabel: `${SITE_NAME} 首页`, read: "阅读", productLabel: "产品", resourcesLabel: "资源", appScreenshots: "应用截图", productHuntAlt: "ScreenshotBro App - 设计并导出精美 App Store 截图。| Product Hunt" },
-    featureTitles: ["多模板编辑", "设备边框", "背景与跨模板背景", "形状工具 + SVG", "智能对齐", "本地化导出", "上传到 App Store Connect", "AI 智能体与 MCP", "内建本地化", "原生 Mac 与 iPad", "iCloud 同步", "自定义字体", "项目模板", "键盘快捷键", "隐私优先", "批量图片导入", "永久免费层级"],
+    ui: { docs: "文档", redditCommunity: "Reddit 社区", followOnX: "在 X 上关注", followOnThreads: "在 Threads 上关注", homeLabel: `${SITE_NAME} 首页`, read: "阅读", productLabel: "产品", resourcesLabel: "资源", productHuntAlt: "ScreenshotBro App - 设计并导出精美 App Store 截图。| Product Hunt" },
+    featureTitles: ["多模板编辑", "设备边框", "背景与跨模板背景", "形状工具 + SVG", "智能对齐", "本地化导出", "上传到 App Store Connect", "AI 智能体与 MCP", "内建本地化", "原生 Mac、iPad 与 iPhone", "iCloud 同步", "自定义字体", "项目模板", "键盘快捷键", "隐私优先", "批量图片导入", "永久免费层级"],
     featureDescription: "为多语言商店截图准备的专注工具，保留原生性能、可重复模板和可直接提交的导出结果。",
-    withoutBroPoints: ["手动调整每张截图尺寸", "逐个复制设备边框", "改一个颜色就重新导出所有文件", "为每种语言复制全部内容", "手动上传每个 PNG"],
-    withBroPoints: ["一个模板更新所有版本", "一键添加设备边框", "按形状添加多语言文本", "一键导出所有语言和尺寸", "直接上传到 App Store Connect"],
-    showcaseLabels: ["批量导入", "自动上传", "形状与图层", "背景", "设备边框"],
-    showcaseTitles: ["拖入，完成。", "一键上传到 App Store Connect。", "一层一层搭建。", "制作漂亮背景。", "自定义设备边框。"],
+    showcaseLabels: ["批量导入", "自动上传", "形状与图层", "背景", "设备边框", "AI 智能体与 MCP"],
+    showcaseTitles: ["拖入，完成。", "一键上传到 App Store Connect。", "一层一层搭建。", "制作漂亮背景。", "自定义设备边框。", "让 AI 智能体替你处理繁琐工作。"],
     showcaseDescription: "核心工作流展示了 Screenshot Bro 如何减少重复设计、导出和上传步骤。",
-    screenshotCaptions: ["设计漂亮的 App Store 截图", "一次导出整个项目", "从内建模板中选择", "轻松本地化截图", "添加真实设备边框", "制作漂亮背景", "添加 SVG、形状和图片"],
     screenshotAltSuffix: "Screenshot Bro 界面截图",
     workflowTitles: ["设置行", "设计并本地化", "全部导出", "上传到 App Store Connect"],
     workflowDescription: "从设备尺寸到多语言导出和上传，整个截图流程都集中在一个原生应用中。",
-    testimonialQuotes: ["以前每次发布后，我都要花很久处理截图。现在设置一次模板，替换新截图后直接导出。", "本地化功能非常省时间。多语言导出以前最麻烦，现在只要一键。", "终于有一个不挡路的工具。没有浏览器标签页，就是快速完成工作的原生应用。"],
-    developerLabel: "开发者",
   }),
-  hi: compactLandingContent({
+  hi: compactLandingContent("hi", {
     socialImageAlt: "Screenshot Bro — Mac, iPad और iPhone के लिए App Store और Google Play screenshots बनाने वाला native ऐप",
-    ui: { docs: "दस्तावेज़", redditCommunity: "Reddit समुदाय", followOnX: "X पर follow करें", followOnThreads: "Threads पर follow करें", homeLabel: `${SITE_NAME} होम`, read: "पढ़ें", productLabel: "उत्पाद", resourcesLabel: "संसाधन", appScreenshots: "ऐप स्क्रीनशॉट", productHuntAlt: "ScreenshotBro App - सुंदर App Store screenshots design और export करें. | Product Hunt" },
+    ui: { docs: "दस्तावेज़", redditCommunity: "Reddit समुदाय", followOnX: "X पर follow करें", followOnThreads: "Threads पर follow करें", homeLabel: `${SITE_NAME} होम`, read: "पढ़ें", productLabel: "उत्पाद", resourcesLabel: "संसाधन", productHuntAlt: "ScreenshotBro App - सुंदर App Store screenshots design और export करें. | Product Hunt" },
     featureTitles: ["मल्टी-टेम्पलेट एडिटिंग", "डिवाइस फ्रेम", "बैकग्राउंड और स्पैनिंग", "शेप टूल्स + SVG", "स्मार्ट अलाइनमेंट", "लोकलाइज्ड एक्सपोर्ट", "App Store Connect अपलोड", "AI एजेंट और MCP", "बिल्ट-इन लोकलाइजेशन", "नेटिव Mac, iPad और iPhone", "iCloud सिंक", "कस्टम फॉन्ट", "प्रोजेक्ट टेम्पलेट", "कीबोर्ड शॉर्टकट", "प्राइवेसी-फर्स्ट", "बैच इमेज इंपोर्ट", "हमेशा फ्री प्लान"],
     featureDescription: "Multi-language store screenshots के लिए focused tools, native performance, reusable templates और upload-ready exports के साथ।",
-    withoutBroPoints: ["हर screenshot manually resize करना", "डिवाइस फ्रेम एक-एक करके copy करना", "एक color बदलने पर सब export करना", "हर language के लिए सब duplicate करना", "हर PNG manually upload करना"],
-    withBroPoints: ["एक template से सभी variants update", "एक click में device frame जोड़ें", "Per-shape text से locales जोड़ें", "हर language और size one click में export", "App Store Connect पर direct upload"],
-    showcaseLabels: ["बैच इंपोर्ट", "ऑटो अपलोड", "शेप्स और लेयर्स", "बैकग्राउंड", "डिवाइस फ्रेम"],
-    showcaseTitles: ["खींचें, छोड़ें, हो गया।", "App Store Connect पर एक क्लिक में अपलोड।", "लेयर दर लेयर बनाएं।", "सुंदर बैकग्राउंड बनाएं।", "डिवाइस फ्रेम कस्टमाइज़ करें।"],
+    showcaseLabels: ["बैच इंपोर्ट", "ऑटो अपलोड", "शेप्स और लेयर्स", "बैकग्राउंड", "डिवाइस फ्रेम", "AI एजेंट और MCP"],
+    showcaseTitles: ["खींचें, छोड़ें, हो गया।", "App Store Connect पर एक क्लिक में अपलोड।", "लेयर दर लेयर बनाएं।", "सुंदर बैकग्राउंड बनाएं।", "डिवाइस फ्रेम कस्टमाइज़ करें।", "दोहराव वाला काम अपने AI एजेंट को सौंपें।"],
     showcaseDescription: "मुख्य वर्कफ़्लो दिखाता है कि Screenshot Bro दोहराव वाले डिज़ाइन, एक्सपोर्ट और अपलोड चरणों को कैसे कम करता है।",
-    screenshotCaptions: ["सुंदर App Store स्क्रीनशॉट डिज़ाइन करें", "पूरा प्रोजेक्ट एक साथ एक्सपोर्ट करें", "बिल्ट-इन टेम्पलेट चुनें", "स्क्रीनशॉट आसानी से लोकलाइज़ करें", "असली डिवाइस फ्रेम जोड़ें", "सुंदर बैकग्राउंड बनाएं", "SVG, शेप्स और इमेज जोड़ें"],
     screenshotAltSuffix: "Screenshot Bro इंटरफ़ेस स्क्रीनशॉट",
     workflowTitles: ["पंक्तियां सेट करें", "डिजाइन और लोकलाइज करें", "सब एक्सपोर्ट करें", "App Store Connect पर अपलोड"],
     workflowDescription: "डिवाइस साइज़ से मल्टी-लैंग्वेज एक्सपोर्ट और अपलोड तक पूरा स्क्रीनशॉट वर्कफ़्लो एक नेटिव ऐप में रहता है।",
-    testimonialQuotes: ["हर release के बाद screenshots में बहुत समय लगता था। अब templates एक बार set करता हूं और new shots export कर देता हूं।", "Localization feature बहुत time बचाता है। Multiple languages export करना अब one click है।", "आखिरकार ऐसा tool मिला जो रास्ते में नहीं आता — browser tabs नहीं, fast native app।"],
-    developerLabel: "डेवलपर",
   }),
-  fr: compactLandingContent({
+  fr: compactLandingContent("fr", {
     socialImageAlt: "Screenshot Bro — app native Mac, iPad et iPhone pour créer des captures App Store et Google Play avec cadres, dégradés et localisation",
-    ui: { docs: "Documentation", redditCommunity: "Communauté Reddit", followOnX: "Suivre sur X", followOnThreads: "Suivre sur Threads", homeLabel: `Accueil ${SITE_NAME}`, read: "Lire", productLabel: "Produit", resourcesLabel: "Ressources", appScreenshots: "Captures de l'app", productHuntAlt: "ScreenshotBro App - Créez et exportez de belles captures App Store. | Product Hunt" },
+    ui: { docs: "Documentation", redditCommunity: "Communauté Reddit", followOnX: "Suivre sur X", followOnThreads: "Suivre sur Threads", homeLabel: `Accueil ${SITE_NAME}`, read: "Lire", productLabel: "Produit", resourcesLabel: "Ressources", productHuntAlt: "ScreenshotBro App - Créez et exportez de belles captures App Store. | Product Hunt" },
     featureTitles: ["Édition multi-template", "Cadres d'appareils", "Arrière-plans étendus", "Outils de formes + SVG", "Alignement intelligent", "Export localisé", "Envoi App Store Connect", "Agents IA et MCP", "Localisation intégrée", "Natif Mac, iPad et iPhone", "Sync iCloud", "Polices personnalisées", "Templates de projet", "Raccourcis clavier", "Confidentialité d'abord", "Import d'images groupé", "Version gratuite permanente"],
     featureDescription: "Des outils ciblés pour des captures de store multilingues, avec performances natives, templates réutilisables et exports prêts à envoyer.",
-    withoutBroPoints: ["Redimensionner chaque capture à la main", "Copier les cadres un par un", "Réexporter tout pour une couleur", "Tout dupliquer pour chaque langue", "Envoyer chaque PNG manuellement"],
-    withBroPoints: ["Un template met tout à jour", "Ajoutez un cadre en un clic", "Ajoutez des textes par locale", "Exportez toutes les langues en un clic", "Envoyez directement à App Store Connect"],
-    showcaseLabels: ["Import groupé", "Envoi auto", "Formes et calques", "Arrière-plans", "Cadres"],
-    showcaseTitles: ["Glissez, déposez, terminé.", "App Store Connect en un clic.", "Construisez calque par calque.", "Créez de beaux fonds.", "Personnalisez les cadres."],
+    showcaseLabels: ["Import groupé", "Envoi auto", "Formes et calques", "Arrière-plans", "Cadres", "Agents IA et MCP"],
+    showcaseTitles: ["Glissez, déposez, terminé.", "App Store Connect en un clic.", "Construisez calque par calque.", "Créez de beaux fonds.", "Personnalisez les cadres.", "Confiez les tâches répétitives à votre agent IA."],
     showcaseDescription: "Le flux principal montre comment Screenshot Bro réduit les étapes répétitives de design, d'export et d'envoi.",
-    screenshotCaptions: ["Créez de belles captures App Store", "Exportez tout le projet d'un coup", "Choisissez des templates intégrés", "Localisez facilement vos captures", "Ajoutez de vrais cadres d'appareils", "Créez de beaux arrière-plans", "Ajoutez SVG, formes et images"],
     screenshotAltSuffix: "capture de l'interface Screenshot Bro",
     workflowTitles: ["Configurez les rangées", "Créez et localisez", "Exportez tout", "Envoyez à App Store Connect"],
     workflowDescription: "Des tailles d'appareils à l'export multilingue et à l'envoi, tout le flux reste dans une app native.",
-    testimonialQuotes: ["Avant, les captures prenaient tout un après-midi après chaque sortie. Maintenant je remplace les images et j'exporte.", "La localisation fait gagner beaucoup de temps. Exporter plusieurs langues se fait maintenant en un clic.", "Enfin un outil qui ne gêne pas : pas d'onglets navigateur, juste une app native rapide."],
-    developerLabel: "développeur",
   }),
-  ar: compactLandingContent({
+  ar: compactLandingContent("ar", {
     socialImageAlt: "Screenshot Bro — تطبيق أصلي على Mac و iPad و iPhone لتصميم لقطات App Store و Google Play بإطارات وتدرجات وتوطين",
-    ui: { docs: "الوثائق", redditCommunity: "مجتمع Reddit", followOnX: "تابع على X", followOnThreads: "تابع على Threads", homeLabel: `صفحة ${SITE_NAME} الرئيسية`, read: "اقرأ", productLabel: "المنتج", resourcesLabel: "الموارد", appScreenshots: "لقطات التطبيق", productHuntAlt: "ScreenshotBro App - صمّم وصدّر لقطات App Store جميلة. | Product Hunt" },
+    ui: { docs: "الوثائق", redditCommunity: "مجتمع Reddit", followOnX: "تابع على X", followOnThreads: "تابع على Threads", homeLabel: `صفحة ${SITE_NAME} الرئيسية`, read: "اقرأ", productLabel: "المنتج", resourcesLabel: "الموارد", productHuntAlt: "ScreenshotBro App - صمّم وصدّر لقطات App Store جميلة. | Product Hunt" },
     featureTitles: ["تحرير متعدد القوالب", "إطارات الأجهزة", "الخلفيات والامتداد", "أدوات الأشكال + SVG", "محاذاة ذكية", "تصدير موطّن", "رفع إلى App Store Connect", "وكلاء الذكاء الاصطناعي و MCP", "توطين مدمج", "أصلي على Mac و iPad و iPhone", "مزامنة iCloud", "خطوط مخصصة", "قوالب المشاريع", "اختصارات لوحة المفاتيح", "الخصوصية أولاً", "استيراد صور جماعي", "خطة مجانية دائماً"],
     featureDescription: "أدوات مركزة للقطات متجر متعددة اللغات مع أداء أصلي وقوالب قابلة لإعادة الاستخدام وتصدير جاهز للرفع.",
-    withoutBroPoints: ["تغيير حجم كل لقطة يدوياً", "نسخ الإطارات واحداً تلو الآخر", "إعادة تصدير كل شيء بسبب لون واحد", "تكرار كل شيء لكل لغة", "رفع كل PNG يدوياً"],
-    withBroPoints: ["قالب واحد يحدّث كل النسخ", "إضافة إطار بنقرة واحدة", "نصوص لكل لغة ولكل شكل", "تصدير كل اللغات بنقرة", "رفع مباشر إلى App Store Connect"],
-    showcaseLabels: ["استيراد جماعي", "رفع تلقائي", "أشكال وطبقات", "خلفيات", "إطارات الأجهزة"],
-    showcaseTitles: ["اسحب، أفلت، انتهى.", "رفع App Store Connect بنقرة.", "ابنِه طبقة بعد طبقة.", "اصنع خلفيات جميلة.", "خصص إطارات الأجهزة."],
+    showcaseLabels: ["استيراد جماعي", "رفع تلقائي", "أشكال وطبقات", "خلفيات", "إطارات الأجهزة", "وكلاء الذكاء الاصطناعي و MCP"],
+    showcaseTitles: ["اسحب، أفلت، انتهى.", "رفع App Store Connect بنقرة.", "ابنِه طبقة بعد طبقة.", "اصنع خلفيات جميلة.", "خصص إطارات الأجهزة.", "دع وكيل الذكاء الاصطناعي يتولى المهام الروتينية."],
     showcaseDescription: "يوضح سير العمل كيف يقلل Screenshot Bro خطوات التصميم والتصدير والرفع المتكررة.",
-    screenshotCaptions: ["صمّم لقطات App Store جميلة", "صدّر المشروع كله مرة واحدة", "اختر من القوالب المدمجة", "وطّن اللقطات بسهولة", "أضف إطارات أجهزة حقيقية", "اصنع خلفيات جميلة", "أضف SVG وأشكالاً وصوراً"],
     screenshotAltSuffix: "لقطة من واجهة Screenshot Bro",
     workflowTitles: ["أعدّ الصفوف", "صمّم ووطّن", "صدّر الكل", "ارفع إلى App Store Connect"],
     workflowDescription: "من أحجام الأجهزة إلى التصدير متعدد اللغات والرفع، يبقى سير اللقطات داخل تطبيق أصلي واحد.",
-    testimonialQuotes: ["كانت اللقطات تستغرق وقتاً طويلاً بعد كل إصدار. الآن أبدل الصور في القوالب وأصدّر.", "التوطين يوفر الكثير من الوقت. تصدير عدة لغات أصبح بنقرة واحدة.", "أخيراً أداة لا تعيق العمل: لا تبويبات متصفح، فقط تطبيق أصلي سريع."],
-    developerLabel: "مطوّر",
   }),
-  de: compactLandingContent({
+  de: compactLandingContent("de", {
     socialImageAlt: "Screenshot Bro — native Mac-, iPad- und iPhone-App für App Store- und Google Play-Screenshots mit Geräterahmen, Verläufen und Lokalisierung",
-    ui: { docs: "Dokumentation", redditCommunity: "Reddit-Community", followOnX: "Auf X folgen", followOnThreads: "Auf Threads folgen", homeLabel: `${SITE_NAME} Startseite`, read: "Lesen", productLabel: "Produkt", resourcesLabel: "Ressourcen", appScreenshots: "App-Screenshots", productHuntAlt: "ScreenshotBro App - Schöne App-Store-Screenshots gestalten und exportieren. | Product Hunt" },
+    ui: { docs: "Dokumentation", redditCommunity: "Reddit-Community", followOnX: "Auf X folgen", followOnThreads: "Auf Threads folgen", homeLabel: `${SITE_NAME} Startseite`, read: "Lesen", productLabel: "Produkt", resourcesLabel: "Ressourcen", productHuntAlt: "ScreenshotBro App - Schöne App-Store-Screenshots gestalten und exportieren. | Product Hunt" },
     featureTitles: ["Multi-Template-Bearbeitung", "Geräterahmen", "Hintergründe & Spanning", "Formwerkzeuge + SVG", "Intelligente Ausrichtung", "Lokalisierter Export", "Upload zu App Store Connect", "KI-Agenten & MCP", "Lokalisierung integriert", "Nativ für Mac, iPad & iPhone", "iCloud-Synchronisierung", "Eigene Schriften", "Projektvorlagen", "Tastaturkürzel", "Datenschutz zuerst", "Batch-Bildimport", "Kostenlos dauerhaft"],
     featureDescription: "Fokussierte Werkzeuge für mehrsprachige Store-Screenshots mit nativer Performance, wiederverwendbaren Templates und uploadfertigen Exporten.",
-    withoutBroPoints: ["Jeden Screenshot manuell skalieren", "Geräterahmen einzeln kopieren", "Alles wegen einer Farbe neu exportieren", "Alles pro Sprache duplizieren", "Jedes PNG manuell hochladen"],
-    withBroPoints: ["Ein Template aktualisiert alle Varianten", "Geräterahmen per Klick hinzufügen", "Texte pro Locale und Form pflegen", "Alle Sprachen mit einem Klick exportieren", "Direkt zu App Store Connect hochladen"],
-    showcaseLabels: ["Batch-Import", "Auto-Upload", "Formen & Ebenen", "Hintergründe", "Geräterahmen"],
-    showcaseTitles: ["Ziehen, ablegen, fertig.", "App Store Connect mit einem Klick.", "Ebene für Ebene aufbauen.", "Schöne Hintergründe erstellen.", "Geräterahmen anpassen."],
+    showcaseLabels: ["Batch-Import", "Auto-Upload", "Formen & Ebenen", "Hintergründe", "Geräterahmen", "KI-Agenten & MCP"],
+    showcaseTitles: ["Ziehen, ablegen, fertig.", "App Store Connect mit einem Klick.", "Ebene für Ebene aufbauen.", "Schöne Hintergründe erstellen.", "Geräterahmen anpassen.", "Überlass die Fleißarbeit deinem KI-Agenten."],
     showcaseDescription: "Der Kernworkflow zeigt, wie Screenshot Bro wiederholte Design-, Export- und Upload-Schritte reduziert.",
-    screenshotCaptions: ["Schöne App-Store-Screenshots gestalten", "Ganzes Projekt auf einmal exportieren", "Integrierte Vorlagen auswählen", "Screenshots einfach lokalisieren", "Echte Geräterahmen hinzufügen", "Schöne Hintergründe erstellen", "SVGs, Formen und Bilder hinzufügen"],
     screenshotAltSuffix: "Screenshot der Screenshot-Bro-Oberfläche",
     workflowTitles: ["Zeilen einrichten", "Gestalten & lokalisieren", "Alles exportieren", "Zu App Store Connect hochladen"],
     workflowDescription: "Von Gerätegrößen bis Mehrsprachenexport und Upload bleibt der gesamte Screenshot-Workflow in einer nativen App.",
-    testimonialQuotes: ["Früher dauerten Screenshots nach jedem Release ewig. Jetzt tausche ich Bilder in Templates aus und exportiere.", "Lokalisierung spart enorm Zeit. Mehrere Sprachen zu exportieren ist jetzt ein Klick.", "Endlich ein Tool, das nicht stört: keine Browser-Tabs, nur eine schnelle native App."],
-    developerLabel: "Entwickler",
   }),
-  ja: compactLandingContent({
+  ja: compactLandingContent("ja", {
     socialImageAlt: "Screenshot Bro — App Store・Google Playスクリーンショットをデバイスフレーム、グラデーション、ローカライズ付きで作成するMac/iPad/iPhoneネイティブアプリ",
-    ui: { docs: "ドキュメント", redditCommunity: "Redditコミュニティ", followOnX: "Xでフォロー", followOnThreads: "Threadsでフォロー", homeLabel: `${SITE_NAME} ホーム`, read: "読む", productLabel: "製品", resourcesLabel: "リソース", appScreenshots: "アプリのスクリーンショット", productHuntAlt: "ScreenshotBro App - 美しいApp Storeスクリーンショットを作成・書き出し。| Product Hunt" },
-    featureTitles: ["マルチテンプレート編集", "デバイスフレーム", "背景とスパン", "図形ツール + SVG", "スマート整列", "ローカライズ書き出し", "App Store Connectアップロード", "AIエージェントとMCP", "内蔵ローカライズ", "MacとiPadにネイティブ対応", "iCloud同期", "カスタムフォント", "プロジェクトテンプレート", "キーボードショートカット", "プライバシー重視", "画像の一括読み込み", "ずっと無料のプラン"],
+    ui: { docs: "ドキュメント", redditCommunity: "Redditコミュニティ", followOnX: "Xでフォロー", followOnThreads: "Threadsでフォロー", homeLabel: `${SITE_NAME} ホーム`, read: "読む", productLabel: "製品", resourcesLabel: "リソース", productHuntAlt: "ScreenshotBro App - 美しいApp Storeスクリーンショットを作成・書き出し。| Product Hunt" },
+    featureTitles: ["マルチテンプレート編集", "デバイスフレーム", "背景とスパン", "図形ツール + SVG", "スマート整列", "ローカライズ書き出し", "App Store Connectアップロード", "AIエージェントとMCP", "内蔵ローカライズ", "Mac・iPad・iPhoneにネイティブ対応", "iCloud同期", "カスタムフォント", "プロジェクトテンプレート", "キーボードショートカット", "プライバシー重視", "画像の一括読み込み", "ずっと無料のプラン"],
     featureDescription: "多言語ストア用スクリーンショットに特化したツール群。ネイティブ性能、再利用可能なテンプレート、提出しやすい書き出しを備えています。",
-    withoutBroPoints: ["各スクリーンショットを手動でリサイズ", "フレームを一つずつコピー", "色変更だけで全ファイルを書き出し直し", "言語ごとにすべて複製", "各PNGを手動アップロード"],
-    withBroPoints: ["1つのテンプレートで全バリエーション更新", "ワンクリックでフレーム追加", "形状ごとにlocaleテキストを管理", "全言語を一括書き出し", "App Store Connectへ直接アップロード"],
-    showcaseLabels: ["一括読み込み", "自動アップロード", "図形とレイヤー", "背景", "デバイスフレーム"],
-    showcaseTitles: ["ドラッグして完了。", "App Store Connectへワンクリック。", "レイヤーごとに作成。", "美しい背景を作成。", "フレームをカスタマイズ。"],
+    showcaseLabels: ["一括読み込み", "自動アップロード", "図形とレイヤー", "背景", "デバイスフレーム", "AIエージェントとMCP"],
+    showcaseTitles: ["ドラッグして完了。", "App Store Connectへワンクリック。", "レイヤーごとに作成。", "美しい背景を作成。", "フレームをカスタマイズ。", "面倒な作業はAIエージェントにおまかせ。"],
     showcaseDescription: "Screenshot Broが繰り返しのデザイン、書き出し、アップロード作業を減らす流れを紹介します。",
-    screenshotCaptions: ["美しいApp Storeスクリーンショットを作成", "プロジェクト全体を一括書き出し", "内蔵テンプレートを選択", "簡単にローカライズ", "本物のデバイスフレームを追加", "美しい背景を作成", "SVG、図形、画像を追加"],
     screenshotAltSuffix: "Screenshot Broのインターフェイス画像",
     workflowTitles: ["行を設定", "デザインとローカライズ", "すべて書き出し", "App Store Connectへアップロード"],
     workflowDescription: "デバイスサイズから多言語書き出しとアップロードまで、スクリーンショット作業を1つのネイティブアプリで完結できます。",
-    testimonialQuotes: ["以前はリリース後のスクリーンショット作業に時間がかかっていました。今はテンプレートに画像を差し替えて書き出すだけです。", "ローカライズ機能で大幅に時間を節約できます。複数言語の書き出しがワンクリックになりました。", "作業を邪魔しないツールです。ブラウザタブではなく、速いネイティブアプリです。"],
-    developerLabel: "開発者",
   }),
-  pt: compactLandingContent({
+  pt: compactLandingContent("pt", {
     socialImageAlt: "Screenshot Bro — app nativo para Mac, iPad e iPhone para criar capturas da App Store e Google Play com molduras, gradientes e localização",
-    ui: { docs: "Documentação", redditCommunity: "Comunidade Reddit", followOnX: "Seguir no X", followOnThreads: "Seguir no Threads", homeLabel: `Início do ${SITE_NAME}`, read: "Ler", productLabel: "Produto", resourcesLabel: "Recursos", appScreenshots: "Capturas de tela do app", productHuntAlt: "ScreenshotBro App - Crie e exporte belas capturas da App Store. | Product Hunt" },
+    ui: { docs: "Documentação", redditCommunity: "Comunidade Reddit", followOnX: "Seguir no X", followOnThreads: "Seguir no Threads", homeLabel: `Início do ${SITE_NAME}`, read: "Ler", productLabel: "Produto", resourcesLabel: "Recursos", productHuntAlt: "ScreenshotBro App - Crie e exporte belas capturas da App Store. | Product Hunt" },
     featureTitles: ["Edição multi-template", "Molduras de dispositivos", "Fundos e expansão", "Formas + SVG", "Alinhamento inteligente", "Exportação localizada", "Envio ao App Store Connect", "Agentes de IA e MCP", "Localização integrada", "Nativo para Mac, iPad e iPhone", "Sincronização iCloud", "Fontes personalizadas", "Modelos de projeto", "Atalhos de teclado", "Privacidade primeiro", "Importação em lote", "Plano grátis para sempre"],
     featureDescription: "Ferramentas focadas para capturas de loja em vários idiomas, com desempenho nativo, modelos reutilizáveis e exportações prontas para envio.",
-    withoutBroPoints: ["Redimensionar cada captura manualmente", "Copiar molduras uma por uma", "Reexportar tudo por uma cor", "Duplicar tudo para cada idioma", "Enviar cada PNG manualmente"],
-    withBroPoints: ["Um modelo atualiza todas as variantes", "Adicione molduras com um clique", "Gerencie textos por locale e forma", "Exporte todos os idiomas em um clique", "Envie direto ao App Store Connect"],
-    showcaseLabels: ["Importação em lote", "Envio automático", "Formas e camadas", "Fundos", "Molduras"],
-    showcaseTitles: ["Arraste, solte, pronto.", "App Store Connect em um clique.", "Monte camada por camada.", "Crie fundos bonitos.", "Personalize molduras."],
+    showcaseLabels: ["Importação em lote", "Envio automático", "Formas e camadas", "Fundos", "Molduras", "Agentes de IA e MCP"],
+    showcaseTitles: ["Arraste, solte, pronto.", "App Store Connect em um clique.", "Monte camada por camada.", "Crie fundos bonitos.", "Personalize molduras.", "Deixe o trabalho repetitivo com seu agente de IA."],
     showcaseDescription: "O fluxo principal mostra como o Screenshot Bro reduz etapas repetitivas de design, exportação e envio.",
-    screenshotCaptions: ["Crie belas capturas da App Store", "Exporte o projeto inteiro de uma vez", "Escolha modelos integrados", "Localize capturas facilmente", "Adicione molduras reais", "Crie belos fundos", "Adicione SVGs, formas e imagens"],
     screenshotAltSuffix: "captura da interface do Screenshot Bro",
     workflowTitles: ["Configure linhas", "Projete e localize", "Exporte tudo", "Envie ao App Store Connect"],
     workflowDescription: "Dos tamanhos de dispositivo à exportação em vários idiomas e envio, todo o fluxo fica em um app nativo.",
-    testimonialQuotes: ["Antes eu gastava muito tempo em capturas após cada lançamento. Agora troco imagens nos modelos e exporto.", "A localização economiza muito tempo. Exportar vários idiomas agora leva um clique.", "Finalmente uma ferramenta que não atrapalha: sem abas de navegador, só um app nativo rápido."],
-    developerLabel: "desenvolvedor",
   }),
-  it: compactLandingContent({
+  it: compactLandingContent("it", {
     socialImageAlt: "Screenshot Bro — app nativa per Mac, iPad e iPhone per creare screenshot App Store e Google Play con cornici, gradienti e localizzazione",
-    ui: { docs: "Documentazione", redditCommunity: "Community Reddit", followOnX: "Segui su X", followOnThreads: "Segui su Threads", homeLabel: `Home di ${SITE_NAME}`, read: "Leggi", productLabel: "Prodotto", resourcesLabel: "Risorse", appScreenshots: "Screenshot dell'app", productHuntAlt: "ScreenshotBro App - Progetta ed esporta splendidi screenshot App Store. | Product Hunt" },
+    ui: { docs: "Documentazione", redditCommunity: "Community Reddit", followOnX: "Segui su X", followOnThreads: "Segui su Threads", homeLabel: `Home di ${SITE_NAME}`, read: "Leggi", productLabel: "Prodotto", resourcesLabel: "Risorse", productHuntAlt: "ScreenshotBro App - Progetta ed esporta splendidi screenshot App Store. | Product Hunt" },
     featureTitles: ["Modifica multi-template", "Cornici dispositivo", "Sfondi estesi", "Strumenti forme + SVG", "Allineamento intelligente", "Export localizzato", "Upload App Store Connect", "Agenti IA e MCP", "Localizzazione integrata", "Nativa Mac, iPad e iPhone", "Sync iCloud", "Font personalizzati", "Template progetto", "Scorciatoie da tastiera", "Privacy prima di tutto", "Import batch", "Piano gratis per sempre"],
     featureDescription: "Strumenti mirati per screenshot store multilingue, con prestazioni native, template riutilizzabili ed export pronti per l'upload.",
-    withoutBroPoints: ["Ridimensionare ogni screenshot manualmente", "Copiare cornici una alla volta", "Riesportare tutto per un colore", "Duplicare tutto per ogni lingua", "Caricare ogni PNG manualmente"],
-    withBroPoints: ["Un template aggiorna tutte le varianti", "Aggiungi cornici con un clic", "Gestisci testi per locale e forma", "Esporta tutte le lingue in un clic", "Carica diretto su App Store Connect"],
-    showcaseLabels: ["Import batch", "Upload automatico", "Forme e livelli", "Sfondi", "Cornici"],
-    showcaseTitles: ["Trascina, rilascia, fatto.", "App Store Connect in un clic.", "Costruisci livello per livello.", "Crea sfondi belli.", "Personalizza le cornici."],
+    showcaseLabels: ["Import batch", "Upload automatico", "Forme e livelli", "Sfondi", "Cornici", "Agenti IA e MCP"],
+    showcaseTitles: ["Trascina, rilascia, fatto.", "App Store Connect in un clic.", "Costruisci livello per livello.", "Crea sfondi belli.", "Personalizza le cornici.", "Lascia il lavoro ripetitivo al tuo agente IA."],
     showcaseDescription: "Il flusso principale mostra come Screenshot Bro riduce passaggi ripetitivi di design, export e upload.",
-    screenshotCaptions: ["Crea bellissimi screenshot App Store", "Esporta l'intero progetto insieme", "Scegli template integrati", "Localizza screenshot facilmente", "Aggiungi cornici reali", "Crea sfondi belli", "Aggiungi SVG, forme e immagini"],
     screenshotAltSuffix: "schermata dell'interfaccia Screenshot Bro",
     workflowTitles: ["Configura righe", "Progetta e localizza", "Esporta tutto", "Carica su App Store Connect"],
     workflowDescription: "Dalle dimensioni dispositivo all'export multilingue e all'upload, tutto il workflow resta in un'app nativa.",
-    testimonialQuotes: ["Prima perdevo molto tempo sugli screenshot dopo ogni release. Ora cambio le immagini nei template ed esporto.", "La localizzazione fa risparmiare tantissimo tempo. Esportare più lingue ora richiede un clic.", "Finalmente uno strumento che non intralcia: niente schede browser, solo un'app nativa veloce."],
-    developerLabel: "sviluppatore",
   }),
   ko: {
     socialImageAlt: "Screenshot Bro — Mac, iPad 및 iPhone용 네이티브 앱으로 App Store와 Google Play 스크린샷을 디바이스 프레임, 그라디언트, 현지화와 함께 제작",
-    ui: { docs: "문서", redditCommunity: "Reddit 커뮤니티", followOnX: "X에서 팔로우", followOnThreads: "Threads에서 팔로우", homeLabel: `${SITE_NAME} 홈`, read: "읽기", productLabel: "제품", resourcesLabel: "리소스", appScreenshots: "앱 스크린샷", productHuntAlt: "ScreenshotBro App - 아름다운 App Store 스크린샷을 디자인하고 내보내세요. | Product Hunt" },
+    ui: { docs: "문서", redditCommunity: "Reddit 커뮤니티", followOnX: "X에서 팔로우", followOnThreads: "Threads에서 팔로우", homeLabel: `${SITE_NAME} 홈`, read: "읽기", productLabel: "제품", resourcesLabel: "리소스", productHuntAlt: "ScreenshotBro App - 아름다운 App Store 스크린샷을 디자인하고 내보내세요. | Product Hunt" },
     features: localizeFeatures([
       { title: "멀티 템플릿 편집", description: "한 번 편집하면 모든 변형이 업데이트됩니다. 도형이나 텍스트를 바꾸면 모든 스크린샷에 동시에 반영됩니다." },
       { title: "디바이스 프레임", description: "iPhone, iPad, MacBook, iMac, Android 프레임으로 App Store와 Google Play 스크린샷을 만들 수 있습니다. 정확한 베젤과 색상 설정을 지원합니다." },
       { title: "배경과 확장", description: "단색, 여러 종류의 그라디언트, 이미지 배경을 지원하며 한 행의 여러 템플릿에 배경을 이어서 적용할 수 있습니다." },
       { title: "도형 도구 + SVG", description: "사각형, 원, 별, 텍스트, 이미지, SVG, 디바이스 프레임을 추가하고 스타일과 변형을 조정할 수 있습니다." },
       { title: "스마트 정렬", description: "드래그할 때 스냅 가이드가 표시됩니다. 방향키로 이동하고 Option 드래그로 복제하며 Shift로 비율을 고정합니다." },
-      { title: "현지화 내보내기", description: "여러 locale에 대해 PNG 또는 JPEG를 1x-3x로 내보내고 언어와 행별 폴더로 자동 정리합니다." },
+      { title: "현지화 내보내기", description: "각 행의 정확한 픽셀 크기로 PNG 또는 JPEG를 모든 locale에 한 번에 내보내고, App Store Connect, Google Play, 출시용 에셋에 맞게 locale과 행별 폴더로 자동 정리합니다." },
       { title: "App Store Connect 업로드", description: "디스플레이 유형 감지, locale 매칭, 사전 검사를 거쳐 App Store Connect에 원클릭 업로드합니다." },
       { title: "AI 에이전트와 MCP", description: "Mac에서 선택적으로 켜는 로컬 MCP 서버를 통해 Claude Code, Claude Desktop, Cursor가 프로젝트 생성, 행과 도형 배치, 스크린샷 가져오기, 번역, 미리보기 렌더링, 내보내기를 대신 수행합니다." },
       { title: "내장 현지화", description: "81개 언어 프리셋, 온디바이스 자동 번역, 도형별 텍스트·위치·이미지 재정의를 지원합니다." },
       { title: "Mac, iPad 및 iPhone 네이티브", description: "Swift와 SwiftUI로 제작되었습니다. Electron이나 브라우저 탭 없이 빠르게 실행되고 자동 저장을 지원합니다." },
-      { title: "iCloud 동기화", description: "선택형 iCloud Drive 동기화로 Mac과 iPad에서 프로젝트를 사용할 수 있습니다." },
+      { title: "iCloud 동기화", description: "선택형 iCloud Drive 동기화로 Mac, iPad, iPhone에서 프로젝트를 사용할 수 있습니다." },
       { title: "사용자 지정 폰트", description: ".ttf, .otf, .ttc 파일을 가져와 텍스트 도형에서 원하는 서체를 사용할 수 있습니다." },
       { title: "프로젝트 템플릿", description: "레이아웃, 디바이스 프레임, 배경이 미리 설정된 내장 템플릿으로 바로 시작하세요." },
       { title: "키보드 단축키", description: "이동, 복제, 잘라내기/복사/붙여넣기, 레이어 순서, 줌, locale 전환, 선택을 키보드로 처리합니다." },
@@ -905,273 +705,188 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
       { title: "이미지 일괄 가져오기", description: "스크린샷 폴더를 드롭하면 파일명에서 디바이스 크기를 감지해 행을 일괄로 채웁니다." },
       { title: "영구 무료 플랜", description: "1개 프로젝트, 3개 행, 행당 5개 템플릿, 모든 프레임, 81개 locale, 모든 내보내기 형식. 워터마크와 가입이 없습니다." },
     ]),
-    withoutBroPoints: ["Figma나 Photoshop에서 각 스크린샷을 수동으로 리사이즈", "아트보드마다 디바이스 프레임을 하나씩 복사", "색상 하나를 바꿔도 모든 파일을 다시 내보내기", "언어마다 모든 것을 복제하고 번역 상태를 잃어버리기", "각 PNG를 App Store Connect에 직접 드래그 앤 드롭"],
-    withBroPoints: ["템플릿 하나로 모든 변형을 즉시 업데이트", "클릭 한 번으로 디바이스 프레임과 색상 선택", "도형별 텍스트 재정의로 여러 locale 추가", "모든 스크린샷, 언어, 크기를 한 번에 내보내기", "브라우저 없이 App Store Connect에 직접 업로드"],
     featureShowcases: localizeFeatureShowcases([
       { label: "일괄 가져오기", title: "드래그하고 놓으면 끝.", description: "여러 스크린샷을 한 번에 드롭하면 Screenshot Bro가 가져와 각각을 디바이스 프레임에 자동으로 배치합니다.", mediaAlt: "여러 스크린샷이 자동으로 디바이스 프레임에 들어가는 모습" },
       { label: "자동 업로드", title: "App Store Connect에 원클릭 업로드.", description: "API 키를 한 번 연결하면 올바른 앱, 버전, 디스플레이 유형, locale로 스크린샷을 보냅니다.", mediaAlt: "Screenshot Bro에서 App Store Connect로 스크린샷 업로드" },
       { label: "도형과 레이어", title: "레이어별로 완성하세요.", description: "도형, 텍스트, 이미지, SVG를 추가하고 크기, 회전, 색상, 그라디언트, 외곽선을 조정합니다.", mediaAlt: "캔버스에서 도형을 편집하는 모습" },
       { label: "배경", title: "멋진 배경 만들기.", description: "프리셋, 사용자 지정 그라디언트, 이미지를 사용하고 여러 템플릿에 걸친 배경을 만들 수 있습니다.", mediaAlt: "그라디언트와 확장 배경을 전환하는 모습" },
       { label: "디바이스 프레임", title: "프레임을 맞춤 설정.", description: "iPhone, iPad, MacBook, iMac, Android를 선택하고 색상을 바꿔 브랜드에 맞춥니다.", mediaAlt: "앱 스크린샷 주변의 디바이스 프레임을 선택하고 조정" },
-    ]),
-    appScreenshots: localizeAppScreenshots([
-      { alt: "여러 템플릿과 디바이스 프레임을 보여주는 Screenshot Bro 편집기", caption: "아름다운 App Store 스크린샷 디자인" },
-      { alt: "업로드 준비가 된 프로젝트 스크린샷 일괄 내보내기 화면", caption: "전체 프로젝트를 한 번에 내보내기" },
-      { alt: "iPhone 및 iPad용 내장 템플릿 선택기", caption: "내장 템플릿 선택" },
-      { alt: "독일어 locale과 텍스트 재정의를 보여주는 현지화 편집기", caption: "스크린샷을 쉽게 현지화" },
-      { alt: "MacBook, iPad, iPhone 프레임 선택 화면", caption: "실제 디바이스 프레임 추가" },
-      { alt: "그라디언트와 색상 선택기가 있는 배경 편집기", caption: "아름다운 배경 만들기" },
-      { alt: "SVG와 벡터 요소를 포함한 도형 도구", caption: "SVG, 도형, 이미지 추가" },
+      { label: "AI 에이전트와 MCP", title: "번거로운 작업은 AI 에이전트에게 맡기세요.", description: "로컬 MCP 서버를 켜면 Claude Code, Claude Desktop, Cursor가 Screenshot Bro를 직접 다룹니다. 프로젝트 생성, 행과 도형 배치, 스크린샷 가져오기, 텍스트 번역, 렌더링된 미리보기 확인, 내보내기, App Store Connect 동기화까지 처리합니다. 127.0.0.1에서만 수신하고 설정에서 받은 토큰이 필요하며, 모든 변경은 ⌘Z로 되돌릴 수 있습니다.", mediaAlt: "AI 에이전트가 Screenshot Bro MCP 도구를 호출해 App Store 스크린샷을 만들고 번역하고 렌더링하고 업로드하는 세션" },
     ]),
     workflowSteps: localizeWorkflowSteps([
-      { title: "행 설정", description: "iPhone, iPad Pro, MacBook, iMac 크기를 선택하고 필요한 만큼 행을 추가합니다." },
+      { title: "행 설정", description: "iPhone, iPad, Mac, Android 휴대폰과 태블릿 중에서 기기 크기를 선택하세요. 각 크기는 해당 스토어가 요구하는 픽셀로 미리 설정되어 있으며, 행은 필요한 만큼 추가할 수 있습니다." },
       { title: "디자인 및 현지화", description: "프레임, 텍스트, 도형, 배경을 추가하고 locale과 텍스트 재정의를 조정합니다." },
-      { title: "모두 내보내기", description: "선택한 배율의 스크린샷을 locale과 행별 폴더로 정리해 받습니다." },
+      { title: "모두 내보내기", description: "내보내기를 누르면 locale과 행별로 정리된 폴더에 모든 스크린샷이 스토어가 요구하는 정확한 크기로 담깁니다. 클릭 한 번이면 끝." },
       { title: "App Store Connect 업로드", description: "API 키를 연결하고 올바른 앱, 버전, 디스플레이 유형, locale로 스크린샷을 보냅니다." },
     ]),
-    testimonials: [
-      { quote: "예전에는 릴리스 후 스크린샷 작업에 오후를 통째로 썼습니다. Screenshot Bro에서는 템플릿을 한 번 만들고 새 이미지만 바꿔 내보냅니다.", name: "Refuells 개발자", app: "Refuells", icon: "/showcase/refuells.jpg" },
-      { quote: "현지화 기능이 정말 큰 도움이 됩니다. 6개 언어를 지원하는데 예전에는 내보내기가 가장 힘들었습니다. 이제는 한 번 클릭이면 됩니다.", name: "AdRadar 개발자", app: "AdRadar", icon: "/showcase/adradar.jpg" },
-      { quote: "드디어 작업을 방해하지 않는 도구입니다. Figma 플러그인도 브라우저 탭도 없이 빠른 네이티브 앱입니다.", name: "TT Tracker 개발자", app: "TT Tracker", icon: "/showcase/tt-tracker.jpg" },
-    ],
   },
-  uk: compactLandingContent({
+  uk: compactLandingContent("uk", {
     socialImageAlt: "Screenshot Bro — нативний додаток для Mac, iPad та iPhone для дизайну скриншотів App Store і Google Play з рамками пристроїв, градієнтами та локалізацією",
-    ui: { docs: "Документація", redditCommunity: "Спільнота в Reddit", followOnX: "Стежити в X", followOnThreads: "Стежити в Threads", homeLabel: `${SITE_NAME} Головна`, read: "Читати", productLabel: "Продукт", resourcesLabel: "Ресурси", appScreenshots: "Скриншоти додатку", productHuntAlt: "ScreenshotBro App - Створюйте та експортуйте красиві скриншоти для App Store. | Product Hunt" },
+    ui: { docs: "Документація", redditCommunity: "Спільнота в Reddit", followOnX: "Стежити в X", followOnThreads: "Стежити в Threads", homeLabel: `${SITE_NAME} Головна`, read: "Читати", productLabel: "Продукт", resourcesLabel: "Ресурси", productHuntAlt: "ScreenshotBro App - Створюйте та експортуйте красиві скриншоти для App Store. | Product Hunt" },
     featureTitles: ["Мульти-шаблонне редагування", "Рамки пристроїв", "Фони та розтягування", "Інструменти фігур + SVG", "Розумне вирівнювання", "Локалізований експорт", "Завантаження в App Store Connect", "ШІ-агенти та MCP", "Вбудована локалізація", "Нативно для Mac, iPad та iPhone", "Синхронізація iCloud", "Власні шрифти", "Шаблони проектів", "Гарячі клавіші", "Конфіденційність понад усе", "Пакетний імпорт зображень", "Назавжди безкоштовний тариф"],
     featureDescription: "Спеціалізовані інструменти для багатомовних скриншотів магазинів із нативною швидкістю, шаблонами для повторного використання та експортом, готовим до завантаження.",
-    withoutBroPoints: ["Ручна зміна розміру кожного скриншота у Figma або Photoshop", "Копіювання рамок пристроїв по одній між артбордами", "Повторний експорт усіх файлів через зміну одного кольору", "Дублювання всього для кожної мови та втрата контролю над перекладами", "Ручне перетягування кожного PNG в App Store Connect"],
-    withBroPoints: ["Один шаблон оновлює всі варіанти миттєво", "Додавання рамок пристроїв в один клік із вибором моделі та кольору", "Додавання локалей із перевизначенням тексту для кожної фігури", "Експорт усіх скриншотів, мов і розмірів в один клік", "Пряме завантаження в App Store Connect без браузера"],
-    showcaseLabels: ["Пакетний імпорт", "Автозавантаження", "Фігури та шари", "Фони", "Рамки пристроїв"],
-    showcaseTitles: ["Перетягніть, відпустіть — готово.", "Завантажуйте в App Store Connect в один клік.", "Створюйте шар за шаром.", "Створюйте красиві фони.", "Налаштовуйте рамки пристроїв."],
+    showcaseLabels: ["Пакетний імпорт", "Автозавантаження", "Фігури та шари", "Фони", "Рамки пристроїв", "ШІ-агенти та MCP"],
+    showcaseTitles: ["Перетягніть, відпустіть — готово.", "Завантажуйте в App Store Connect в один клік.", "Створюйте шар за шаром.", "Створюйте красиві фони.", "Налаштовуйте рамки пристроїв.", "Доручіть рутину своєму ШІ-агенту."],
     showcaseDescription: "Основний робочий процес показує, як Screenshot Bro усуває повторювану рутину під час дизайну, експорту та завантаження.",
-    screenshotCaptions: ["Створюйте красиві скриншоти для App Store", "Експортуйте весь проект за один раз", "Обирайте із вбудованих шаблонів", "Легко локалізуйте скриншоти", "Додавайте реальні рамки пристроїв", "Створюйте красиві фони", "Додавайте SVG, фігури та зображення"],
     screenshotAltSuffix: "скриншот інтерфейсу Screenshot Bro",
     workflowTitles: ["Налаштуйте рядки", "Створюйте дизайн і локалізуйте", "Експортуйте все", "Завантажуйте в App Store Connect"],
     workflowDescription: "Від розмірів пристроїв до багатомовного експорту та завантаження — увесь робочий процес залишається в одному нативному додатку.",
-    testimonialQuotes: ["Раніше після кожного релізу я витрачав цілий день на скриншоти. У Screenshot Bro я налаштував шаблони один раз — тепер просто підставляю нові кадри й тисну експорт.", "Локалізація — це просто порятунок. Я підтримую 6 мов, і експорт усіх версій був найгіршою частиною оновлень. Тепер це один клік.", "Нарешті інструмент, який не заважає. Жодних плагінів для Figma, жодних вкладок браузера — лише швидкий нативний додаток, який робить свою справу."],
-    developerLabel: "Розробник",
   }),
-  pl: compactLandingContent({
+  pl: compactLandingContent("pl", {
     socialImageAlt: "Screenshot Bro — natywna aplikacja na Maca, iPada i iPhone'a do projektowania zrzutów ekranu dla App Store i Google Play z ramkami urządzeń, gradientami i lokalizacją",
-    ui: { docs: "Dokumentacja", redditCommunity: "Społeczność Reddit", followOnX: "Obserwuj na X", followOnThreads: "Obserwuj na Threads", homeLabel: `${SITE_NAME} Strona główna`, read: "Czytaj", productLabel: "Produkt", resourcesLabel: "Zasoby", appScreenshots: "Zrzuty ekranu aplikacji", productHuntAlt: "ScreenshotBro App - Projektuj i eksportuj piękne zrzuty ekranu dla App Store. | Product Hunt" },
+    ui: { docs: "Dokumentacja", redditCommunity: "Społeczność Reddit", followOnX: "Obserwuj na X", followOnThreads: "Obserwuj na Threads", homeLabel: `${SITE_NAME} Strona główna`, read: "Czytaj", productLabel: "Produkt", resourcesLabel: "Zasoby", productHuntAlt: "ScreenshotBro App - Projektuj i eksportuj piękne zrzuty ekranu dla App Store. | Product Hunt" },
     featureTitles: ["Edycja wielu szablonów", "Ramki urządzeń", "Tła i rozciąganie", "Narzędzia kształtów + SVG", "Inteligentne wyrównanie", "Zlokalizowany eksport", "Przesyłanie do App Store Connect", "Agenci AI i MCP", "Wbudowana lokalizacja", "Natywna na Maca, iPada i iPhone'a", "Synchronizacja iCloud", "Własne czcionki", "Szablony projektów", "Skróty klawiszowe", "Prywatność przede wszystkim", "Masowy import obrazów", "Zawsze darmowy plan"],
     featureDescription: "Dedykowane narzędzia do wielojęzycznych zrzutów ekranu w sklepach z natywną wydajnością, szablonami wielokrotnego użytku i eksportem gotowym do przesłania.",
-    withoutBroPoints: ["Ręczna zmiana rozmiaru każdego zrzutu ekranu w Figma lub Photoshopie", "Kopiowanie ramek urządzeń pojedynczo między obszarami roboczymi", "Ponowny eksport wszystkich plików po zmianie jednego koloru", "Duplikowanie wszystkiego dla każdego języka i utrata kontroli nad tłumaczeniami", "Ręczne przeciąganie każdego pliku PNG do App Store Connect"],
-    withBroPoints: ["Jeden szablon aktualizuje wszystkie warianty natychmiast", "Dodawanie ramek urządzeń jednym kliknięciem z wyborem modelu i koloru", "Dodawanie wersji językowych z nadpisywaniem tekstu dla każdego kształtu", "Eksport wszystkich zrzutów, języków i rozmiarów jednym kliknięciem", "Bezpośrednie przesyłanie do App Store Connect bez przeglądarki"],
-    showcaseLabels: ["Masowy import", "Automatyczne przesyłanie", "Kształty i warstwy", "Tła", "Ramki urządzeń"],
-    showcaseTitles: ["Przeciągnij, upuść, gotowe.", "Przesyłaj do App Store Connect jednym kliknięciem.", "Buduj warstwa po warstwie.", "Twórz atrakcyjne tła.", "Dostosuj ramki urządzeń."],
+    showcaseLabels: ["Masowy import", "Automatyczne przesyłanie", "Kształty i warstwy", "Tła", "Ramki urządzeń", "Agenci AI i MCP"],
+    showcaseTitles: ["Przeciągnij, upuść, gotowe.", "Przesyłaj do App Store Connect jednym kliknięciem.", "Buduj warstwa po warstwie.", "Twórz atrakcyjne tła.", "Dostosuj ramki urządzeń.", "Zostaw żmudną robotę agentowi AI."],
     showcaseDescription: "Główny przepływ pracy pokazuje, jak Screenshot Bro eliminuje powtarzalne projektowanie, eksport i przesyłanie.",
-    screenshotCaptions: ["Projektuj piękne zrzuty ekranu dla App Store", "Eksportuj cały projekt za jednym razem", "Wybieraj spośród wbudowanych szablonów", "Łatwo lokalizuj zrzuty ekranu", "Dodawaj realistyczne ramki urządzeń", "Twórz piękne tła", "Dodawaj pliki SVG, kształty i obrazy"],
     screenshotAltSuffix: "zrzut ekranu interfejsu Screenshot Bro",
     workflowTitles: ["Skonfiguruj wiersze", "Zaprojektuj i zlokalizuj", "Wyeksportuj wszystko", "Prześlij do App Store Connect"],
     workflowDescription: "Od rozmiarów urządzeń po wielojęzyczny eksport i przesyłanie — cały proces pozostaje w jednej natywnej aplikacji.",
-    testimonialQuotes: ["Kiedyś spędzałem całe popołudnie na zrzutach ekranu po każdym wydaniu. W Screenshot Bro konfiguruję szablony raz, a teraz tylko podmieniam nowe ujęcia i klikam eksport.", "Funkcja lokalizacji to zbawienie. Obsługuję 6 języków i eksportowanie ich wszystkich było najgorszą częścią każdej aktualizacji. Teraz to jedno kliknięcie.", "Wreszcie narzędzie, które nie przeszkadza w pracy. Żadnych wtyczek do Figmy, żadnych kart w przeglądarce — po prostu natywna aplikacja, która działa szybko."],
-    developerLabel: "Twórca",
   }),
-  tr: compactLandingContent({
+  tr: compactLandingContent("tr", {
     socialImageAlt: "Screenshot Bro — Cihaz çerçeveleri, degradeler ve yerelleştirme ile App Store ve Google Play ekran görüntüleri tasarlamak için yerel Mac, iPad ve iPhone uygulaması",
-    ui: { docs: "Belgeler", redditCommunity: "Reddit Topluluğu", followOnX: "X'te Takip Et", followOnThreads: "Threads'te Takip Et", homeLabel: `${SITE_NAME} Ana Sayfa`, read: "Oku", productLabel: "Ürün", resourcesLabel: "Kaynaklar", appScreenshots: "Uygulama Ekran Görüntüleri", productHuntAlt: "ScreenshotBro App - Harika App Store ekran görüntüleri tasarlayın ve dışa aktarın. | Product Hunt" },
+    ui: { docs: "Belgeler", redditCommunity: "Reddit Topluluğu", followOnX: "X'te Takip Et", followOnThreads: "Threads'te Takip Et", homeLabel: `${SITE_NAME} Ana Sayfa`, read: "Oku", productLabel: "Ürün", resourcesLabel: "Kaynaklar", productHuntAlt: "ScreenshotBro App - Harika App Store ekran görüntüleri tasarlayın ve dışa aktarın. | Product Hunt" },
     featureTitles: ["Çoklu Şablon Düzenleme", "Cihaz Çerçeveleri", "Arka Planlar ve Yayma", "Şekil Araçları + SVG", "Akıllı Hizalama", "Yerelleştirilmiş Dışa Aktarma", "App Store Connect'e Yükleme", "Yapay Zeka Ajanları ve MCP", "Yerleşik Yerelleştirme", "Yerel Mac, iPad ve iPhone", "iCloud Eşzamanlama", "Özel Yazı Tipleri", "Proje Şablonları", "Klavye Kısayolları", "Önce Gizlilik", "Toplu Görsel İçe Aktarma", "Kalıcı Ücretsiz Plan"],
     featureDescription: "Yerel performans, yeniden kullanılabilir şablonlar ve yüklemeye hazır dışa aktarmalarla çok dilli mağaza ekran görüntüleri için odaklanmış araçlar.",
-    withoutBroPoints: ["Figma veya Photoshop'ta her ekran görüntüsünü manuel boyutlandırmak", "Çalışma yüzeyleri arasında cihaz çerçevelerini tek tek kopyalamak", "Tek bir renk değiştiğinde tüm dosyaları yeniden dışa aktarmak", "Her dil için her şeyi çoğaltıp çeviri takibini kaybetmek", "Her PNG dosyasını App Store Connect'e elle sürüklemek"],
-    withBroPoints: ["Tek bir şablon tasarlayın, tüm varyantlar anında güncellensin", "Tek tıkla cihaz çerçeveleri ve renkleri ekleyin", "Şekil başına metin geçersiz kılmalarıyla çoklu diller ekleyin", "Tüm ekran görüntülerini, dilleri ve boyutları tek tıkla dışa aktarın", "Tarayıcı olmadan doğrudan App Store Connect'e yükleyin"],
-    showcaseLabels: ["Toplu İçe Aktarma", "Otomatik Yükleme", "Şekiller ve Katmanlar", "Arka Planlar", "Cihaz Çerçeveleri"],
-    showcaseTitles: ["Sürükle, bırak, bitti.", "App Store Connect'e tek tıkla yükleyin.", "Katman katman inşa edin.", "Göz alıcı arka planlar oluşturun.", "Cihaz çerçevelerini özelleştirin."],
+    showcaseLabels: ["Toplu İçe Aktarma", "Otomatik Yükleme", "Şekiller ve Katmanlar", "Arka Planlar", "Cihaz Çerçeveleri", "Yapay Zeka Ajanları ve MCP"],
+    showcaseTitles: ["Sürükle, bırak, bitti.", "App Store Connect'e tek tıkla yükleyin.", "Katman katman inşa edin.", "Göz alıcı arka planlar oluşturun.", "Cihaz çerçevelerini özelleştirin.", "Angarya işleri yapay zeka ajanınıza bırakın."],
     showcaseDescription: "Temel iş akışı, Screenshot Bro'nun tekrarlayan tasarım, dışa aktarma ve yükleme adımlarını nasıl ortadan kaldırdığını gösterir.",
-    screenshotCaptions: ["Harika App Store ekran görüntüleri tasarlayın", "Tüm projeyi tek seferde dışa aktarın", "Yerleşik şablonlardan seçin", "Ekran görüntülerini kolayca yerelleştirin", "Gerçek cihaz çerçeveleri ekleyin", "Güzel arka planlar oluşturun", "SVG, şekiller ve görseller ekleyin"],
     screenshotAltSuffix: "Screenshot Bro arayüz ekran görüntüsü",
     workflowTitles: ["Satırları Ayarlayın", "Tasarlayın ve Yerelleştirin", "Hepsini Dışa Aktarın", "App Store Connect'e Yükleyin"],
     workflowDescription: "Cihaz boyutlarından çok dilli dışa aktarma ve yüklemeye kadar tüm ekran görüntüsü iş akışı tek bir yerel uygulamada kalır.",
-    testimonialQuotes: ["Eskiden her sürümden sonra ekran görüntüleri için bütün bir öğleden sonramı harcardım. Screenshot Bro ile şablonları bir kez kurdum, artık sadece yeni kareleri değiştirip dışa aktarıyorum.", "Yerelleştirme özelliği hayat kurtarıcı. 6 dili destekliyorum ve hepsini dışa aktarmak güncellemelerin en zor kısmıydı. Artık tek bir tık.", "Sonunda işime engel olmayan bir araç. Figma eklentisi yok, tarayıcı sekmesi yok — sadece işi hızlıca bitiren yerel bir uygulama."],
-    developerLabel: "Geliştiricisi",
   }),
-  nl: compactLandingContent({
-    socialImageAlt: "Screenshot Bro — native Mac- en iPad-app voor het ontwerpen van App Store- en Google Play-screenshots met apparaatframes, verlopen en lokalisatie",
-    ui: { docs: "Documentatie", redditCommunity: "Reddit-community", followOnX: "Volg op X", followOnThreads: "Volg op Threads", homeLabel: `${SITE_NAME} Home`, read: "Lees", productLabel: "Product", resourcesLabel: "Bronnen", appScreenshots: "App-screenshots", productHuntAlt: "ScreenshotBro App - Ontwerp en exporteer prachtige App Store-screenshots. | Product Hunt" },
+  nl: compactLandingContent("nl", {
+    socialImageAlt: "Screenshot Bro — native app voor Mac, iPad en iPhone voor het ontwerpen van App Store- en Google Play-screenshots met apparaatframes, verlopen en lokalisatie",
+    ui: { docs: "Documentatie", redditCommunity: "Reddit-community", followOnX: "Volg op X", followOnThreads: "Volg op Threads", homeLabel: `${SITE_NAME} Home`, read: "Lees", productLabel: "Product", resourcesLabel: "Bronnen", productHuntAlt: "ScreenshotBro App - Ontwerp en exporteer prachtige App Store-screenshots. | Product Hunt" },
     featureTitles: ["Multi-template bewerking", "Apparaatframes", "Achtergronden & overspanning", "Vormgereedschappen + SVG", "Slimme uitlijning", "Gelokaliseerde export", "Uploaden naar App Store Connect", "AI-agenten & MCP", "Ingebouwde lokalisatie", "Native voor Mac, iPad & iPhone", "iCloud-synchronisatie", "Aangepaste lettertypen", "Projectsjablonen", "Toetscombinaties", "Privacy voorop", "Batch-afbeeldingsimport", "Blijvend gratis plan"],
     featureDescription: "Gerichte tools voor meertalige store-screenshots met native prestaties, herbruikbare sjablonen en exporten klaar voor upload.",
-    withoutBroPoints: ["Elk screenshot handmatig schalen in Figma of Photoshop", "Apparaatframes één voor één kopiëren tussen artboards", "Alles opnieuw exporteren bij het aanpassen van één kleur", "Alles dupliceren voor elke taal en vertaaloverzicht verliezen", "Elke PNG handmatig naar App Store Connect slepen"],
-    withBroPoints: ["Ontwerp één sjabloon en alle varianten worden direct bijgewerkt", "Voeg apparaatframes toe met één klik en kies model en kleur", "Voeg meerdere talen toe met tekstaanpassingen per vorm", "Exporteer alle screenshots, talen en formaten in één klik", "Upload direct naar App Store Connect zonder browser"],
-    showcaseLabels: ["Batch-import", "Automatische upload", "Vormen en lagen", "Achtergronden", "Apparaatframes"],
-    showcaseTitles: ["Slepen, neerzetten, klaar.", "Upload naar App Store Connect in één klik.", "Bouw laag voor laag op.", "Maak prachtige achtergronden.", "Pas apparaatframes aan."],
+    showcaseLabels: ["Batch-import", "Automatische upload", "Vormen en lagen", "Achtergronden", "Apparaatframes", "AI-agenten & MCP"],
+    showcaseTitles: ["Slepen, neerzetten, klaar.", "Upload naar App Store Connect in één klik.", "Bouw laag voor laag op.", "Maak prachtige achtergronden.", "Pas apparaatframes aan.", "Laat je AI-agent het saaie werk doen."],
     showcaseDescription: "De kernworkflow laat zien hoe Screenshot Bro repetitief ontwerp-, export- en uploadwerk elimineert.",
-    screenshotCaptions: ["Ontwerp prachtige App Store-screenshots", "Exporteer het hele project in één keer", "Kies uit ingebouwde sjablonen", "Lokaliseer screenshots eenvoudig", "Voeg echte apparaatframes toe", "Maak mooie achtergronden", "Voeg SVG's, vormen en afbeeldingen toe"],
     screenshotAltSuffix: "Screenshot Bro-interface screenshot",
     workflowTitles: ["Rijen instellen", "Ontwerpen & lokaliseren", "Alles exporteren", "Uploaden naar App Store Connect"],
     workflowDescription: "Van apparaatformaten tot meertalige export en upload: de hele workflow blijft in één native app.",
-    testimonialQuotes: ["Vroeger was ik na elke release een hele middag kwijt aan screenshots. Met Screenshot Bro stel ik sjablonen één keer in en hoef ik alleen nieuwe beelden te wisselen en op export te drukken.", "De lokalisatiefunctie is een uitkomst. Ik ondersteun 6 talen en alles exporteren was het zwaarste deel van elke update. Nu is het één klik.", "Eindelijk een tool die niet in de weg zit. Geen Figma-plug-ins, geen browsertabbladen — gewoon een snelle native app die het werk doet."],
-    developerLabel: "ontwikkelaar",
   }),
-  id: compactLandingContent({
+  id: compactLandingContent("id", {
     socialImageAlt: "Screenshot Bro — aplikasi native Mac, iPad dan iPhone untuk mendesain tangkapan layar App Store dan Google Play dengan bingkai perangkat, gradien, dan lokalisasi",
-    ui: { docs: "Dokumentasi", redditCommunity: "Komunitas Reddit", followOnX: "Ikuti di X", followOnThreads: "Ikuti di Threads", homeLabel: `${SITE_NAME} Beranda`, read: "Baca", productLabel: "Produk", resourcesLabel: "Sumber Daya", appScreenshots: "Tangkapan Layar Aplikasi", productHuntAlt: "ScreenshotBro App - Desain dan ekspor tangkapan layar App Store yang indah. | Product Hunt" },
+    ui: { docs: "Dokumentasi", redditCommunity: "Komunitas Reddit", followOnX: "Ikuti di X", followOnThreads: "Ikuti di Threads", homeLabel: `${SITE_NAME} Beranda`, read: "Baca", productLabel: "Produk", resourcesLabel: "Sumber Daya", productHuntAlt: "ScreenshotBro App - Desain dan ekspor tangkapan layar App Store yang indah. | Product Hunt" },
     featureTitles: ["Pengeditan Multi-Template", "Bingkai Perangkat", "Latar Belakang & Rentang", "Alat Bentuk + SVG", "Perataan Cerdas", "Ekspor Terlokalisasi", "Unggah ke App Store Connect", "Agen AI & MCP", "Lokalisasi Bawaan", "Native untuk Mac, iPad & iPhone", "Sinkronisasi iCloud", "Font Khusus", "Template Proyek", "Pintasan Papan Ketik", "Privasi Utama", "Impor Gambar Massal", "Paket Gratis Selamanya"],
     featureDescription: "Alat terfokus untuk tangkapan layar toko multibahasa dengan performa native, template yang dapat digunakan kembali, dan ekspor siap unggah.",
-    withoutBroPoints: ["Mengubah ukuran setiap tangkapan layar secara manual di Figma atau Photoshop", "Menyalin bingkai perangkat satu per satu antar artboard", "Mengekspor ulang semua file saat mengubah satu warna", "Menduplikasi semuanya untuk setiap bahasa dan kehilangan jejak terjemahan", "Menyeret setiap PNG ke App Store Connect secara manual"],
-    withBroPoints: ["Desain satu template dan semua varian langsung diperbarui", "Tambahkan bingkai perangkat dalam satu klik dan pilih model serta warna", "Tambahkan berbagai bahasa dengan penimpaan teks per bentuk", "Ekspor semua tangkapan layar, bahasa, dan ukuran dalam satu klik", "Unggah langsung ke App Store Connect tanpa browser"],
-    showcaseLabels: ["Impor Massal", "Unggah Otomatis", "Bentuk & Lapisan", "Latar Belakang", "Bingkai Perangkat"],
-    showcaseTitles: ["Tarik, lepas, selesai.", "Unggah ke App Store Connect dalam satu klik.", "Bangun lapis demi lapis.", "Buat latar belakang menarik.", "Sesuaikan bingkai perangkat."],
+    showcaseLabels: ["Impor Massal", "Unggah Otomatis", "Bentuk & Lapisan", "Latar Belakang", "Bingkai Perangkat", "Agen AI & MCP"],
+    showcaseTitles: ["Tarik, lepas, selesai.", "Unggah ke App Store Connect dalam satu klik.", "Bangun lapis demi lapis.", "Buat latar belakang menarik.", "Sesuaikan bingkai perangkat.", "Serahkan pekerjaan rutin ke agen AI Anda."],
     showcaseDescription: "Alur kerja inti menunjukkan bagaimana Screenshot Bro menghilangkan pekerjaan desain, ekspor, dan unggah yang berulang.",
-    screenshotCaptions: ["Desain tangkapan layar App Store yang indah", "Ekspor seluruh proyek sekaligus", "Pilih dari template bawaan", "Lokalisasikan tangkapan layar dengan mudah", "Tambahkan bingkai perangkat nyata", "Buat latar belakang yang indah", "Tambahkan SVG, bentuk, dan gambar"],
     screenshotAltSuffix: "tangkapan layar antarmuka Screenshot Bro",
     workflowTitles: ["Atur Baris", "Desain & Lokalisasi", "Ekspor Semua", "Unggah ke App Store Connect"],
     workflowDescription: "Dari ukuran perangkat hingga ekspor multibahasa dan pengunggahan, seluruh alur kerja tetap berada dalam satu aplikasi native.",
-    testimonialQuotes: ["Dulu saya menghabiskan sepanjang sore untuk tangkapan layar setelah setiap rilis. Dengan Screenshot Bro, saya mengatur template sekali dan sekarang hanya mengganti gambar baru lalu klik ekspor.", "Fitur lokalisasi sangat menghemat waktu. Mendukung 6 bahasa dan mengekspor semuanya dulunya adalah bagian terburuk. Sekarang cukup satu klik.", "Akhirnya ada alat yang tidak merepotkan. Tanpa plugin Figma, tanpa tab browser — hanya aplikasi native cepat yang menyelesaikan pekerjaan."],
-    developerLabel: "Pengembang",
   }),
-  vi: compactLandingContent({
+  vi: compactLandingContent("vi", {
     socialImageAlt: "Screenshot Bro — ứng dụng native trên Mac, iPad và iPhone để thiết kế ảnh chụp màn hình App Store và Google Play với khung thiết bị, gradient và bản địa hóa",
-    ui: { docs: "Tài liệu", redditCommunity: "Cộng đồng Reddit", followOnX: "Theo dõi trên X", followOnThreads: "Theo dõi trên Threads", homeLabel: `${SITE_NAME} Trang chủ`, read: "Đọc", productLabel: "Sản phẩm", resourcesLabel: "Tài nguyên", appScreenshots: "Ảnh chụp ứng dụng", productHuntAlt: "ScreenshotBro App - Thiết kế và xuất ảnh chụp màn hình App Store tuyệt đẹp. | Product Hunt" },
+    ui: { docs: "Tài liệu", redditCommunity: "Cộng đồng Reddit", followOnX: "Theo dõi trên X", followOnThreads: "Theo dõi trên Threads", homeLabel: `${SITE_NAME} Trang chủ`, read: "Đọc", productLabel: "Sản phẩm", resourcesLabel: "Tài nguyên", productHuntAlt: "ScreenshotBro App - Thiết kế và xuất ảnh chụp màn hình App Store tuyệt đẹp. | Product Hunt" },
     featureTitles: ["Chỉnh sửa đa mẫu", "Khung thiết bị", "Hình nền & trải rộng", "Công cụ hình dạng + SVG", "Căn chỉnh thông minh", "Xuất bản địa hóa", "Tải lên App Store Connect", "AI Agent & MCP", "Bản địa hóa tích hợp", "Native cho Mac, iPad & iPhone", "Đồng bộ iCloud", "Phông chữ tùy chỉnh", "Mẫu dự án", "Phím tắt", "Bảo mật hàng đầu", "Nhập ảnh hàng loạt", "Gói miễn phí vĩnh viễn"],
     featureDescription: "Công cụ chuyên dụng cho ảnh chụp màn hình ứng dụng đa ngôn ngữ với hiệu năng native, mẫu tái sử dụng và xuất file sẵn sàng tải lên.",
-    withoutBroPoints: ["Thay đổi kích thước từng ảnh chụp màn hình thủ công trong Figma hoặc Photoshop", "Sao chép từng khung thiết bị giữa các artboard", "Xuất lại toàn bộ file khi chỉ đổi một màu sắc", "Nhân bản mọi thứ cho từng ngôn ngữ và mất kiểm soát bản dịch", "Kéo từng file PNG vào App Store Connect bằng tay"],
-    withBroPoints: ["Thiết kế một mẫu và tất cả biến thể được cập nhật ngay lập tức", "Thêm khung thiết bị chỉ với một cú nhấp và chọn kiểu dáng, màu sắc", "Thêm nhiều ngôn ngữ với ghi đè văn bản theo từng hình", "Xuất tất cả ảnh chụp màn hình, ngôn ngữ và kích thước trong một cú nhấp", "Tải trực tiếp lên App Store Connect không cần trình duyệt"],
-    showcaseLabels: ["Nhập hàng loạt", "Tải lên tự động", "Hình dạng & lớp", "Hình nền", "Khung thiết bị"],
-    showcaseTitles: ["Kéo, thả, xong.", "Tải lên App Store Connect chỉ với một cú nhấp.", "Xây dựng từng lớp.", "Tạo hình nền ấn tượng.", "Tùy chỉnh khung thiết bị."],
+    showcaseLabels: ["Nhập hàng loạt", "Tải lên tự động", "Hình dạng & lớp", "Hình nền", "Khung thiết bị", "AI Agent & MCP"],
+    showcaseTitles: ["Kéo, thả, xong.", "Tải lên App Store Connect chỉ với một cú nhấp.", "Xây dựng từng lớp.", "Tạo hình nền ấn tượng.", "Tùy chỉnh khung thiết bị.", "Để AI agent lo những việc lặp đi lặp lại."],
     showcaseDescription: "Quy trình làm việc cốt lõi cho thấy Screenshot Bro giúp loại bỏ các bước thiết kế, xuất file và tải lên lặp đi lặp lại như thế nào.",
-    screenshotCaptions: ["Thiết kế ảnh chụp màn hình App Store đẹp mắt", "Xuất toàn bộ dự án cùng một lúc", "Chọn từ các mẫu tích hợp sẵn", "Bản địa hóa ảnh chụp màn hình dễ dàng", "Thêm khung thiết bị thực tế", "Tạo hình nền tuyệt đẹp", "Thêm SVG, hình dạng và hình ảnh"],
     screenshotAltSuffix: "ảnh chụp giao diện Screenshot Bro",
     workflowTitles: ["Thiết lập hàng", "Thiết kế & bản địa hóa", "Xuất tất cả", "Tải lên App Store Connect"],
     workflowDescription: "Từ kích thước thiết bị đến xuất đa ngôn ngữ và tải lên — toàn bộ quy trình làm việc đều nằm trong một ứng dụng native duy nhất.",
-    testimonialQuotes: ["Trước đây tôi mất cả buổi chiều để làm ảnh chụp màn hình sau mỗi lần phát hành. Với Screenshot Bro, tôi tạo mẫu một lần và giờ chỉ cần thay ảnh mới rồi bấm xuất.", "Tính năng bản địa hóa thực sự cứu cánh. Tôi hỗ trợ 6 ngôn ngữ và xuất tất cả từng là phần mệt nhất. Giờ chỉ mất một cú nhấp.", "Cuối cùng cũng có một công cụ gọn gàng. Không plugin Figma, không tab trình duyệt — chỉ là một ứng dụng native nhanh chóng hoàn thành công việc."],
-    developerLabel: "Nhà phát triển",
   }),
-  th: compactLandingContent({
-    socialImageAlt: "Screenshot Bro — แอปเนทีฟบน Mac และ iPad สำหรับออกแบบภาพสกรีนช็อต App Store และ Google Play พร้อมกรอบอุปกรณ์ การไล่ระดับสี และการแปลภาษา",
-    ui: { docs: "เอกสารประกอบ", redditCommunity: "ชุมชน Reddit", followOnX: "ติดตามบน X", followOnThreads: "ติดตามบน Threads", homeLabel: `${SITE_NAME} หน้าแรก`, read: "อ่าน", productLabel: "ผลิตภัณฑ์", resourcesLabel: "แหล่งข้อมูล", appScreenshots: "สกรีนช็อตของแอป", productHuntAlt: "ScreenshotBro App - ออกแบบและส่งออกภาพสกรีนช็อต App Store ที่สวยงาม | Product Hunt" },
-    featureTitles: ["แก้ไขหลายเทมเพลตพร้อมกัน", "กรอบอุปกรณ์", "พื้นหลังและการขยายข้ามหน้า", "เครื่องมือรูปทรง + SVG", "การจัดตำแหน่งอัจฉริยะ", "การส่งออกตามภาษา", "อัปโหลดไปยัง App Store Connect", "AI Agent และ MCP", "การแปลภาษาในตัว", "เนทีฟสำหรับ Mac และ iPad", "การซิงค์ iCloud", "ฟอนต์แบบกำหนดเอง", "เทมเพลตโปรเจกต์", "คีย์ลัดบนแป้นพิมพ์", "เน้นความเป็นส่วนตัว", "นำเข้ารูปภาพเป็นชุด", "แผนฟรีตลอดไป"],
+  th: compactLandingContent("th", {
+    socialImageAlt: "Screenshot Bro — แอปเนทีฟบน Mac, iPad และ iPhone สำหรับออกแบบภาพสกรีนช็อต App Store และ Google Play พร้อมกรอบอุปกรณ์ การไล่ระดับสี และการแปลภาษา",
+    ui: { docs: "เอกสารประกอบ", redditCommunity: "ชุมชน Reddit", followOnX: "ติดตามบน X", followOnThreads: "ติดตามบน Threads", homeLabel: `${SITE_NAME} หน้าแรก`, read: "อ่าน", productLabel: "ผลิตภัณฑ์", resourcesLabel: "แหล่งข้อมูล", productHuntAlt: "ScreenshotBro App - ออกแบบและส่งออกภาพสกรีนช็อต App Store ที่สวยงาม | Product Hunt" },
+    featureTitles: ["แก้ไขหลายเทมเพลตพร้อมกัน", "กรอบอุปกรณ์", "พื้นหลังและการขยายข้ามหน้า", "เครื่องมือรูปทรง + SVG", "การจัดตำแหน่งอัจฉริยะ", "การส่งออกตามภาษา", "อัปโหลดไปยัง App Store Connect", "AI Agent และ MCP", "การแปลภาษาในตัว", "เนทีฟสำหรับ Mac, iPad และ iPhone", "การซิงค์ iCloud", "ฟอนต์แบบกำหนดเอง", "เทมเพลตโปรเจกต์", "คีย์ลัดบนแป้นพิมพ์", "เน้นความเป็นส่วนตัว", "นำเข้ารูปภาพเป็นชุด", "แผนฟรีตลอดไป"],
     featureDescription: "เครื่องมือเฉพาะทางสำหรับสกรีนช็อตหลายภาษา พร้อมประสิทธิภาพเนทีฟ เทมเพลตที่ใช้ซ้ำได้ และการส่งออกที่พร้อมอัปโหลดทันที",
-    withoutBroPoints: ["ปรับขนาดสกรีนช็อตแต่ละภาพด้วยตนเองใน Figma หรือ Photoshop", "คัดลอกและวางกรอบอุปกรณ์ทีละชิ้นระหว่างอาร์ตบอร์ด", "ส่งออกไฟล์ทั้งหมดใหม่เมื่อเปลี่ยนสีเพียงสีเดียว", "ทำซ้ำทุกอย่างสำหรับแต่ละภาษาจนควบคุมการแปลไม่ได้", "ลากไฟล์ PNG แต่ละไฟล์ไปยัง App Store Connect ด้วยตนเอง"],
-    withBroPoints: ["ออกแบบเทมเพลตเดียว อัปเดตทุกรูปแบบทันที", "เพิ่มกรอบอุปกรณ์ได้ในคลิกเดียวพร้อมเลือกรุ่นและสี", "เพิ่มหลายภาษาพร้อมปรับแต่งข้อความแยกตามรูปทรง", "ส่งออกสกรีนช็อต ทุกภาษา และทุกขนาดได้ในคลิกเดียว", "อัปโหลดไปยัง App Store Connect ได้โดยตรงโดยไม่ต้องเปิดเบราว์เซอร์"],
-    showcaseLabels: ["นำเข้าเป็นชุด", "อัปโหลดอัตโนมัติ", "รูปทรงและเลเยอร์", "พื้นหลัง", "กรอบอุปกรณ์"],
-    showcaseTitles: ["ลาก วาง เรียบร้อย", "อัปโหลดไปยัง App Store Connect ในคลิกเดียว", "สร้างทีละเลเยอร์", "สร้างพื้นหลังที่สวยงาม", "ปรับแต่งกรอบอุปกรณ์"],
+    showcaseLabels: ["นำเข้าเป็นชุด", "อัปโหลดอัตโนมัติ", "รูปทรงและเลเยอร์", "พื้นหลัง", "กรอบอุปกรณ์", "AI Agent และ MCP"],
+    showcaseTitles: ["ลาก วาง เรียบร้อย", "อัปโหลดไปยัง App Store Connect ในคลิกเดียว", "สร้างทีละเลเยอร์", "สร้างพื้นหลังที่สวยงาม", "ปรับแต่งกรอบอุปกรณ์", "ให้ AI Agent จัดการงานจุกจิกแทนคุณ"],
     showcaseDescription: "ขั้นตอนการทำงานหลักแสดงให้เห็นว่า Screenshot Bro ช่วยลดขั้นตอนการออกแบบ การส่งออก และการอัปโหลดที่ซ้ำซ้อนได้อย่างไร",
-    screenshotCaptions: ["ออกแบบสกรีนช็อต App Store ที่สวยงาม", "ส่งออกทั้งโปรเจกต์ได้ในคราวเดียว", "เลือกจากเทมเพลตในตัว", "แปลภาษาสกรีนช็อตได้อย่างง่ายดาย", "เพิ่มกรอบอุปกรณ์จริง", "สร้างพื้นหลังที่สวยงาม", "เพิ่ม SVG รูปทรง และรูปภาพ"],
     screenshotAltSuffix: "ภาพหน้าจออินเทอร์เฟซ Screenshot Bro",
     workflowTitles: ["ตั้งค่าแถว", "ออกแบบและแปลภาษา", "ส่งออกทั้งหมด", "อัปโหลดไปยัง App Store Connect"],
     workflowDescription: "ตั้งแต่ขนาดอุปกรณ์ไปจนถึงการส่งออกหลายภาษาและการอัปโหลด ทุกขั้นตอนทำได้ในแอปเนทีฟเดียว",
-    testimonialQuotes: ["เมื่อก่อนผมต้องเสียเวลาทั้งบ่ายไปกับสกรีนช็อตหลังปล่อยอัปเดตทุกครั้ง ด้วย Screenshot Bro ผมตั้งค่าเทมเพลตครั้งเดียว ตอนนี้แค่เปลี่ยนภาพใหม่แล้วกดส่งออก", "ฟีเจอร์แปลภาษาช่วยประหยัดเวลาได้มาก ผมรองรับ 6 ภาษา และการส่งออกทั้งหมดเคยเป็นงานที่เหนื่อยที่สุด ตอนนี้คลิกเดียวจบ", "ในที่สุดก็มีเครื่องมือที่ทำงานได้ตรงใจ ไม่มีปลั๊กอิน Figma ไม่มีแท็บเบราว์เซอร์ — แค่แอปเนทีฟที่ทำงานได้รวดเร็ว"],
-    developerLabel: "ผู้พัฒนา",
   }),
-  sv: compactLandingContent({
+  sv: compactLandingContent("sv", {
     socialImageAlt: "Screenshot Bro — nativ Mac-, iPad- och iPhone-app för att designa skärmdumpar för App Store och Google Play med enhetsramar, gradienter och lokalisering",
-    ui: { docs: "Dokumentation", redditCommunity: "Reddit-community", followOnX: "Följ på X", followOnThreads: "Följ på Threads", homeLabel: `${SITE_NAME} Hem`, read: "Läs", productLabel: "Produkt", resourcesLabel: "Resurser", appScreenshots: "Appskärmdumpar", productHuntAlt: "ScreenshotBro App - Designa och exportera vackra App Store-skärmdumpar. | Product Hunt" },
+    ui: { docs: "Dokumentation", redditCommunity: "Reddit-community", followOnX: "Följ på X", followOnThreads: "Följ på Threads", homeLabel: `${SITE_NAME} Hem`, read: "Läs", productLabel: "Produkt", resourcesLabel: "Resurser", productHuntAlt: "ScreenshotBro App - Designa och exportera vackra App Store-skärmdumpar. | Product Hunt" },
     featureTitles: ["Redigering av flera mallar", "Enhetsramar", "Bakgrunder & spännvidd", "Formverktyg + SVG", "Smart justering", "Lokaliserad export", "Uppladdning till App Store Connect", "AI-agenter & MCP", "Inbyggd lokalisering", "Nativt för Mac, iPad & iPhone", "iCloud-synkronisering", "Anpassade typsnitt", "Projektmallar", "Kortkommandon", "Integritet först", "Batchimport av bilder", "Permanent gratisplan"],
     featureDescription: "Fokuserade verktyg för flerspråkiga butiksskärmdumpar med nativ prestanda, återanvändbara mallar och uppladdningsklara exporter.",
-    withoutBroPoints: ["Ändra storlek på varje skärmdump manuellt i Figma eller Photoshop", "Kopiera enhetsramar en efter en mellan ritytor", "Exportera om alla filer när en enda färg ändras", "Duplicera allt för varje språk och tappa överblicken över översättningar", "Dra varje PNG-fil till App Store Connect för hand"],
-    withBroPoints: ["Designa en mall och alla varianter uppdateras direkt", "Lägg till enhetsramar med ett klick och välj modell och färg", "Lägg till flera språk med textanpassningar per form", "Exportera alla skärmdumpar, språk och storlekar med ett klick", "Ladda upp direkt till App Store Connect utan webbläsare"],
-    showcaseLabels: ["Batchimport", "Automatisk uppladdning", "Former och lager", "Bakgrunder", "Enhetsramar"],
-    showcaseTitles: ["Dra, släpp, klart.", "Ladda upp till App Store Connect med ett klick.", "Bygg lager för lager.", "Skapa snygga bakgrunder.", "Anpassa enhetsramar."],
+    showcaseLabels: ["Batchimport", "Automatisk uppladdning", "Former och lager", "Bakgrunder", "Enhetsramar", "AI-agenter & MCP"],
+    showcaseTitles: ["Dra, släpp, klart.", "Ladda upp till App Store Connect med ett klick.", "Bygg lager för lager.", "Skapa snygga bakgrunder.", "Anpassa enhetsramar.", "Låt din AI-agent sköta grovjobbet."],
     showcaseDescription: "Kärnarbetsflödet visar hur Screenshot Bro eliminerar repetitivt design-, export- och uppladdningsarbete.",
-    screenshotCaptions: ["Designa snygga App Store-skärmdumpar", "Exportera hela projektet på en gång", "Välj bland inbyggda mallar", "Lokalisera skärmdumpar enkelt", "Lägg till verkliga enhetsramar", "Skapa vackra bakgrunder", "Lägg till SVG, former och bilder"],
     screenshotAltSuffix: "Screenshot Bro-gränssnittsskärmdump",
     workflowTitles: ["Ställ in rader", "Designa & lokalisera", "Exportera allt", "Ladda upp till App Store Connect"],
     workflowDescription: "Från enhetsstorlekar till flerspråkig export och uppladdning — hela arbetsflödet ryms i en enda nativ app.",
-    testimonialQuotes: ["Tidigare lade jag en hel eftermiddag på skärmdumpar efter varje release. Med Screenshot Bro ställer jag in mallarna en gång och byter bara ut bilderna och exporterar.", "Lokaliseringsfunktionen är en räddare i nöden. Jag stöder 6 språk och att exportera alla var den värsta delen av varje uppdatering. Nu krävs bara ett klick.", "Äntligen ett verktyg som inte är i vägen. Inga Figma-plugins, inga webbläsarflikar — bara en snabb nativ app som gör jobbet."],
-    developerLabel: "utvecklare",
   }),
-  da: compactLandingContent({
+  da: compactLandingContent("da", {
     socialImageAlt: "Screenshot Bro — nativ Mac-, iPad- og iPhone-app til at designe App Store- og Google Play-skærmbilleder med enhedsrammer, gradueringer og lokalisering",
-    ui: { docs: "Dokumentation", redditCommunity: "Reddit-fællesskab", followOnX: "Følg på X", followOnThreads: "Følg på Threads", homeLabel: `${SITE_NAME} Hjem`, read: "Læs", productLabel: "Produkt", resourcesLabel: "Ressourcer", appScreenshots: "App-skærmbilleder", productHuntAlt: "ScreenshotBro App - Design og eksportér smukke App Store-skærmbilleder. | Product Hunt" },
+    ui: { docs: "Dokumentation", redditCommunity: "Reddit-fællesskab", followOnX: "Følg på X", followOnThreads: "Følg på Threads", homeLabel: `${SITE_NAME} Hjem`, read: "Læs", productLabel: "Produkt", resourcesLabel: "Ressourcer", productHuntAlt: "ScreenshotBro App - Design og eksportér smukke App Store-skærmbilleder. | Product Hunt" },
     featureTitles: ["Multi-skabelon redigering", "Enhedsrammer", "Baggrunde & spændvidde", "Formværktøjer + SVG", "Smart justering", "Lokaliseret eksport", "Upload til App Store Connect", "AI-agenter & MCP", "Indbygget lokalisering", "Nativ til Mac, iPad & iPhone", "iCloud-synkronisering", "Brugerdefinerede skrifttyper", "Projektskabeloner", "Tastaturgenveje", "Privatliv først", "Batch-import af billeder", "Permanent gratis plan"],
     featureDescription: "Fokuserede værktøjer til flersprogede butiksskærmbilleder med nativ ydeevne, genanvendelige skabeloner og upload-klare eksporter.",
-    withoutBroPoints: ["Tilpas størrelsen på hvert skærmbillede manuelt i Figma eller Photoshop", "Kopier enhedsrammer én efter én mellem artboards", "Geneksportér alle filer, når en enkelt farve ændres", "Duplikér alt for hvert sprog og mist overblikket over oversættelser", "Træk hver PNG-fil ind i App Store Connect med hånden"],
-    withBroPoints: ["Design én skabelon, og alle varianter opdateres med det samme", "Tilføj enhedsrammer med et klik, og vælg model og farve", "Tilføj flere sprog med teksttilsidesættelser pr. form", "Eksportér alle skærmbilleder, sprog og størrelser med et klik", "Upload direkte til App Store Connect uden browser"],
-    showcaseLabels: ["Batch-import", "Automatisk upload", "Former og lag", "Baggrunde", "Enhedsrammer"],
-    showcaseTitles: ["Træk, slip, færdig.", "Upload til App Store Connect med ét klik.", "Byg lag for lag.", "Skab flotte baggrunde.", "Tilpas enhedsrammer."],
+    showcaseLabels: ["Batch-import", "Automatisk upload", "Former og lag", "Baggrunde", "Enhedsrammer", "AI-agenter & MCP"],
+    showcaseTitles: ["Træk, slip, færdig.", "Upload til App Store Connect med ét klik.", "Byg lag for lag.", "Skab flotte baggrunde.", "Tilpas enhedsrammer.", "Lad din AI-agent klare det trivielle arbejde."],
     showcaseDescription: "Det centrale arbejdsflow viser, hvordan Screenshot Bro fjerner gentagne design-, eksport- og upload-opgaver.",
-    screenshotCaptions: ["Design flotte App Store-skærmbilleder", "Eksportér hele projektet på én gang", "Vælg blandt indbyggede skabeloner", "Lokaliser skærmbilleder nemt", "Tilføj realistiske enhedsrammer", "Skab smukke baggrunde", "Tilføj SVG, former og billeder"],
     screenshotAltSuffix: "Screenshot Bro brugerflade-skærmbillede",
     workflowTitles: ["Opsæt rækker", "Design & lokaliser", "Eksportér alt", "Upload til App Store Connect"],
     workflowDescription: "Fra enhedsstørrelser til flersproget eksport og upload — hele arbejdsgangen samlet i én nativ app.",
-    testimonialQuotes: ["Jeg plejede at bruge en hel eftermiddag på skærmbilleder efter hver udgivelse. Med Screenshot Bro opsætter jeg skabelonerne én gang og udskifter bare billederne og eksporterer.", "Lokaliseringsfunktionen er en kæmpe hjælp. Jeg understøtter 6 sprog, og at eksportere alle var den værste del af hver opdatering. Nu tager det ét klik.", "Endelig et værktøj, der ikke er i vejen. Ingen Figma-plugins, ingen browserfaner — bare en hurtig nativ app, der gør arbejdet."],
-    developerLabel: "udvikler",
   }),
-  fi: compactLandingContent({
+  fi: compactLandingContent("fi", {
     socialImageAlt: "Screenshot Bro — natiivi Mac-, iPad- ja iPhone-sovellus App Store- ja Google Play -kuvakaappausten suunnitteluun laitekehyksillä, liukuväreillä ja lokalisoinnilla",
-    ui: { docs: "Dokumentaatio", redditCommunity: "Reddit-yhteisö", followOnX: "Seuraa X:ssä", followOnThreads: "Seuraa Threadsissä", homeLabel: `${SITE_NAME} Etusivu`, read: "Lue", productLabel: "Tuote", resourcesLabel: "Resurssit", appScreenshots: "Sovelluksen kuvakaappaukset", productHuntAlt: "ScreenshotBro App - Suunnittele ja vie upeita App Store -kuvakaappauksia. | Product Hunt" },
+    ui: { docs: "Dokumentaatio", redditCommunity: "Reddit-yhteisö", followOnX: "Seuraa X:ssä", followOnThreads: "Seuraa Threadsissä", homeLabel: `${SITE_NAME} Etusivu`, read: "Lue", productLabel: "Tuote", resourcesLabel: "Resurssit", productHuntAlt: "ScreenshotBro App - Suunnittele ja vie upeita App Store -kuvakaappauksia. | Product Hunt" },
     featureTitles: ["Usean mallin muokkaus", "Laitekehykset", "Taustat & kattavuus", "Muototyökalut + SVG", "Älykäs kohdistus", "Lokalisoitu vienti", "Lataus App Store Connectiin", "Tekoälyagentit & MCP", "Sisäänrakennettu lokalisointi", "Natiivi Macille, iPadille ja iPhonelle", "iCloud-synkronointi", "Mukautetut fontit", "Projektimallit", "Pikanäppäimet", "Yksityisyys edellä", "Kuvien erätuonti", "Pysyvästi ilmainen versio"],
     featureDescription: "Täsmälliset työkalut monikielisiin sovelluskaupan kuvakaappauksiin natiivilla suorituskyvyllä, uudelleenkäytettävillä malleilla ja latausvalmiilla viennillä.",
-    withoutBroPoints: ["Jokaisen kuvakaappauksen koon muuttaminen manuaalisesti Figmassa tai Photoshopissa", "Laitekehysten kopiointi yksitellen työpohjien välillä", "Kaikkien tiedostojen vienti uudelleen yhden värimuutoksen vuoksi", "Kaiken monistaminen jokaiselle kielelle ja käännösten hallinnan menetys", "Jokaisen PNG-tiedoston vetäminen App Store Connectiin käsin"],
-    withBroPoints: ["Suunnittele yksi malli ja kaikki versiot päivittyvät heti", "Lisää laitekehykset yhdellä napsautuksella ja valitse malli sekä väri", "Lisää useita kieliä muotokohtaisilla tekstikorvauksilla", "Vie kaikki kuvakaappaukset, kielet ja koot yhdellä napsautuksella", "Lataa suoraan App Store Connectiin ilman selainta"],
-    showcaseLabels: ["Erätuonti", "Automaattinen lataus", "Muodot ja tasot", "Taustat", "Laitekehykset"],
-    showcaseTitles: ["Vedä, pudota, valmis.", "Lataa App Store Connectiin yhdellä napsautuksella.", "Rakenna taso tasolta.", "Luo upeita taustoja.", "Mukauta laitekehyksiä."],
+    showcaseLabels: ["Erätuonti", "Automaattinen lataus", "Muodot ja tasot", "Taustat", "Laitekehykset", "Tekoälyagentit & MCP"],
+    showcaseTitles: ["Vedä, pudota, valmis.", "Lataa App Store Connectiin yhdellä napsautuksella.", "Rakenna taso tasolta.", "Luo upeita taustoja.", "Mukauta laitekehyksiä.", "Anna tekoälyagentin hoitaa rutiinityöt."],
     showcaseDescription: "Ydintyönkulku näyttää, miten Screenshot Bro poistaa toistuvat suunnittelu-, vienti- ja latausvaiheet.",
-    screenshotCaptions: ["Suunnittele upeita App Store -kuvakaappauksia", "Vie koko projekti kerralla", "Valitse sisäänrakennetuista malleista", "Lokalisoi kuvakaappaukset vaivattomasti", "Lisää realistisia laitekehyksiä", "Luo kauniita taustoja", "Lisää SVG-kuvia, muotoja ja kuvia"],
     screenshotAltSuffix: "Screenshot Bro -käyttöliittymän kuvakaappaus",
     workflowTitles: ["Määritä rivit", "Suunnittele ja lokalisoi", "Vie kaikki", "Lataa App Store Connectiin"],
     workflowDescription: "Laitteiden koosta monikieliseen vientiin ja lataukseen — koko työnkulku yhdessä natiivisovelluksessa.",
-    testimonialQuotes: ["Käytin ennen kokonaisen iltapäivän kuvakaappauksiin jokaisen julkaisun jälkeen. Screenshot Bron avulla loin mallit kerran ja nyt vain vaihdan uudet kuvat ja vien.", "Lokalisointiominaisuus on todellinen hengenpelastaja. Tuen 6 kieltä ja kaikkien vienti oli päivitysten raskain vaihe. Nyt se hoituu yhdellä klikkauksella.", "Viimeinkin työkalu, joka ei ole tiellä. Ei Figma-liitännäisiä, ei selainvälilehtiä — vain nopea natiivisovellus, joka tekee työn."],
-    developerLabel: "kehittäjä",
   }),
-  no: compactLandingContent({
+  no: compactLandingContent("no", {
     socialImageAlt: "Screenshot Bro — nativ Mac-, iPad- og iPhone-app for å designe App Store- og Google Play-skjermbilder med enhetsrammer, gradienter og lokalisering",
-    ui: { docs: "Dokumentasjon", redditCommunity: "Reddit-fellesskap", followOnX: "Følg på X", followOnThreads: "Følg på Threads", homeLabel: `${SITE_NAME} Hjem`, read: "Les", productLabel: "Produkt", resourcesLabel: "Ressourcer", appScreenshots: "Appskjermbilder", productHuntAlt: "ScreenshotBro App - Design og eksporter flotte App Store-skjermbilder. | Product Hunt" },
+    ui: { docs: "Dokumentasjon", redditCommunity: "Reddit-fellesskap", followOnX: "Følg på X", followOnThreads: "Følg på Threads", homeLabel: `${SITE_NAME} Hjem`, read: "Les", productLabel: "Produkt", resourcesLabel: "Ressourcer", productHuntAlt: "ScreenshotBro App - Design og eksporter flotte App Store-skjermbilder. | Product Hunt" },
     featureTitles: ["Redigering av flere maler", "Enhetsrammer", "Bakgrunner & spennvidde", "Formverktøy + SVG", "Smart justering", "Lokalisert eksport", "Opplasting til App Store Connect", "AI-agenter & MCP", "Innebygd lokalisering", "Nativt for Mac, iPad & iPhone", "iCloud-synkronisering", "Egendefinerte fonter", "Prosjektmaler", "Tastatursnarveier", "Personvern først", "Batch-import av bilder", "Permanent gratisplan"],
     featureDescription: "Målrettede verktøy for flerspråklige butikkskjermbilder med nativ ytelse, gjenbrukbare maler og eksport klare for opplasting.",
-    withoutBroPoints: ["Endre størrelse på hvert skjermbilde manuelt i Figma eller Photoshop", "Kopiere enhetsrammer én etter én mellom artboards", "Eksportere alle filer på nytt når en enkelt farge endres", "Duplisere alt for hvert språk og miste kontrollen over oversettelser", "Dra hver PNG-fil til App Store Connect for hånd"],
-    withBroPoints: ["Design én mal, og alle varianter oppdateres umiddelbart", "Legg til enhetsrammer med ett klikk og velg modell og farge", "Legg til flere språk med tekstoverstyringer per form", "Eksporter alle skjermbilder, språk og størrelser med ett klikk", "Last opp direkte til App Store Connect uten nettleser"],
-    showcaseLabels: ["Batch-import", "Automatisk opplasting", "Former og lag", "Bakgrunner", "Enhetsrammer"],
-    showcaseTitles: ["Dra, slipp, ferdig.", "Last opp til App Store Connect med ett klikk.", "Bygg lag for lag.", "Lag flotte bakgrunner.", "Tilpass enhetsrammer."],
+    showcaseLabels: ["Batch-import", "Automatisk opplasting", "Former og lag", "Bakgrunner", "Enhetsrammer", "AI-agenter & MCP"],
+    showcaseTitles: ["Dra, slipp, ferdig.", "Last opp til App Store Connect med ett klikk.", "Bygg lag for lag.", "Lag flotte bakgrunner.", "Tilpass enhetsrammer.", "La AI-agenten ta seg av rutinearbeidet."],
     showcaseDescription: "Det sentrale arbeidsflyten viser hvordan Screenshot Bro fjerner repetitivt design-, eksport- og opplastingsarbeid.",
-    screenshotCaptions: ["Design flotte App Store-skjermbilder", "Eksporter hele prosjektet samtidig", "Velg blant innebygde maler", "Lokaliser skjermbilder enkelt", "Legg til realistiske enhetsrammer", "Lag vakre bakgrunner", "Legg til SVG, former og bilder"],
     screenshotAltSuffix: "Screenshot Bro-grensesnittskjermbilde",
     workflowTitles: ["Sett opp rader", "Design & lokaliser", "Eksporter alt", "Last opp til App Store Connect"],
     workflowDescription: "Fra enhetsstørrelser til flerspråklig eksport og opplasting — hele arbeidsflyten i én enkelt nativ app.",
-    testimonialQuotes: ["Tidligere brukte jeg en hel ettermiddag på skjermbilder etter hver utgivelse. Med Screenshot Bro setter jeg opp malene én gang og bytter bare ut bildene og eksporterer.", "Lokaliseringsfunksjonen er en livredder. Jeg støtter 6 språk, og å eksportere alle var den verste delen av hver oppdatering. Nå tar det ett klikk.", "Endelig et verktøy som ikke er i veien. Ingen Figma-plugins, ingen nettleserfaner — bare en rask nativ app som gjør jobben."],
-    developerLabel: "utvikler",
   }),
-  cs: compactLandingContent({
+  cs: compactLandingContent("cs", {
     socialImageAlt: "Screenshot Bro — nativní aplikace pro Mac, iPad a iPhone k navrhování snímků obrazovky pro App Store a Google Play s rámečky zařízení, přechody a lokalizací",
-    ui: { docs: "Dokumentace", redditCommunity: "Komunita Reddit", followOnX: "Sledovat na X", followOnThreads: "Sledovat na Threads", homeLabel: `${SITE_NAME} Domů`, read: "Číst", productLabel: "Produkt", resourcesLabel: "Zdroje", appScreenshots: "Snímky aplikace", productHuntAlt: "ScreenshotBro App - Navrhujte a exportujte krásné snímky obrazovky pro App Store. | Product Hunt" },
+    ui: { docs: "Dokumentace", redditCommunity: "Komunita Reddit", followOnX: "Sledovat na X", followOnThreads: "Sledovat na Threads", homeLabel: `${SITE_NAME} Domů`, read: "Číst", productLabel: "Produkt", resourcesLabel: "Zdroje", productHuntAlt: "ScreenshotBro App - Navrhujte a exportujte krásné snímky obrazovky pro App Store. | Product Hunt" },
     featureTitles: ["Úprava více šablon", "Rámečky zařízení", "Pozadí a prolínání", "Nástroje tvarů + SVG", "Chytré zarovnání", "Lokalizovaný export", "Nahrávání do App Store Connect", "AI agenti & MCP", "Vestavěná lokalizace", "Nativní pro Mac, iPad & iPhone", "Synchronizace přes iCloud", "Vlastní písma", "Projektové šablony", "Klávesové zkratky", "Důraz na soukromí", "Dávkový import obrázků", "Trvale bezplatný plán"],
     featureDescription: "Cílené nástroje pro vícejazyčné snímky obrazovky s nativním výkonem, znovupoužitelnými šablonami a exportem připraveným k nahrání.",
-    withoutBroPoints: ["Ruční změna velikosti každého snímku ve Figmě nebo Photoshopu", "Kopírování rámečků zařízení jeden po druhém mezi plátny", "Opětovný export všech souborů při změně jediné barvy", "Duplikování všeho pro každý jazyk a ztráta přehledu o překladech", "Ruční přetahování každého souboru PNG do App Store Connect"],
-    withBroPoints: ["Navrhněte jednu šablonu a všechny varianty se okamžitě aktualizují", "Přidejte rámečky zařízení jedním kliknutím a zvolte model i barvu", "Přidejte více jazyků s přepsáním textu podle jednotlivých tvarů", "Exportujte všechny snímky, jazyky a velikosti jedním kliknutím", "Nahrávejte přímo do App Store Connect bez nutnosti otevírat prohlížeč"],
-    showcaseLabels: ["Dávkový import", "Automatické nahrávání", "Tvary a vrstvy", "Pozadí", "Rámečky zařízení"],
-    showcaseTitles: ["Přetáhněte, pusťte, hotovo.", "Nahrávání do App Store Connect jedním kliknutím.", "Stavějte vrstvu po vrstvě.", "Vytvářejte působivá pozadí.", "Přizpůsobte rámečky zařízení."],
+    showcaseLabels: ["Dávkový import", "Automatické nahrávání", "Tvary a vrstvy", "Pozadí", "Rámečky zařízení", "AI agenti & MCP"],
+    showcaseTitles: ["Přetáhněte, pusťte, hotovo.", "Nahrávání do App Store Connect jedním kliknutím.", "Stavějte vrstvu po vrstvě.", "Vytvářejte působivá pozadí.", "Přizpůsobte rámečky zařízení.", "Nechte otravnou práci na svém AI agentovi."],
     showcaseDescription: "Základní pracovní postup ukazuje, jak Screenshot Bro odstraňuje opakující se návrhové, exportní a nahrávací kroky.",
-    screenshotCaptions: ["Navrhujte krásné snímky pro App Store", "Exportujte celý projekt najednou", "Vybírejte z vestavěných šablon", "Snadno lokalizujte snímky obrazovky", "Přidávejte realistické rámečky zařízení", "Vytvářejte nádherná pozadí", "Přidávejte SVG, tvary a obrázky"],
     screenshotAltSuffix: "Snímek rozhraní aplikace Screenshot Bro",
     workflowTitles: ["Nastavení řádků", "Návrh a lokalizace", "Export všeho", "Nahrání do App Store Connect"],
     workflowDescription: "Od velikostí zařízení po vícejazyčný export a nahrávání — celý pracovní postup v jediné nativní aplikaci.",
-    testimonialQuotes: ["Dříve jsem po každém vydání strávil celé odpoledne tvorbou snímků. Se Screenshot Bro nastavím šablony jednou a pak jen vyměním obrázky a exportuji.", "Funkce lokalizace mi nesmírně pomáhá. Podporuji 6 jazyků a jejich export býval nejhorší částí aktualizace. Nyní to trvá jedno kliknutí.", "Konečně nástroj, který nepřekáží. Žádné doplňky pro Figmu, žádné záložky v prohlížeči — jen rychlá nativní aplikace, která udělá svou práci."],
-    developerLabel: "vývojář",
   }),
-  ro: compactLandingContent({
+  ro: compactLandingContent("ro", {
     socialImageAlt: "Screenshot Bro — aplicație nativă pentru Mac, iPad și iPhone pentru proiectarea capturilor de ecran pentru App Store și Google Play cu rame de dispozitive, degradeuri și localizare",
-    ui: { docs: "Documentație", redditCommunity: "Comunitate Reddit", followOnX: "Urmărește pe X", followOnThreads: "Urmărește pe Threads", homeLabel: `${SITE_NAME} Acasă`, read: "Citește", productLabel: "Produs", resourcesLabel: "Resurse", appScreenshots: "Capturi din aplicație", productHuntAlt: "ScreenshotBro App - Proiectează și exportă capturi de ecran superbe pentru App Store. | Product Hunt" },
+    ui: { docs: "Documentație", redditCommunity: "Comunitate Reddit", followOnX: "Urmărește pe X", followOnThreads: "Urmărește pe Threads", homeLabel: `${SITE_NAME} Acasă`, read: "Citește", productLabel: "Produs", resourcesLabel: "Resurse", productHuntAlt: "ScreenshotBro App - Proiectează și exportă capturi de ecran superbe pentru App Store. | Product Hunt" },
     featureTitles: ["Editare multi-șablon", "Rame de dispozitive", "Fundaluri & extindere", "Instrumente de forme + SVG", "Aliniere inteligentă", "Export localizat", "Încărcare în App Store Connect", "Agenți AI & MCP", "Localizare integrată", "Nativ pentru Mac, iPad & iPhone", "Sincronizare iCloud", "Fonturi personalizate", "Șabloane de proiect", "Scurtături de tastatură", "Confidențialitate prioritară", "Import în masă al imaginilor", "Plan gratuit permanent"],
     featureDescription: "Instrumente dedicate pentru capturi de ecran multilingve, cu performanță nativă, șabloane reutilizabile și exporturi gata de încărcare.",
-    withoutBroPoints: ["Redimensionarea manuală a fiecărei capturi în Figma sau Photoshop", "Copierea ramelor de dispozitive una câte una între artboard-uri", "Reexportarea tuturor fișierelor la schimbarea unei singure culori", "Duplicarea întregului proiect pentru fiecare limbă și pierderea controlului traducerilor", "Tragerea manuală a fiecărui fișier PNG în App Store Connect"],
-    withBroPoints: ["Proiectează un singur șablon și toate variantele se actualizează instantaneu", "Adaugă rame de dispozitive cu un clic și alege modelul și culoarea", "Adaugă mai multe limbi cu înlocuiri de text per formă", "Exportă toate capturile, limbile și dimensiunile cu un singur clic", "Încarcă direct în App Store Connect fără a deschide browserul"],
-    showcaseLabels: ["Import în masă", "Încărcare automată", "Forme și straturi", "Fundaluri", "Rame de dispozitive"],
-    showcaseTitles: ["Trage, plasează, gata.", "Încărcare în App Store Connect cu un singur clic.", "Construiește strat cu strat.", "Creează fundaluri impresionante.", "Personalizează ramele dispozitivelor."],
+    showcaseLabels: ["Import în masă", "Încărcare automată", "Forme și straturi", "Fundaluri", "Rame de dispozitive", "Agenți AI & MCP"],
+    showcaseTitles: ["Trage, plasează, gata.", "Încărcare în App Store Connect cu un singur clic.", "Construiește strat cu strat.", "Creează fundaluri impresionante.", "Personalizează ramele dispozitivelor.", "Lasă agentul AI să se ocupe de munca repetitivă."],
     showcaseDescription: "Fluxul de lucru de bază arată cum Screenshot Bro elimină pașii repetitivi de design, export și încărcare.",
-    screenshotCaptions: ["Proiectează capturi de ecran superbe pentru App Store", "Exportă întregul proiect deodată", "Alege din șabloanele integrate", "Localizează capturile de ecran cu ușurință", "Adaugă rame realiste de dispozitive", "Creează fundaluri spectaculoase", "Adaugă SVG-uri, forme și imagini"],
     screenshotAltSuffix: "Captură de ecran din interfața Screenshot Bro",
     workflowTitles: ["Configurează rândurile", "Proiectează și localizează", "Exportă tot", "Încarcă în App Store Connect"],
     workflowDescription: "De la dimensiunile dispozitivelor până la exportul multilingv și încărcare — întregul flux de lucru într-o singură aplicație nativă.",
-    testimonialQuotes: ["Obișnuiam să petrec o după-amiază întreagă cu capturile după fiecare lansare. Cu Screenshot Bro am configurat șabloanele o dată, iar acum doar schimb imaginile și export.", "Funcția de localizare este salvatoare. Suport 6 limbi, iar exportul tuturor era cea mai grea parte a fiecărei actualizări. Acum se face cu un singur clic.", "În sfârșit un instrument care nu stă în cale. Fără plugin-uri de Figma, fără tab-uri de browser — doar o aplicație nativă rapidă care își face treaba."],
-    developerLabel: "dezvoltator",
   }),
-  ms: compactLandingContent({
+  ms: compactLandingContent("ms", {
     socialImageAlt: "Screenshot Bro — aplikasi natif Mac, iPad dan iPhone untuk mereka bentuk tangkapan skrin App Store dan Google Play dengan bingkai peranti, kecerunan dan penyetempatan",
-    ui: { docs: "Dokumentasi", redditCommunity: "Komuniti Reddit", followOnX: "Ikuti di X", followOnThreads: "Ikuti di Threads", homeLabel: `${SITE_NAME} Utama`, read: "Baca", productLabel: "Produk", resourcesLabel: "Sumber", appScreenshots: "Tangkapan skrin aplikasi", productHuntAlt: "ScreenshotBro App - Reka dan eksport tangkapan skrin App Store yang cantik. | Product Hunt" },
+    ui: { docs: "Dokumentasi", redditCommunity: "Komuniti Reddit", followOnX: "Ikuti di X", followOnThreads: "Ikuti di Threads", homeLabel: `${SITE_NAME} Utama`, read: "Baca", productLabel: "Produk", resourcesLabel: "Sumber", productHuntAlt: "ScreenshotBro App - Reka dan eksport tangkapan skrin App Store yang cantik. | Product Hunt" },
     featureTitles: ["Penyuntingan pelbagai templat", "Bingkai peranti", "Latar belakang & rentangan", "Alat bentuk + SVG", "Penjajaran pintar", "Eksport setempat", "Muat naik ke App Store Connect", "Ejen AI & MCP", "Penyetempatan terbina dalam", "Natif untuk Mac, iPad & iPhone", "Penyelarasan iCloud", "Fon tersuai", "Templat projek", "Pintasan papan kekunci", "Privasi diutamakan", "Import imej secara pukal", "Pelan percuma selamanya"],
     featureDescription: "Alat khusus untuk tangkapan skrin gedung berbilang bahasa dengan prestasi natif, templat boleh guna semula dan eksport sedia dimuat naik.",
-    withoutBroPoints: ["Mengubah saiz setiap tangkapan skrin secara manual dalam Figma atau Photoshop", "Menyalin bingkai peranti satu persatu antara artboard", "Mengeksport semula semua fail apabila menukar satu warna sahaja", "Menduplikasi segalanya untuk setiap bahasa dan hilang kawalan terjemahan", "Menyeret setiap fail PNG ke App Store Connect secara manual"],
-    withBroPoints: ["Reka satu templat dan semua varian dikemas kini serta-merta", "Tambah bingkai peranti dengan satu klik serta pilih model dan warna", "Tambah pelbagai bahasa dengan penggantian teks bagi setiap bentuk", "Eksport semua tangkapan skrin, bahasa dan saiz dengan satu klik", "Muat naik terus ke App Store Connect tanpa memerlukan pelayar web"],
-    showcaseLabels: ["Import pukal", "Muat naik automatik", "Bentuk dan lapisan", "Latar belakang", "Bingkai peranti"],
-    showcaseTitles: ["Tarik, lepas, siap.", "Muat naik ke App Store Connect dengan satu klik.", "Bina lapisan demi lapisan.", "Cipta latar belakang yang menakjubkan.", "Sesuaikan bingkai peranti."],
+    showcaseLabels: ["Import pukal", "Muat naik automatik", "Bentuk dan lapisan", "Latar belakang", "Bingkai peranti", "Ejen AI & MCP"],
+    showcaseTitles: ["Tarik, lepas, siap.", "Muat naik ke App Store Connect dengan satu klik.", "Bina lapisan demi lapisan.", "Cipta latar belakang yang menakjubkan.", "Sesuaikan bingkai peranti.", "Biar ejen AI anda uruskan kerja yang remeh."],
     showcaseDescription: "Aliran kerja utama menunjukkan bagaimana Screenshot Bro menghapuskan tugas reka bentuk, eksport dan muat naik yang berulang.",
-    screenshotCaptions: ["Reka tangkapan skrin App Store yang menawan", "Eksport seluruh projek sekali gus", "Pilih daripada templat terbina dalam", "Setempatkan tangkapan skrin dengan mudah", "Tambah bingkai peranti realistik", "Cipta latar belakang yang cantik", "Tambah SVG, bentuk dan imej"],
     screenshotAltSuffix: "Tangkapan skrin antara muka Screenshot Bro",
     workflowTitles: ["Sediakan baris", "Reka & setempatkan", "Eksport semua", "Muat naik ke App Store Connect"],
     workflowDescription: "Daripada saiz peranti hingga eksport pelbagai bahasa dan muat naik — seluruh aliran kerja dalam satu aplikasi natif.",
-    testimonialQuotes: ["Dulu saya luangkan sepanjang petang untuk tangkapan skrin selepas setiap keluaran. Dengan Screenshot Bro, saya sediakan templat sekali dan kini hanya tukar gambar dan tekan eksport.", "Ciri penyetempatan sangat membantu. Saya menyokong 6 bahasa dan mengeksport semuanya adalah bahagian paling leceh. Kini hanya perlu satu klik.", "Akhirnya ada alat yang memudahkan kerja. Tiada pemalam Figma, tiada tab pelayar — hanya aplikasi natif pantas yang menyelesaikan tugas."],
-    developerLabel: "pembangun",
   }),
 };
 
@@ -1184,7 +899,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Ejemplos", href: "#showcases" },
       { label: "Funciones", href: "#features" },
-      { label: "Flujo", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -1226,7 +940,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "¿Puedo arrastrar capturas de simuladores y dispositivos directamente?",
         answer:
-          "Sí. Arrastra una carpeta de capturas y Screenshot Bro dirigirá cada una a la fila correcta según su tamaño en píxeles: las de iPhone a la fila de iPhone, iPad a iPad y Android a Android. Un botón de captura de un clic en cada plantilla también inserta la captura de simulador más reciente directamente en el lienzo.",
+          "Sí. Arrastra una carpeta de capturas y Screenshot Bro dirigirá cada una a la fila correcta según su tamaño en píxeles: las de iPhone a la fila de iPhone, iPad a iPad y Android a Android.",
       },
       {
         question: "¿Puedo subir directo a App Store Connect desde la app?",
@@ -1269,16 +983,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Abrir menú",
       closeMenu: "Cerrar menú",
       seeInAction: "Ver cómo funciona",
-      tryItNow: "Pruébalo ahora",
-      seeDetails: "Ver detalles",
+      directDownload: "¿Prefieres la descarga directa? Consigue el DMG para Mac",
       browseGuides: "Ver todas las guías",
       submitApp: "Envía tu app",
       contactDeveloper: "Contactar al desarrollador",
       backToTop: "Volver arriba",
-      previousScreenshot: "Captura anterior",
-      nextScreenshot: "Captura siguiente",
-      goToScreenshot: (index) => `Ir a la captura ${index}`,
-      slideCount: (index, total) => `${index} de ${total}`,
       availabilityNote:
         "App para macOS 15+ y iOS/iPadOS 18+ | Swift y SwiftUI | Disponible en la App Store",
     },
@@ -1298,13 +1007,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         description:
           "Importación por lotes, subida a App Store Connect, capas, fondos y marcos de dispositivo en un solo flujo.",
       },
-      problem: {
-        eyebrow: "Por qué existe",
-        title:
-          "Publicar una función nueva no debería obligarte a rehacer todas las capturas.",
-        description:
-          "Screenshot Bro nació del mismo problema de muchos equipos: cambia el producto y las capturas se convierten otra vez en un mini-proyecto repetitivo.",
-      },
       workflow: {
         eyebrow: "Flujo",
         title: "Un camino más corto desde capturas brutas hasta assets listos.",
@@ -1316,18 +1018,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         title: "Todo lo necesario. Nada de ruido.",
         description:
           "Velocidad de maquetación, consistencia y exportación ordenada sin navegador ni redimensionado repetitivo.",
-      },
-      screenshots: {
-        eyebrow: "Capturas",
-        title: "Míralo en acción.",
-        description:
-          "Capturas reales de Screenshot Bro en la App Store: el mismo editor que usarás para tus assets.",
-      },
-      testimonials: {
-        eyebrow: "Desarrolladores",
-        title: "Lo que dicen los desarrolladores.",
-        description:
-          "Comentarios reales de desarrolladores indie que usan Screenshot Bro en producción.",
       },
       blog: {
         eyebrow: "Del blog",
@@ -1351,14 +1041,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     problem: {
       story:
         "Lo construí después de pasar demasiado tiempo en Figma rehaciendo capturas cada vez que cambiaba el texto, los degradados o los idiomas. La idea es simple: diseña el sistema una vez y deja que la app haga lo repetitivo.",
-      withoutLabel: "Sin Screenshot Bro",
-      withLabel: "Con Screenshot Bro",
     },
     download: {
       titleLine1: "Listo para publicar",
       titleLine2: "mejores capturas?",
       description:
-        "Descárgalo desde la App Store y usa el flujo completo en Mac o iPad: configuración, diseño, traducción automática, localización y exportación.",
+        "Descárgalo desde la App Store y usa el flujo completo en Mac, iPad o iPhone: configuración, diseño, traducción automática, localización y exportación.",
     },
     footer: {
       note:
@@ -1409,7 +1097,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "可以直接拖入模拟器和真机截图吗？",
         answer:
-          "可以。直接拖入包含截图的文件夹，Screenshot Bro 会根据像素尺寸自动将每张截图分配到正确的行——iPhone 截图进 iPhone 行，iPad 进 iPad 行，Android 进 Android 行。每个模版上的一键截取按钮还可以直接将最新的模拟器截图提取到画布中。",
+          "可以。直接拖入包含截图的文件夹，Screenshot Bro 会根据像素尺寸自动将每张截图分配到正确的行——iPhone 截图进 iPhone 行，iPad 进 iPad 行，Android 进 Android 行。",
       },
       {
         question: "可以在应用内直接上传到 App Store Connect 吗？",
@@ -1435,7 +1123,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "演示", href: "#showcases" },
       { label: "功能", href: "#features" },
-      { label: "流程", href: "#workflow" },
       { label: "常见问题", href: "#faq" },
     ],
     ui: {
@@ -1458,16 +1145,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "打开菜单",
       closeMenu: "关闭菜单",
       seeInAction: "查看演示",
-      tryItNow: "立即试用",
-      seeDetails: "查看详情",
+      directDownload: "想直接下载？获取 Mac 版 DMG",
       browseGuides: "浏览所有指南",
       submitApp: "提交你的 App",
       contactDeveloper: "联系开发者",
       backToTop: "返回顶部",
-      previousScreenshot: "上一张截图",
-      nextScreenshot: "下一张截图",
-      goToScreenshot: (index) => `转到第 ${index} 张截图`,
-      slideCount: (index, total) => `${index} / ${total}`,
       availabilityNote: "macOS 15+ 和 iOS/iPadOS 18+ 应用 | Swift 和 SwiftUI | 已上架 App Store",
     },
     hero: {
@@ -1486,12 +1168,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         description:
           "批量导入、一键上传 App Store Connect、图层、背景和设备边框都在同一个流程里。",
       },
-      problem: {
-        eyebrow: "为什么做它",
-        title: "发布一个新功能，不该意味着重做所有商店截图。",
-        description:
-          "产品更新后，截图文件又变成重复的小项目。Screenshot Bro 就是为解决这个循环而做。",
-      },
       workflow: {
         eyebrow: "流程",
         title: "从原始截图到可提交素材，更短的路径。",
@@ -1503,17 +1179,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         title: "你需要的都有，不需要的没有。",
         description:
           "专注布局速度、截图一致性和稳定导出，不需要浏览器标签页或重复调整尺寸。",
-      },
-      screenshots: {
-        eyebrow: "截图",
-        title: "看看实际界面。",
-        description:
-          "这些是 Screenshot Bro 自己的 App Store 截图，也是你会使用的同一个编辑器。",
-      },
-      testimonials: {
-        eyebrow: "开发者",
-        title: "开发者怎么说。",
-        description: "来自正在使用 Screenshot Bro 的独立开发者反馈。",
       },
       blog: {
         eyebrow: "博客",
@@ -1534,14 +1199,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     problem: {
       story:
         "我做它，是因为每次文案、渐变或语言变化，都要在 Figma 里重新处理 App Store 截图太浪费时间。目标很简单：系统设计一次，重复工作交给应用。",
-      withoutLabel: "没有 Screenshot Bro",
-      withLabel: "使用 Screenshot Bro",
     },
     download: {
       titleLine1: "准备发布",
       titleLine2: "更好的截图？",
       description:
-        "从 App Store 下载，并在 Mac 或 iPad 上使用完整截图流程：设置、设计、自动翻译、本地化和导出。",
+        "从 App Store 下载，并在 Mac、iPad 或 iPhone 上使用完整截图流程：设置、设计、自动翻译、本地化和导出。",
     },
     footer: {
       note: "使用 SwiftUI 构建。为需要发布 App Store 更新的开发者设计。",
@@ -1591,7 +1254,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "क्या मैं सिम्युलेटर और डिवाइस स्क्रीनशॉट सीधे ड्रॉप कर सकता हूँ?",
         answer:
-          "हाँ। स्क्रीनशॉट का एक फ़ोल्डर ड्रॉप करें और Screenshot Bro प्रत्येक को उसके पिक्सेल आकार के अनुसार सही पंक्ति में भेजता है — iPhone शॉट्स iPhone पंक्ति में, iPad शॉट्स iPad में, Android शॉट्स Android में। प्रत्येक टेम्प्लेट पर एक-क्लिक कैप्चर बटन सबसे हालिया सिम्युलेटर स्क्रीनशॉट को सीधे कैनवास में खींचता है।",
+          "हाँ। स्क्रीनशॉट का एक फ़ोल्डर ड्रॉप करें और Screenshot Bro प्रत्येक को उसके पिक्सेल आकार के अनुसार सही पंक्ति में भेजता है — iPhone शॉट्स iPhone पंक्ति में, iPad शॉट्स iPad में, Android शॉट्स Android में।",
       },
       {
         question: "क्या मैं ऐप के भीतर से सीधे App Store Connect पर अपलोड कर सकता हूँ?",
@@ -1617,7 +1280,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "शोकेस", href: "#showcases" },
       { label: "फीचर", href: "#features" },
-      { label: "वर्कफ्लो", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     ui: {
@@ -1643,16 +1305,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "मेनू खोलें",
       closeMenu: "मेनू बंद करें",
       seeInAction: "काम करते देखें",
-      tryItNow: "अभी आजमाएं",
-      seeDetails: "विवरण देखें",
+      directDownload: "सीधा डाउनलोड चाहिए? Mac DMG पाएं",
       browseGuides: "सभी गाइड देखें",
       submitApp: "अपना ऐप भेजें",
       contactDeveloper: "डेवलपर से संपर्क करें",
       backToTop: "ऊपर जाएं",
-      previousScreenshot: "पिछला स्क्रीनशॉट",
-      nextScreenshot: "अगला स्क्रीनशॉट",
-      goToScreenshot: (index) => `स्क्रीनशॉट ${index} पर जाएं`,
-      slideCount: (index, total) => `${index} / ${total}`,
       availabilityNote:
         "macOS 15+ और iOS/iPadOS 18+ ऐप | Swift और SwiftUI | App Store पर उपलब्ध",
     },
@@ -1672,13 +1329,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         description:
           "बैच इंपोर्ट, एक-क्लिक App Store Connect अपलोड, लेयर्स, बैकग्राउंड और डिवाइस फ्रेम एक ही जगह।",
       },
-      problem: {
-        eyebrow: "क्यों बनाया गया",
-        title:
-          "एक नया फीचर शिप करने का मतलब हर स्क्रीनशॉट दोबारा बनाना नहीं होना चाहिए।",
-        description:
-          "उत्पाद अपडेट के बाद स्क्रीनशॉट सेट फिर से दोहराव वाला काम बन जाता है। Screenshot Bro इसी समस्या से निकला।",
-      },
       workflow: {
         eyebrow: "वर्कफ्लो",
         title: "कच्चे स्क्रीनशॉट से App Store-ready assets तक छोटा रास्ता।",
@@ -1690,17 +1340,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         title: "जो चाहिए वह सब। गैरजरूरी कुछ नहीं।",
         description:
           "तेज लेआउट, consistent screenshots और साफ export पर फोकस। कोई browser tab या repeated resize नहीं।",
-      },
-      screenshots: {
-        eyebrow: "स्क्रीनशॉट",
-        title: "इसे काम करते देखें।",
-        description:
-          "Screenshot Bro के App Store screenshots: वही editor जिससे आप अपने screenshots बनाएंगे।",
-      },
-      testimonials: {
-        eyebrow: "डेवलपर्स",
-        title: "डेवलपर्स क्या कह रहे हैं।",
-        description: "प्रोडक्शन में Screenshot Bro इस्तेमाल कर रहे indie developers की राय।",
       },
       blog: {
         eyebrow: "ब्लॉग से",
@@ -1721,14 +1360,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     problem: {
       story:
         "मैंने इसे इसलिए बनाया क्योंकि हर copy, gradient या language change पर Figma में App Store screenshots दोबारा बनाना बहुत समय लेता था। लक्ष्य सरल है: system एक बार design करें और repetitive काम app को करने दें।",
-      withoutLabel: "Screenshot Bro के बिना",
-      withLabel: "Screenshot Bro के साथ",
     },
     download: {
       titleLine1: "बेहतर screenshots",
       titleLine2: "ship करने के लिए तैयार?",
       description:
-        "App Store से डाउनलोड करें और Mac या iPad पर setup, design, auto-translation, localization और export का पूरा workflow इस्तेमाल करें।",
+        "App Store से डाउनलोड करें और Mac, iPad या iPhone पर setup, design, auto-translation, localization और export का पूरा workflow इस्तेमाल करें।",
     },
     footer: {
       note: "SwiftUI से बनाया गया। App Store updates ship करने वाले developers के लिए।",
@@ -1778,7 +1415,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Puis-je glisser-déposer directement des captures de simulateurs ou d'appareils ?",
         answer:
-          "Oui. Glissez un dossier de captures et Screenshot Bro achemine chaque fichier vers la bonne rangée selon sa résolution en pixels : les captures iPhone vers la rangée iPhone, iPad vers iPad, Android vers Android. Un bouton de capture en un clic sur chaque modèle permet aussi d'insérer directement la capture de simulateur la plus récente.",
+          "Oui. Glissez un dossier de captures et Screenshot Bro achemine chaque fichier vers la bonne rangée selon sa résolution en pixels : les captures iPhone vers la rangée iPhone, iPad vers iPad, Android vers Android.",
       },
       {
         question: "Puis-je envoyer directement vers App Store Connect depuis l'application ?",
@@ -1804,7 +1441,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Démos", href: "#showcases" },
       { label: "Fonctions", href: "#features" },
-      { label: "Flux", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     ui: {
@@ -1828,16 +1464,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Ouvrir le menu",
       closeMenu: "Fermer le menu",
       seeInAction: "Voir en action",
-      tryItNow: "Essayer maintenant",
-      seeDetails: "Voir les détails",
+      directDownload: "Vous préférez un téléchargement direct ? Récupérez le DMG pour Mac",
       browseGuides: "Voir tous les guides",
       submitApp: "Proposer votre app",
       contactDeveloper: "Contacter le développeur",
       backToTop: "Retour en haut",
-      previousScreenshot: "Capture précédente",
-      nextScreenshot: "Capture suivante",
-      goToScreenshot: (index) => `Aller à la capture ${index}`,
-      slideCount: (index, total) => `${index} sur ${total}`,
       availabilityNote:
         "App macOS 15+ et iOS/iPadOS 18+ | Swift et SwiftUI | Disponible sur l'App Store",
     },
@@ -1857,13 +1488,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         description:
           "Import groupé, envoi App Store Connect, calques, arrière-plans et cadres d'appareils dans un seul flux.",
       },
-      problem: {
-        eyebrow: "Pourquoi ça existe",
-        title:
-          "Publier une nouvelle fonctionnalité ne devrait pas obliger à refaire toutes les captures.",
-        description:
-          "Screenshot Bro vient du même problème que rencontrent beaucoup d'équipes: après chaque mise à jour, les captures redeviennent un mini-projet répétitif.",
-      },
       workflow: {
         eyebrow: "Flux",
         title: "Un chemin plus court vers des assets prêts pour l'App Store.",
@@ -1875,18 +1499,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         title: "Tout ce qu'il faut. Rien de superflu.",
         description:
           "Vitesse de mise en page, cohérence des captures et export propre. Pas d'onglet navigateur, pas de redimensionnement répétitif.",
-      },
-      screenshots: {
-        eyebrow: "Captures",
-        title: "Voyez-le en action.",
-        description:
-          "Captures App Store de Screenshot Bro lui-même: le même éditeur que vous utiliserez.",
-      },
-      testimonials: {
-        eyebrow: "Développeurs",
-        title: "Ce que disent les développeurs.",
-        description:
-          "Retours réels de développeurs indépendants qui utilisent Screenshot Bro en production.",
       },
       blog: {
         eyebrow: "Sur le blog",
@@ -1910,14 +1522,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     problem: {
       story:
         "Je l'ai créé après avoir passé trop de temps dans Figma à refaire des captures App Store à chaque changement de texte, de dégradé ou de langue. L'objectif est simple: concevoir le système une fois, puis laisser l'app gérer le répétitif.",
-      withoutLabel: "Sans Screenshot Bro",
-      withLabel: "Avec Screenshot Bro",
     },
     download: {
       titleLine1: "Prêt à publier",
       titleLine2: "de meilleures captures?",
       description:
-        "Téléchargez depuis l'App Store et utilisez le flux complet sur Mac ou iPad: configuration, design, traduction automatique, localisation et export.",
+        "Téléchargez depuis l'App Store et utilisez le flux complet sur Mac, iPad ou iPhone : configuration, design, traduction automatique, localisation et export.",
     },
     footer: {
       note:
@@ -1968,7 +1578,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "هل يمكنني سحب لقطات شاشة المحاكي والأجهزة مباشرة إلى التطبيق؟",
         answer:
-          "نعم. اسحب مجلد لقطات الشاشة وسيوجه Screenshot Bro كل لقطة إلى الصف المناسب وفقاً لحجم أبعادها بالبكسل — صور iPhone إلى صف iPhone، و iPad إلى iPad، و Android إلى Android. كما يتيح زر الالتقاط بنقرة واحدة في كل قالب جلب أحدث لقطة شاشة من المحاكي إلى لوحة العمل مباشرة.",
+          "نعم. اسحب مجلد لقطات الشاشة وسيوجه Screenshot Bro كل لقطة إلى الصف المناسب وفقاً لحجم أبعادها بالبكسل — صور iPhone إلى صف iPhone، و iPad إلى iPad، و Android إلى Android.",
       },
       {
         question: "هل يمكن الرفع مباشرة إلى App Store Connect من داخل التطبيق؟",
@@ -1994,7 +1604,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "العروض", href: "#showcases" },
       { label: "الميزات", href: "#features" },
-      { label: "سير العمل", href: "#workflow" },
       { label: "الأسئلة", href: "#faq" },
     ],
     ui: {
@@ -2017,16 +1626,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "فتح القائمة",
       closeMenu: "إغلاق القائمة",
       seeInAction: "شاهده عملياً",
-      tryItNow: "جرّبه الآن",
-      seeDetails: "عرض التفاصيل",
+      directDownload: "تفضّل التنزيل المباشر؟ احصل على ملف DMG لجهاز Mac",
       browseGuides: "تصفح كل الأدلة",
       submitApp: "أرسل تطبيقك",
       contactDeveloper: "تواصل مع المطور",
       backToTop: "العودة للأعلى",
-      previousScreenshot: "اللقطة السابقة",
-      nextScreenshot: "اللقطة التالية",
-      goToScreenshot: (index) => `اذهب إلى اللقطة ${index}`,
-      slideCount: (index, total) => `${index} من ${total}`,
       availabilityNote:
         "تطبيق macOS 15+ و iOS/iPadOS 18+ | Swift و SwiftUI | متوفر على App Store",
     },
@@ -2046,13 +1650,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         description:
           "استيراد جماعي، رفع بنقرة واحدة إلى App Store Connect، طبقات، خلفيات وإطارات أجهزة في سير واحد.",
       },
-      problem: {
-        eyebrow: "لماذا وُجد",
-        title:
-          "إطلاق ميزة جديدة لا يجب أن يعني إعادة بناء كل لقطات المتجر.",
-        description:
-          "ظهر Screenshot Bro من مشكلة متكررة: تحديث المنتج يصل، ثم تتحول ملفات اللقطات إلى مشروع صغير متعب من جديد.",
-      },
       workflow: {
         eyebrow: "سير العمل",
         title: "طريق أقصر من اللقطات الخام إلى أصول جاهزة للمتجر.",
@@ -2064,18 +1661,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         title: "كل ما تحتاجه. بلا زوائد.",
         description:
           "سرعة في التخطيط، اتساق في اللقطات وتصدير مرتب. بلا تبويب متصفح ولا تغيير مقاسات متكرر.",
-      },
-      screenshots: {
-        eyebrow: "اللقطات",
-        title: "شاهده أثناء العمل.",
-        description:
-          "لقطات App Store لتطبيق Screenshot Bro نفسه: نفس المحرر الذي ستستخدمه.",
-      },
-      testimonials: {
-        eyebrow: "المطورون",
-        title: "ماذا يقول المطورون.",
-        description:
-          "آراء حقيقية من مطورين مستقلين يستخدمون Screenshot Bro في الإنتاج.",
       },
       blog: {
         eyebrow: "من المدونة",
@@ -2099,14 +1684,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     problem: {
       story:
         "بنيته بعد وقت طويل ضاع في Figma لإعادة لقطات App Store كلما تغير النص أو التدرج أو اللغة. الهدف بسيط: صمّم النظام مرة واحدة، ودع التطبيق يتولى الأجزاء المتكررة.",
-      withoutLabel: "بدون Screenshot Bro",
-      withLabel: "مع Screenshot Bro",
     },
     download: {
       titleLine1: "جاهز لإطلاق",
       titleLine2: "لقطات أفضل؟",
       description:
-        "نزّله من App Store واستخدم سير العمل الكامل على Mac أو iPad: الإعداد، التصميم، الترجمة التلقائية، التوطين والتصدير.",
+        "نزّله من App Store واستخدم سير العمل الكامل على Mac أو iPad أو iPhone: الإعداد، التصميم، الترجمة التلقائية، التوطين والتصدير.",
     },
     footer: {
       note:
@@ -2121,7 +1704,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Beispiele", href: "#showcases" },
       { label: "Funktionen", href: "#features" },
-      { label: "Workflow", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -2163,7 +1745,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Kann ich Screenshots aus dem Simulator oder von Geräten direkt hineinziehen?",
         answer:
-          "Ja. Ziehen Sie einfach einen Ordner mit Screenshots hinein: Screenshot Bro ordnet jedes Bild anhand seiner Pixelgröße automatisch der richtigen Zeile zu — iPhone-Bilder in die iPhone-Zeile, iPad zu iPad und Android zu Android. Eine 1-Klick-Aufnahmetaste an jeder Vorlage zieht zudem den neuesten Simulator-Screenshot direkt auf die Arbeitsfläche.",
+          "Ja. Ziehen Sie einfach einen Ordner mit Screenshots hinein: Screenshot Bro ordnet jedes Bild anhand seiner Pixelgröße automatisch der richtigen Zeile zu — iPhone-Bilder in die iPhone-Zeile, iPad zu iPad und Android zu Android.",
       },
       {
         question: "Kann ich direkt aus der App zu App Store Connect hochladen?",
@@ -2207,16 +1789,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Menü öffnen",
       closeMenu: "Menü schließen",
       seeInAction: "In Aktion sehen",
-      tryItNow: "Jetzt ausprobieren",
-      seeDetails: "Details ansehen",
+      directDownload: "Lieber direkt herunterladen? Hol dir die DMG für den Mac",
       browseGuides: "Alle Anleitungen durchsuchen",
       submitApp: "App einreichen",
       contactDeveloper: "Entwickler kontaktieren",
       backToTop: "Zurück nach oben",
-      previousScreenshot: "Vorheriger Screenshot",
-      nextScreenshot: "Nächster Screenshot",
-      goToScreenshot: (index) => `Gehe zu Screenshot ${index}`,
-      slideCount: (index, total) => `${index} von ${total}`,
       availabilityNote:
         "macOS 15+ und iOS/iPadOS 18+ App | Swift & SwiftUI | Im App Store erhältlich",
     },
@@ -2236,13 +1813,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         description:
           "Batch-Import, App Store Connect Upload mit einem Klick, Ebenen, Hintergründe und Geräterahmen in einem einzigen Workflow.",
       },
-      problem: {
-        eyebrow: "Warum es existiert",
-        title:
-          "Die Veröffentlichung eines neuen Features sollte nicht bedeuten, jeden Screenshot neu zu erstellen.",
-        description:
-          "Screenshot Bro entstand aus dem ständigen Kreislauf, den fast alle App-Teams kennen: Nach jedem Produkt-Update wird die Aktualisierung der Screenshots zu einem lästigen Mini-Projekt.",
-      },
       workflow: {
         eyebrow: "Workflow",
         title: "Ein kürzerer Weg von rohen Screenshots zu fertigen Store-Assets.",
@@ -2254,18 +1824,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         title: "Alles, was du brauchst. Nichts, was du nicht brauchst.",
         description:
           "Voller Fokus auf Layout-Geschwindigkeit, Konsistenz und reibungslosen Export. Keine Browser-Tabs, kein wiederholtes Ändern der Bildgröße.",
-      },
-      screenshots: {
-        eyebrow: "Screenshots",
-        title: "Sieh es in Aktion.",
-        description:
-          "App Store Screenshots von Screenshot Bro selbst – derselbe Editor, den du für deine Screenshots verwendest.",
-      },
-      testimonials: {
-        eyebrow: "Entwickler",
-        title: "Was Entwickler sagen.",
-        description:
-          "Echtes Feedback von Indie-Entwicklern, die Screenshot Bro produktiv nutzen.",
       },
       blog: {
         eyebrow: "Aus dem Blog",
@@ -2289,14 +1847,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     problem: {
       story:
         "Ich habe die App entwickelt, nachdem ich zu viel Zeit in Figma damit verbracht habe, App-Store-Screenshots bei jeder Änderung von Texten, Verläufen oder Sprachen neu zu erstellen. Das Ziel ist einfach: Gestalte das System einmal und lass die App die lästige Arbeit machen.",
-      withoutLabel: "Ohne Screenshot Bro",
-      withLabel: "Mit Screenshot Bro",
     },
     download: {
       titleLine1: "Bereit für",
       titleLine2: "bessere Screenshots?",
       description:
-        "Lade die App aus dem App Store herunter und nutze den gesamten Workflow auf Mac oder iPad: Einrichtung, Design, automatische Übersetzung, Lokalisierung und Export.",
+        "Lade die App aus dem App Store herunter und nutze den gesamten Workflow auf Mac, iPad oder iPhone: Einrichtung, Design, automatische Übersetzung, Lokalisierung und Export.",
     },
     footer: {
       note:
@@ -2311,11 +1867,10 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "デモ", href: "#showcases" },
       { label: "機能", href: "#features" },
-      { label: "ワークフロー", href: "#workflow" },
       { label: "よくある質問", href: "#faq" },
     ],
     benefits: [
-      "MacとiPad向けにApp Storeで配信中",
+      "Mac・iPad・iPhone向けにApp Storeで配信中",
       "インポート、デザイン、翻訳、ローカライズ、書き出しまでの完全なワークフロー",
       "ブラウザへのドラッグ＆ドロップ不要で、App Store Connectに直接アップロード",
     ],
@@ -2353,7 +1908,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "シミュレータや実機のスクリーンショットを直接ドラッグ＆ドロップできますか？",
         answer:
-          "はい。スクリーンショットが入ったフォルダをドラッグ＆ドロップするだけで、Screenshot Broがピクセル解像度を自動判別し、適切な行（iPhone用画像はiPhone行、iPad用はiPad行、Android用はAndroid行）へ振り分けます。各テンプレートのワンクリック取り込みボタンを使えば、最新のシミュレータ画像をキャンバスに直接読み込むことも可能です。",
+          "はい。スクリーンショットが入ったフォルダをドラッグ＆ドロップするだけで、Screenshot Broがピクセル解像度を自動判別し、適切な行（iPhone用画像はiPhone行、iPad用はiPad行、Android用はAndroid行）へ振り分けます。",
       },
       {
         question: "App Store Connectに直接アップロードできますか？",
@@ -2363,7 +1918,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "複数デバイス間で同期できますか？",
         answer:
-          "はい。任意のiCloud Drive同期を有効にすると、同一のApple AccountでサインインしているすべてのMacおよびiPadでプロジェクト、スクリーンショット、フォントを自動同期できます。競合が発生した場合はフィールド単位で最新の変更が自動統合されます。",
+          "はい。任意のiCloud Drive同期を有効にすると、同一のApple AccountでサインインしているすべてのMac、iPad、iPhoneでプロジェクト、スクリーンショット、フォントを自動同期できます。競合が発生した場合はフィールド単位で最新の変更が自動統合されます。",
       },
       {
         question: "AIエージェントにスクリーンショットを作らせられますか？",
@@ -2396,16 +1951,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "メニューを開く",
       closeMenu: "メニューを閉じる",
       seeInAction: "実際の動作を見る",
-      tryItNow: "今すぐ試す",
-      seeDetails: "詳細を見る",
+      directDownload: "直接ダウンロードをご希望ですか？Mac版DMGはこちら",
       browseGuides: "すべてのガイドを見る",
       submitApp: "アプリを掲載する",
       contactDeveloper: "開発者に連絡",
       backToTop: "トップへ戻る",
-      previousScreenshot: "前のスクリーンショット",
-      nextScreenshot: "次のスクリーンショット",
-      goToScreenshot: (index) => `スクリーンショット ${index} へ移動`,
-      slideCount: (index, total) => `${total}枚中 ${index}枚目`,
       availabilityNote:
         "macOS 15以降・iOS/iPadOS 18以降のアプリ | Swift & SwiftUI | App Storeで入手可能",
     },
@@ -2425,13 +1975,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         description:
           "一括インポート、ワンクリックでのApp Store Connectアップロード、レイヤー、背景、デバイスフレームなど、作業時間を劇的に短縮する機能をご覧ください。",
       },
-      problem: {
-        eyebrow: "開発の背景",
-        title:
-          "新しい機能をリリースするたびに、すべてのスクリーンショットを作り直す必要はありません。",
-        description:
-          "製品のアップデートがあるたびに、スクリーンショット作成という単調で時間のかかる作業が繰り返される。Screenshot Broは、そんな多くの開発チームが直面する課題から誕生しました。",
-      },
       workflow: {
         eyebrow: "ワークフロー",
         title: "生のスクリーンショットからApp Store提出用アセットへの最短ルート。",
@@ -2443,18 +1986,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         title: "必要なものだけを。無駄なものは一切なし。",
         description:
           "レイアウトの高速化、スクリーンショットの一貫性、そして書き出しの安定性に焦点を当てています。ブラウザのタブを行き来したり、サイズ変更を繰り返したりする必要はありません。",
-      },
-      screenshots: {
-        eyebrow: "スクリーンショット",
-        title: "実際の画面を見る。",
-        description:
-          "Screenshot Bro自体のApp Store用スクリーンショットです。App StoreやGoogle Play用のアセットを作成する際と全く同じエディタを使用しています。",
-      },
-      testimonials: {
-        eyebrow: "デベロッパーの声",
-        title: "開発者からのフィードバック。",
-        description:
-          "実際にScreenshot Broを本番環境で導入している個人開発者からのリアルな感想です。",
       },
       blog: {
         eyebrow: "ブログ記事",
@@ -2478,14 +2009,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     problem: {
       story:
         "テキストやグラデーション、言語が変わるたびに、FigmaでApp Store用のスクリーンショットを何度も作り直す手間に疲れてこのアプリを作りました。目的はシンプルです。システムを一度デザインすれば、あとはアプリが繰り返しの作業を自動で処理します。",
-      withoutLabel: "Screenshot Broなし",
-      withLabel: "Screenshot Broあり",
     },
     download: {
       titleLine1: "より魅力的なスクリーンショットを",
       titleLine2: "配信しませんか？",
       description:
-        "App Storeからダウンロードして、MacまたはiPadでセットアップ、デザイン、自動翻訳、ローカライズ、書き出しまでのフルワークフローを体験してください。",
+        "App Storeからダウンロードして、Mac、iPad、iPhoneでセットアップ、デザイン、自動翻訳、ローカライズ、書き出しまでのフルワークフローを体験してください。",
     },
     footer: {
       note:
@@ -2500,7 +2029,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Exemplos", href: "#showcases" },
       { label: "Recursos", href: "#features" },
-      { label: "Fluxo de Trabalho", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -2542,7 +2070,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Posso arrastar capturas do simulador e de aparelhos diretamente?",
         answer:
-          "Sim. Arraste uma pasta de capturas e o Screenshot Bro encaminhará cada uma para a linha correta de acordo com seu tamanho em pixels — imagens de iPhone para a linha do iPhone, iPad para iPad e Android para Android. Um botão de captura com um clique em cada modelo também puxa a captura mais recente do simulador diretamente para a tela.",
+          "Sim. Arraste uma pasta de capturas e o Screenshot Bro encaminhará cada uma para a linha correta de acordo com seu tamanho em pixels — imagens de iPhone para a linha do iPhone, iPad para iPad e Android para Android.",
       },
       {
         question: "Posso enviar diretamente para o App Store Connect a partir do aplicativo?",
@@ -2586,16 +2114,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Abrir menu",
       closeMenu: "Fechar menu",
       seeInAction: "Ver em ação",
-      tryItNow: "Experimente agora",
-      seeDetails: "Ver detalhes",
+      directDownload: "Prefere baixar direto? Baixe o DMG para Mac",
       browseGuides: "Navegar por todos os guias",
       submitApp: "Enviar seu app",
       contactDeveloper: "Contatar desenvolvedor",
       backToTop: "Voltar ao topo",
-      previousScreenshot: "Captura de tela anterior",
-      nextScreenshot: "Próxima captura de tela",
-      goToScreenshot: (index) => `Ir para a captura de tela ${index}`,
-      slideCount: (index, total) => `${index} de ${total}`,
       availabilityNote:
         "App para macOS 15+ e iOS/iPadOS 18+ | Swift & SwiftUI | Disponível na App Store",
     },
@@ -2615,13 +2138,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         description:
           "Importação em lote, envio para o App Store Connect em um clique, camadas, fundos e molduras de dispositivos em um único fluxo de trabalho.",
       },
-      problem: {
-        eyebrow: "Por que Existe",
-        title:
-          "Lançar um novo recurso não deveria significar refazer todas as capturas de tela.",
-        description:
-          "O Screenshot Bro surgiu do mesmo ciclo que a maioria das equipes enfrenta: uma atualização do produto é lançada, e o conjunto de capturas de tela vira um mini-projeto repetitivo de novo.",
-      },
       workflow: {
         eyebrow: "Fluxo de Trabalho",
         title: "Um caminho mais curto de capturas brutas a arquivos prontos para a App Store.",
@@ -2633,18 +2149,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         title: "Tudo o que você precisa. Nada de excessos.",
         description:
           "Foco na velocidade de layout, consistência das capturas de tela e simplicidade de exportação. Sem abas do navegador ou redimensionamento repetitivo.",
-      },
-      screenshots: {
-        eyebrow: "Capturas de Tela",
-        title: "Veja em ação.",
-        description:
-          "Capturas de tela do próprio Screenshot Bro na App Store — o mesmo editor que você usará para as capturas do seu aplicativo.",
-      },
-      testimonials: {
-        eyebrow: "Desenvolvedores",
-        title: "O que os desenvolvedores estão dizendo.",
-        description:
-          "Feedback real de desenvolvedores independentes usando o Screenshot Bro em produção.",
       },
       blog: {
         eyebrow: "Do Blog",
@@ -2668,14 +2172,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     problem: {
       story:
         "Eu o criei depois de passar tempo demais no Figma refazendo capturas de tela para a App Store sempre que mudávamos textos, gradientes ou idiomas. O objetivo é simples: projete o sistema uma vez e deixe o app cuidar da parte repetitiva.",
-      withoutLabel: "Sem o Screenshot Bro",
-      withLabel: "Com o Screenshot Bro",
     },
     download: {
       titleLine1: "Pronto para publicar",
       titleLine2: "capturas de tela melhores?",
       description:
-        "Baixe na App Store e utilize o fluxo completo no Mac ou iPad: configuração, design, tradução automática, localização e exportação.",
+        "Baixe na App Store e utilize o fluxo completo no Mac, iPad ou iPhone: configuração, design, tradução automática, localização e exportação.",
     },
     footer: {
       note:
@@ -2690,7 +2192,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Esempi", href: "#showcases" },
       { label: "Funzionalità", href: "#features" },
-      { label: "Flusso di lavoro", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -2732,7 +2233,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Posso trascinare direttamente screenshot da simulatori e dispositivi reali?",
         answer:
-          "Sì. Trascina una cartella di screenshot e Screenshot Bro smisterà ciascuna immagine nella riga corretta in base alla risoluzione in pixel: le immagini iPhone nella riga iPhone, iPad su iPad e Android su Android. Un pulsante di acquisizione a un clic su ciascun modello consente inoltre di inserire l'ultimo screenshot del simulatore direttamente nell'area di lavoro.",
+          "Sì. Trascina una cartella di screenshot e Screenshot Bro smisterà ciascuna immagine nella riga corretta in base alla risoluzione in pixel: le immagini iPhone nella riga iPhone, iPad su iPad e Android su Android.",
       },
       {
         question: "Posso caricare direttamente su App Store Connect dall'applicazione?",
@@ -2776,16 +2277,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Apri menu",
       closeMenu: "Chiudi menu",
       seeInAction: "Guarda in azione",
-      tryItNow: "Prova ora",
-      seeDetails: "Vedi dettagli",
+      directDownload: "Preferisci il download diretto? Scarica il DMG per Mac",
       browseGuides: "Sfoglia tutte le guide",
       submitApp: "Invia la tua app",
       contactDeveloper: "Contatta lo sviluppatore",
       backToTop: "Torna in alto",
-      previousScreenshot: "Screenshot precedente",
-      nextScreenshot: "Screenshot successivo",
-      goToScreenshot: (index) => `Vai allo screenshot ${index}`,
-      slideCount: (index, total) => `${index} di ${total}`,
       availabilityNote:
         "App per macOS 15+ e iOS/iPadOS 18+ | Swift e SwiftUI | Disponibile sull'App Store",
     },
@@ -2805,13 +2301,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         description:
           "Importazione in batch, caricamento su App Store Connect in un clic, livelli, sfondi e cornici per dispositivi in un unico flusso di lavoro.",
       },
-      problem: {
-        eyebrow: "Perché esiste",
-        title:
-          "Rilasciare una nuova funzionalità non dovrebbe significare rifare ogni singolo screenshot.",
-        description:
-          "Screenshot Bro nasce dallo stesso circolo vizioso in cui si trovano molti team: dopo ogni aggiornamento del prodotto, il set di screenshot si trasforma nuovamente in un noioso mini-progetto.",
-      },
       workflow: {
         eyebrow: "Flusso di lavoro",
         title: "Una scorciatoia dagli screenshot grezzi agli asset pronti per l'App Store.",
@@ -2823,18 +2312,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         title: "Tutto ciò di cui hai bisogno. Niente di superfluo.",
         description:
           "Velocità di impaginazione, coerenza degli screenshot ed esportazione ordinata. Niente schede del browser o ridimensionamenti ripetitivi.",
-      },
-      screenshots: {
-        eyebrow: "Screenshot",
-        title: "Guardalo in azione.",
-        description:
-          "Gli screenshot dell'App Store di Screenshot Bro stesso: lo stesso editor che userai per creare i tuoi asset.",
-      },
-      testimonials: {
-        eyebrow: "Sviluppatori",
-        title: "Cosa dicono gli sviluppatori.",
-        description:
-          "Feedback reali da parte di sviluppatori indipendenti che usano Screenshot Bro in produzione.",
       },
       blog: {
         eyebrow: "Dal Blog",
@@ -2858,14 +2335,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     problem: {
       story:
         "L'ho creato dopo aver passato troppo tempo su Figma a rifare gli screenshot dell'App Store ogni volta che cambiavano testi, sfumature o lingue. L'obiettivo è semplice: progetta il sistema una volta e lascia che l'app gestisca le parti ripetitive.",
-      withoutLabel: "Senza Screenshot Bro",
-      withLabel: "Con Screenshot Bro",
     },
     download: {
       titleLine1: "Pronto a pubblicare",
       titleLine2: "screenshot migliori?",
       description:
-        "Scarica dall'App Store e prova il flusso di lavoro completo su Mac o iPad: configurazione, design, traduzione automatica, localizzazione ed esportazione.",
+        "Scarica dall'App Store e prova il flusso di lavoro completo su Mac, iPad o iPhone: configurazione, design, traduzione automatica, localizzazione ed esportazione.",
     },
     footer: {
       note:
@@ -2880,7 +2355,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "쇼케이스", href: "#showcases" },
       { label: "주요 기능", href: "#features" },
-      { label: "워크플로우", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -2922,7 +2396,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "시뮬레이터나 기기 스크린샷을 직접 드래그 앤 드롭할 수 있나요?",
         answer:
-          "네. 스크린샷이 담긴 폴더를 드래그하기만 하면 Screenshot Bro가 픽셀 해상도를 인식하여 올바른 행(iPhone 이미지는 iPhone 행, iPad는 iPad 행, Android는 Android 행)으로 자동 배치합니다. 각 템플릿의 원클릭 캡처 버튼을 누르면 가장 최근 시뮬레이터 스크린샷을 캔버스로 바로 가져올 수도 있습니다.",
+          "네. 스크린샷이 담긴 폴더를 드래그하기만 하면 Screenshot Bro가 픽셀 해상도를 인식하여 올바른 행(iPhone 이미지는 iPhone 행, iPad는 iPad 행, Android는 Android 행)으로 자동 배치합니다.",
       },
       {
         question: "앱 내에서 App Store Connect로 바로 업로드할 수 있나요?",
@@ -2932,7 +2406,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "여러 기기 간에 프로젝트가 동기화되나요?",
         answer:
-          "네. 선택적 iCloud Drive 동기화를 사용하면 동일한 Apple 계정으로 로그인된 모든 Mac과 iPad에서 프로젝트, 스크린샷, 폰트를 동기화하여 사용할 수 있습니다. 충돌 발생 시 필드 단위로 최근 변경 내용이 자동 병합됩니다.",
+          "네. 선택적 iCloud Drive 동기화를 사용하면 동일한 Apple 계정으로 로그인된 모든 Mac, iPad, iPhone에서 프로젝트, 스크린샷, 폰트를 동기화하여 사용할 수 있습니다. 충돌 발생 시 필드 단위로 최근 변경 내용이 자동 병합됩니다.",
       },
       {
         question: "AI 에이전트가 스크린샷을 만들어 줄 수 있나요?",
@@ -2965,16 +2439,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "메뉴 열기",
       closeMenu: "메뉴 닫기",
       seeInAction: "기능 데모 보기",
-      tryItNow: "지금 사용해보기",
-      seeDetails: "자세히 보기",
+      directDownload: "직접 다운로드를 원하시나요? Mac용 DMG 받기",
       browseGuides: "모든 가이드 둘러보기",
       submitApp: "앱 등록 신청",
       contactDeveloper: "개발자에게 연락하기",
       backToTop: "맨 위로 이동",
-      previousScreenshot: "이전 스크린샷",
-      nextScreenshot: "다음 스크린샷",
-      goToScreenshot: (index) => `스크린샷 ${index}로 이동`,
-      slideCount: (index, total) => `${total}개 중 ${index}번째`,
       availabilityNote:
         "macOS 15+ 및 iOS/iPadOS 18+ 앱 | Swift 및 SwiftUI | App Store에서 다운로드 가능",
     },
@@ -2994,13 +2463,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         description:
           "일괄 가져오기, 원클릭 App Store Connect 업로드, 레이어, 배경, 디바이스 프레임 등 대부분의 사용자가 시간을 절약할 수 있는 주요 기능들을 보여줍니다.",
       },
-      problem: {
-        eyebrow: "개발 배경",
-        title:
-          "새로운 기능을 출시할 때마다 모든 스크린샷을 다시 만들 필요가 없어야 합니다.",
-        description:
-          "Screenshot Bro는 대부분의 앱 개발 팀들이 겪는 문제에서 시작되었습니다. 제품이 업데이트되면 스크린샷 세트를 수정하는 번거로운 미니 프로젝트가 반복되곤 합니다.",
-      },
       workflow: {
         eyebrow: "워크플로우",
         title: "원본 스크린샷에서 App Store에 바로 제출할 수 있는 리소스까지의 단축 경로.",
@@ -3013,18 +2475,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         description:
           "레이아웃 속도, 스크린샷의 일관성, 직관적인 내보내기에 집중했습니다. 불필요한 브라우저 탭 이동이나 크기 조절 반복 작업이 필요 없습니다.",
       },
-      screenshots: {
-        eyebrow: "스크린샷",
-        title: "직접 확인해보세요.",
-        description:
-          "Screenshot Bro 앱 자체의 App Store 스크린샷입니다. 귀하의 앱 스크린샷 세트를 제작할 때 사용하게 될 에디터와 동일합니다.",
-      },
-      testimonials: {
-        eyebrow: "개발자 한마디",
-        title: "개발자들의 솔직한 후기.",
-        description:
-          "실제 프로덕션 환경에서 Screenshot Bro를 사용 중인 1인 개발자들의 실제 피드백입니다.",
-      },
       blog: {
         eyebrow: "블로그 소식",
         title: "더 나은 App Store 스크린샷 제작을 위한 가이드.",
@@ -3035,7 +2485,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "자주 묻는 질문",
         title: "사용하기 전에 가장 많이 묻는 질문들.",
         description:
-          "초기 단계이지만 호환성 및 내보내기, 핵심 워크플로우에 대한 명쾌한 답변을 담았습니다.",
+          "가격, 요구 사항, 개인정보 보호, 그리고 워크플로우가 App Store Connect와 어떻게 연결되는지 정리했습니다.",
       },
       appShowcase: {
         eyebrow: "Screenshot Bro로 완성된 앱",
@@ -3047,14 +2497,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     problem: {
       story:
         "텍스트나 그라데이션, 언어가 바뀔 때마다 Figma에서 매번 App Store 스크린샷을 새로 디자인하는 데 너무 많은 시간을 낭비한 끝에 이 앱을 개발하게 되었습니다. 목표는 간단합니다. 템플릿 시스템을 한 번 구축해두면 반복적인 작업은 앱이 알아서 처리하는 것입니다.",
-      withoutLabel: "Screenshot Bro 사용 전",
-      withLabel: "Screenshot Bro 사용 후",
     },
     download: {
       titleLine1: "더 매력적인 스크린샷을",
       titleLine2: "배포할 준비가 되셨나요?",
       description:
-        "App Store에서 다운로드하여 Mac 또는 iPad에서 설정, 디자인, 자동 번역, 현지화 및 내보내기까지의 모든 워크플로우를 지금 경험해보세요.",
+        "App Store에서 다운로드하여 Mac, iPad 또는 iPhone에서 설정, 디자인, 자동 번역, 현지화 및 내보내기까지의 모든 워크플로우를 지금 경험해보세요.",
     },
     footer: {
       note:
@@ -3069,7 +2517,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Показ", href: "#showcases" },
       { label: "Можливості", href: "#features" },
-      { label: "Процес", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -3111,7 +2558,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Чи можна перетягувати скриншоти з симуляторів і пристроїв напряму?",
         answer:
-          "Так. Перетягніть папку зі скриншотами, і Screenshot Bro автоматично розподілить кожен знімок у потрібний рядок за його піксельним розміром: скриншоти iPhone — у рядок iPhone, iPad — в iPad, а Android — в Android. Кнопка захоплення в один клік на кожному шаблоні також вставляє найновіший знімок із симулятора безпосередньо на полотно.",
+          "Так. Перетягніть папку зі скриншотами, і Screenshot Bro автоматично розподілить кожен знімок у потрібний рядок за його піксельним розміром: скриншоти iPhone — у рядок iPhone, iPad — в iPad, а Android — в Android.",
       },
       {
         question: "Чи можна завантажувати в App Store Connect напряму з додатку?",
@@ -3155,16 +2602,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Відкрити меню",
       closeMenu: "Закрити меню",
       seeInAction: "Подивитися в дії",
-      tryItNow: "Спробувати зараз",
-      seeDetails: "Детальніше",
+      directDownload: "Хочете завантажити напряму? Отримайте DMG для Mac",
       browseGuides: "Усі посібники",
       submitApp: "Запропонувати додаток",
       contactDeveloper: "Написати розробнику",
       backToTop: "Вгору",
-      previousScreenshot: "Попередній скриншот",
-      nextScreenshot: "Наступний скриншот",
-      goToScreenshot: (index) => `Перейти до скриншота ${index}`,
-      slideCount: (index, total) => `${index} з ${total}`,
       availabilityNote:
         "Додаток для macOS 15+ та iOS/iPadOS 18+ | Swift і SwiftUI | Доступно в App Store",
     },
@@ -3184,13 +2626,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         description:
           "Пакетний імпорт, завантаження в App Store Connect в один клік, шари, фони та рамки пристроїв — те, що заощаджує найбільше часу.",
       },
-      problem: {
-        eyebrow: "Навіщо це створено",
-        title:
-          "Реліз однієї функції не повинен означати переробку кожного скриншота.",
-        description:
-          "Screenshot Bro з'явився через проблему, знайому кожному: виходить оновлення, і набір скриншотів знову перетворюється на рутинний міні-проект.",
-      },
       workflow: {
         eyebrow: "Процес",
         title: "Коротший шлях від сирих знімків до готових матеріалів для App Store.",
@@ -3202,18 +2637,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         title: "Усе, що має робити генератор скриншотів. І нічого зайвого.",
         description:
           "Швидкість верстки, узгодженість скриншотів і зручний експорт. Без вкладок браузера, складних графічних редакторів та нудної зміни розмірів.",
-      },
-      screenshots: {
-        eyebrow: "Скриншоти",
-        title: "Подивіться в дії.",
-        description:
-          "Скриншоти самого додатку Screenshot Bro в App Store — той самий редактор, який ви будете використовувати для своїх скриншотів.",
-      },
-      testimonials: {
-        eyebrow: "Розробники",
-        title: "Що кажуть розробники.",
-        description:
-          "Реальні відгуки від інді-розробників, які використовують Screenshot Bro у продакшені.",
       },
       blog: {
         eyebrow: "З блогу",
@@ -3237,14 +2660,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     problem: {
       story:
         "Я створив його після того, як провів занадто багато часу у Figma, переробляючи скриншоти для App Store щоразу, коли змінювався текст, градієнти чи мови. Мета проста: налаштуйте систему один раз, а рутину довірте додатку.",
-      withoutLabel: "Без Screenshot Bro",
-      withLabel: "З Screenshot Bro",
     },
     download: {
       titleLine1: "Готові публікувати",
       titleLine2: "кращі скриншоти?",
       description:
-        "Завантажте з App Store та використовуйте повний робочий процес на Mac або iPad: налаштування, дизайн, автопереклад, локалізація та експорт для App Store і Google Play.",
+        "Завантажте з App Store та використовуйте повний робочий процес на Mac, iPad або iPhone: налаштування, дизайн, автопереклад, локалізація та експорт для App Store і Google Play.",
     },
     footer: {
       note:
@@ -3259,7 +2680,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Przykłady", href: "#showcases" },
       { label: "Funkcje", href: "#features" },
-      { label: "Przepływ pracy", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -3301,7 +2721,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Czy mogę przeciągać zrzuty ekranu bezpośrednio z symulatorów i urządzeń?",
         answer:
-          "Tak. Przeciągnij folder ze zrzutami ekranu, a Screenshot Bro automatycznie przypisze każdy plik do właściwego wiersza na podstawie jego wymiarów w pikselach: zrzuty z iPhone'a do wiersza iPhone, z iPada do iPada, a z Androida do Androida. Przycisk przechwytywania jednym kliknięciem na każdym szablonie wstawia również najnowszy zrzut z symulatora bezpośrednio na płótno.",
+          "Tak. Przeciągnij folder ze zrzutami ekranu, a Screenshot Bro automatycznie przypisze każdy plik do właściwego wiersza na podstawie jego wymiarów w pikselach: zrzuty z iPhone'a do wiersza iPhone, z iPada do iPada, a z Androida do Androida.",
       },
       {
         question: "Czy mogę przesyłać bezpośrednio do App Store Connect z aplikacji?",
@@ -3345,16 +2765,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Otwórz menu",
       closeMenu: "Zamknij menu",
       seeInAction: "Zobacz w akcji",
-      tryItNow: "Wypróbuj teraz",
-      seeDetails: "Zobacz szczegóły",
+      directDownload: "Wolisz pobrać bezpośrednio? Pobierz plik DMG na Maca",
       browseGuides: "Wszystkie poradniki",
       submitApp: "Zgłoś aplikację",
       contactDeveloper: "Napisz do twórcy",
       backToTop: "W górę",
-      previousScreenshot: "Poprzedni zrzut ekranu",
-      nextScreenshot: "Następny zrzut ekranu",
-      goToScreenshot: (index) => `Przejdź do zrzutu ekranu ${index}`,
-      slideCount: (index, total) => `${index} z ${total}`,
       availabilityNote:
         "Aplikacja na macOS 15+ i iOS/iPadOS 18+ | Swift i SwiftUI | Dostępna w App Store",
     },
@@ -3374,13 +2789,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         description:
           "Masowy import, przesyłanie do App Store Connect jednym kliknięciem, warstwy, tła i ramki urządzeń — to, co pozwala zaoszczędzić najwięcej czasu.",
       },
-      problem: {
-        eyebrow: "Dlaczego powstał",
-        title:
-          "Wydanie jednej nowej funkcji nie powinno oznaczać projektowania wszystkich zrzutów od nowa.",
-        description:
-          "Screenshot Bro powstał z problemu, który zna każdy: pojawia się aktualizacja, a zestaw zrzutów ekranu znowu staje się monotonnym miniprojektem.",
-      },
       workflow: {
         eyebrow: "Przepływ pracy",
         title: "Krótsza droga od surowych zrzutów do gotowych materiałów dla App Store.",
@@ -3392,18 +2800,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         title: "Wszystko, co powinien robić generator zrzutów ekranu. I nic zbędnego.",
         description:
           "Szybkość układania, spójność zrzutów i bezproblemowy eksport. Bez kart w przeglądarce, skomplikowanych programów graficznych i żmudnej zmiany rozmiarów.",
-      },
-      screenshots: {
-        eyebrow: "Zrzuty ekranu",
-        title: "Zobacz w akcji.",
-        description:
-          "Zrzuty ekranu samej aplikacji Screenshot Bro w App Store — ten sam edytor, którego używasz do swoich zrzutów ekranu.",
-      },
-      testimonials: {
-        eyebrow: "Twórcy",
-        title: "Co mówią deweloperzy.",
-        description:
-          "Prawdziwe opinie niezależnych deweloperów korzystających ze Screenshot Bro na co dzień.",
       },
       blog: {
         eyebrow: "Z bloga",
@@ -3427,14 +2823,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     problem: {
       story:
         "Stworzyłem go po spędzeniu zbyt wielu godzin w Figmie na poprawianiu zrzutów ekranu dla App Store za każdym razem, gdy zmieniał się tekst, gradienty lub języki. Cel jest prosty: zaprojektuj system raz, a powtarzalne czynności zostaw aplikacji.",
-      withoutLabel: "Bez Screenshot Bro",
-      withLabel: "Ze Screenshot Bro",
     },
     download: {
       titleLine1: "Gotowy na publikację",
       titleLine2: "lepszych zrzutów ekranu?",
       description:
-        "Pobierz z App Store i korzystaj z pełnego przepływu pracy na Macu lub iPadzie: konfiguracja, projektowanie, automatyczne tłumaczenie, lokalizacja i eksport dla App Store i Google Play.",
+        "Pobierz z App Store i korzystaj z pełnego przepływu pracy na Macu, iPadzie lub iPhonie: konfiguracja, projektowanie, automatyczne tłumaczenie, lokalizacja i eksport dla App Store i Google Play.",
     },
     footer: {
       note:
@@ -3449,7 +2843,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Örnekler", href: "#showcases" },
       { label: "Özellikler", href: "#features" },
-      { label: "İş Akışı", href: "#workflow" },
       { label: "SSS", href: "#faq" },
     ],
     benefits: [
@@ -3535,46 +2928,36 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Menüyü aç",
       closeMenu: "Menüyü kapat",
       seeInAction: "Çalışırken görün",
-      tryItNow: "Şimdi deneyin",
-      seeDetails: "Detayları görün",
+      directDownload: "Doğrudan indirmeyi mi tercih edersiniz? Mac için DMG dosyasını alın",
       browseGuides: "Tüm rehberlere göz atın",
       submitApp: "Uygulamanızı gönderin",
       contactDeveloper: "Geliştiriciye ulaşın",
       backToTop: "Yukarı çık",
-      previousScreenshot: "Önceki ekran görüntüsü",
-      nextScreenshot: "Sonraki ekran görüntüsü",
-      goToScreenshot: (index) => `Ekran görüntüsüne git: ${index}`,
-      slideCount: (index, total) => `${index} / ${total}`,
       availabilityNote: "macOS 15+ ve iOS/iPadOS 18+ uygulaması | Swift ve SwiftUI | App Store'da mevcut",
     },
     hero: {
       titleLead: "Dakikalar İçinde",
       titleAccent: "App Store",
       titleRest: " Ekran Görüntüleri Oluşturun",
-      descriptionLead: "Bir kez tasarlayın. 70'ten fazla dile yerelleştirin, her cihaz boyutunu oluşturun ve",
+      descriptionLead: "Bir kez tasarlayın. 81 dile yerelleştirin, her cihaz boyutunu oluşturun ve",
       descriptionStrong: "doğrudan App Store Connect'e yükleyin",
       descriptionTail: " — hepsi tek bir yerel Mac, iPad ve iPhone uygulamasında.",
     },
     sections: {
       showcases: { eyebrow: "Vitrin", title: "Yüklemeden önce ekran görüntüsü oluşturucunun nasıl çalıştığını görün.", description: "Toplu içe aktarma, tek tıkla App Store Connect yüklemesi, katmanlar ve cihaz çerçeveleri." },
-      problem: { eyebrow: "Neden Var", title: "Tek bir yeni özellik yayınlamak tüm ekran görüntülerini yeniden yapmak anlamına gelmemeli.", description: "Screenshot Bro, her güncellemede ekran görüntülerinin sıkıcı bir projeye dönüşmesini engeller." },
       workflow: { eyebrow: "İş Akışı", title: "Ham görüntülerden App Store'a hazır varlıklara giden en kısa yol.", description: "Tek kullanımlık tasarım dosyaları yığını tutmadan kusursuz ekran görüntüleri oluşturun." },
       features: { eyebrow: "Yetenekler", title: "Bir App Store ekran görüntüsü aracının yapması gereken her şey.", description: "Düzen hızı, tutarlılık ve zahmetsiz dışa aktarma odaklı." },
-      screenshots: { eyebrow: "Ekran Görüntüleri", title: "Çalışırken görün.", description: "Screenshot Bro uygulamasının App Store ekran görüntüleri." },
-      testimonials: { eyebrow: "Geliştiriciler", title: "Geliştiriciler ne diyor?", description: "Screenshot Bro'yu üretimde kullanan bağımsız geliştiricilerden geri bildirimler." },
       blog: { eyebrow: "Blogdan", title: "Daha iyi App Store ekran görüntüleri için rehberler.", description: "Dönüşüm sağlayan ekran görüntüleri tasarlamak için başvuru kaynakları." },
       faq: { eyebrow: "SSS", title: "Denemeden önce en çok sorulan sorular.", description: "Uyumluluk ve temel iş akışı hakkındaki yanıtlar." },
       appShowcase: { eyebrow: "Screenshot Bro ile Yayınlandı", title: "Harika bir topluluktassınız.", description: "Ekran görüntüleri için Screenshot Bro'yu kullanan bağımsız uygulamalar." },
     },
     problem: {
       story: "Metin veya diller her değiştiğinde Figma'da App Store ekran görüntülerini baştan yapmaktan yorulduğum için geliştirdim. Amaç basit: sistemi bir kez kurun, gerisini uygulamaya bırakın.",
-      withoutLabel: "Screenshot Bro Olmadan",
-      withLabel: "Screenshot Bro İle",
     },
     download: {
       titleLine1: "Daha iyi ekran görüntüleri",
       titleLine2: "yayınlamaya hazır mısınız?",
-      description: "App Store'dan indirin ve Mac veya iPad'de tam iş akışını kullanın: kurulum, tasarım, yerelleştirme ve dışa aktarma.",
+      description: "App Store'dan indirin ve Mac, iPad veya iPhone'da tam iş akışını kullanın: kurulum, tasarım, yerelleştirme ve dışa aktarma.",
     },
     footer: {
       note: "SwiftUI ile geliştirildi. App Store güncellemeleri yayınlayan geliştiriciler için tasarlandı.",
@@ -3588,11 +2971,10 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Voorbeelden", href: "#showcases" },
       { label: "Functies", href: "#features" },
-      { label: "Werkwijze", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Nu beschikbaar in de App Store voor Mac en iPad",
+      "Nu beschikbaar in de App Store voor Mac, iPad en iPhone",
       "Volledige workflow: importeren, ontwerpen, automatisch vertalen, lokaliseren en exporteren",
       "Direct uploaden naar App Store Connect zonder bestanden in de browser te slepen",
     ],
@@ -3640,7 +3022,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Synchroniseert het tussen apparaten?",
         answer:
-          "Ja. Optionele synchronisatie via iCloud Drive houdt projecten beschikbaar op al uw Macs en iPads.",
+          "Ja. Optionele synchronisatie via iCloud Drive houdt projecten beschikbaar op al uw Macs, iPads en iPhones.",
       },
       {
         question: "Kan een AI-agent mijn screenshots maken?",
@@ -3674,46 +3056,36 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Menu openen",
       closeMenu: "Menu sluiten",
       seeInAction: "Bekijk in actie",
-      tryItNow: "Probeer nu",
-      seeDetails: "Bekijk details",
+      directDownload: "Liever direct downloaden? Download de DMG voor Mac",
       browseGuides: "Bekijk alle gidsen",
       submitApp: "App aanmelden",
       contactDeveloper: "Contacteer ontwikkelaar",
       backToTop: "Naar boven",
-      previousScreenshot: "Vorig screenshot",
-      nextScreenshot: "Volgend screenshot",
-      goToScreenshot: (index) => `Ga naar screenshot ${index}`,
-      slideCount: (index, total) => `${index} van ${total}`,
       availabilityNote: "macOS 15+ en iOS/iPadOS 18+ app | Swift & SwiftUI | Beschikbaar in de App Store",
     },
     hero: {
       titleLead: "Maak & lokaliseer",
       titleAccent: "App Store",
       titleRest: " screenshots in minuten",
-      descriptionLead: "Ontwerp één keer. Lokaliseer naar 70+ talen, genereer elk apparaatformaat en",
+      descriptionLead: "Ontwerp één keer. Lokaliseer naar 81 talen, genereer elk apparaatformaat en",
       descriptionStrong: "upload direct naar App Store Connect",
       descriptionTail: " zonder screenshots handmatig opnieuw te maken. Alles in één native app.",
     },
     sections: {
       showcases: { eyebrow: "Voorbeelden", title: "Zie hoe de screenshotgenerator werkt voordat u installeert.", description: "Batch-import, one-click upload naar App Store Connect, lagen en apparaatframes." },
-      problem: { eyebrow: "Waarom het bestaat", title: "Eén nieuwe functie uitbrengen mag niet betekenen dat alle screenshots opnieuw moeten.", description: "Screenshot Bro lost de herhalende screenshotroutine op bij elke app-update." },
       workflow: { eyebrow: "Werkwijze", title: "Een kortere weg van ruwe beelden naar App Store-klare bestanden.", description: "Gericht op één taak: verzorgde screenshots maken zonder ontwerpmallen te onderhouden." },
       features: { eyebrow: "Mogelijkheden", title: "Alles wat een App Store screenshottool moet doen.", description: "Volledige focus op snelheid, lay-out en soepele export." },
-      screenshots: { eyebrow: "Screenshots", title: "Bekijk het in actie.", description: "App Store-screenshots van Screenshot Bro zelf." },
-      testimonials: { eyebrow: "Ontwikkelaars", title: "Wat ontwikkelaars zeggen.", description: "Echte feedback van indie-ontwikkelaars." },
       blog: { eyebrow: "Van de Blog", title: "Gidsen voor betere App Store-screenshots.", description: "Tips en handleidingen voor effectieve screenshots." },
       faq: { eyebrow: "FAQ", title: "Veelgestelde vragen voor het proberen.", description: "Antwoorden op de belangrijkste vragen." },
       appShowcase: { eyebrow: "Gemaakt met Screenshot Bro", title: "In goed gezelschap.", description: "Indie-apps die Screenshot Bro al gebruiken." },
     },
     problem: {
       story: "Gebouwd nadat ik te veel tijd in Figma doorbracht om screenshots opnieuw te maken bij elke tekstwijziging. Ontwerp het systeem één keer en laat de app de rest doen.",
-      withoutLabel: "Zonder Screenshot Bro",
-      withLabel: "Met Screenshot Bro",
     },
     download: {
       titleLine1: "Klaar om betere",
       titleLine2: "screenshots te publiceren?",
-      description: "Download in de App Store en gebruik de complete workflow op Mac of iPad.",
+      description: "Download in de App Store en gebruik de complete workflow op Mac, iPad of iPhone.",
     },
     footer: {
       note: "Gebouwd met SwiftUI. Ontworpen voor app-ontwikkelaars.",
@@ -3727,7 +3099,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Contoh", href: "#showcases" },
       { label: "Fitur", href: "#features" },
-      { label: "Alur Kerja", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -3813,46 +3184,36 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Buka menu",
       closeMenu: "Tutup menu",
       seeInAction: "Lihat cara kerjanya",
-      tryItNow: "Coba sekarang",
-      seeDetails: "Lihat detail",
+      directDownload: "Lebih suka unduhan langsung? Dapatkan DMG untuk Mac",
       browseGuides: "Jelajahi panduan",
       submitApp: "Kirim aplikasi",
       contactDeveloper: "Hubungi pengembang",
       backToTop: "Kembali ke atas",
-      previousScreenshot: "Tangkapan layar sebelumnya",
-      nextScreenshot: "Tangkapan layar berikutnya",
-      goToScreenshot: (index) => `Buka tangkapan layar ${index}`,
-      slideCount: (index, total) => `${index} dari ${total}`,
       availabilityNote: "Aplikasi macOS 15+ dan iOS/iPadOS 18+ | Swift & SwiftUI | Tersedia di App Store",
     },
     hero: {
       titleLead: "Buat & Lokalisasikan",
       titleAccent: "App Store",
       titleRest: " Tangkapan Layar dalam Hitungan Menit",
-      descriptionLead: "Desain sekali. Lokalisasikan ke 70+ bahasa, hasilkan setiap ukuran perangkat, dan",
+      descriptionLead: "Desain sekali. Lokalisasikan ke 81 bahasa, hasilkan setiap ukuran perangkat, dan",
       descriptionStrong: "unggah langsung ke App Store Connect",
       descriptionTail: " tanpa mendesain ulang secara manual. Semua dalam satu aplikasi native.",
     },
     sections: {
       showcases: { eyebrow: "Pameran", title: "Lihat cara kerja pembuat tangkapan layar sebelum Anda memasangnya.", description: "Impor massal, unggah satu klik ke App Store Connect, lapisan, dan bingkai perangkat." },
-      problem: { eyebrow: "Alasan Dibuat", title: "Merilis satu fitur baru tidak seharusnya berarti mendesain ulang semua tangkapan layar.", description: "Screenshot Bro menghilangkan kerumitan pembaruan tangkapan layar di setiap rilis." },
       workflow: { eyebrow: "Alur Kerja", title: "Jalur lebih cepat dari tangkapan mentah ke aset siap App Store.", description: "Dibuat untuk satu tujuan: tangkapan layar rapi tanpa tumpukan file desain." },
       features: { eyebrow: "Kemampuan", title: "Semua yang dibutuhkan alat tangkapan layar App Store.", description: "Fokus pada kecepatan tata letak, konsistensi, dan kemudahan ekspor." },
-      screenshots: { eyebrow: "Tangkapan Layar", title: "Lihat dalam aksi nyata.", description: "Tangkapan layar App Store dari Screenshot Bro sendiri." },
-      testimonials: { eyebrow: "Pengembang", title: "Apa kata pengembang.", description: "Ulasan nyata dari pengembang indie." },
       blog: { eyebrow: "Dari Blog", title: "Panduan untuk membuat tangkapan layar App Store yang lebih baik.", description: "Referensi dan panduan untuk merancang tangkapan layar yang meningkatkan konversi." },
       faq: { eyebrow: "FAQ", title: "Pertanyaan yang paling sering diajukan.", description: "Jawaban atas pertanyaan kompatibilitas dan ekspor." },
       appShowcase: { eyebrow: "Dibuat dengan Screenshot Bro", title: "Bersama aplikasi hebat lainnya.", description: "Aplikasi indie yang sudah menggunakan Screenshot Bro." },
     },
     problem: {
       story: "Saya membuatnya setelah terlalu banyak menghabiskan waktu di Figma mendesain ulang tangkapan layar setiap kali teks atau bahasa berubah. Desain sistemnya sekali, biarkan aplikasi menangani sisanya.",
-      withoutLabel: "Tanpa Screenshot Bro",
-      withLabel: "Dengan Screenshot Bro",
     },
     download: {
       titleLine1: "Siap merilis tangkapan layar",
       titleLine2: "yang lebih baik?",
-      description: "Unduh dari App Store dan gunakan alur kerja lengkap di Mac atau iPad.",
+      description: "Unduh dari App Store dan gunakan alur kerja lengkap di Mac, iPad, atau iPhone.",
     },
     footer: {
       note: "Dibuat dengan SwiftUI. Dirancang untuk pengembang aplikasi App Store.",
@@ -3866,7 +3227,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Trình diễn", href: "#showcases" },
       { label: "Tính năng", href: "#features" },
-      { label: "Quy trình", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -3952,46 +3312,36 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Mở menu",
       closeMenu: "Đóng menu",
       seeInAction: "Xem hoạt động",
-      tryItNow: "Thử ngay",
-      seeDetails: "Xem chi tiết",
+      directDownload: "Muốn tải trực tiếp? Tải bản DMG cho Mac",
       browseGuides: "Xem tất cả hướng dẫn",
       submitApp: "Gửi ứng dụng",
       contactDeveloper: "Liên hệ nhà phát triển",
       backToTop: "Lên đầu trang",
-      previousScreenshot: "Ảnh trước",
-      nextScreenshot: "Ảnh sau",
-      goToScreenshot: (index) => `Chuyển đến ảnh ${index}`,
-      slideCount: (index, total) => `${index} trên ${total}`,
       availabilityNote: "Ứng dụng macOS 15+ và iOS/iPadOS 18+ | Swift & SwiftUI | Có sẵn trên App Store",
     },
     hero: {
       titleLead: "Tạo & Bản địa hóa",
       titleAccent: "App Store",
       titleRest: " Ảnh chụp màn hình trong tích tắc",
-      descriptionLead: "Thiết kế một lần. Bản địa hóa sang hơn 70 ngôn ngữ, tạo mọi kích thước thiết bị và",
+      descriptionLead: "Thiết kế một lần. Bản địa hóa sang 81 ngôn ngữ, tạo mọi kích thước thiết bị và",
       descriptionStrong: "tải trực tiếp lên App Store Connect",
       descriptionTail: " mà không cần làm lại từng ảnh thủ công. Tất cả trong một ứng dụng native.",
     },
     sections: {
       showcases: { eyebrow: "Trình diễn", title: "Xem cách công cụ hoạt động trước khi cài đặt.", description: "Nhập hàng loạt, tải lên App Store Connect một cú nhấp, các lớp và khung thiết bị." },
-      problem: { eyebrow: "Lý do ra đời", title: "Phát hành một tính năng mới không nên đồng nghĩa với việc làm lại toàn bộ ảnh chụp.", description: "Screenshot Bro giải quyết sự mệt mỏi khi cập nhật ảnh chụp màn hình mỗi bản phát hành." },
       workflow: { eyebrow: "Quy trình", title: "Con đường ngắn nhất từ ảnh thô đến tài nguyên hoàn thiện cho App Store.", description: "Tập trung vào một mục tiêu duy nhất: tạo ảnh chụp màn hình trau chuốt mà không cần quản lý nhiều file thiết kế." },
       features: { eyebrow: "Khả năng", title: "Tất cả những gì bạn cần cho ảnh chụp màn hình App Store.", description: "Tập trung vào tốc độ bố cục, tính nhất quán và xuất file mượt mà." },
-      screenshots: { eyebrow: "Ảnh chụp màn hình", title: "Xem trong thực tế.", description: "Ảnh chụp màn hình App Store của chính Screenshot Bro." },
-      testimonials: { eyebrow: "Nhà phát triển", title: "Nhà phát triển nói gì.", description: "Phản hồi thực tế từ các nhà phát triển indie." },
       blog: { eyebrow: "Từ Blog", title: "Hướng dẫn tạo ảnh chụp màn hình App Store hiệu quả.", description: "Kinh nghiệm và tài liệu tham khảo để tăng tỷ lệ chuyển đổi." },
       faq: { eyebrow: "FAQ", title: "Các câu hỏi thường gặp trước khi dùng thử.", description: "Giải đáp về tính tương thích và quy trình xuất file." },
       appShowcase: { eyebrow: "Tạo bằng Screenshot Bro", title: "Đồng hành cùng các ứng dụng tuyệt vời.", description: "Các ứng dụng indie đã tin dùng Screenshot Bro." },
     },
     problem: {
       story: "Tôi tạo ra công cụ này sau khi mất quá nhiều thời gian trong Figma để làm lại ảnh chụp mỗi khi thay đổi văn bản hay màu sắc. Thiết kế hệ thống một lần và để ứng dụng lo phần còn lại.",
-      withoutLabel: "Không có Screenshot Bro",
-      withLabel: "Có Screenshot Bro",
     },
     download: {
       titleLine1: "Sẵn sàng phát hành",
       titleLine2: "ảnh chụp màn hình đẹp hơn?",
-      description: "Tải trên App Store và trải nghiệm quy trình làm việc hoàn chỉnh trên Mac hoặc iPad.",
+      description: "Tải trên App Store và trải nghiệm quy trình làm việc hoàn chỉnh trên Mac, iPad hoặc iPhone.",
     },
     footer: {
       note: "Được xây dựng bằng SwiftUI. Dành cho các nhà phát triển phát hành ứng dụng trên App Store.",
@@ -4005,11 +3355,10 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "ตัวอย่าง", href: "#showcases" },
       { label: "ฟีเจอร์", href: "#features" },
-      { label: "ขั้นตอน", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "พร้อมใช้งานแล้วบน App Store สำหรับ Mac และ iPad",
+      "พร้อมใช้งานแล้วบน App Store สำหรับ Mac, iPad และ iPhone",
       "ครบทุกขั้นตอน: นำเข้า ออกแบบ แปลภาษาอัตโนมัติ และส่งออก",
       "อัปโหลดไปยัง App Store Connect ได้โดยตรงโดยไม่ต้องลากไฟล์ในเบราว์เซอร์",
     ],
@@ -4057,7 +3406,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "มีการซิงค์ระหว่างอุปกรณ์หรือไม่?",
         answer:
-          "มี การซิงค์ผ่าน iCloud Drive ช่วยให้โปรเจกต์ของคุณพร้อมใช้งานบน Mac และ iPad ทุกเครื่องของคุณ",
+          "มี การซิงค์ผ่าน iCloud Drive ช่วยให้โปรเจกต์ของคุณพร้อมใช้งานบน Mac, iPad และ iPhone ทุกเครื่องของคุณ",
       },
       {
         question: "ให้ AI Agent ช่วยสร้างสกรีนช็อตได้หรือไม่?",
@@ -4091,46 +3440,36 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "เปิดเมนู",
       closeMenu: "ปิดเมนู",
       seeInAction: "ดูการทำงาน",
-      tryItNow: "ลองใช้เลย",
-      seeDetails: "ดูรายละเอียด",
+      directDownload: "อยากดาวน์โหลดโดยตรงใช่ไหม? รับไฟล์ DMG สำหรับ Mac",
       browseGuides: "ดูคู่มือทั้งหมด",
       submitApp: "ส่งแอปของคุณ",
       contactDeveloper: "ติดต่อผู้พัฒนา",
       backToTop: "กลับขึ้นด้านบน",
-      previousScreenshot: "ภาพก่อนหน้า",
-      nextScreenshot: "ภาพถัดไป",
-      goToScreenshot: (index) => `ไปยังภาพที่ ${index}`,
-      slideCount: (index, total) => `${index} จาก ${total}`,
       availabilityNote: "แอป macOS 15+ และ iOS/iPadOS 18+ | Swift & SwiftUI | มีใน App Store",
     },
     hero: {
       titleLead: "สร้างและแปลภาษา",
       titleAccent: "App Store",
       titleRest: " สกรีนช็อตได้ในไม่กี่นาที",
-      descriptionLead: "ออกแบบครั้งเดียว แปลภาษาได้มากกว่า 70 ภาษา สร้างได้ทุกขนาดอุปกรณ์ และ",
+      descriptionLead: "ออกแบบครั้งเดียว แปลได้ 81 ภาษา สร้างได้ทุกขนาดอุปกรณ์ และ",
       descriptionStrong: "อัปโหลดไปยัง App Store Connect โดยตรง",
       descriptionTail: " โดยไม่ต้องทำใหม่ทีละภาพ ทั้งหมดในแอปเนทีฟเดียว",
     },
     sections: {
       showcases: { eyebrow: "ตัวอย่าง", title: "ดูการทำงานของเครื่องมือก่อนติดตั้ง", description: "นำเข้าเป็นชุด อัปโหลด App Store Connect ในคลิกเดียว เลเยอร์ และกรอบอุปกรณ์" },
-      problem: { eyebrow: "เหตุผลที่สร้าง", title: "การปล่อยฟีเจอร์ใหม่ไม่ควรหมายถึงการต้องทำสกรีนช็อตใหม่ทั้งหมด", description: "Screenshot Bro ช่วยแก้ปัญหาความยุ่งยากในการอัปเดตสกรีนช็อตทุกครั้งที่ปล่อยแอป" },
       workflow: { eyebrow: "ขั้นตอน", title: "เส้นทางที่เร็วที่สุดจากภาพต้นฉบับสู่ไฟล์พร้อมส่งสโตร์", description: "เน้นงานเดียว: สร้างสกรีนช็อตที่สวยงามโดยไม่ต้องดูแลไฟล์ดีไซน์จำนวนมาก" },
       features: { eyebrow: "ความสามารถ", title: "ทุกสิ่งที่เครื่องมือสกรีนช็อต App Store ควรมี", description: "มุ่งเน้นที่ความเร็วในการจัดวาง ความสม่ำเสมอ และการส่งออกที่ง่ายดาย" },
-      screenshots: { eyebrow: "สกรีนช็อต", title: "ดูภาพการทำงานจริง", description: "สกรีนช็อต App Store ของตัวแอป Screenshot Bro เอง" },
-      testimonials: { eyebrow: "ผู้พัฒนา", title: "เสียงตอบรับจากนักพัฒนา", description: "ความคิดเห็นจริงจากนักพัฒนาอิสระ" },
       blog: { eyebrow: "จากบล็อก", title: "คู่มือเพื่อสกรีนช็อต App Store ที่ดีกว่า", description: "แนวทางและข้อแนะนำเพื่อเพิ่มยอดดาวน์โหลด" },
       faq: { eyebrow: "FAQ", title: "คำถามที่พบบ่อยก่อนลองใช้", description: "คำตอบเกี่ยวกับความเข้ากันได้และการส่งออกไฟล์" },
       appShowcase: { eyebrow: "สร้างด้วย Screenshot Bro", title: "ร่วมเป็นส่วนหนึ่งกับแอปชั้นนำ", description: "แอปอินดี้ที่ใช้ Screenshot Bro ในการทำสกรีนช็อต" },
     },
     problem: {
       story: "ผมสร้างแอปนี้หลังจากเสียเวลาใน Figma ไปมากกับการแก้สกรีนช็อตทุกครั้งที่เปลี่ยนข้อความหรือภาษา ออกแบบระบบครั้งเดียวแล้วปล่อยให้แอปจัดการส่วนที่ซ้ำซ้อน",
-      withoutLabel: "เมื่อไม่มี Screenshot Bro",
-      withLabel: "เมื่อใช้ Screenshot Bro",
     },
     download: {
       titleLine1: "พร้อมปล่อยสกรีนช็อต",
       titleLine2: "ที่ดูดียิ่งขึ้นหรือยัง?",
-      description: "ดาวน์โหลดจาก App Store และใช้งานทุกฟังก์ชันบน Mac หรือ iPad ได้ทันที",
+      description: "ดาวน์โหลดจาก App Store และใช้งานทุกฟังก์ชันบน Mac, iPad หรือ iPhone ได้ทันที",
     },
     footer: {
       note: "สร้างด้วย SwiftUI ออกแบบมาเพื่อนักพัฒนาที่อัปเดตแอปบน App Store สม่ำเสมอ",
@@ -4144,7 +3483,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Exempel", href: "#showcases" },
       { label: "Funktioner", href: "#features" },
-      { label: "Arbetsflöde", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -4230,46 +3568,36 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Öppna meny",
       closeMenu: "Stäng meny",
       seeInAction: "Se i praktiken",
-      tryItNow: "Prova nu",
-      seeDetails: "Se detaljer",
+      directDownload: "Föredrar du direktnedladdning? Hämta DMG-filen för Mac",
       browseGuides: "Bläddra bland guider",
       submitApp: "Skicka in app",
       contactDeveloper: "Kontakta utvecklaren",
       backToTop: "Till toppen",
-      previousScreenshot: "Föregående skärmdump",
-      nextScreenshot: "Nästa skärmdump",
-      goToScreenshot: (index) => `Gå till skärmdump ${index}`,
-      slideCount: (index, total) => `${index} av ${total}`,
       availabilityNote: "macOS 15+ och iOS/iPadOS 18+ app | Swift & SwiftUI | Tillgänglig i App Store",
     },
     hero: {
       titleLead: "Skapa & lokalisera",
       titleAccent: "App Store",
       titleRest: " skärmdumpar på några minuter",
-      descriptionLead: "Designa en gång. Lokalisera till 70+ språk, generera alla enhetsstorlekar och",
+      descriptionLead: "Designa en gång. Lokalisera till 81 språk, generera alla enhetsstorlekar och",
       descriptionStrong: "ladda upp direkt till App Store Connect",
       descriptionTail: " utan att bygga om skärmdumpar för hand. Allt i en nativ app.",
     },
     sections: {
       showcases: { eyebrow: "Exempel", title: "Se hur generatorn fungerar innan du installerar.", description: "Batchimport, uppladdning till App Store Connect med ett klick, lager och enhetsramar." },
-      problem: { eyebrow: "Varför den finns", title: "Att släppa en ny funktion ska inte innebära att göra om alla skärmdumpar.", description: "Screenshot Bro eliminerar det repetitiva arbetet vid varje appuppdatering." },
       workflow: { eyebrow: "Arbetsflöde", title: "En kortare väg från råa skärmdumpar till färdiga butikstillgångar.", description: "Fokuserad på en uppgift: skapa snygga skärmdumpar utan att underhålla en hög med designfiler." },
       features: { eyebrow: "Kapacitet", title: "Allt ett skärmdumpsverktyg för App Store behöver göra.", description: "Fokus på snabb layout, konsekvens och smidig export." },
-      screenshots: { eyebrow: "Skärmdumpar", title: "Se den i aktion.", description: "App Store-skärmdumpar från Screenshot Bro själv." },
-      testimonials: { eyebrow: "Utvecklare", title: "Vad utvecklare säger.", description: "Verklig feedback från oberoende utvecklare." },
       blog: { eyebrow: "Från bloggen", title: "Guider för att skapa bättre App Store-skärmdumpar.", description: "Tips och referenser för att öka konverteringen." },
       faq: { eyebrow: "FAQ", title: "Vanliga frågor innan du testar.", description: "Svar om kompatibilitet och export." },
       appShowcase: { eyebrow: "Skapad med Screenshot Bro", title: "I gott sällskap.", description: "Indieappar som redan använder Screenshot Bro." },
     },
     problem: {
       story: "Jag byggde appen efter att ha lagt för mycket tid i Figma på att göra om skärmdumpar varje gång text eller färger ändrades. Bygg systemet en gång och låt appen göra resten.",
-      withoutLabel: "Utan Screenshot Bro",
-      withLabel: "Med Screenshot Bro",
     },
     download: {
       titleLine1: "Redo att publicera",
       titleLine2: "bättre skärmdumpar?",
-      description: "Hämta i App Store och upplev hela arbetsflödet på Mac eller iPad.",
+      description: "Hämta i App Store och upplev hela arbetsflödet på Mac, iPad eller iPhone.",
     },
     footer: {
       note: "Byggd med SwiftUI. Designad för utvecklare som släpper App Store-uppdateringar.",
@@ -4282,35 +3610,57 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Eksempler", href: "#showcases" },
       { label: "Funktioner", href: "#features" },
-      { label: "Arbejdsgang", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
       "Tilgængelig nu i App Store til Mac, iPad og iPhone",
-      "Engangskøb eller gratis plan — intet abonnement påkrævet",
-      "Native macOS-, iOS- og iPadOS-app med iCloud-synkronisering",
-      "Eksportér forudindstillinger for alle enhedsstørrelser med ét klik",
+      "Hele arbejdsgangen: importér, design, oversæt automatisk, lokaliser, eksportér",
+      "Upload direkte til App Store Connect — slut med træk-og-slip i en browserfane",
     ],
     faqs: [
       {
-        question: "Hvad gør Screenshot Bro anderledes end webbaserede generatorer?",
-        answer: "Screenshot Bro er en 100 % nativ macOS-, iOS- og iPadOS-app. Dine data forbliver på din enhed, der er ingen månedlige abonnementer, og du kan arbejde offline. Den er optimeret til hastighed og understøtter tastaturgenveje, batch-import og direkte upload til App Store Connect.",
+        question: "Er Screenshot Bro gratis?",
+        answer: "Ja. Den gratis plan er ikke tidsbegrænset og lader dig have 1 projekt med op til 3 rækker og 5 skabeloner pr. række — med fuld adgang til alle enhedsrammer, former og sprog, eksport uden vandmærke, upload til App Store Connect og Google Play samt iCloud-synkronisering. Pro fjerner begrænsningerne på projekter, rækker og skabeloner.",
       },
       {
-        question: "Kan jeg lokalisere skærmbilleder til flere sprog?",
-        answer: "Ja! Screenshot Bro er bygget med lokalisering i højsædet. Du kan tilføje flere sprog, overstyre tekst og billeder pr. sprog og eksportere alle lokaliserede varianter på én gang.",
+        question: "Hvordan adskiller den sig fra en webbaseret generator til App Store-skærmbilleder?",
+        answer: "Screenshot Bro er en nativ app til Mac, iPad og iPhone og ikke et browserværktøj, så projekter, skærmbilleder og skrifttyper bliver på disken, og daglig redigering kræver hverken konto eller internetforbindelse. Rendering og batch-eksport kører på din egen hardware i stedet for på en server. Hvis du bruger Windows eller Linux, vil samarbejde i en delt browsersession eller kun har brug for et eller to billeder, er et webbaseret værktøj til App Store-skærmbilleder et bedre valg — siden med alternativer dækker de tilfælde.",
       },
       {
-        question: "Hvilke enhedsstørrelser understøttes?",
-        answer: "Alle standardstørrelser til App Store og Google Play, herunder iPhones med Dynamic Island, iPads, MacBooks, Apple Watch og Android-telefoner.",
+        question: "Hvad kræver det at køre den?",
+        answer: "macOS 15 (Sequoia) eller nyere på Mac, iPadOS 18 eller nyere på iPad eller iOS 18 eller nyere på iPhone. Ingen ekstra enhed, ingen konto og ingen internetforbindelse kræves til daglig redigering.",
       },
       {
-        question: "Er der et abonnement?",
-        answer: "Nej. Screenshot Bro tilbyder en generøs gratis plan og et simpelt engangskøb for livstidsadgang til Pro-funktioner.",
+        question: "Forlader mine data min enhed?",
+        answer: "Dit arbejde gør ikke. Projekter, skærmbilleder og skrifttyper bliver på disken. Automatisk oversættelse kører via Apples Translation-framework på enheden — ingen API-nøgler, ingen tredjepartsservere. Valgfri synkronisering via iCloud Drive bruger din personlige iCloud-konto; vi driver ingen mellemliggende servere. Det, der faktisk sendes, er en anonym nedbrudsrapport, når noget går galt, samt anonyme optællinger af milepæle som »en eksport blev fuldført«, så vi ved, hvad vi skal forbedre — aldrig dine projekter, billeder eller den tekst, du skriver.",
       },
       {
-        question: "Kan jeg uploade direkte til App Store Connect?",
-        answer: "Ja. Med App Store Connect API-nøgler kan du uploade dine eksporterede skærmbilleder direkte til dine app-versioner uden at åbne browseren.",
+        question: "Hvordan fungerer lokalisering?",
+        answer: "Vælg mellem 81 sprogforudindstillinger, eller definér din egen kode. Automatisk oversættelse udfylder manglende tekst på enheden. Oversættelser gemmes som tekstoverstyringer pr. sprog, så layout, farver og billeder deles på tværs af alle sprog — design én gang, udgiv på alle sprog. Eksporter organiseres i sprogmapper, som App Store Connect kan bruge direkte.",
+      },
+      {
+        question: "Kan jeg også lave skærmbilleder til Google Play?",
+        answer: "Ja. Rækker til Android-telefoner og -tablets renderes side om side med iPhone, iPad og Mac i det samme projekt. Hver enhedskategori er forudindstillet til de pixelmål, den pågældende butik accepterer.",
+      },
+      {
+        question: "Kan jeg trække skærmbilleder fra simulatoren og enheder direkte ind?",
+        answer: "Ja. Slip en mappe med skærmbilleder, og Screenshot Bro sender hvert billede til den rigtige række ud fra pixelstørrelsen — iPhone-billeder til iPhone-rækken, iPad til iPad, Android til Android.",
+      },
+      {
+        question: "Kan jeg uploade til App Store Connect inde fra appen?",
+        answer: "Ja. Konfigurer din App Store Connect API-nøgle én gang (Issuer ID, Key ID og .p8). Screenshot Bro registrerer automatisk den rigtige skærmtype for hver række, matcher dine projektsprog med lokaliseringerne i App Store Connect og erstatter eksisterende skærmbilleder i én omgang — ingen træk-og-slip i browseren.",
+      },
+      {
+        question: "Kan en AI-agent bygge mine skærmbilleder?",
+        answer: "Ja. Screenshot Bro kører en valgfri lokal MCP-server på Mac, så en assistent som Claude Code, Claude Desktop eller Cursor kan oprette projekter, opsætte rækker og former, importere skærmbilleder, oversætte tekst, rendere forhåndsvisninger, den faktisk kan se, eksportere og synkronisere et færdigt sæt til App Store Connect. Serveren lytter kun på 127.0.0.1, hver anmodning kræver et adgangstoken, som du kopierer fra Indstillinger, og alle ændringer, agenten laver, kan fortrydes med ⌘Z.",
+      },
+      {
+        question: "Synkroniserer den mellem enheder?",
+        answer: "Ja — valgfri synkronisering via iCloud Drive holder projekter, skærmbilleder og skrifttyper tilgængelige på alle Mac-computere, iPads og iPhones, der er logget ind på din Apple-konto. Konflikter flettes felt for felt efter last-writer-wins-princippet, så redigering af det samme projekt på flere enheder samles pænt.",
+      },
+      {
+        question: "Hvor får jeg support?",
+        answer: "Bliv medlem af Screenshot Bro-Discord — det er den hurtigste måde at komme i kontakt med udvikleren, rapportere en fejl, spørge, hvordan noget virker, og se, hvad der kommer næste gang. Du kan også skrive en e-mail om private eller kontospecifikke forhold, og hjælpedokumentationen dækker alle dele af editoren.",
       },
     ],
     ui: {
@@ -4335,46 +3685,36 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Åbn menu",
       closeMenu: "Luk menu",
       seeInAction: "Se i praksis",
-      tryItNow: "Prøv nu",
-      seeDetails: "Se detaljer",
+      directDownload: "Foretrækker du direkte download? Hent DMG-filen til Mac",
       browseGuides: "Gennemse guides",
       submitApp: "Indsend app",
       contactDeveloper: "Kontakt udvikleren",
       backToTop: "Til toppen",
-      previousScreenshot: "Forrige skærmbillede",
-      nextScreenshot: "Næste skærmbillede",
-      goToScreenshot: (index) => `Gå til skærmbillede ${index}`,
-      slideCount: (index, total) => `${index} af ${total}`,
       availabilityNote: "macOS 15+ og iOS/iPadOS 18+ app | Swift & SwiftUI | Tilgængelig i App Store",
     },
     hero: {
       titleLead: "Opret & lokaliser",
       titleAccent: "App Store",
       titleRest: " skærmbilleder på få minutter",
-      descriptionLead: "Design én gang. Lokaliser til 70+ sprog, generer alle enhedsstørrelser og",
+      descriptionLead: "Design én gang. Lokaliser til 81 sprog, generer alle enhedsstørrelser og",
       descriptionStrong: "upload direkte til App Store Connect",
       descriptionTail: " uden at genopbygge skærmbilleder manuelt. Alt i en nativ app.",
     },
     sections: {
       showcases: { eyebrow: "Eksempler", title: "Se hvordan generatoren fungerer, før du installerer.", description: "Batch-import, upload til App Store Connect med ét klik, lag og enhedsrammer." },
-      problem: { eyebrow: "Hvorfor den findes", title: "Udgivelse af en ny funktion bør ikke betyde genopbygning af alle skærmbilleder.", description: "Screenshot Bro fjerner det gentagne arbejde ved hver appopdatering." },
       workflow: { eyebrow: "Arbejdsgang", title: "En kortere vej fra rå skærmbilleder til færdige butiksaktiver.", description: "Fokuseret på én opgave: skab flotte skærmbilleder uden at vedligeholde en masse designfiler." },
       features: { eyebrow: "Funktioner", title: "Alt hvad et skærmbilledeværktøj til App Store skal kunne.", description: "Fokus på hurtigt layout, ensartethed og problemfri eksport." },
-      screenshots: { eyebrow: "Skærmbilleder", title: "Se den i aktion.", description: "App Store-skærmbilleder fra Screenshot Bro selv." },
-      testimonials: { eyebrow: "Udviklere", title: "Hvad udviklere siger.", description: "Ægte feedback fra uafhængige udviklere." },
       blog: { eyebrow: "Fra bloggen", title: "Guides til bedre App Store-skærmbilleder.", description: "Tips og referencer til at forbedre konvertering." },
       faq: { eyebrow: "FAQ", title: "Ofte stillede spørgsmål før du prøver.", description: "Svar om kompatibilitet og eksport." }      ,
       appShowcase: { eyebrow: "Lavet med Screenshot Bro", title: "I godt selskab.", description: "Indie-apps, der allerede bruger Screenshot Bro." },
     },
     problem: {
       story: "Jeg byggede appen efter at have brugt for meget tid i Figma på at lave skærmbilleder om, hver gang tekst eller farver ændrede sig. Byg systemet én gang og lad appen klare resten.",
-      withoutLabel: "Uden Screenshot Bro",
-      withLabel: "Med Screenshot Bro",
     },
     download: {
       titleLine1: "Klar til at udgive",
       titleLine2: "bedre skærmbilleder?",
-      description: "Hent i App Store og oplev hele arbejdsgangen på Mac eller iPad.",
+      description: "Hent i App Store og oplev hele arbejdsgangen på Mac, iPad eller iPhone.",
     },
     footer: {
       note: "Bygget med SwiftUI. Designet til udviklere, der udgiver App Store-opdateringer.",
@@ -4387,35 +3727,57 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Esimerkit", href: "#showcases" },
       { label: "Ominaisuudet", href: "#features" },
-      { label: "Työnkulku", href: "#workflow" },
       { label: "UKK", href: "#faq" },
     ],
     benefits: [
       "Saatavilla nyt App Storessa Macille, iPadille ja iPhonelle",
-      "Kertaostos tai ilmainen versio — ei tilauspakkoa",
-      "Natiivi macOS-, iOS- ja iPadOS-sovellus iCloud-synkronoinnilla",
-      "Vie kaikkien laitteiden kokomallit yhdellä napsautuksella",
+      "Koko työnkulku: tuonti, suunnittelu, automaattinen käännös, lokalisointi, vienti",
+      "Lataa suoraan App Store Connectiin — ei enää vetämistä ja pudottamista selainvälilehdessä",
     ],
     faqs: [
       {
-        question: "Mikä erottaa Screenshot Bron verkkopohjaisista generaattoreista?",
-        answer: "Screenshot Bro on 100 % natiivi macOS-, iOS- ja iPadOS-sovellus. Tietosi pysyvät laitteellasi, kuukausimaksuja ei ole ja voit työskennellä offline-tilassa. Se on optimoitu nopeuteen ja tukee pikanäppäimiä, erätuontia ja suoraa latausta App Store Connectiin.",
+        question: "Onko Screenshot Bro ilmainen?",
+        answer: "Kyllä. Ilmainen versio ei ole aikarajoitettu, ja siinä voit pitää 1 projektin, jossa on enintään 3 riviä ja 5 mallia riviä kohden — täysi pääsy kaikkiin laitekehyksiin, muotoihin ja kieliin, vienti ilman vesileimaa, lataus App Store Connectiin ja Google Playhin sekä iCloud-synkronointi sisältyvät. Pro poistaa projektien, rivien ja mallien rajoitukset.",
       },
       {
-        question: "Voinko lokalisoida kuvakaappaukset useille kielille?",
-        answer: "Kyllä! Screenshot Bro on rakennettu lokalisointi edellä. Voit lisätä useita kieliä, korvata tekstit ja kuvat kielikohtaisesti ja viedä kaikki lokalisoidut versiot kerralla.",
+        question: "Miten tämä eroaa verkkopohjaisesta App Store -kuvakaappausgeneraattorista?",
+        answer: "Screenshot Bro on natiivi Mac-, iPad- ja iPhone-sovellus eikä selaintyökalu, joten projektit, kuvakaappaukset ja fontit pysyvät levyllä, eikä päivittäinen muokkaus vaadi tiliä tai internetyhteyttä. Renderöinti ja erävienti tapahtuvat omalla laitteistollasi palvelimen sijaan. Jos käytät Windowsia tai Linuxia, haluat tehdä yhteistyötä jaetussa selainistunnossa tai tarvitset vain yhden tai kaksi kuvaa, verkkopohjainen App Store -kuvakaappaustyökalu sopii paremmin — vaihtoehtosivu käsittelee nämä tapaukset.",
       },
       {
-        question: "Mitä laitekokoja tuetaan?",
-        answer: "Kaikkia virallisia App Store- ja Google Play -kokoja, mukaan lukien Dynamic Islandilla varustetut iPhonet, iPadit, MacBookit, Apple Watchit ja Android-puhelimet.",
+        question: "Mitä tarvitsen sen käyttämiseen?",
+        answer: "macOS 15 (Sequoia) tai uudempi Macissa, iPadOS 18 tai uudempi iPadissa tai iOS 18 tai uudempi iPhonessa. Päivittäinen muokkaus ei vaadi lisälaitetta, tiliä eikä internetyhteyttä.",
       },
       {
-        question: "Onko palvelussa kuukausitilausta?",
-        answer: "Ei. Screenshot Bro tarjoaa kattavan ilmaisen suunnitelman sekä edullisen kertaostoksen Pro-ominaisuuksien elinikäiseen käyttöön.",
+        question: "Poistuvatko tietoni laitteeltani?",
+        answer: "Työsi ei poistu. Projektit, kuvakaappaukset ja fontit pysyvät levyllä. Automaattinen käännös toimii Applen laitteella toimivan Translation-kehyksen kautta — ei API-avaimia, ei kolmannen osapuolen palvelimia. Valinnainen iCloud Drive -synkronointi käyttää henkilökohtaista iCloud-tiliäsi; emme ylläpidä välipalvelimia. Lähetettäviä tietoja ovat nimetön kaatumisraportti, kun jokin menee rikki, sekä nimettömät lukumäärät virstanpylväistä, kuten ”vienti valmistui”, jotta tiedämme, mitä parantaa — ei koskaan projektejasi, kuviasi tai kirjoittamaasi tekstiä.",
       },
       {
-        question: "Voinko ladata kuvat suoraan App Store Connectiin?",
-        answer: "Kyllä. App Store Connect -rajapinta-avaimien avulla voit ladata viedyt kuvakaappaukset suoraan sovellusversioihisi avaamatta selainta.",
+        question: "Miten lokalisointi toimii?",
+        answer: "Valitse 81 kieliesiasetuksesta tai määritä oma koodisi. Automaattinen käännös täyttää puuttuvat tekstit laitteella. Käännökset tallentuvat kielikohtaisina tekstin ohituksina, joten asettelu, värit ja kuvat pysyvät yhteisinä kaikille kielille — suunnittele kerran, julkaise kaikilla kielillä. Viennit järjestetään kielikansioihin, jotka App Store Connect voi ottaa suoraan käyttöön.",
+      },
+      {
+        question: "Voinko tehdä myös Google Play -kuvakaappauksia?",
+        answer: "Kyllä. Android-puhelimen ja -tabletin rivit renderöidään iPhonen, iPadin ja Macin rinnalla samassa projektissa. Jokainen laiteluokka on valmiiksi asetettu niihin pikselimittoihin, jotka kyseinen kauppa hyväksyy.",
+      },
+      {
+        question: "Voinko pudottaa simulaattorin ja laitteiden kuvakaappaukset suoraan sovellukseen?",
+        answer: "Kyllä. Pudota kansiollinen kuvakaappauksia, niin Screenshot Bro ohjaa jokaisen oikealle riville sen pikselikoon perusteella — iPhone-kuvat iPhone-riville, iPad-kuvat iPad-riville ja Android-kuvat Android-riville.",
+      },
+      {
+        question: "Voinko ladata App Store Connectiin suoraan sovelluksesta?",
+        answer: "Kyllä. Määritä App Store Connect -API-avaimesi kerran (Issuer ID, Key ID ja .p8). Screenshot Bro tunnistaa automaattisesti oikean näyttötyypin jokaiselle riville, täsmäyttää projektisi kielet App Store Connectin lokalisointeihin ja korvaa olemassa olevat kuvakaappaukset yhdellä kertaa — ei vetämistä ja pudottamista selaimessa.",
+      },
+      {
+        question: "Voiko tekoälyagentti tehdä kuvakaappaukseni?",
+        answer: "Kyllä. Screenshot Bro tarjoaa Macilla valinnaisen paikallisen MCP-palvelimen, joten avustaja, kuten Claude Code, Claude Desktop tai Cursor, voi luoda projekteja, asetella rivejä ja muotoja, tuoda kuvakaappauksia, kääntää tekstejä, renderöidä esikatseluja, joita se voi oikeasti katsoa, viedä ja synkronoida valmiin sarjan App Store Connectiin. Palvelin kuuntelee vain osoitteessa 127.0.0.1, jokainen pyyntö vaatii Asetuksista kopioitavan käyttötunnisteen, ja jokaisen agentin tekemän muutoksen voi kumota ⌘Z:lla.",
+      },
+      {
+        question: "Synkronoituuko se laitteiden välillä?",
+        answer: "Kyllä — valinnainen iCloud Drive -synkronointi pitää projektit, kuvakaappaukset ja fontit saatavilla jokaisella Macilla, iPadilla ja iPhonella, jolla on kirjauduttu Apple-tilillesi. Ristiriidat yhdistetään kenttä kerrallaan last-writer-wins-periaatteella, joten saman projektin muokkaus usealla laitteella yhdistyy siististi.",
+      },
+      {
+        question: "Mistä saan tukea?",
+        answer: "Liity Screenshot Bro -yhteisöön Discordissa — se on nopein tapa tavoittaa tekijä, ilmoittaa bugista, kysyä, miten jokin toimii, ja nähdä, mitä on tulossa seuraavaksi. Voit myös lähettää sähköpostia yksityisissä tai tiliin liittyvissä asioissa, ja ohjedokumentaatio kattaa editorin jokaisen osan.",
       },
     ],
     ui: {
@@ -4440,46 +3802,36 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Avaa valikko",
       closeMenu: "Sulje valikko",
       seeInAction: "Katso toiminnassa",
-      tryItNow: "Kokeile nyt",
-      seeDetails: "Katso tiedot",
+      directDownload: "Haluatko ladata suoraan? Hae Macin DMG-tiedosto",
       browseGuides: "Selaa oppaita",
       submitApp: "Lähetä sovellus",
       contactDeveloper: "Ota yhteyttä kehittäjään",
       backToTop: "Takaisin alkuun",
-      previousScreenshot: "Edellinen kuvakaappaus",
-      nextScreenshot: "Seuraava kuvakaappaus",
-      goToScreenshot: (index) => `Siirry kuvakaappaukseen ${index}`,
-      slideCount: (index, total) => `${index} / ${total}`,
       availabilityNote: "macOS 15+ ja iOS/iPadOS 18+ sovellus | Swift & SwiftUI | Saatavilla App Storessa",
     },
     hero: {
       titleLead: "Luo & lokalisoi",
       titleAccent: "App Store",
       titleRest: " -kuvakaappaukset minuuteissa",
-      descriptionLead: "Suunnittele kerran. Lokalisoi yli 70 kielelle, luo kaikki laitekoot ja",
+      descriptionLead: "Suunnittele kerran. Lokalisoi 81 kielelle, luo kaikki laitekoot ja",
       descriptionStrong: "lataa suoraan App Store Connectiin",
       descriptionTail: " rakentamatta kuvakaappauksia uudelleen käsin. Kaikki yhdessä natiivisovelluksessa.",
     },
     sections: {
       showcases: { eyebrow: "Esimerkit", title: "Katso miten generaattori toimii ennen asennusta.", description: "Erätuonti, lataus App Store Connectiin yhdellä napsautuksella, tasot ja laitekehykset." },
-      problem: { eyebrow: "Miksi se on luotu", title: "Uuden ominaisuuden julkaisun ei pitäisi tarkoittaa kaikkien kuvakaappausten tekemistä alusta.", description: "Screenshot Bro poistaa toistuvan työn jokaisesta sovelluspäivityksestä." },
       workflow: { eyebrow: "Työnkulku", title: "Lyhyempi tie raakakuvista valmiisiin sovelluskaupan materiaaleihin.", description: "Keskittynyt yhteen tehtävään: luo kauniita kuvakaappauksia ilman raskasta suunnittelutiedostojen ylläpitoa." },
       features: { eyebrow: "Ominaisuudet", title: "Kaikki mitä App Store -kuvakaappaustyökalulta tarvitaan.", description: "Painopisteenä nopea asettelu, yhtenäisyys ja vaivaton vienti." },
-      screenshots: { eyebrow: "Kuvakaappaukset", title: "Katso se toiminnassa.", description: "Screenshot Bron omat App Store -kuvakaappaukset." },
-      testimonials: { eyebrow: "Kehittäjät", title: "Mitä kehittäjät sanovat.", description: "Aitoa palautetta itsenäisiltä kehittäjiltä." }      ,
       blog: { eyebrow: "Blogista", title: "Oppaat parempien App Store -kuvakaappausten tekemiseen.", description: "Vinkkejä ja referenssejä konversion parantamiseen." },
       faq: { eyebrow: "UKK", title: "Usein kysytyt kysymykset ennen kokeilua.", description: "Vastauksia yhteensopivuudesta ja viennistä." },
       appShowcase: { eyebrow: "Luotu Screenshot Brolla", title: "Hyvässä seurassa.", description: "Indie-sovellukset, jotka käyttävät jo Screenshot Brota." },
     },
     problem: {
       story: "Rakensin sovelluksen käytettyäni liikaa aikaa Figmassa kuvakaappausten tekemiseen alusta aina, kun teksti tai värit muuttuivat. Rakenna järjestelmä kerran ja anna sovelluksen hoitaa loput.",
-      withoutLabel: "Ilman Screenshot Brota",
-      withLabel: "Screenshot Bron kanssa",
     },
     download: {
       titleLine1: "Valmiina julkaisemaan",
       titleLine2: "parempia kuvakaappauksia?",
-      description: "Lataa App Storesta ja koe koko työnkulku Macilla tai iPadilla.",
+      description: "Lataa App Storesta ja koe koko työnkulku Macilla, iPadilla tai iPhonella.",
     },
     footer: {
       note: "Rakennettu SwiftUI:lla. Suunniteltu kehittäjille, jotka julkaisevat App Store -päivityksiä.",
@@ -4492,35 +3844,57 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Eksempler", href: "#showcases" },
       { label: "Funksjoner", href: "#features" },
-      { label: "Arbeidsflyt", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
       "Tilgjengelig nå i App Store for Mac, iPad og iPhone",
-      "Engangskjøp eller gratisplan — intet abonnement kreves",
-      "Nativ macOS-, iOS- og iPadOS-app med iCloud-synkronisering",
-      "Eksporter forhåndsinnstillinger for alle enhetsstørrelser med ett klikk",
+      "Hele arbeidsflyten: importer, design, oversett automatisk, lokaliser, eksporter",
+      "Last opp direkte til App Store Connect — slutt på dra-og-slipp i en nettleserfane",
     ],
     faqs: [
       {
-        question: "Hva gjør Screenshot Bro annerledes enn nettbaserte generatorer?",
-        answer: "Screenshot Bro er en 100 % nativ macOS-, iOS- og iPadOS-app. Dine data forblir på enheten din, det er ingen månedlige abonnementer, og du kan jobbe offline. Den er optimalisert for hastighet og støtter hurtigtaster, batch-import og direkte opplasting til App Store Connect.",
+        question: "Er Screenshot Bro gratis?",
+        answer: "Ja. Gratisplanen er ikke tidsbegrenset og lar deg ha 1 prosjekt med opptil 3 rader og 5 maler per rad — med full tilgang til alle enhetsrammer, former og språk, eksport uten vannmerke, opplasting til App Store Connect og Google Play og iCloud-synkronisering inkludert. Pro fjerner begrensningene for prosjekter, rader og maler.",
       },
       {
-        question: "Kan jeg lokalisere skjermbilder til flere språk?",
-        answer: "Ja! Screenshot Bro er bygget med lokalisering i fokus. Du kan legge til flere språk, overstyre tekst og bilder per språk og eksportere alle lokaliserte varianter samtidig.",
+        question: "Hvordan skiller dette seg fra en nettbasert generator for App Store-skjermbilder?",
+        answer: "Screenshot Bro er en nativ app for Mac, iPad og iPhone, ikke et nettleserverktøy, så prosjekter, skjermbilder og fonter blir liggende på disken, og daglig redigering krever verken konto eller internettforbindelse. Rendering og batch-eksport kjører på din egen maskinvare i stedet for på en server. Bruker du Windows eller Linux, vil samarbeide i en delt nettleserøkt eller trenger bare ett eller to bilder, passer et nettbasert verktøy for App Store-skjermbilder bedre — siden med alternativer dekker disse tilfellene.",
       },
       {
-        question: "Hvilke enhetsstørrelser støttes?",
-        answer: "Alle offisielle størrelser for App Store og Google Play, inkludert iPhoner med Dynamic Island, iPads, MacBooks, Apple Watch og Android-telefoner.",
+        question: "Hva trenger jeg for å kjøre den?",
+        answer: "macOS 15 (Sequoia) eller nyere på Mac, iPadOS 18 eller nyere på iPad, eller iOS 18 eller nyere på iPhone. Ingen ekstra enhet, ingen konto og ingen internettforbindelse kreves for daglig redigering.",
       },
       {
-        question: "Er det et abonnement?",
-        answer: "Nei. Screenshot Bro tilbyr en raus gratisplan og et enkelt engangskjøp for livstidstilgang til Pro-funksjoner.",
+        question: "Forlater dataene mine enheten?",
+        answer: "Arbeidet ditt gjør ikke det. Prosjekter, skjermbilder og fonter blir liggende på disken. Automatisk oversettelse kjører gjennom Apples Translation-rammeverk på enheten — ingen API-nøkler, ingen tredjepartsservere. Valgfri synkronisering via iCloud Drive bruker din personlige iCloud-konto; vi drifter ingen mellomliggende servere. Det som faktisk sendes, er en anonym krasjrapport når noe går galt, pluss anonyme tellinger av milepæler som «en eksport ble fullført», slik at vi vet hva vi bør forbedre — aldri prosjektene, bildene eller teksten du skriver.",
       },
       {
-        question: "Kan jeg laste opp direkte til App Store Connect?",
-        answer: "Ja. Med App Store Connect API-nøkler kan du laste opp eksporterte skjermbilder direkte til app-versjonene dine uten å åpne nettleseren.",
+        question: "Hvordan fungerer lokalisering?",
+        answer: "Velg blant 81 språkforhåndsinnstillinger, eller definer din egen kode. Automatisk oversettelse fyller inn manglende tekst på enheten. Oversettelser lagres som tekstoverstyringer per språk, så layout, farger og bilder deles på tvers av alle språk — design én gang, publiser på alle språk. Eksporter organiseres i språkmapper som App Store Connect kan bruke direkte.",
+      },
+      {
+        question: "Kan jeg lage skjermbilder for Google Play også?",
+        answer: "Ja. Rader for Android-telefoner og -nettbrett rendres side om side med iPhone, iPad og Mac i samme prosjekt. Hver enhetskategori er forhåndsinnstilt til pikseldimensjonene den aktuelle butikken godtar.",
+      },
+      {
+        question: "Kan jeg slippe skjermbilder fra simulator og enheter rett inn?",
+        answer: "Ja. Slipp en mappe med skjermbilder, så sender Screenshot Bro hvert bilde til riktig rad basert på pikselstørrelsen — iPhone-bilder til iPhone-raden, iPad til iPad, Android til Android.",
+      },
+      {
+        question: "Kan jeg laste opp til App Store Connect fra appen?",
+        answer: "Ja. Konfigurer App Store Connect API-nøkkelen din én gang (Issuer ID, Key ID og .p8). Screenshot Bro gjenkjenner automatisk riktig skjermtype for hver rad, kobler prosjektspråkene dine til lokaliseringene i App Store Connect og erstatter eksisterende skjermbilder i én omgang — ingen dra-og-slipp i nettleseren.",
+      },
+      {
+        question: "Kan en AI-agent lage skjermbildene mine?",
+        answer: "Ja. Screenshot Bro kjører en valgfri lokal MCP-server på Mac, så en assistent som Claude Code, Claude Desktop eller Cursor kan opprette prosjekter, sette opp rader og former, importere skjermbilder, oversette tekst, rendre forhåndsvisninger den faktisk kan se på, eksportere og synkronisere et ferdig sett til App Store Connect. Serveren lytter bare på 127.0.0.1, hver forespørsel krever et tilgangstoken du kopierer fra Innstillinger, og alle endringer agenten gjør, kan angres med ⌘Z.",
+      },
+      {
+        question: "Synkroniseres den mellom enheter?",
+        answer: "Ja — valgfri synkronisering via iCloud Drive holder prosjekter, skjermbilder og fonter tilgjengelige på alle Mac-er, iPader og iPhoner som er logget på Apple-kontoen din. Konflikter slås sammen felt for felt etter last-writer-wins-prinsippet, så redigering av samme prosjekt på flere enheter går rent sammen.",
+      },
+      {
+        question: "Hvor får jeg støtte?",
+        answer: "Bli med i Screenshot Bro-Discorden — det er den raskeste måten å nå utvikleren på, rapportere en feil, spørre hvordan noe fungerer og se hva som kommer neste gang. Du kan også sende e-post om private eller kontospesifikke saker, og hjelpedokumentasjonen dekker alle deler av editoren.",
       },
     ],
     ui: {
@@ -4545,46 +3919,36 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Åpne meny",
       closeMenu: "Lukk meny",
       seeInAction: "Se i praksis",
-      tryItNow: "Prøv nå",
-      seeDetails: "Se detaljer",
+      directDownload: "Foretrekker du direkte nedlasting? Last ned DMG-filen for Mac",
       browseGuides: "Bla gjennom guider",
       submitApp: "Send inn app",
       contactDeveloper: "Kontakt utvikleren",
       backToTop: "Til toppen",
-      previousScreenshot: "Forrige skjermbilde",
-      nextScreenshot: "Neste skjermbilde",
-      goToScreenshot: (index) => `Gå til skjermbilde ${index}`,
-      slideCount: (index, total) => `${index} av ${total}`,
       availabilityNote: "macOS 15+ og iOS/iPadOS 18+ app | Swift & SwiftUI | Tilgjengelig i App Store",
     },
     hero: {
       titleLead: "Opprett & lokaliser",
       titleAccent: "App Store",
       titleRest: " skjermbilder på minutter",
-      descriptionLead: "Design én gang. Lokaliser til 70+ språk, generer alle enhetsstørrelser og",
+      descriptionLead: "Design én gang. Lokaliser til 81 språk, generer alle enhetsstørrelser og",
       descriptionStrong: "last opp direkte til App Store Connect",
       descriptionTail: " uten å bygge om skjermbilder manuelt. Alt i en nativ app.",
     },
     sections: {
       showcases: { eyebrow: "Eksempler", title: "Se hvordan generatoren fungerer før du installerer.", description: "Batch-import, opplasting til App Store Connect med ett klikk, lag og enhetsrammer." },
-      problem: { eyebrow: "Hvorfor den finnes", title: "Å lansere en ny funksjon bør ikke bety å bygge om alle skjermbilder.", description: "Screenshot Bro fjerner det repetitive arbeidet ved hver appoppdatering." },
       workflow: { eyebrow: "Arbeidsflyt", title: "En kortere vei fra rå skjermbilder til ferdige butikkressurser.", description: "Fokusert på én oppgave: lag flotte skjermbilder uten å vedlikeholde en haug med designfiler." },
       features: { eyebrow: "Funksjoner", title: "Alt et skjermbildeverktøy for App Store trenger å gjøre.", description: "Fokus på raskt oppsett, konsistens og sømløs eksport." },
-      screenshots: { eyebrow: "Skjermbilder", title: "Se den i aksjon.", description: "App Store-skjermbilder fra Screenshot Bro selv." },
-      testimonials: { eyebrow: "Utviklere", title: "Hva utviklere sier.", description: "Ekte tilbakemeldinger fra uavhengige utviklere." },
       blog: { eyebrow: "Fra bloggen", title: "Guider for å lage bedre App Store-skjermbilder.", description: "Tips og referenser for å øke konverteringen." },
       faq: { eyebrow: "FAQ", title: "Ofte stilte spørsmål før du prøver.", description: "Svar om kompatibilitet og eksport." },
       appShowcase: { eyebrow: "Laget med Screenshot Bro", title: "I godt selskap.", description: "Indie-apper som allerede bruker Screenshot Bro." },
     },
     problem: {
       story: "Jeg bygde appen etter å ha brukt for mye tid i Figma på å gjøre om skjermbilder hver gang tekst eller farger ble endret. Bygg systemet én gang og la appen gjøre resten.",
-      withoutLabel: "Uten Screenshot Bro",
-      withLabel: "Med Screenshot Bro",
     },
     download: {
       titleLine1: "Klar til å publisere",
       titleLine2: "bedre skjermbilder?",
-      description: "Hent i App Store og opplev hele arbeidsflyten på Mac eller iPad.",
+      description: "Hent i App Store og opplev hele arbeidsflyten på Mac, iPad eller iPhone.",
     },
     footer: {
       note: "Bygget med SwiftUI. Designet for utviklere som publiserer App Store-oppdateringer.",
@@ -4597,35 +3961,57 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Příklady", href: "#showcases" },
       { label: "Schopnosti", href: "#features" },
-      { label: "Postup", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Nyní k dispozici v App Store pro Mac, iPad a iPhone",
-      "Jednorázový nákup nebo bezplatný plán — žádné předplatné",
-      "Nativní aplikace pro macOS, iOS a iPadOS se synchronizací iCloud",
-      "Export všech velikostí zařízení jedním kliknutím",
+      "Dostupné nyní v App Store pro Mac, iPad a iPhone",
+      "Celý pracovní postup: import, návrh, automatický překlad, lokalizace, export",
+      "Nahrávání přímo do App Store Connect — konec přetahování v záložce prohlížeče",
     ],
     faqs: [
       {
-        question: "V čem je Screenshot Bro jiný než webové generátory?",
-        answer: "Screenshot Bro je 100% nativní aplikace pro macOS, iOS a iPadOS. Vaše data zůstávají na vašem zařízení, neplatíte žádné měsíční poplatky a můžete pracovat offline. Je optimalizována pro rychlost a podporuje klávesové zkratky, dávkový import a přímé nahrávání do App Store Connect.",
+        question: "Je Screenshot Bro zdarma?",
+        answer: "Ano. Bezplatný plán není časově omezený a umožňuje mít 1 projekt s až 3 řádky a 5 šablonami na řádek — s plným přístupem ke všem rámečkům zařízení, tvarům a jazykům, exporty bez vodoznaku, nahráváním do App Store Connect a Google Play a synchronizací přes iCloud. Pro ruší limity projektů, řádků a šablon.",
       },
       {
-        question: "Mohu snímky lokalizovat do více jazyků?",
-        answer: "Ano! Screenshot Bro je navržen s důrazem na lokalizaci. Můžete přidávat více jazyků, přepisovat texty i obrázky pro každý jazyk a exportovat všechny jazykové varianty najednou.",
+        question: "Čím se liší od webového generátoru snímků pro App Store?",
+        answer: "Screenshot Bro je nativní aplikace pro Mac, iPad a iPhone, ne nástroj v prohlížeči, takže projekty, snímky a písma zůstávají na disku a běžná práce nevyžaduje účet ani připojení k internetu. Renderování a dávkový export běží na vašem vlastním hardwaru místo na serveru. Pokud používáte Windows nebo Linux, chcete spolupracovat ve sdílené relaci prohlížeče nebo potřebujete jen jeden či dva obrázky, bude pro vás vhodnější webový nástroj na snímky pro App Store — stránka s alternativami tyto případy popisuje.",
       },
       {
-        question: "Jaké velikosti zařízení jsou podporovány?",
-        answer: "Všechny oficiální rozměry pro App Store i Google Play, včetně iPhonů s Dynamic Island, iPadů, MacBooků, Apple Watch a telefonů Android.",
+        question: "Co potřebuji ke spuštění?",
+        answer: "macOS 15 (Sequoia) nebo novější na Macu, iPadOS 18 nebo novější na iPadu, nebo iOS 18 nebo novější na iPhonu. Pro běžnou práci není potřeba žádné doprovodné zařízení, účet ani připojení k internetu.",
       },
       {
-        question: "Vyžaduje aplikace předplatné?",
-        answer: "Ne. Screenshot Bro nabízí štědrý bezplatný tarif a jednoduchý jednorázový nákup pro doživotní přístup k funkcím Pro.",
+        question: "Opouštějí moje data zařízení?",
+        answer: "Vaše práce ne. Projekty, snímky a písma zůstávají na disku. Automatický překlad běží přes framework Translation od Applu přímo v zařízení — žádné API klíče, žádné servery třetích stran. Volitelná synchronizace přes iCloud Drive používá váš osobní účet iCloud; neprovozujeme žádné zprostředkující servery. Odesílá se jen anonymní zpráva o pádu, když se něco pokazí, a anonymní počty milníků jako „export dokončen“, abychom věděli, co zlepšit — nikdy vaše projekty, obrázky ani texty, které píšete.",
       },
       {
-        question: "Mohu nahrávat přímo do App Store Connect?",
-        answer: "Ano. Pomocí API klíčů App Store Connect můžete exportované snímky nahrávat přímo do verzí svých aplikací bez nutnosti otevírat webový prohlížeč.",
+        question: "Jak funguje lokalizace?",
+        answer: "Vyberte si z 81 jazykových předvoleb nebo definujte vlastní kód. Automatický překlad doplní chybějící texty přímo v zařízení. Překlady se ukládají jako textové přepisy pro jednotlivé jazyky, takže rozvržení, barvy a obrázky zůstávají sdílené napříč všemi jazyky — navrhněte jednou, vydejte ve všech jazycích. Exporty se třídí do jazykových složek, které App Store Connect přímo převezme.",
+      },
+      {
+        question: "Mohu vytvářet i snímky pro Google Play?",
+        answer: "Ano. Řádky pro telefony a tablety s Androidem se renderují vedle iPhonu, iPadu a Macu ve stejném projektu. Každá kategorie zařízení je předem nastavená na pixelové rozměry, které příslušný obchod přijímá.",
+      },
+      {
+        question: "Mohu snímky ze simulátoru a zařízení rovnou přetáhnout do aplikace?",
+        answer: "Ano. Přetáhněte složku se snímky a Screenshot Bro přiřadí každý z nich do správného řádku podle pixelové velikosti — snímky z iPhonu do řádku iPhone, z iPadu do iPadu, z Androidu do Androidu.",
+      },
+      {
+        question: "Mohu nahrávat do App Store Connect přímo z aplikace?",
+        answer: "Ano. Jednou nastavte svůj API klíč k App Store Connect (Issuer ID, Key ID a .p8). Screenshot Bro automaticky rozpozná správný typ displeje pro každý řádek, spáruje jazyky projektu s lokalizacemi v App Store Connect a nahradí stávající snímky v jediném průchodu — žádné přetahování v prohlížeči.",
+      },
+      {
+        question: "Může moje snímky vytvořit AI agent?",
+        answer: "Ano. Screenshot Bro na Macu provozuje volitelný lokální MCP server, takže asistent jako Claude Code, Claude Desktop nebo Cursor může vytvářet projekty, rozvrhovat řádky a tvary, importovat snímky, překládat texty, renderovat náhledy, které si skutečně může prohlédnout, exportovat a synchronizovat hotovou sadu do App Store Connect. Server naslouchá pouze na 127.0.0.1, každý požadavek vyžaduje přístupový token, který zkopírujete z Nastavení, a každou změnu, kterou agent provede, lze vrátit pomocí ⌘Z.",
+      },
+      {
+        question: "Synchronizuje se mezi zařízeními?",
+        answer: "Ano — volitelná synchronizace přes iCloud Drive udržuje projekty, snímky a písma dostupné na každém Macu, iPadu a iPhonu přihlášeném k vašemu Apple účtu. Konflikty se slučují pole po poli podle principu last-writer-wins, takže úpravy stejného projektu na více zařízeních se čistě sjednotí.",
+      },
+      {
+        question: "Kde najdu podporu?",
+        answer: "Připojte se k Discordu Screenshot Bro — je to nejrychlejší způsob, jak se spojit s autorem, nahlásit chybu, zeptat se, jak něco funguje, a podívat se, co se chystá. Pro soukromé záležitosti nebo věci týkající se účtu můžete napsat i e-mail a nápověda pokrývá každou část editoru.",
       },
     ],
     ui: {
@@ -4650,46 +4036,36 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Otevřít nabídku",
       closeMenu: "Zavřít nabídku",
       seeInAction: "Zobrazit v praxi",
-      tryItNow: "Vyzkoušet hned",
-      seeDetails: "Zobrazit podrobnosti",
+      directDownload: "Chcete raději stahovat přímo? Stáhněte si DMG pro Mac",
       browseGuides: "Procházet průvodce",
       submitApp: "Odeslat aplikaci",
       contactDeveloper: "Kontaktovat vývojáře",
       backToTop: "Zpět nahoru",
-      previousScreenshot: "Předchozí snímek",
-      nextScreenshot: "Další snímek",
-      goToScreenshot: (index) => `Přejít na snímek ${index}`,
-      slideCount: (index, total) => `${index} z ${total}`,
       availabilityNote: "Aplikace pro macOS 15+ a iOS/iPadOS 18+ | Swift & SwiftUI | Dostupné v App Store",
     },
     hero: {
       titleLead: "Vytvářejte & lokalizujte",
       titleAccent: "App Store",
       titleRest: " snímky během několika minut",
-      descriptionLead: "Navrhněte jednou. Lokalizujte do více než 70 jazyků, generujte všechny velikosti zařízení a",
+      descriptionLead: "Navrhněte jednou. Lokalizujte do 81 jazyků, generujte všechny velikosti zařízení a",
       descriptionStrong: "nahrávejte přímo do App Store Connect",
       descriptionTail: " bez nutnosti ručně předělávat snímky. Vše v nativní aplikaci.",
     },
     sections: {
       showcases: { eyebrow: "Příklady", title: "Podívejte se, jak generátor funguje, ještě před instalací.", description: "Dávkový import, nahrání do App Store Connect jedním kliknutím, vrstvy a rámečky zařízení." },
-      problem: { eyebrow: "Proč vznikl", title: "Vydání nové funkce by nemělo znamenat předělávání všech snímků obrazovky.", description: "Screenshot Bro odstraňuje opakující se práci při každé aktualizaci aplikace." },
       workflow: { eyebrow: "Pracovní postup", title: "Kratší cesta od hrubých snímků k hotovým materiálům pro obchod.", description: "Zaměřeno na jeden cíl: vytvořit skvělé snímky bez nutnosti spravovat hromady návrhových souborů." },
       features: { eyebrow: "Schopnosti", title: "Vše, co nástroj pro snímky App Store potřebuje.", description: "Důraz na rychlé rozvržení, konzistenci a snadný export." },
-      screenshots: { eyebrow: "Snímky obrazovky", title: "Podívejte se na něj v akci.", description: "Snímky pro App Store ze samotné aplikace Screenshot Bro." },
-      testimonials: { eyebrow: "Vývojáři", title: "Co říkají vývojáři.", description: "Skutečná zpětná vazba od nezávislých tvůrců." },
       blog: { eyebrow: "Z blogu", title: "Průvodci pro tvorbu lepších snímků obrazovky pro App Store.", description: "Tipy a doporučení pro zvýšení konverze." },
       faq: { eyebrow: "FAQ", title: "Často kladené otázky před vyzkoušením.", description: "Odpovědi ohledně kompatibility a exportu." },
       appShowcase: { eyebrow: "Vytvořeno v Screenshot Bro", title: "V dobré společnosti.", description: "Indie aplikace, které již používají Screenshot Bro." },
     },
     problem: {
       story: "Aplikaci jsem vytvořil poté, co jsem strávil příliš mnoho času ve Figmě předěláváním snímků při každé změně textu nebo barev. Nastavte systém jednou a nechte aplikaci udělat zbytek.",
-      withoutLabel: "Bez Screenshot Bro",
-      withLabel: "Se Screenshot Bro",
     },
     download: {
       titleLine1: "Připraveni publikovat",
       titleLine2: "lepší snímky obrazovky?",
-      description: "Stáhněte si aplikaci v App Store a vyzkoušejte celý pracovní postup na Macu nebo iPadu.",
+      description: "Stáhněte si aplikaci v App Store a vyzkoušejte celý pracovní postup na Macu, iPadu nebo iPhonu.",
     },
     footer: {
       note: "Vytvořeno v SwiftUI. Navrženo pro vývojáře, kteří vydávají aktualizace v App Store.",
@@ -4702,35 +4078,57 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Exemple", href: "#showcases" },
       { label: "Capabilități", href: "#features" },
-      { label: "Flux", href: "#workflow" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
       "Disponibilă acum în App Store pentru Mac, iPad și iPhone",
-      "Achiziție unică sau plan gratuit — fără abonament obligatoriu",
-      "Aplicație nativă macOS, iOS și iPadOS cu sincronizare iCloud",
-      "Exportă șabloane pentru toate dimensiunile de dispozitive cu un singur clic",
+      "Flux de lucru complet: import, design, traducere automată, localizare, export",
+      "Încărcare direct în App Store Connect — gata cu drag-and-drop într-o filă de browser",
     ],
     faqs: [
       {
-        question: "Prin ce se deosebește Screenshot Bro de generatoarele web?",
-        answer: "Screenshot Bro este o aplicație 100% nativă pentru macOS, iOS și iPadOS. Datele tale rămân pe dispozitiv, nu există abonamente lunare și poți lucra offline. Este optimizată pentru viteză și suportă comenzi rapide, import în masă și încărcare directă în App Store Connect.",
+        question: "Screenshot Bro este gratuit?",
+        answer: "Da. Planul gratuit nu are limită de timp și îți permite să păstrezi 1 proiect cu până la 3 rânduri și 5 șabloane pe rând — cu acces complet la toate ramele de dispozitive, formele și limbile, exporturi fără filigran, încărcare în App Store Connect și Google Play și sincronizare iCloud incluse. Pro elimină limitele de proiecte, rânduri și șabloane.",
       },
       {
-        question: "Pot localiza capturile de ecran în mai multe limbi?",
-        answer: "Da! Screenshot Bro este construit cu accent pe localizare. Poți adăuga multiple limbi, înlocui texte și imagini per limbă și exporta toate variantele localizate dintr-o dată.",
+        question: "Prin ce diferă de un generator web de capturi de ecran pentru App Store?",
+        answer: "Screenshot Bro este o aplicație nativă pentru Mac, iPad și iPhone, nu un instrument în browser, așa că proiectele, capturile și fonturile rămân pe disc, iar editarea de zi cu zi nu necesită cont sau conexiune la internet. Randarea și exportul în masă rulează pe propriul tău hardware, nu pe un server. Dacă folosești Windows sau Linux, vrei să colaborezi într-o sesiune de browser partajată sau ai nevoie doar de una sau două imagini, un instrument web pentru capturi App Store ți se potrivește mai bine — pagina de alternative acoperă aceste situații.",
       },
       {
-        question: "Ce dimensiuni de dispozitive sunt acceptate?",
-        answer: "Toate dimensiunile oficiale pentru App Store și Google Play, inclusiv iPhone-uri cu Dynamic Island, iPad-uri, MacBook-uri, Apple Watch și telefoane Android.",
+        question: "De ce am nevoie ca să o rulez?",
+        answer: "macOS 15 (Sequoia) sau mai nou pe Mac, iPadOS 18 sau mai nou pe iPad ori iOS 18 sau mai nou pe iPhone. Pentru editarea de zi cu zi nu ai nevoie de un dispozitiv suplimentar, de cont sau de conexiune la internet.",
       },
       {
-        question: "Există vreun abonament?",
-        answer: "Nu. Screenshot Bro oferă un plan gratuit generos și o achiziție unică simplă pentru acces pe viață la funcțiile Pro.",
+        question: "Datele mele părăsesc dispozitivul?",
+        answer: "Munca ta, nu. Proiectele, capturile și fonturile rămân pe disc. Traducerea automată rulează prin framework-ul Translation de la Apple, direct pe dispozitiv — fără chei API, fără servere terțe. Sincronizarea opțională prin iCloud Drive folosește contul tău personal iCloud; nu operăm niciun server intermediar. Ce se trimite totuși este un raport anonim de eroare atunci când ceva se strică, plus numărători anonime ale unor momente-cheie precum „un export s-a finalizat”, ca să știm ce să îmbunătățim — niciodată proiectele, imaginile sau textele pe care le scrii.",
       },
       {
-        question: "Pot încărca direct în App Store Connect?",
-        answer: "Da. Folosind cheile API App Store Connect, poți încărca capturile exportate direct în versiunile aplicațiilor tale fără a deschide browserul.",
+        question: "Cum funcționează localizarea?",
+        answer: "Alege dintre 81 de presetări de limbă sau definește-ți propriul cod. Traducerea automată completează textele lipsă pe dispozitiv. Traducerile se salvează ca suprascrieri de text pentru fiecare limbă, astfel încât aspectul, culorile și imaginile rămân comune tuturor limbilor — proiectezi o dată, publici în toate limbile. Exporturile sunt organizate în foldere pe limbi, pe care App Store Connect le poate prelua direct.",
+      },
+      {
+        question: "Pot face și capturi de ecran pentru Google Play?",
+        answer: "Da. Rândurile pentru telefoane și tablete Android se randează alături de iPhone, iPad și Mac în același proiect. Fiecare categorie de dispozitive vine presetată la dimensiunile în pixeli acceptate de magazinul respectiv.",
+      },
+      {
+        question: "Pot plasa direct capturile din simulator și de pe dispozitive?",
+        answer: "Da. Plasează un folder cu capturi, iar Screenshot Bro trimite fiecare captură în rândul potrivit după dimensiunea în pixeli — capturile de iPhone în rândul de iPhone, cele de iPad la iPad, cele de Android la Android.",
+      },
+      {
+        question: "Pot încărca în App Store Connect direct din aplicație?",
+        answer: "Da. Configurează o singură dată cheia API App Store Connect (Issuer ID, Key ID și .p8). Screenshot Bro detectează automat tipul de afișaj potrivit pentru fiecare rând, potrivește limbile proiectului cu localizările din App Store Connect și înlocuiește capturile existente dintr-o singură trecere — fără drag-and-drop în browser.",
+      },
+      {
+        question: "Poate un agent AI să-mi creeze capturile?",
+        answer: "Da. Screenshot Bro găzduiește pe Mac un server MCP local opțional, astfel încât un asistent precum Claude Code, Claude Desktop sau Cursor poate crea proiecte, aranja rânduri și forme, importa capturi, traduce textele, randa previzualizări pe care le poate vedea efectiv, exporta și sincroniza un set finalizat în App Store Connect. Serverul ascultă doar pe 127.0.0.1, fiecare cerere necesită un token de acces pe care îl copiezi din Setări, iar orice modificare făcută de agent poate fi anulată cu ⌘Z.",
+      },
+      {
+        question: "Se sincronizează între dispozitive?",
+        answer: "Da — sincronizarea opțională prin iCloud Drive păstrează proiectele, capturile și fonturile disponibile pe fiecare Mac, iPad și iPhone conectat la contul tău Apple. Conflictele se îmbină câmp cu câmp, după principiul last-writer-wins, așa că editarea aceluiași proiect pe mai multe dispozitive converge curat.",
+      },
+      {
+        question: "Unde primesc asistență?",
+        answer: "Intră pe serverul de Discord Screenshot Bro — este cea mai rapidă cale de a ajunge la creatorul aplicației, de a raporta o eroare, de a întreba cum funcționează ceva și de a vedea ce urmează. Poți scrie și pe e-mail pentru chestiuni private sau legate de cont, iar documentația de ajutor acoperă fiecare parte a editorului.",
       },
     ],
     ui: {
@@ -4755,46 +4153,36 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Deschide meniul",
       closeMenu: "Închide meniul",
       seeInAction: "Vezi în acțiune",
-      tryItNow: "Încearcă acum",
-      seeDetails: "Vezi detalii",
+      directDownload: "Preferi descărcarea directă? Ia fișierul DMG pentru Mac",
       browseGuides: "Răsfoiește ghidurile",
       submitApp: "Trimite aplicația",
       contactDeveloper: "Contactează dezvoltatorul",
       backToTop: "Înapoi sus",
-      previousScreenshot: "Captura anterioară",
-      nextScreenshot: "Captura următoare",
-      goToScreenshot: (index) => `Mergi la captura ${index}`,
-      slideCount: (index, total) => `${index} din ${total}`      ,
       availabilityNote: "Aplicație pentru macOS 15+ și iOS/iPadOS 18+ | Swift & SwiftUI | Disponibilă în App Store",
     },
     hero: {
       titleLead: "Creează & localizează",
       titleAccent: "App Store",
       titleRest: " capturi de ecran în câteva minute",
-      descriptionLead: "Proiectează o dată. Localizează în peste 70 de limbi, generează toate dimensiunile de dispozitive și",
+      descriptionLead: "Proiectează o dată. Localizează în 81 de limbi, generează toate dimensiunile de dispozitive și",
       descriptionStrong: "încarcă direct în App Store Connect",
       descriptionTail: " fără a reface manual capturile. Totul într-o aplicație nativă.",
     },
     sections: {
       showcases: { eyebrow: "Exemple", title: "Vezi cum funcționează generatorul înainte de instalare.", description: "Import în masă, încărcare în App Store Connect cu un clic, straturi și rame de dispozitive." },
-      problem: { eyebrow: "De ce există", title: "Lansarea unei funcționalități noi nu ar trebui să însemne refacerea tuturor capturilor.", description: "Screenshot Bro elimină munca repetitivă la fiecare actualizare a aplicației." },
       workflow: { eyebrow: "Flux de lucru", title: "O cale mai scurtă de la capturile brute la materialele finale pentru magazin.", description: "Conceput pentru un singur scop: creează capturi superbe fără a întreține o grămadă de fișiere de design." },
       features: { eyebrow: "Capabilități", title: "Tot ce trebuie să facă un instrument de capturi pentru App Store.", description: "Accent pe aspect rapid, consecvență și export fără bătăi de cap." },
-      screenshots: { eyebrow: "Capturi de ecran", title: "Vezi aplicația în acțiune.", description: "Capturi de App Store chiar din Screenshot Bro." },
-      testimonials: { eyebrow: "Dezvoltatori", title: "Ce spun dezvoltatorii.", description: "Feedback real de la creatori independenți." },
       blog: { eyebrow: "Din blog", title: "Ghiduri pentru a crea capturi de ecran mai bune pentru App Store.", description: "Sfaturi și referințe pentru a crește conversia." },
       faq: { eyebrow: "FAQ", title: "Întrebări frecvente înainte de testare.", description: "Răspunsuri despre compatibilitate și export." },
       appShowcase: { eyebrow: "Creat cu Screenshot Bro", title: "În companie bună.", description: "Aplicații indie care folosesc deja Screenshot Bro." },
     },
     problem: {
       story: "Am creat aplicația după ce am petrecut prea mult timp în Figma refăcând capturile de fiecare dată când se modificau textele sau culorile. Configurează sistemul o dată și lasă aplicația să facă restul.",
-      withoutLabel: "Fără Screenshot Bro",
-      withLabel: "Cu Screenshot Bro",
     },
     download: {
       titleLine1: "Gata să publici",
       titleLine2: "capturi de ecran mai bune?",
-      description: "Descarcă din App Store și experimentează întregul flux de lucru pe Mac sau iPad.",
+      description: "Descarcă din App Store și experimentează întregul flux de lucru pe Mac, iPad sau iPhone.",
     },
     footer: {
       note: "Construit cu SwiftUI. Creat pentru dezvoltatorii care publică actualizări în App Store.",
@@ -4807,35 +4195,57 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     navItems: [
       { label: "Contoh", href: "#showcases" },
       { label: "Keupayaan", href: "#features" },
-      { label: "Aliran Kerja", href: "#workflow" },
       { label: "Soalan Lazim", href: "#faq" },
     ],
     benefits: [
-      "Boleh didapati sekarang di App Store untuk Mac, iPad dan iPhone",
-      "Pembelian sekali atau pelan percuma — tiada langganan diperlukan",
-      "Aplikasi natif macOS, iOS dan iPadOS dengan penyelarasan iCloud",
-      "Eksport pratetap semua saiz peranti dengan satu klik",
+      "Kini tersedia di App Store untuk Mac, iPad dan iPhone",
+      "Aliran kerja penuh: import, reka, terjemah automatik, setempatkan, eksport",
+      "Muat naik terus ke App Store Connect — tiada lagi tarik dan lepas dalam tab pelayar",
     ],
     faqs: [
       {
-        question: "Apakah perbezaan Screenshot Bro berbanding penjana berasaskan web?",
-        answer: "Screenshot Bro ialah aplikasi 100% natif macOS, iOS dan iPadOS. Data anda kekal pada peranti anda, tiada langganan bulanan dan anda boleh bekerja di luar talian. Ia dioptimumkan untuk kelajuan serta menyokong pintasan papan kekunci, import pukal dan muat naik terus ke App Store Connect.",
+        question: "Adakah Screenshot Bro percuma?",
+        answer: "Ya. Pelan percuma tidak terhad masa dan membolehkan anda menyimpan 1 projek dengan sehingga 3 baris dan 5 templat setiap baris — akses penuh kepada setiap bingkai peranti, bentuk dan bahasa, eksport tanpa tera air, muat naik ke App Store Connect dan Google Play, serta penyelarasan iCloud disertakan. Pro menghapuskan had projek, baris dan templat.",
       },
       {
-        question: "Bolehkah saya menyetempatkan tangkapan skrin ke pelbagai bahasa?",
-        answer: "Ya! Screenshot Bro dibina khusus untuk penyetempatan. Anda boleh menambah pelbagai bahasa, menggantikan teks dan imej bagi setiap bahasa serta mengeksport semua varian setempat secara serentak.",
+        question: "Apakah bezanya dengan penjana tangkapan skrin App Store berasaskan web?",
+        answer: "Screenshot Bro ialah aplikasi natif Mac, iPad dan iPhone, bukan alat pelayar, jadi projek, tangkapan skrin dan fon kekal pada cakera dan penyuntingan harian tidak memerlukan akaun atau sambungan internet. Proses render dan eksport pukal berjalan pada perkakasan anda sendiri, bukan pada pelayan. Jika anda menggunakan Windows atau Linux, mahu bekerjasama dalam sesi pelayar yang dikongsi, atau hanya memerlukan satu atau dua imej, alat tangkapan skrin App Store berasaskan web lebih sesuai — halaman alternatif merangkumi kes-kes tersebut.",
       },
       {
-        question: "Apakah saiz peranti yang disokong?",
-        answer: "Semua saiz rasmi App Store dan Google Play, termasuk iPhone dengan Dynamic Island, iPad, MacBook, Apple Watch dan telefon Android.",
+        question: "Apakah yang saya perlukan untuk menjalankannya?",
+        answer: "macOS 15 (Sequoia) atau lebih baharu pada Mac, iPadOS 18 atau lebih baharu pada iPad, atau iOS 18 atau lebih baharu pada iPhone. Tiada peranti pendamping, tiada akaun dan tiada sambungan internet diperlukan untuk penyuntingan harian.",
       },
       {
-        question: "Adakah terdapat langganan bulanan?",
-        answer: "Tidak. Screenshot Bro menyediakan pelan percuma yang mencukupi serta pembelian sekali untuk akses sepanjang hayat kepada ciri-ciri Pro.",
+        question: "Adakah data saya keluar dari peranti saya?",
+        answer: "Kerja anda tidak. Projek, tangkapan skrin dan fon kekal pada cakera. Terjemahan automatik berjalan melalui rangka kerja Translation Apple pada peranti — tiada kunci API, tiada pelayan pihak ketiga. Penyelarasan iCloud Drive pilihan menggunakan akaun iCloud peribadi anda; kami tidak mengendalikan sebarang pelayan perantara. Yang dihantar hanyalah laporan ranap tanpa nama apabila sesuatu rosak, serta kiraan tanpa nama bagi pencapaian seperti “eksport selesai” supaya kami tahu apa yang perlu diperbaiki — tidak sekali-kali projek, imej atau teks yang anda tulis.",
       },
       {
-        question: "Bolehkah saya memuat naik terus ke App Store Connect?",
-        answer: "Ya. Dengan kunci API App Store Connect, anda boleh memuat naik tangkapan skrin yang dieksport terus ke versi aplikasi anda tanpa membuka pelayar web.",
+        question: "Bagaimanakah penyetempatan berfungsi?",
+        answer: "Pilih daripada 81 pratetap bahasa, atau tentukan kod anda sendiri. Terjemahan automatik mengisi teks yang tiada pada peranti. Terjemahan disimpan sebagai gantian teks bagi setiap bahasa, jadi susun atur, warna dan imej dikongsi merentas setiap bahasa — reka sekali, terbitkan dalam setiap bahasa. Eksport disusun ke dalam folder bahasa yang boleh terus diambil oleh App Store Connect.",
+      },
+      {
+        question: "Bolehkah saya membuat tangkapan skrin Google Play juga?",
+        answer: "Ya. Baris telefon dan tablet Android dirender bersama iPhone, iPad dan Mac dalam projek yang sama. Setiap kategori peranti dipratetap kepada dimensi piksel yang diterima oleh gedung berkenaan.",
+      },
+      {
+        question: "Bolehkah saya terus melepaskan tangkapan skrin simulator dan peranti ke dalamnya?",
+        answer: "Ya. Lepaskan folder tangkapan skrin dan Screenshot Bro menghalakan setiap satu ke baris yang betul berdasarkan saiz pikselnya — tangkapan iPhone ke baris iPhone, iPad ke iPad, Android ke Android.",
+      },
+      {
+        question: "Bolehkah saya memuat naik ke App Store Connect dari dalam aplikasi?",
+        answer: "Ya. Konfigurasikan kunci API App Store Connect anda sekali (Issuer ID, Key ID dan .p8). Screenshot Bro mengesan jenis paparan yang betul bagi setiap baris secara automatik, memadankan bahasa projek anda dengan penyetempatan App Store Connect dan menggantikan tangkapan skrin sedia ada dalam satu laluan — tiada tarik dan lepas dalam pelayar.",
+      },
+      {
+        question: "Bolehkah ejen AI membina tangkapan skrin saya?",
+        answer: "Ya. Screenshot Bro menyediakan pelayan MCP setempat pilihan pada Mac, jadi pembantu seperti Claude Code, Claude Desktop atau Cursor boleh mencipta projek, menyusun baris dan bentuk, mengimport tangkapan skrin, menterjemah teks, merender pratonton yang benar-benar boleh dilihatnya, mengeksport dan menyelaraskan set yang siap ke App Store Connect. Pelayan hanya mendengar pada 127.0.0.1, setiap permintaan memerlukan token akses yang anda salin daripada Tetapan, dan setiap perubahan yang dibuat oleh ejen boleh dibuat asal dengan ⌘Z.",
+      },
+      {
+        question: "Adakah ia menyelaras antara peranti?",
+        answer: "Ya — penyelarasan iCloud Drive pilihan memastikan projek, tangkapan skrin dan fon tersedia pada setiap Mac, iPad dan iPhone yang didaftar masuk ke Akaun Apple anda. Konflik digabungkan medan demi medan secara last-writer-wins, jadi penyuntingan projek yang sama pada beberapa peranti berpadu dengan kemas.",
+      },
+      {
+        question: "Di manakah saya boleh mendapatkan sokongan?",
+        answer: "Sertai Discord Screenshot Bro — ia cara terpantas untuk menghubungi pembangunnya, melaporkan pepijat, bertanya cara sesuatu berfungsi dan melihat apa yang akan datang. E-mel juga boleh digunakan untuk apa-apa perkara peribadi atau khusus akaun, dan dokumen bantuan merangkumi setiap bahagian editor.",
       },
     ],
     ui: {
@@ -4860,46 +4270,36 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Buka menu",
       closeMenu: "Tutup menu",
       seeInAction: "Lihat dalam tindakan",
-      tryItNow: "Cuba sekarang",
-      seeDetails: "Lihat butiran",
+      directDownload: "Lebih suka muat turun terus? Dapatkan DMG untuk Mac",
       browseGuides: "Semak panduan",
       submitApp: "Hantar aplikasi",
       contactDeveloper: "Hubungi pembangun",
       backToTop: "Kembali ke atas",
-      previousScreenshot: "Tangkapan skrin sebelumnya",
-      nextScreenshot: "Tangkapan skrin seterusnya",
-      goToScreenshot: (index) => `Pergi ke tangkapan skrin ${index}`,
-      slideCount: (index, total) => `${index} daripada ${total}`,
       availabilityNote: "Aplikasi macOS 15+ dan iOS/iPadOS 18+ | Swift & SwiftUI | Boleh didapati di App Store",
     },
     hero: {
       titleLead: "Cipta & setempatkan",
       titleAccent: "App Store",
       titleRest: " tangkapan skrin dalam beberapa minit",
-      descriptionLead: "Reka sekali. Setempatkan ke 70+ bahasa, jana semua saiz peranti dan",
+      descriptionLead: "Reka sekali. Setempatkan ke 81 bahasa, jana semua saiz peranti dan",
       descriptionStrong: "muat naik terus ke App Store Connect",
       descriptionTail: " tanpa membina semula tangkapan skrin secara manual. Segalanya dalam satu aplikasi natif.",
     },
     sections: {
       showcases: { eyebrow: "Contoh", title: "Lihat bagaimana penjana berfungsi sebelum memasang.", description: "Import pukal, muat naik ke App Store Connect dengan satu klik, lapisan dan bingkai peranti." },
-      problem: { eyebrow: "Sebab ia dicipta", title: "Mengeluarkan ciri baharu tidak sepatutnya bermakna membina semula semua tangkapan skrin.", description: "Screenshot Bro menghapuskan kerja berulang dalam setiap kemas kini aplikasi." },
       workflow: { eyebrow: "Aliran kerja", title: "Laluan lebih pantas daripada tangkapan mentah ke aset gedung yang siap.", description: "Fokus pada satu matlamat: cipta tangkapan skrin hebat tanpa perlu menyelenggara timbunan fail reka bentuk." },
       features: { eyebrow: "Keupayaan", title: "Semua yang diperlukan oleh alat tangkapan skrin App Store.", description: "Tumpuan pada susun atur pantas, ketekalan dan eksport yang lancar." },
-      screenshots: { eyebrow: "Tangkapan skrin", title: "Lihat ia beraksi.", description: "Tangkapan skrin App Store daripada Screenshot Bro sendiri." },
-      testimonials: { eyebrow: "Pembangun", title: "Apa kata pembangun.", description: "Maklum balas sebenar daripada pencipta indie." },
       blog: { eyebrow: "Daripada blog", title: "Panduan untuk mereka bentuk tangkapan skrin App Store yang lebih baik.", description: "Petua dan rujukan untuk meningkatkan kadar penukaran." },
       faq: { eyebrow: "Soalan Lazim", title: "Soalan lazim sebelum anda mencuba.", description: "Jawapan mengenai keserasian dan eksport." },
       appShowcase: { eyebrow: "Dicipta dengan Screenshot Bro", title: "Bersama rakan hebat.", description: "Aplikasi indie yang sudah menggunakan Screenshot Bro." },
     },
     problem: {
       story: "Saya membina aplikasi ini selepas menghabiskan terlalu banyak masa dalam Figma membuat semula tangkapan skrin setiap kali teks atau warna berubah. Bina sistem sekali dan biarkan aplikasi selesaikan bakinya.",
-      withoutLabel: "Tanpa Screenshot Bro",
-      withLabel: "Dengan Screenshot Bro",
     },
     download: {
       titleLine1: "Sedia untuk terbitkan",
       titleLine2: "tangkapan skrin yang lebih baik?",
-      description: "Dapatkan di App Store dan rasai seluruh aliran kerja di Mac atau iPad.",
+      description: "Dapatkan di App Store dan rasai seluruh aliran kerja di Mac, iPad atau iPhone.",
     },
     footer: {
       note: "Dibina dengan SwiftUI. Direka untuk pembangun yang mengeluarkan kemas kini App Store.",

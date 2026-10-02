@@ -37,8 +37,8 @@ export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
   return (
     <footer className="border-t border-border-subtle bg-surface/40">
       <div className="max-w-6xl mx-auto px-6 py-14">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
-          <div className="flex flex-col gap-5 max-w-sm">
+        <div className="grid gap-10 sm:grid-cols-3 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
+          <div className="flex flex-col items-start gap-5 max-w-sm sm:col-span-3 md:col-span-1">
             <SiteLogo className="h-6 w-auto opacity-80" />
             <p className="text-sm text-ink/55 leading-relaxed">
               {copy.footer.note}
@@ -114,13 +114,18 @@ export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
             copy={copy}
           />
           <FooterColumn
+            label={copy.ui.community}
+            links={COMMUNITY_LINKS}
+            copy={copy}
+          />
+          <FooterColumn
             label={copy.ui.resourcesLabel}
-            links={[...COMPARISON_LINKS, ...COMMUNITY_LINKS, ...LEGAL_LINKS]}
+            links={[...COMPARISON_LINKS, ...LEGAL_LINKS]}
             copy={copy}
           />
         </div>
 
-        <div className="mt-12 pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-x-3 gap-y-1 text-xs text-ink/58">
             <span>
               © {year} {SITE_NAME}
@@ -140,15 +145,6 @@ export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
               </a>
             </span>
           </div>
-          <a
-            href={X_PROFILE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs text-ink/55 hover:text-ink/90 transition-colors"
-          >
-            <XGlyph />
-            {copy.ui.followJourney}
-          </a>
         </div>
       </div>
     </footer>
@@ -178,7 +174,8 @@ function FooterColumn({
               rel={link.external ? "noopener noreferrer" : undefined}
               className="text-sm text-ink/65 hover:text-ink/95 transition-colors"
             >
-              {copy.ui[link.uiKey]}
+              {/* Under a "Community" heading the Reddit link needs its full name. */}
+              {link.uiKey === "community" ? copy.ui.redditCommunity : copy.ui[link.uiKey]}
             </a>
           </li>
         ))}

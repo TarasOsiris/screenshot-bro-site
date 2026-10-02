@@ -1,6 +1,8 @@
 import { redirect } from "react-router";
 import type { Route } from "./+types/buy";
 import { ContentLayout } from "~/components/ContentLayout";
+import { ButtonLink } from "~/components/ui/Button";
+import { Panel } from "~/components/ui/Panel";
 import { mergeMeta } from "~/config/meta";
 import { DISCORD_INVITE_URL, SITE_NAME, WEB_PURCHASE_EMAIL } from "~/config/site";
 
@@ -23,39 +25,43 @@ export const meta: Route.MetaFunction = ({ matches }) =>
 export default function Buy() {
   return (
     <ContentLayout>
-      <div className="max-w-xl mx-auto text-center">
-        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-ink">
+      <div className="max-w-2xl mx-auto text-center">
+        <img
+          src="/web-app-manifest-512x512.png"
+          alt=""
+          width={96}
+          height={96}
+          className="mx-auto h-24 w-24 rounded-[22px] shadow-[0_20px_60px_-20px_var(--color-accent-glow)]"
+        />
+        <p className="mt-8 text-xs uppercase tracking-[0.25em] text-accent-light font-mono">
+          {SITE_NAME} Pro
+        </p>
+        <h1 className="mt-3 font-display font-extrabold text-4xl sm:text-5xl text-ink tracking-tight text-balance">
           Checkout is temporarily unavailable
         </h1>
-        <p className="mt-4 text-ink/60 leading-relaxed">
+        <p className="mt-5 text-lg text-ink/60 leading-relaxed text-balance">
           We couldn't open the {SITE_NAME} Pro checkout just now. Please try again in a few minutes —
           nothing has been charged.
         </p>
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a
-            href="/buy"
-            className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-accent to-accent-light px-6 py-3 font-semibold text-white"
-          >
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <ButtonLink href="/buy" size="lg">
             Try again
-          </a>
-          <a
-            href="/download"
-            className="inline-flex items-center justify-center rounded-xl border border-ink/15 bg-ink/5 px-6 py-3 font-semibold text-ink hover:bg-ink/10"
-          >
+          </ButtonLink>
+          <ButtonLink href="/download" variant="secondary" size="lg">
             Back to download
-          </a>
+          </ButtonLink>
         </div>
-        <p className="mt-8 text-sm text-ink/50">
+        <Panel padding="md" className="mt-14 text-sm text-ink/60 leading-relaxed">
           Still stuck? Email{" "}
-          <a href={`mailto:${WEB_PURCHASE_EMAIL}`} className="underline hover:text-ink">
+          <a href={`mailto:${WEB_PURCHASE_EMAIL}`} className="text-ink underline underline-offset-4 decoration-ink/25 hover:decoration-ink/60">
             {WEB_PURCHASE_EMAIL}
           </a>{" "}
           or ask on{" "}
-          <a href={DISCORD_INVITE_URL} className="underline hover:text-ink">
+          <a href={DISCORD_INVITE_URL} className="text-ink underline underline-offset-4 decoration-ink/25 hover:decoration-ink/60">
             Discord
           </a>
           .
-        </p>
+        </Panel>
       </div>
     </ContentLayout>
   );

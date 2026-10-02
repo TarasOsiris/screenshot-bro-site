@@ -4,7 +4,7 @@ import { ContentLayout } from "~/components/ContentLayout";
 import { mergeMeta } from "~/config/meta";
 import { isLocaleCode, type LocaleCode } from "~/config/localization";
 import { localeHref } from "~/config/localized-routes";
-import { data } from "react-router";
+import { data, useLoaderData } from "react-router";
 
 export async function loader({ params }: Route.LoaderArgs) {
   const locale = params.locale;
@@ -92,8 +92,9 @@ const DEVELOPER_NAME = "Nineva Studios";
 const DEVELOPER_EMAIL = "tleskiv@ninevastudios.com";
 
 export default function Privacy() {
+  const { locale } = useLoaderData<typeof loader>();
   return (
-    <ContentLayout>
+    <ContentLayout locale={locale}>
       <article className="max-w-3xl mx-auto prose-policy">
           <h1>Privacy Policy</h1>
           <p className="meta">

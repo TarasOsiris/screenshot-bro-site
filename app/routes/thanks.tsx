@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { buttonClass } from "~/components/ui/Button";
 import { useLoaderData } from "react-router";
 import type { Route } from "./+types/thanks";
 import { ContentLayout } from "~/components/ContentLayout";
@@ -94,7 +95,7 @@ export default function Thanks() {
             </p>
             <a
               href={redeemUrl}
-              className="mt-10 inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-accent to-accent-light text-white font-semibold text-base transition-all hover:shadow-[0_0_48px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]"
+              className={buttonClass("primary", "lg", "mt-10")}
             >
               Open {SITE_NAME}
             </a>
