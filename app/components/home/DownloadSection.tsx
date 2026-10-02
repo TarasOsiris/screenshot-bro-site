@@ -1,8 +1,8 @@
-import { AppleLogo } from "~/components/home/icons";
+import { DownloadIcon } from "~/components/home/small-icons";
 import { ButtonLink } from "~/components/ui/Button";
 import { Panel } from "~/components/ui/Panel";
 import { CONTACT_MAILTO } from "~/config/site";
-import { appStoreCtaUrl, type HomeCopy } from "~/config/localization";
+import { downloadPageUrl, type HomeCopy } from "~/config/localization";
 
 export function DownloadSection({
   copy,
@@ -11,7 +11,7 @@ export function DownloadSection({
   copy: HomeCopy;
   href?: string;
 }) {
-  const ctaHref = href ?? appStoreCtaUrl(copy.locale.code);
+  const ctaHref = href ?? downloadPageUrl(copy.locale.code);
 
   return (
     <section
@@ -51,7 +51,7 @@ export function DownloadSection({
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <ButtonLink href={ctaHref} size="lg">
-            <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
+            <DownloadIcon className="opacity-80 group-hover:opacity-100 transition-opacity" />
             {copy.primaryCtaLabel}
           </ButtonLink>
           <ButtonLink href={CONTACT_MAILTO} variant="secondary" size="lg" className="font-medium text-sm">
@@ -59,15 +59,7 @@ export function DownloadSection({
           </ButtonLink>
         </div>
 
-        <p className="mt-6 text-sm">
-          <a
-            href="/download"
-            className="text-ink/[0.66] underline underline-offset-4 decoration-ink/20 hover:text-ink hover:decoration-ink/50 transition-colors"
-          >
-            {copy.ui.directDownload}
-          </a>
-        </p>
-        <p className="mt-3 text-xs text-ink/55 font-mono">
+        <p className="mt-6 text-xs text-ink/55 font-mono">
           {copy.ui.availabilityNote}
         </p>
       </div>

@@ -8,6 +8,7 @@ import type {
 import { HOME_DESCRIPTIONS } from "~/config/home-descriptions";
 import {
   appStoreProductUrl,
+  DEFAULT_APP_STORE_COUNTRY,
   DOWNLOAD_BENEFITS,
   FAQS,
   FEATURE_SHOWCASES,
@@ -131,7 +132,6 @@ export type HomeCopy = {
     language: string;
     homeLabel: string;
     seeInAction: string;
-    directDownload: string;
     read: string;
     browseGuides: string;
     submitApp: string;
@@ -222,7 +222,6 @@ const EN_HOME_COPY: HomeCopy = {
     language: "Language",
     homeLabel: `${SITE_NAME} home`,
     seeInAction: "See it in action",
-    directDownload: "Prefer a direct download? Get the Mac DMG",
     read: "Read",
     browseGuides: "Browse all guides",
     submitApp: "Submit your app",
@@ -895,7 +894,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — Capturas de App Store y Google Play en Mac`,
     siteDescription:
       "Diseña capturas para App Store y Google Play en una app nativa para Mac, iPad y iPhone. Marcos de dispositivos, localización y subida a App Store Connect.",
-    primaryCtaLabel: "Ver en App Store",
+    primaryCtaLabel: "Descargar Screenshot Bro",
     navItems: [
       { label: "Ejemplos", href: "#showcases" },
       { label: "Funciones", href: "#features" },
@@ -983,7 +982,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Abrir menú",
       closeMenu: "Cerrar menú",
       seeInAction: "Ver cómo funciona",
-      directDownload: "¿Prefieres la descarga directa? Consigue el DMG para Mac",
       browseGuides: "Ver todas las guías",
       submitApp: "Envía tu app",
       contactDeveloper: "Contactar al desarrollador",
@@ -1057,7 +1055,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — Mac、iPad 和 iPhone 上的 App Store 与 Google Play 截图设计工具`,
     siteDescription:
       "用原生 Mac、iPad 和 iPhone 应用设计 App Store 和 Google Play 截图。设备边框、本地化、自动翻译、批量导出，并可直接上传到 App Store Connect。",
-    primaryCtaLabel: "在 App Store 获取",
+    primaryCtaLabel: "下载 Screenshot Bro",
     benefits: [
       "现已在 Mac、iPad 和 iPhone 的 App Store 上架",
       "完整流程：导入、设计、自动翻译、本地化和导出",
@@ -1145,7 +1143,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "打开菜单",
       closeMenu: "关闭菜单",
       seeInAction: "查看演示",
-      directDownload: "想直接下载？获取 Mac 版 DMG",
       browseGuides: "浏览所有指南",
       submitApp: "提交你的 App",
       contactDeveloper: "联系开发者",
@@ -1214,7 +1211,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — App Store और Google Play स्क्रीनशॉट Mac पर`,
     siteDescription:
       "नेटिव Mac, iPad और iPhone ऐप में App Store और Google Play स्क्रीनशॉट डिजाइन करें। डिवाइस फ्रेम, लोकलाइजेशन और App Store Connect पर सीधा अपलोड।",
-    primaryCtaLabel: "App Store पर पाएं",
+    primaryCtaLabel: "Screenshot Bro डाउनलोड करें",
     benefits: [
       "Mac, iPad और iPhone के लिए App Store पर अभी उपलब्ध",
       "पूरा workflow: import, design, auto-translate, localize और export",
@@ -1305,7 +1302,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "मेनू खोलें",
       closeMenu: "मेनू बंद करें",
       seeInAction: "काम करते देखें",
-      directDownload: "सीधा डाउनलोड चाहिए? Mac DMG पाएं",
       browseGuides: "सभी गाइड देखें",
       submitApp: "अपना ऐप भेजें",
       contactDeveloper: "डेवलपर से संपर्क करें",
@@ -1375,7 +1371,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — Captures App Store et Google Play sur Mac`,
     siteDescription:
       "Créez des captures App Store et Google Play dans une app native pour Mac, iPad et iPhone. Cadres d'appareils, localisation et envoi vers App Store Connect.",
-    primaryCtaLabel: "Voir sur l'App Store",
+    primaryCtaLabel: "Télécharger Screenshot Bro",
     benefits: [
       "Disponible maintenant sur l'App Store pour Mac, iPad et iPhone",
       "Flux complet : import, design, traduction automatique, localisation et export",
@@ -1464,7 +1460,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Ouvrir le menu",
       closeMenu: "Fermer le menu",
       seeInAction: "Voir en action",
-      directDownload: "Vous préférez un téléchargement direct ? Récupérez le DMG pour Mac",
       browseGuides: "Voir tous les guides",
       submitApp: "Proposer votre app",
       contactDeveloper: "Contacter le développeur",
@@ -1538,7 +1533,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — لقطات App Store و Google Play على Mac`,
     siteDescription:
       "صمّم لقطات App Store و Google Play داخل تطبيق أصلي على Mac و iPad و iPhone. إطارات أجهزة، توطين، ترجمة تلقائية، تصدير جماعي ورفع مباشر إلى App Store Connect.",
-    primaryCtaLabel: "احصل عليه من App Store",
+    primaryCtaLabel: "نزّل Screenshot Bro",
     benefits: [
       "متوفر الآن على App Store لأجهزة Mac و iPad و iPhone",
       "سير كامل: استيراد، تصميم، ترجمة تلقائية، توطين وتصدير",
@@ -1626,7 +1621,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "فتح القائمة",
       closeMenu: "إغلاق القائمة",
       seeInAction: "شاهده عملياً",
-      directDownload: "تفضّل التنزيل المباشر؟ احصل على ملف DMG لجهاز Mac",
       browseGuides: "تصفح كل الأدلة",
       submitApp: "أرسل تطبيقك",
       contactDeveloper: "تواصل مع المطور",
@@ -1700,7 +1694,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — Screenshots für App Store & Google Play`,
     siteDescription:
       "Screenshots für App Store und Google Play in einer nativen App für Mac, iPad und iPhone. Geräterahmen, Lokalisierung und direkter Upload zu App Store Connect.",
-    primaryCtaLabel: "Im App Store laden",
+    primaryCtaLabel: "Screenshot Bro laden",
     navItems: [
       { label: "Beispiele", href: "#showcases" },
       { label: "Funktionen", href: "#features" },
@@ -1789,7 +1783,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Menü öffnen",
       closeMenu: "Menü schließen",
       seeInAction: "In Aktion sehen",
-      directDownload: "Lieber direkt herunterladen? Hol dir die DMG für den Mac",
       browseGuides: "Alle Anleitungen durchsuchen",
       submitApp: "App einreichen",
       contactDeveloper: "Entwickler kontaktieren",
@@ -1863,7 +1856,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — Mac、iPad、iPhone用App Store & Google Playスクリーンショット作成ツール`,
     siteDescription:
       "App StoreとGoogle Play用のスクリーンショットをネイティブMac、iPad、iPhoneアプリでデザイン。デバイスフレーム、ローカライズ、自動翻訳、バッチ書き出し、App Store Connectへの直接アップロードに対応。",
-    primaryCtaLabel: "App Storeでダウンロード",
+    primaryCtaLabel: "Screenshot Bro をダウンロード",
     navItems: [
       { label: "デモ", href: "#showcases" },
       { label: "機能", href: "#features" },
@@ -1951,7 +1944,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "メニューを開く",
       closeMenu: "メニューを閉じる",
       seeInAction: "実際の動作を見る",
-      directDownload: "直接ダウンロードをご希望ですか？Mac版DMGはこちら",
       browseGuides: "すべてのガイドを見る",
       submitApp: "アプリを掲載する",
       contactDeveloper: "開発者に連絡",
@@ -2025,7 +2017,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — Capturas para App Store e Google Play`,
     siteDescription:
       "Crie capturas para App Store e Google Play em um app nativo para Mac, iPad e iPhone. Molduras de dispositivos, localização e envio para App Store Connect.",
-    primaryCtaLabel: "Obter na App Store",
+    primaryCtaLabel: "Baixar o Screenshot Bro",
     navItems: [
       { label: "Exemplos", href: "#showcases" },
       { label: "Recursos", href: "#features" },
@@ -2114,7 +2106,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Abrir menu",
       closeMenu: "Fechar menu",
       seeInAction: "Ver em ação",
-      directDownload: "Prefere baixar direto? Baixe o DMG para Mac",
       browseGuides: "Navegar por todos os guias",
       submitApp: "Enviar seu app",
       contactDeveloper: "Contatar desenvolvedor",
@@ -2188,7 +2179,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — Screenshot per App Store e Google Play`,
     siteDescription:
       "Progetta screenshot per App Store e Google Play in un'app nativa per Mac, iPad e iPhone. Cornici per dispositivi, localizzazione e upload su App Store Connect.",
-    primaryCtaLabel: "Scarica su App Store",
+    primaryCtaLabel: "Scarica Screenshot Bro",
     navItems: [
       { label: "Esempi", href: "#showcases" },
       { label: "Funzionalità", href: "#features" },
@@ -2277,7 +2268,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Apri menu",
       closeMenu: "Chiudi menu",
       seeInAction: "Guarda in azione",
-      directDownload: "Preferisci il download diretto? Scarica il DMG per Mac",
       browseGuides: "Sfoglia tutte le guide",
       submitApp: "Invia la tua app",
       contactDeveloper: "Contatta lo sviluppatore",
@@ -2351,7 +2341,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — Mac, iPad 및 iPhone용 App Store & Google Play 스크린샷 디자인 도구`,
     siteDescription:
       "네이티브 Mac, iPad 및 iPhone 앱에서 App Store 및 Google Play 스크린샷을 디자인하세요. 디바이스 프레임, 현지화, 자동 번역, 일괄 내보내기, App Store Connect 직접 업로드를 지원합니다.",
-    primaryCtaLabel: "App Store에서 받기",
+    primaryCtaLabel: "Screenshot Bro 다운로드",
     navItems: [
       { label: "쇼케이스", href: "#showcases" },
       { label: "주요 기능", href: "#features" },
@@ -2439,7 +2429,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "메뉴 열기",
       closeMenu: "메뉴 닫기",
       seeInAction: "기능 데모 보기",
-      directDownload: "직접 다운로드를 원하시나요? Mac용 DMG 받기",
       browseGuides: "모든 가이드 둘러보기",
       submitApp: "앱 등록 신청",
       contactDeveloper: "개발자에게 연락하기",
@@ -2513,7 +2502,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — Скриншоти для App Store та Google Play на Mac`,
     siteDescription:
       "Створюйте скриншоти для App Store та Google Play у нативному додатку для Mac, iPad та iPhone. Рамки пристроїв, локалізація та пряме завантаження в App Store Connect.",
-    primaryCtaLabel: "Завантажити в App Store",
+    primaryCtaLabel: "Завантажити Screenshot Bro",
     navItems: [
       { label: "Показ", href: "#showcases" },
       { label: "Можливості", href: "#features" },
@@ -2602,7 +2591,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Відкрити меню",
       closeMenu: "Закрити меню",
       seeInAction: "Подивитися в дії",
-      directDownload: "Хочете завантажити напряму? Отримайте DMG для Mac",
       browseGuides: "Усі посібники",
       submitApp: "Запропонувати додаток",
       contactDeveloper: "Написати розробнику",
@@ -2676,7 +2664,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — Zrzuty ekranu do App Store i Google Play na Maca`,
     siteDescription:
       "Projektuj zrzuty ekranu dla App Store i Google Play w natywnej aplikacji na Maca, iPada i iPhone'a. Ramki urządzeń, lokalizacja i bezpośrednie przesyłanie do App Store Connect.",
-    primaryCtaLabel: "Pobierz w App Store",
+    primaryCtaLabel: "Pobierz Screenshot Bro",
     navItems: [
       { label: "Przykłady", href: "#showcases" },
       { label: "Funkcje", href: "#features" },
@@ -2765,7 +2753,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Otwórz menu",
       closeMenu: "Zamknij menu",
       seeInAction: "Zobacz w akcji",
-      directDownload: "Wolisz pobrać bezpośrednio? Pobierz plik DMG na Maca",
       browseGuides: "Wszystkie poradniki",
       submitApp: "Zgłoś aplikację",
       contactDeveloper: "Napisz do twórcy",
@@ -2839,7 +2826,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — Mac'te App Store ve Google Play Ekran Görüntüleri`,
     siteDescription:
       "Mac, iPad ve iPhone için yerel uygulamada App Store ve Google Play ekran görüntüleri tasarlayın. Cihaz çerçeveleri, yerelleştirme ve doğrudan App Store Connect yüklemesi.",
-    primaryCtaLabel: "App Store'dan İndir",
+    primaryCtaLabel: "Screenshot Bro'yu İndir",
     navItems: [
       { label: "Örnekler", href: "#showcases" },
       { label: "Özellikler", href: "#features" },
@@ -2928,7 +2915,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Menüyü aç",
       closeMenu: "Menüyü kapat",
       seeInAction: "Çalışırken görün",
-      directDownload: "Doğrudan indirmeyi mi tercih edersiniz? Mac için DMG dosyasını alın",
       browseGuides: "Tüm rehberlere göz atın",
       submitApp: "Uygulamanızı gönderin",
       contactDeveloper: "Geliştiriciye ulaşın",
@@ -2967,7 +2953,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — App Store & Google Play screenshots op Mac`,
     siteDescription:
       "Ontwerp screenshots voor App Store en Google Play in een native app voor Mac, iPad en iPhone. Apparaatframes, lokalisatie en directe upload naar App Store Connect.",
-    primaryCtaLabel: "Download in App Store",
+    primaryCtaLabel: "Download Screenshot Bro",
     navItems: [
       { label: "Voorbeelden", href: "#showcases" },
       { label: "Functies", href: "#features" },
@@ -3056,7 +3042,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Menu openen",
       closeMenu: "Menu sluiten",
       seeInAction: "Bekijk in actie",
-      directDownload: "Liever direct downloaden? Download de DMG voor Mac",
       browseGuides: "Bekijk alle gidsen",
       submitApp: "App aanmelden",
       contactDeveloper: "Contacteer ontwikkelaar",
@@ -3095,7 +3080,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — Tangkapan Layar App Store & Google Play di Mac`,
     siteDescription:
       "Desain tangkapan layar untuk App Store dan Google Play dalam aplikasi native untuk Mac, iPad, dan iPhone. Bingkai perangkat, lokalisasi, dan unggah langsung ke App Store Connect.",
-    primaryCtaLabel: "Unduh di App Store",
+    primaryCtaLabel: "Unduh Screenshot Bro",
     navItems: [
       { label: "Contoh", href: "#showcases" },
       { label: "Fitur", href: "#features" },
@@ -3184,7 +3169,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Buka menu",
       closeMenu: "Tutup menu",
       seeInAction: "Lihat cara kerjanya",
-      directDownload: "Lebih suka unduhan langsung? Dapatkan DMG untuk Mac",
       browseGuides: "Jelajahi panduan",
       submitApp: "Kirim aplikasi",
       contactDeveloper: "Hubungi pengembang",
@@ -3223,7 +3207,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — Ảnh chụp màn hình App Store & Google Play trên Mac`,
     siteDescription:
       "Thiết kế ảnh chụp màn hình cho App Store và Google Play trong ứng dụng native cho Mac, iPad và iPhone. Khung thiết bị, bản địa hóa và tải trực tiếp lên App Store Connect.",
-    primaryCtaLabel: "Tải trên App Store",
+    primaryCtaLabel: "Tải Screenshot Bro",
     navItems: [
       { label: "Trình diễn", href: "#showcases" },
       { label: "Tính năng", href: "#features" },
@@ -3312,7 +3296,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Mở menu",
       closeMenu: "Đóng menu",
       seeInAction: "Xem hoạt động",
-      directDownload: "Muốn tải trực tiếp? Tải bản DMG cho Mac",
       browseGuides: "Xem tất cả hướng dẫn",
       submitApp: "Gửi ứng dụng",
       contactDeveloper: "Liên hệ nhà phát triển",
@@ -3351,7 +3334,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — สกรีนช็อต App Store & Google Play บน Mac`,
     siteDescription:
       "ออกแบบสกรีนช็อตสำหรับ App Store และ Google Play ในแอปเนทีฟสำหรับ Mac, iPad และ iPhone กรอบอุปกรณ์ การแปลภาษา และอัปโหลดตรงไปยัง App Store Connect",
-    primaryCtaLabel: "ดาวน์โหลดบน App Store",
+    primaryCtaLabel: "ดาวน์โหลด Screenshot Bro",
     navItems: [
       { label: "ตัวอย่าง", href: "#showcases" },
       { label: "ฟีเจอร์", href: "#features" },
@@ -3440,7 +3423,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "เปิดเมนู",
       closeMenu: "ปิดเมนู",
       seeInAction: "ดูการทำงาน",
-      directDownload: "อยากดาวน์โหลดโดยตรงใช่ไหม? รับไฟล์ DMG สำหรับ Mac",
       browseGuides: "ดูคู่มือทั้งหมด",
       submitApp: "ส่งแอปของคุณ",
       contactDeveloper: "ติดต่อผู้พัฒนา",
@@ -3479,7 +3461,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     siteTitle: `${SITE_NAME} — App Store & Google Play-skärmdumpar på Mac`,
     siteDescription:
       "Designa skärmdumpar för App Store och Google Play i en nativ app för Mac, iPad och iPhone. Enhetsramar, lokalisering och direkt uppladdning till App Store Connect.",
-    primaryCtaLabel: "Hämta i App Store",
+    primaryCtaLabel: "Hämta Screenshot Bro",
     navItems: [
       { label: "Exempel", href: "#showcases" },
       { label: "Funktioner", href: "#features" },
@@ -3568,7 +3550,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Öppna meny",
       closeMenu: "Stäng meny",
       seeInAction: "Se i praktiken",
-      directDownload: "Föredrar du direktnedladdning? Hämta DMG-filen för Mac",
       browseGuides: "Bläddra bland guider",
       submitApp: "Skicka in app",
       contactDeveloper: "Kontakta utvecklaren",
@@ -3606,7 +3587,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   da: {
     siteTitle: `${SITE_NAME} — App Store og Google Play skærmbilleder på Mac`,
     siteDescription: "Design skærmbilleder til App Store og Google Play i en nativ app til Mac, iPad og iPhone. Enhedsrammer, lokalisering og direkte upload til App Store Connect.",
-    primaryCtaLabel: "Hent i App Store",
+    primaryCtaLabel: "Hent Screenshot Bro",
     navItems: [
       { label: "Eksempler", href: "#showcases" },
       { label: "Funktioner", href: "#features" },
@@ -3685,7 +3666,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Åbn menu",
       closeMenu: "Luk menu",
       seeInAction: "Se i praksis",
-      directDownload: "Foretrækker du direkte download? Hent DMG-filen til Mac",
       browseGuides: "Gennemse guides",
       submitApp: "Indsend app",
       contactDeveloper: "Kontakt udvikleren",
@@ -3723,7 +3703,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   fi: {
     siteTitle: `${SITE_NAME} — App Store- ja Google Play -kuvakaappaukset Macilla`,
     siteDescription: "Suunnittele kuvakaappauksia App Storelle ja Google Playlle natiivilla Mac-, iPad- ja iPhone-sovelluksella. Laitekehykset, lokalisointi ja suora lataus App Store Connectiin.",
-    primaryCtaLabel: "Hanki App Storesta",
+    primaryCtaLabel: "Lataa Screenshot Bro",
     navItems: [
       { label: "Esimerkit", href: "#showcases" },
       { label: "Ominaisuudet", href: "#features" },
@@ -3802,7 +3782,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Avaa valikko",
       closeMenu: "Sulje valikko",
       seeInAction: "Katso toiminnassa",
-      directDownload: "Haluatko ladata suoraan? Hae Macin DMG-tiedosto",
       browseGuides: "Selaa oppaita",
       submitApp: "Lähetä sovellus",
       contactDeveloper: "Ota yhteyttä kehittäjään",
@@ -3840,7 +3819,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   no: {
     siteTitle: `${SITE_NAME} — App Store- og Google Play-skjermbilder på Mac`,
     siteDescription: "Design skjermbilder for App Store og Google Play i en nativ app for Mac, iPad og iPhone. Enhetsrammer, lokalisering og direkte opplasting til App Store Connect.",
-    primaryCtaLabel: "Hent i App Store",
+    primaryCtaLabel: "Hent Screenshot Bro",
     navItems: [
       { label: "Eksempler", href: "#showcases" },
       { label: "Funksjoner", href: "#features" },
@@ -3919,7 +3898,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Åpne meny",
       closeMenu: "Lukk meny",
       seeInAction: "Se i praksis",
-      directDownload: "Foretrekker du direkte nedlasting? Last ned DMG-filen for Mac",
       browseGuides: "Bla gjennom guider",
       submitApp: "Send inn app",
       contactDeveloper: "Kontakt utvikleren",
@@ -3957,7 +3935,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   cs: {
     siteTitle: `${SITE_NAME} — Snímky pro App Store a Google Play na Macu`,
     siteDescription: "Navrhujte snímky obrazovky pro App Store a Google Play v nativní aplikaci pro Mac, iPad a iPhone. Rámečky zařízení, lokalizace a nahrávání do App Store Connect.",
-    primaryCtaLabel: "Získat v App Store",
+    primaryCtaLabel: "Stáhnout Screenshot Bro",
     navItems: [
       { label: "Příklady", href: "#showcases" },
       { label: "Schopnosti", href: "#features" },
@@ -4036,7 +4014,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Otevřít nabídku",
       closeMenu: "Zavřít nabídku",
       seeInAction: "Zobrazit v praxi",
-      directDownload: "Chcete raději stahovat přímo? Stáhněte si DMG pro Mac",
       browseGuides: "Procházet průvodce",
       submitApp: "Odeslat aplikaci",
       contactDeveloper: "Kontaktovat vývojáře",
@@ -4074,7 +4051,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   ro: {
     siteTitle: `${SITE_NAME} — Capturi pentru App Store și Google Play pe Mac`,
     siteDescription: "Proiectează capturi pentru App Store și Google Play într-o aplicație nativă pentru Mac, iPad și iPhone. Rame de dispozitive, localizare și încărcare în App Store Connect.",
-    primaryCtaLabel: "Descarcă din App Store",
+    primaryCtaLabel: "Descarcă Screenshot Bro",
     navItems: [
       { label: "Exemple", href: "#showcases" },
       { label: "Capabilități", href: "#features" },
@@ -4153,7 +4130,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Deschide meniul",
       closeMenu: "Închide meniul",
       seeInAction: "Vezi în acțiune",
-      directDownload: "Preferi descărcarea directă? Ia fișierul DMG pentru Mac",
       browseGuides: "Răsfoiește ghidurile",
       submitApp: "Trimite aplicația",
       contactDeveloper: "Contactează dezvoltatorul",
@@ -4191,7 +4167,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   ms: {
     siteTitle: `${SITE_NAME} — Tangkapan Skrin App Store & Google Play di Mac`,
     siteDescription: "Reka tangkapan skrin untuk App Store dan Google Play dalam aplikasi natif Mac, iPad dan iPhone. Bingkai peranti, penyetempatan dan muat naik terus ke App Store Connect.",
-    primaryCtaLabel: "Dapatkan di App Store",
+    primaryCtaLabel: "Muat turun Screenshot Bro",
     navItems: [
       { label: "Contoh", href: "#showcases" },
       { label: "Keupayaan", href: "#features" },
@@ -4270,7 +4246,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       openMenu: "Buka menu",
       closeMenu: "Tutup menu",
       seeInAction: "Lihat dalam tindakan",
-      directDownload: "Lebih suka muat turun terus? Dapatkan DMG untuk Mac",
       browseGuides: "Semak panduan",
       submitApp: "Hantar aplikasi",
       contactDeveloper: "Hubungi pembangun",
@@ -4322,6 +4297,14 @@ export function getLocaleInfo(locale: LocaleCode): LocaleInfo {
 // signed-in Apple Account instead — the country only shapes the web page.)
 export function appStoreCtaUrl(locale: LocaleCode = DEFAULT_LOCALE): string {
   return appStoreProductUrl(getLocaleInfo(locale).storefront);
+}
+
+// Every main CTA goes to /download, which offers the App Store and the direct
+// download side by side. /download is English-only, so the visitor's storefront
+// rides along as ?store= for its App Store button.
+export function downloadPageUrl(locale: LocaleCode = DEFAULT_LOCALE): string {
+  const storefront = getLocaleInfo(locale).storefront;
+  return storefront === DEFAULT_APP_STORE_COUNTRY ? "/download" : `/download?store=${storefront}`;
 }
 
 export function getLocaleFromPath(pathname: string): LocaleCode {

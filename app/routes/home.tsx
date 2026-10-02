@@ -91,7 +91,11 @@ function useGadsConversion() {
   useEffect(() => {
     if (!isFromGads) return;
     function handleClick(e: MouseEvent) {
-      const anchor = (e.target as HTMLElement).closest?.("a[href*='apps.apple.com']");
+      // Main CTAs now open /download (App Store and direct side by side), so a
+      // click there counts too — it's the same intent the store link used to carry.
+      const anchor = (e.target as HTMLElement).closest?.(
+        "a[href*='apps.apple.com'], a[href^='/download']",
+      );
       if (!anchor) return;
       if (typeof window.gtag === "function") {
         window.gtag("event", "ads_conversion_outbound_click", {

@@ -1,13 +1,13 @@
+import { DownloadIcon } from "~/components/home/small-icons";
 import { useEffect, useState } from "react";
 
-import { AppleLogo } from "~/components/home/icons";
 import { NavLink } from "~/components/NavLink";
 import { buttonClass } from "~/components/ui/Button";
 import { SiteLogo } from "~/components/SiteLogo";
 import { ThemeToggle, themeLabel } from "~/components/ThemeToggle";
 import { PRODUCT_LINKS, type SecondaryLink } from "~/config/site";
 import {
-  appStoreCtaUrl,
+  downloadPageUrl,
   getHomeCopy,
   LOCALES,
   localizedPath,
@@ -46,7 +46,7 @@ export function SiteNav({
   showSectionAnchors = true,
   showLocaleSwitcher = true,
 }: SiteNavProps) {
-  const ctaHref = href ?? appStoreCtaUrl(copy.locale.code);
+  const ctaHref = href ?? downloadPageUrl(copy.locale.code);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -137,7 +137,7 @@ export function SiteNav({
             href={ctaHref}
             className="hidden sm:inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl bg-gradient-to-r from-accent to-accent-light px-4 py-2 text-sm font-semibold text-white transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)]"
           >
-            <AppleLogo />
+            <DownloadIcon />
             <span>{copy.primaryCtaLabel}</span>
           </a>
 
@@ -245,7 +245,7 @@ function MobileMenu({
           onClick={onClose}
           className={buttonClass("primary", "md")}
         >
-          <AppleLogo />
+          <DownloadIcon />
           {copy.primaryCtaLabel}
         </a>
       </div>

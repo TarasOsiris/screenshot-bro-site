@@ -1,10 +1,10 @@
-import { AppleLogo } from "~/components/home/icons";
+import { DownloadIcon } from "~/components/home/small-icons";
 import { useLazyLoopVideo } from "~/components/home/hooks";
 import { McpSessionVisual } from "~/components/home/McpSessionVisual";
 import { ButtonLink } from "~/components/ui/Button";
 import { SectionIntro } from "~/components/home/SectionIntro";
 import type { FeatureShowcase } from "~/config/site";
-import { appStoreCtaUrl, type HomeCopy } from "~/config/localization";
+import { downloadPageUrl, type HomeCopy } from "~/config/localization";
 
 function FeatureShowcaseBlock({ showcase }: { showcase: FeatureShowcase }) {
   const isVideo =
@@ -70,7 +70,7 @@ export function ShowcasesSection({
   copy: HomeCopy;
   href?: string;
 }) {
-  const ctaHref = href ?? appStoreCtaUrl(copy.locale.code);
+  const ctaHref = href ?? downloadPageUrl(copy.locale.code);
 
   return (
     <section
@@ -104,7 +104,7 @@ export function ShowcasesSection({
 
         <div className="mt-12 flex justify-center">
           <ButtonLink href={ctaHref} size="lg">
-            <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
+            <DownloadIcon className="opacity-80 group-hover:opacity-100 transition-opacity" />
             {copy.primaryCtaLabel}
           </ButtonLink>
         </div>

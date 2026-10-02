@@ -7,7 +7,7 @@ import {
   PauseIcon,
   PlayIcon,
 } from "~/components/home/small-icons";
-import { appStoreCtaUrl, type HomeCopy } from "~/config/localization";
+import { downloadPageUrl, type HomeCopy } from "~/config/localization";
 import {
   DEFAULT_STARTER_TEMPLATE_ID,
   STARTER_TEMPLATES,
@@ -85,7 +85,7 @@ export function TemplatesSection({
     STARTER_TEMPLATES.findIndex((template) => template.id === selectedId),
   );
   const selected = STARTER_TEMPLATES[selectedIndex];
-  const ctaHref = href ?? appStoreCtaUrl(copy.locale.code);
+  const ctaHref = href ?? downloadPageUrl(copy.locale.code);
   const total = STARTER_TEMPLATES.length;
   const count = String(total);
   const section = copy.sections.templates;

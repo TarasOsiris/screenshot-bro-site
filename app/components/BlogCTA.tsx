@@ -1,8 +1,8 @@
-import { AppleLogo } from "~/components/home/icons";
+import { DownloadIcon } from "~/components/home/small-icons";
 import { ButtonLink } from "~/components/ui/Button";
 import { PRIMARY_CTA_LABEL } from "~/config/site";
 import {
-  appStoreCtaUrl,
+  downloadPageUrl,
   getHomeCopy,
   localizedPath,
   type LocaleCode,
@@ -39,18 +39,10 @@ export function BlogCTA({
   return (
     <div className="soft-panel mt-10 p-7 rounded-3xl text-center">
       <p className="text-sm text-ink/60 mb-4">{message}</p>
-      <ButtonLink href={appStoreCtaUrl(locale)}>
-        <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
+      <ButtonLink href={downloadPageUrl(locale)}>
+        <DownloadIcon className="opacity-80 group-hover:opacity-100 transition-opacity" />
         {resolvedButtonLabel}
       </ButtonLink>
-      <p className="mt-3 text-xs">
-        <a
-          href="/download"
-          className="text-ink/55 hover:text-ink/80 transition-colors"
-        >
-          {copy.ui.directDownload}
-        </a>
-      </p>
       <p className="mt-4 text-sm">
         <a
           href={localizedPath(locale)}

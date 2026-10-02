@@ -1,8 +1,7 @@
-import { AppleLogo } from "~/components/home/icons";
 import { ButtonLink } from "~/components/ui/Button";
-import { ArrowDownIcon } from "~/components/home/small-icons";
+import { ArrowDownIcon, DownloadIcon } from "~/components/home/small-icons";
 import { useDeferredLoopVideo } from "~/components/home/hooks";
-import { appStoreCtaUrl, type HomeCopy } from "~/config/localization";
+import { downloadPageUrl, type HomeCopy } from "~/config/localization";
 
 function AppPreview({ label }: { label: string }) {
   const videoRef = useDeferredLoopVideo("/demo-main.mp4");
@@ -32,7 +31,7 @@ export function HeroSection({
   copy: HomeCopy;
   href?: string;
 }) {
-  const ctaHref = href ?? appStoreCtaUrl(copy.locale.code);
+  const ctaHref = href ?? downloadPageUrl(copy.locale.code);
 
   return (
     <section className="relative pt-32 pb-14 px-6 overflow-hidden">
@@ -67,7 +66,7 @@ export function HeroSection({
             style={{ animationDelay: "0.28s" }}
           >
             <ButtonLink href={ctaHref}>
-              <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
+              <DownloadIcon className="opacity-80 group-hover:opacity-100 transition-opacity" />
               {copy.primaryCtaLabel}
             </ButtonLink>
             <ButtonLink href="#showcases" variant="secondary">
