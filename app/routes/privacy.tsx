@@ -87,7 +87,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
   ]);
 };
 
-export const EFFECTIVE_DATE = "October 1, 2026";
+export const EFFECTIVE_DATE = "October 2, 2026";
 const DEVELOPER_NAME = "Nineva Studios";
 const DEVELOPER_EMAIL = "tleskiv@ninevastudios.com";
 
@@ -486,6 +486,17 @@ export default function Privacy() {
               <code>paywall_shown</code>, <code>paywall_dismissed</code>,{" "}
               <code>purchase_completed</code>, <code>purchase_failed</code>,{" "}
               <code>purchase_restored</code>
+            </li>
+            <li>
+              <code>developer_rating_shown</code>,{" "}
+              <code>developer_rating_dismissed</code>,{" "}
+              <code>developer_rating_accepted</code>
+            </li>
+            <li>
+              <code>testflight_graduation_shown</code>,{" "}
+              <code>testflight_graduation_dismissed</code>,{" "}
+              <code>testflight_graduation_accepted</code> — only in TestFlight
+              beta builds
             </li>
             <li>
               <code>mcp_server_toggled</code>, <code>mcp_server_started</code>,{" "}
