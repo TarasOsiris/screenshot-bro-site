@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { SectionIntro } from "~/components/home/SectionIntro";
+import { ChevronLeftIcon, ChevronRightIcon } from "~/components/home/small-icons";
 import type { HomeCopy } from "~/config/localization";
 
 export function ScreenshotsSection({ copy }: { copy: HomeCopy }) {
@@ -175,41 +176,5 @@ export function ScreenshotsSection({ copy }: { copy: HomeCopy }) {
         {activeIndex + 1} / {screenshots.length}
       </p>
     </section>
-  );
-}
-
-function ChevronLeftIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      width="18"
-      height="18"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polyline points="15 18 9 12 15 6" />
-    </svg>
-  );
-}
-
-function ChevronRightIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      width="18"
-      height="18"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polyline points="9 18 15 12 9 6" />
-    </svg>
   );
 }

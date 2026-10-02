@@ -268,7 +268,6 @@ button:focus-visible {
   scroll-snap-type: x mandatory;
   scroll-padding: 24px;
   background: var(--color-surface-overlay);
-  animation: template-swap 0.35s ease;
 }
 
 @media (min-width: 640px) {
@@ -288,37 +287,109 @@ button:focus-visible {
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
   scroll-snap-align: start;
+  animation: template-shot-in 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--i, 0) * 55ms);
 }
 
-@keyframes template-swap {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes template-shot-in {
+  from { opacity: 0; transform: translateY(14px) scale(0.985); }
+  to { opacity: 1; transform: none; }
+}
+
+.template-name {
+  display: inline-block;
+  animation: template-name-in 0.4s ease both;
+}
+
+@keyframes template-name-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Thin rail on top of the caption; its fill is the rotation timer. */
+.template-progress {
+  position: absolute;
+  inset: -1px 0 auto;
+  height: 2px;
+  overflow: hidden;
+}
+
+.template-progress-bar {
+  display: block;
+  height: 100%;
+  background: var(--color-accent);
+  transform-origin: left;
+  animation-name: template-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes template-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.template-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+  color: color-mix(in srgb, var(--color-ink) 75%, transparent);
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.template-control:hover {
+  color: var(--color-ink);
+  border-color: color-mix(in srgb, var(--color-ink) 22%, transparent);
+  background: color-mix(in srgb, var(--color-ink) 5%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .template-shots { animation: none; }
+  .template-shot,
+  .template-name { animation: none; }
 }
 
+/* Collapsed: one scrollable strip that follows the active template.
+   Expanded: every template in a grid. */
 .template-picker {
+  position: relative;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 148px;
   gap: 14px;
   overflow-x: auto;
-  padding-bottom: 8px;
-  scroll-snap-type: x mandatory;
+  padding: 4px 4px 8px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent);
+}
+
+.template-picker::-webkit-scrollbar { display: none; }
+
+@media (min-width: 1024px) {
+  .template-picker { grid-auto-columns: 164px; }
+}
+
+.template-picker.is-expanded {
+  grid-auto-flow: row;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: visible;
+  mask-image: none;
+}
+
+@media (min-width: 640px) {
+  .template-picker.is-expanded { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 @media (min-width: 1024px) {
-  .template-picker {
-    grid-auto-flow: row;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    overflow: visible;
-  }
+  .template-picker.is-expanded { grid-template-columns: repeat(8, minmax(0, 1fr)); }
 }
 
 .template-chip {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   min-width: 0;
 }
 
@@ -332,11 +403,12 @@ button:focus-visible {
   border: 1px solid var(--color-border);
   outline: 2px solid transparent;
   outline-offset: 2px;
-  transition: outline-color 0.15s ease;
+  transition: outline-color 0.15s ease, transform 0.2s ease;
 }
 
 .template-chip:hover .template-chip-image {
   outline-color: color-mix(in srgb, var(--color-ink) 25%, transparent);
+  transform: translateY(-2px);
 }
 
 .template-chip[aria-pressed="true"] .template-chip-image {

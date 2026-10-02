@@ -158,6 +158,12 @@ export type HomeCopy = {
     templateMeta: (columns: number, width: number, height: number) => string;
     startWithTemplate: string;
     templatePickerLabel: string;
+    previousTemplate: string;
+    nextTemplate: string;
+    pauseTemplates: string;
+    playTemplates: string;
+    showAllTemplates: (count: number) => string;
+    showFewerTemplates: string;
     productHuntAlt: string;
     availabilityNote: string;
   };
@@ -289,6 +295,12 @@ const EN_HOME_COPY: HomeCopy = {
       `${columns} screenshots, ${width}×${height} px each`,
     startWithTemplate: "Start with this template",
     templatePickerLabel: "Choose a template to preview",
+    previousTemplate: "Previous template",
+    nextTemplate: "Next template",
+    pauseTemplates: "Pause template rotation",
+    playTemplates: "Play template rotation",
+    showAllTemplates: (count) => `Show all ${count} templates`,
+    showFewerTemplates: "Show fewer",
     productHuntAlt:
       "ScreenshotBro App - Design and export beautiful App Store screenshots. | Product Hunt",
     availabilityNote:
@@ -4925,7 +4937,16 @@ type TemplatesCopy = {
   section: SectionCopy;
   ui: Pick<
     HomeCopy["ui"],
-    "templateAlt" | "templateMeta" | "startWithTemplate" | "templatePickerLabel"
+    | "templateAlt"
+    | "templateMeta"
+    | "startWithTemplate"
+    | "templatePickerLabel"
+    | "previousTemplate"
+    | "nextTemplate"
+    | "pauseTemplates"
+    | "playTemplates"
+    | "showAllTemplates"
+    | "showFewerTemplates"
   >;
 };
 
@@ -4942,6 +4963,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} capturas, ${width}×${height} px cada una`,
       startWithTemplate: "Empezar con esta plantilla",
       templatePickerLabel: "Elige una plantilla para verla",
+      previousTemplate: "Plantilla anterior",
+      nextTemplate: "Plantilla siguiente",
+      pauseTemplates: "Pausar la rotación de plantillas",
+      playTemplates: "Reanudar la rotación de plantillas",
+      showAllTemplates: (count) => `Ver las ${count} plantillas`,
+      showFewerTemplates: "Ver menos",
     },
   },
   zh: {
@@ -4956,6 +4983,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} 张截图，每张 ${width}×${height} 像素`,
       startWithTemplate: "使用此模板开始",
       templatePickerLabel: "选择要预览的模板",
+      previousTemplate: "上一个模板",
+      nextTemplate: "下一个模板",
+      pauseTemplates: "暂停模板轮播",
+      playTemplates: "播放模板轮播",
+      showAllTemplates: (count) => `查看全部 ${count} 个模板`,
+      showFewerTemplates: "收起",
     },
   },
   hi: {
@@ -4970,6 +5003,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} स्क्रीनशॉट, हर एक ${width}×${height} px`,
       startWithTemplate: "इस टेम्पलेट से शुरू करें",
       templatePickerLabel: "प्रीव्यू के लिए टेम्पलेट चुनें",
+      previousTemplate: "पिछला टेम्पलेट",
+      nextTemplate: "अगला टेम्पलेट",
+      pauseTemplates: "टेम्पलेट रोटेशन रोकें",
+      playTemplates: "टेम्पलेट रोटेशन चलाएँ",
+      showAllTemplates: (count) => `सभी ${count} टेम्पलेट देखें`,
+      showFewerTemplates: "कम दिखाएँ",
     },
   },
   fr: {
@@ -4984,6 +5023,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} captures, ${width}×${height} px chacune`,
       startWithTemplate: "Commencer avec ce modèle",
       templatePickerLabel: "Choisissez un modèle à prévisualiser",
+      previousTemplate: "Modèle précédent",
+      nextTemplate: "Modèle suivant",
+      pauseTemplates: "Mettre en pause le défilement des modèles",
+      playTemplates: "Reprendre le défilement des modèles",
+      showAllTemplates: (count) => `Voir les ${count} modèles`,
+      showFewerTemplates: "Voir moins",
     },
   },
   ar: {
@@ -4998,6 +5043,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} لقطات، كل منها ${width}×${height} بكسل`,
       startWithTemplate: "ابدأ بهذا القالب",
       templatePickerLabel: "اختر قالبًا لمعاينته",
+      previousTemplate: "القالب السابق",
+      nextTemplate: "القالب التالي",
+      pauseTemplates: "إيقاف تبديل القوالب مؤقتًا",
+      playTemplates: "تشغيل تبديل القوالب",
+      showAllTemplates: (count) => `عرض كل القوالب (${count})`,
+      showFewerTemplates: "عرض أقل",
     },
   },
   de: {
@@ -5012,6 +5063,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} Screenshots, je ${width}×${height} px`,
       startWithTemplate: "Mit dieser Vorlage starten",
       templatePickerLabel: "Vorlage für die Vorschau wählen",
+      previousTemplate: "Vorherige Vorlage",
+      nextTemplate: "Nächste Vorlage",
+      pauseTemplates: "Vorlagenwechsel pausieren",
+      playTemplates: "Vorlagenwechsel fortsetzen",
+      showAllTemplates: (count) => `Alle ${count} Vorlagen anzeigen`,
+      showFewerTemplates: "Weniger anzeigen",
     },
   },
   ja: {
@@ -5026,6 +5083,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `スクリーンショット ${columns} 枚、各 ${width}×${height} px`,
       startWithTemplate: "このテンプレートで始める",
       templatePickerLabel: "プレビューするテンプレートを選択",
+      previousTemplate: "前のテンプレート",
+      nextTemplate: "次のテンプレート",
+      pauseTemplates: "テンプレートの自動切り替えを一時停止",
+      playTemplates: "テンプレートの自動切り替えを再開",
+      showAllTemplates: (count) => `${count} 個のテンプレートをすべて表示`,
+      showFewerTemplates: "表示を減らす",
     },
   },
   pt: {
@@ -5040,6 +5103,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} capturas, ${width}×${height} px cada`,
       startWithTemplate: "Começar com este modelo",
       templatePickerLabel: "Escolha um modelo para visualizar",
+      previousTemplate: "Modelo anterior",
+      nextTemplate: "Próximo modelo",
+      pauseTemplates: "Pausar a rotação de modelos",
+      playTemplates: "Retomar a rotação de modelos",
+      showAllTemplates: (count) => `Ver todos os ${count} modelos`,
+      showFewerTemplates: "Ver menos",
     },
   },
   it: {
@@ -5054,6 +5123,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} screenshot, ${width}×${height} px ciascuno`,
       startWithTemplate: "Inizia con questo modello",
       templatePickerLabel: "Scegli un modello da visualizzare",
+      previousTemplate: "Modello precedente",
+      nextTemplate: "Modello successivo",
+      pauseTemplates: "Metti in pausa la rotazione dei modelli",
+      playTemplates: "Riprendi la rotazione dei modelli",
+      showAllTemplates: (count) => `Mostra tutti i ${count} modelli`,
+      showFewerTemplates: "Mostra meno",
     },
   },
   ko: {
@@ -5068,6 +5143,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `스크린샷 ${columns}장, 각 ${width}×${height}px`,
       startWithTemplate: "이 템플릿으로 시작",
       templatePickerLabel: "미리 볼 템플릿 선택",
+      previousTemplate: "이전 템플릿",
+      nextTemplate: "다음 템플릿",
+      pauseTemplates: "템플릿 자동 전환 일시정지",
+      playTemplates: "템플릿 자동 전환 재생",
+      showAllTemplates: (count) => `템플릿 ${count}개 모두 보기`,
+      showFewerTemplates: "간단히 보기",
     },
   },
   uk: {
@@ -5082,6 +5163,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `Скриншотів: ${columns}, кожен ${width}×${height} px`,
       startWithTemplate: "Почати з цього шаблону",
       templatePickerLabel: "Оберіть шаблон для перегляду",
+      previousTemplate: "Попередній шаблон",
+      nextTemplate: "Наступний шаблон",
+      pauseTemplates: "Призупинити зміну шаблонів",
+      playTemplates: "Відновити зміну шаблонів",
+      showAllTemplates: (count) => `Показати всі ${count} шаблони`,
+      showFewerTemplates: "Показати менше",
     },
   },
   pl: {
@@ -5096,6 +5183,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `Zrzuty: ${columns}, każdy ${width}×${height} px`,
       startWithTemplate: "Zacznij od tego szablonu",
       templatePickerLabel: "Wybierz szablon do podglądu",
+      previousTemplate: "Poprzedni szablon",
+      nextTemplate: "Następny szablon",
+      pauseTemplates: "Wstrzymaj zmianę szablonów",
+      playTemplates: "Wznów zmianę szablonów",
+      showAllTemplates: (count) => `Pokaż wszystkie szablony (${count})`,
+      showFewerTemplates: "Pokaż mniej",
     },
   },
   tr: {
@@ -5110,6 +5203,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} ekran görüntüsü, her biri ${width}×${height} px`,
       startWithTemplate: "Bu şablonla başla",
       templatePickerLabel: "Önizlemek için bir şablon seçin",
+      previousTemplate: "Önceki şablon",
+      nextTemplate: "Sonraki şablon",
+      pauseTemplates: "Şablon geçişini duraklat",
+      playTemplates: "Şablon geçişini başlat",
+      showAllTemplates: (count) => `${count} şablonun tümünü göster`,
+      showFewerTemplates: "Daha az göster",
     },
   },
   nl: {
@@ -5124,6 +5223,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} screenshots, elk ${width}×${height} px`,
       startWithTemplate: "Begin met dit sjabloon",
       templatePickerLabel: "Kies een sjabloon om te bekijken",
+      previousTemplate: "Vorig sjabloon",
+      nextTemplate: "Volgend sjabloon",
+      pauseTemplates: "Sjabloonrotatie pauzeren",
+      playTemplates: "Sjabloonrotatie hervatten",
+      showAllTemplates: (count) => `Alle ${count} sjablonen tonen`,
+      showFewerTemplates: "Minder tonen",
     },
   },
   id: {
@@ -5138,6 +5243,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} tangkapan layar, masing-masing ${width}×${height} px`,
       startWithTemplate: "Mulai dengan templat ini",
       templatePickerLabel: "Pilih templat untuk pratinjau",
+      previousTemplate: "Templat sebelumnya",
+      nextTemplate: "Templat berikutnya",
+      pauseTemplates: "Jeda rotasi templat",
+      playTemplates: "Putar rotasi templat",
+      showAllTemplates: (count) => `Lihat semua ${count} templat`,
+      showFewerTemplates: "Tampilkan lebih sedikit",
     },
   },
   vi: {
@@ -5152,6 +5263,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} ảnh chụp, mỗi ảnh ${width}×${height} px`,
       startWithTemplate: "Bắt đầu với mẫu này",
       templatePickerLabel: "Chọn mẫu để xem trước",
+      previousTemplate: "Mẫu trước",
+      nextTemplate: "Mẫu tiếp theo",
+      pauseTemplates: "Tạm dừng chuyển mẫu",
+      playTemplates: "Tiếp tục chuyển mẫu",
+      showAllTemplates: (count) => `Xem tất cả ${count} mẫu`,
+      showFewerTemplates: "Thu gọn",
     },
   },
   th: {
@@ -5166,6 +5283,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `ภาพหน้าจอ ${columns} ภาพ ภาพละ ${width}×${height} px`,
       startWithTemplate: "เริ่มด้วยเทมเพลตนี้",
       templatePickerLabel: "เลือกเทมเพลตเพื่อดูตัวอย่าง",
+      previousTemplate: "เทมเพลตก่อนหน้า",
+      nextTemplate: "เทมเพลตถัดไป",
+      pauseTemplates: "หยุดการสลับเทมเพลตชั่วคราว",
+      playTemplates: "เล่นการสลับเทมเพลต",
+      showAllTemplates: (count) => `ดูเทมเพลตทั้งหมด ${count} แบบ`,
+      showFewerTemplates: "แสดงน้อยลง",
     },
   },
   sv: {
@@ -5180,6 +5303,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} skärmbilder, ${width}×${height} px vardera`,
       startWithTemplate: "Börja med den här mallen",
       templatePickerLabel: "Välj en mall att förhandsgranska",
+      previousTemplate: "Föregående mall",
+      nextTemplate: "Nästa mall",
+      pauseTemplates: "Pausa mallväxlingen",
+      playTemplates: "Starta mallväxlingen",
+      showAllTemplates: (count) => `Visa alla ${count} mallar`,
+      showFewerTemplates: "Visa färre",
     },
   },
   da: {
@@ -5194,6 +5323,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} skærmbilleder, ${width}×${height} px hver`,
       startWithTemplate: "Start med denne skabelon",
       templatePickerLabel: "Vælg en skabelon at se",
+      previousTemplate: "Forrige skabelon",
+      nextTemplate: "Næste skabelon",
+      pauseTemplates: "Sæt skabelonskift på pause",
+      playTemplates: "Genoptag skabelonskift",
+      showAllTemplates: (count) => `Vis alle ${count} skabeloner`,
+      showFewerTemplates: "Vis færre",
     },
   },
   fi: {
@@ -5208,6 +5343,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} kuvakaappausta, kukin ${width}×${height} px`,
       startWithTemplate: "Aloita tällä mallilla",
       templatePickerLabel: "Valitse esikatseltava malli",
+      previousTemplate: "Edellinen malli",
+      nextTemplate: "Seuraava malli",
+      pauseTemplates: "Keskeytä mallien vaihtuminen",
+      playTemplates: "Jatka mallien vaihtumista",
+      showAllTemplates: (count) => `Näytä kaikki ${count} mallia`,
+      showFewerTemplates: "Näytä vähemmän",
     },
   },
   no: {
@@ -5222,6 +5363,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} skjermbilder, ${width}×${height} px hver`,
       startWithTemplate: "Start med denne malen",
       templatePickerLabel: "Velg en mal å forhåndsvise",
+      previousTemplate: "Forrige mal",
+      nextTemplate: "Neste mal",
+      pauseTemplates: "Sett malbytte på pause",
+      playTemplates: "Fortsett malbytte",
+      showAllTemplates: (count) => `Vis alle ${count} malene`,
+      showFewerTemplates: "Vis færre",
     },
   },
   cs: {
@@ -5236,6 +5383,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `Snímků: ${columns}, každý ${width}×${height} px`,
       startWithTemplate: "Začít s touto šablonou",
       templatePickerLabel: "Vyberte šablonu k náhledu",
+      previousTemplate: "Předchozí šablona",
+      nextTemplate: "Další šablona",
+      pauseTemplates: "Pozastavit střídání šablon",
+      playTemplates: "Spustit střídání šablon",
+      showAllTemplates: (count) => `Zobrazit všech ${count} šablon`,
+      showFewerTemplates: "Zobrazit méně",
     },
   },
   ro: {
@@ -5250,6 +5403,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} capturi, fiecare ${width}×${height} px`,
       startWithTemplate: "Începe cu acest șablon",
       templatePickerLabel: "Alege un șablon de previzualizat",
+      previousTemplate: "Șablonul anterior",
+      nextTemplate: "Șablonul următor",
+      pauseTemplates: "Întrerupe rotația șabloanelor",
+      playTemplates: "Pornește rotația șabloanelor",
+      showAllTemplates: (count) => `Vezi toate cele ${count} șabloane`,
+      showFewerTemplates: "Vezi mai puține",
     },
   },
   ms: {
@@ -5264,6 +5423,12 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       templateMeta: (columns, width, height) => `${columns} tangkapan skrin, setiap satu ${width}×${height} px`,
       startWithTemplate: "Mula dengan templat ini",
       templatePickerLabel: "Pilih templat untuk pratonton",
+      previousTemplate: "Templat sebelumnya",
+      nextTemplate: "Templat seterusnya",
+      pauseTemplates: "Jeda putaran templat",
+      playTemplates: "Mainkan putaran templat",
+      showAllTemplates: (count) => `Lihat kesemua ${count} templat`,
+      showFewerTemplates: "Tunjuk kurang",
     },
   },
 };
