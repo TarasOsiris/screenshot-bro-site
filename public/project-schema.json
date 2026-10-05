@@ -34,6 +34,13 @@
       "items": {
         "$ref": "#/$defs/ScreenshotVariant"
       }
+    },
+    "pal": {
+      "description": "palette — the project's saved colors, offered in every color picker; omitted when empty.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Color"
+      }
     }
   },
   "$defs": {
@@ -331,9 +338,17 @@
           "description": "translationKey — catalog key this text shape sources its string from. Absent = owns its own string (key = id); present = reuses a shared string (translations live in the sibling translations.xcstrings under this key).",
           "type": "string"
         },
+        "stf": {
+          "description": "shrinkToFit — text shapes only. When true, the text is scaled down (to no less than half size) until every line fits the box; computed per locale. Written only when true.",
+          "type": "boolean"
+        },
         "ifn": {
           "description": "imageFileName — filename in resources/ for image shapes.",
           "type": "string"
+        },
+        "icr": {
+          "description": "imageCrop — zoom and pan of an image shape's picture inside its frame. Absent = centered aspect fill. Written only when not the identity.",
+          "$ref": "#/$defs/ImageCrop"
         },
         "dc": {
           "description": "deviceCategory — device kind for device shapes.",
@@ -384,7 +399,7 @@
           "type": "boolean"
         },
         "olc": {
-          "description": "outlineColorData — stroke color (rectangle/circle/star).",
+          "description": "outlineColorData — stroke color (rectangle/circle/star/image; on text, a glyph outline drawn outside the letters).",
           "$ref": "#/$defs/Color"
         },
         "olw": {
@@ -420,7 +435,7 @@
           "type": "integer"
         },
         "fst": {
-          "description": "fillStyle — gradient/image fill for rectangle/circle/star.",
+          "description": "fillStyle — gradient/image fill for rectangle/circle/star; text accepts gradient only (fills the glyphs).",
           "$ref": "#/$defs/BackgroundStyle"
         },
         "fgc": {
@@ -770,6 +785,49 @@
         "oifn": {
           "description": "overrideImageFileName — locale-specific image asset.",
           "type": "string"
+        },
+        "icr": {
+          "description": "imageCrop override for image shapes. The identity crop (s 1, x 0, y 0) means this locale shows the picture uncropped under a cropped base; absent inherits the base crop.",
+          "$ref": "#/$defs/ImageCrop"
+        },
+        "af": {
+          "description": "autoFit — bookkeeping for the MCP translation auto-fit: the share of oy/oh/fs it wrote, so a later fit can take it back. Dropped by any manual edit of the override.",
+          "$ref": "#/$defs/TextAutoFitContribution"
+        }
+      }
+    },
+    "TextAutoFitContribution": {
+      "type": "object",
+      "properties": {
+        "dy": {
+          "description": "offsetY auto-fit added to oy",
+          "type": "number"
+        },
+        "dh": {
+          "description": "addedHeight auto-fit added to oh",
+          "type": "number"
+        },
+        "fs": {
+          "description": "fontSize auto-fit wrote as fs (only where the locale had none of its own)",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ImageCrop": {
+      "type": "object",
+      "properties": {
+        "s": {
+          "description": "scale over the aspect-fill fit, 1–5",
+          "type": "number"
+        },
+        "x": {
+          "description": "horizontal offset as a fraction of the frame width (clamped at render so the picture covers the frame)",
+          "type": "number"
+        },
+        "y": {
+          "description": "vertical offset as a fraction of the frame height",
+          "type": "number"
         }
       }
     },

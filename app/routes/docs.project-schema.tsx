@@ -194,7 +194,7 @@ Use UUIDs for all \`id\` fields. Use Swift reference-date timestamps
           <h2>File structure overview</h2>
 
           <p>
-            A project file has five top-level fields:
+            A project file has six top-level fields:
           </p>
 
           <table>
@@ -230,6 +230,11 @@ Use UUIDs for all \`id\` fields. Use Swift reference-date timestamps
                 <td><code>v</code></td>
                 <td>array</td>
                 <td>A/B variants in display order — alternatives to the Original rows, which rows opt into through their own <code>vr</code> key (omitted when the project has none)</td>
+              </tr>
+              <tr>
+                <td><code>pal</code></td>
+                <td>array</td>
+                <td>The project's saved colors, offered in every color picker as <strong>Project Colors</strong> (omitted when empty)</td>
               </tr>
             </tbody>
           </table>
