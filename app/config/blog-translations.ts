@@ -4,6 +4,15 @@ import type { LocaleCode } from "./localization";
 export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, BlogPost[]>> = {
   es: [
     {
+      slug: "googlebook-google-play-screenshots",
+      title: "Llega Googlebook: capturas de pantalla grande en Play",
+      description: "Los portátiles Android salieron a la venta el 4 de octubre. No hay nuevo tamaño en Play, pero la sección de pantallas grandes que casi nadie rellena ya reparte distribución.",
+      date: "2026-10-05",
+      readTime: "Lectura de 9 min",
+      category: "Guide",
+      keywords: ["googlebook capturas google play","capturas pantalla grande google play","capturas chromebook play store","tamano captura tablet google play"],
+    },
+    {
       slug: "app-store-creative-assets",
       title: "Recursos creativos de App Store: cabeceras y búsqueda",
       description: "Apple añade cabeceras de página de producto, recursos para los resultados de búsqueda y una biblioteca de recursos. Qué está confirmado y qué cambia para tus capturas.",
@@ -565,6 +574,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   zh: [
+    {
+      slug: "googlebook-google-play-screenshots",
+      title: "Googlebook 发布：Play 大屏幕截图该怎么做",
+      description: "Android 笔记本已于 10 月 4 日开售。Play 没有新增截图尺寸，但多数应用留空的大屏幕板块如今真正影响曝光。",
+      date: "2026-10-05",
+      readTime: "9 分钟阅读",
+      category: "Guide",
+      keywords: ["googlebook google play 截图","google play 大屏幕截图","chromebook play 商店截图","google play 平板截图尺寸"],
+    },
     {
       slug: "app-store-creative-assets",
       title: "App Store 创意素材：产品页页首与搜索结果",
@@ -1128,6 +1146,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   ja: [
     {
+      slug: "googlebook-google-play-screenshots",
+      title: "Googlebook 発売：Play の大画面スクリーンショット",
+      description: "Android ノートPCが10月4日に発売。Play に新しいサイズはないが、ほとんどのアプリが空欄にしている大画面枠が配信に直結するようになった。",
+      date: "2026-10-05",
+      readTime: "読了目安 9分",
+      category: "Guide",
+      keywords: ["googlebook google play スクリーンショット","google play 大画面 スクリーンショット","chromebook play ストア スクリーンショット","google play タブレット スクリーンショット サイズ"],
+    },
+    {
       slug: "app-store-creative-assets",
       title: "App Storeのクリエイティブアセット：ヘッダーと検索結果",
       description: "Appleがプロダクトページのヘッダー、検索結果用アセット、アセットライブラリを追加。確定している内容と、スクリーンショットへの影響を解説。",
@@ -1689,6 +1716,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   de: [
+    {
+      slug: "googlebook-google-play-screenshots",
+      title: "Googlebook ist da: Play-Screenshots für große Displays",
+      description: "Android-Notebooks sind seit dem 4. Oktober im Handel. Keine neue Play-Größe – aber der Bereich für große Displays, den fast niemand füllt, bringt jetzt echte Sichtbarkeit.",
+      date: "2026-10-05",
+      readTime: "9 Min. Lesezeit",
+      category: "Guide",
+      keywords: ["googlebook google play screenshots","google play screenshots grosse displays","chromebook play store screenshots","google play tablet screenshot groesse"],
+    },
     {
       slug: "app-store-creative-assets",
       title: "App Store Creative Assets: Header und Suchergebnisse",
@@ -2252,6 +2288,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   fr: [
     {
+      slug: "googlebook-google-play-screenshots",
+      title: "Googlebook arrive : vos captures grand écran sur Play",
+      description: "Les ordinateurs portables Android sont en vente depuis le 4 octobre. Aucune nouvelle taille sur Play, mais la section grand écran que presque personne ne remplit pèse désormais sur la visibilité.",
+      date: "2026-10-05",
+      readTime: "9 min de lecture",
+      category: "Guide",
+      keywords: ["googlebook captures google play","captures grand ecran google play","captures chromebook play store","taille capture tablette google play"],
+    },
+    {
       slug: "app-store-creative-assets",
       title: "Ressources créatives App Store : en-têtes et recherche",
       description: "Apple ajoute des en-têtes de fiche produit, des ressources pour les résultats de recherche et une bibliothèque de ressources. Ce qui est confirmé et ce qui change.",
@@ -2813,6 +2858,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   pt: [
+    {
+      slug: "googlebook-google-play-screenshots",
+      title: "Googlebook chegou: capturas de tela grande na Play",
+      description: "Os notebooks Android chegaram às lojas em 4 de outubro. Nenhum tamanho novo na Play, mas a seção de telas grandes que quase ninguém preenche agora vale distribuição.",
+      date: "2026-10-05",
+      readTime: "Leitura de 9 min",
+      category: "Guide",
+      keywords: ["googlebook capturas google play","capturas tela grande google play","capturas chromebook play store","tamanho captura tablet google play"],
+    },
     {
       slug: "app-store-creative-assets",
       title: "Recursos criativos da App Store: cabeçalhos e busca",
@@ -3376,6 +3430,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   it: [
     {
+      slug: "googlebook-google-play-screenshots",
+      title: "Googlebook è in vendita: screenshot Play per schermi grandi",
+      description: "I portatili Android sono in vendita dal 4 ottobre. Nessuna nuova dimensione su Play, ma la sezione schermi grandi che quasi nessuno compila ora porta visibilità reale.",
+      date: "2026-10-05",
+      readTime: "9 min di lettura",
+      category: "Guide",
+      keywords: ["googlebook screenshot google play","screenshot schermi grandi google play","screenshot chromebook play store","dimensioni screenshot tablet google play"],
+    },
+    {
       slug: "app-store-creative-assets",
       title: "Risorse creative App Store: header e risultati di ricerca",
       description: "Apple aggiunge header della pagina prodotto, risorse per i risultati di ricerca e una libreria di risorse. Cosa è confermato e cosa cambia per i tuoi screenshot.",
@@ -3937,6 +4000,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   ko: [
+    {
+      slug: "googlebook-google-play-screenshots",
+      title: "Googlebook 출시: Play 대화면 스크린샷 준비하기",
+      description: "안드로이드 노트북이 10월 4일 출시됐습니다. Play에 새 크기는 없지만, 대부분 비워 두는 대화면 항목이 이제 실제 노출로 이어집니다.",
+      date: "2026-10-05",
+      readTime: "9분 소요",
+      category: "Guide",
+      keywords: ["googlebook google play 스크린샷","google play 대화면 스크린샷","크롬북 플레이스토어 스크린샷","google play 태블릿 스크린샷 크기"],
+    },
     {
       slug: "app-store-creative-assets",
       title: "App Store 크리에이티브 애셋: 헤더와 검색 결과",
@@ -4500,6 +4572,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   ar: [
     {
+      slug: "googlebook-google-play-screenshots",
+      title: "إطلاق Googlebook: لقطات الشاشات الكبيرة في Play",
+      description: "بدأ بيع حواسيب أندرويد المحمولة في 4 أكتوبر. لا يوجد مقاس جديد في Play، لكن قسم الشاشات الكبيرة الذي يتركه الجميع فارغًا بات يمنح انتشارًا حقيقيًا.",
+      date: "2026-10-05",
+      readTime: "9 دقيقة للقراءة",
+      category: "Guide",
+      keywords: ["googlebook لقطات google play","لقطات الشاشات الكبيرة google play","لقطات chromebook play store","مقاس لقطات التابلت google play"],
+    },
+    {
       slug: "app-store-creative-assets",
       title: "الأصول الإبداعية في App Store: الرؤوس ونتائج البحث",
       description: "تضيف Apple رؤوس صفحة المنتج وأصول نتائج البحث ومكتبة أصول. ما تم تأكيده وما يعنيه ذلك للقطات الشاشة الخاصة بك.",
@@ -5061,6 +5142,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   hi: [
+    {
+      slug: "googlebook-google-play-screenshots",
+      title: "Googlebook आया: Play की बड़ी स्क्रीन स्क्रीनशॉट",
+      description: "एंड्रॉइड लैपटॉप 4 अक्टूबर को बिक्री पर आ गए। Play में कोई नया साइज़ नहीं, लेकिन बड़ी स्क्रीन का वह सेक्शन जो लगभग कोई नहीं भरता, अब असली डिस्ट्रिब्यूशन देता है।",
+      date: "2026-10-05",
+      readTime: "9 मिनट में पढ़ें",
+      category: "Guide",
+      keywords: ["googlebook google play स्क्रीनशॉट","google play बड़ी स्क्रीन स्क्रीनशॉट","chromebook play store स्क्रीनशॉट","google play टैबलेट स्क्रीनशॉट साइज़"],
+    },
     {
       slug: "app-store-creative-assets",
       title: "App Store क्रिएटिव एसेट: हेडर और सर्च रिज़ल्ट",

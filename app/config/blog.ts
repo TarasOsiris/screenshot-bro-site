@@ -19,6 +19,22 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "googlebook-google-play-screenshots",
+    title: "Googlebook Ships: Your Play Large-Screen Screenshots",
+    description:
+      "Android laptops went on sale October 4. No new Play screenshot size — but the Large screens slot most listings leave empty now carries real distribution.",
+    date: "2026-10-05",
+    readTime: "9 min read",
+    category: "Guide",
+    keywords: [
+      "googlebook google play screenshots",
+      "google play large screen screenshots",
+      "chromebook play store screenshots",
+      "google play tablet screenshot size",
+      "android laptop app listing",
+    ],
+  },
+  {
     slug: "app-store-creative-assets",
     title: "App Store Creative Assets: Headers and Search Results",
     description:

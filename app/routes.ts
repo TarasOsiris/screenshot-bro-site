@@ -26,6 +26,8 @@ export default [
   ),
   route("blog", "routes/blog._index.tsx"),
   route(":locale/blog", "routes/blog._index.tsx", { id: "blog-locale" }),
+  route("blog/googlebook-google-play-screenshots", "routes/blog.googlebook-google-play-screenshots.tsx"),
+  route(":locale/blog/googlebook-google-play-screenshots", "routes/blog.googlebook-google-play-screenshots.tsx", { id: "blog-googlebook-google-play-screenshots-locale" }),
   route("blog/app-store-creative-assets", "routes/blog.app-store-creative-assets.tsx"),
   route(":locale/blog/app-store-creative-assets", "routes/blog.app-store-creative-assets.tsx", { id: "blog-app-store-creative-assets-locale" }),
   route("blog/screenshot-bro-mcp-server", "routes/blog.screenshot-bro-mcp-server.tsx"),

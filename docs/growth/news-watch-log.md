@@ -172,3 +172,103 @@ run missed, and it caught one item (Apple's Sep 18 iPhone Duo resources).
     creative assets. No release since 2.240.1.
   - April 2027 SDK floor (iOS 27 SDK required for App Store Connect uploads).
     Far out, no action yet.
+
+## 2026-10-05
+
+- **Scanned:** developer.apple.com/news (all items through Oct 5),
+  developer.apple.com/app-store/whats-new, the App Store Connect screenshot
+  specifications reference, developer.apple.com/help/app-store-connect/release-notes,
+  the App Store Connect API release-notes index (via Apple's tutorials JSON
+  endpoint), the App Review Guidelines (full 2.3.1–2.3.12 plus a phrase search for
+  "creative asset" / "product page header" / "Asset Library"), fastlane versions on
+  RubyGems, Google Play's graphic asset requirements (answer/9866151, fetched raw
+  and grepped rather than summarized), developer.android.com adaptive app quality
+  guidelines, the Android Developers Blog (Sep–Oct 2026) and its #Googlebook hub,
+  blog.google Googlebook posts, plus searches on competitor pricing and ASO
+  screenshot research.
+
+- **Findings:**
+  - **Googlebook went on sale this week.** Google: "Devices arrive on shelves
+    starting October 4 in the U.S., and October 5 in Canada, the U.K., Ireland,
+    France, Germany, and Australia," pre-orders from Sep 21, built by Acer, ASUS,
+    Dell, HP and Lenovo, from $899 —
+    <https://blog.google/products-and-platforms/devices/googlebook/pre-order-googlebook/>.
+    Developer framing in "Land your apps on Googlebook with adaptive development"
+    (Sep 22), <https://android-developers.googleblog.com/2026/09/adaptive-development-scale-app-googlebook.html>:
+    "Google Play highlights optimized titles with dedicated badging, enhanced
+    search, and featured spots across curated store homepages," and optimized apps
+    are "prominently highlighted for easy transfer" during phone-to-laptop setup.
+    **Published.**
+  - **No Googlebook screenshot slot exists, and no Play dimension changed.** Checked
+    this directly rather than trusting a summary: fetched
+    <https://support.google.com/googleplay/android-developer/answer/9866151> raw and
+    grepped it. The single "googlebook" hit on that page is inside Google's help-widget
+    JavaScript (a product-ID list), not content, and all 175 "Desktop" hits are CSS
+    class names. Form factors remain phone, Large screens (Chromebook + tablets),
+    Wear OS, Android TV, Automotive, Android XR. Googlebook is served by the existing
+    Large screens slot. **This is the claim a careless run would have gotten wrong.**
+  - **Large screens slot wording, verbatim from Google:** "For Chromebook and tablets,
+    you can add a minimum of 4 screenshots to demonstrate your in-app experience.
+    Upload screenshots between 1,080 and 7,680px / Use a 16:9 aspect ratio for
+    landscape and a 9:16 aspect ratio for portrait / Exclude additional text that is
+    not part of your core app experience, as this can get cut off on Play homepages
+    on certain screen sizes." Note the page's own general requirements separately cap
+    any screenshot at 3,840 px — Google carries both numbers without reconciling them.
+    The article reports both and recommends 1920x1080 or 2560x1440, which satisfy
+    each. Worth re-checking whether Google ever fixes this.
+  - **Adaptive app quality guidelines** name the listing explicitly ("Upload
+    screenshots that show off the app on tablets and foldables") and list test
+    targets: Googlebook (160 ppi), Foldable (841x701 dp), 8-inch tablet (1024x640 dp),
+    10.5-inch tablet (1280x800 dp), 13-inch Chromebook (1600x900 dp). Capture path is
+    the "Desktop > Desktop (Preview)" emulator, which needs Android Studio Canary.
+    <https://developer.android.com/docs/quality-guidelines/adaptive-app-quality>.
+    Google has published no reference resolution for Googlebook beyond "160 ppi" —
+    deliberately not invented one.
+  - **Apple: nothing material.** No screenshot- or metadata-facing news item since
+    Sep 18. The only October items are Full Disk Access changes (Oct 2,
+    <https://developer.apple.com/news/?id=p6zjojqw>) and the Developer ID Sub-CA
+    expiring Feb 1, 2027 (Oct 1, <https://developer.apple.com/news/?id=w4atic4c>) —
+    neither touches store assets. Screenshot specifications re-verified unchanged,
+    iPhone Duo still "support for uploading assets ... available later this year".
+    Creative assets, Asset Library and the product page preview are all still "coming
+    this fall" on /app-store/whats-new — so last run's `app-store-creative-assets`
+    post remains accurate. App Review Guidelines 2.3.1–2.3.12 verbatim unchanged, and
+    the phrases "creative asset", "product page header" and "Asset Library" still
+    appear nowhere in them.
+  - **App Store Connect API** still tops out at 4.5. No Asset Library or
+    creative-asset endpoints.
+  - **fastlane** — still 2.240.1, created 2026-09-15. No release since the last two
+    runs. Still no frameit Duo frames, no deliver support for Duo or creative assets.
+  - **Competitors** — nothing surfaced beyond secondary roundup posts recycling
+    pricing. No primary vendor announcement of a launch, price change or shutdown.
+  - **ASO research** — same as last run: only secondary posts citing unattributed
+    conversion percentages (SplitMetrics "15–30%", and similar). No primary study.
+    Dropped per the primary-source rule.
+
+- **Published:** `googlebook-google-play-screenshots` — "Googlebook Ships: Your Play
+  Large-Screen Screenshots" (Guide, 2026-10-05)
+
+- **Updated:** none. Checked the two Play posts against the live requirements page —
+  `google-play-screenshot-sizes-requirements` and
+  `google-play-store-listing-graphics-checklist` already carry the large-screen rule
+  (min 4, 1080–7680, 16:9/9:16), the XR rule, Wear OS, Automotive and the TV banner,
+  and all of it still matches Google's page. Nothing contradicted.
+
+- **Watching:**
+  - Whether Google adds a Googlebook or desktop device type to Play Console store
+    listings, or publishes a reference resolution for it. Neither exists today; if
+    either lands, the new post needs the real slot and numbers.
+  - The 3,840 px vs 7,680 px contradiction on Google's graphic assets page.
+  - Asset Library, product page headers, search result assets and the product page
+    preview going live in App Store Connect ("this fall") — still not shipped, still
+    absent from the API at 4.5. When it ships, `app-store-creative-assets` needs the
+    real upload flow and Apple may publish quotable dimensions.
+  - iPhone Duo ships Oct 23 (18 days out); App Store Connect accepting Duo uploads
+    "later this year". `app-store-screenshot-sizes` and
+    `device-mockup-generator-app-screenshots` both say uploads are not accepted yet,
+    in all locales — both go wrong the day that ships. Highest-priority correction.
+  - Apple's Duo product bezel in Apple Design Resources — fold into the mockup post's
+    Duo section on its next edit.
+  - fastlane: frameit Duo frames, deliver support for Duo display types or creative
+    assets. No release since 2.240.1 (three runs now).
+  - April 2027 SDK floor (iOS 27 SDK required for App Store Connect uploads).
