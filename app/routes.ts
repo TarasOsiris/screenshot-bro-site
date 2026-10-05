@@ -26,6 +26,8 @@ export default [
   ),
   route("blog", "routes/blog._index.tsx"),
   route(":locale/blog", "routes/blog._index.tsx", { id: "blog-locale" }),
+  route("blog/iphone-duo-app-store-screenshots", "routes/blog.iphone-duo-app-store-screenshots.tsx"),
+  route(":locale/blog/iphone-duo-app-store-screenshots", "routes/blog.iphone-duo-app-store-screenshots.tsx", { id: "blog-iphone-duo-app-store-screenshots-locale" }),
   route("blog/googlebook-google-play-screenshots", "routes/blog.googlebook-google-play-screenshots.tsx"),
   route(":locale/blog/googlebook-google-play-screenshots", "routes/blog.googlebook-google-play-screenshots.tsx", { id: "blog-googlebook-google-play-screenshots-locale" }),
   route("blog/app-store-creative-assets", "routes/blog.app-store-creative-assets.tsx"),

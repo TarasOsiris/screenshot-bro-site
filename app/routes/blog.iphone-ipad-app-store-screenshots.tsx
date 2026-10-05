@@ -117,7 +117,7 @@ export default function BlogPost() {
           <tr>
             <td>iPhone Duo</td>
             <td>2007 x 2853 (inner display) or 1398 x 2034 (outer display)</td>
-            <td>Apple lists the sizes, but upload support in App Store Connect arrives later in 2026.</td>
+            <td>Apple lists the sizes, but upload support in App Store Connect arrives later in 2026. See the <a href="/blog/iphone-duo-app-store-screenshots">iPhone Duo screenshots guide</a>.</td>
           </tr>
           <tr>
             <td>6.9 inch</td>

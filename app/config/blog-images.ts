@@ -8,6 +8,7 @@ export type BlogThumb = { src: string; alt: string };
 // (matching the untranslated category labels). A post without an entry
 // renders a category-tinted placeholder on the blog index.
 const BLOG_THUMB_ALT: Record<string, string> = {
+  "iphone-duo-app-store-screenshots": "iPhone in a brown leather case on a wooden table next to AirPods Pro",
   "googlebook-google-play-screenshots": "Open silver laptop with a dark widescreen display on a wooden desk",
   "app-store-creative-assets": "iMac and a second monitor on a wooden desk showing the same wide landscape image",
   "screenshot-bro-mcp-server": "Close-up of colorful code on a dark computer screen",

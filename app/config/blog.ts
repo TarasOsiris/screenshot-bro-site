@@ -19,6 +19,24 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "iphone-duo-app-store-screenshots",
+    title: "iPhone Duo App Store Screenshots: Sizes and Setup",
+    description:
+      "iPhone Duo screenshot sizes for the inner (2007×2853) and outer (1398×2034) displays, upload status, how to capture them, and how to build both sets.",
+    date: "2026-10-05",
+    readTime: "11 min read",
+    category: "Reference",
+    keywords: [
+      "iphone duo app store screenshots",
+      "iphone duo screenshot size",
+      "iphone duo screenshot dimensions",
+      "iphone duo inner display screenshot",
+      "iphone duo outer display screenshot",
+      "foldable iphone app store screenshots",
+      "iphone duo simulator screenshots",
+    ],
+  },
+  {
     slug: "googlebook-google-play-screenshots",
     title: "Googlebook Ships: Your Play Large-Screen Screenshots",
     description:
@@ -809,7 +827,6 @@ export const BLOG_POSTS: BlogPost[] = [
       "iPhone screenshot App Store",
       "App Store screenshot upload iPhone iPad",
       "App Store screenshot display sizes",
-      "iPhone Duo App Store screenshots",
       "iPhone 18 Pro Max screenshot size",
     ],
   },

@@ -4,6 +4,15 @@ import type { LocaleCode } from "./localization";
 export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, BlogPost[]>> = {
   es: [
     {
+      slug: "iphone-duo-app-store-screenshots",
+      title: "Capturas de iPhone Duo para App Store: tamaños y guía",
+      description: "Tamaños de captura del iPhone Duo para la pantalla interior (2007×2853) y exterior (1398×2034), estado de subida y cómo crear ambos conjuntos.",
+      date: "2026-10-05",
+      readTime: "Lectura de 11 min",
+      category: "Reference",
+      keywords: ["capturas iphone duo app store", "tamaño captura iphone duo"],
+    },
+    {
       slug: "googlebook-google-play-screenshots",
       title: "Llega Googlebook: capturas de pantalla grande en Play",
       description: "Los portátiles Android salieron a la venta el 4 de octubre. No hay nuevo tamaño en Play, pero la sección de pantallas grandes que casi nadie rellena ya reparte distribución.",
@@ -574,6 +583,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   zh: [
+    {
+      slug: "iphone-duo-app-store-screenshots",
+      title: "iPhone Duo App Store 截图：尺寸与制作指南",
+      description: "iPhone Duo 内屏（2007×2853）与外屏（1398×2034）的 App Store 截图尺寸、上传状态、截取方法，以及如何制作两套截图。",
+      date: "2026-10-05",
+      readTime: "11 分钟阅读",
+      category: "Reference",
+      keywords: ["iphone duo 截图尺寸", "iphone duo app store 截图"],
+    },
     {
       slug: "googlebook-google-play-screenshots",
       title: "Googlebook 发布：Play 大屏幕截图该怎么做",
@@ -1146,6 +1164,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   ja: [
     {
+      slug: "iphone-duo-app-store-screenshots",
+      title: "iPhone DuoのApp Storeスクリーンショット：サイズと作り方",
+      description: "iPhone Duoの内側（2007×2853）と外側（1398×2034）ディスプレイのスクリーンショットサイズ、アップロード状況、撮影方法と2セットの作り方。",
+      date: "2026-10-05",
+      readTime: "読了目安 11分",
+      category: "Reference",
+      keywords: ["iphone duo スクリーンショット サイズ", "iphone duo app store スクリーンショット"],
+    },
+    {
       slug: "googlebook-google-play-screenshots",
       title: "Googlebook 発売：Play の大画面スクリーンショット",
       description: "Android ノートPCが10月4日に発売。Play に新しいサイズはないが、ほとんどのアプリが空欄にしている大画面枠が配信に直結するようになった。",
@@ -1716,6 +1743,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   de: [
+    {
+      slug: "iphone-duo-app-store-screenshots",
+      title: "iPhone Duo App-Store-Screenshots: Größen und Setup",
+      description: "Screenshot-Größen für das innere (2007×2853) und äußere (1398×2034) Display des iPhone Duo, Upload-Status, Aufnahme und Erstellung beider Sets.",
+      date: "2026-10-05",
+      readTime: "11 Min. Lesezeit",
+      category: "Reference",
+      keywords: ["iphone duo screenshot größe", "iphone duo app store screenshots"],
+    },
     {
       slug: "googlebook-google-play-screenshots",
       title: "Googlebook ist da: Play-Screenshots für große Displays",
@@ -2288,6 +2324,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   fr: [
     {
+      slug: "iphone-duo-app-store-screenshots",
+      title: "Captures iPhone Duo pour l'App Store : tailles et méthode",
+      description: "Tailles de capture de l'iPhone Duo pour l'écran intérieur (2007×2853) et extérieur (1398×2034), état de l'envoi, capture et création des deux séries.",
+      date: "2026-10-05",
+      readTime: "11 min de lecture",
+      category: "Reference",
+      keywords: ["captures iphone duo app store", "taille capture iphone duo"],
+    },
+    {
       slug: "googlebook-google-play-screenshots",
       title: "Googlebook arrive : vos captures grand écran sur Play",
       description: "Les ordinateurs portables Android sont en vente depuis le 4 octobre. Aucune nouvelle taille sur Play, mais la section grand écran que presque personne ne remplit pèse désormais sur la visibilité.",
@@ -2858,6 +2903,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   pt: [
+    {
+      slug: "iphone-duo-app-store-screenshots",
+      title: "Capturas do iPhone Duo na App Store: tamanhos e guia",
+      description: "Tamanhos de captura do iPhone Duo para a tela interna (2007×2853) e externa (1398×2034), status do envio, como capturar e montar os dois conjuntos.",
+      date: "2026-10-05",
+      readTime: "Leitura de 11 min",
+      category: "Reference",
+      keywords: ["capturas iphone duo app store", "tamanho captura iphone duo"],
+    },
     {
       slug: "googlebook-google-play-screenshots",
       title: "Googlebook chegou: capturas de tela grande na Play",
@@ -3430,6 +3484,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   it: [
     {
+      slug: "iphone-duo-app-store-screenshots",
+      title: "Screenshot iPhone Duo per l'App Store: dimensioni e guida",
+      description: "Dimensioni degli screenshot di iPhone Duo per il display interno (2007×2853) ed esterno (1398×2034), stato del caricamento e come creare i due set.",
+      date: "2026-10-05",
+      readTime: "11 min di lettura",
+      category: "Reference",
+      keywords: ["screenshot iphone duo app store", "dimensioni screenshot iphone duo"],
+    },
+    {
       slug: "googlebook-google-play-screenshots",
       title: "Googlebook è in vendita: screenshot Play per schermi grandi",
       description: "I portatili Android sono in vendita dal 4 ottobre. Nessuna nuova dimensione su Play, ma la sezione schermi grandi che quasi nessuno compila ora porta visibilità reale.",
@@ -4000,6 +4063,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   ko: [
+    {
+      slug: "iphone-duo-app-store-screenshots",
+      title: "iPhone Duo App Store 스크린샷: 크기와 제작 가이드",
+      description: "iPhone Duo 내부(2007×2853)·외부(1398×2034) 디스플레이 스크린샷 크기, 업로드 현황, 캡처 방법과 두 세트를 만드는 법.",
+      date: "2026-10-05",
+      readTime: "11분 소요",
+      category: "Reference",
+      keywords: ["iphone duo 스크린샷 크기", "iphone duo app store 스크린샷"],
+    },
     {
       slug: "googlebook-google-play-screenshots",
       title: "Googlebook 출시: Play 대화면 스크린샷 준비하기",
@@ -4572,6 +4644,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   ar: [
     {
+      slug: "iphone-duo-app-store-screenshots",
+      title: "لقطات شاشة iPhone Duo في App Store: المقاسات والإعداد",
+      description: "مقاسات لقطات شاشة iPhone Duo للشاشة الداخلية (2007×2853) والخارجية (1398×2034)، وحالة الرفع، وطريقة الالتقاط وإنشاء المجموعتين.",
+      date: "2026-10-05",
+      readTime: "11 دقيقة للقراءة",
+      category: "Reference",
+      keywords: ["لقطات شاشة iphone duo", "مقاس لقطة شاشة iphone duo"],
+    },
+    {
       slug: "googlebook-google-play-screenshots",
       title: "إطلاق Googlebook: لقطات الشاشات الكبيرة في Play",
       description: "بدأ بيع حواسيب أندرويد المحمولة في 4 أكتوبر. لا يوجد مقاس جديد في Play، لكن قسم الشاشات الكبيرة الذي يتركه الجميع فارغًا بات يمنح انتشارًا حقيقيًا.",
@@ -5142,6 +5223,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
     },
   ],
   hi: [
+    {
+      slug: "iphone-duo-app-store-screenshots",
+      title: "iPhone Duo App Store स्क्रीनशॉट: साइज़ और सेटअप",
+      description: "iPhone Duo के अंदरूनी (2007×2853) और बाहरी (1398×2034) डिस्प्ले के स्क्रीनशॉट साइज़, अपलोड की स्थिति, कैप्चर का तरीका और दोनों सेट बनाना।",
+      date: "2026-10-05",
+      readTime: "11 मिनट में पढ़ें",
+      category: "Reference",
+      keywords: ["iphone duo स्क्रीनशॉट साइज़", "iphone duo app store स्क्रीनशॉट"],
+    },
     {
       slug: "googlebook-google-play-screenshots",
       title: "Googlebook आया: Play की बड़ी स्क्रीन स्क्रीनशॉट",

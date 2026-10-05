@@ -229,9 +229,13 @@ export default function BlogPost() {
         then, Duo mockups belong on your website, in launch posts, and in
         press kits. Screenshot Bro ships the three Duo frames in Night Sky and
         Star White, plus a Duo Showcase template that lays out all three views
-        across one row. See the{" "}
+        across one row. The{" "}
+        <a href="/blog/iphone-duo-app-store-screenshots">
+          iPhone Duo screenshots guide
+        </a>{" "}
+        covers capture and setup, and the{" "}
         <a href="/blog/app-store-screenshot-sizes">App Store screenshot sizes</a>{" "}
-        reference for the full list.
+        reference has the full list.
       </p>
 
       <h2>How to Generate a Framed Mockup</h2>
