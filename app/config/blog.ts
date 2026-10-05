@@ -307,7 +307,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Looking for an AppLaunchpad alternative? How Screenshot Bro compares: native Mac app, device frames, localization, direct App Store Connect upload.",
     date: "2026-06-18",
-    dateModified: "2026-09-26",
+    dateModified: "2026-10-05",
     readTime: "6 min read",
     category: "Comparison",
     keywords: [

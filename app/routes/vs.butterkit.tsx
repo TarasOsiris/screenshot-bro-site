@@ -230,7 +230,7 @@ export default function ButterKitComparison() {
         holds rows — one per device size, such as iPhone 6.9&quot;, iPad
         13&quot;, Mac, Android phone and 10&quot; tablet — and each row holds the
         individual screenshots; headlines, images, gradients and backgrounds can
-        span across them. It ships 50+ starter templates, 81 language presets
+        span across them. It ships 60+ starter templates, 81 language presets
         with on-device auto-translate and per-locale overrides, custom fonts, and
         exports PNG or JPEG at the exact pixel size each store expects, one
         folder per locale and row. From the same window it uploads to App Store

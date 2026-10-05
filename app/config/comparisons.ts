@@ -64,7 +64,7 @@ export const SCREENSHOT_BRO_FACTS = {
     "Presets for every App Store iPhone, iPad and Mac size and Google Play phone and tablet; custom row sizes; no Watch, TV or Vision Pro presets",
   layout:
     "One continuous multi-row canvas; shapes and backgrounds can span across screenshots",
-  templates: "50+ starter templates, fully editable",
+  templates: "60+ starter templates, fully editable",
   localization:
     "81 built-in language presets plus custom codes; on-device auto-translate (no API keys) for the languages Apple's Translation framework supports; per-locale text, style, image and position overrides",
   ascUpload:

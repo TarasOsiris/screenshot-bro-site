@@ -141,7 +141,7 @@ const FAQS: BlogFaqItem[] = [
   {
     question: "Which has more templates, AppLaunchpad or Screenshot Bro?",
     answer:
-      "AppLaunchpad, by a wide margin: it advertises 1000+ pre-built templates plus 2K+ icons and SVGs, against 50+ starters in Screenshot Bro. Screenshot Bro's starters are a first draft for its multi-row canvas rather than a catalogue to browse; if picking a finished look from a large library is how you work, AppLaunchpad is the better fit.",
+      "AppLaunchpad, by a wide margin: it advertises 1000+ pre-built templates plus 2K+ icons and SVGs, against 60+ starters in Screenshot Bro. Screenshot Bro's starters are a first draft for its multi-row canvas rather than a catalogue to browse; if picking a finished look from a large library is how you work, AppLaunchpad is the better fit.",
   },
 ];
 
@@ -231,7 +231,7 @@ export default function AppLaunchpadComparison() {
       <p>
         {SITE_NAME} is a native Mac, iPad and iPhone app (macOS{" "}
         {MINIMUM_MACOS_VERSION}+, iOS/iPadOS {MINIMUM_IPADOS_VERSION}+) sold
-        only through the App Store. It has far fewer templates — 50+ starters —
+        only through the App Store. It has far fewer templates — 60+ starters —
         because the design happens on one continuous canvas where each row is
         a device size and each template is a screenshot, and a headline or
         gradient can span across several screenshots. The free tier needs no
@@ -421,7 +421,7 @@ export default function AppLaunchpadComparison() {
 
       <h3>&quot;Does {SITE_NAME} have 1000 templates too?&quot;</h3>
       <p>
-        No — 50+ starters. The two tools are built around opposite bets.
+        No — 60+ starters. The two tools are built around opposite bets.
         AppLaunchpad bets that most people want to choose a finished look;{" "}
         {SITE_NAME} bets that most people want to design a row once and then
         reuse it across sizes and languages. If you expect a catalogue to
