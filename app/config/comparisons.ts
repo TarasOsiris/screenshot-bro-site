@@ -49,9 +49,9 @@ export type ComparisonPage = {
 export const comparisonPath = (slug: string) => `/vs/${slug}`;
 
 // The "Screenshot Bro" column, verified against the app source. Every /vs page
-// reads its cells from here so eleven pages cannot drift apart.
+// reads its cells from here so the pages cannot drift apart.
 export const SCREENSHOT_BRO_FACTS = {
-  platform: `Native Mac, iPad and iPhone app (macOS ${MINIMUM_MACOS_VERSION}+, iOS/iPadOS ${MINIMUM_IPADOS_VERSION}+), from the App Store`,
+  platform: `Native Mac, iPad and iPhone app (macOS ${MINIMUM_MACOS_VERSION}+, iOS/iPadOS ${MINIMUM_IPADOS_VERSION}+), from the App Store or as a direct Mac download`,
   account: "None — no signup; projects are local files",
   priceModel:
     "Free tier with no expiry; Pro unlock sold as a lifetime purchase or a subscription (price shown in the app)",
@@ -314,25 +314,56 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     upload: "Download files",
     alternativeHref: "/blog/placeit-alternative",
   },
+  {
+    slug: "canva",
+    competitor: "Canva",
+    competitorUrl: "https://www.canva.com/",
+    heading: `${SITE_NAME} vs Canva`,
+    title: `${SITE_NAME} vs Canva — which to use?`,
+    description:
+      "Canva's all-purpose editor with paid Magic Resize and Translate versus Screenshot Bro's store sizes, 81 locales and direct upload: pricing, limits, fit.",
+    readTime: "10 min read",
+    datePublished: "2026-10-09",
+    lastVerified: "2026-10-09",
+    checkedAgainst: "Canva's own pricing page, help center and Translate page",
+    group: "design",
+    type: "Browser, desktop and mobile",
+    free: "Free plan; resize and translate paid",
+    localization: "Translate (Pro), one language at a time",
+    upload: "Download files",
+    alternativeHref: "/blog/canva-app-store-screenshots",
+  },
+  {
+    slug: "figma",
+    competitor: "Figma",
+    competitorUrl: "https://www.figma.com/",
+    heading: `${SITE_NAME} vs Figma`,
+    title: `${SITE_NAME} vs Figma — which to use?`,
+    description:
+      "Figma's canvas, components and variable modes versus Screenshot Bro's store size presets, 81 locales and direct upload: plans, limits and when each fits.",
+    readTime: "10 min read",
+    datePublished: "2026-10-09",
+    lastVerified: "2026-10-09",
+    checkedAgainst: "Figma's own pricing page, downloads page and help center",
+    group: "design",
+    type: "Browser and desktop",
+    free: "Free Starter, 3 team files",
+    localization: "Variable modes or AI translate",
+    upload: "Export files",
+    alternativeHref: "/blog/screenshot-generator-vs-figma-vs-photoshop",
+  },
 ];
 
 // Competitors covered only by a blog post. They still belong on the hub.
+// Canva and Figma now have their own /vs pages above; Photoshop is still
+// covered only by the generator-vs-Figma-vs-Photoshop post.
 export const BLOG_ONLY_HUB_ROWS: HubRow[] = [
   {
-    tool: "Canva",
-    href: "/blog/canva-app-store-screenshots",
-    type: "Browser and desktop",
-    free: "Free plan",
-    localization: "Manual per language",
-    upload: "Download files",
-    group: "design",
-  },
-  {
-    tool: "Figma and Photoshop",
+    tool: "Photoshop",
     href: "/blog/screenshot-generator-vs-figma-vs-photoshop",
-    type: "Design tools",
-    free: "Figma free tier",
-    localization: "Manual, or via plugins",
+    type: "Desktop design app",
+    free: "7-day free trial",
+    localization: "Manual per language",
     upload: "Export files",
     group: "design",
   },
