@@ -14,10 +14,16 @@ function AppPreview({ label }: { label: string }) {
         muted
         playsInline
         preload="none"
+        // The src is set after first paint (useDeferredLoopVideo), so the
+        // intrinsic size and the poster frame are what reserve the box and fill
+        // it until then — no layout shift, no empty rectangle before hydration.
+        width={1660}
+        height={1080}
+        poster="/demo-main-poster.webp"
         onLoadedMetadata={(event) => {
           event.currentTarget.playbackRate = 1.25;
         }}
-        className="w-full h-auto block"
+        className="w-full h-auto block aspect-[1660/1080]"
         aria-label={label}
       />
     </div>
