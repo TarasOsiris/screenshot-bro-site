@@ -1,7 +1,6 @@
 import { redirect } from "react-router";
 
-import { SITE_NAME, SITE_URL, APP_STORE_URL } from "~/config/site";
-import { AppleLogo } from "~/components/home/icons";
+import { SITE_NAME } from "~/config/site";
 import type { Route } from "./+types/$";
 import { mergeMeta } from "~/config/meta";
 import { canonicalGlobalPath, dedupedLocalePath } from "~/config/localization";
@@ -15,10 +14,6 @@ export const meta: Route.MetaFunction = ({ matches }) =>
     { name: "description", content: NOT_FOUND_DESCRIPTION },
     { name: "robots", content: "noindex" },
   ]);
-
-export const links: Route.LinksFunction = () => [
-  { rel: "canonical", href: SITE_URL },
-];
 
 export function loader({ request }: Route.LoaderArgs) {
   const url = new URL(request.url);

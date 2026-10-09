@@ -14,7 +14,8 @@ export function loader({ params }: Route.LoaderArgs) {
     throw new Response("Not Found", { status: 404 });
   }
 
-  return redirect(localeHref(getRouteLocale(locale), "/docs/help"));
+  // Permanent: /docs has never been a page of its own.
+  return redirect(localeHref(getRouteLocale(locale), "/docs/help"), 301);
 }
 
 export default function DocsIndex() {

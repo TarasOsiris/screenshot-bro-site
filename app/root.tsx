@@ -7,6 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation,
+  useRouteError,
 } from "react-router";
 
 import type { Route } from "./+types/root";
@@ -185,7 +186,26 @@ const HOW_TO_SCHEMA_JSON = JSON.stringify({
 const SOCIAL_IMAGE_ALT =
   "Screenshot Bro — native Mac, iPad and iPhone app for designing App Store and Google Play screenshots with device frames, gradients, and localization";
 
-export const meta: Route.MetaFunction = () => [
+export const meta: Route.MetaFunction = ({ error }) => {
+  // Error pages render the root ErrorBoundary, so only root meta applies. They
+  // must not inherit the home page's title and description, nor be indexed.
+  if (error) {
+    const notFound = isRouteErrorResponse(error) && error.status === 404;
+    return [
+      { title: notFound ? `Page not found — ${SITE_NAME}` : `Something went wrong — ${SITE_NAME}` },
+      {
+        name: "description",
+        content: notFound
+          ? `This page doesn't exist on ${SITE_NAME}'s site. Head to the home page, the blog or the docs to find App Store screenshot guides and help.`
+          : `${SITE_NAME} hit an unexpected error. Please try again in a moment.`,
+      },
+      { name: "robots", content: "noindex" },
+    ];
+  }
+  return DEFAULT_META;
+};
+
+const DEFAULT_META: Route.MetaDescriptors = [
   { title: SITE_TITLE },
   { name: "description", content: SITE_DESCRIPTION },
   ...buildOgLocaleMeta(),
@@ -278,6 +298,9 @@ const isLocalizedHome = (pathname: string): boolean => {
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
+  // Set when the root ErrorBoundary is rendering (a 404 or a crash): such a
+  // page gets no canonical or hreflang, only the noindex from root meta.
+  const routeError = useRouteError();
   const locale = getLocaleInfo(getLocaleFromPath(location.pathname));
   const cleanPath = stripLocale(location.pathname);
 
@@ -302,7 +325,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="apple-itunes-app" content={`app-id=${APP_STORE_APP_ID}`} />
         <Meta />
         <Links />
-        {hasTranslations(cleanPath) ? (
+        {routeError ? null : hasTranslations(cleanPath) ? (
           <>
             <link
               rel="canonical"
