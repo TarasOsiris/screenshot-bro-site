@@ -17,6 +17,7 @@ import { useHomeCopy } from "~/config/home-copy";
 import type { HomeCopy, LocaleCode } from "~/config/localization";
 import { SiteLogo } from "~/components/SiteLogo";
 import { localeHref } from "~/config/localized-routes";
+import { GA_ID, openConsentSettings } from "~/lib/consent";
 
 // localeHref prefixes only the paths that actually have a translation, so the
 // footer stops emitting /{locale}/friends (no such route — a 301 on every page)
@@ -141,6 +142,20 @@ export function SiteFooter({ copy: copyProp }: { copy?: HomeCopy }) {
                 {NINEVA_STUDIOS_NAME}
               </a>
             </span>
+            {GA_ID ? (
+              <>
+                <span className="hidden sm:inline text-ink/25" aria-hidden="true">
+                  ·
+                </span>
+                <button
+                  type="button"
+                  onClick={openConsentSettings}
+                  className="text-ink/65 hover:text-ink/95 underline-offset-4 hover:underline transition-colors"
+                >
+                  {copy.ui.cookieSettings}
+                </button>
+              </>
+            ) : null}
           </div>
         </div>
       </div>

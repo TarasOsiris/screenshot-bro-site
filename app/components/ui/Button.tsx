@@ -1,4 +1,4 @@
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
+import type { AnchorHTMLAttributes, ComponentPropsWithRef } from "react";
 
 // One source for the site's button styles. `buttonClass` is exported for the few
 // places that render something other than a plain <a> or <button> (a router
@@ -51,7 +51,7 @@ export function Button({
   className,
   type = "button",
   ...props
-}: StyleProps & ButtonHTMLAttributes<HTMLButtonElement>) {
+}: StyleProps & ComponentPropsWithRef<"button">) {
   return (
     <button {...props} type={type} className={buttonClass(variant, size, className)} />
   );

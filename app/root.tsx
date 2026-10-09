@@ -45,6 +45,8 @@ import {
   stripLocale,
 } from "~/config/localization";
 import { hasTranslations } from "~/config/localized-routes";
+import { ConsentBanner } from "~/components/ConsentBanner";
+import { GA_ID, gtagBootstrapScript } from "~/lib/consent";
 // Self-hosted fonts, bundled into the stylesheet (Google Fonts was a render-
 // blocking third-party request). Familjen Grotesk ships upright only — the
 // handful of italic runs use the browser's synthetic oblique.
@@ -60,10 +62,6 @@ export const SITE_TITLE = `${SITE_NAME} — App Store & Google Play Screenshots`
 // Kept in step with --color-surface in app.css; ThemeToggle carries the same pair.
 const THEME_COLORS = { light: "#fbfaf8", dark: "#08080c" } as const;
 export const SOCIAL_IMAGE = `${SITE_URL}/og-image.png`;
-const GA_ID =
-  import.meta.env.PROD && import.meta.env.VITE_GA_ID
-    ? (import.meta.env.VITE_GA_ID as string)
-    : undefined;
 
 const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
   "@context": "https://schema.org",
@@ -404,7 +402,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             />
             <script
               dangerouslySetInnerHTML={{
-                __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}',{anonymize_ip:true});`,
+                __html: gtagBootstrapScript(GA_ID),
               }}
             />
           </>
@@ -412,6 +410,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className="noise">
         {children}
+        <ConsentBanner />
         <ScrollRestoration />
         <Scripts />
       </body>

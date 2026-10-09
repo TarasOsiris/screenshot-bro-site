@@ -87,7 +87,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
   ]);
 };
 
-export const EFFECTIVE_DATE = "October 2, 2026";
+export const EFFECTIVE_DATE = "October 9, 2026";
 const DEVELOPER_NAME = "Nineva Studios";
 const DEVELOPER_EMAIL = "tleskiv@ninevastudios.com";
 
@@ -105,7 +105,8 @@ export default function Privacy() {
             "our") handles information in connection with the{" "}
             <strong>{SITE_NAME}</strong> application for macOS, iOS and iPadOS (the
             "App"). We are committed to protecting your privacy and being
-            transparent about our practices.
+            transparent about our practices. Section 8 covers this website,{" "}
+            <code>screenshotbro.app</code>, which is separate from the App.
           </p>
 
           <h2>1. Information We Do Not Collect</h2>
@@ -595,7 +596,60 @@ export default function Privacy() {
             updates automatically.
           </p>
 
-          <h2>8. Third-Party Services Summary</h2>
+          <h2 id="website">8. This Website and Cookies</h2>
+          <p>
+            This section is about visiting <code>screenshotbro.app</code>, not
+            about the App. The App does not use Google Analytics.
+          </p>
+          <p>
+            <strong>Google Analytics.</strong> We use Google Analytics 4 to
+            understand how visitors find and use the website: which pages are
+            viewed, the referring site or campaign, the approximate location
+            Google derives from your IP address, the device and browser type,
+            and clicks on the download, App Store and purchase links. We ask
+            Google to anonymize IP addresses. With your consent, Google
+            Analytics sets first-party cookies (<code>_ga</code> and{" "}
+            <code>_ga_*</code>) to tell visits apart. When you arrive from a
+            Google ad, the page also records that you clicked a download or App
+            Store link, so we can tell which ads work.
+          </p>
+          <p>
+            <strong>Your choice.</strong> We use Google Consent Mode. If you
+            visit from the European Economic Area, the United Kingdom or
+            Switzerland, analytics and advertising storage are off until you
+            choose <strong>Accept</strong> in the cookie banner; until then, and
+            if you choose <strong>Reject</strong>, no Google Analytics cookies are
+            set and Google receives only cookieless signals (for example, that a
+            page was viewed) without an identifier. Elsewhere, analytics is on
+            by default. Wherever you are, you can change your choice at any time
+            with <strong>Cookie settings</strong> at the bottom of every page.
+          </p>
+          <p>
+            Your choice is saved in your browser&apos;s local storage on this
+            device (the <code>consent</code> key), as is the light or dark theme
+            if you pick one (the <code>theme</code> key). Neither is sent to us.
+            Clearing your browser&apos;s site data resets both.
+          </p>
+          <p>
+            <strong>Embedded badges.</strong> The site footer shows badge images
+            hosted by Product Hunt and TrustMRR. As with any image, your browser
+            requests them from those services, which receive your IP address and
+            browser details.
+          </p>
+          <p>
+            Google processes website analytics data under its own{" "}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              privacy policy
+            </a>{" "}
+            and keeps it for the retention period set in our Google Analytics
+            property.
+          </p>
+
+          <h2>9. Third-Party Services Summary</h2>
           <table>
             <thead>
               <tr>
@@ -651,6 +705,15 @@ export default function Privacy() {
                 <td>Standard App Store transaction data</td>
               </tr>
               <tr>
+                <td>Google Analytics (website only)</td>
+                <td>Website usage statistics (Section 8)</td>
+                <td>
+                  Pages viewed, referrer, approximate location, device and
+                  browser type, link clicks; cookies only with consent where
+                  consent is required
+                </td>
+              </tr>
+              <tr>
                 <td>screenshotbro.app</td>
                 <td>Update checks (direct-download version only)</td>
                 <td>IP address and App name and version, as in any web request</td>
@@ -662,7 +725,7 @@ export default function Privacy() {
             the App.
           </p>
 
-          <h2>9. Data Retention and Deletion</h2>
+          <h2>10. Data Retention and Deletion</h2>
           <ul>
             <li>
               <strong>Local data</strong> — all project data and preferences are
@@ -701,7 +764,7 @@ export default function Privacy() {
             </li>
           </ul>
 
-          <h2>10. Children&apos;s Privacy</h2>
+          <h2>11. Children&apos;s Privacy</h2>
           <p>
             {SITE_NAME} is not directed at children under the age of 13 and does
             not knowingly collect personal information from children. The only
@@ -709,7 +772,7 @@ export default function Privacy() {
             entered when buying Pro on our website.
           </p>
 
-          <h2>11. Security</h2>
+          <h2>12. Security</h2>
           <p>
             The App runs inside Apple's app sandbox on macOS, iOS and iPadOS, which
             restricts file system access and network capabilities. All data at
@@ -720,7 +783,7 @@ export default function Privacy() {
             encrypted HTTPS connections.
           </p>
 
-          <h2>12. Changes to This Policy</h2>
+          <h2>13. Changes to This Policy</h2>
           <p>
             We may update this Privacy Policy from time to time. The updated
             version will be posted at{" "}
@@ -729,7 +792,7 @@ export default function Privacy() {
             periodically.
           </p>
 
-          <h2>13. Contact Us</h2>
+          <h2>14. Contact Us</h2>
           <p>
             If you have questions or concerns about this Privacy Policy or the
             App's data practices, please contact us:
