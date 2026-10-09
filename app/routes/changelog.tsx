@@ -97,6 +97,39 @@ type ChangelogEntry = {
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "4.22",
+    date: "October 8, 2026",
+    title: "Reorder, Upload and iCloud Font Fixes",
+    changes: [
+      { type: "fixed", text: "Reordering the screenshots in a row keeps each image with the screenshot it belongs to — an image whose bleed hung off the first or last screenshot used to be left behind, sitting on top of whatever moved into its place" },
+      { type: "fixed", text: "An App Store screenshot that Apple is still processing when the poll window ends is now kept rather than removed, so the next sync matches it by checksum instead of uploading it again" },
+      { type: "fixed", text: "Fonts stored in iCloud are brought down to the Mac before they are registered, so a project using them no longer freezes the app while every font lookup waits" },
+    ],
+  },
+  {
+    version: "4.21",
+    date: "October 7, 2026",
+    title: "iPhone Duo and Per-Language Backgrounds",
+    changes: [
+      { type: "added", text: "iPhone Duo support — size presets for iPhone Duo Inner Display (2007×2853) and iPhone Duo Outer Display (1398×2034), iPhone Duo frames that suggest their own size, and imported screenshots at either size drop into the matching frame" },
+      { type: "added", text: "App Store Connect uploads send iPhone Duo screenshots as their own display type, and the wizard warns when an iOS version would have none — Apple requires them in every submission from April 2027" },
+      { type: "added", text: "The 6.9\" App Store slot now also accepts 1260×2736, the iPhone Air size Apple documents" },
+      { type: "added", text: "Each language can have its own background image, for a row background or a template override, raster or SVG — fill mode, opacity, tiling and blur stay shared, and a Use English Image button — named for your base language — puts it back" },
+      { type: "added", text: "The App Store Connect plan step flags, on each row, screenshot counts that differ from most of your locales, locales that would fall back to your primary language, and a primary language with no set — with a Fix that ticks the locales the row can reach" },
+      { type: "added", text: "Bring to Front and Send to Back in a shape's right-click menu" },
+      { type: "improved", text: "Create Version is offered for each platform that has no editable version, so you can start the next iOS release from the wizard even while a macOS version is editable" },
+      { type: "improved", text: "Showcase export remembers the format, size, layout and background you last used, including a picked background image" },
+      { type: "improved", text: "Auto-translating text that several shapes share translates it once" },
+      { type: "fixed", text: "Clicking the Dock icon brings the editor window back even when another window — Settings, Help, or one on a different display — is open" },
+      { type: "fixed", text: "A row with many image or device layers no longer stalls the editor as it redraws" },
+      { type: "fixed", text: "Reloading projects from iCloud no longer blocks the app while the container is still downloading" },
+      { type: "fixed", text: "Cancelling a Google Play upload now abandons its edit, instead of leaving an open edit behind in your Play Console" },
+      { type: "fixed", text: "A project deleted on another device while you had it open is closed, instead of staying on screen and being saved into the next project you open" },
+      { type: "fixed", text: "A save still in the queue can no longer bring back a project you just deleted" },
+      { type: "fixed", text: "An upload now sends what the project holds when it runs: rows that lost screenshots after you planned the upload can't run past their end, rows you removed are skipped and left out of the progress, and a plan that no longer applies stops instead of uploading something you never reviewed" },
+    ],
+  },
+  {
     version: "4.20",
     date: "October 3, 2026",
     title: "Translations That Fit Themselves",
