@@ -1,12 +1,11 @@
 import type { MetaDescriptor } from "react-router";
-import { AUTHOR_NAME, AUTHOR_URL, PUBLISHER_ORGANIZATION } from "~/config/blog-seo";
+import { AUTHOR_NAME, AUTHOR_URL, ogImageFor, PUBLISHER_ORGANIZATION } from "~/config/blog-seo";
 import { comparisonPath, getComparisonPage } from "~/config/comparisons";
 import { mergeMeta, type MetaMatchLike } from "~/config/meta";
 import { SITE_URL, TWITTER_HANDLE, SITE_NAME } from "~/config/site";
 import { type LocaleCode } from "~/config/localization";
 import { localeHref } from "~/config/localized-routes";
 
-const OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 export function buildComparisonMeta(
   slug: string,
@@ -17,6 +16,7 @@ export function buildComparisonMeta(
   const url = `${SITE_URL}${localeHref(locale, comparisonPath(slug))}`;
   const title = page.title;
   const description = page.description;
+  const image = ogImageFor(`vs-${slug}`);
 
   return mergeMeta(matches, [
     { title },
@@ -25,7 +25,8 @@ export function buildComparisonMeta(
     { property: "og:title", content: title },
     { property: "og:description", content: description },
     { property: "og:url", content: url },
-    { property: "og:image", content: OG_IMAGE },
+    { property: "og:image", content: image },
+    { property: "og:image:alt", content: page.heading },
     { property: "article:published_time", content: page.datePublished },
     { property: "article:modified_time", content: page.lastVerified },
     { property: "article:author", content: AUTHOR_NAME },
@@ -35,7 +36,8 @@ export function buildComparisonMeta(
     { name: "twitter:creator", content: TWITTER_HANDLE },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
-    { name: "twitter:image", content: OG_IMAGE },
+    { name: "twitter:image", content: image },
+    { name: "twitter:image:alt", content: page.heading },
   ]);
 }
 
@@ -57,7 +59,12 @@ export function buildComparisonArticleJsonLd(slug: string, locale: LocaleCode = 
     dateModified: page.lastVerified,
     articleSection: "Comparison",
     inLanguage: locale,
-    image: OG_IMAGE,
+    image: {
+      "@type": "ImageObject",
+      url: ogImageFor(`vs-${slug}`),
+      width: 1200,
+      height: 630,
+    },
     author: person,
     publisher: PUBLISHER_ORGANIZATION,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },

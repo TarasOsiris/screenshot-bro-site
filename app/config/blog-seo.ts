@@ -1,6 +1,7 @@
 import type { MetaDescriptor } from "react-router";
 import { BLOG_POSTS, type BlogPost } from "~/config/blog";
 import { mergeMeta, type MetaMatchLike } from "~/config/meta";
+import { OG_IMAGE_NAMES } from "~/config/og-images";
 import {
   NINEVA_STUDIOS_NAME,
   NINEVA_STUDIOS_URL,
@@ -10,7 +11,13 @@ import {
 } from "~/config/site";
 import { buildOgLocaleMeta, localizedPath, type LocaleCode } from "~/config/localization";
 
-const BLOG_OG_IMAGE = `${SITE_URL}/og-image.png`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
+
+// The post's own 1200×630 card from scripts/generate-og-images.mjs, falling
+// back to the site-wide image for a post rendered before `npm run og`.
+export function ogImageFor(name: string): string {
+  return OG_IMAGE_NAMES.has(name) ? `${SITE_URL}/og/${name}.jpg` : DEFAULT_OG_IMAGE;
+}
 export const AUTHOR_NAME = "Taras Leskiv";
 export const AUTHOR_URL = "https://x.com/soycastic";
 
@@ -48,6 +55,7 @@ export function buildBlogPostMeta(
   const fullTitle = `${post.title} — ${SITE_NAME}`;
   const title = fullTitle.length <= 60 ? fullTitle : post.title;
   const url = `${SITE_URL}${localizedPath(locale, `/blog/${post.slug}`)}`;
+  const image = ogImageFor(`blog-${post.slug}`);
   const meta: MetaDescriptor[] = [
     { title },
     { name: "description", content: post.description },
@@ -56,7 +64,8 @@ export function buildBlogPostMeta(
     { property: "og:title", content: post.title },
     { property: "og:description", content: post.description },
     { property: "og:url", content: url },
-    { property: "og:image", content: BLOG_OG_IMAGE },
+    { property: "og:image", content: image },
+    { property: "og:image:alt", content: post.title },
     { property: "article:published_time", content: post.date },
     { property: "article:modified_time", content: post.dateModified ?? post.date },
     { property: "article:author", content: AUTHOR_NAME },
@@ -66,7 +75,8 @@ export function buildBlogPostMeta(
     { name: "twitter:creator", content: TWITTER_HANDLE },
     { name: "twitter:title", content: post.title },
     { name: "twitter:description", content: post.description },
-    { name: "twitter:image", content: BLOG_OG_IMAGE },
+    { name: "twitter:image", content: image },
+    { name: "twitter:image:alt", content: post.title },
   ];
 
   if (post.keywords?.length) {
@@ -127,7 +137,12 @@ export function buildBlogPostingJsonLd(slug: string, locale: LocaleCode = "en"):
         articleSection: post.category,
         keywords: post.keywords?.join(", "),
         inLanguage: locale,
-        image: BLOG_OG_IMAGE,
+        image: {
+          "@type": "ImageObject",
+          url: ogImageFor(`blog-${post.slug}`),
+          width: 1200,
+          height: 630,
+        },
         author: {
           "@type": "Person",
           name: AUTHOR_NAME,

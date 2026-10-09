@@ -9,7 +9,8 @@
     "indexnow": "node scripts/indexnow-submit.mjs",
     "blog:thumbs": "node scripts/fetch-blog-thumbs.mjs",
     "typecheck": "react-router typegen && tsc",
-    "proof": "node scripts/fetch-app-store-proof.mjs"
+    "proof": "node scripts/fetch-app-store-proof.mjs",
+    "og": "node scripts/generate-og-images.mjs"
   },
   "dependencies": {
     "@fontsource-variable/familjen-grotesk": "^5.3.0",

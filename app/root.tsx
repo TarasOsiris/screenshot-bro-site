@@ -255,6 +255,7 @@ const CANONICAL_HOST = "screenshotbro.app";
 const STATIC_DIR_SEGMENTS = new Set([
   "assets",
   "docs-help",
+  "og",
   "screenshot",
   "screenshots",
   "showcase",
