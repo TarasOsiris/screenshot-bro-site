@@ -99,11 +99,11 @@ export default function Thanks() {
             >
               Open {SITE_NAME}
             </a>
-            <p className="mt-3 text-xs text-ink/50">
+            <p className="mt-3 text-xs text-ink/60">
               The link works once and expires after 60 minutes.
             </p>
 
-            <h2 className="mt-16 text-sm font-semibold uppercase tracking-wider text-ink/50">
+            <h2 className="mt-16 text-sm font-semibold uppercase tracking-wider text-ink/60">
               Didn't open?
             </h2>
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -136,7 +136,7 @@ export default function Thanks() {
                 Download {SITE_NAME}
               </a>
             </div>
-            <p className="mt-8 text-sm text-ink/50">
+            <p className="mt-8 text-sm text-ink/60">
               Can't find the email? Write to{" "}
               <a href={`mailto:${WEB_PURCHASE_EMAIL}`} className="underline hover:text-ink">
                 {WEB_PURCHASE_EMAIL}

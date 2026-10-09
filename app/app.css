@@ -24,6 +24,10 @@
   /* Deeper than --color-accent in light so text-accent-light and .prose-policy a
      stay legible on white; in dark it is the lighter of the pair as the name says. */
   --color-accent-light: #0356b5;
+  /* The far end of the primary button gradient, under white text. Same as
+     --color-accent-light in light; in dark it stays deep while accent-light
+     brightens for text, so both clear 4.5:1. */
+  --color-accent-end: #0356b5;
   --color-accent-glow: color-mix(in srgb, var(--color-accent) 10%, transparent);
   --color-warm: #b45309;
   --color-warm-light: #d97706;
@@ -67,7 +71,9 @@
   --color-border-subtle: #ffffff0a;
   --color-border: #ffffff14;
 
-  --color-accent-light: #1A75DC;
+  /* Text and links: 5.4:1 or better on every dark surface (#1A75DC was 4.4:1). */
+  --color-accent-light: #4a93ea;
+  --color-accent-end: #1A75DC;
   --color-accent-glow: color-mix(in srgb, var(--color-accent) 25%, transparent);
   --color-warm: #f59e0b;
   --color-warm-light: #fbbf24;

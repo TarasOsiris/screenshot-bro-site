@@ -135,7 +135,7 @@ export function SiteNav({
 
           <a
             href={ctaHref}
-            className="hidden sm:inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl bg-gradient-to-r from-accent to-accent-light px-4 py-2 text-sm font-semibold text-white transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)]"
+            className="hidden sm:inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl bg-gradient-to-r from-accent to-accent-end px-4 py-2 text-sm font-semibold text-white transition-all hover:shadow-[0_0_32px_var(--color-accent-glow)]"
           >
             <DownloadIcon />
             <span>{copy.primaryCtaLabel}</span>

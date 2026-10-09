@@ -11,7 +11,7 @@ const BASE =
 
 const VARIANTS: Record<ButtonVariant, string> = {
   primary:
-    "bg-gradient-to-r from-accent to-accent-light text-white hover:shadow-[0_0_40px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]",
+    "bg-gradient-to-r from-accent to-accent-end text-white hover:shadow-[0_0_40px_var(--color-accent-glow)] hover:scale-[1.02] active:scale-[0.98]",
   secondary:
     "border border-ink/10 bg-ink/[0.05] text-ink/[0.82] hover:border-ink/20 hover:bg-ink/10 hover:text-ink",
   ghost: "text-ink/[0.66] hover:text-ink",
