@@ -45,6 +45,13 @@ import {
   stripLocale,
 } from "~/config/localization";
 import { hasTranslations } from "~/config/localized-routes";
+// Self-hosted fonts, bundled into the stylesheet (Google Fonts was a render-
+// blocking third-party request). Familjen Grotesk ships upright only — the
+// handful of italic runs use the browser's synthetic oblique.
+import "@fontsource-variable/familjen-grotesk/wght.css";
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/500.css";
+import familjenLatinUrl from "@fontsource-variable/familjen-grotesk/files/familjen-grotesk-latin-wght-normal.woff2?url";
 import { serializeHomeCopy, type RootLoaderData } from "~/config/home-copy";
 import { getHomeCopy } from "~/config/home-copy.server";
 import "./app.css";
@@ -272,18 +279,17 @@ export async function loader({ request }: Route.LoaderArgs) {
 }
 
 export const links: Route.LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  // The Latin subset of the variable body/display face covers every page's
+  // first paint; other subsets load on demand through unicode-range.
   {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
+    rel: "preload",
+    href: familjenLatinUrl,
+    as: "font",
+    type: "font/woff2",
     crossOrigin: "anonymous",
   },
   { rel: "preconnect", href: "https://apps.apple.com" },
   { rel: "dns-prefetch", href: "https://apps.apple.com" },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap",
-  },
   { rel: "icon", href: "/favicon.ico", sizes: "48x48" },
   { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
   { rel: "icon", href: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },

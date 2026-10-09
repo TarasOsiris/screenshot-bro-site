@@ -4,8 +4,8 @@
    preference gets. Dark lives in the :root[data-theme="dark"] block further down,
    which is unlayered and so outranks Tailwind's @layer theme output. */
 @theme {
-  --font-display: "Familjen Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Familjen Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Familjen Grotesk Variable", "Familjen Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Familjen Grotesk Variable", "Familjen Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   /* The whole design is one ink color at many alphas over a surface, so a light
