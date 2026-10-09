@@ -13,15 +13,10 @@ import {
   X_PROFILE_URL,
   type SecondaryLink,
 } from "~/config/site";
-import {
-  getHomeCopy,
-  type HomeCopy,
-  type LocaleCode,
-} from "~/config/localization";
+import { useHomeCopy } from "~/config/home-copy";
+import type { HomeCopy, LocaleCode } from "~/config/localization";
 import { SiteLogo } from "~/components/SiteLogo";
 import { localeHref } from "~/config/localized-routes";
-
-const DEFAULT_COPY = getHomeCopy("en");
 
 // localeHref prefixes only the paths that actually have a translation, so the
 // footer stops emitting /{locale}/friends (no such route — a 301 on every page)
@@ -31,7 +26,9 @@ function getSecondaryLinkHref(locale: LocaleCode, link: SecondaryLink): string {
   return localeHref(locale, link.href);
 }
 
-export function SiteFooter({ copy = DEFAULT_COPY }: { copy?: HomeCopy }) {
+export function SiteFooter({ copy: copyProp }: { copy?: HomeCopy }) {
+  const urlCopy = useHomeCopy();
+  const copy = copyProp ?? urlCopy;
   const year = new Date().getFullYear();
 
   return (

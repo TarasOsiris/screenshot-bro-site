@@ -1,4 +1,4 @@
-import { getLocalizedBlogPosts } from "~/config/blog";
+import { BLOG_POSTS } from "~/config/blog";
 import type { LocaleCode } from "~/config/localization";
 import { localeHref } from "~/config/localized-routes";
 
@@ -67,8 +67,7 @@ export function RelatedPosts({
   locale?: LocaleCode;
   limit?: number;
 }) {
-  const posts = getLocalizedBlogPosts(locale);
-  const related = posts.filter((post) => post.slug !== currentSlug).slice(
+  const related = BLOG_POSTS.filter((post) => post.slug !== currentSlug).slice(
     0,
     limit,
   );

@@ -10,9 +10,11 @@ import { data } from "react-router";
 import type { Route } from "./+types/home";
 import { SITE_URL } from "~/config/site";
 import { mergeMeta } from "~/config/meta";
+import { getLocalizedBlogPosts } from "~/config/blog-localized.server";
+import { useHomeCopy } from "~/config/home-copy";
+import { getHomeCopy } from "~/config/home-copy.server";
 import {
   buildOgLocaleMeta,
-  getHomeCopy,
   isLocaleCode,
   localizedPath,
   type LocaleCode,
@@ -32,12 +34,19 @@ export async function loader({ params }: { params: LocaleParams }) {
   if (locale && !isLocaleCode(locale)) {
     throw data("Not found", { status: 404 });
   }
-  return { locale: getRouteLocale(params) };
+  const resolved = getRouteLocale(params);
+  const { siteTitle, siteDescription, socialImageAlt } = getHomeCopy(resolved);
+  return {
+    locale: resolved,
+    head: { siteTitle, siteDescription, socialImageAlt },
+    blogPosts: getLocalizedBlogPosts(resolved).slice(0, 3),
+  };
 }
 
-export const meta: Route.MetaFunction = ({ matches, params }) => {
+export const meta: Route.MetaFunction = ({ matches, params, loaderData }) => {
   const locale = getRouteLocale(params);
-  const copy = getHomeCopy(locale);
+  if (!loaderData) return mergeMeta(matches, []);
+  const copy = loaderData.head;
   const url = `${SITE_URL}${localizedPath(locale)}`;
   return mergeMeta(matches, [
     { title: copy.siteTitle },
@@ -113,7 +122,7 @@ function useGadsConversion() {
 
 export default function Home({ loaderData }: Route.ComponentProps) {
   const showBackToTop = useScrollFade(600);
-  const copy = getHomeCopy(loaderData.locale);
+  const copy = useHomeCopy();
   useGadsConversion();
 
   return (
@@ -134,7 +143,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
         <TemplatesSection copy={copy} />
         <WorkflowSection copy={copy} />
         <FeaturesSection copy={copy} />
-        <BlogPreviewSection copy={copy} />
+        <BlogPreviewSection copy={copy} posts={loaderData.blogPosts} />
         <FaqSection copy={copy} />
         <DownloadSection copy={copy} />
       </main>

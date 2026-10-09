@@ -8,7 +8,6 @@ import { ThemeToggle, themeLabel } from "~/components/ThemeToggle";
 import { PRODUCT_LINKS, type SecondaryLink } from "~/config/site";
 import {
   downloadPageUrl,
-  getHomeCopy,
   LOCALES,
   localizedPath,
   stripLocale,
@@ -16,6 +15,7 @@ import {
   type LocaleCode,
 } from "~/config/localization";
 import { hasTranslations, localeHref } from "~/config/localized-routes";
+import { useHomeCopy } from "~/config/home-copy";
 
 type SiteNavProps = {
   copy?: HomeCopy;
@@ -23,8 +23,6 @@ type SiteNavProps = {
   showSectionAnchors?: boolean;
   showLocaleSwitcher?: boolean;
 };
-
-const DEFAULT_COPY = getHomeCopy("en");
 
 function getSecondaryLinkHref(locale: LocaleCode, link: SecondaryLink): string {
   if (link.external) return link.href;
@@ -41,11 +39,13 @@ function localeSwitchTarget(targetLocale: LocaleCode): string {
 }
 
 export function SiteNav({
-  copy = DEFAULT_COPY,
+  copy: copyProp,
   href,
   showSectionAnchors = true,
   showLocaleSwitcher = true,
 }: SiteNavProps) {
+  const urlCopy = useHomeCopy();
+  const copy = copyProp ?? urlCopy;
   const ctaHref = href ?? downloadPageUrl(copy.locale.code);
   const [menuOpen, setMenuOpen] = useState(false);
 

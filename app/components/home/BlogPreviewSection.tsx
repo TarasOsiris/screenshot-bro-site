@@ -1,11 +1,18 @@
-import { getLocalizedBlogPosts } from "~/config/blog";
+import type { BlogPost } from "~/config/blog";
 import { getBlogThumb } from "~/config/blog-images";
 import { buttonClass } from "~/components/ui/Button";
 import { SectionIntro } from "~/components/home/SectionIntro";
 import { localizedPath, type HomeCopy } from "~/config/localization";
 
-export function BlogPreviewSection({ copy }: { copy: HomeCopy }) {
-  const highlight = getLocalizedBlogPosts(copy.locale.code).slice(0, 3);
+export function BlogPreviewSection({
+  copy,
+  posts,
+}: {
+  copy: HomeCopy;
+  // The newest posts in the page's locale, from the home loader.
+  posts: BlogPost[];
+}) {
+  const highlight = posts.slice(0, 3);
   if (highlight.length === 0) return null;
   return (
     <section

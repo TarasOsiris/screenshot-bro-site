@@ -1,9 +1,9 @@
 import { DownloadIcon } from "~/components/home/small-icons";
 import { ButtonLink } from "~/components/ui/Button";
 import { PRIMARY_CTA_LABEL } from "~/config/site";
+import { useHomeCopy } from "~/config/home-copy";
 import {
   downloadPageUrl,
-  getHomeCopy,
   localizedPath,
   type LocaleCode,
 } from "~/config/localization";
@@ -25,7 +25,7 @@ export function BlogCTA({
   homeLinkLabel?: string;
   locale?: LocaleCode;
 }) {
-  const copy = getHomeCopy(locale);
+  const copy = useHomeCopy();
   const resolvedButtonLabel = buttonLabel ?? copy.primaryCtaLabel;
   // Descriptive anchors are authored in English, so only use them on the
   // English pages; translated posts fall back to already-translated UI copy

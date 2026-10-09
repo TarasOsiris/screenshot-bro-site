@@ -1,5 +1,5 @@
 import type { MetaDescriptor } from "react-router";
-import { getLocalizedBlogPosts, type BlogPost } from "~/config/blog";
+import { BLOG_POSTS, type BlogPost } from "~/config/blog";
 import { mergeMeta, type MetaMatchLike } from "~/config/meta";
 import { SITE_NAME, SITE_URL, TWITTER_HANDLE } from "~/config/site";
 import { buildOgLocaleMeta, localizedPath, type LocaleCode } from "~/config/localization";
@@ -9,8 +9,8 @@ export const AUTHOR_NAME = "Taras Leskiv";
 export const AUTHOR_URL = "https://x.com/soycastic";
 
 function getPost(slug: string, locale: LocaleCode = "en"): BlogPost {
-  const posts = getLocalizedBlogPosts(locale);
-  const post = posts.find((entry) => entry.slug === slug);
+  // Post bodies are English-only, so their metadata is too.
+  const post = BLOG_POSTS.find((entry) => entry.slug === slug);
   if (!post) {
     throw new Error(`Unknown blog post slug: ${slug} for locale: ${locale}`);
   }

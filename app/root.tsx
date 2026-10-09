@@ -44,6 +44,8 @@ import {
   stripLocale,
 } from "~/config/localization";
 import { hasTranslations } from "~/config/localized-routes";
+import { serializeHomeCopy, type RootLoaderData } from "~/config/home-copy";
+import { getHomeCopy } from "~/config/home-copy.server";
 import "./app.css";
 
 export const SITE_TITLE = `${SITE_NAME} — App Store & Google Play Screenshots`;
@@ -237,7 +239,12 @@ export async function loader({ request }: Route.LoaderArgs) {
   ) {
     throw redirect(`/${segments.join("/")}${url.search}`, 301);
   }
-  return null;
+  // Only the requested locale's nav, footer and home copy goes to the client
+  // (read back with useHomeCopy); English already ships as the fallback.
+  const locale = getLocaleFromPath(url.pathname);
+  return {
+    homeCopy: locale === "en" ? null : serializeHomeCopy(getHomeCopy(locale)),
+  } satisfies RootLoaderData;
 }
 
 export const links: Route.LinksFunction = () => [

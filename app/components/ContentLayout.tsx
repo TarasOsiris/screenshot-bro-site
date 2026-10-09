@@ -1,15 +1,17 @@
 import { SiteFooter } from "~/components/home/SiteFooter";
 import { SiteNav } from "~/components/home/SiteNav";
-import { getHomeCopy, type LocaleCode } from "~/config/localization";
+import { useHomeCopy } from "~/config/home-copy";
+import type { LocaleCode } from "~/config/localization";
 
 export function ContentLayout({
   children,
-  locale = "en",
 }: {
   children: React.ReactNode;
+  // The nav and footer copy follows the URL's locale (root loader data); the
+  // prop stays so pages can keep passing the locale they render in.
   locale?: LocaleCode;
 }) {
-  const copy = getHomeCopy(locale);
+  const copy = useHomeCopy();
 
   return (
     <div className="min-h-screen flex flex-col">

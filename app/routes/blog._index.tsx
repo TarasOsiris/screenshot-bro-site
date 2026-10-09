@@ -1,7 +1,8 @@
 import { useState } from "react";
 import type { Route } from "./+types/blog._index";
 import { SITE_NAME, SITE_URL } from "~/config/site";
-import { BLOG_CATEGORIES, getLocalizedBlogPosts, type BlogCategory, type BlogPost } from "~/config/blog";
+import { BLOG_CATEGORIES, type BlogCategory, type BlogPost } from "~/config/blog";
+import { getLocalizedBlogPosts } from "~/config/blog-localized.server";
 import { getBlogThumb } from "~/config/blog-images";
 import { ContentLayout } from "~/components/ContentLayout";
 import { mergeMeta } from "~/config/meta";
@@ -221,7 +222,8 @@ export async function loader({ params }: Route.LoaderArgs) {
   if (locale && !isLocaleCode(locale)) {
     throw data("Not Found", { status: 404 });
   }
-  return { locale: (locale || "en") as LocaleCode };
+  const resolved = (locale || "en") as LocaleCode;
+  return { locale: resolved, posts: getLocalizedBlogPosts(resolved) };
 }
 
 export const meta: Route.MetaFunction = ({ matches, params }) => {
@@ -382,8 +384,7 @@ function BlogCard({ post, locale }: { post: BlogPost; locale: LocaleCode }) {
 
 export default function BlogIndex() {
   const loaderData = useLoaderData<typeof loader>();
-  const locale = loaderData.locale;
-  const posts = getLocalizedBlogPosts(locale);
+  const { locale, posts } = loaderData;
   const copy = INDEX_COPY[locale] || INDEX_COPY.en;
   const blogIndexUrl = `${SITE_URL}${localizedPath(locale, "/blog")}`;
 
