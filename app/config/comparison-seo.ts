@@ -1,5 +1,5 @@
 import type { MetaDescriptor } from "react-router";
-import { AUTHOR_NAME, AUTHOR_URL } from "~/config/blog-seo";
+import { AUTHOR_NAME, AUTHOR_URL, PUBLISHER_ORGANIZATION } from "~/config/blog-seo";
 import { comparisonPath, getComparisonPage } from "~/config/comparisons";
 import { mergeMeta, type MetaMatchLike } from "~/config/meta";
 import { SITE_URL, TWITTER_HANDLE, SITE_NAME } from "~/config/site";
@@ -59,7 +59,7 @@ export function buildComparisonArticleJsonLd(slug: string, locale: LocaleCode = 
     inLanguage: locale,
     image: OG_IMAGE,
     author: person,
-    publisher: person,
+    publisher: PUBLISHER_ORGANIZATION,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     about: [
       { "@id": `${SITE_URL}/#software` },

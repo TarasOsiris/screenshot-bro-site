@@ -1,12 +1,34 @@
 import type { MetaDescriptor } from "react-router";
 import { BLOG_POSTS, type BlogPost } from "~/config/blog";
 import { mergeMeta, type MetaMatchLike } from "~/config/meta";
-import { SITE_NAME, SITE_URL, TWITTER_HANDLE } from "~/config/site";
+import {
+  NINEVA_STUDIOS_NAME,
+  NINEVA_STUDIOS_URL,
+  SITE_NAME,
+  SITE_URL,
+  TWITTER_HANDLE,
+} from "~/config/site";
 import { buildOgLocaleMeta, localizedPath, type LocaleCode } from "~/config/localization";
 
 const BLOG_OG_IMAGE = `${SITE_URL}/og-image.png`;
 export const AUTHOR_NAME = "Taras Leskiv";
 export const AUTHOR_URL = "https://x.com/soycastic";
+
+// Articles name the studio as publisher — the same node as root.tsx's
+// Organization — with the raster logo that article rich results expect.
+// The author stays the person who wrote the piece.
+export const PUBLISHER_ORGANIZATION = {
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: NINEVA_STUDIOS_NAME,
+  url: NINEVA_STUDIOS_URL,
+  logo: {
+    "@type": "ImageObject",
+    url: `${SITE_URL}/web-app-manifest-512x512.png`,
+    width: 512,
+    height: 512,
+  },
+};
 
 function getPost(slug: string, locale: LocaleCode = "en"): BlogPost {
   // Post bodies are English-only, so their metadata is too.
@@ -111,11 +133,7 @@ export function buildBlogPostingJsonLd(slug: string, locale: LocaleCode = "en"):
           name: AUTHOR_NAME,
           url: AUTHOR_URL,
         },
-        publisher: {
-          "@type": "Person",
-          name: AUTHOR_NAME,
-          url: AUTHOR_URL,
-        },
+        publisher: PUBLISHER_ORGANIZATION,
         mainEntityOfPage: {
           "@type": "WebPage",
           "@id": url,
