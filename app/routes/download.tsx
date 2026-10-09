@@ -32,7 +32,7 @@ export async function loader({ request }: Route.LoaderArgs) {
 
 export const meta: Route.MetaFunction = ({ matches }) => {
   const title = `Download ${SITE_NAME} for Mac`;
-  const description = `Download ${SITE_NAME} directly, or get it from the Mac App Store. Free to start; unlock Pro with a one-time purchase.`;
+  const description = `Download ${SITE_NAME} directly, or get it from the App Store. Free to start; Pro is an in-app purchase on the App Store or a one-time web purchase for the direct download.`;
   return mergeMeta(matches, [
     { title },
     { name: "description", content: description },
@@ -158,7 +158,7 @@ export default function Download() {
             platforms="Mac, iPad and iPhone"
             rows={[
               "Updates through the App Store",
-              "Buy Pro in the app with your Apple Account",
+              "Buy Pro in the app with your Apple Account — lifetime or subscription",
               "Install it on iPad and iPhone too",
             ]}
             footer={<>macOS {MINIMUM_MACOS_VERSION}+ · iOS and iPadOS {MINIMUM_IPADOS_VERSION}+</>}
@@ -174,7 +174,7 @@ export default function Download() {
             platforms="Mac"
             rows={[
               "Updates itself, right inside the app",
-              "Buy Pro on our site — card, Apple Pay or Google Pay, no account",
+              "Buy Pro once on our site — card, Apple Pay or Google Pay, no account",
               "Signed with our Developer ID and notarized by Apple",
             ]}
             footer={
@@ -207,6 +207,10 @@ export default function Download() {
         <p className="mt-6 text-center text-xs text-ink/55">
           A Pro purchase belongs to the version you bought it in: App Store purchases unlock the App
           Store version, web purchases unlock the direct download.{" "}
+          <a href="/pricing" className="underline hover:text-ink">
+            Compare Free and Pro
+          </a>
+          {" · "}
           <a href="/buy" className="underline hover:text-ink">
             Buy Pro for the direct version
           </a>

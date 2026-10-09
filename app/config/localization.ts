@@ -153,6 +153,16 @@ export type HomeCopy = {
     showFewerTemplates: string;
     productHuntAlt: string;
     availabilityNote: string;
+    features: string;
+    templates: string;
+    pricing: string;
+    press: string;
+    cookieSettings: string;
+    consentLabel: string;
+    consentMessage: string;
+    consentAccept: string;
+    consentReject: string;
+    consentPrivacy: string;
   };
   hero: {
     titleLead: string;
@@ -247,6 +257,17 @@ export const EN_HOME_COPY: HomeCopy = {
       "ScreenshotBro App - Design and export beautiful App Store screenshots. | Product Hunt",
     availabilityNote:
       "macOS 15+ and iOS/iPadOS 18+ app | Swift & SwiftUI | App Store or direct download for Mac",
+    features: "Features",
+    templates: "Templates",
+    pricing: "Pricing",
+    press: "Press kit",
+    cookieSettings: "Cookie settings",
+    consentLabel: "Cookie consent",
+    consentMessage:
+      "May we use Google Analytics cookies to see how visitors use this site? You can change your choice any time from Cookie settings in the footer.",
+    consentAccept: "Accept",
+    consentReject: "Reject",
+    consentPrivacy: "Privacy policy",
   },
   hero: {
     titleLead: "Create & Localize",
@@ -379,6 +400,10 @@ export function localizedPath(locale: LocaleCode, path = "/"): string {
 // link builders, canonicals and the sitemap consult.
 export const GLOBAL_ROUTE_PATHS = [
   "/friends",
+  "/pricing",
+  "/features",
+  "/templates",
+  "/press",
   "/sitemap.xml",
   "/llms.txt",
 ];

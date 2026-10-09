@@ -86,6 +86,10 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export type SecondaryLinkKey =
+  | "features"
+  | "templates"
+  | "pricing"
+  | "press"
   | "blog"
   | "tutorials"
   | "changelog"
@@ -105,7 +109,20 @@ export type SecondaryLink = {
   external?: boolean;
 };
 
+// The top bar (and the drawer's Product group): the indexable product pages
+// first, then the two content hubs.
+export const NAV_BAR_LINKS: SecondaryLink[] = [
+  { uiKey: "features", href: "/features" },
+  { uiKey: "templates", href: "/templates" },
+  { uiKey: "pricing", href: "/pricing" },
+  { uiKey: "blog", href: "/blog" },
+  { uiKey: "docs", href: "/docs/help" },
+];
+
 export const PRODUCT_LINKS: SecondaryLink[] = [
+  { uiKey: "features", href: "/features" },
+  { uiKey: "templates", href: "/templates" },
+  { uiKey: "pricing", href: "/pricing" },
   { uiKey: "blog", href: "/blog" },
   { uiKey: "tutorials", href: "/tutorials" },
   { uiKey: "changelog", href: "/changelog" },
@@ -122,6 +139,7 @@ export const COMMUNITY_LINKS: SecondaryLink[] = [
 export const COMPARISON_LINKS: SecondaryLink[] = [
   { uiKey: "comparisons", href: "/vs" },
   { uiKey: "vsFastlane", href: "/vs/fastlane-snapshot" },
+  { uiKey: "press", href: "/press" },
 ];
 
 export const LEGAL_LINKS: SecondaryLink[] = [

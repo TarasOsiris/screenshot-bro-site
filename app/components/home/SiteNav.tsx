@@ -5,7 +5,7 @@ import { NavLink } from "~/components/NavLink";
 import { buttonClass } from "~/components/ui/Button";
 import { SiteLogo } from "~/components/SiteLogo";
 import { ThemeToggle, themeLabel } from "~/components/ThemeToggle";
-import { PRODUCT_LINKS, type SecondaryLink } from "~/config/site";
+import { NAV_BAR_LINKS, type SecondaryLink } from "~/config/site";
 import {
   downloadPageUrl,
   LOCALES,
@@ -84,10 +84,10 @@ export function SiteNav({
         </a>
 
         {/* Section anchors stay out of the bar and live in the drawer instead —
-            four product links plus the language picker and the CTA is already
+            five product links plus the language picker and the CTA is already
             as much as this row can carry without the CTA getting lost. */}
         <div className="hidden lg:flex items-center gap-6">
-          {PRODUCT_LINKS.map((link) => (
+          {NAV_BAR_LINKS.map((link) => (
             <NavLink
               key={link.uiKey}
               item={{
@@ -202,7 +202,7 @@ function MobileMenu({
         ) : null}
 
         <MobileLinkGroup label={copy.ui.productLabel}>
-          {PRODUCT_LINKS.map((link) => (
+          {NAV_BAR_LINKS.map((link) => (
             <MobileLink
               key={link.uiKey}
               href={getSecondaryLinkHref(copy.locale.code, link)}

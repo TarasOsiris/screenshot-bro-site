@@ -96,11 +96,15 @@ const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
     name: "Taras Leskiv",
     url: X_PROFILE_URL,
   },
+  // The download is free; Pro is an optional in-app or web purchase whose
+  // price varies by storefront, so no Pro price is asserted here.
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
     price: "0.00",
     priceCurrency: "USD",
+    description: "Free download with a free tier; Pro is an optional in-app purchase.",
+    url: `${SITE_URL}/pricing`,
   },
   isAccessibleForFree: true,
   softwareRequirements: `macOS ${MINIMUM_MACOS_VERSION} or later, iPadOS ${MINIMUM_IPADOS_VERSION} or later, or iOS ${MINIMUM_IPADOS_VERSION} or later`,
