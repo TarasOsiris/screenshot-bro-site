@@ -304,7 +304,7 @@ function FeaturedCard({ post, locale, latestLabel }: { post: BlogPost; locale: L
   const thumb = getBlogThumb(post.slug);
   return (
     <a
-      href={localizedPath(locale, `/blog/${post.slug}`)}
+      href={`/blog/${post.slug}`}
       className="group grid md:grid-cols-2 rounded-2xl border border-border bg-surface-raised overflow-hidden transition-all hover:border-ink/20 hover:bg-surface-overlay mb-10"
     >
       <div className="relative aspect-video md:aspect-auto md:h-full md:min-h-72 overflow-hidden bg-surface-overlay">
@@ -346,7 +346,7 @@ function BlogCard({ post, locale }: { post: BlogPost; locale: LocaleCode }) {
   const thumb = getBlogThumb(post.slug);
   return (
     <a
-      href={localizedPath(locale, `/blog/${post.slug}`)}
+      href={`/blog/${post.slug}`}
       className="group flex flex-col rounded-2xl border border-border bg-surface-raised overflow-hidden transition-all hover:border-ink/20 hover:bg-surface-overlay"
     >
       <div className="relative aspect-video overflow-hidden bg-surface-overlay">
@@ -409,7 +409,7 @@ export default function BlogIndex() {
           "@type": "BlogPosting",
           headline: post.title,
           description: post.description,
-          url: `${SITE_URL}${localizedPath(locale, `/blog/${post.slug}`)}`,
+          url: `${SITE_URL}${`/blog/${post.slug}`}`,
           image: getBlogThumb(post.slug) ? `${SITE_URL}${getBlogThumb(post.slug)!.src}` : undefined,
           datePublished: post.date,
           dateModified: post.date,
@@ -422,7 +422,7 @@ export default function BlogIndex() {
         itemListElement: posts.map((post, index) => ({
           "@type": "ListItem",
           position: index + 1,
-          url: `${SITE_URL}${localizedPath(locale, `/blog/${post.slug}`)}`,
+          url: `${SITE_URL}${`/blog/${post.slug}`}`,
           name: post.title,
         })),
       },

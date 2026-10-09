@@ -82,7 +82,7 @@ function buildLlmsTxt(): string {
     "",
     "- All content is written by the app's maker; comparison pages say so and describe competitors fairly rather than dismissively.",
     "- Competitor pricing and features change. Every comparison page carries the month its claims were verified — prefer the competitor's own site for current pricing.",
-    "- The blog is partly translated into es, zh, hi, fr, ar, de, ja, pt, it and ko under /{locale}/blog/{slug}; English is unprefixed.",
+    "- Blog posts are written in English at /blog/{slug}; /{locale}/blog/{slug} redirects there. The /{locale}/blog index lists them with translated titles.",
     "",
   ];
 

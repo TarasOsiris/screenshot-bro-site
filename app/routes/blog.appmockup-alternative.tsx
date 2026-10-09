@@ -1,8 +1,8 @@
 import type { Route } from "./+types/blog.appmockup-alternative";
 import { BlogArticleShell } from "~/components/BlogArticleShell";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
-import { isLocaleCode, type LocaleCode } from "~/config/localization";
-import { data, useLoaderData } from "react-router";
+import { type LocaleCode } from "~/config/localization";
+import { useLoaderData } from "react-router";
 
 const SLUG = "appmockup-alternative";
 
@@ -39,16 +39,14 @@ const COMPARISON = [
   },
 ] as const;
 
-export async function loader({ params }: Route.LoaderArgs) {
-  const locale = params.locale;
-  if (locale && !isLocaleCode(locale)) {
-    throw data("Not Found", { status: 404 });
-  }
-  return { locale: (locale || "en") as LocaleCode };
+// Posts are written in English only. /{locale}/blog/<slug> 301s to this URL
+// (routes/blog.locale-redirect.tsx), so the page always renders as "en".
+export async function loader() {
+  return { locale: "en" as LocaleCode };
 }
 
-export const meta: Route.MetaFunction = ({ matches, params }) =>
-  buildBlogPostMeta(SLUG, matches, (params.locale || "en") as LocaleCode);
+export const meta: Route.MetaFunction = ({ matches }) =>
+  buildBlogPostMeta(SLUG, matches);
 
 export const links: Route.LinksFunction = () => buildBlogPostLinks(SLUG);
 

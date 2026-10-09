@@ -3,8 +3,8 @@ import { BlogArticleShell } from "~/components/BlogArticleShell";
 import { CodeBlock } from "~/components/CodeBlock";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
 import { highlight } from "~/lib/highlight";
-import { isLocaleCode, type LocaleCode } from "~/config/localization";
-import { data, useLoaderData } from "react-router";
+import { type LocaleCode } from "~/config/localization";
+import { useLoaderData } from "react-router";
 
 const SLUG = "screenshot-bro-mcp-server";
 
@@ -164,13 +164,12 @@ translate the English copy and write it back with set_translation — keep each
 headline under 30 characters so it doesn't wrap, and render a preview of the
 German row when you're done so I can check the line breaks.`;
 
-export async function loader({ params }: Route.LoaderArgs) {
-  const locale = params.locale;
-  if (locale && !isLocaleCode(locale)) {
-    throw data("Not Found", { status: 404 });
-  }
+// Posts are written in English only. /{locale}/blog/<slug> 301s to this URL
+// (routes/blog.locale-redirect.tsx), so the page always renders as "en".
+export async function loader() {
+  const locale: LocaleCode = "en";
   return {
-    locale: (locale || "en") as LocaleCode,
+    locale,
     code: {
       config: highlight("json", MCP_CONFIG),
       claudeCode: highlight("bash", CLAUDE_CODE_ADD),
@@ -184,8 +183,8 @@ export async function loader({ params }: Route.LoaderArgs) {
   };
 }
 
-export const meta: Route.MetaFunction = ({ matches, params }) =>
-  buildBlogPostMeta(SLUG, matches, (params.locale || "en") as LocaleCode);
+export const meta: Route.MetaFunction = ({ matches }) =>
+  buildBlogPostMeta(SLUG, matches);
 
 export const links: Route.LinksFunction = () => buildBlogPostLinks(SLUG);
 

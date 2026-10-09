@@ -15,24 +15,15 @@ import { localizedPath, stripLocale, type LocaleCode } from "~/config/localizati
 // Adding a translation means translating the body, then adding the path here.
 const TRANSLATED_PATHS = new Set(["/", "/blog", "/support", "/tutorials"]);
 
-// Blog posts are translated as a matter of course — config/blog-translations.ts
-// carries a row for every slug — so /blog/<slug> counts as translated unless the
-// slug is listed here — the single source of truth, which sitemap.xml reads back
-// through isBlogPostLocalized() so its hreflang sets match the rendered pages.
-const UNTRANSLATED_BLOG_SLUGS = new Set<string>([]);
-
-export function isBlogPostLocalized(slug: string): boolean {
-  return !UNTRANSLATED_BLOG_SLUGS.has(slug);
-}
-
+// Blog posts are not on that list. config/blog-translations.ts carries a
+// translated title and description for every slug — which the translated
+// /{locale}/blog index uses — but every post body is English. routes.ts
+// therefore mounts no per-post `:locale` route: /{locale}/blog/<slug> 301s to
+// /blog/<slug> (routes/blog.locale-redirect.tsx), sitemap.xml lists the English
+// URL only, and localeHref() below never prefixes a post link. Translate a body
+// first, then give that post its own `:locale` route and add it here.
 export function hasTranslations(path: string): boolean {
-  const clean = stripLocale(path.split(/[#?]/)[0]);
-  if (TRANSLATED_PATHS.has(clean)) return true;
-  const segments = clean.split("/").filter(Boolean);
-  if (segments.length === 2 && segments[0] === "blog") {
-    return isBlogPostLocalized(segments[1]);
-  }
-  return false;
+  return TRANSLATED_PATHS.has(stripLocale(path.split(/[#?]/)[0]));
 }
 
 // The one way to build an internal href or a self-referencing page URL.

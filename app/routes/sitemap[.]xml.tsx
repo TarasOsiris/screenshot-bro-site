@@ -6,7 +6,6 @@ import {
   comparisonPath,
 } from "~/config/comparisons";
 import { DEFAULT_LOCALE, LOCALES, localizedPath } from "~/config/localization";
-import { isBlogPostLocalized } from "~/config/localized-routes";
 import { GUIDE_UPDATED } from "~/config/tutorial-guide";
 import { CHANGELOG } from "~/routes/changelog";
 import { EFFECTIVE_DATE as TERMS_EFFECTIVE_DATE } from "~/routes/terms";
@@ -151,30 +150,14 @@ function buildSitemap(): string {
     ),
   ];
 
-  const blogEntries: SitemapEntry[] = [];
-  BLOG_POSTS.forEach((post) => {
-    const path = `/blog/${post.slug}`;
-    const localized = isBlogPostLocalized(post.slug);
-    const alternates = localized ? localeAlternates(path) : undefined;
-    blogEntries.push({
-      loc: path,
-      changefreq: "monthly",
-      priority: "0.7",
-      lastmod: post.dateModified ?? post.date,
-      alternates,
-    });
-    if (localized) {
-      LOCALES.filter((locale) => locale.code !== DEFAULT_LOCALE).forEach((locale) => {
-        blogEntries.push({
-          loc: localizedPath(locale.code, path),
-          changefreq: "monthly",
-          priority: "0.7",
-          lastmod: post.dateModified ?? post.date,
-          alternates,
-        });
-      });
-    }
-  });
+  // English only: post bodies are not translated, and /{locale}/blog/<slug>
+  // 301s to the English URL (see config/localized-routes.ts).
+  const blogEntries: SitemapEntry[] = BLOG_POSTS.map((post) => ({
+    loc: `/blog/${post.slug}`,
+    changefreq: "monthly",
+    priority: "0.7",
+    lastmod: post.dateModified ?? post.date,
+  }));
 
   const urls = [...staticEntries, ...blogEntries]
     .map((entry) => {

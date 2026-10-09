@@ -25,7 +25,7 @@ export function BlogPreviewSection({ copy }: { copy: HomeCopy }) {
             return (
               <a
                 key={post.slug}
-                href={localizedPath(copy.locale.code, `/blog/${post.slug}`)}
+                href={`/blog/${post.slug}`}
                 className="group rounded-3xl bg-surface-raised border border-border overflow-hidden transition-all hover:border-ink/20 flex flex-col"
               >
                 <div className="relative aspect-video overflow-hidden bg-surface-overlay">

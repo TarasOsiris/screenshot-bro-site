@@ -6,16 +6,15 @@ import { CodeBlock } from "~/components/CodeBlock";
 import { RelatedPosts } from "~/components/RelatedPosts";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
 import { highlight } from "~/lib/highlight";
-import { data, useLoaderData } from "react-router";
-import { isLocaleCode, type LocaleCode } from "~/config/localization";
+import { useLoaderData } from "react-router";
+import { type LocaleCode } from "~/config/localization";
 
 const SLUG = "make-and-ship-screenshots-with-fastlane";
 
-export async function loader({ params }: Route.LoaderArgs) {
-  const locale = params.locale;
-  if (locale && !isLocaleCode(locale)) {
-    throw data("Not Found", { status: 404 });
-  }
+// Posts are written in English only. /{locale}/blog/<slug> 301s to this URL
+// (routes/blog.locale-redirect.tsx), so the page always renders as "en".
+export async function loader() {
+  const locale: LocaleCode = "en";
 
   const SNAPFILE = `# fastlane/Snapfile
 
@@ -328,7 +327,7 @@ bundle exec fastlane frameit download_frames
 bundle exec fastlane ship_screenshots`;
 
   return {
-    locale: (locale || "en") as LocaleCode,
+    locale,
     blocks: {
       bundlerInstall: highlight("bash", BUNDLER_INSTALL),
       fastlaneInit: highlight("bash", FASTLANE_INIT),
@@ -352,8 +351,8 @@ bundle exec fastlane ship_screenshots`;
   };
 }
 
-export const meta: Route.MetaFunction = ({ matches, params }) =>
-  buildBlogPostMeta(SLUG, matches, (params.locale || "en") as LocaleCode);
+export const meta: Route.MetaFunction = ({ matches }) =>
+  buildBlogPostMeta(SLUG, matches);
 
 export const links: Route.LinksFunction = () => buildBlogPostLinks(SLUG);
 
