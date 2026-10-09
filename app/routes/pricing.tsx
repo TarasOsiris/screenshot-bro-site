@@ -181,7 +181,7 @@ export default function Pricing() {
                 <li>Pay by card, Apple Pay or Google Pay; the price is shown at checkout.</li>
                 <li>A purchase activates on one Mac. To move it, email {WEB_PURCHASE_EMAIL}.</li>
               </ul>
-              <ButtonLink href="/buy" variant="secondary" className="mt-6">
+              <ButtonLink href="/buy" variant="secondary" className="mt-6" data-placement="pricing">
                 Buy Pro for the direct download
               </ButtonLink>
             </Panel>

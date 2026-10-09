@@ -47,6 +47,7 @@ import {
 import { hasTranslations } from "~/config/localized-routes";
 import { ConsentBanner } from "~/components/ConsentBanner";
 import { GA_ID, gtagBootstrapScript } from "~/lib/consent";
+import { useOutboundClickTracking } from "~/lib/analytics";
 // Self-hosted fonts, bundled into the stylesheet (Google Fonts was a render-
 // blocking third-party request). Familjen Grotesk ships upright only — the
 // handful of italic runs use the browser's synthetic oblique.
@@ -419,6 +420,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  useOutboundClickTracking();
   return <Outlet />;
 }
 

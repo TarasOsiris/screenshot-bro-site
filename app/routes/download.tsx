@@ -163,7 +163,7 @@ export default function Download() {
             ]}
             footer={<>macOS {MINIMUM_MACOS_VERSION}+ · iOS and iPadOS {MINIMUM_IPADOS_VERSION}+</>}
           >
-            <a href={appStoreUrl} className={primaryButton}>
+            <a href={appStoreUrl} className={primaryButton} data-placement="download-page">
               <AppleLogo /> Download on the App Store
             </a>
           </OptionCard>
@@ -182,7 +182,7 @@ export default function Download() {
                 {started ? (
                   <p className="text-ink/80">
                     Your download is starting…{" "}
-                    <a href={DIRECT_DOWNLOAD_URL} className="underline text-ink/60 hover:text-ink">
+                    <a href={DIRECT_DOWNLOAD_URL} className="underline text-ink/60 hover:text-ink" data-placement="download-page-retry">
                       Didn't start? Try again
                     </a>
                   </p>
@@ -198,7 +198,7 @@ export default function Download() {
               </div>
             }
           >
-            <a href={DIRECT_DOWNLOAD_URL} onClick={markStarted} className={primaryButton}>
+            <a href={DIRECT_DOWNLOAD_URL} onClick={markStarted} className={primaryButton} data-placement="download-page">
               <DownloadIcon /> Download for Mac
             </a>
           </OptionCard>
@@ -211,7 +211,7 @@ export default function Download() {
             Compare Free and Pro
           </a>
           {" · "}
-          <a href="/buy" className="underline hover:text-ink">
+          <a href="/buy" className="underline hover:text-ink" data-placement="download-page">
             Buy Pro for the direct version
           </a>
         </p>
