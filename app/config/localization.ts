@@ -197,7 +197,9 @@ export type HomeCopy = {
 
 export const EN_HOME_COPY: HomeCopy = {
   locale: LOCALES[0],
-  siteTitle: "App Store Screenshot Tool for Mac, iPad & iPhone",
+  // Brand first, like every translated title; 54 chars, inside the 60 the
+  // blog and /vs titles are held to.
+  siteTitle: `${SITE_NAME}: App Store Screenshot Tool for Mac & iOS`,
   siteDescription: SITE_DESCRIPTION,
   socialImageAlt:
     "Screenshot Bro — native Mac, iPad and iPhone app for designing App Store and Google Play screenshots with device frames, gradients, and localization",
