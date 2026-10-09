@@ -246,7 +246,7 @@ export const EN_HOME_COPY: HomeCopy = {
     productHuntAlt:
       "ScreenshotBro App - Design and export beautiful App Store screenshots. | Product Hunt",
     availabilityNote:
-      "macOS 15+ and iOS/iPadOS 18+ app | Swift & SwiftUI | Available on the App Store",
+      "macOS 15+ and iOS/iPadOS 18+ app | Swift & SwiftUI | App Store or direct download for Mac",
   },
   hero: {
     titleLead: "Create & Localize",

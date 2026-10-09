@@ -11,7 +11,10 @@ export const EARLY_ACCESS_EMAIL = "tleskiv@ninevastudios.com";
 // Transfers and refunds for purchases made on the website (direct-download version).
 export const WEB_PURCHASE_EMAIL = "info@ninevastudios.com";
 export const APP_STORE_APP_ID = "6760177675";
-export const APP_STORE_URL = "https://apps.apple.com/us/app/screenshot-bro/id6760177675";
+// The slug the live store canonicalizes to: /app/screenshot-bro/id… and
+// /app/id… both 301 here.
+export const APP_STORE_SLUG = "screenshot-bro-mockup-maker";
+export const APP_STORE_URL = `https://apps.apple.com/us/app/${APP_STORE_SLUG}/id${APP_STORE_APP_ID}`;
 
 // Storefront used when we have no locale to go on. Apple does NOT geo-redirect
 // a country-less /app/id… URL — it 301s everyone to /us/ — so the country
@@ -32,7 +35,7 @@ export const REDEMPTION_URL_SCHEME = "rc-6cc0af703b";
 export function appStoreProductUrl(
   country: string = DEFAULT_APP_STORE_COUNTRY,
 ): string {
-  return `https://apps.apple.com/${country}/app/screenshot-bro-mockup-maker/id${APP_STORE_APP_ID}`;
+  return `https://apps.apple.com/${country}/app/${APP_STORE_SLUG}/id${APP_STORE_APP_ID}`;
 }
 export const CONTACT_MAILTO = `mailto:${EARLY_ACCESS_EMAIL}`;
 export const REDDIT_COMMUNITY_URL = "https://www.reddit.com/r/ScreenshotBro/";
@@ -127,7 +130,7 @@ export const LEGAL_LINKS: SecondaryLink[] = [
 ];
 
 export const DOWNLOAD_BENEFITS = [
-  "Available now on the App Store for Mac, iPad and iPhone",
+  "Mac, iPad and iPhone on the App Store, plus a direct download for Mac",
   "Full workflow: import, design, auto-translate, localize, export",
   "Upload direct to App Store Connect — no more drag-and-drop in a browser tab",
 ];

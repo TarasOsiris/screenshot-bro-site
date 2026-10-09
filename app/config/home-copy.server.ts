@@ -595,7 +595,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Disponible ahora en la App Store para Mac, iPad y iPhone",
+      "Para Mac, iPad y iPhone en la App Store, y descarga directa para Mac",
       "Flujo completo: importar, diseñar, traducir, localizar y exportar",
       "Subida directa a App Store Connect sin arrastrar archivos en el navegador",
     ],
@@ -681,7 +681,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "Contactar al desarrollador",
       backToTop: "Volver arriba",
       availabilityNote:
-        "App para macOS 15+ y iOS/iPadOS 18+ | Swift y SwiftUI | Disponible en la App Store",
+        "App para macOS 15+ y iOS/iPadOS 18+ | Swift y SwiftUI | En la App Store o descarga directa para Mac",
     },
     hero: {
       titleLead: "Diseña y publica",
@@ -751,7 +751,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       "用原生 Mac、iPad 和 iPhone 应用设计 App Store 和 Google Play 截图。设备边框、本地化、自动翻译、批量导出，并可直接上传到 App Store Connect。",
     primaryCtaLabel: "下载 Screenshot Bro",
     benefits: [
-      "现已在 Mac、iPad 和 iPhone 的 App Store 上架",
+      "Mac、iPad 和 iPhone 版已在 App Store 上架，另提供 Mac 直接下载版",
       "完整流程：导入、设计、自动翻译、本地化和导出",
       "直接上传到 App Store Connect，不再在浏览器里拖放文件",
     ],
@@ -841,7 +841,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "提交你的 App",
       contactDeveloper: "联系开发者",
       backToTop: "返回顶部",
-      availabilityNote: "macOS 15+ 和 iOS/iPadOS 18+ 应用 | Swift 和 SwiftUI | 已上架 App Store",
+      availabilityNote: "macOS 15+ 和 iOS/iPadOS 18+ 应用 | Swift 和 SwiftUI | App Store 或 Mac 直接下载",
     },
     hero: {
       titleLead: "设计并发布",
@@ -907,7 +907,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       "नेटिव Mac, iPad और iPhone ऐप में App Store और Google Play स्क्रीनशॉट डिजाइन करें। डिवाइस फ्रेम, लोकलाइजेशन और App Store Connect पर सीधा अपलोड।",
     primaryCtaLabel: "Screenshot Bro डाउनलोड करें",
     benefits: [
-      "Mac, iPad और iPhone के लिए App Store पर अभी उपलब्ध",
+      "Mac, iPad और iPhone के लिए App Store पर, साथ ही Mac के लिए सीधा डाउनलोड",
       "पूरा workflow: import, design, auto-translate, localize और export",
       "App Store Connect पर सीधा upload, browser में drag-and-drop नहीं",
     ],
@@ -1001,7 +1001,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "डेवलपर से संपर्क करें",
       backToTop: "ऊपर जाएं",
       availabilityNote:
-        "macOS 15+ और iOS/iPadOS 18+ ऐप | Swift और SwiftUI | App Store पर उपलब्ध",
+        "macOS 15+ और iOS/iPadOS 18+ ऐप | Swift और SwiftUI | App Store या Mac के लिए सीधा डाउनलोड",
     },
     hero: {
       titleLead: "डिजाइन करें और शिप करें",
@@ -1067,7 +1067,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       "Créez des captures App Store et Google Play dans une app native pour Mac, iPad et iPhone. Cadres d'appareils, localisation et envoi vers App Store Connect.",
     primaryCtaLabel: "Télécharger Screenshot Bro",
     benefits: [
-      "Disponible maintenant sur l'App Store pour Mac, iPad et iPhone",
+      "Pour Mac, iPad et iPhone sur l'App Store, plus un téléchargement direct pour Mac",
       "Flux complet : import, design, traduction automatique, localisation et export",
       "Envoi direct vers App Store Connect sans glisser-déposer dans le navigateur",
     ],
@@ -1159,7 +1159,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "Contacter le développeur",
       backToTop: "Retour en haut",
       availabilityNote:
-        "App macOS 15+ et iOS/iPadOS 18+ | Swift et SwiftUI | Disponible sur l'App Store",
+        "App macOS 15+ et iOS/iPadOS 18+ | Swift et SwiftUI | Sur l'App Store ou en téléchargement direct pour Mac",
     },
     hero: {
       titleLead: "Créez et publiez",
@@ -1229,7 +1229,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       "صمّم لقطات App Store و Google Play داخل تطبيق أصلي على Mac و iPad و iPhone. إطارات أجهزة، توطين، ترجمة تلقائية، تصدير جماعي ورفع مباشر إلى App Store Connect.",
     primaryCtaLabel: "نزّل Screenshot Bro",
     benefits: [
-      "متوفر الآن على App Store لأجهزة Mac و iPad و iPhone",
+      "لأجهزة Mac وiPad وiPhone على App Store، مع تنزيل مباشر لنظام Mac",
       "سير كامل: استيراد، تصميم، ترجمة تلقائية، توطين وتصدير",
       "رفع مباشر إلى App Store Connect بدون السحب والإفلات في المتصفح",
     ],
@@ -1320,7 +1320,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "تواصل مع المطور",
       backToTop: "العودة للأعلى",
       availabilityNote:
-        "تطبيق macOS 15+ و iOS/iPadOS 18+ | Swift و SwiftUI | متوفر على App Store",
+        "تطبيق macOS 15+ و iOS/iPadOS 18+ | Swift و SwiftUI | على App Store أو تنزيل مباشر لنظام Mac",
     },
     hero: {
       titleLead: "صمّم وانشر لقطات",
@@ -1395,7 +1395,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Jetzt im App Store für Mac, iPad und iPhone erhältlich",
+      "Für Mac, iPad und iPhone im App Store, dazu als direkter Download für den Mac",
       "Vollständiger Workflow: Importieren, Gestalten, Übersetzen, Lokalisieren und Exportieren",
       "Direkter Upload zu App Store Connect ohne lästiges Drag-and-Drop im Browser",
     ],
@@ -1482,7 +1482,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "Entwickler kontaktieren",
       backToTop: "Zurück nach oben",
       availabilityNote:
-        "macOS 15+ und iOS/iPadOS 18+ App | Swift & SwiftUI | Im App Store erhältlich",
+        "macOS 15+ und iOS/iPadOS 18+ App | Swift & SwiftUI | Im App Store oder als direkter Download für den Mac",
     },
     hero: {
       titleLead: "Gestalte und veröffentliche",
@@ -1557,7 +1557,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "よくある質問", href: "#faq" },
     ],
     benefits: [
-      "Mac・iPad・iPhone向けにApp Storeで配信中",
+      "Mac・iPad・iPhone 版を App Store で配信中。Mac 向け直接ダウンロード版もあり",
       "インポート、デザイン、翻訳、ローカライズ、書き出しまでの完全なワークフロー",
       "ブラウザへのドラッグ＆ドロップ不要で、App Store Connectに直接アップロード",
     ],
@@ -1643,7 +1643,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "開発者に連絡",
       backToTop: "トップへ戻る",
       availabilityNote:
-        "macOS 15以降・iOS/iPadOS 18以降のアプリ | Swift & SwiftUI | App Storeで入手可能",
+        "macOS 15以降・iOS/iPadOS 18以降のアプリ | Swift & SwiftUI | App Store または Mac 向け直接ダウンロード",
     },
     hero: {
       titleLead: "デザインから",
@@ -1718,7 +1718,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Disponível agora na App Store para Mac, iPad e iPhone",
+      "Para Mac, iPad e iPhone na App Store, além de download direto para Mac",
       "Fluxo completo: importar, projetar, traduzir, localizar e exportar",
       "Envio direto para o App Store Connect sem arrastar arquivos no navegador",
     ],
@@ -1805,7 +1805,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "Contatar desenvolvedor",
       backToTop: "Voltar ao topo",
       availabilityNote:
-        "App para macOS 15+ e iOS/iPadOS 18+ | Swift & SwiftUI | Disponível na App Store",
+        "App para macOS 15+ e iOS/iPadOS 18+ | Swift & SwiftUI | Na App Store ou download direto para Mac",
     },
     hero: {
       titleLead: "Crie e publique",
@@ -1880,7 +1880,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Disponibile ora sull'App Store per Mac, iPad e iPhone",
+      "Per Mac, iPad e iPhone sull'App Store, più un download diretto per Mac",
       "Flusso completo: importa, progetta, traduci, localizza ed esporta",
       "Caricamento diretto su App Store Connect senza trascinare file nel browser",
     ],
@@ -1967,7 +1967,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "Contatta lo sviluppatore",
       backToTop: "Torna in alto",
       availabilityNote:
-        "App per macOS 15+ e iOS/iPadOS 18+ | Swift e SwiftUI | Disponibile sull'App Store",
+        "App per macOS 15+ e iOS/iPadOS 18+ | Swift e SwiftUI | Sull'App Store o in download diretto per Mac",
     },
     hero: {
       titleLead: "Progetta e pubblica",
@@ -2042,7 +2042,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "현재 Mac, iPad 및 iPhone용 App Store에서 다운로드 가능",
+      "Mac, iPad, iPhone용 App Store 버전과 Mac용 직접 다운로드 버전 제공",
       "가져오기, 디자인, 자동 번역, 현지화, 내보내기까지 완벽한 워크플로우",
       "브라우저 드래그 앤 드롭 없이 App Store Connect에 직접 업로드",
     ],
@@ -2128,7 +2128,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "개발자에게 연락하기",
       backToTop: "맨 위로 이동",
       availabilityNote:
-        "macOS 15+ 및 iOS/iPadOS 18+ 앱 | Swift 및 SwiftUI | App Store에서 다운로드 가능",
+        "macOS 15+ 및 iOS/iPadOS 18+ 앱 | Swift 및 SwiftUI | App Store 또는 Mac용 직접 다운로드",
     },
     hero: {
       titleLead: "스크린샷 디자인부터",
@@ -2203,7 +2203,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Вже доступно в App Store для Mac, iPad та iPhone",
+      "Для Mac, iPad і iPhone в App Store, а також пряме завантаження для Mac",
       "Повний робочий процес: імпорт, дизайн, автопереклад, локалізація та експорт",
       "Пряме завантаження в App Store Connect без ручного перетягування у браузері",
     ],
@@ -2290,7 +2290,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "Написати розробнику",
       backToTop: "Вгору",
       availabilityNote:
-        "Додаток для macOS 15+ та iOS/iPadOS 18+ | Swift і SwiftUI | Доступно в App Store",
+        "Додаток для macOS 15+ та iOS/iPadOS 18+ | Swift і SwiftUI | В App Store або пряме завантаження для Mac",
     },
     hero: {
       titleLead: "Створюйте та публікуйте",
@@ -2365,7 +2365,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Dostępne w App Store na Maca, iPada i iPhone'a",
+      "Na Maca, iPada i iPhone'a w App Store oraz do pobrania bezpośrednio na Maca",
       "Pełny przepływ pracy: import, projektowanie, automatyczne tłumaczenie, lokalizacja i eksport",
       "Bezpośrednie przesyłanie do App Store Connect bez ręcznego przeciągania plików w przeglądarce",
     ],
@@ -2452,7 +2452,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "Napisz do twórcy",
       backToTop: "W górę",
       availabilityNote:
-        "Aplikacja na macOS 15+ i iOS/iPadOS 18+ | Swift i SwiftUI | Dostępna w App Store",
+        "Aplikacja na macOS 15+ i iOS/iPadOS 18+ | Swift i SwiftUI | W App Store lub do pobrania bezpośrednio na Maca",
     },
     hero: {
       titleLead: "Twórz i publikuj",
@@ -2527,7 +2527,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "SSS", href: "#faq" },
     ],
     benefits: [
-      "Mac, iPad ve iPhone için App Store'da mevcut",
+      "Mac, iPad ve iPhone için App Store'da, ayrıca Mac için doğrudan indirme",
       "Tam iş akışı: içe aktarma, tasarım, otomatik çeviri, yerelleştirme ve dışa aktarma",
       "Tarayıcıda sürükleyip bırakmadan doğrudan App Store Connect'e yükleme",
     ],
@@ -2613,7 +2613,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Uygulamanızı gönderin",
       contactDeveloper: "Geliştiriciye ulaşın",
       backToTop: "Yukarı çık",
-      availabilityNote: "macOS 15+ ve iOS/iPadOS 18+ uygulaması | Swift ve SwiftUI | App Store'da mevcut",
+      availabilityNote: "macOS 15+ ve iOS/iPadOS 18+ uygulaması | Swift ve SwiftUI | App Store'da veya Mac için doğrudan indirme",
     },
     hero: {
       titleLead: "Dakikalar İçinde",
@@ -2654,7 +2654,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Nu beschikbaar in de App Store voor Mac, iPad en iPhone",
+      "Voor Mac, iPad en iPhone in de App Store, plus een directe download voor Mac",
       "Volledige workflow: importeren, ontwerpen, automatisch vertalen, lokaliseren en exporteren",
       "Direct uploaden naar App Store Connect zonder bestanden in de browser te slepen",
     ],
@@ -2740,7 +2740,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "App aanmelden",
       contactDeveloper: "Contacteer ontwikkelaar",
       backToTop: "Naar boven",
-      availabilityNote: "macOS 15+ en iOS/iPadOS 18+ app | Swift & SwiftUI | Beschikbaar in de App Store",
+      availabilityNote: "macOS 15+ en iOS/iPadOS 18+ app | Swift & SwiftUI | In de App Store of als directe download voor Mac",
     },
     hero: {
       titleLead: "Maak & lokaliseer",
@@ -2781,7 +2781,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Tersedia sekarang di App Store untuk Mac, iPad dan iPhone",
+      "Untuk Mac, iPad, dan iPhone di App Store, plus unduhan langsung untuk Mac",
       "Alur kerja lengkap: impor, desain, terjemahan otomatis, lokalisasi, dan ekspor",
       "Unggah langsung ke App Store Connect tanpa menyeret file di browser",
     ],
@@ -2867,7 +2867,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Kirim aplikasi",
       contactDeveloper: "Hubungi pengembang",
       backToTop: "Kembali ke atas",
-      availabilityNote: "Aplikasi macOS 15+ dan iOS/iPadOS 18+ | Swift & SwiftUI | Tersedia di App Store",
+      availabilityNote: "Aplikasi macOS 15+ dan iOS/iPadOS 18+ | Swift & SwiftUI | Di App Store atau unduh langsung untuk Mac",
     },
     hero: {
       titleLead: "Buat & Lokalisasikan",
@@ -2908,7 +2908,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Hiện có sẵn trên App Store cho Mac, iPad và iPhone",
+      "Cho Mac, iPad và iPhone trên App Store, kèm bản tải trực tiếp cho Mac",
       "Quy trình hoàn chỉnh: nhập, thiết kế, tự động dịch, bản địa hóa và xuất file",
       "Tải trực tiếp lên App Store Connect không cần kéo thả trong trình duyệt",
     ],
@@ -2994,7 +2994,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Gửi ứng dụng",
       contactDeveloper: "Liên hệ nhà phát triển",
       backToTop: "Lên đầu trang",
-      availabilityNote: "Ứng dụng macOS 15+ và iOS/iPadOS 18+ | Swift & SwiftUI | Có sẵn trên App Store",
+      availabilityNote: "Ứng dụng macOS 15+ và iOS/iPadOS 18+ | Swift & SwiftUI | Trên App Store hoặc tải trực tiếp cho Mac",
     },
     hero: {
       titleLead: "Tạo & Bản địa hóa",
@@ -3035,7 +3035,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "พร้อมใช้งานแล้วบน App Store สำหรับ Mac, iPad และ iPhone",
+      "สำหรับ Mac, iPad และ iPhone บน App Store พร้อมเวอร์ชันดาวน์โหลดโดยตรงสำหรับ Mac",
       "ครบทุกขั้นตอน: นำเข้า ออกแบบ แปลภาษาอัตโนมัติ และส่งออก",
       "อัปโหลดไปยัง App Store Connect ได้โดยตรงโดยไม่ต้องลากไฟล์ในเบราว์เซอร์",
     ],
@@ -3121,7 +3121,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "ส่งแอปของคุณ",
       contactDeveloper: "ติดต่อผู้พัฒนา",
       backToTop: "กลับขึ้นด้านบน",
-      availabilityNote: "แอป macOS 15+ และ iOS/iPadOS 18+ | Swift & SwiftUI | มีใน App Store",
+      availabilityNote: "แอป macOS 15+ และ iOS/iPadOS 18+ | Swift & SwiftUI | บน App Store หรือดาวน์โหลดโดยตรงสำหรับ Mac",
     },
     hero: {
       titleLead: "สร้างและแปลภาษา",
@@ -3162,7 +3162,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Tillgänglig nu i App Store för Mac, iPad och iPhone",
+      "För Mac, iPad och iPhone i App Store, plus direkt nedladdning för Mac",
       "Komplett arbetsflöde: import, design, automatisk översättning, lokalisering och export",
       "Direkt uppladdning till App Store Connect utan att dra filer i webbläsaren",
     ],
@@ -3248,7 +3248,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Skicka in app",
       contactDeveloper: "Kontakta utvecklaren",
       backToTop: "Till toppen",
-      availabilityNote: "macOS 15+ och iOS/iPadOS 18+ app | Swift & SwiftUI | Tillgänglig i App Store",
+      availabilityNote: "macOS 15+ och iOS/iPadOS 18+ app | Swift & SwiftUI | I App Store eller som direkt nedladdning för Mac",
     },
     hero: {
       titleLead: "Skapa & lokalisera",
@@ -3288,7 +3288,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Tilgængelig nu i App Store til Mac, iPad og iPhone",
+      "Til Mac, iPad og iPhone i App Store, plus direkte download til Mac",
       "Hele arbejdsgangen: importér, design, oversæt automatisk, lokaliser, eksportér",
       "Upload direkte til App Store Connect — slut med træk-og-slip i en browserfane",
     ],
@@ -3364,7 +3364,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Indsend app",
       contactDeveloper: "Kontakt udvikleren",
       backToTop: "Til toppen",
-      availabilityNote: "macOS 15+ og iOS/iPadOS 18+ app | Swift & SwiftUI | Tilgængelig i App Store",
+      availabilityNote: "macOS 15+ og iOS/iPadOS 18+ app | Swift & SwiftUI | I App Store eller som direkte download til Mac",
     },
     hero: {
       titleLead: "Opret & lokaliser",
@@ -3404,7 +3404,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "UKK", href: "#faq" },
     ],
     benefits: [
-      "Saatavilla nyt App Storessa Macille, iPadille ja iPhonelle",
+      "Macille, iPadille ja iPhonelle App Storessa sekä suorana latauksena Macille",
       "Koko työnkulku: tuonti, suunnittelu, automaattinen käännös, lokalisointi, vienti",
       "Lataa suoraan App Store Connectiin — ei enää vetämistä ja pudottamista selainvälilehdessä",
     ],
@@ -3480,7 +3480,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Lähetä sovellus",
       contactDeveloper: "Ota yhteyttä kehittäjään",
       backToTop: "Takaisin alkuun",
-      availabilityNote: "macOS 15+ ja iOS/iPadOS 18+ sovellus | Swift & SwiftUI | Saatavilla App Storessa",
+      availabilityNote: "macOS 15+ ja iOS/iPadOS 18+ sovellus | Swift & SwiftUI | App Storessa tai suorana latauksena Macille",
     },
     hero: {
       titleLead: "Luo & lokalisoi",
@@ -3520,7 +3520,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Tilgjengelig nå i App Store for Mac, iPad og iPhone",
+      "For Mac, iPad og iPhone i App Store, pluss direkte nedlasting for Mac",
       "Hele arbeidsflyten: importer, design, oversett automatisk, lokaliser, eksporter",
       "Last opp direkte til App Store Connect — slutt på dra-og-slipp i en nettleserfane",
     ],
@@ -3596,7 +3596,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Send inn app",
       contactDeveloper: "Kontakt utvikleren",
       backToTop: "Til toppen",
-      availabilityNote: "macOS 15+ og iOS/iPadOS 18+ app | Swift & SwiftUI | Tilgjengelig i App Store",
+      availabilityNote: "macOS 15+ og iOS/iPadOS 18+ app | Swift & SwiftUI | I App Store eller som direkte nedlasting for Mac",
     },
     hero: {
       titleLead: "Opprett & lokaliser",
@@ -3636,7 +3636,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Dostupné nyní v App Store pro Mac, iPad a iPhone",
+      "Pro Mac, iPad a iPhone v App Store a také přímé stažení pro Mac",
       "Celý pracovní postup: import, návrh, automatický překlad, lokalizace, export",
       "Nahrávání přímo do App Store Connect — konec přetahování v záložce prohlížeče",
     ],
@@ -3712,7 +3712,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Odeslat aplikaci",
       contactDeveloper: "Kontaktovat vývojáře",
       backToTop: "Zpět nahoru",
-      availabilityNote: "Aplikace pro macOS 15+ a iOS/iPadOS 18+ | Swift & SwiftUI | Dostupné v App Store",
+      availabilityNote: "Aplikace pro macOS 15+ a iOS/iPadOS 18+ | Swift & SwiftUI | V App Store nebo jako přímé stažení pro Mac",
     },
     hero: {
       titleLead: "Vytvářejte & lokalizujte",
@@ -3752,7 +3752,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Disponibilă acum în App Store pentru Mac, iPad și iPhone",
+      "Pentru Mac, iPad și iPhone pe App Store, plus descărcare directă pentru Mac",
       "Flux de lucru complet: import, design, traducere automată, localizare, export",
       "Încărcare direct în App Store Connect — gata cu drag-and-drop într-o filă de browser",
     ],
@@ -3828,7 +3828,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Trimite aplicația",
       contactDeveloper: "Contactează dezvoltatorul",
       backToTop: "Înapoi sus",
-      availabilityNote: "Aplicație pentru macOS 15+ și iOS/iPadOS 18+ | Swift & SwiftUI | Disponibilă în App Store",
+      availabilityNote: "Aplicație pentru macOS 15+ și iOS/iPadOS 18+ | Swift & SwiftUI | Pe App Store sau descărcare directă pentru Mac",
     },
     hero: {
       titleLead: "Creează & localizează",
@@ -3868,7 +3868,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "Soalan Lazim", href: "#faq" },
     ],
     benefits: [
-      "Kini tersedia di App Store untuk Mac, iPad dan iPhone",
+      "Untuk Mac, iPad dan iPhone di App Store, serta muat turun terus untuk Mac",
       "Aliran kerja penuh: import, reka, terjemah automatik, setempatkan, eksport",
       "Muat naik terus ke App Store Connect — tiada lagi tarik dan lepas dalam tab pelayar",
     ],
@@ -3944,7 +3944,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Hantar aplikasi",
       contactDeveloper: "Hubungi pembangun",
       backToTop: "Kembali ke atas",
-      availabilityNote: "Aplikasi macOS 15+ dan iOS/iPadOS 18+ | Swift & SwiftUI | Boleh didapati di App Store",
+      availabilityNote: "Aplikasi macOS 15+ dan iOS/iPadOS 18+ | Swift & SwiftUI | Di App Store atau muat turun terus untuk Mac",
     },
     hero: {
       titleLead: "Cipta & setempatkan",

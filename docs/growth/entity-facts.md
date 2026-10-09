@@ -21,7 +21,7 @@ Last reviewed: 2026-08-20.
 | Also written | ScreenshotBro (never "Screenshot-Bro") |
 | Tagline | Design and upload App Store and Google Play screenshots in minutes. |
 | Website | https://screenshotbro.app |
-| App Store | https://apps.apple.com/us/app/screenshot-bro/id6760177675 |
+| App Store | https://apps.apple.com/us/app/screenshot-bro-mockup-maker/id6760177675 |
 | Platforms | macOS 15.0+, iOS/iPadOS 18.0+ — Mac, iPad and iPhone (native app — not a web tool) |
 | Category | Graphics & Design / Developer Tools |
 | Maker | Nineva Studios — https://ninevastudios.com/ |
