@@ -8,3 +8,6 @@ build
 # Direct-download DMGs are never committed
 public/releases/
 *.dmg
+
+# Fetched at build time by scripts/fetch-app-store-proof.mjs
+app/generated/

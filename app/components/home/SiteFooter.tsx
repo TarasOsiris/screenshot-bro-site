@@ -16,6 +16,7 @@ import {
 import { useHomeCopy } from "~/config/home-copy";
 import type { HomeCopy, LocaleCode } from "~/config/localization";
 import { SiteLogo } from "~/components/SiteLogo";
+import { ProductHuntBadge } from "~/components/home/ProductHuntBadge";
 import { localeHref } from "~/config/localized-routes";
 import { GA_ID, openConsentSettings } from "~/lib/consent";
 
@@ -62,26 +63,7 @@ export function SiteFooter({ copy: copyProp }: { copy?: HomeCopy }) {
                 label={copy.ui.followOnThreads}
                 icon="threads"
               />
-              <a
-                href="https://www.producthunt.com/products/screenshotbro-mac-app?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-screenshotbro-mac-app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1106959&theme=neutral&t=1775116842049"
-                  alt={copy.ui.productHuntAlt}
-                  width="200"
-                  height="43"
-                  className="theme-light-only opacity-80 hover:opacity-100 transition-opacity"
-                />
-                <img
-                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1106959&theme=dark&t=1775116842049"
-                  alt={copy.ui.productHuntAlt}
-                  width="200"
-                  height="43"
-                  className="theme-dark-only opacity-80 hover:opacity-100 transition-opacity"
-                />
-              </a>
+              <ProductHuntBadge alt={copy.ui.productHuntAlt} lazy />
             </div>
             <a
               href="https://trustmrr.com/startup/screenshot-bro"
@@ -94,6 +76,7 @@ export function SiteFooter({ copy: copyProp }: { copy?: HomeCopy }) {
                 alt="TrustMRR verified revenue badge"
                 width="220"
                 height="90"
+                loading="lazy"
                 className="theme-light-only opacity-80 hover:opacity-100 transition-opacity"
               />
               <img
@@ -101,6 +84,7 @@ export function SiteFooter({ copy: copyProp }: { copy?: HomeCopy }) {
                 alt="TrustMRR verified revenue badge"
                 width="220"
                 height="90"
+                loading="lazy"
                 className="theme-dark-only opacity-80 hover:opacity-100 transition-opacity"
               />
             </a>

@@ -2,6 +2,32 @@ import { ButtonLink } from "~/components/ui/Button";
 import { ArrowDownIcon, DownloadIcon } from "~/components/home/small-icons";
 import { useDeferredLoopVideo } from "~/components/home/hooks";
 import { downloadPageUrl, type HomeCopy } from "~/config/localization";
+import { APP_STORE_RATING } from "~/config/app-store-proof";
+import { fill } from "~/config/home-copy";
+import { ProductHuntBadge } from "~/components/home/ProductHuntBadge";
+
+// Proof right under the CTAs: the App Store rating once enough people have
+// rated (config/app-store-proof.ts gates it) and the Product Hunt badge.
+function HeroProof({ copy }: { copy: HomeCopy }) {
+  return (
+    <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-x-6 gap-y-3">
+      {APP_STORE_RATING ? (
+        <p className="flex items-center gap-2 text-sm text-ink/70">
+          <span className="text-warm-light tracking-[0.1em]" aria-hidden="true">
+            ★★★★★
+          </span>
+          <span>
+            {fill(copy.ui.ratingSummary, {
+              rating: APP_STORE_RATING.value.toFixed(1),
+              count: APP_STORE_RATING.count,
+            })}
+          </span>
+        </p>
+      ) : null}
+      <ProductHuntBadge alt={copy.ui.productHuntAlt} />
+    </div>
+  );
+}
 
 function AppPreview({ label }: { label: string }) {
   const videoRef = useDeferredLoopVideo("/demo-main.mp4");
@@ -79,6 +105,9 @@ export function HeroSection({
               {copy.ui.seeInAction}
               <ArrowDownIcon />
             </ButtonLink>
+          </div>
+          <div className="animate-fade-up" style={{ animationDelay: "0.34s" }}>
+            <HeroProof copy={copy} />
           </div>
         </div>
 

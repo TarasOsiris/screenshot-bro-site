@@ -4483,7 +4483,7 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
 // UI strings added after the per-locale overrides above (pricing, press kit and
 // cookie consent). "Features" and "Templates" reuse the section labels each
 // locale already translated for the home page's nav.
-type ExtraUiCopy = Pick<HomeCopy["ui"], "pricing" | "press" | "cookieSettings" | "consentLabel" | "consentMessage" | "consentAccept" | "consentReject" | "consentPrivacy">;
+type ExtraUiCopy = Pick<HomeCopy["ui"], "pricing" | "press" | "cookieSettings" | "consentLabel" | "consentMessage" | "consentAccept" | "consentReject" | "consentPrivacy" | "ratingSummary" | "reviewsHeading" | "showcaseCount">;
 
 const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
   es: {
@@ -4495,6 +4495,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Aceptar",
     consentReject: "Rechazar",
     consentPrivacy: "Política de privacidad",
+    ratingSummary: "Media de {rating} en {count} valoraciones de la App Store",
+    reviewsHeading: "Reseñas de la App Store",
+    showcaseCount: "{count} apps y contando",
   },
   zh: {
     pricing: "价格",
@@ -4505,6 +4508,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "接受",
     consentReject: "拒绝",
     consentPrivacy: "隐私政策",
+    ratingSummary: "{count} 条 App Store 评分，平均 {rating} 分",
+    reviewsHeading: "来自 App Store 的评价",
+    showcaseCount: "已有 {count} 款应用",
   },
   hi: {
     pricing: "कीमत",
@@ -4515,6 +4521,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "स्वीकार करें",
     consentReject: "अस्वीकार करें",
     consentPrivacy: "गोपनीयता नीति",
+    ratingSummary: "{count} App Store रेटिंग में औसत {rating}",
+    reviewsHeading: "App Store समीक्षाओं से",
+    showcaseCount: "{count} ऐप्स और बढ़ रहे हैं",
   },
   fr: {
     pricing: "Tarifs",
@@ -4525,6 +4534,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Accepter",
     consentReject: "Refuser",
     consentPrivacy: "Politique de confidentialité",
+    ratingSummary: "Moyenne de {rating} sur {count} notes App Store",
+    reviewsHeading: "Avis de l'App Store",
+    showcaseCount: "{count} apps, et ce n'est qu'un début",
   },
   ar: {
     pricing: "الأسعار",
@@ -4535,6 +4547,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "قبول",
     consentReject: "رفض",
     consentPrivacy: "سياسة الخصوصية",
+    ratingSummary: "متوسط {rating} من {count} تقييمات على App Store",
+    reviewsHeading: "من مراجعات App Store",
+    showcaseCount: "{count} تطبيقًا والعدد في ازدياد",
   },
   de: {
     pricing: "Preise",
@@ -4545,6 +4560,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Akzeptieren",
     consentReject: "Ablehnen",
     consentPrivacy: "Datenschutzerklärung",
+    ratingSummary: "Durchschnitt {rating} aus {count} App-Store-Bewertungen",
+    reviewsHeading: "Aus App-Store-Rezensionen",
+    showcaseCount: "{count} Apps, und es werden mehr",
   },
   ja: {
     pricing: "料金",
@@ -4555,6 +4573,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "同意する",
     consentReject: "拒否する",
     consentPrivacy: "プライバシーポリシー",
+    ratingSummary: "App Store の評価 {count} 件、平均 {rating}",
+    reviewsHeading: "App Store のレビューより",
+    showcaseCount: "{count} 本のアプリが利用中",
   },
   pt: {
     pricing: "Preços",
@@ -4565,6 +4586,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Aceitar",
     consentReject: "Recusar",
     consentPrivacy: "Política de privacidade",
+    ratingSummary: "Média de {rating} em {count} avaliações na App Store",
+    reviewsHeading: "Avaliações da App Store",
+    showcaseCount: "{count} apps e contando",
   },
   it: {
     pricing: "Prezzi",
@@ -4575,6 +4599,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Accetta",
     consentReject: "Rifiuta",
     consentPrivacy: "Informativa sulla privacy",
+    ratingSummary: "Media di {rating} su {count} valutazioni dell'App Store",
+    reviewsHeading: "Dalle recensioni dell'App Store",
+    showcaseCount: "{count} app, e non è finita",
   },
   ko: {
     pricing: "가격",
@@ -4585,6 +4612,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "동의",
     consentReject: "거부",
     consentPrivacy: "개인정보 처리방침",
+    ratingSummary: "App Store 평가 {count}개, 평균 {rating}",
+    reviewsHeading: "App Store 리뷰에서",
+    showcaseCount: "{count}개 앱이 함께하고 있어요",
   },
   uk: {
     pricing: "Ціни",
@@ -4595,6 +4625,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Прийняти",
     consentReject: "Відхилити",
     consentPrivacy: "Політика конфіденційності",
+    ratingSummary: "Середня оцінка {rating} з {count} оцінок в App Store",
+    reviewsHeading: "З відгуків в App Store",
+    showcaseCount: "{count} застосунків, і їх більшає",
   },
   pl: {
     pricing: "Cennik",
@@ -4605,6 +4638,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Akceptuję",
     consentReject: "Odrzucam",
     consentPrivacy: "Polityka prywatności",
+    ratingSummary: "Średnia {rating} z {count} ocen w App Store",
+    reviewsHeading: "Z recenzji w App Store",
+    showcaseCount: "{count} aplikacji i przybywa",
   },
   tr: {
     pricing: "Fiyatlar",
@@ -4615,6 +4651,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Kabul et",
     consentReject: "Reddet",
     consentPrivacy: "Gizlilik politikası",
+    ratingSummary: "{count} App Store puanından ortalama {rating}",
+    reviewsHeading: "App Store yorumlarından",
+    showcaseCount: "{count} uygulama ve artıyor",
   },
   nl: {
     pricing: "Prijzen",
@@ -4625,6 +4664,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Accepteren",
     consentReject: "Weigeren",
     consentPrivacy: "Privacybeleid",
+    ratingSummary: "Gemiddeld {rating} uit {count} App Store-beoordelingen",
+    reviewsHeading: "Uit App Store-recensies",
+    showcaseCount: "{count} apps, en het worden er meer",
   },
   id: {
     pricing: "Harga",
@@ -4635,6 +4677,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Terima",
     consentReject: "Tolak",
     consentPrivacy: "Kebijakan privasi",
+    ratingSummary: "Rata-rata {rating} dari {count} rating App Store",
+    reviewsHeading: "Dari ulasan App Store",
+    showcaseCount: "{count} aplikasi dan terus bertambah",
   },
   vi: {
     pricing: "Bảng giá",
@@ -4645,6 +4690,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Chấp nhận",
     consentReject: "Từ chối",
     consentPrivacy: "Chính sách quyền riêng tư",
+    ratingSummary: "Trung bình {rating} từ {count} lượt đánh giá trên App Store",
+    reviewsHeading: "Từ đánh giá trên App Store",
+    showcaseCount: "{count} ứng dụng và đang tăng",
   },
   th: {
     pricing: "ราคา",
@@ -4655,6 +4703,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "ยอมรับ",
     consentReject: "ปฏิเสธ",
     consentPrivacy: "นโยบายความเป็นส่วนตัว",
+    ratingSummary: "เฉลี่ย {rating} จาก {count} คะแนนใน App Store",
+    reviewsHeading: "จากรีวิวใน App Store",
+    showcaseCount: "{count} แอปและกำลังเพิ่มขึ้น",
   },
   sv: {
     pricing: "Priser",
@@ -4665,6 +4716,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Godkänn",
     consentReject: "Avvisa",
     consentPrivacy: "Integritetspolicy",
+    ratingSummary: "Snitt {rating} av {count} betyg i App Store",
+    reviewsHeading: "Från recensioner i App Store",
+    showcaseCount: "{count} appar och fler på väg",
   },
   da: {
     pricing: "Priser",
@@ -4675,6 +4729,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Accepter",
     consentReject: "Afvis",
     consentPrivacy: "Privatlivspolitik",
+    ratingSummary: "Gennemsnit {rating} ud af {count} bedømmelser i App Store",
+    reviewsHeading: "Fra anmeldelser i App Store",
+    showcaseCount: "{count} apps og flere på vej",
   },
   fi: {
     pricing: "Hinnoittelu",
@@ -4685,6 +4742,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Hyväksy",
     consentReject: "Hylkää",
     consentPrivacy: "Tietosuojakäytäntö",
+    ratingSummary: "Keskiarvo {rating} {count} App Store -arviosta",
+    reviewsHeading: "App Storen arvosteluista",
+    showcaseCount: "{count} sovellusta ja lisää tulossa",
   },
   no: {
     pricing: "Priser",
@@ -4695,6 +4755,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Godta",
     consentReject: "Avvis",
     consentPrivacy: "Personvernerklæring",
+    ratingSummary: "Snitt {rating} fra {count} vurderinger i App Store",
+    reviewsHeading: "Fra anmeldelser i App Store",
+    showcaseCount: "{count} apper og flere kommer",
   },
   cs: {
     pricing: "Ceník",
@@ -4705,6 +4768,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Přijmout",
     consentReject: "Odmítnout",
     consentPrivacy: "Zásady ochrany soukromí",
+    ratingSummary: "Průměr {rating} z {count} hodnocení v App Store",
+    reviewsHeading: "Z recenzí v App Store",
+    showcaseCount: "{count} aplikací a přibývají další",
   },
   ro: {
     pricing: "Prețuri",
@@ -4715,6 +4781,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Accept",
     consentReject: "Refuz",
     consentPrivacy: "Politica de confidențialitate",
+    ratingSummary: "Medie de {rating} din {count} evaluări în App Store",
+    reviewsHeading: "Din recenziile din App Store",
+    showcaseCount: "{count} aplicații și numărul crește",
   },
   ms: {
     pricing: "Harga",
@@ -4725,6 +4794,9 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
     consentAccept: "Terima",
     consentReject: "Tolak",
     consentPrivacy: "Dasar privasi",
+    ratingSummary: "Purata {rating} daripada {count} penilaian App Store",
+    reviewsHeading: "Daripada ulasan App Store",
+    showcaseCount: "{count} aplikasi dan terus bertambah",
   },
 };
 

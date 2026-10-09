@@ -48,6 +48,7 @@ import { hasTranslations } from "~/config/localized-routes";
 import { ConsentBanner } from "~/components/ConsentBanner";
 import { GA_ID, gtagBootstrapScript } from "~/lib/consent";
 import { useOutboundClickTracking } from "~/lib/analytics";
+import { APP_STORE_RATING } from "~/config/app-store-proof";
 // Self-hosted fonts, bundled into the stylesheet (Google Fonts was a render-
 // blocking third-party request). Familjen Grotesk ships upright only — the
 // handful of italic runs use the browser's synthetic oblique.
@@ -113,6 +114,18 @@ const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
     description: "Free download with a free tier; Pro is an optional in-app purchase.",
     url: `${SITE_URL}/pricing`,
   },
+  // Only once enough App Store ratings exist (config/app-store-proof.ts).
+  ...(APP_STORE_RATING
+    ? {
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: APP_STORE_RATING.value.toFixed(1),
+          ratingCount: APP_STORE_RATING.count,
+          bestRating: "5",
+          worstRating: "1",
+        },
+      }
+    : {}),
   isAccessibleForFree: true,
   softwareRequirements: `macOS ${MINIMUM_MACOS_VERSION} or later, iPadOS ${MINIMUM_IPADOS_VERSION} or later, or iOS ${MINIMUM_IPADOS_VERSION} or later`,
   keywords: SITE_KEYWORDS,

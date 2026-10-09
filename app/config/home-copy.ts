@@ -33,7 +33,8 @@ export function serializeHomeCopy(copy: HomeCopy): SerializedHomeCopy {
   };
 }
 
-function fill(template: string, values: Record<string, string | number>): string {
+// Fills `{name}` placeholders in a copy string.
+export function fill(template: string, values: Record<string, string | number>): string {
   return template.replace(/\{(\w+)\}/g, (match, key: string) =>
     key in values ? String(values[key]) : match,
   );

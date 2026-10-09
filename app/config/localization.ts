@@ -163,6 +163,10 @@ export type HomeCopy = {
     consentAccept: string;
     consentReject: string;
     consentPrivacy: string;
+    // {rating} and {count} are filled in where the strings are shown.
+    ratingSummary: string;
+    reviewsHeading: string;
+    showcaseCount: string;
   };
   hero: {
     titleLead: string;
@@ -270,6 +274,9 @@ export const EN_HOME_COPY: HomeCopy = {
     consentAccept: "Accept",
     consentReject: "Reject",
     consentPrivacy: "Privacy policy",
+    ratingSummary: "{rating} average from {count} App Store ratings",
+    reviewsHeading: "From App Store reviews",
+    showcaseCount: "{count} apps and counting",
   },
   hero: {
     titleLead: "Create & Localize",
