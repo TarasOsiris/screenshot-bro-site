@@ -24,6 +24,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "iPhone Duo screenshot sizes for the inner (2007×2853) and outer (1398×2034) displays, upload status, how to capture them, and how to build both sets.",
     date: "2026-10-05",
+    dateModified: "2026-10-09",
     readTime: "11 min read",
     category: "Reference",
     keywords: [

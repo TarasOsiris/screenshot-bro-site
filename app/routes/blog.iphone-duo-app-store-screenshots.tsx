@@ -69,8 +69,8 @@ export default function BlogPost() {
     <BlogArticleShell
       slug={SLUG}
       locale={locale}
-      tldr="iPhone Duo is the first iPhone with two App Store screenshot sizes, one per screen: 2007 × 2853 px for the 7.6-inch inner display and 1398 × 2034 px for the 5.4-inch outer display (or the same pairs in landscape). Apple lists both as optional, and as of October 5, 2026 App Store Connect does not accept Duo uploads yet — Apple says that arrives later this year. Your 6.9-inch iPhone set is still the one that is required. Both Duo canvases are close to square (about 1.42 : 1 and 1.45 : 1), so a normal phone screenshot does not fit them: capture the real unfolded layout from the iPhone Duo simulator in Xcode 27.1, build the sets now, and upload when Apple opens the slot."
-      ctaMessage="Screenshot Bro ships iPhone Duo frames for the inner screen, the closed phone and the open phone from the back, plus a Duo Showcase template. Free to try."
+      tldr="iPhone Duo is the first iPhone with two App Store screenshot sizes, one per screen: 2007 × 2853 px for the 7.6-inch inner display and 1398 × 2034 px for the 5.4-inch outer display (or the same pairs in landscape). App Store Connect has an iPhone Duo slot that takes either size. Duo screenshots are optional for now, but Apple's specifications say they will be required starting in April 2027 for any app using the iOS 27.1 SDK or later, and your 6.9-inch iPhone set is still the one that is required. Both Duo canvases are close to square (about 1.42 : 1 and 1.45 : 1), so a normal phone screenshot does not fit them: capture the real unfolded layout from the iPhone Duo simulator in Xcode 27.1, build the set, and upload it now."
+      ctaMessage="Screenshot Bro ships iPhone Duo frames for the inner screen, the closed phone and the open phone from the back, size presets for both Duo displays, uploads to App Store Connect's iPhone Duo slot, and a Duo Showcase template. Free to try."
       ctaHomeLinkLabel="a native App Store screenshot app for Mac"
       seoLinks={[
         {
@@ -101,7 +101,7 @@ export default function BlogPost() {
           href: "/blog/upload-screenshots-to-app-store-connect",
           label: "Uploading screenshots to App Store Connect",
           description:
-            "how Media Manager slots work, for when the Duo slot appears.",
+            "how Media Manager slots work, now that Duo has one.",
         },
       ]}
       faqs={[
@@ -113,12 +113,12 @@ export default function BlogPost() {
         {
           question: "Are iPhone Duo screenshots required?",
           answer:
-            "No. Apple's screenshot specifications mark iPhone Duo as optional. What stays required is your 6.9-inch iPhone set (1260 × 2736, 1290 × 2796 or 1320 × 2868), or the 6.5-inch set if you do not provide 6.9-inch screenshots. Duo screenshots are an addition to that, not a replacement.",
+            "Not yet. Apple's screenshot specifications say that starting in April 2027, iPhone Duo screenshots will be required for any app using the iOS 27.1 SDK or later. Until then they are optional. What stays required is your 6.9-inch iPhone set (1260 × 2736, 1290 × 2796 or 1320 × 2868), or the 6.5-inch set if you do not provide 6.9-inch screenshots. Duo screenshots are an addition to that, not a replacement.",
         },
         {
           question: "Can I upload iPhone Duo screenshots to App Store Connect now?",
           answer:
-            "Not yet. Apple's specifications page says support for uploading assets for iPhone Duo in App Store Connect will be available later this year (checked October 5, 2026). The sizes are published, so you can design and export the sets now and upload them as soon as the slot appears.",
+            "Yes. App Store Connect has an iPhone Duo display type, so each language gets one iPhone Duo set, and it takes either Duo size — 2007 × 2853 or 1398 × 2034, in portrait or landscape. The \"available later this year\" note that Apple's specifications page carried when we first published this guide is gone (checked October 9, 2026).",
         },
         {
           question: "Can I reuse my normal iPhone screenshots for iPhone Duo?",
@@ -133,7 +133,7 @@ export default function BlogPost() {
         {
           question: "Does Screenshot Bro support iPhone Duo?",
           answer:
-            "Yes, with frames rather than a dedicated size preset. Screenshot Bro has three iPhone Duo frames — the open phone, the closed phone and the open phone seen from the back — in Night Sky and Star White, plus a Duo Showcase template. Because App Store Connect has no Duo slot yet, there is no Duo size preset: you set a row's Screenshot Size to Custom and type 2007 × 2853 or 1398 × 2034. Turn on Exclude when uploading to App Store Connect for those rows until Apple opens Duo uploads, and export them to a folder instead.",
+            "Yes. Screenshot Bro has three iPhone Duo frames — the open phone, the closed phone and the open phone seen from the back — in Night Sky and Star White, plus a Duo Showcase template. Since version 4.21 it also has a size preset for each screen, iPhone Duo Inner Display (2007 × 2853) and iPhone Duo Outer Display (1398 × 2034); screenshots at either size drop into the matching Duo frame. The App Store Connect upload detects the iPhone Duo display type from the row's size and uploads the row to it, and it warns when an iOS version would have no Duo screenshots.",
         },
       ]}
     >
@@ -151,8 +151,8 @@ export default function BlogPost() {
       <p>
         This guide covers what Apple has actually published, what is still
         missing, why your existing screenshots will not carry over, and how to
-        build both Duo sets in Screenshot Bro so they are ready the day App
-        Store Connect accepts them.
+        build both Duo sets in Screenshot Bro and upload them to App Store
+        Connect.
       </p>
 
       <h2>iPhone Duo Screenshot Sizes</h2>
@@ -193,22 +193,25 @@ export default function BlogPost() {
         iPad than to any phone.
       </p>
 
-      <h2>Optional Today, and Not Uploadable Yet</h2>
+      <h2>Optional Today, Required From April 2027</h2>
       <p>
         Two facts from that same page shape everything else:
       </p>
       <ul>
         <li>
-          <strong>Duo screenshots are optional.</strong> Apple does not require
-          them. The 6.9-inch set is still the one you must provide if your app
-          runs on iPhone — or the 6.5-inch set if you skip 6.9-inch.
+          <strong>Duo screenshots are optional, for now.</strong> Apple does
+          not require them today. The 6.9-inch set is still the one you must
+          provide if your app runs on iPhone — or the 6.5-inch set if you skip
+          6.9-inch. But Apple notes that &ldquo;starting in April 2027,
+          screenshots will be required for any app using the iOS 27.1 SDK or
+          later.&rdquo;
         </li>
         <li>
-          <strong>App Store Connect does not accept them yet.</strong> Apple
-          says &ldquo;support for uploading assets for this device in App Store
-          Connect will be available later this year.&rdquo; We checked again
-          on October 5, 2026, after the pre-order date was set, and the line
-          had not changed.
+          <strong>App Store Connect accepts them.</strong> When we first
+          published this guide, Apple said upload support would be
+          &ldquo;available later this year.&rdquo; That line is gone (we checked on October 9, 2026), and App Store Connect
+          now has an iPhone Duo display type: one set per language, which
+          takes screenshots at either Duo size.
         </li>
       </ul>
       <p>
@@ -219,11 +222,11 @@ export default function BlogPost() {
         and published, so the work can be done now.
       </p>
       <p>
-        That makes this a real window. The phone ships on October 23 and the
-        upload slot comes after it. Developers who have both Duo sets exported
-        and localized when the slot opens will be among the first listings
-        with native Duo screenshots, on a device whose buyers are, by
-        definition, early adopters looking for apps that use the fold.
+        That makes this a real window. The upload slot is open before the
+        phone ships on October 23. Developers who have a Duo set uploaded and
+        localized by launch day will be among the first listings with native
+        Duo screenshots, on a device whose buyers are, by definition, early
+        adopters looking for apps that use the fold.
       </p>
 
       <h2>Why Your Phone Screenshots Won&apos;t Carry Over</h2>
@@ -301,7 +304,9 @@ export default function BlogPost() {
 
       <h2>Which Screen Should Lead?</h2>
       <p>
-        You will design two sets, but they do different jobs.
+        You will design two sets, but they do different jobs — and App Store
+        Connect gives iPhone Duo a single set per language, so decide which one
+        it gets.
       </p>
       <p>
         <strong>The inner display set is the one that sells.</strong> Someone
@@ -365,25 +370,26 @@ export default function BlogPost() {
       <h2>Building iPhone Duo Screenshots in Screenshot Bro</h2>
       <p>
         Screenshot Bro has native iPhone Duo frames from version 4.15 onward.
-        There is one honest limitation to know up front: because App Store
-        Connect has no Duo slot yet, there is <strong>no Duo size
-        preset</strong>. You set the size by hand, which takes ten seconds.
+        Version 4.21 added a <strong>size preset for each Duo screen</strong>{" "}
+        and uploads to App Store Connect&apos;s iPhone Duo slot.
       </p>
       <h3>1. Add a row per Duo screen</h3>
       <p>
         Add a new row with the dashed <strong>+</strong> tile under your
         existing rows. In the inspector, under <strong>Screenshot Size</strong>,
-        switch from <strong>Presets</strong> to <strong>Custom</strong> and
-        type <strong>2007 × 2853</strong> (or 2853 × 2007 for landscape).
-        Add a second row at <strong>1398 × 2034</strong> for the cover screen.
-        Custom accepts any size from 100 to 5000 px, so both Duo sizes fit,
-        and every template in the row exports at exactly that pixel size.
+        open <strong>Presets</strong> and pick{" "}
+        <strong>iPhone Duo Inner Display</strong> (2007 × 2853). Add a second
+        row with <strong>iPhone Duo Outer Display</strong> (1398 × 2034) for
+        the cover screen. <strong>Orientation</strong> flips either one to
+        landscape (2853 × 2007 or 2034 × 1398), and every template in the row
+        exports at exactly that pixel size.
       </p>
       <h3>2. Pick the right Duo frame</h3>
       <p>
-        Drop your simulator captures onto the row, then use{" "}
-        <strong>Change Device</strong> to choose a Duo frame. There are three,
-        each in Night Sky and Star White:
+        Drop your simulator captures onto the row. Captures at either Duo
+        size drop into the matching iPhone Duo frame; use{" "}
+        <strong>Change Device</strong> to pick another view. There are three
+        frames, each in Night Sky and Star White:
       </p>
       <table>
         <thead>
@@ -416,20 +422,23 @@ export default function BlogPost() {
         open, closed and open from the back — across a six-screenshot 6.9-inch
         row (1320 × 2868), with a night-sky gradient behind them. Several
         screenshots hold more than one phone, so drop a capture onto each
-        frame rather than relying on a batch import. Because it is
-        a 6.9-inch row, it uploads to the iPhone slot App Store Connect already
-        has, so Duo owners and everyone else see it today.
+        frame rather than relying on a batch import. The 6.9-inch row uploads
+        to the regular iPhone slot, so Duo owners and everyone else see it.
+        Since 4.21 the template also has an iPhone Duo Inner Display row and
+        an iPhone Duo Outer Display row, with the outer row excluded from App
+        Store Connect uploads so the inner one fills the Duo set.
       </p>
-      <h3>4. Keep Duo rows out of uploads until Apple opens the slot</h3>
+      <h3>4. Upload one Duo row per language</h3>
       <p>
         Screenshot Bro uploads to App Store Connect directly, free tier
-        included, and it checks every row&apos;s size against the display type
-        it is going to. A 2007 × 2853 row matches no display type App Store
-        Connect offers today, so turn on{" "}
-        <strong>Exclude when uploading to App Store Connect</strong> in the
-        row inspector for both Duo rows. They stay in the project and in folder
-        exports, and the rest of your rows upload as normal. Export the Duo
-        rows to a folder and keep them ready.
+        included, and it detects each row&apos;s display type from its size:
+        a 2007 × 2853 or 1398 × 2034 row goes to <strong>iPhone Duo</strong>.
+        Because Duo has one set per language, only one row can fill it. Turn
+        on <strong>Exclude when uploading to App Store Connect</strong> in the
+        row inspector for the Duo row you are not uploading — usually the
+        outer one. It stays in the project and in folder exports. If an iOS
+        version would go out with no Duo screenshots at all, the upload wizard
+        warns you.
       </p>
       <h3>5. Localize once</h3>
       <p>
@@ -453,19 +462,21 @@ export default function BlogPost() {
         <li>An outer-display set at 1398 × 2034 (or 2034 × 1398) leads with a one-handed action.</li>
         <li>Captions fit a near-square canvas in every language you ship.</li>
         <li>PNG or JPEG, no alpha channel, one to ten images per set.</li>
-        <li>Duo rows are excluded from App Store Connect uploads until Apple opens the Duo slot.</li>
-        <li>You re-check Apple&apos;s specifications page for the upload date.</li>
+        <li>One Duo row per language goes to App Store Connect&apos;s iPhone Duo set; the other is excluded from uploads.</li>
+        <li>If you build with the iOS 27.1 SDK, you have Duo screenshots in place before the April 2027 requirement.</li>
       </ul>
 
       <h2>The Short Version</h2>
       <p>
         iPhone Duo adds two screenshot sizes, 2007 × 2853 for the inner display
-        and 1398 × 2034 for the cover screen. Both are optional and neither can
-        be uploaded yet. Neither is phone-shaped, so your current screenshots
+        and 1398 × 2034 for the cover screen. Both are optional for now —
+        from April 2027 Apple requires them for any app using the iOS 27.1 SDK
+        or later — and App Store Connect already takes them in one iPhone Duo
+        set per language. Neither is phone-shaped, so your current screenshots
         will not convert — capture the real unfolded layout in the Xcode 27.1
-        simulator instead. The window between the October 23 launch and the
-        upload slot opening is the time to build the sets, so they go live the
-        day Apple lets them.
+        simulator instead. The slot is open before the October 23 launch, so
+        build the set now and have it live when the first Duo owners open the
+        App Store.
       </p>
       <p>
         For the full list of display classes Duo sits alongside, see{" "}
