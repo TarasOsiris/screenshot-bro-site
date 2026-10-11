@@ -65,7 +65,7 @@ export const SITE_TITLE = `${SITE_NAME} — App Store & Google Play Screenshots`
 const THEME_COLORS = { light: "#fbfaf8", dark: "#08080c" } as const;
 export const SOCIAL_IMAGE = `${SITE_URL}/og-image.png`;
 
-const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
+const SOFTWARE_APP_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "@id": `${SITE_URL}/#software`,
@@ -114,24 +114,30 @@ const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify({
     description: "Free download with a free tier; Pro is an optional in-app purchase.",
     url: `${SITE_URL}/pricing`,
   },
-  // Only once enough App Store ratings exist (config/app-store-proof.ts).
-  ...(APP_STORE_RATING
-    ? {
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: APP_STORE_RATING.value.toFixed(1),
-          ratingCount: APP_STORE_RATING.count,
-          bestRating: "5",
-          worstRating: "1",
-        },
-      }
-    : {}),
   isAccessibleForFree: true,
   softwareRequirements: `macOS ${MINIMUM_MACOS_VERSION} or later, iPadOS ${MINIMUM_IPADOS_VERSION} or later, or iOS ${MINIMUM_IPADOS_VERSION} or later`,
   keywords: SITE_KEYWORDS,
   sameAs: [APP_STORE_URL, X_PROFILE_URL, THREADS_URL, REDDIT_COMMUNITY_URL, DISCORD_INVITE_URL],
   featureList: FEATURES.map((feature) => feature.title),
-});
+};
+
+const SOFTWARE_APP_SCHEMA_JSON = JSON.stringify(SOFTWARE_APP_SCHEMA);
+
+// The rating goes on the home page only, where it is shown: repeating it on
+// every page made Search Console flag "Review has multiple aggregate ratings".
+// Only once enough App Store ratings exist (config/app-store-proof.ts).
+const HOME_SOFTWARE_APP_SCHEMA_JSON = APP_STORE_RATING
+  ? JSON.stringify({
+      ...SOFTWARE_APP_SCHEMA,
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: APP_STORE_RATING.value.toFixed(1),
+        ratingCount: APP_STORE_RATING.count,
+        bestRating: "5",
+        worstRating: "1",
+      },
+    })
+  : SOFTWARE_APP_SCHEMA_JSON;
 
 const WEB_SITE_SCHEMA_JSON = JSON.stringify({
   "@context": "https://schema.org",
@@ -378,7 +384,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: SOFTWARE_APP_SCHEMA_JSON,
+            __html: isLocalizedHome(location.pathname)
+              ? HOME_SOFTWARE_APP_SCHEMA_JSON
+              : SOFTWARE_APP_SCHEMA_JSON,
           }}
         />
         <script
