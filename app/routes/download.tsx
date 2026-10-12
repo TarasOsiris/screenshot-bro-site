@@ -32,7 +32,7 @@ export async function loader({ request }: Route.LoaderArgs) {
 
 export const meta: Route.MetaFunction = ({ matches }) => {
   const title = `Download ${SITE_NAME} for Mac`;
-  const description = `Download ${SITE_NAME} directly, or get it from the App Store. Free to start; Pro is an in-app purchase on the App Store or a one-time web purchase for the direct download.`;
+  const description = `Download ${SITE_NAME} directly or from the App Store. Free to start; Pro is an App Store in-app purchase, or a one-time web purchase for the direct download.`;
   return mergeMeta(matches, [
     { title },
     { name: "description", content: description },

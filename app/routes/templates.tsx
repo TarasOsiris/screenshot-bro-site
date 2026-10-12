@@ -12,7 +12,7 @@ import { STARTER_TEMPLATES, starterTemplateShots } from "~/config/templates";
 // same real exports in public/template-gallery/ (see config/templates.ts).
 const COUNT = STARTER_TEMPLATES.length;
 const TITLE = `${COUNT} App Store Screenshot Templates — ${SITE_NAME}`;
-const DESCRIPTION = `Browse all ${COUNT} App Store and Google Play screenshot templates built into Screenshot Bro. Each preview is a real export; start a project from any of them and swap in your screenshots.`;
+const DESCRIPTION = `Browse ${COUNT} App Store and Google Play screenshot templates built into Screenshot Bro. Every preview is a real export; start from any and swap in your shots.`;
 const PREVIEW_SHOTS = 3;
 
 export const meta: Route.MetaFunction = ({ matches }) =>

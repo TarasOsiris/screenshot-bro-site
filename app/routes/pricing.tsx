@@ -20,7 +20,7 @@ import {
 // differ by storefront and are shown at checkout (see docs/growth/entity-facts.md).
 
 const TITLE = `Pricing — ${SITE_NAME}`;
-const DESCRIPTION = `${SITE_NAME} is free to download with no trial expiry. Pro unlocks unlimited projects, rows and templates — in the App Store or as a one-time web purchase for the direct Mac download.`;
+const DESCRIPTION = `${SITE_NAME} is free with no trial expiry. Pro unlocks unlimited projects, rows and templates: via the App Store, or a one-time web purchase on direct Mac.`;
 
 export const meta: Route.MetaFunction = ({ matches }) =>
   mergeMeta(matches, [

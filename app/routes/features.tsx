@@ -21,7 +21,7 @@ import { STARTER_TEMPLATES } from "~/config/templates";
 // the two never disagree. English-only, like /download and /pricing.
 const TITLE = `Features — ${SITE_NAME}`;
 const DESCRIPTION =
-  "Everything Screenshot Bro does: device frames, multi-template editing, 81 language presets with on-device translation, batch export, App Store Connect and Google Play upload, and a local MCP server.";
+  "Device frames, multi-template editing, 81 language presets with on-device translation, batch export, App Store Connect and Google Play upload, and MCP.";
 
 export const meta: Route.MetaFunction = ({ matches }) =>
   mergeMeta(matches, [

@@ -19,7 +19,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "app-store-screenshot-majority-rule",
     title: "App Store Screenshot Majority Rule (Guideline 2.3.3)",
     description:
-      "Apple's App Review now says more than half of your screenshots per device and language must show the app in use. The rule, Apple's examples, and how to audit your set.",
+      "App Review now says over half your screenshots per device and language must show the app in use. The rule, Apple's examples, and how to audit your set.",
     date: "2026-10-12",
     readTime: "7 min read",
     category: "Guide",
