@@ -25,6 +25,7 @@ const MIN_BYTES = 5_000; // anything smaller is an error page or dead photo ID
 
 // slug -> Unsplash photo base URL (query string is appended from PARAMS)
 const THUMBS = {
+  "app-store-screenshot-majority-rule": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c",
   "iphone-duo-app-store-screenshots": "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd",
   "googlebook-google-play-screenshots": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
   "app-store-creative-assets": "https://images.unsplash.com/photo-1481887328591-3e277f9473dc",

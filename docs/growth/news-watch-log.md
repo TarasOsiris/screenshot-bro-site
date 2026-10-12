@@ -272,3 +272,19 @@ run missed, and it caught one item (Apple's Sep 18 iPhone Duo resources).
   - fastlane: frameit Duo frames, deliver support for Duo display types or creative
     assets. No release since 2.240.1 (three runs now).
   - April 2027 SDK floor (iOS 27 SDK required for App Store Connect uploads).
+
+## 2026-10-12
+- **Scanned:** developer.apple.com/news, App Store Connect What's New, screenshot specifications, asset best practices, creative assets specifications, manage-your-app-store-assets, App Review guideline 2.3.3 page and the guidelines page, fastlane releases. Google Play / competitors / ASO research: not re-checked this run beyond the Apple items below (no new primary-source leads).
+- **Findings:**
+  - **Apple published a creative assets specifications table** (header 21:9 3840x1646 / 16:9 5244x2950; search results 3:2 1920x1280–3840x2560 / 16:9 5244x2950; video 5–30 s, 30/60 fps) and upload steps for the Asset Library, with the Oct 5 announcement. Contradicted our `app-store-creative-assets` post ("no spec table", "coming this fall"). <https://developer.apple.com/help/app-store-connect/reference/app-information/creative-assets-specifications>, <https://developer.apple.com/help/app-store-connect/manage-app-information/manage-your-app-store-assets>
+  - **New App Review page for guideline 2.3.3 with a majority rule**: more than half of the screenshots per device type, assessed per localization, must show the app in use (3 -> 2, 4 -> 3). <https://developer.apple.com/help/app-review/guideline-reference/2-3-3-screenshots>
+  - iPhone Duo: Apple says Duo-optimized apps can be submitted now; Duo screenshots required from April 2027; spec page still lists 2007x2853 / 1398x2034. Already covered by `iphone-duo-app-store-screenshots`. <https://developer.apple.com/help/app-store-connect/reference/screenshot-specifications/>
+  - fastlane 2.241.0 (Oct 10): snapshot removes unused ScreenshotRotate/ScreenshotFlatten classes, path-with-spaces fix, HTML reports open without a shell. Not material for the fastlane guides. <https://github.com/fastlane/fastlane/releases>
+- **Published:** `app-store-screenshot-majority-rule`
+- **Updated:** `app-store-creative-assets` (spec table, upload flow, removed "not yet available" claims; dateModified 2026-10-12 in blog.ts and all locale arrays)
+- **Watching:**
+  - Apple gives no rollout date for the Asset Library; the creative-assets post tells readers to confirm in their own account. App Store Connect API at 4.5 earlier: re-check for asset-library endpoints.
+  - iPhone Duo ships Oct 23.
+  - fastlane: frameit Duo frames, deliver Duo/creative-asset support.
+  - April 2027 iOS 27 SDK floor and Duo screenshot requirement.
+  - Whether the majority-rule page's "in use" threshold (no pixel measure) gets clarified.

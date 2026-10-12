@@ -16,6 +16,22 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "app-store-screenshot-majority-rule",
+    title: "App Store Screenshot Majority Rule (Guideline 2.3.3)",
+    description:
+      "Apple's App Review now says more than half of your screenshots per device and language must show the app in use. The rule, Apple's examples, and how to audit your set.",
+    date: "2026-10-12",
+    readTime: "7 min read",
+    category: "Guide",
+    keywords: [
+      "app store screenshot majority rule",
+      "app store guideline 2.3.3",
+      "app store screenshots rejected",
+      "screenshots must show app in use",
+      "app review screenshot guidance",
+    ],
+  },
+  {
     slug: "iphone-duo-app-store-screenshots",
     title: "iPhone Duo App Store Screenshots: Sizes and Setup",
     description:
@@ -56,6 +72,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Apple is adding product page headers, search result assets and an Asset Library to the App Store. What's confirmed, and what it changes for your screenshots.",
     date: "2026-09-27",
+    dateModified: "2026-10-12",
     readTime: "10 min read",
     category: "Guide",
     keywords: [

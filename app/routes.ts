@@ -33,6 +33,7 @@ export default [
   // Posts are English-only. Every /{locale}/blog/<slug> 301s to /blog/<slug>
   // instead of serving the English body again under a locale prefix.
   route(":locale/blog/:slug", "routes/blog.locale-redirect.tsx"),
+  route("blog/app-store-screenshot-majority-rule", "routes/blog.app-store-screenshot-majority-rule.tsx"),
   route("blog/iphone-duo-app-store-screenshots", "routes/blog.iphone-duo-app-store-screenshots.tsx"),
   route("blog/googlebook-google-play-screenshots", "routes/blog.googlebook-google-play-screenshots.tsx"),
   route("blog/app-store-creative-assets", "routes/blog.app-store-creative-assets.tsx"),

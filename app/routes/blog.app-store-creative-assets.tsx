@@ -62,7 +62,7 @@ export default function BlogPost() {
     <BlogArticleShell
       slug={SLUG}
       locale={locale}
-      tldr="Apple is adding creative assets to the App Store: a product page header above your screenshots, a dedicated asset for search results, and an Asset Library in App Store Connect that accepts assets separately from an app version. They appear on iOS 27 and iPadOS 27 and later, and Apple lists them as coming this fall. Two things matter now. If you skip the search result asset, your screenshots keep doing that job — up to three of them can show in search. And Apple's asset rules are explicit: no pricing, no discounts, no URLs, no copyright symbols, no other-platform logos, no Apple accolades, and a 4+ age rating on every asset regardless of your app's rating."
+      tldr="Apple is adding creative assets to the App Store: a product page header above your screenshots, a dedicated asset for search results, and an Asset Library in App Store Connect that accepts assets separately from an app version. They appear on iOS 27 and iPadOS 27 and later, and Apple's October 5, 2026 announcement moved them from &ldquo;coming this fall&rdquo; to documented, with a published spec table and upload steps in App Store Connect. Two things matter now. If you skip the search result asset, your screenshots keep doing that job — up to three of them can show in search. And Apple's asset rules are explicit: no pricing, no discounts, no URLs, no copyright symbols, no other-platform logos, no Apple accolades, and a 4+ age rating on every asset regardless of your app's rating."
       ctaMessage="Redesigning your screenshots for the new App Store layout? Screenshot Bro exports every size at its exact pixel dimensions — free to try."
       ctaHomeLinkLabel="a native App Store screenshot app for Mac"
       seoLinks={[
@@ -121,12 +121,12 @@ export default function BlogPost() {
         {
           question: "What are the exact pixel dimensions for a product page header?",
           answer:
-            "Apple has not published a public specification table for creative assets the way it does for screenshots. What it ships instead are templates for Figma, Photoshop, Pixelmator and Sketch, including a universal template that covers both the header and search results. Until a spec page exists, the template is the specification — download it from Apple's asset best practices page and build on the canvas it gives you rather than trusting a dimension quoted in a blog post.",
+            "Yes — Apple published a creative assets specifications page with the October 5, 2026 announcement. Product page header images: 21:9 at 3840 × 1646 px (JPEG or PNG) or 16:9 at 5244 × 2950 px (PNG). Search results images: 3:2 from 1920 × 1280 to 3840 × 2560 px (JPEG or PNG) or 16:9 at 5244 × 2950 px (PNG). No alpha channel or transparency. Header and search results videos run 5–30 seconds at 30 or 60 fps (.mov, .m4v, .mp4); the header video is 21:9 at 3840 × 1646 px and the search results video is 3:2 from 1920 × 1280 to 3840 × 2560 px. Always confirm against Apple's page before exporting.",
         },
         {
           question: "When do creative assets go live?",
           answer:
-            "Apple's App Store What's New page lists the headers, search results assets, Asset Library and product page preview tool as coming this fall, and the September 9, 2026 submissions announcement described the preview tool as coming soon. The design guidance and templates are available now, so the work you can do today is design and review, not upload.",
+            "Apple's October 5, 2026 announcement describes the Asset Library and the preview tool as part of App Store Connect, and its help pages give upload steps: add a header or search results asset on the version page under Product Page Information, or upload standalone through Asset Library and submit it for review. The assets show on iOS 27 and iPadOS 27 or later. Apple's pages give no separate rollout date, so check that the Asset Library appears in your own App Store Connect account.",
         },
       ]}
     >
@@ -265,36 +265,54 @@ export default function BlogPost() {
         uploaded files.
       </p>
       <p>
-        Both are listed as coming this fall on Apple&apos;s{" "}
-        <a href="https://developer.apple.com/app-store/whats-new/">
-          App Store What&apos;s New
+        Apple&apos;s{" "}
+        <a href="https://developer.apple.com/help/app-store-connect/manage-app-information/manage-your-app-store-assets">
+          help page on managing App Store assets
         </a>{" "}
-        page, and the September 9 announcement called the preview tool &ldquo;coming
-        soon.&rdquo; Treat the upload path as not yet available.
+        now documents both routes: add a header or search results asset on the version
+        page (it goes live when the version is approved and released), or upload
+        standalone through Asset Library and submit it for review, where it is reviewed
+        against your app&apos;s latest version. Only a universal asset can serve both
+        header and search results. Apple gives no rollout date, so confirm the Asset
+        Library appears in your own account.
       </p>
 
-      <h2>Apple Has Not Published Dimensions — Use the Templates</h2>
+      <h2>The Dimensions Apple Published</h2>
       <p>
-        There is no creative asset equivalent of the{" "}
-        <a href="https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications">
-          screenshot specifications
+        Apple&apos;s original guidance shipped only templates, but the October 5, 2026
+        announcement added a{" "}
+        <a href="https://developer.apple.com/help/app-store-connect/reference/app-information/creative-assets-specifications">
+          creative assets specifications
         </a>{" "}
-        page. What Apple ships instead is a set of templates: Figma and Sketch provide a
-        universal asset, and Photoshop and Pixelmator provide separate header, search
-        results and universal files. The universal asset is designed to serve both the
-        header and search results from one composition.
+        page. Images cannot include alpha channels or transparency.
       </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Placement</th>
+            <th>Aspect ratio</th>
+            <th>Resolution</th>
+            <th>Format</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Product page header</td><td>21:9</td><td>3840 × 1646 px</td><td>JPEG, JPG or PNG</td></tr>
+          <tr><td>Product page header</td><td>16:9</td><td>5244 × 2950 px</td><td>PNG</td></tr>
+          <tr><td>Search results</td><td>3:2</td><td>1920 × 1280 to 3840 × 2560 px</td><td>JPEG, JPG or PNG</td></tr>
+          <tr><td>Search results</td><td>16:9</td><td>5244 × 2950 px</td><td>PNG</td></tr>
+        </tbody>
+      </table>
       <p>
-        You will find pixel dimensions quoted around the web for these placements. They
-        come from reading the templates, not from a published Apple specification, so
-        treat them accordingly — download the template from Apple&apos;s{" "}
+        Video for the header (21:9, 3840 × 1646 px) and search results (3:2, 1920 × 1280
+        to 3840 × 2560 px) must be 5–30 seconds at 30 or 60 fps, as .mov, .m4v or .mp4.
+        Safe areas still matter more than the outer dimensions: Apple warns that assets
+        &ldquo;appear differently across the App Store&rdquo; and tells you to keep the
+        focal point centred. The Figma, Photoshop, Pixelmator and Sketch templates on
+        Apple&apos;s{" "}
         <a href="https://developer.apple.com/app-store/asset-best-practices/">
           best practices page
         </a>{" "}
-        and design on the canvas it gives you. That also gets you the safe areas, which
-        matter more than the outer dimensions: Apple warns that assets &ldquo;appear
-        differently across the App Store&rdquo; and tells you to keep the focal point
-        centred to prevent clipping.
+        give you those safe areas.
       </p>
       <p>
         For video, the existing rules carry over and one is easy to miss. Assets autoplay
@@ -335,8 +353,8 @@ export default function BlogPost() {
           clearly stated, is what Apple asks for in both.
         </li>
         <li>
-          <strong>Do not wait to upload.</strong> The Asset Library and the preview tool
-          are not live yet. Design now, upload when App Store Connect accepts it.
+          <strong>Export to the published sizes and upload.</strong> Use the table above,
+          then check the result in the App Store Connect preview tool before you submit.
         </li>
       </ul>
 

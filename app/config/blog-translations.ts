@@ -4,6 +4,15 @@ import type { LocaleCode } from "./localization";
 export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, BlogPost[]>> = {
   es: [
     {
+      slug: "app-store-screenshot-majority-rule",
+      title: "Regla de la mayoría en capturas de App Store (2.3.3)",
+      description: "Apple exige que más de la mitad de tus capturas por dispositivo muestren la app en uso. La regla de la pauta 2.3.3, con ejemplos y cómo auditar tu conjunto.",
+      date: "2026-10-12",
+      readTime: "Lectura de 7 min",
+      category: "Guide",
+      keywords: ["regla mayoría capturas app store", "guideline 2.3.3 capturas", "rechazo capturas app store"],
+    },
+    {
       slug: "iphone-duo-app-store-screenshots",
       title: "Capturas de iPhone Duo para App Store: tamaños y guía",
       description: "Tamaños de captura del iPhone Duo para la pantalla interior (2007×2853) y exterior (1398×2034), estado de subida y cómo crear ambos conjuntos.",
@@ -26,6 +35,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
       title: "Recursos creativos de App Store: cabeceras y búsqueda",
       description: "Apple añade cabeceras de página de producto, recursos para los resultados de búsqueda y una biblioteca de recursos. Qué está confirmado y qué cambia para tus capturas.",
       date: "2026-09-27",
+      dateModified: "2026-10-12",
       readTime: "Lectura de 10 min",
       category: "Guide",
       keywords: ["recursos creativos app store","cabecera pagina de producto app store","biblioteca de recursos app store connect"],
@@ -584,6 +594,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   zh: [
     {
+      slug: "app-store-screenshot-majority-rule",
+      title: "App Store 截图多数规则（准则 2.3.3）",
+      description: "Apple 要求每种设备的截图中过半数展示使用中的应用。准则 2.3.3 的规则、示例以及如何自查你的截图集。",
+      date: "2026-10-12",
+      readTime: "阅读约 7 分钟",
+      category: "Guide",
+      keywords: ["app store 截图多数规则", "准则 2.3.3 截图", "app store 截图被拒"],
+    },
+    {
       slug: "iphone-duo-app-store-screenshots",
       title: "iPhone Duo App Store 截图：尺寸与制作指南",
       description: "iPhone Duo 内屏（2007×2853）与外屏（1398×2034）的 App Store 截图尺寸、上传状态、截取方法，以及如何制作两套截图。",
@@ -606,6 +625,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
       title: "App Store 创意素材：产品页页首与搜索结果",
       description: "Apple 新增产品页页首、搜索结果素材和素材库。哪些已确认，对你的截图有什么影响，现在该做什么。",
       date: "2026-09-27",
+      dateModified: "2026-10-12",
       readTime: "10 分钟阅读",
       category: "Guide",
       keywords: ["app store 创意素材","产品页页首","app store connect 素材库"],
@@ -1164,6 +1184,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   ja: [
     {
+      slug: "app-store-screenshot-majority-rule",
+      title: "App Storeスクリーンショットの過半数ルール（2.3.3）",
+      description: "Appleは、デバイスごとに過半数のスクリーンショットでアプリの実使用を見せることを求めています。ガイドライン2.3.3のルールと、セットの確認方法。",
+      date: "2026-10-12",
+      readTime: "7分で読めます",
+      category: "Guide",
+      keywords: ["app store スクリーンショット 過半数 ルール", "ガイドライン 2.3.3", "スクリーンショット リジェクト"],
+    },
+    {
       slug: "iphone-duo-app-store-screenshots",
       title: "iPhone DuoのApp Storeスクリーンショット：サイズと作り方",
       description: "iPhone Duoの内側（2007×2853）と外側（1398×2034）ディスプレイのスクリーンショットサイズ、アップロード状況、撮影方法と2セットの作り方。",
@@ -1186,6 +1215,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
       title: "App Storeのクリエイティブアセット：ヘッダーと検索結果",
       description: "Appleがプロダクトページのヘッダー、検索結果用アセット、アセットライブラリを追加。確定している内容と、スクリーンショットへの影響を解説。",
       date: "2026-09-27",
+      dateModified: "2026-10-12",
       readTime: "読了目安 10分",
       category: "Guide",
       keywords: ["app store クリエイティブアセット","プロダクトページ ヘッダー","app store connect アセットライブラリ"],
@@ -1744,6 +1774,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   de: [
     {
+      slug: "app-store-screenshot-majority-rule",
+      title: "App-Store-Screenshots: Mehrheitsregel (2.3.3)",
+      description: "Apple verlangt, dass mehr als die Hälfte der Screenshots pro Gerät die App im Einsatz zeigt. Die Regel aus Richtlinie 2.3.3, Beispiele und wie du dein Set prüfst.",
+      date: "2026-10-12",
+      readTime: "7 Min. Lesezeit",
+      category: "Guide",
+      keywords: ["app store screenshots mehrheitsregel", "richtlinie 2.3.3 screenshots", "app store screenshots abgelehnt"],
+    },
+    {
       slug: "iphone-duo-app-store-screenshots",
       title: "iPhone Duo App-Store-Screenshots: Größen und Setup",
       description: "Screenshot-Größen für das innere (2007×2853) und äußere (1398×2034) Display des iPhone Duo, Upload-Status, Aufnahme und Erstellung beider Sets.",
@@ -1766,6 +1805,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
       title: "App Store Creative Assets: Header und Suchergebnisse",
       description: "Apple ergänzt Produktseiten-Header, Assets für Suchergebnisse und eine Asset-Bibliothek. Was bestätigt ist und was sich für deine Screenshots ändert.",
       date: "2026-09-27",
+      dateModified: "2026-10-12",
       readTime: "10 Min. Lesezeit",
       category: "Guide",
       keywords: ["app store creative assets","produktseiten header app store","app store connect asset bibliothek"],
@@ -2324,6 +2364,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   fr: [
     {
+      slug: "app-store-screenshot-majority-rule",
+      title: "Règle de la majorité des captures App Store (2.3.3)",
+      description: "Apple exige que plus de la moitié des captures par appareil montrent l'app en usage. La règle de la directive 2.3.3, des exemples et comment auditer votre lot.",
+      date: "2026-10-12",
+      readTime: "7 min de lecture",
+      category: "Guide",
+      keywords: ["règle majorité captures app store", "directive 2.3.3 captures", "captures app store refusées"],
+    },
+    {
       slug: "iphone-duo-app-store-screenshots",
       title: "Captures iPhone Duo pour l'App Store : tailles et méthode",
       description: "Tailles de capture de l'iPhone Duo pour l'écran intérieur (2007×2853) et extérieur (1398×2034), état de l'envoi, capture et création des deux séries.",
@@ -2346,6 +2395,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
       title: "Ressources créatives App Store : en-têtes et recherche",
       description: "Apple ajoute des en-têtes de fiche produit, des ressources pour les résultats de recherche et une bibliothèque de ressources. Ce qui est confirmé et ce qui change.",
       date: "2026-09-27",
+      dateModified: "2026-10-12",
       readTime: "10 min de lecture",
       category: "Guide",
       keywords: ["ressources creatives app store","en-tete fiche produit app store","bibliotheque de ressources app store connect"],
@@ -2904,6 +2954,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   pt: [
     {
+      slug: "app-store-screenshot-majority-rule",
+      title: "Regra da maioria nas capturas da App Store (2.3.3)",
+      description: "A Apple exige que mais da metade das capturas por dispositivo mostre o app em uso. A regra da diretriz 2.3.3, exemplos e como auditar seu conjunto.",
+      date: "2026-10-12",
+      readTime: "7 min de leitura",
+      category: "Guide",
+      keywords: ["regra da maioria capturas app store", "diretriz 2.3.3 capturas", "capturas app store rejeitadas"],
+    },
+    {
       slug: "iphone-duo-app-store-screenshots",
       title: "Capturas do iPhone Duo na App Store: tamanhos e guia",
       description: "Tamanhos de captura do iPhone Duo para a tela interna (2007×2853) e externa (1398×2034), status do envio, como capturar e montar os dois conjuntos.",
@@ -2926,6 +2985,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
       title: "Recursos criativos da App Store: cabeçalhos e busca",
       description: "A Apple está adicionando cabeçalhos de página do produto, recursos para resultados de busca e uma biblioteca de recursos. O que está confirmado e o que muda.",
       date: "2026-09-27",
+      dateModified: "2026-10-12",
       readTime: "Leitura de 10 min",
       category: "Guide",
       keywords: ["recursos criativos app store","cabecalho pagina do produto app store","biblioteca de recursos app store connect"],
@@ -3484,6 +3544,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   it: [
     {
+      slug: "app-store-screenshot-majority-rule",
+      title: "Regola della maggioranza negli screenshot App Store (2.3.3)",
+      description: "Apple richiede che oltre la metà degli screenshot per dispositivo mostri l'app in uso. La regola della linea guida 2.3.3, esempi e come verificare il tuo set.",
+      date: "2026-10-12",
+      readTime: "7 min di lettura",
+      category: "Guide",
+      keywords: ["regola maggioranza screenshot app store", "linea guida 2.3.3 screenshot", "screenshot app store rifiutati"],
+    },
+    {
       slug: "iphone-duo-app-store-screenshots",
       title: "Screenshot iPhone Duo per l'App Store: dimensioni e guida",
       description: "Dimensioni degli screenshot di iPhone Duo per il display interno (2007×2853) ed esterno (1398×2034), stato del caricamento e come creare i due set.",
@@ -3506,6 +3575,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
       title: "Risorse creative App Store: header e risultati di ricerca",
       description: "Apple aggiunge header della pagina prodotto, risorse per i risultati di ricerca e una libreria di risorse. Cosa è confermato e cosa cambia per i tuoi screenshot.",
       date: "2026-09-27",
+      dateModified: "2026-10-12",
       readTime: "10 min di lettura",
       category: "Guide",
       keywords: ["risorse creative app store","header pagina prodotto app store","libreria risorse app store connect"],
@@ -4064,6 +4134,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   ko: [
     {
+      slug: "app-store-screenshot-majority-rule",
+      title: "App Store 스크린샷 과반수 규칙 (2.3.3)",
+      description: "Apple은 기기별 스크린샷의 절반 넘게 앱이 실제로 쓰이는 모습을 보여 주길 요구합니다. 가이드라인 2.3.3 규칙, 예시, 세트 점검 방법.",
+      date: "2026-10-12",
+      readTime: "7분 읽기",
+      category: "Guide",
+      keywords: ["app store 스크린샷 과반수 규칙", "가이드라인 2.3.3 스크린샷", "app store 스크린샷 거부"],
+    },
+    {
       slug: "iphone-duo-app-store-screenshots",
       title: "iPhone Duo App Store 스크린샷: 크기와 제작 가이드",
       description: "iPhone Duo 내부(2007×2853)·외부(1398×2034) 디스플레이 스크린샷 크기, 업로드 현황, 캡처 방법과 두 세트를 만드는 법.",
@@ -4086,6 +4165,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
       title: "App Store 크리에이티브 애셋: 헤더와 검색 결과",
       description: "Apple이 제품 페이지 헤더, 검색 결과 애셋, 애셋 라이브러리를 추가합니다. 확정된 내용과 스크린샷에 미치는 영향을 정리했습니다.",
       date: "2026-09-27",
+      dateModified: "2026-10-12",
       readTime: "10분 소요",
       category: "Guide",
       keywords: ["app store 크리에이티브 애셋","제품 페이지 헤더","app store connect 애셋 라이브러리"],
@@ -4644,6 +4724,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   ar: [
     {
+      slug: "app-store-screenshot-majority-rule",
+      title: "قاعدة الأغلبية للقطات App Store (البند 2.3.3)",
+      description: "تشترط Apple أن تعرض أكثر من نصف لقطات كل جهاز التطبيق قيد الاستخدام. قاعدة البند 2.3.3 مع أمثلة وطريقة مراجعة مجموعتك.",
+      date: "2026-10-12",
+      readTime: "قراءة 7 دقائق",
+      category: "Guide",
+      keywords: ["قاعدة الأغلبية لقطات app store", "البند 2.3.3 لقطات الشاشة", "رفض لقطات app store"],
+    },
+    {
       slug: "iphone-duo-app-store-screenshots",
       title: "لقطات شاشة iPhone Duo في App Store: المقاسات والإعداد",
       description: "مقاسات لقطات شاشة iPhone Duo للشاشة الداخلية (2007×2853) والخارجية (1398×2034)، وحالة الرفع، وطريقة الالتقاط وإنشاء المجموعتين.",
@@ -4666,6 +4755,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
       title: "الأصول الإبداعية في App Store: الرؤوس ونتائج البحث",
       description: "تضيف Apple رؤوس صفحة المنتج وأصول نتائج البحث ومكتبة أصول. ما تم تأكيده وما يعنيه ذلك للقطات الشاشة الخاصة بك.",
       date: "2026-09-27",
+      dateModified: "2026-10-12",
       readTime: "10 دقيقة للقراءة",
       category: "Guide",
       keywords: ["الأصول الإبداعية app store","رأس صفحة المنتج","مكتبة الأصول app store connect"],
@@ -5224,6 +5314,15 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
   ],
   hi: [
     {
+      slug: "app-store-screenshot-majority-rule",
+      title: "App Store स्क्रीनशॉट का बहुमत नियम (2.3.3)",
+      description: "Apple चाहता है कि हर डिवाइस के आधे से ज़्यादा स्क्रीनशॉट ऐप को इस्तेमाल में दिखाएँ। गाइडलाइन 2.3.3 का नियम, उदाहरण और सेट की जाँच कैसे करें।",
+      date: "2026-10-12",
+      readTime: "7 मिनट पढ़ें",
+      category: "Guide",
+      keywords: ["app store स्क्रीनशॉट बहुमत नियम", "गाइडलाइन 2.3.3 स्क्रीनशॉट", "app store स्क्रीनशॉट अस्वीकृत"],
+    },
+    {
       slug: "iphone-duo-app-store-screenshots",
       title: "iPhone Duo App Store स्क्रीनशॉट: साइज़ और सेटअप",
       description: "iPhone Duo के अंदरूनी (2007×2853) और बाहरी (1398×2034) डिस्प्ले के स्क्रीनशॉट साइज़, अपलोड की स्थिति, कैप्चर का तरीका और दोनों सेट बनाना।",
@@ -5246,6 +5345,7 @@ export const LOCALIZED_BLOG_POSTS: Partial<Record<Exclude<LocaleCode, "en">, Blo
       title: "App Store क्रिएटिव एसेट: हेडर और सर्च रिज़ल्ट",
       description: "Apple प्रोडक्ट पेज हेडर, सर्च रिज़ल्ट एसेट और एसेट लाइब्रेरी जोड़ रहा है। क्या पुष्ट है और आपके स्क्रीनशॉट के लिए क्या बदलता है।",
       date: "2026-09-27",
+      dateModified: "2026-10-12",
       readTime: "10 मिनट में पढ़ें",
       category: "Guide",
       keywords: ["app store क्रिएटिव एसेट","प्रोडक्ट पेज हेडर","app store connect एसेट लाइब्रेरी"],
