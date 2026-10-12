@@ -99,11 +99,17 @@ export const CHANGELOG: ChangelogEntry[] = [
   {
     version: "4.22",
     date: "October 8, 2026",
-    title: "Reorder, Upload and iCloud Font Fixes",
+    title: "30 New Languages, Apple Watch Upload and iCloud Fixes",
     changes: [
+      { type: "added", text: "The app is now translated into 30 more languages, including Arabic, Hebrew, Hindi, Dutch, Polish, Swedish, Thai and Vietnamese" },
+      { type: "added", text: "Apple Watch screenshots can be uploaded to App Store Connect: the six watch sizes are available as row size presets and in the \"Upload as\" picker" },
+      { type: "improved", text: "The upload wizard blocks an upload that mixes Apple Watch sizes across languages and warns when existing screenshot sets on the version use another size, since Apple requires one watch size across every localization" },
+      { type: "fixed", text: "The Apple Watch Ultra 3 frame now suggests 422×514 instead of the Ultra 1/2 size" },
       { type: "fixed", text: "Reordering the screenshots in a row keeps each image with the screenshot it belongs to — an image whose bleed hung off the first or last screenshot used to be left behind, sitting on top of whatever moved into its place" },
       { type: "fixed", text: "An App Store screenshot that Apple is still processing when the poll window ends is now kept rather than removed, so the next sync matches it by checksum instead of uploading it again" },
       { type: "fixed", text: "Fonts stored in iCloud are brought down to the Mac before they are registered, so a project using them no longer freezes the app while every font lookup waits" },
+      { type: "fixed", text: "Projects stored in iCloud no longer hang the app when it is reactivated or when a preview, export or upload loads full-resolution images, because those files are now read off the main thread" },
+      { type: "fixed", text: "Dropping an image the app cannot read no longer risks a crash" },
     ],
   },
   {
