@@ -14,7 +14,7 @@ const CONNECTION_FACTS = [
   { property: "Authentication", value: "Authorization: Bearer <access token>, stored in your Keychain" },
   { property: "Default state", value: "Off. Opt in at Settings ▸ Automation" },
   { property: "Platform", value: "macOS only — the iPad and iPhone builds have no MCP server" },
-  { property: "Availability", value: "Screenshot Bro 3.6+ (App Store Connect sync tools need 3.9+)" },
+  { property: "Availability", value: "Screenshot Bro 3.6+ (App Store Connect sync tools need 3.9+; editing closed projects, batch, design and Google Play tools need 4.24+)" },
   { property: "Lifecycle", value: "Starts with the app once enabled; the app must be running" },
 ] as const;
 
@@ -22,37 +22,47 @@ const TOOL_GROUPS = [
   {
     area: "Projects",
     tools: "list_templates, list_projects, get_project, create_project, rename_project, delete_project, switch_project",
-    what: "Discover bundled templates, create a project from one (or blank), switch the active project, and pull a full structured snapshot with every id other tools need.",
+    what: "Discover bundled templates, create a project from one (or blank), switch the project the app shows, and pull a structured snapshot (optionally just some rows, without translations) with every id other tools need.",
   },
   {
     area: "Rows & columns",
-    tools: "add_row, update_row, move_row, delete_row, add_template, remove_template",
-    what: "Add screenshot rows at a given pixel size, set labels, solid or gradient backgrounds, spanning backgrounds, device visibility and default frames, and add or remove screenshot columns.",
+    tools: "add_row, update_row, move_row, delete_row, duplicate_row, add_template, remove_template, duplicate_template, move_template, update_template",
+    what: "Add and copy screenshot rows at a given pixel size; set labels and color, gradient or image backgrounds (per language if needed), blur and spanning; add, copy, reorder or remove columns, and give one column its own background.",
   },
   {
     area: "Shapes",
-    tools: "add_shape, update_shape, delete_shape",
-    what: "Place and patch rectangles, circles, stars, text, device frames, bundled SVG presets and images — position, size, rotation, opacity, corner radius, fill, outline, font, alignment, lock and z-order.",
+    tools: "add_shape, update_shape, delete_shape, duplicate_shape, arrange_shapes, set_all_devices",
+    what: "Place fully styled rectangles, circles, stars, text, device frames, SVG presets and images in one call — position, rotation, fill, outline, shadow, text plate, font, italic, alignment, line height, lock and z-order; copy a headline into every column, align or distribute shapes, and swap every device frame at once.",
   },
   {
     area: "Screenshots",
-    tools: "import_screenshots",
-    what: "Load PNG or JPEG files from disk into a row's device frames, in order, creating columns as needed.",
+    tools: "import_screenshots, replace_image",
+    what: "Load PNG or JPEG files into a row's device frames in order, or put one image into a single frame for one language.",
   },
   {
     area: "Languages",
-    tools: "add_locale, remove_locale, set_translation",
-    what: "Add locales such as de-DE or ja to the project and write per-locale text for any text shape.",
+    tools: "add_locale, remove_locale, set_base_locale, set_translation, set_translations, set_locale_layout",
+    what: "Add locales such as de-DE or ja, write per-locale text (many at once, with automatic fitting), give a shape its own position, size or font in one language, and change the base language.",
+  },
+  {
+    area: "Working fast",
+    tools: "batch, list_catalog, undo, redo",
+    what: "Apply many edits in one all-or-nothing call that is a single undo step, look up valid device frames, SVG presets, fonts, locales and screenshot sizes instead of guessing, and undo or redo in the open project.",
   },
   {
     area: "Seeing & exporting",
     tools: "render_preview, export_project",
-    what: "Render a row (or one column) as a downscaled PNG the model can actually look at, and export the finished set as PNG or JPEG files.",
+    what: "Render a row (or one column) as a downscaled PNG the model can actually look at, and export the finished set as PNG or JPEG files — chosen rows only, with a file suffix, or as one stitched image per row.",
   },
   {
     area: "App Store Connect",
-    tools: "get_app_store_metadata, update_app_store_description, preview_app_store_screenshot_sync, apply_app_store_screenshot_sync, get_sync_job_status, cancel_sync_job",
-    what: "Read every version's per-locale description, write new descriptions back, preview then apply a checksum-matched screenshot sync to a version, and poll or cancel a large sync that runs as a background job.",
+    tools: "list_app_store_apps, link_project_stores, get_app_store_metadata, update_app_store_metadata, update_app_store_description, preview_app_store_screenshot_sync, apply_app_store_screenshot_sync, get_sync_job_status, cancel_sync_job",
+    what: "Link a project to its app, read and write every listing field per locale (description, keywords, promotional text, What's New, name, subtitle, URLs) with the store's length limits checked first, preview then apply a checksum-matched screenshot sync, and poll or cancel a large sync running as a background job.",
+  },
+  {
+    area: "Google Play",
+    tools: "preview_play_upload, upload_play_screenshots",
+    what: "Plan which rows go up as which Play image type and language, then render and upload them as a draft (or send for review), as a background job.",
   },
 ] as const;
 
@@ -73,9 +83,14 @@ const TROUBLESHOOTING = [
     fix: "Quit whatever owns the port, then toggle the server off and on again.",
   },
   {
-    symptom: "“No active project”",
-    cause: "Tools that edit rows and shapes act on the active project only",
-    fix: "Have the agent call list_projects and switch_project (or create_project) first.",
+    symptom: "“No project is open in the app”",
+    cause: "An editing tool was called without project_id while no project is open",
+    fix: "Have the agent call list_projects and pass project_id to every tool — it can then edit any project, open or not.",
+  },
+  {
+    symptom: "An edit can't be undone with ⌘Z",
+    cause: "The agent edited a project that isn't open in the window",
+    fix: "Edits to other projects are saved directly. To keep ⌘Z, open the project first (switch_project) and have the agent work on it there.",
   },
   {
     symptom: "“Could not load /path/to/shot.png”",
@@ -195,7 +210,7 @@ export default function BlogPost() {
     <BlogArticleShell
       slug={SLUG}
       locale={locale}
-      tldr="Open Screenshot Bro on your Mac, switch on Settings ▸ Automation ▸ Enable MCP server, then paste the Copy Agent Prompt into Claude Code, Claude Desktop or Cursor. The client connects to a local server at http://127.0.0.1:8722/mcp with a bearer token, and your agent gets 28 tools that create projects, lay out rows and shapes, import screenshots, translate text, render previews it can actually see, export PNGs, and sync a finished set to App Store Connect — all through the same undoable actions you use by hand."
+      tldr="Open Screenshot Bro on your Mac, switch on Settings ▸ Automation ▸ Enable MCP server, then paste the Copy Agent Prompt into Claude Code, Claude Desktop or Cursor. The client connects to a local server at http://127.0.0.1:8722/mcp with a bearer token, and your agent gets 48 tools that create projects, lay out rows and shapes, import screenshots, translate text, render previews it can actually see, export PNGs, and push a finished set to App Store Connect or Google Play — through the same editing actions you use by hand."
       ctaMessage="Want an AI agent to build your App Store screenshots while you watch? Turn on the MCP server in Screenshot Bro — it's free to try."
       ctaHomeLinkLabel="a native App Store screenshot app for Mac with a built-in MCP server"
       seoLinks={[
@@ -229,7 +244,7 @@ export default function BlogPost() {
         {
           question: "What is the Screenshot Bro MCP server?",
           answer:
-            "It is a local Model Context Protocol server built into the Screenshot Bro Mac app. When you enable it at Settings ▸ Automation, the app listens on http://127.0.0.1:8722/mcp and exposes 28 tools that let an AI assistant create and edit screenshot projects, import screenshots, translate text, render previews, export images, and sync sets to App Store Connect. It runs on your Mac only, requires an access token, and is off by default.",
+            "It is a local Model Context Protocol server built into the Screenshot Bro Mac app. When you enable it at Settings ▸ Automation, the app listens on http://127.0.0.1:8722/mcp and exposes 48 tools that let an AI assistant create and edit screenshot projects, import screenshots, translate text, render previews, export images, and upload sets to App Store Connect and Google Play. It runs on your Mac only, requires an access token, and is off by default.",
         },
         {
           question: "Which AI clients can connect to it?",
@@ -244,7 +259,7 @@ export default function BlogPost() {
         {
           question: "Is it safe to let an AI agent edit my screenshots?",
           answer:
-            "The server binds to 127.0.0.1, so nothing outside your Mac can reach it, and every request must carry an access token that only you can copy from Settings. Agent edits go through the same actions as the UI, so ⌘Z undoes them and autosave keeps them. App Store Connect mutations are two-step: the agent must first build a sync plan, then apply it with an explicit confirm flag and an explicit list of sets.",
+            "The server binds to 127.0.0.1, so nothing outside your Mac can reach it, and every request must carry an access token that only you can copy from Settings. Agent edits go through the same document logic as the UI and are saved like yours; edits to the project open in the window are also undoable with ⌘Z. Store mutations are explicit: the agent must first build a sync plan, then apply it with an explicit confirm flag and an explicit list of sets.",
         },
         {
           question: "Can I run it on iPad, or in CI?",
@@ -265,11 +280,11 @@ export default function BlogPost() {
         editor directly: create the project, size the rows, place the headlines,
         pull in your screenshots, translate them, look at what it made, and push
         the finished set to App Store Connect. You watch it happen on the canvas,
-        and every change it makes is undoable with <strong>⌘Z</strong>.
+        and edits to the project you have open are undoable with <strong>⌘Z</strong>.
       </p>
       <p>
         This guide covers the whole thing: what the server is, how to turn it on,
-        how to connect each client, what all 28 tools do, the prompts that get
+        how to connect each client, what all 48 tools do, the prompts that get
         good results, the sandbox rule that trips up screenshot imports, and what
         the server deliberately cannot do. Everything below was checked against
         Screenshot Bro 4.2 in August 2026.
@@ -303,9 +318,11 @@ export default function BlogPost() {
         Two consequences of that design are worth internalising before you start.
         First, <strong>the app has to be open</strong> — the agent is not talking
         to a headless service, it is remote-controlling a window on your screen.
-        Second, <strong>agent edits are ordinary edits</strong>: they go through
-        the same undo transactions and the same autosave as your own clicks, so a
-        bad instruction is one ⌘Z away from being reversed, not a corrupted file.
+        Second, <strong>agent edits are ordinary edits</strong>: they run the same
+        document logic and the same autosave as your own clicks. On the project
+        open in the window each call — or each <code>batch</code> of calls — is one
+        undo step, so a bad instruction is one ⌘Z away from being reversed. Edits
+        to a project that isn't open are saved directly, with no undo history.
       </p>
 
       <h2>What You Need Before You Start</h2>
@@ -391,12 +408,12 @@ export default function BlogPost() {
       <h3>Check that it worked</h3>
       <p>
         Ask the assistant to <em>list your screenshot-bro tools</em>. You should
-        get 28 of them, starting with <code>list_templates</code> and{" "}
+        get 48 of them, starting with <code>list_templates</code> and{" "}
         <code>list_projects</code>. If the list is empty, the client connected to
         nothing — see the troubleshooting table at the end.
       </p>
 
-      <h2>The 28 Tools, Grouped</h2>
+      <h2>The 48 Tools, Grouped</h2>
       <p>
         You never call these by hand; the agent picks them. But knowing what
         exists is what lets you write a prompt that maps cleanly onto them
@@ -514,7 +531,7 @@ export default function BlogPost() {
 
       <h2>Exporting</h2>
       <p>
-        <code>export_project</code> writes the active project&apos;s screenshots as
+        <code>export_project</code> writes a project&apos;s screenshots as
         PNG or JPEG and returns the exact file paths it wrote. Pass{" "}
         <code>locale</code> to export a single language, or leave it off for all of
         them. Pass <code>folder_path</code> only if you know the app can write
