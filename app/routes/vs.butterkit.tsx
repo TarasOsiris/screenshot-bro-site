@@ -278,8 +278,8 @@ export default function ButterKitComparison() {
           {SITE_NAME} edits App Store metadata but does not translate it for you.
         </li>
         <li>
-          <strong>Automation is broader.</strong> Its MCP server exposes 42 tools
-          across five namespaces, and folder linking keeps an artboard in sync
+          <strong>Automation reaches further.</strong> Its MCP server exposes 42
+          tools across five namespaces, and folder linking keeps an artboard in sync
           with a fastlane <code>screenshots</code> directory, which is the
           cleanest bridge between generated captures and a designed layout that
           either tool offers.
@@ -453,13 +453,14 @@ export default function ButterKitComparison() {
       <p>
         Not quite. Both expose a local MCP server that an agent drives while the
         app runs, and neither is a headless CLI or a hosted API, so neither
-        belongs in CI. ButterKit&apos;s is the bigger surface — 42 tools across
-        five namespaces, documented for Cursor, Claude Code and Codex —
-        and it pairs with Simulator capture and fastlane folder linking, so more
-        of the pipeline can be scripted. {SITE_NAME}&apos;s MCP server is opt-in,
-        macOS-only, loopback-only, and its edits go through the same undo stack as
-        manual ones. If agent-driven work is central to how you build, ButterKit
-        currently offers more of it.
+        belongs in CI. ButterKit&apos;s 42 tools across five namespaces are
+        documented for Cursor, Claude Code and Codex, and pair with Simulator
+        capture and fastlane folder linking, so more of the capture end of the
+        pipeline can be scripted. {SITE_NAME}&apos;s 48 tools are opt-in,
+        macOS-only and loopback-only, also cover Google Play uploads, and edits
+        to the project open in the window go through the same undo stack as
+        manual ones. If agent-driven capture is central to how you build,
+        ButterKit currently offers more of it.
       </p>
 
       <h3>&quot;Does either one make App Preview videos?&quot;</h3>

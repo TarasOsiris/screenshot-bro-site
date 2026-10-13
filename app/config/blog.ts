@@ -89,7 +89,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Turn on the Screenshot Bro MCP server and let Claude Code, Claude Desktop or Cursor build, translate, preview and export your App Store screenshots.",
     date: "2026-08-26",
-    dateModified: "2026-09-26",
+    dateModified: "2026-10-13",
     readTime: "12 min read",
     category: "Guide",
     keywords: [

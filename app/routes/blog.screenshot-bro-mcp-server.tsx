@@ -259,7 +259,7 @@ export default function BlogPost() {
         {
           question: "Is it safe to let an AI agent edit my screenshots?",
           answer:
-            "The server binds to 127.0.0.1, so nothing outside your Mac can reach it, and every request must carry an access token that only you can copy from Settings. Agent edits go through the same document logic as the UI and are saved like yours; edits to the project open in the window are also undoable with ⌘Z. Store mutations are explicit: the agent must first build a sync plan, then apply it with an explicit confirm flag and an explicit list of sets.",
+            "The server binds to 127.0.0.1, so nothing outside your Mac can reach it, and every request must carry an access token that only you can copy from Settings. Agent edits go through the same document logic as the UI and are saved like yours; edits to the project open in the window are also undoable with ⌘Z. Screenshot uploads are two-step: the agent must first build a plan, then apply it — an App Store Connect sync needs an explicit confirm flag and an explicit list of sets.",
         },
         {
           question: "Can I run it on iPad, or in CI?",
@@ -287,7 +287,7 @@ export default function BlogPost() {
         how to connect each client, what all 48 tools do, the prompts that get
         good results, the sandbox rule that trips up screenshot imports, and what
         the server deliberately cannot do. Everything below was checked against
-        Screenshot Bro 4.2 in August 2026.
+        Screenshot Bro 4.24 in October 2026.
       </p>
 
       <h2>What the Screenshot Bro MCP Server Actually Is</h2>
@@ -408,7 +408,8 @@ export default function BlogPost() {
       <h3>Check that it worked</h3>
       <p>
         Ask the assistant to <em>list your screenshot-bro tools</em>. You should
-        get 48 of them, starting with <code>list_templates</code> and{" "}
+        get 48 of them on Screenshot Bro 4.24 or later (earlier versions list
+        fewer), starting with <code>list_templates</code> and{" "}
         <code>list_projects</code>. If the list is empty, the client connected to
         nothing — see the troubleshooting table at the end.
       </p>
@@ -479,8 +480,9 @@ export default function BlogPost() {
         <code>import_screenshots</code> takes a row id and a list of absolute file
         paths, and fills that row's device-holding columns in order, creating
         extra columns if you pass more images than there are slots. It replaces
-        whatever was there — you cannot target a single column, so re-import the
-        whole row's images in the order you want.
+        whatever was there. To swap one screenshot without touching the rest,{" "}
+        <code>replace_image</code> puts a single image into one frame, for one
+        language.
       </p>
       <p>
         The catch: <strong>Screenshot Bro is sandboxed.</strong> It can read its
@@ -503,8 +505,8 @@ export default function BlogPost() {
         kind of tedium worth handing over. Two tools do the work:{" "}
         <code>add_locale</code> registers a language on the project (any code —{" "}
         <code>de-DE</code>, <code>fr-FR</code>, <code>ja</code>, <code>pt-BR</code>),
-        and <code>set_translation</code> writes one text shape's copy for one
-        locale.
+        <code>set_translation</code> writes one text shape's copy for one locale,
+        and <code>set_translations</code> writes many at once.
       </p>
       <CodeBlock html={code.localizePrompt} />
       <p>Three rules to know before you point a model at your copy:</p>
@@ -523,9 +525,13 @@ export default function BlogPost() {
         </li>
         <li>
           <strong>Length is the real risk.</strong> German and French run 20–35%
-          longer than English and will wrap or overflow a headline box that fits
-          in English. Give the agent a character budget in the prompt and make it
-          render a preview of the longest language.
+          longer than English. A translation written over MCP is fitted to its
+          box automatically — a smaller font for that language, then a taller box
+          where there is room — but a headline shrunk to fit can still look wrong.
+          Give the agent a character budget in the prompt, make it render a
+          preview of the longest language, and use{" "}
+          <code>set_locale_layout</code> when one language needs its own
+          position, size or font.
         </li>
       </ul>
 
@@ -542,14 +548,17 @@ export default function BlogPost() {
 
       <h2>Driving App Store Connect From the Agent</h2>
       <p>
-        With an App Store Connect API key configured, four more tools open up. The
-        two metadata tools are straightforward:{" "}
-        <code>get_app_store_metadata</code> returns every App Store version — one
-        per platform — with its per-locale descriptions, which is also how the
-        agent discovers the exact locale codes your listing uses. Then{" "}
-        <code>update_app_store_description</code> writes new descriptions back.
-        That tool applies what you give it and does not translate anything itself,
-        so the agent must supply one already-written description per locale;
+        With an App Store Connect API key configured, the store tools open up.{" "}
+        <code>list_app_store_apps</code> and <code>link_project_stores</code>{" "}
+        tie a project to its app. <code>get_app_store_metadata</code> returns
+        every App Store version — one per platform — with its per-locale listing
+        text, which is also how the agent discovers the exact locale codes your
+        listing uses. Then <code>update_app_store_metadata</code> writes listing
+        fields back (description, keywords, promotional text, What&apos;s New,
+        name, subtitle, URLs), checking the store&apos;s length limits first;{" "}
+        <code>update_app_store_description</code> does the same for descriptions
+        alone. These tools apply what you give them and do not translate anything
+        themselves, so the agent must supply already-written text per locale;
         locales that do not exist on a version are reported as skipped rather than
         created.
       </p>
@@ -571,6 +580,12 @@ export default function BlogPost() {
       <p>
         Worth saying plainly: this step publishes to a real listing. Read the
         preview before you approve it, the same way you would read a diff.
+      </p>
+      <p>
+        Google Play follows the same shape. <code>preview_play_upload</code>{" "}
+        plans which rows go up as which Play image type and language, and{" "}
+        <code>upload_play_screenshots</code> renders and uploads them as a
+        draft — or sends them for review — as a background job.
       </p>
 
       <h2>Prompt Patterns That Work</h2>
@@ -675,15 +690,6 @@ export default function BlogPost() {
           <strong>It cannot capture screenshots for you.</strong> There is no
           Simulator capture tool in the shipping app; you bring images you already
           took.
-        </li>
-        <li>
-          <strong>It cannot target a single screenshot column on import.</strong>{" "}
-          Re-import the whole row&apos;s images in order instead.
-        </li>
-        <li>
-          <strong>Google Play uploads are not exposed over MCP.</strong> The App
-          Store Connect tools have no Play equivalent yet — that upload stays in
-          the UI.
         </li>
       </ul>
 
