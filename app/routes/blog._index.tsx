@@ -26,7 +26,7 @@ const INDEX_COPY: Record<
   es: {
     eyebrow: "Blog",
     title: "Guías y recursos",
-    description: "Guías prácticas para diseñar capturas de la App Store que conviertan.",
+    description: "Guías para diseñar capturas de App Store y Google Play: dimensiones, marcos, textos, localización y exportación con Screenshot Bro.",
     latest: "Lo último",
     all: "Todos",
     filterLabel: "Filtrar artículos por categoría",
@@ -42,7 +42,7 @@ const INDEX_COPY: Record<
   hi: {
     eyebrow: "ब्लॉग",
     title: "गाइड और संसाधन",
-    description: "ऐप स्टोर स्क्रीनशॉट डिज़ाइन करने के लिए व्यावहारिक गाइड जो वास्तव में कन्वर्ट हों।",
+    description: "Screenshot Bro के साथ App Store और Google Play स्क्रीनशॉट बनाने की गाइड: सही आकार, डिवाइस फ्रेम, टेक्स्ट, अनुवाद और एक्सपोर्ट की जानकारी।",
     latest: "नवीनतम",
     all: "सभी",
     filterLabel: "श्रेणी के अनुसार लेख फ़िल्टर करें",
@@ -50,7 +50,7 @@ const INDEX_COPY: Record<
   fr: {
     eyebrow: "Blog",
     title: "Guides & Ressources",
-    description: "Guides pratiques pour concevoir des captures App Store qui convertissent.",
+    description: "Guides pour créer des captures App Store et Google Play : dimensions, cadres, textes, localisation et exportation avec Screenshot Bro.",
     latest: "Dernier article",
     all: "Tous",
     filterLabel: "Filtrer les articles par catégorie",
@@ -58,7 +58,7 @@ const INDEX_COPY: Record<
   ar: {
     eyebrow: "المدونة",
     title: "الأدلة والموارد",
-    description: "أدلة عملية لتصميم لقطات شاشة App Store تؤدي بالفعل إلى زيادة التحويل.",
+    description: "أدلة لتصميم لقطات شاشة App Store وGoogle Play مع Screenshot Bro: المقاسات وإطارات الأجهزة والنصوص والترجمة والتصدير لمتاجر التطبيقات.",
     latest: "الأحدث",
     all: "الكل",
     filterLabel: "تصفية المقالات حسب الفئة",
@@ -66,7 +66,7 @@ const INDEX_COPY: Record<
   de: {
     eyebrow: "Blog",
     title: "Leitfäden & Ressourcen",
-    description: "Praktische Leitfäden für das Design von App-Store-Screenshots, die konvertieren.",
+    description: "Anleitungen für App Store- und Google Play-Screenshots: Größen, Geräterahmen, Texte, Lokalisierung und Export mit Screenshot Bro.",
     latest: "Neuester Beitrag",
     all: "Alle",
     filterLabel: "Artikel nach Kategorie filtern",
@@ -82,7 +82,7 @@ const INDEX_COPY: Record<
   pt: {
     eyebrow: "Blog",
     title: "Guias e Recursos",
-    description: "Guias práticos para criar capturas de tela da App Store que convertem.",
+    description: "Guias para criar capturas da App Store e do Google Play: tamanhos, molduras, textos, localização e exportação com Screenshot Bro.",
     latest: "Mais recente",
     all: "Todos",
     filterLabel: "Filtrar artigos por categoria",
@@ -90,7 +90,7 @@ const INDEX_COPY: Record<
   it: {
     eyebrow: "Blog",
     title: "Guide e Risorse",
-    description: "Guide pratiche per progettare screenshot di App Store che convertono.",
+    description: "Guide per creare screenshot per App Store e Google Play: dimensioni, cornici, testi, localizzazione ed esportazione con Screenshot Bro.",
     latest: "Ultimo articolo",
     all: "Tutti",
     filterLabel: "Filtra gli articoli per categoria",

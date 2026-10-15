@@ -2032,7 +2032,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     },
   },
   ko: {
-    siteTitle: `${SITE_NAME} — Mac, iPad 및 iPhone용 App Store & Google Play 스크린샷 디자인 도구`,
+    siteTitle: `${SITE_NAME} — App Store·Google Play 스크린샷 (Mac·iPad·iPhone)`,
     siteDescription:
       "네이티브 Mac, iPad 및 iPhone 앱에서 App Store 및 Google Play 스크린샷을 디자인하세요. 디바이스 프레임, 현지화, 자동 번역, 일괄 내보내기, App Store Connect 직접 업로드를 지원합니다.",
     primaryCtaLabel: "Screenshot Bro 다운로드",
@@ -2195,7 +2195,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   uk: {
     siteTitle: `${SITE_NAME} — Скриншоти для App Store та Google Play на Mac`,
     siteDescription:
-      "Створюйте скриншоти для App Store та Google Play у нативному додатку для Mac, iPad та iPhone. Рамки пристроїв, локалізація та пряме завантаження в App Store Connect.",
+      "Створюйте скриншоти App Store та Google Play на Mac, iPad і iPhone. Додавайте рамки, локалізуйте та завантажуйте в App Store Connect.",
     primaryCtaLabel: "Завантажити Screenshot Bro",
     navItems: [
       { label: "Показ", href: "#showcases" },
@@ -2357,7 +2357,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   pl: {
     siteTitle: `${SITE_NAME} — Zrzuty ekranu do App Store i Google Play na Maca`,
     siteDescription:
-      "Projektuj zrzuty ekranu dla App Store i Google Play w natywnej aplikacji na Maca, iPada i iPhone'a. Ramki urządzeń, lokalizacja i bezpośrednie przesyłanie do App Store Connect.",
+      "Projektuj zrzuty App Store i Google Play na Macu, iPadzie i iPhonie. Dodawaj ramki, lokalizuj i przesyłaj obrazy do App Store Connect.",
     primaryCtaLabel: "Pobierz Screenshot Bro",
     navItems: [
       { label: "Przykłady", href: "#showcases" },
@@ -2519,7 +2519,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   tr: {
     siteTitle: `${SITE_NAME} — Mac'te App Store ve Google Play Ekran Görüntüleri`,
     siteDescription:
-      "Mac, iPad ve iPhone için yerel uygulamada App Store ve Google Play ekran görüntüleri tasarlayın. Cihaz çerçeveleri, yerelleştirme ve doğrudan App Store Connect yüklemesi.",
+      "App Store ve Google Play ekran görüntülerini Mac, iPad ve iPhone'da tasarlayın. Cihaz çerçeveleri, yerelleştirme ve App Store Connect'e yükleme.",
     primaryCtaLabel: "Screenshot Bro'yu İndir",
     navItems: [
       { label: "Örnekler", href: "#showcases" },
@@ -2646,7 +2646,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   nl: {
     siteTitle: `${SITE_NAME} — App Store & Google Play screenshots op Mac`,
     siteDescription:
-      "Ontwerp screenshots voor App Store en Google Play in een native app voor Mac, iPad en iPhone. Apparaatframes, lokalisatie en directe upload naar App Store Connect.",
+      "Ontwerp screenshots voor App Store en Google Play op Mac, iPad en iPhone. Apparaatframes, lokalisatie en upload naar App Store Connect.",
     primaryCtaLabel: "Download Screenshot Bro",
     navItems: [
       { label: "Voorbeelden", href: "#showcases" },
@@ -2773,7 +2773,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   id: {
     siteTitle: `${SITE_NAME} — Tangkapan Layar App Store & Google Play di Mac`,
     siteDescription:
-      "Desain tangkapan layar untuk App Store dan Google Play dalam aplikasi native untuk Mac, iPad, dan iPhone. Bingkai perangkat, lokalisasi, dan unggah langsung ke App Store Connect.",
+      "Desain tangkapan layar App Store dan Google Play di Mac, iPad, dan iPhone. Tambahkan bingkai, lokalisasi, dan unggah ke App Store Connect.",
     primaryCtaLabel: "Unduh Screenshot Bro",
     navItems: [
       { label: "Contoh", href: "#showcases" },
@@ -2900,7 +2900,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   vi: {
     siteTitle: `${SITE_NAME} — Ảnh chụp màn hình App Store & Google Play trên Mac`,
     siteDescription:
-      "Thiết kế ảnh chụp màn hình cho App Store và Google Play trong ứng dụng native cho Mac, iPad và iPhone. Khung thiết bị, bản địa hóa và tải trực tiếp lên App Store Connect.",
+      "Thiết kế ảnh chụp màn hình App Store và Google Play trên Mac, iPad và iPhone. Khung thiết bị, bản địa hóa và tải lên App Store Connect.",
     primaryCtaLabel: "Tải Screenshot Bro",
     navItems: [
       { label: "Trình diễn", href: "#showcases" },
@@ -3154,7 +3154,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   sv: {
     siteTitle: `${SITE_NAME} — App Store & Google Play-skärmdumpar på Mac`,
     siteDescription:
-      "Designa skärmdumpar för App Store och Google Play i en nativ app för Mac, iPad och iPhone. Enhetsramar, lokalisering och direkt uppladdning till App Store Connect.",
+      "Designa skärmdumpar för App Store och Google Play på Mac, iPad och iPhone. Enhetsramar, lokalisering och uppladdning till App Store Connect.",
     primaryCtaLabel: "Hämta Screenshot Bro",
     navItems: [
       { label: "Exempel", href: "#showcases" },
@@ -3396,7 +3396,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   },
   fi: {
     siteTitle: `${SITE_NAME} — App Store- ja Google Play -kuvakaappaukset Macilla`,
-    siteDescription: "Suunnittele kuvakaappauksia App Storelle ja Google Playlle natiivilla Mac-, iPad- ja iPhone-sovelluksella. Laitekehykset, lokalisointi ja suora lataus App Store Connectiin.",
+    siteDescription: "Suunnittele App Store- ja Google Play -kuvakaappauksia Macilla, iPadilla ja iPhonella. Laitekehykset, lokalisointi ja lataus App Store Connectiin.",
     primaryCtaLabel: "Lataa Screenshot Bro",
     navItems: [
       { label: "Esimerkit", href: "#showcases" },
@@ -3744,7 +3744,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   },
   ro: {
     siteTitle: `${SITE_NAME} — Capturi pentru App Store și Google Play pe Mac`,
-    siteDescription: "Proiectează capturi pentru App Store și Google Play într-o aplicație nativă pentru Mac, iPad și iPhone. Rame de dispozitive, localizare și încărcare în App Store Connect.",
+    siteDescription: "Proiectează capturi App Store și Google Play pe Mac, iPad și iPhone. Rame de dispozitive, localizare și încărcare în App Store Connect.",
     primaryCtaLabel: "Descarcă Screenshot Bro",
     navItems: [
       { label: "Exemple", href: "#showcases" },
@@ -3860,7 +3860,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   },
   ms: {
     siteTitle: `${SITE_NAME} — Tangkapan Skrin App Store & Google Play di Mac`,
-    siteDescription: "Reka tangkapan skrin untuk App Store dan Google Play dalam aplikasi natif Mac, iPad dan iPhone. Bingkai peranti, penyetempatan dan muat naik terus ke App Store Connect.",
+    siteDescription: "Reka tangkapan skrin App Store dan Google Play pada Mac, iPad dan iPhone. Bingkai peranti, penyetempatan dan muat naik ke App Store Connect.",
     primaryCtaLabel: "Muat turun Screenshot Bro",
     navItems: [
       { label: "Contoh", href: "#showcases" },
