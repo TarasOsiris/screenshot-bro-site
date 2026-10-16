@@ -87,7 +87,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
   ]);
 };
 
-export const EFFECTIVE_DATE = "October 9, 2026";
+export const EFFECTIVE_DATE = "October 16, 2026";
 const DEVELOPER_NAME = "Nineva Studios";
 const DEVELOPER_EMAIL = "tleskiv@ninevastudios.com";
 
@@ -105,7 +105,7 @@ export default function Privacy() {
             "our") handles information in connection with the{" "}
             <strong>{SITE_NAME}</strong> application for macOS, iOS and iPadOS (the
             "App"). We are committed to protecting your privacy and being
-            transparent about our practices. Section 8 covers this website,{" "}
+            transparent about our practices. Section 9 covers this website,{" "}
             <code>screenshotbro.app</code>, which is separate from the App.
           </p>
 
@@ -133,13 +133,17 @@ export default function Privacy() {
             <li>Advertising identifiers</li>
             <li>
               The contents of your projects — screenshots, imported images,
-              fonts, or the text you write
+              fonts, or the text you write. They leave your device only when
+              you turn on iCloud sync, export files, start an upload to App
+              Store Connect or Google Play, or connect an automation client
+              (Sections 3 and 8), and even then they never reach us
             </li>
           </ul>
           <p>
             The App contains <strong>no advertising frameworks</strong> and does
-            no cross-app or cross-site tracking. It does include two services
-            that send data off your device: a crash and error reporting service,
+            no cross-app or cross-site tracking. Besides purchase validation
+            (<strong>Section 4</strong>), it includes two services that send
+            data off your device: a crash and error reporting service,
             which sends technical diagnostics when something goes wrong
             (<strong>Section 5</strong>), and a product analytics service, which
             counts a short, fixed list of milestones such as &ldquo;an export
@@ -147,7 +151,8 @@ export default function Privacy() {
             actually reach (<strong>Section 6</strong>). Neither carries the
             contents of your work. The version of {SITE_NAME} downloaded from
             our website also checks our website for updates
-            (<strong>Section 7</strong>).
+            (<strong>Section 7</strong>), and a few features you choose to use
+            talk directly to Apple or Google (<strong>Section 8</strong>).
           </p>
 
           <h2>2. Data Stored on Your Device</h2>
@@ -173,8 +178,10 @@ export default function Privacy() {
           </ul>
           <p>
             This data never leaves your device unless you explicitly enable
-            iCloud sync (see Section 3) or export files to a location of your
-            choice.
+            iCloud sync (see Section 3), export files to a location of your
+            choice, upload screenshots and listing text to App Store Connect
+            or Google Play, or connect an automation client to the App (see
+            Section 8).
           </p>
 
           <h2>3. iCloud Sync (Optional)</h2>
@@ -242,6 +249,25 @@ export default function Privacy() {
               email is shared.
             </li>
             <li>
+              Like any request, those RevenueCat makes carry your IP address,
+              and its SDK adds technical context: the App version and build,
+              operating system and version, device model, preferred languages,
+              and App Store country. On iPhone and iPad it also sends Apple&apos;s
+              identifier for vendor — a random ID that Apple gives our apps on
+              that device, which is not the advertising identifier and resets
+              when all of our apps are removed.
+            </li>
+            <li>
+              On iPhone and iPad only, the App lets RevenueCat collect an Apple
+              Ads attribution token through Apple&apos;s AdServices framework.
+              RevenueCat exchanges it with Apple to learn whether the App was
+              installed after tapping an Apple Ads (Search Ads) ad, and from
+              which campaign, so we can tell which ads work. This does not use
+              the advertising identifier, does not ask for tracking permission,
+              and is not used to track you across other companies&apos; apps or
+              websites. The Mac version does not do this.
+            </li>
+            <li>
               For subscriptions, RevenueCat is also notified by Apple when a
               renewal succeeds, fails, is paused, or is cancelled, so the App
               can keep your entitlement state accurate. We do not see your
@@ -281,8 +307,11 @@ export default function Privacy() {
             <a href={`mailto:${WEB_PURCHASE_EMAIL}`}>{WEB_PURCHASE_EMAIL}</a>.
           </p>
           <p>
-            If you do not make a purchase, no data is sent to RevenueCat
-            beyond an initial anonymous entitlement check. Subscription terms,
+            If you do not make a purchase, RevenueCat still receives the
+            anonymous identifier and technical context above each time the App
+            checks your entitlement and loads the available products, and on
+            iPhone and iPad the Apple Ads attribution token, but no purchase
+            details. Subscription terms,
             including auto-renewal and cancellation, are described in our{" "}
             <a href={`${SITE_URL}/terms`}>Terms of Use</a>.
           </p>
@@ -347,7 +376,7 @@ export default function Privacy() {
             </li>
             <li>
               A random installation identifier, and the anonymous RevenueCat
-              identifier if you have made a purchase (see below)
+              identifier (see below)
             </li>
           </ul>
           <p>
@@ -357,20 +386,24 @@ export default function Privacy() {
             Account, or anything about you — it exists so that repeated crashes
             from one installation can be recognised as related, and so that a
             problem you email us about can be matched to the reports we already
-            received. If you have made a purchase, the anonymous app user ID used
-            by RevenueCat (see Section 4) is attached to reports as well, so that
-            a purchase-related bug can be traced to the transaction that
-            triggered it, and the two anonymous identifiers are associated with
-            one another in our analytics tool (Section 6) so that a purchase can
-            be attributed to the installation that made it. Neither identifier is
+            received. The anonymous app user ID that RevenueCat assigns to every
+            installation, whether or not you buy anything (see Section 4), is
+            attached to reports as well, so that a purchase-related bug can be
+            traced to the transaction that triggered it, and the two anonymous
+            identifiers are associated with one another in our analytics tool
+            (Section 6) so that a purchase can be attributed to the installation
+            that made it. Neither identifier is
             joined to anything that identifies you personally, with one
             exception: if you bought Pro on our website, RevenueCat keeps the
             email address you entered at checkout with that purchase, and
-            therefore with its anonymous identifier. Both values are shown
-            in the App under Settings ▸ General ▸ Copy Diagnostics, alongside
-            your App version, storage mode, language, and project counts; that
+            therefore with its anonymous identifier. On Mac, both values are
+            copied by Settings ▸ General ▸ Copy Diagnostics, alongside your App
+            version, storage mode, language, and project counts; that
             information is placed on your clipboard and is sent to us only if you
-            choose to paste it into a support email.
+            choose to paste it into a support email. On Mac, iPhone and iPad, the
+            RevenueCat identifier is also shown as <em>RevenueCat ID</em> under
+            Settings ▸ Purchase. The iPhone and iPad versions do not currently
+            display the installation identifier.
           </p>
           <p>
             <strong>App run records.</strong> In addition to error reports,
@@ -408,7 +441,8 @@ export default function Privacy() {
           <p>
             Crash reporting is enabled by default and is currently not
             configurable in the App's settings. Reports are transmitted over an
-            encrypted connection to Sentry, which processes them on our behalf
+            encrypted connection to Sentry, hosted in the United States, which
+            processes them on our behalf
             under their{" "}
             <a
               href="https://sentry.io/privacy/"
@@ -433,9 +467,10 @@ export default function Privacy() {
             >
               PostHog
             </a>
-            , hosted in the United States. This is the only feature of the App
-            whose purpose is to observe use rather than to serve you directly, so
-            it is described here in full.
+            , hosted in the United States. Apart from the Apple Ads attribution
+            described in Section 4, this is the only feature of the App whose
+            purpose is to observe use rather than to serve you directly, so it is
+            described here in full.
           </p>
           <p>
             <strong>What is sent.</strong> The complete list of events, as named
@@ -456,14 +491,18 @@ export default function Privacy() {
               <code>settings</code>, <code>help</code>,{" "}
               <code>onboarding</code>, <code>paywall</code>,{" "}
               <code>purchase_celebration</code>,{" "}
+              <code>developer_rating</code>,{" "}
               <code>export_destination</code>, <code>showcase_export</code>,{" "}
               <code>asc_upload</code>, <code>asc_metadata</code>,{" "}
-              <code>google_play_upload</code>, <code>manage_locales</code>, and{" "}
+              <code>asc_experiment_upload</code> (only if you turn on the A/B
+              testing beta), <code>google_play_upload</code>,{" "}
+              <code>manage_locales</code>, and{" "}
               <code>translation_overview</code>
             </li>
             <li>
-              <code>onboarding_started</code>, <code>onboarding_completed</code>,{" "}
-              <code>onboarding_skipped</code>
+              <code>onboarding_started</code>,{" "}
+              <code>onboarding_step_viewed</code>,{" "}
+              <code>onboarding_completed</code>, <code>onboarding_skipped</code>
             </li>
             <li>
               <code>project_created</code> (whether from a blank project, a
@@ -519,8 +558,8 @@ export default function Privacy() {
             them, the analytics service records the App version and build,
             whether the copy came from the App Store or our website, the
             platform, your device model, operating system version, language, time
-            zone and screen size — the same class of technical context as a crash
-            report.
+            zone, screen size, and whether you are on Wi-Fi or cellular — the
+            same class of technical context as a crash report.
           </p>
           <p>
             <strong>What is never sent.</strong> No project, row, or language
@@ -537,9 +576,12 @@ export default function Privacy() {
           </p>
           <p>
             <strong>Identifiers and location.</strong> Events are labelled with
-            the same random installation identifier described in Section 5, and —
-            if you have made a purchase — the anonymous RevenueCat identifier, so
-            that a purchase can be attributed to the installation that made it.
+            the same random installation identifier described in Section 5, which
+            is also linked to the anonymous RevenueCat identifier so that a
+            purchase can be attributed to the installation that made it. The
+            analytics library also tags events with a random session identifier
+            that changes when you come back to the App after a break, so that
+            events from one sitting can be read together.
             The App sets the reported IP address to zero, so PostHog does not
             derive your city, region, or country from it. If you use the optional
             local automation server, its events also carry a random identifier
@@ -590,13 +632,85 @@ export default function Privacy() {
             does not send Sparkle&apos;s optional system profile, so no device
             model, hardware, or operating system details are included, and no
             identifier, purchase information, or project data is sent.
-            Automatic update checks are enabled by default and are currently
-            not configurable in the App&apos;s settings. Sparkle asks before
+            Automatic update checks are enabled by default; you can turn them
+            off with <strong>Automatically check for updates</strong> under
+            Settings ▸ About, and still check by hand with{" "}
+            <strong>Check for Updates…</strong>. Sparkle asks before
             installing an update unless you have chosen to have it install
             updates automatically.
           </p>
 
-          <h2 id="website">8. This Website and Cookies</h2>
+          <h2>8. Store Uploads, Translation, and Automation</h2>
+          <p>
+            These features send nothing unless you use them, and none of them
+            sends anything to us.
+          </p>
+          <ul>
+            <li>
+              <strong>App Store Connect and Google Play uploads.</strong> If you
+              add your own App Store Connect API key or Google Play service
+              account, the App connects directly to Apple&apos;s App Store
+              Connect API or Google&apos;s Google Play Developer API (signing in
+              through Google&apos;s OAuth service) when you open those screens
+              or start an upload. It reads your apps, versions, existing
+              screenshots and, from App Store Connect, store listing text. It
+              uploads the screenshots you choose to send and, to App Store
+              Connect, any listing text you edit in the App — name, subtitle,
+              description, keywords, promotional text, what&apos;s new, and
+              support, marketing and privacy policy URLs — including product
+              page experiments if you use the A/B testing beta. Your credentials are
+              kept in your device&apos;s Keychain, are not synced, and are sent
+              only to Apple or Google. Apple and Google handle this data as the
+              providers of your developer accounts, under the{" "}
+              <a
+                href="https://www.apple.com/legal/privacy/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Apple Privacy Policy
+              </a>{" "}
+              and the{" "}
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google Privacy Policy
+              </a>
+              .
+            </li>
+            <li>
+              <strong>App Store lookups.</strong> To show your app&apos;s icon
+              in the App Store Connect screens, the App looks up its bundle
+              identifier in Apple&apos;s public iTunes lookup service. Settings ▸
+              About lists our other apps using the same service, sending your
+              device&apos;s region code so names and prices match your store,
+              and TestFlight beta builds use it to check whether a newer version
+              is on the App Store. These requests carry your IP address, as any
+              web request does, but no identifier.
+            </li>
+            <li>
+              <strong>Translation and background removal.</strong>{" "}
+              Auto-translate uses Apple&apos;s Translation framework, which
+              translates on your device; the system may download language files
+              from Apple the first time you use a language. Background removal
+              uses Apple&apos;s Vision framework, also on your device. Your text
+              and images are not sent to us or to any AI or translation service.
+            </li>
+            <li>
+              <strong>Local automation server (Mac only).</strong> If you turn
+              it on under Settings ▸ Automation, the App runs an MCP server that
+              accepts connections only from your own Mac
+              (<code>127.0.0.1</code>) and only with an access token kept in
+              your Keychain. AI agents and other MCP clients you connect can read and
+              change your projects, including their text and images, and export
+              screenshots. What such a tool does with that content — including
+              sending it to an AI provider — is governed by that tool and its
+              provider, not by this policy.
+            </li>
+          </ul>
+
+          <h2 id="website">9. This Website and Cookies</h2>
           <p>
             This section is about visiting <code>screenshotbro.app</code>, not
             about the App. The App does not use Google Analytics.
@@ -649,7 +763,7 @@ export default function Privacy() {
             property.
           </p>
 
-          <h2>9. Third-Party Services Summary</h2>
+          <h2>10. Third-Party Services Summary</h2>
           <table>
             <thead>
               <tr>
@@ -666,10 +780,15 @@ export default function Privacy() {
               </tr>
               <tr>
                 <td>RevenueCat</td>
-                <td>Purchase validation; website checkout</td>
                 <td>
-                  Anonymous ID, transaction receipt; for website purchases, the
-                  email address entered at checkout
+                  Purchase validation; website checkout; Apple Ads attribution
+                  (iPhone and iPad)
+                </td>
+                <td>
+                  Anonymous ID, transaction receipt, device and app version
+                  info; on iPhone and iPad, the identifier for vendor and an
+                  Apple Ads attribution token; for website purchases, the email
+                  address entered at checkout
                 </td>
               </tr>
               <tr>
@@ -694,9 +813,10 @@ export default function Privacy() {
                 <td>PostHog</td>
                 <td>Product analytics</td>
                 <td>
-                  Random installation ID and anonymous RevenueCat ID, a fixed
-                  list of milestone events (Section 6) with counts, settings
-                  values and outcomes, device and app version info
+                  Random installation ID and anonymous RevenueCat ID, a random
+                  session ID, a fixed list of milestone events (Section 6) with
+                  counts, settings values and outcomes, device and app version
+                  info
                 </td>
               </tr>
               <tr>
@@ -706,7 +826,7 @@ export default function Privacy() {
               </tr>
               <tr>
                 <td>Google Analytics (website only)</td>
-                <td>Website usage statistics (Section 8)</td>
+                <td>Website usage statistics (Section 9)</td>
                 <td>
                   Pages viewed, referrer, approximate location, device and
                   browser type, link clicks; cookies only with consent where
@@ -718,14 +838,36 @@ export default function Privacy() {
                 <td>Update checks (direct-download version only)</td>
                 <td>IP address and App name and version, as in any web request</td>
               </tr>
+              <tr>
+                <td>Apple App Store Connect API</td>
+                <td>Screenshot and metadata uploads you start (Section 8)</td>
+                <td>
+                  Your API credentials, the screenshots and listing text you
+                  upload
+                </td>
+              </tr>
+              <tr>
+                <td>Google Play Developer API</td>
+                <td>Screenshot uploads you start (Section 8)</td>
+                <td>Your service account credentials, the screenshots you upload</td>
+              </tr>
+              <tr>
+                <td>Apple iTunes lookup</td>
+                <td>App icons, our other apps, TestFlight version check (Section 8)</td>
+                <td>
+                  An app&apos;s bundle or App Store ID, your region code, IP
+                  address
+                </td>
+              </tr>
             </tbody>
           </table>
           <p>
             No other third-party services, SDKs, or frameworks receive data from
-            the App.
+            the App. Automation clients you connect to the local server (Section
+            8) are your own tools, chosen by you.
           </p>
 
-          <h2>10. Data Retention and Deletion</h2>
+          <h2>11. Data Retention and Deletion</h2>
           <ul>
             <li>
               <strong>Local data</strong> — all project data and preferences are
@@ -735,14 +877,15 @@ export default function Privacy() {
             </li>
             <li>
               <strong>iCloud data</strong> — disable sync in the App's settings,
-              then remove files via System Settings on Mac, Settings on iPad,
-              or iCloud Drive.
+              then remove files via System Settings on Mac, Settings on iPhone
+              or iPad, or iCloud Drive.
             </li>
             <li>
               <strong>Purchase records</strong> — managed by Apple and
               RevenueCat, and by Stripe for website purchases. You can contact
-              RevenueCat to request deletion of any anonymous records associated
-              with your transactions. For a website purchase, email{" "}
+              RevenueCat, or email us with the RevenueCat ID shown under
+              Settings ▸ Purchase, to request deletion of the anonymous records
+              associated with your installation and transactions. For a website purchase, email{" "}
               <a href={`mailto:${WEB_PURCHASE_EMAIL}`}>{WEB_PURCHASE_EMAIL}</a>{" "}
               to request deletion of the email address kept with it; payment
               records that the law requires us or Stripe to keep are retained
@@ -753,18 +896,20 @@ export default function Privacy() {
               records are retained by Sentry for a limited period (90 days by
               default) and then deleted automatically. You can also email us to
               request deletion of reports associated with your installation
-              identifier, which you can find under Settings ▸ General ▸ Copy
-              Diagnostics.
+              identifier, which you can find on Mac under Settings ▸ General ▸
+              Copy Diagnostics, or with the RevenueCat ID shown under Settings ▸
+              Purchase on any device.
             </li>
             <li>
               <strong>Product analytics</strong> — milestone events are retained
               by PostHog under their standard retention period. Email us with the
               installation identifier from Settings ▸ General ▸ Copy Diagnostics
+              (Mac), or the RevenueCat ID from Settings ▸ Purchase (any device),
               and we will delete the events associated with it.
             </li>
           </ul>
 
-          <h2>11. Children&apos;s Privacy</h2>
+          <h2>12. Children&apos;s Privacy</h2>
           <p>
             {SITE_NAME} is not directed at children under the age of 13 and does
             not knowingly collect personal information from children. The only
@@ -772,18 +917,19 @@ export default function Privacy() {
             entered when buying Pro on our website.
           </p>
 
-          <h2>12. Security</h2>
+          <h2>13. Security</h2>
           <p>
             The App runs inside Apple's app sandbox on macOS, iOS and iPadOS, which
             restricts file system access and network capabilities. All data at
             rest is protected by platform storage encryption and iCloud
             encryption when applicable. The limited data the App does send —
-            purchase validation, crash reports, analytics events, and update
-            checks — is transmitted over
-            encrypted HTTPS connections.
+            purchase validation, crash reports, analytics events, update
+            checks, App Store lookups, and the store uploads you start — is
+            transmitted over encrypted HTTPS connections. The local automation
+            server accepts connections only from your own Mac.
           </p>
 
-          <h2>13. Changes to This Policy</h2>
+          <h2>14. Changes to This Policy</h2>
           <p>
             We may update this Privacy Policy from time to time. The updated
             version will be posted at{" "}
@@ -792,7 +938,7 @@ export default function Privacy() {
             periodically.
           </p>
 
-          <h2>14. Contact Us</h2>
+          <h2>15. Contact Us</h2>
           <p>
             If you have questions or concerns about this Privacy Policy or the
             App's data practices, please contact us:
