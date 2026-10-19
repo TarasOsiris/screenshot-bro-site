@@ -97,6 +97,23 @@ type ChangelogEntry = {
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "4.23",
+    date: "October 15, 2026",
+    title: "A Much Bigger MCP Server and an Undo Crash Fix",
+    changes: [
+      { type: "added", text: "The MCP server can edit any project, not just the open one, and apply several edits in one undoable step with batch operations; undo and redo are available to agents, and a catalog tool lists the valid device frames, SVG presets, fonts, languages and screenshot sizes" },
+      { type: "added", text: "The MCP server gained design tools: shadows and text plates, background images, duplicating shapes, rows and columns, moving columns, replacing images, changing every device at once and per-language layouts" },
+      { type: "added", text: "The MCP server can read and update App Store listing metadata, upload to Google Play, and export one continuous image per row" },
+      { type: "improved", text: "MCP tool arguments are now checked against each tool's schema, so an unknown or wrongly typed argument returns an error instead of being silently ignored" },
+      { type: "improved", text: "The App Store Connect upload wizard no longer fills empty What's New fields with placeholder text" },
+      { type: "improved", text: "Missing translations were filled in for Italian, Russian, Turkish, Ukrainian and Traditional Chinese" },
+      { type: "fixed", text: "Pressing ⌘Z in a text field after using a multi-line text box (such as the per-language translation box) could crash the app" },
+      { type: "fixed", text: "Text in a font that lacks some characters, such as Cyrillic in Familjen Grotesk, no longer gets uneven line spacing" },
+      { type: "fixed", text: "A change synced from another device through iCloud could be missed when it arrived while the project list was being replaced" },
+      { type: "fixed", text: "MCP fixes: z-order changes now work on any row, deleting a locked shape no longer reports success, and choosing a device frame also updates the device type and aspect ratio" },
+    ],
+  },
+  {
     version: "4.22",
     date: "October 8, 2026",
     title: "30 New Languages, Apple Watch Upload and iCloud Fixes",
