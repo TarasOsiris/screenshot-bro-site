@@ -288,3 +288,17 @@ run missed, and it caught one item (Apple's Sep 18 iPhone Duo resources).
   - fastlane: frameit Duo frames, deliver Duo/creative-asset support.
   - April 2027 iOS 27 SDK floor and Duo screenshot requirement.
   - Whether the majority-rule page's "in use" threshold (no pixel measure) gets clarified.
+
+## 2026-10-19
+- **Scanned:** developer.apple.com/news, App Store Connect What's New, screenshot specifications, App Review Guidelines (2.3), fastlane releases. Google Play, competitors, ASO research: no new primary-source leads checked this run.
+- **Findings:**
+  - **New App Review guideline 2.3.14 (Oct 16)** on creative assets: must pertain to app content/functionality or brand, be appropriate for all audiences, and not include misleading references to other apps, unverifiable claims, or specific/discounted pricing. Also 2.5.19 split out of 2.3.1. <https://developer.apple.com/app-store/review/guidelines/>, <https://developer.apple.com/news/>
+  - fastlane 2.241.1 (Oct 15): deliver adds iPhone Duo screenshot sizes (#30444); snapshot adds iPhone 18 Pro/Pro Max device names (#30443). <https://github.com/fastlane/fastlane/releases>
+  - Screenshot spec page: Duo sizes unchanged (1398x2034 outer, 2007x2853 inner); required from April 2027 for apps built with iOS 27.1 SDK or later. <https://developer.apple.com/help/app-store-connect/reference/screenshot-specifications/>
+- **Published:** none
+- **Updated:** `app-store-creative-assets` (added 2.3.14 paragraph; dateModified 2026-10-19 in blog.ts and all 10 locales)
+- **Watching:**
+  - iPhone Duo ships Oct 23; App Store Connect Duo uploads — posts say not accepted yet; re-check and correct `app-store-screenshot-sizes`, `device-mockup-generator-app-screenshots`, `iphone-duo-app-store-screenshots` once live.
+  - fastlane Duo support (deliver now has sizes; frameit frames still absent) — consider a mention in fastlane guides.
+  - Asset Library / product page headers going live ("this fall").
+  - April 2027 iOS 27 SDK floor and Duo screenshot requirement.

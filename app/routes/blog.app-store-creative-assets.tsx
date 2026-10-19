@@ -239,6 +239,19 @@ export default function BlogPost() {
         and the Apple Advertising Policies as the enforcement backing.
       </p>
       <p>
+        That backing is now explicit. The{" "}
+        <a href="https://developer.apple.com/app-store/review/guidelines/#accurate-metadata">
+          October 16, 2026 App Review Guidelines update
+        </a>{" "}
+        added guideline 2.3.14, which says creative assets must pertain to your app&rsquo;s
+        content and functionality or overarching brand, follow standard metadata
+        guidelines, and be appropriate for all audiences. They must not include
+        inappropriate content, references to other apps with an intent to mislead,
+        unverifiable product claims, or specific or discounted pricing information. It
+        applies to the product page header and search results placements, so the pricing
+        and claims rules above are now review criteria, not just best-practice advice.
+      </p>
+      <p>
         If you have a listing live right now, re-reading your screenshots against that
         list is a ten-minute job with a real chance of catching something. Our guide to{" "}
         <a href="/blog/app-store-screenshots-rejected-fix">

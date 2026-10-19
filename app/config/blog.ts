@@ -72,7 +72,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Apple is adding product page headers, search result assets and an Asset Library to the App Store. What's confirmed, and what it changes for your screenshots.",
     date: "2026-09-27",
-    dateModified: "2026-10-12",
+    dateModified: "2026-10-19",
     readTime: "10 min read",
     category: "Guide",
     keywords: [
