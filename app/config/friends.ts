@@ -21,11 +21,12 @@ export type FriendApp = {
   /** The App Store subtitle, or a one-line descriptor of our own. */
   subtitle: string;
   developer: string;
-  storeUrl: string;
+  /** Absent for web apps; `websiteUrl` then becomes the primary link. */
+  storeUrl?: string;
   websiteUrl?: string;
-  /** Raw averageUserRating from the store; rendered with toFixed(1). */
-  rating: number;
-  ratingCount: number;
+  /** Raw averageUserRating from the store; rendered with toFixed(1). Store apps only. */
+  rating?: number;
+  ratingCount?: number;
   /** Two to four sentences, written by us, about what the app actually does. */
   description: string;
 };
@@ -56,7 +57,8 @@ export function friendIconPath(app: FriendApp): string {
  * the campaign provider for OUR app, and has no business on someone else's
  * listing.
  */
-export function friendStoreUrl(app: FriendApp): string {
+export function friendStoreUrl(app: FriendApp): string | undefined {
+  if (!app.storeUrl) return undefined;
   const url = new URL(app.storeUrl);
   url.searchParams.set("ct", APP_STORE_CAMPAIGN);
   url.searchParams.set("mt", "8");
@@ -180,5 +182,14 @@ export const FRIEND_APPS: FriendApp[] = [
     ratingCount: 5,
     description:
       "A habit tracker, to-do list and focus timer that share one score, so a finished task, a checked habit and half an hour of deep work all count toward the same XP and the same year grid. Habits take flexible schedules and let you skip a planned day off without losing the streak; tasks parse plain language like \"call dentist tomorrow at 3pm\". The gamification is the point — 100 levels, badges, monthly leaderboards — and there's a web app and an Android app on the same account. Generous free plan, Pro for unlimited habits and tasks.",
+  },
+  {
+    slug: "kulmanlab",
+    name: "Kulman Lab",
+    subtitle: "Free 2D CAD and DXF editor in the browser",
+    developer: "Volodymyr",
+    websiteUrl: "https://kulmanlab.com",
+    description:
+      "For the DXF that needs three lines moved before it goes to the laser cutter, without installing a desktop CAD suite to do it. It runs in the browser with a command terminal, snapping, layers, dimensions, grip editing and paper-space layouts, and reads and writes standard DXF, so files go back to LibreCAD, FreeCAD or whatever runs your machine. Nothing is uploaded — drawings stay on your computer, and it works offline. Free, no account, built by one civil engineer turned developer.",
   },
 ];

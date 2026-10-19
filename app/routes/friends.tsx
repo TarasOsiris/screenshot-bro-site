@@ -31,7 +31,7 @@ import {
 const PAGE_PATH = "/friends";
 const TITLE = `Friends — ${SITE_NAME}`;
 const DESCRIPTION =
-  "Indie Mac, iPad and iPhone apps built by developers we know. No affiliate links, no paid placements — we just think they're good.";
+  "Indie apps for Mac, iPad, iPhone and the web, built by developers we know. No affiliate links, no paid placements — we just think they're good.";
 
 export const meta: Route.MetaFunction = ({ matches }) =>
   mergeMeta(matches, [
@@ -89,6 +89,7 @@ function useFriendLinkTracking() {
 }
 
 function FriendCard({ app }: { app: FriendApp }) {
+  const storeHref = friendStoreUrl(app);
   const websiteHref = friendWebsiteUrl(app);
 
   return (
@@ -117,38 +118,42 @@ function FriendCard({ app }: { app: FriendApp }) {
             by {app.developer}
           </p>
 
-          <p className="mt-2 flex items-center gap-2 text-sm text-ink/55">
-            <span className="text-warm">
-              <StarGlyph />
-            </span>
-            <span className="font-medium text-ink/80">
-              {app.rating.toFixed(1)}
-            </span>
-            <span aria-hidden="true" className="text-ink/25">
-              ·
-            </span>
-            {app.ratingCount} ratings
-          </p>
+          {app.rating !== undefined ? (
+            <p className="mt-2 flex items-center gap-2 text-sm text-ink/55">
+              <span className="text-warm">
+                <StarGlyph />
+              </span>
+              <span className="font-medium text-ink/80">
+                {app.rating.toFixed(1)}
+              </span>
+              <span aria-hidden="true" className="text-ink/25">
+                ·
+              </span>
+              {app.ratingCount} ratings
+            </p>
+          ) : null}
 
           <p className="mt-4 text-sm text-ink/60 leading-relaxed">
             {app.description}
           </p>
 
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
-            <a
-              href={friendStoreUrl(app)}
-              data-friend={app.slug}
-              data-destination="app-store"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={buttonClass("primary", "md")}
-            >
-              <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
-              App Store
-              <span aria-hidden="true" className="opacity-60">
-                ↗
-              </span>
-            </a>
+            {storeHref ? (
+              <a
+                href={storeHref}
+                data-friend={app.slug}
+                data-destination="app-store"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={buttonClass("primary", "md")}
+              >
+                <AppleLogo className="opacity-80 group-hover:opacity-100 transition-opacity" />
+                App Store
+                <span aria-hidden="true" className="opacity-60">
+                  ↗
+                </span>
+              </a>
+            ) : null}
             {websiteHref ? (
               <a
                 href={websiteHref}
@@ -156,7 +161,11 @@ function FriendCard({ app }: { app: FriendApp }) {
                 data-destination="website"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={buttonClass("secondary", "md", "font-medium")}
+                className={
+                  storeHref
+                    ? buttonClass("secondary", "md", "font-medium")
+                    : buttonClass("primary", "md")
+                }
               >
                 Website
                 <span aria-hidden="true" className="opacity-60">
@@ -189,16 +198,18 @@ export default function Friends() {
         "@type": "SoftwareApplication",
         name: app.name,
         description: app.description,
-        applicationCategory: "MobileApplication",
-        operatingSystem: "iOS",
+        applicationCategory: app.storeUrl ? "MobileApplication" : "WebApplication",
+        operatingSystem: app.storeUrl ? "iOS" : "Web browser",
         image: `${SITE_URL}${friendIconPath(app)}`,
-        url: app.storeUrl,
+        url: app.storeUrl ?? app.websiteUrl,
         author: { "@type": "Person", name: app.developer },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: app.rating.toFixed(1),
-          ratingCount: app.ratingCount,
-        },
+        ...(app.rating !== undefined && {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: app.rating.toFixed(1),
+            ratingCount: app.ratingCount,
+          },
+        }),
       },
     })),
   });
@@ -230,7 +241,7 @@ export default function Friends() {
 
         <div className="flex flex-col gap-6">
           {FRIEND_APPS.map((app) => (
-            <FriendCard key={app.storeUrl} app={app} />
+            <FriendCard key={app.slug} app={app} />
           ))}
         </div>
 
