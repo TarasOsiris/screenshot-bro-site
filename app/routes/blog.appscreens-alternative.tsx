@@ -128,7 +128,7 @@ export default function BlogPost() {
       <h2>Why People Look for an Alternative</h2>
       <ul>
         <li>
-          They want a <strong>native Mac or iPad app</strong> — faster canvas
+          They want a <strong>native Mac, iPad or iPhone app</strong> — faster canvas
           work, offline editing, and normal files instead of a cloud account.
         </li>
         <li>
@@ -166,7 +166,7 @@ export default function BlogPost() {
         Choose <strong>AppScreens</strong> if you want machine translation into
         every market you ship to, want the widest storefront coverage, or need a tool that runs on
         any operating system. Choose <strong>Screenshot Bro</strong> if you work
-        on a Mac or iPad, want a real editor with multi-row layouts and no
+        on a Mac, iPad or iPhone, want a real editor with multi-row layouts and no
         watermark on the free tier, and prefer project files you own. For the
         wider field, see the{" "}
         <a href="/blog/best-app-store-screenshot-tools-for-mac">

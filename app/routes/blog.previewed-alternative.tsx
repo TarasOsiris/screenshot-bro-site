@@ -124,7 +124,7 @@ export default function BlogPost() {
       <h2>Why People Look for an Alternative</h2>
       <ul>
         <li>
-          They want a <strong>native Mac or iPad app</strong>, not a browser
+          They want a <strong>native Mac, iPad or iPhone app</strong>, not a browser
           tool.
         </li>
         <li>

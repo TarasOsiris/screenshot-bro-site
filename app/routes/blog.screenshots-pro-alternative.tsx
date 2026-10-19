@@ -127,7 +127,7 @@ export default function BlogPost() {
       <h2>Why People Look for an Alternative</h2>
       <ul>
         <li>
-          They want a <strong>native Mac or iPad app</strong> that works offline
+          They want a <strong>native Mac, iPad or iPhone app</strong> that works offline
           and keeps project files locally rather than in an account.
         </li>
         <li>
@@ -166,7 +166,7 @@ export default function BlogPost() {
         by a script, if you need 3D angles, or if your team works across
         operating systems in a shared cloud project. Choose{" "}
         <strong>Screenshot Bro</strong> if you design screenshots by hand on a
-        Mac or iPad, want a watermark-free free tier, and want the finished set
+        Mac, iPad or iPhone, want a watermark-free free tier, and want the finished set
         pushed to App Store Connect from the same app. If you are weighing
         automation more broadly, read{" "}
         <a href="/vs/fastlane-snapshot">Fastlane snapshot vs Screenshot Bro</a>.

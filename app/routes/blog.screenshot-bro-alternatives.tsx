@@ -100,7 +100,7 @@ export default function BlogPost() {
         {
           question: "When is Screenshot Bro the right choice?",
           answer:
-            "When you work on a Mac or iPad, ship iPhone, iPad, Mac, or Android listings, want the whole set on one zoomable canvas with per-locale overrides, and want to export watermark-free before paying anything. Direct App Store Connect upload and iCloud sync come with Pro.",
+            "When you work on a Mac, iPad or iPhone, ship iPhone, iPad, Mac, or Android listings, want the whole set on one zoomable canvas with per-locale overrides, and want to export watermark-free before paying anything. Direct App Store Connect upload and iCloud sync come with Pro.",
         },
       ]}
     >
@@ -218,7 +218,7 @@ export default function BlogPost() {
 
       <h2>And When It Is The Right Tool</h2>
       <p>
-        Screenshot Bro fits when you work on a Mac or iPad and the listing
+        Screenshot Bro fits when you work on a Mac, iPad or iPhone and the listing
         repeats: one continuous canvas holding every device size, row, and
         locale; device frames for iPhone, iPad, Mac, and Android; 81 language
         presets with on-device auto-translate and per-shape overrides; batch

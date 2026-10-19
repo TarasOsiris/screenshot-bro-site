@@ -125,7 +125,7 @@ export default function BlogPost() {
       <h2>Why People Look for an Alternative</h2>
       <ul>
         <li>
-          They prefer a <strong>native Mac or iPad app</strong> over a browser
+          They prefer a <strong>native Mac, iPad or iPhone app</strong> over a browser
           tool — for speed, offline use, and file/iCloud integration.
         </li>
         <li>

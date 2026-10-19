@@ -953,7 +953,7 @@ function ContentEn({ blocks }: { blocks: any }) {
           only behind a feature flag your test target cannot reach.
         </li>
         <li>
-          You are a solo dev who would rather design once in a Mac or iPad app
+          You are a solo dev who would rather design once in a Mac, iPad or iPhone app
           and click <strong>Upload</strong>. The Ruby toolchain plus XCUITest
           plus Xcode-version pinning is real maintenance overhead.
         </li>

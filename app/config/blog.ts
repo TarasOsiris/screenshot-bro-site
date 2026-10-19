@@ -178,7 +178,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "An honest list of Screenshot Bro alternatives from its own maker: which tool to use for Windows, Apple Watch, CI automation, 80+ languages or video.",
     date: "2026-08-17",
-    dateModified: "2026-08-20",
+    dateModified: "2026-10-19",
     readTime: "7 min read",
     category: "Comparison",
     keywords: [
@@ -196,7 +196,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Looking for an AppScreens alternative? How Screenshot Bro compares: native Mac app, watermark-free exports, 81 locales, direct store upload.",
     date: "2026-08-17",
-    dateModified: "2026-08-20",
+    dateModified: "2026-10-19",
     readTime: "6 min read",
     category: "Comparison",
     keywords: [
@@ -214,7 +214,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Looking for a Screenshots Pro alternative? How Screenshot Bro compares: native editing, localization and direct App Store Connect upload, not an API.",
     date: "2026-08-17",
-    dateModified: "2026-08-20",
+    dateModified: "2026-10-19",
     readTime: "6 min read",
     category: "Comparison",
     keywords: [
@@ -340,7 +340,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Looking for an AppLaunchpad alternative? How Screenshot Bro compares: native Mac app, device frames, localization, direct App Store Connect upload.",
     date: "2026-06-18",
-    dateModified: "2026-10-05",
+    dateModified: "2026-10-19",
     readTime: "6 min read",
     category: "Comparison",
     keywords: [
@@ -358,7 +358,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "Looking for a Previewed alternative? How Screenshot Bro compares: store-ready screenshots at exact sizes, localization and direct App Store Connect upload.",
     date: "2026-06-18",
-    dateModified: "2026-08-20",
+    dateModified: "2026-10-19",
     readTime: "6 min read",
     category: "Comparison",
     keywords: [
@@ -1035,7 +1035,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "End-to-end fastlane screenshot pipeline for iOS in 2026: snapshot, frameit, and deliver — with Fastfile, Deliverfile, and a GitHub Actions workflow.",
     date: "2026-04-30",
-    dateModified: "2026-09-26",
+    dateModified: "2026-10-19",
     readTime: "15 min read",
     category: "Guide",
   },
