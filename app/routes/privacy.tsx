@@ -87,7 +87,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
   ]);
 };
 
-export const EFFECTIVE_DATE = "October 16, 2026";
+export const EFFECTIVE_DATE = "October 22, 2026";
 const DEVELOPER_NAME = "Nineva Studios";
 const DEVELOPER_EMAIL = "tleskiv@ninevastudios.com";
 
@@ -491,7 +491,7 @@ export default function Privacy() {
               <code>settings</code>, <code>help</code>,{" "}
               <code>onboarding</code>, <code>paywall</code>,{" "}
               <code>purchase_celebration</code>,{" "}
-              <code>developer_rating</code>,{" "}
+              <code>developer_rating</code> (versions before 4.25),{" "}
               <code>export_destination</code>, <code>showcase_export</code>,{" "}
               <code>asc_upload</code>, <code>asc_metadata</code>,{" "}
               <code>asc_experiment_upload</code> (only if you turn on the A/B
@@ -530,7 +530,11 @@ export default function Privacy() {
             <li>
               <code>developer_rating_shown</code>,{" "}
               <code>developer_rating_dismissed</code>,{" "}
-              <code>developer_rating_accepted</code>
+              <code>developer_rating_accepted</code> (versions before 4.25),{" "}
+              <code>review_prompt_requested</code> (when the App asks Apple to
+              show its standard rating prompt, with what triggered it and how
+              many exports or uploads you have completed),{" "}
+              <code>rate_app_tapped</code> (whether from the menu or Settings)
             </li>
             <li>
               <code>testflight_graduation_shown</code>,{" "}
