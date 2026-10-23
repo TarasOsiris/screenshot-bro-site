@@ -4,6 +4,15 @@
         <title>Screenshot Bro</title>
         <link>https://screenshotbro.app</link>
         <item>
+            <title>4.25</title>
+            <pubDate>Fri, 23 Oct 2026 19:58:54 +0300</pubDate>
+            <link>https://screenshotbro.app</link>
+            <sparkle:version>166</sparkle:version>
+            <sparkle:shortVersionString>4.25</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://downloads.screenshotbro.app/ScreenshotBro-4.25-166.dmg" length="55801572" type="application/octet-stream" sparkle:edSignature="FQk5m0rVGoeoH1GueqtUPivbC+JQ22nbzEc+OlDVn2Y8UI1oLzbGPGwT2/v1pKZEjF7tYT64+eRJ3wybgqDAAQ=="/>
+        </item>
+        <item>
             <title>4.24</title>
             <pubDate>Wed, 21 Oct 2026 10:29:05 +0300</pubDate>
             <link>https://screenshotbro.app</link>
@@ -20,15 +29,6 @@
             <sparkle:shortVersionString>4.23</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
             <enclosure url="https://downloads.screenshotbro.app/ScreenshotBro-4.23-164.dmg" length="55673287" type="application/octet-stream" sparkle:edSignature="GsDiNfwVCuCqRQzWegDDYTn+C3haK8+VrS5bL9whOE6Z40yRcT42nPqePiuDzBBSKes0JS0xHURoWfTSuD11DA=="/>
-        </item>
-        <item>
-            <title>4.23</title>
-            <pubDate>Mon, 12 Oct 2026 13:51:37 +0300</pubDate>
-            <link>https://screenshotbro.app</link>
-            <sparkle:version>163</sparkle:version>
-            <sparkle:shortVersionString>4.23</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://downloads.screenshotbro.app/ScreenshotBro-4.23-163.dmg" length="55459988" type="application/octet-stream" sparkle:edSignature="UTkXMFM1ax0GLz6FjDu7Ykrr0PY2mjG+jvxdUlyxg5GcIGMhFfi98r6o3qHAiTkI5BourdbZGHK23HK3n0vCAQ=="/>
         </item>
     </channel>
 </rss>
