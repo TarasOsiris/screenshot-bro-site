@@ -159,7 +159,7 @@ function ContentEn() {
         </tbody>
       </table>
       <p>
-        iPhone 18 Pro and 18 Pro Max use the same resolutions as the 17 Pro and 17 Pro Max, so an existing 6.3&quot; or 6.9&quot; set already covers them. iPhone Duo is the exception: Apple lists a separate screenshot size for each of its two screens (landscape versions of both are accepted), but App Store Connect does not take Duo uploads yet. Apple says support is coming later in 2026, so until then the 6.9&quot; set is still the one to get right.
+        iPhone 18 Pro and 18 Pro Max use the same resolutions as the 17 Pro and 17 Pro Max, so an existing 6.3&quot; or 6.9&quot; set already covers them. iPhone Duo is the exception: Apple lists a separate screenshot size for each of its two screens (landscape versions of both are accepted), and App Store Connect now has an iPhone Duo display type. Duo screenshots become required in April 2027 for apps built with the iOS 27.1 SDK or later, so for now the 6.9&quot; set is still the one to get right.
       </p>
 
       <h2>iPad Screenshots</h2>
@@ -340,7 +340,7 @@ function ContentEs() {
         </tbody>
       </table>
       <p>
-        El iPhone 18 Pro y el 18 Pro Max usan las mismas resoluciones que el 17 Pro y el 17 Pro Max, así que un set de 6.3&quot; o 6.9&quot; que ya tengas los cubre. El iPhone Duo es la excepción: Apple indica un tamaño de captura distinto para cada una de sus dos pantallas (también acepta ambas en horizontal), pero App Store Connect todavía no admite subidas para el Duo. Apple dice que el soporte llegará más adelante en 2026, así que hasta entonces el set de 6.9&quot; sigue siendo el que hay que cuidar.
+        El iPhone 18 Pro y el 18 Pro Max usan las mismas resoluciones que el 17 Pro y el 17 Pro Max, así que un set de 6.3&quot; o 6.9&quot; que ya tengas los cubre. El iPhone Duo es la excepción: Apple indica un tamaño de captura distinto para cada una de sus dos pantallas (también acepta ambas en horizontal), y App Store Connect ya tiene un tipo de pantalla para el iPhone Duo. Las capturas del Duo serán obligatorias en abril de 2027 para apps compiladas con el SDK de iOS 27.1 o posterior; por ahora, el set de 6.9&quot; sigue siendo el que hay que cuidar.
       </p>
 
       <h2>Capturas de pantalla de iPad</h2>
@@ -519,7 +519,7 @@ function ContentZh() {
         </tbody>
       </table>
       <p>
-        iPhone 18 Pro 和 18 Pro Max 的分辨率与 17 Pro 和 17 Pro Max 相同，因此现有的 6.3&quot; 或 6.9&quot; 截图集已经适用。iPhone Duo 是例外：Apple 为它的两块屏幕分别列出了独立的截图尺寸（两者也都接受横屏版本），但 App Store Connect 目前还不支持上传 Duo 截图。Apple 表示将在 2026 年晚些时候提供支持，在此之前，6.9&quot; 截图集仍然是重点。
+        iPhone 18 Pro 和 18 Pro Max 的分辨率与 17 Pro 和 17 Pro Max 相同，因此现有的 6.3&quot; 或 6.9&quot; 截图集已经适用。iPhone Duo 是例外：Apple 为它的两块屏幕分别列出了独立的截图尺寸（两者也都接受横屏版本），而且 App Store Connect 现在已有 iPhone Duo 显示类型。自 2027 年 4 月起，使用 iOS 27.1 SDK 或更高版本构建的 App 必须提供 Duo 截图；在此之前，6.9&quot; 截图集仍然是重点。
       </p>
 
       <h2>iPad 屏幕截图</h2>
@@ -693,7 +693,7 @@ function ContentHi() {
         </tbody>
       </table>
       <p>
-        iPhone 18 Pro और 18 Pro Max, 17 Pro और 17 Pro Max वाले ही रिज़ॉल्यूशन इस्तेमाल करते हैं, इसलिए आपका मौजूदा 6.3&quot; या 6.9&quot; सेट इन्हें पहले से कवर करता है। iPhone Duo अपवाद है: Apple इसकी दोनों स्क्रीन के लिए अलग-अलग स्क्रीनशॉट आकार बताता है (दोनों के लैंडस्केप संस्करण भी स्वीकार होते हैं), लेकिन App Store Connect अभी Duo के लिए अपलोड नहीं लेता। Apple के अनुसार यह सुविधा 2026 में आगे चलकर आएगी, इसलिए तब तक 6.9&quot; सेट को सही रखना ही सबसे ज़रूरी है।
+        iPhone 18 Pro और 18 Pro Max, 17 Pro और 17 Pro Max वाले ही रिज़ॉल्यूशन इस्तेमाल करते हैं, इसलिए आपका मौजूदा 6.3&quot; या 6.9&quot; सेट इन्हें पहले से कवर करता है। iPhone Duo अपवाद है: Apple इसकी दोनों स्क्रीन के लिए अलग-अलग स्क्रीनशॉट आकार बताता है (दोनों के लैंडस्केप संस्करण भी स्वीकार होते हैं), और App Store Connect में अब iPhone Duo डिस्प्ले टाइप मौजूद है। iOS 27.1 SDK या उसके बाद से बने ऐप्स के लिए अप्रैल 2027 से Duo स्क्रीनशॉट अनिवार्य होंगे; फिलहाल 6.9&quot; सेट को सही रखना ही सबसे ज़रूरी है।
       </p>
 
       <h2>iPad स्क्रीनशॉट</h2>
@@ -870,7 +870,7 @@ function ContentFr() {
         </tbody>
       </table>
       <p>
-        Les iPhone 18 Pro et 18 Pro Max utilisent les mêmes résolutions que les 17 Pro et 17 Pro Max : un lot 6.3&quot; ou 6.9&quot; existant les couvre déjà. L&apos;iPhone Duo fait exception : Apple indique une taille de capture distincte pour chacun de ses deux écrans (les versions paysage sont aussi acceptées), mais App Store Connect n&apos;accepte pas encore les envois pour le Duo. Apple annonce une prise en charge plus tard en 2026 ; d&apos;ici là, c&apos;est toujours le lot 6.9&quot; qu&apos;il faut soigner.
+        Les iPhone 18 Pro et 18 Pro Max utilisent les mêmes résolutions que les 17 Pro et 17 Pro Max : un lot 6.3&quot; ou 6.9&quot; existant les couvre déjà. L&apos;iPhone Duo fait exception : Apple indique une taille de capture distincte pour chacun de ses deux écrans (les versions paysage sont aussi acceptées), et App Store Connect propose désormais un type d&apos;écran iPhone Duo. Les captures Duo seront obligatoires en avril 2027 pour les apps compilées avec le SDK iOS 27.1 ou ultérieur ; pour l&apos;instant, c&apos;est toujours le lot 6.9&quot; qu&apos;il faut soigner.
       </p>
 
       <h2>Captures d&apos;écran iPad</h2>
@@ -1048,7 +1048,7 @@ function ContentAr() {
         </tbody>
       </table>
       <p>
-        يستخدم iPhone 18 Pro و18 Pro Max نفس دقة 17 Pro و17 Pro Max، لذا فإن مجموعتك الحالية بمقاس 6.3&quot; أو 6.9&quot; تغطيهما بالفعل. أما iPhone Duo فهو الاستثناء: تحدد Apple مقاسًا مستقلًا للقطات الشاشة لكل شاشة من شاشتيه (وتقبل النسخ الأفقية لكلتيهما)، لكن App Store Connect لا يقبل رفع لقطات Duo بعد. تقول Apple إن الدعم سيتوفر لاحقًا في 2026، وحتى ذلك الحين تبقى مجموعة 6.9&quot; هي الأهم.
+        يستخدم iPhone 18 Pro و18 Pro Max نفس دقة 17 Pro و17 Pro Max، لذا فإن مجموعتك الحالية بمقاس 6.3&quot; أو 6.9&quot; تغطيهما بالفعل. أما iPhone Duo فهو الاستثناء: تحدد Apple مقاسًا مستقلًا للقطات الشاشة لكل شاشة من شاشتيه (وتقبل النسخ الأفقية لكلتيهما)، وأصبح لدى App Store Connect الآن نوع عرض لـ iPhone Duo. ستصبح لقطات Duo إلزامية في أبريل 2027 للتطبيقات المبنية بـ iOS 27.1 SDK أو أحدث، وحتى ذلك الحين تبقى مجموعة 6.9&quot; هي الأهم.
       </p>
 
       <h2>لقطات شاشة iPad</h2>
@@ -1222,7 +1222,7 @@ function ContentDe() {
         </tbody>
       </table>
       <p>
-        iPhone 18 Pro und 18 Pro Max nutzen dieselben Auflösungen wie 17 Pro und 17 Pro Max – ein vorhandenes 6.3&quot;- oder 6.9&quot;-Set deckt sie also bereits ab. Das iPhone Duo ist die Ausnahme: Apple nennt für jeden seiner beiden Bildschirme eine eigene Screenshot-Größe (jeweils auch im Querformat), doch App Store Connect nimmt noch keine Duo-Uploads an. Laut Apple folgt die Unterstützung später im Jahr 2026 – bis dahin bleibt das 6.9&quot;-Set das entscheidende.
+        iPhone 18 Pro und 18 Pro Max nutzen dieselben Auflösungen wie 17 Pro und 17 Pro Max – ein vorhandenes 6.3&quot;- oder 6.9&quot;-Set deckt sie also bereits ab. Das iPhone Duo ist die Ausnahme: Apple nennt für jeden seiner beiden Bildschirme eine eigene Screenshot-Größe (jeweils auch im Querformat), und App Store Connect kennt inzwischen einen Duo-Anzeigetyp. Duo-Screenshots werden ab April 2027 für Apps Pflicht, die mit dem iOS-27.1-SDK oder neuer gebaut sind – bis dahin bleibt das 6.9&quot;-Set das entscheidende.
       </p>
 
       <h2>iPad-Screenshots</h2>
@@ -1397,7 +1397,7 @@ function ContentJa() {
         </tbody>
       </table>
       <p>
-        iPhone 18 Proと18 Pro Maxの解像度は17 Proと17 Pro Maxと同じなので、既存の6.3&quot;または6.9&quot;のセットでそのまま対応できます。例外はiPhone Duoです。Appleは2つの画面それぞれに専用のスクリーンショットサイズを定めていますが（どちらも横向きも可）、App Store ConnectはまだDuo向けのアップロードを受け付けていません。Appleによると対応は2026年中に始まる予定なので、それまでは6.9&quot;のセットを整えることが最優先です。
+        iPhone 18 Proと18 Pro Maxの解像度は17 Proと17 Pro Maxと同じなので、既存の6.3&quot;または6.9&quot;のセットでそのまま対応できます。例外はiPhone Duoです。Appleは2つの画面それぞれに専用のスクリーンショットサイズを定めていますが（どちらも横向きも可）、App Store Connectにはすでに iPhone Duo のディスプレイタイプがあります。iOS 27.1 SDK以降でビルドしたアプリでは2027年4月からDuoのスクリーンショットが必須になるため、当面は6.9&quot;のセットを整えることが最優先です。
       </p>
 
       <h2>iPadのスクリーンショット</h2>
@@ -1571,7 +1571,7 @@ function ContentPt() {
         </tbody>
       </table>
       <p>
-        O iPhone 18 Pro e o 18 Pro Max usam as mesmas resoluções do 17 Pro e do 17 Pro Max, então um conjunto de 6.3&quot; ou 6.9&quot; que você já tenha os cobre. O iPhone Duo é a exceção: a Apple lista um tamanho de captura próprio para cada uma das duas telas (as versões em paisagem também são aceitas), mas o App Store Connect ainda não aceita envios para o Duo. A Apple diz que o suporte chega ainda em 2026; até lá, o conjunto de 6.9&quot; continua sendo o que mais importa.
+        O iPhone 18 Pro e o 18 Pro Max usam as mesmas resoluções do 17 Pro e do 17 Pro Max, então um conjunto de 6.3&quot; ou 6.9&quot; que você já tenha os cobre. O iPhone Duo é a exceção: a Apple lista um tamanho de captura próprio para cada uma das duas telas (as versões em paisagem também são aceitas), e o App Store Connect agora tem um tipo de tela para o iPhone Duo. As capturas do Duo serão obrigatórias em abril de 2027 para apps criados com o SDK do iOS 27.1 ou posterior; por ora, o conjunto de 6.9&quot; continua sendo o que mais importa.
       </p>
 
       <h2>Capturas de Tela do iPad</h2>
@@ -1750,7 +1750,7 @@ function ContentIt() {
         </tbody>
       </table>
       <p>
-        iPhone 18 Pro e 18 Pro Max usano le stesse risoluzioni di 17 Pro e 17 Pro Max, quindi un set da 6.3&quot; o 6.9&quot; già pronto li copre. L&apos;eccezione è iPhone Duo: Apple indica una dimensione di screenshot distinta per ciascuno dei suoi due schermi (accettate anche in orizzontale), ma App Store Connect non accetta ancora caricamenti per Duo. Apple dice che il supporto arriverà più avanti nel 2026; fino ad allora il set da 6.9&quot; resta quello da curare.
+        iPhone 18 Pro e 18 Pro Max usano le stesse risoluzioni di 17 Pro e 17 Pro Max, quindi un set da 6.3&quot; o 6.9&quot; già pronto li copre. L&apos;eccezione è iPhone Duo: Apple indica una dimensione di screenshot distinta per ciascuno dei suoi due schermi (accettate anche in orizzontale), e App Store Connect ora ha un tipo di display iPhone Duo. Gli screenshot Duo diventeranno obbligatori da aprile 2027 per le app create con l&apos;SDK iOS 27.1 o successivo; per ora il set da 6.9&quot; resta quello da curare.
       </p>
 
       <h2>Screenshot per iPad</h2>
@@ -1926,7 +1926,7 @@ function ContentKo() {
         </tbody>
       </table>
       <p>
-        iPhone 18 Pro와 18 Pro Max는 17 Pro 및 17 Pro Max와 해상도가 같으므로 기존 6.3&quot; 또는 6.9&quot; 세트로 그대로 대응할 수 있습니다. 예외는 iPhone Duo입니다. Apple은 두 화면 각각에 별도의 스크린샷 크기를 지정했지만(둘 다 가로 방향도 허용), App Store Connect는 아직 Duo용 업로드를 받지 않습니다. Apple에 따르면 지원은 2026년 중에 제공될 예정이므로, 그때까지는 6.9&quot; 세트를 제대로 준비하는 것이 가장 중요합니다.
+        iPhone 18 Pro와 18 Pro Max는 17 Pro 및 17 Pro Max와 해상도가 같으므로 기존 6.3&quot; 또는 6.9&quot; 세트로 그대로 대응할 수 있습니다. 예외는 iPhone Duo입니다. Apple은 두 화면 각각에 별도의 스크린샷 크기를 지정했지만(둘 다 가로 방향도 허용), App Store Connect에는 이제 iPhone Duo 디스플레이 유형이 있습니다. iOS 27.1 SDK 이상으로 빌드한 앱은 2027년 4월부터 Duo 스크린샷이 필수이므로, 당분간은 6.9&quot; 세트를 제대로 준비하는 것이 가장 중요합니다.
       </p>
 
       <h2>iPad 스크린샷</h2>

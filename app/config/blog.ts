@@ -652,7 +652,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "How to wrap app screenshots in realistic device frames — iPhone, iPad, MacBook, and Android — plus free frame sources and export tips.",
     date: "2026-06-18",
-    dateModified: "2026-09-15",
+    dateModified: "2026-10-26",
     readTime: "9 min read",
     category: "Guide",
     keywords: [
@@ -1065,7 +1065,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       "A complete reference of accepted screenshot dimensions for iPhone, iPad, Mac, Apple Watch, Apple TV, and Apple Vision Pro.",
     date: "2026-04-08",
-    dateModified: "2026-09-27",
+    dateModified: "2026-10-26",
     readTime: "5 min read",
     category: "Reference",
   },

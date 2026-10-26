@@ -15,7 +15,7 @@ const FRAME_CATALOG = [
   {
     device: "iPhone foldable",
     models: "iPhone Duo: open, closed, and open seen from the back",
-    use: "Launch posts, marketing sites, and Duo screenshots once App Store Connect accepts them.",
+    use: "Launch posts, marketing sites, and Duo screenshots for App Store Connect.",
   },
   {
     device: "iPad",
@@ -90,7 +90,7 @@ export default function BlogPost() {
         {
           question: "Is there an iPhone Duo mockup frame?",
           answer:
-            "Yes. An iPhone Duo mockup needs three views: the open phone with its inner display, the closed phone with its cover screen, and the open phone seen from the back. Screenshot Bro includes all three in Night Sky and Star White, alongside iPhone 18 Pro and 18 Pro Max frames. App Store Connect lists Duo screenshot sizes but does not accept Duo uploads yet, so for now Duo mockups are mostly for launch posts and marketing sites.",
+            "Yes. An iPhone Duo mockup needs three views: the open phone with its inner display, the closed phone with its cover screen, and the open phone seen from the back. Screenshot Bro includes all three in Night Sky and Star White, alongside iPhone 18 Pro and 18 Pro Max frames. App Store Connect now has an iPhone Duo display type, and Duo screenshots become required in April 2027 for apps built with the iOS 27.1 SDK or later. Duo mockups are still useful for launch posts and marketing sites.",
         },
         {
           question: "What resolution should a framed mockup be?",
@@ -222,10 +222,11 @@ export default function BlogPost() {
           screenshot specifications
         </a>{" "}
         already list Duo sizes, 1398 × 2034 for the outer display and
-        2007 × 2853 for the inner display, but App Store Connect will only
-        accept Duo uploads later in 2026 (checked September 15, 2026). Until
-        then, Duo mockups belong on your website, in launch posts, and in
-        press kits. Screenshot Bro ships the three Duo frames in Night Sky and
+        2007 × 2853 for the inner display, and App Store Connect now has an
+        iPhone Duo display type (checked October 26, 2026). Duo screenshots
+        become required in April 2027 for apps built with the iOS 27.1 SDK or
+        later. Beyond the store, Duo mockups belong on your website, in launch
+        posts, and in press kits. Screenshot Bro ships the three Duo frames in Night Sky and
         Star White, plus a Duo Showcase template that lays out all three views
         across one row. The{" "}
         <a href="/blog/iphone-duo-app-store-screenshots">

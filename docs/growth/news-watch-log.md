@@ -302,3 +302,13 @@ run missed, and it caught one item (Apple's Sep 18 iPhone Duo resources).
   - fastlane Duo support (deliver now has sizes; frameit frames still absent) — consider a mention in fastlane guides.
   - Asset Library / product page headers going live ("this fall").
   - April 2027 iOS 27 SDK floor and Duo screenshot requirement.
+
+## 2026-10-26
+- **Scanned:** developer.apple.com/news, App Store Connect release notes, screenshot specifications, fastlane releases, Google Play screenshot requirements page, web search on Duo upload status.
+- **Findings:**
+  - iPhone Duo reached customers Oct 23. Spec page lists Duo outer 1398x2034 / inner 2007x2853 with no "later this year" caveat; Duo screenshots required from April 2027 for apps built with iOS 27.1 SDK+. Contradicted `app-store-screenshot-sizes` and `device-mockup-generator-app-screenshots` ("uploads not accepted yet"). <https://developer.apple.com/help/app-store-connect/reference/screenshot-specifications/>, <https://developer.apple.com/help/app-store-connect/release-notes/>
+  - Apple news Oct 22: multiseat subscriptions; Oct 20/22 ASC: Xcode 27.2 RC uploads, TestFlight 4.4.1 Duo support, Korea age rating change. Not screenshot-relevant.
+  - fastlane: no release since 2.241.1 (Oct 15). Google Play requirements page unchanged vs. our posts (no changelog on page).
+- **Published:** none
+- **Updated:** `app-store-screenshot-sizes` (Duo paragraph, all 10 locales), `device-mockup-generator-app-screenshots` (Duo section, FAQ); dateModified 2026-10-26.
+- **Watching:** Asset Library / product page headers going live; frameit Duo frames; April 2027 Duo screenshot requirement; whether Apple publishes Duo bezel in Design Resources; Play 3,840 vs 7,680 px inconsistency.
