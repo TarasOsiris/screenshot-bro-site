@@ -97,6 +97,31 @@ type ChangelogEntry = {
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "4.25",
+    date: "October 23, 2026",
+    title: "Rating Menu Item and Text Editor Fixes",
+    changes: [
+      { type: "added", text: "Screenshot Bro ▸ Rate Screenshot Bro on the App Store… opens the App Store review page directly (App Store builds)" },
+      { type: "improved", text: "The one-time \"A quick favor?\" rating sheet is gone; the system rating prompt now appears only after a clean export or finished upload, once nothing else is on screen" },
+      { type: "fixed", text: "Typing over a selection in the inline text editor used the shape's base font and color instead of the selected text's style" },
+      { type: "fixed", text: "Lines jumped down while typing when the line height was below 1.0" },
+      { type: "fixed", text: "Rich text now respects a line height of 1.0 or more on every paragraph, and mixed baseline offsets no longer cause uneven spacing" },
+      { type: "fixed", text: "Ten incorrect translations of \"Rate on the App Store\" were corrected" },
+    ],
+  },
+  {
+    version: "4.24",
+    date: "October 21, 2026",
+    title: "iPhone Duo in MCP and a Direct Launch Hang Fix",
+    changes: [
+      { type: "improved", text: "The MCP catalog now lists the screenshot size and screen orientation of each device frame and can filter by size, so agents can find iPhone Duo frames" },
+      { type: "improved", text: "MCP project creation rows now reject an unknown device frame or malformed size instead of accepting it" },
+      { type: "fixed", text: "Resizing a device frame through MCP stretched the bezel and cropped the screenshot; frames now keep their aspect ratio" },
+      { type: "fixed", text: "MCP edits to a closed project could leave behind unused images, and two edits made at once could drop one of them" },
+      { type: "fixed", text: "The direct-download build could hang for several seconds at launch" },
+    ],
+  },
+  {
     version: "4.23",
     date: "October 15, 2026",
     title: "A Much Bigger MCP Server and an Undo Crash Fix",
