@@ -202,6 +202,6 @@ export const FRIEND_APPS: FriendApp[] = [
     rating: 5,
     ratingCount: 1,
     description:
-      "For the 6 pm stand-off with the fridge and the question of what to cook. Instead of five identical boxes of chicken and rice, you cook components — proteins, grains, vegetables, sauces — in one session of a couple of hours, then put together different balanced plates from them for the next two to five days. Each menu comes with macros, a shopping list that scales to your household and can be shared with whoever is doing the shop, and a cooking mode with photos, videos and timers for running several dishes at once; every menu is cooked in a home kitchen several times before it ships. Free to download with one meal prep free each month, and also on Android and the web.",
+      "Mealpreper Guide is a capsule meal prep app. You cook the components of a menu (grains, proteins, vegetables, sauces) in one session, then combine them into different balanced meals over the next 2 to 5 days. Each menu comes with a shopping list scaled to the number of people you cook for, a step-by-step cooking mode with timers and videos for cooking several things in parallel, and nutrition for every dish. One menu is free every month. Made by a Ukrainian team, incorporated in Estonia.",
   },
 ];
