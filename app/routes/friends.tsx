@@ -129,7 +129,7 @@ function FriendCard({ app }: { app: FriendApp }) {
               <span aria-hidden="true" className="text-ink/25">
                 ·
               </span>
-              {app.ratingCount} ratings
+              {app.ratingCount} {app.ratingCount === 1 ? "rating" : "ratings"}
             </p>
           ) : null}
 

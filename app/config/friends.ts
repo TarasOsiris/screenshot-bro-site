@@ -34,7 +34,7 @@ export type FriendApp = {
 // Ratings and review counts are copied by hand and go stale silently, so the
 // page prints the month they were last checked. Refresh with:
 //   curl -s "https://itunes.apple.com/lookup?id=<id>" | python3 -m json.tool
-export const FRIENDS_RATINGS_VERIFIED = "2026-09-01";
+export const FRIENDS_RATINGS_VERIFIED = "2026-10-30";
 
 // What our friends see in their own analytics when traffic arrives from here.
 // The App Store campaign token lands in their App Analytics → Acquisition →
@@ -83,8 +83,8 @@ export const FRIEND_APPS: FriendApp[] = [
     developer: "Vladyslav Glogus",
     storeUrl: "https://apps.apple.com/app/id6761077074",
     websiteUrl: "https://inithabits.com",
-    rating: 4.95455,
-    ratingCount: 22,
+    rating: 4.83333,
+    ratingCount: 30,
     description:
       "A habit tracker styled like the terminal you already live in — monospaced, keyboard-first, and quiet about it. Five tracking modes, routines, streaks you can shield from one bad day, and a GitHub-style contribution graph of your whole history. There's an Apple Watch app, nine widgets, a browser version, and 23 themes if Tokyo Night is your thing. Local-first, works offline, and the core is free.",
   },
@@ -96,7 +96,7 @@ export const FRIEND_APPS: FriendApp[] = [
     storeUrl: "https://apps.apple.com/app/id6760719322",
     websiteUrl: "https://chaoticgoodcreations.co/keepsake/",
     rating: 5,
-    ratingCount: 2,
+    ratingCount: 3,
     description:
       "For the shoebox of children's drawings, birthday cards and handwritten letters you can't throw away but never actually look at. Photograph them, sort them into Memory Boxes, and revisit them properly instead of leaving them in a drawer. There's no account, no feed and nothing to share — it's a private archive that syncs through your own iCloud. Free to start, with one optional subscription for unlimited keepsakes.",
   },
@@ -107,8 +107,8 @@ export const FRIEND_APPS: FriendApp[] = [
     developer: "Michal Ferak",
     storeUrl: "https://apps.apple.com/app/id6756543673",
     websiteUrl: "https://journeybot.app",
-    rating: 4.8,
-    ratingCount: 10,
+    rating: 4.83333,
+    ratingCount: 12,
     description:
       "The packing list you keep retyping in Notes before every trip, except this one knows where you're going. It builds the list from your destination, dates and activities, using the forecast for trips that are close and historical weather for the ones that aren't. Baggage Check flags the power bank in your checked bag before airport security does, and there's a currency converter, reusable templates, Siri and Shortcuts, and a widget that turns your next trip into a boarding pass. No account, syncs through your own iCloud, and the first journeys are free.",
   },
@@ -120,7 +120,7 @@ export const FRIEND_APPS: FriendApp[] = [
     storeUrl: "https://apps.apple.com/app/id6746460451",
     websiteUrl: "https://reps.siddharthnatamai.com",
     rating: 4,
-    ratingCount: 8,
+    ratingCount: 9,
     description:
       "Recovery scoring without buying a band or a ring — it reads HRV, resting heart rate, sleep and recent strain off the watch you already wear and turns them into one readiness number each morning, with a plain-English reason attached. Rex, the built-in coach, answers questions about your own training data, and the plan adapts to how recovered you actually are instead of following a fixed calendar. Logging a set takes a voice note or an NFC tap on the machine, and a muscle map shows what you've been neglecting. Free to start, with a Pro tier for unlimited coaching and full history.",
   },
@@ -143,8 +143,8 @@ export const FRIEND_APPS: FriendApp[] = [
     developer: "Lazare Kolebka",
     storeUrl: "https://apps.apple.com/app/id6757925827",
     websiteUrl: "https://getscreeny.app",
-    rating: 4.61904,
-    ratingCount: 21,
+    rating: 4.66667,
+    ratingCount: 27,
     description:
       "Drop in a screenshot or a screen recording and it comes back framed in a device, with the status bar rebuilt to a clean 9:41 and full battery — on every frame of a video, not just the first. Zoom keyframes let you punch in on the tap you actually want people to notice, so a flat screen recording turns into something worth watching. It runs on iPhone, iPad and Mac, and the Mac app ships an MCP server, so Claude Code or Cursor can frame a whole folder for you. Free to try.",
   },
@@ -179,7 +179,7 @@ export const FRIEND_APPS: FriendApp[] = [
     storeUrl: "https://apps.apple.com/app/id6760266106",
     websiteUrl: "https://loggd.life",
     rating: 5,
-    ratingCount: 5,
+    ratingCount: 6,
     description:
       "A habit tracker, to-do list and focus timer that share one score, so a finished task, a checked habit and half an hour of deep work all count toward the same XP and the same year grid. Habits take flexible schedules and let you skip a planned day off without losing the streak; tasks parse plain language like \"call dentist tomorrow at 3pm\". The gamification is the point — 100 levels, badges, monthly leaderboards — and there's a web app and an Android app on the same account. Generous free plan, Pro for unlimited habits and tasks.",
   },
@@ -191,5 +191,17 @@ export const FRIEND_APPS: FriendApp[] = [
     websiteUrl: "https://kulmanlab.com",
     description:
       "For the DXF that needs three lines moved before it goes to the laser cutter, without installing a desktop CAD suite to do it. It runs in the browser with a command terminal, snapping, layers, dimensions, grip editing and paper-space layouts, and reads and writes standard DXF, so files go back to LibreCAD, FreeCAD or whatever runs your machine. Nothing is uploaded — drawings stay on your computer, and it works offline. Free, no account, built by one civil engineer turned developer.",
+  },
+  {
+    slug: "mealpreper-guide",
+    name: "Mealpreper Guide",
+    subtitle: "Capsule meal prep plans",
+    developer: "Mealpreper Guide OÜ",
+    storeUrl: "https://apps.apple.com/app/id6743325524",
+    websiteUrl: "https://mealpreper.guide",
+    rating: 5,
+    ratingCount: 1,
+    description:
+      "For the 6 pm stand-off with the fridge and the question of what to cook. Instead of five identical boxes of chicken and rice, you cook components — proteins, grains, vegetables, sauces — in one session of a couple of hours, then put together different balanced plates from them for the next two to five days. Each menu comes with macros, a shopping list that scales to your household and can be shared with whoever is doing the shop, and a cooking mode with photos, videos and timers for running several dishes at once; every menu is cooked in a home kitchen several times before it ships. Free to download with one meal prep free each month, and also on Android and the web.",
   },
 ];
