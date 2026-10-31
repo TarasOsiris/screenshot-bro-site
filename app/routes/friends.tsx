@@ -198,8 +198,11 @@ export default function Friends() {
         "@type": "SoftwareApplication",
         name: app.name,
         description: app.description,
-        applicationCategory: app.storeUrl ? "MobileApplication" : "WebApplication",
-        operatingSystem: app.storeUrl ? "iOS" : "Web browser",
+        applicationCategory:
+          app.platform?.category ??
+          (app.storeUrl ? "MobileApplication" : "WebApplication"),
+        operatingSystem:
+          app.platform?.os ?? (app.storeUrl ? "iOS" : "Web browser"),
         image: `${SITE_URL}${friendIconPath(app)}`,
         url: app.storeUrl ?? app.websiteUrl,
         author: { "@type": "Person", name: app.developer },

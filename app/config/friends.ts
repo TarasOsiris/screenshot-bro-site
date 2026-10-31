@@ -21,9 +21,11 @@ export type FriendApp = {
   /** The App Store subtitle, or a one-line descriptor of our own. */
   subtitle: string;
   developer: string;
-  /** Absent for web apps; `websiteUrl` then becomes the primary link. */
+  /** Absent for web and direct-download apps; `websiteUrl` then becomes the primary link. */
   storeUrl?: string;
   websiteUrl?: string;
+  /** Overrides the structured-data platform otherwise inferred from `storeUrl`. */
+  platform?: { os: string; category: string };
   /** Raw averageUserRating from the store; rendered with toFixed(1). Store apps only. */
   rating?: number;
   ratingCount?: number;
@@ -44,8 +46,9 @@ const UTM_SOURCE = "screenshotbro";
 const UTM_MEDIUM = "referral";
 const UTM_CAMPAIGN = "friends";
 
-// Icons are 512×512 JPEGs downloaded from the store, never hotlinked. Deriving
-// the path from the slug means a rename can't leave a broken <img> behind.
+// Icons are 512×512 JPEGs downloaded from the store, or from the app's own site
+// when it has no listing, never hotlinked. Deriving the path from the slug
+// means a rename can't leave a broken <img> behind.
 export function friendIconPath(app: FriendApp): string {
   return `/friend-icons/${app.slug}.jpg`;
 }
@@ -203,5 +206,15 @@ export const FRIEND_APPS: FriendApp[] = [
     ratingCount: 1,
     description:
       "Mealpreper Guide is a capsule meal prep app. You cook the components of a menu (grains, proteins, vegetables, sauces) in one session, then combine them into different balanced meals over the next 2 to 5 days. Each menu comes with a shopping list scaled to the number of people you cook for, a step-by-step cooking mode with timers and videos for cooking several things in parallel, and nutrition for every dish. One menu is free every month. Made by a Ukrainian team, incorporated in Estonia.",
+  },
+  {
+    slug: "taploom",
+    name: "Taploom",
+    subtitle: "Android and iPhone demos, recorded on your Mac",
+    developer: "Danyil Kobzar",
+    websiteUrl: "https://taploom.polodarb.com",
+    platform: { os: "macOS 15 or later", category: "MultimediaApplication" },
+    description:
+      "For the app demo that used to eat an evening: scrcpy in one window, QuickTime in another, then an hour adding zooms by hand so people can see where you tapped. Plug in an Android phone and it sits in a real device frame on your Mac with touch rings and zoom that follows every tap, ready to share on a Zoom, Meet or Teams call or to record; iPhone is in beta, with taps and zoom going through iPhone Mirroring. The editor on the Mac adds captions from your voice, blurs private data and reframes one take for 16:9, 9:16 or 1:1, and a local MCP server lets Claude Code or Cursor run the whole demo for you. A 14-day trial of everything, then free for personal use with a small watermark on exports, and Pro on a plan or a one-time licence for commercial work.",
   },
 ];
