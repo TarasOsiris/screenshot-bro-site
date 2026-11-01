@@ -1,14 +1,23 @@
 ---
 name: update-changelog
-description: Bring the site's /changelog up to date with the Screenshot Bro app's shipped versions. Use when the user says "update changelog", "add the new versions to the changelog", or after a new app release has been shipped from ../screenshot-mac.
+description: Bring the site's /changelog up to date with the Screenshot Bro app's shipped versions. Use when the user says "update changelog", "add the new versions to the changelog", or after a new app release has been shipped from the screenshot-mac repo. The app's `ship` skill runs this after every ship.
 ---
 
 # Update Changelog
 
 The changelog is the `CHANGELOG` array in `app/routes/changelog.tsx`, newest first. It is
-English-only content (the page chrome is localized, the entries are not). The app lives in
-`../screenshot-mac` (`/Users/taras/repo/experiments/screenshot-mac`) and every uploaded build is
-tagged there as `v<MARKETING_VERSION>-<BUILD>` (e.g. `v4.16-138`).
+English-only content (the page chrome is localized, the entries are not). The app lives in the
+`TarasOsiris/screenshot-mac` repo, and every uploaded build is tagged there as
+`v<MARKETING_VERSION>-<BUILD>` (e.g. `v4.16-138`). Its path differs per Mac, so find it by its
+remote. `ship` sets `$MAC` already when it runs this skill:
+
+```bash
+MAC=${MAC:-$(for d in "$PWD/../screenshot-mac" "$HOME/Documents/repo/experiments/screenshot-mac" \
+  "$HOME/repo/experiments/screenshot-mac"; do
+  git -C "$d" remote get-url origin 2>/dev/null | grep -q 'TarasOsiris/screenshot-mac' && { (cd "$d" && pwd -P); break; }
+done)}
+echo "MAC=$MAC"   # must be non-empty
+```
 
 `app/routes/sitemap[.]xml.tsx` derives the changelog/docs/home `lastmod` from `CHANGELOG[0].date`
 via `parseLongDate`, so the date string format is load-bearing.
@@ -36,8 +45,8 @@ Order changes `added` → `improved` → `fixed`. Sentence case, no trailing per
 
 ```bash
 sed -n '/export const CHANGELOG/,/^  },/p' app/routes/changelog.tsx | head -8   # newest entry
-cd ../screenshot-mac
-git for-each-ref --sort=creatordate --format='%(refname:short) %(creatordate:short)' refs/tags | tail -40
+git -C "$MAC" fetch --tags origin      # a local clone can be behind what shipped from the other Mac
+git -C "$MAC" for-each-ref --sort=creatordate --format='%(refname:short) %(creatordate:short)' refs/tags | tail -40
 ```
 
 Every marketing version with a tag newer than the newest entry needs one entry. **Also re-check the
@@ -54,9 +63,8 @@ The range for version N is `<final tag of N-1>..<final tag of N>`. The shell is 
 1-indexed**, so a `tags[i-1]` loop starting at `i=1` silently drops the last range. Safer:
 
 ```bash
-cd ../screenshot-mac
-git log --reverse --format='%h %s' v4.15-136..v4.16-138
-git log -1 --format=%b <sha>        # read the body for anything ambiguous
+git -C "$MAC" log --reverse --format='%h %s' v4.15-136..v4.16-138
+git -C "$MAC" log -1 --format=%b <sha>        # read the body for anything ambiguous
 ```
 
 Read bodies, not just subjects — subjects are written for developers ("Take X off the main
@@ -108,9 +116,11 @@ Honesty rules (these pages get quoted by answer engines):
 ### 5. Verify
 
 ```bash
+npm ci
 npm run typecheck
 npm run build
 PORT=3187 npx react-router-serve build/server/index.js &
+sleep 3
 curl -s http://localhost:3187/changelog | sed 's/<!-- -->//g' | grep -o 'v[0-9.]*<' | head
 curl -s http://localhost:3187/sitemap.xml | grep -A1 '/changelog<'   # lastmod == newest entry date
 kill %1
@@ -125,7 +135,7 @@ Straight to `main` (the site deploys from it):
 
 ```bash
 git add app/routes/changelog.tsx
-git commit -m "Add changelog entries for app versions <first> through <last>"
+git commit -m "Add changelog entries for app versions <first> through <last>" -- app/routes/changelog.tsx
 git push
 ```
 
