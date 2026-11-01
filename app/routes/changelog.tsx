@@ -95,6 +95,11 @@ type ChangelogEntry = {
   changes: { type: "added" | "improved" | "fixed"; text: string }[];
 };
 
+// Entries are stored without a final period. Without one they read as cut off.
+function withPeriod(text: string) {
+  return /[.!?…]$/.test(text) ? text : `${text}.`;
+}
+
 export const CHANGELOG: ChangelogEntry[] = [
   {
     version: "4.26",
@@ -974,7 +979,7 @@ export default function Changelog() {
                           {style.label}
                         </span>
                         <span className="text-sm text-ink/[0.66] leading-relaxed">
-                          {change.text}
+                          {withPeriod(change.text)}
                         </span>
                       </li>
                     );

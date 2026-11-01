@@ -37,7 +37,8 @@ via `parseLongDate`, so the date string format is load-bearing.
 },
 ```
 
-Order changes `added` → `improved` → `fixed`. Sentence case, no trailing period, one line each.
+Order changes `added` → `improved` → `fixed`. Sentence case, one line each, and no trailing period
+in the source: the page adds it when rendering.
 
 ## Steps
 
