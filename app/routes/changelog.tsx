@@ -97,12 +97,29 @@ type ChangelogEntry = {
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
-    version: "4.25",
-    date: "October 23, 2026",
-    title: "Rating Menu Item and Text Editor Fixes",
+    version: "4.26",
+    date: "October 31, 2026",
+    title: "Languages Keep Their Own Positions",
     changes: [
+      { type: "improved", text: "Custom product page uploads turn on at most one row per screenshot set, starting with rows named for that page; rows named for other pages start off" },
+      { type: "improved", text: "Custom product pages with no version now explain why instead of showing a bare name" },
+      { type: "improved", text: "A more compact App Store sync plan: the issues panel shows the first two issues with Show N more, and each row's size summary sits beside its title" },
+      { type: "fixed", text: "Moving a device or shape in the base language no longer shifts it in languages where you placed it yourself; anything you haven't moved in a language still follows the base" },
+      { type: "fixed", text: "Nudge, group drag, align and center now apply to the language you are editing instead of changing the base language" },
+    ],
+  },
+  {
+    version: "4.25",
+    date: "October 28, 2026",
+    title: "Custom Product Page Uploads and Text Editor Fixes",
+    changes: [
+      { type: "added", text: "The upload wizard can send screenshots to an App Store custom product page" },
+      { type: "added", text: "Create N Missing Locales adds every missing App Store language in one step" },
       { type: "added", text: "Screenshot Bro ▸ Rate Screenshot Bro on the App Store… opens the App Store review page directly (App Store builds)" },
+      { type: "improved", text: "Redesigned App Store upload progress: a thumbnail and file name of the current screenshot, one overall count and a time-remaining estimate" },
+      { type: "improved", text: "Uploads no longer wait for Apple to process each screenshot; the done screens say when Apple is still processing" },
       { type: "improved", text: "The one-time \"A quick favor?\" rating sheet is gone; the system rating prompt now appears only after a clean export or finished upload, once nothing else is on screen" },
+      { type: "fixed", text: "Replace All could stop with a \"more than 10\" error while App Store Connect still counted screenshots that had just been deleted" },
       { type: "fixed", text: "Typing over a selection in the inline text editor used the shape's base font and color instead of the selected text's style" },
       { type: "fixed", text: "Lines jumped down while typing when the line height was below 1.0" },
       { type: "fixed", text: "Rich text now respects a line height of 1.0 or more on every paragraph, and mixed baseline offsets no longer cause uneven spacing" },
