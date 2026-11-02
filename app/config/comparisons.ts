@@ -170,7 +170,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     heading: `${SITE_NAME} vs AppLaunchpad`,
     title: `${SITE_NAME} vs AppLaunchpad — which to use?`,
     description:
-      "AppLaunchpad's browser editor and 1000+ templates versus Screenshot Bro's native Mac app with store upload and 81 locales: pricing, limits, who wins where.",
+      "AppLaunchpad's browser editor and 1000+ templates versus Screenshot Bro's native Mac app with store upload and 81 locales: pricing and limits.",
     readTime: "10 min read",
     datePublished: "2026-08-20",
     lastVerified: "2026-08-20",
@@ -208,7 +208,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     heading: `${SITE_NAME} vs AppScreens`,
     title: `${SITE_NAME} vs AppScreens — which to use?`,
     description:
-      "AppScreens' browser generator with 80+ locales versus Screenshot Bro's native Mac app with a watermark-free free tier and direct upload, factor by factor.",
+      "AppScreens' browser generator with 80+ locales versus Screenshot Bro's native Mac app with a watermark-free free tier and direct upload, compared.",
     readTime: "10 min read",
     datePublished: "2026-08-20",
     lastVerified: "2026-08-20",
@@ -302,7 +302,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     heading: `${SITE_NAME} vs Placeit`,
     title: `${SITE_NAME} vs Placeit — which to use?`,
     description:
-      "Placeit's all-in-one design subscription versus Screenshot Bro's purpose-built App Store screenshot app: watermarks, pricing, store sizes, locales, upload.",
+      "Placeit's all-in-one design subscription versus Screenshot Bro's App Store screenshot app: watermarks, pricing, store sizes, locales, upload.",
     readTime: "10 min read",
     datePublished: "2026-08-20",
     lastVerified: "2026-08-20",
@@ -321,7 +321,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     heading: `${SITE_NAME} vs Canva`,
     title: `${SITE_NAME} vs Canva — which to use?`,
     description:
-      "Canva's all-purpose editor with paid Magic Resize and Translate versus Screenshot Bro's store sizes, 81 locales and direct upload: pricing, limits, fit.",
+      "Canva's all-purpose editor with paid Magic Resize and Translate versus Screenshot Bro's store sizes, 81 locales and direct upload: pricing and limits.",
     readTime: "10 min read",
     datePublished: "2026-10-09",
     lastVerified: "2026-10-09",
@@ -340,7 +340,7 @@ export const COMPARISON_PAGES: ComparisonPage[] = [
     heading: `${SITE_NAME} vs Figma`,
     title: `${SITE_NAME} vs Figma — which to use?`,
     description:
-      "Figma's canvas, components and variable modes versus Screenshot Bro's store size presets, 81 locales and direct upload: plans, limits and when each fits.",
+      "Figma's canvas, components and variable modes versus Screenshot Bro's store size presets, 81 locales and direct upload: plans, limits and fit.",
     readTime: "10 min read",
     datePublished: "2026-10-09",
     lastVerified: "2026-10-09",

@@ -70,7 +70,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "app-store-creative-assets",
     title: "App Store Creative Assets: Headers and Search Results",
     description:
-      "Apple is adding product page headers, search result assets and an Asset Library to the App Store. What's confirmed, and what it changes for your screenshots.",
+      "Apple is adding product page headers, search result assets and an Asset Library to the App Store. What's confirmed and what it changes for screenshots.",
     date: "2026-09-27",
     dateModified: "2026-10-19",
     readTime: "10 min read",
