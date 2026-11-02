@@ -102,6 +102,17 @@ function withPeriod(text: string) {
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "4.27",
+    date: "November 2, 2026",
+    title: "A Shareable App Store Connect Upload Log",
+    changes: [
+      { type: "added", text: "An App Store Connect upload log: when an upload fails, click Details, then Share Log…, and send it to support; it is also under Settings ▸ App Store Connect ▸ Upload Log, and it never contains your API key or screenshots" },
+      { type: "added", text: "MCP agents can move files to and from the app through the local server, so images and exports no longer depend on access to the app's container" },
+      { type: "improved", text: "MCP tool descriptions now point agents to image replacement, which also reports the language it changed" },
+      { type: "improved", text: "App Store A/B test uploads now always offer Details when an upload fails" },
+    ],
+  },
+  {
     version: "4.26",
     date: "October 31, 2026",
     title: "Languages Keep Their Own Positions",
