@@ -312,3 +312,14 @@ run missed, and it caught one item (Apple's Sep 18 iPhone Duo resources).
 - **Published:** none
 - **Updated:** `app-store-screenshot-sizes` (Duo paragraph, all 10 locales), `device-mockup-generator-app-screenshots` (Duo section, FAQ); dateModified 2026-10-26.
 - **Watching:** Asset Library / product page headers going live; frameit Duo frames; April 2027 Duo screenshot requirement; whether Apple publishes Duo bezel in Design Resources; Play 3,840 vs 7,680 px inconsistency.
+
+## 2026-11-02
+- **Scanned:** developer.apple.com/news, App Store Connect release notes, screenshot specifications, fastlane releases, Google Play screenshot requirements page, web search for Play listing policy changes.
+- **Findings:** nothing material this week.
+  - Apple news Oct 29: Taiwan storefront commission change (not screenshot-related). ASC Oct 30: Xcode 27.2 uploads accepted. <https://developer.apple.com/news/>, <https://developer.apple.com/help/app-store-connect/release-notes/>
+  - Screenshot spec page unchanged vs. our posts (Duo 1398x2034 / 2007x2853, required from April 2027 for iOS 27.1 SDK+). <https://developer.apple.com/help/app-store-connect/reference/screenshot-specifications/>
+  - fastlane 2.241.2 (Oct 26): security fixes for spaceship, Fastlane.Swift, match; sigh/Windows fixes. No screenshot-tool changes, existing guides not contradicted. <https://github.com/fastlane/fastlane/releases>
+  - Google Play requirements page unchanged vs. our posts; no dated Play policy change found. <https://support.google.com/googleplay/android-developer/answer/9866151>
+- **Published:** none
+- **Updated:** none
+- **Watching:** Asset Library / product page headers going live (still no ASC release note); frameit Duo frames; April 2027 iOS 27 SDK floor and Duo screenshot requirement; Play 3,840 vs 7,680 px inconsistency; Play Android XR listing slot (8:5, 4-8 shots) — confirm our posts mention it if XR coverage is added.
