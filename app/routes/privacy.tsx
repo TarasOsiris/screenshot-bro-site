@@ -494,8 +494,8 @@ export default function Privacy() {
               <code>developer_rating</code> (versions before 4.25),{" "}
               <code>export_destination</code>, <code>showcase_export</code>,{" "}
               <code>asc_upload</code>, <code>asc_metadata</code>,{" "}
-              <code>asc_experiment_upload</code> (only if you turn on the A/B
-              testing beta), <code>google_play_upload</code>,{" "}
+              <code>asc_experiment_upload</code> (versions before 4.28),{" "}
+              <code>google_play_upload</code>,{" "}
               <code>manage_locales</code>, and{" "}
               <code>translation_overview</code>
             </li>
@@ -662,7 +662,7 @@ export default function Privacy() {
               Connect, any listing text you edit in the App — name, subtitle,
               description, keywords, promotional text, what&apos;s new, and
               support, marketing and privacy policy URLs — including product
-              page experiments if you use the A/B testing beta. Your credentials are
+              page experiments when you upload to one. Your credentials are
               kept in your device&apos;s Keychain, are not synced, and are sent
               only to Apple or Google. Apple and Google handle this data as the
               providers of your developer accounts, under the{" "}
