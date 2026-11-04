@@ -67,7 +67,13 @@ export function SiteNav({
   }, []);
 
   const homeHref = localizedPath(copy.locale.code);
-  const sectionAnchors = showSectionAnchors ? copy.navItems : [];
+  // The drawer's Product group already links the full Features and Templates
+  // pages, so skip the home anchors of the same name.
+  const sectionAnchors = showSectionAnchors
+    ? copy.navItems.filter(
+        (item) => !NAV_BAR_LINKS.some((link) => item.href === `#${link.uiKey}`),
+      )
+    : [];
 
   return (
     <nav
@@ -185,7 +191,7 @@ function MobileMenu({
     <div
       id="mobile-nav"
       hidden={!open}
-      className="lg:hidden fixed inset-x-0 top-16 z-30 overflow-y-auto bg-surface/95 backdrop-blur-2xl border-t border-border-subtle h-[calc(100dvh-4rem)]"
+      className="lg:hidden fixed inset-x-0 top-16 z-30 overflow-y-auto bg-surface border-t border-border-subtle h-[calc(100dvh-4rem)]"
     >
       <div className="px-6 py-8 flex flex-col gap-8">
         {sectionAnchors.length > 0 ? (

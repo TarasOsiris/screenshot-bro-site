@@ -1,7 +1,7 @@
-import { DownloadIcon } from "~/components/home/small-icons";
+import { ArrowUpRightIcon, DownloadIcon } from "~/components/home/small-icons";
 import { ButtonLink } from "~/components/ui/Button";
 import { Panel } from "~/components/ui/Panel";
-import { CONTACT_MAILTO } from "~/config/site";
+import { WEB_DEMO_URL } from "~/config/site";
 import { downloadPageUrl, type HomeCopy } from "~/config/localization";
 
 export function DownloadSection({
@@ -54,14 +54,17 @@ export function DownloadSection({
             <DownloadIcon className="opacity-80 group-hover:opacity-100 transition-opacity" />
             {copy.primaryCtaLabel}
           </ButtonLink>
-          <ButtonLink href={CONTACT_MAILTO} variant="secondary" size="lg" className="font-medium text-sm">
-            {copy.ui.contactDeveloper}
+          <ButtonLink href={WEB_DEMO_URL} target="_blank" rel="noopener" variant="secondary" size="lg">
+            {copy.ui.tryWebDemo}
+            <ArrowUpRightIcon />
           </ButtonLink>
         </div>
 
-        <p className="mt-6 text-xs text-ink/55 font-mono">
-          {copy.ui.availabilityNote}
-        </p>
+        <ul className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-1 text-sm text-ink/55">
+          {copy.ui.availabilityNote.split(/\s*\|\s*/).map((part) => (
+            <li key={part}>{part}</li>
+          ))}
+        </ul>
       </div>
     </section>
   );

@@ -1,65 +1,58 @@
+import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { DownloadIcon } from "~/components/home/small-icons";
-import { useLazyLoopVideo } from "~/components/home/hooks";
+import { useActiveLoopVideo } from "~/components/home/hooks";
 import { McpSessionVisual } from "~/components/home/McpSessionVisual";
 import { ButtonLink } from "~/components/ui/Button";
 import { SectionIntro } from "~/components/home/SectionIntro";
 import type { FeatureShowcase } from "~/config/site";
 import { downloadPageUrl, type HomeCopy } from "~/config/localization";
 
-function FeatureShowcaseBlock({ showcase }: { showcase: FeatureShowcase }) {
-  const isVideo =
-    showcase.media.endsWith(".mp4") || showcase.media.endsWith(".webm");
-  const videoRef = useLazyLoopVideo(showcase.media);
+const tabId = (id: string) => `showcase-tab-${id}`;
 
-  return (
-    <article
-      id={showcase.id}
-      className="showcase-panel overflow-hidden scroll-mt-24"
-    >
-      <div className="grid lg:grid-cols-[0.65fr_1.35fr]">
-        <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-center">
-          <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-accent-light font-mono mb-4">
-              {showcase.label}
-            </p>
-            <h3 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-ink tracking-tight leading-[1.06]">
-              {showcase.title}
-            </h3>
-            <p className="mt-5 text-lg text-ink/[0.58] leading-relaxed max-w-xl">
-              {showcase.description}
-            </p>
-          </div>
-        </div>
+function ShowcaseMedia({
+  showcase,
+  active,
+}: {
+  showcase: FeatureShowcase;
+  active: boolean;
+}) {
+  const isVideo = /\.(mp4|webm)$/.test(showcase.media);
+  const videoRef = useActiveLoopVideo(isVideo ? showcase.media : "", active);
 
-        <div className="min-w-0">
-          {showcase.visual === "mcp" ? (
-            <McpSessionVisual label={showcase.mediaAlt} />
-          ) : isVideo ? (
-            <video
-              ref={videoRef as React.RefObject<HTMLVideoElement>}
-              autoPlay
-              muted
-              playsInline
-              preload="none"
-              width={showcase.mediaWidth}
-              height={showcase.mediaHeight}
-              className="showcase-media w-full h-auto lg:h-full block"
-              aria-label={showcase.mediaAlt}
-            />
-          ) : (
-            <img
-              src={showcase.media}
-              alt={showcase.mediaAlt}
-              width={showcase.mediaWidth}
-              height={showcase.mediaHeight}
-              className="showcase-media w-full h-auto lg:h-full block"
-              loading="lazy"
-              decoding="async"
-            />
-          )}
-        </div>
-      </div>
-    </article>
+  if (showcase.visual === "mcp") {
+    return <McpSessionVisual label={showcase.mediaAlt} />;
+  }
+
+  // Every clip shares one box so switching tabs never moves the page; the one
+  // recording much taller than the box is letterboxed instead of cropped.
+  const fit =
+    showcase.mediaWidth / showcase.mediaHeight < 1.4
+      ? "object-contain"
+      : "object-cover object-top";
+  const className = `w-full h-full block bg-surface-overlay ${fit}`;
+
+  return isVideo ? (
+    <video
+      ref={videoRef}
+      muted
+      playsInline
+      preload="none"
+      poster={active ? showcase.media.replace(/\.\w+$/, "-poster.webp") : undefined}
+      width={showcase.mediaWidth}
+      height={showcase.mediaHeight}
+      className={className}
+      aria-label={showcase.mediaAlt}
+    />
+  ) : (
+    <img
+      src={showcase.media}
+      alt={showcase.mediaAlt}
+      width={showcase.mediaWidth}
+      height={showcase.mediaHeight}
+      className={className}
+      loading="lazy"
+      decoding="async"
+    />
   );
 }
 
@@ -71,6 +64,36 @@ export function ShowcasesSection({
   href?: string;
 }) {
   const ctaHref = href ?? downloadPageUrl(copy.locale.code);
+  const showcases = copy.featureShowcases;
+  const [activeIndex, setActiveIndex] = useState(0);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  // Old deep links (/#auto-upload) open their tab.
+  useEffect(() => {
+    const selectFromHash = () => {
+      const index = showcases.findIndex(
+        (showcase) => `#${showcase.id}` === window.location.hash,
+      );
+      if (index >= 0) setActiveIndex(index);
+    };
+    selectFromHash();
+    window.addEventListener("hashchange", selectFromHash);
+    return () => window.removeEventListener("hashchange", selectFromHash);
+  }, [showcases]);
+
+  const onTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+    const last = showcases.length - 1;
+    const next = {
+      ArrowRight: activeIndex === last ? 0 : activeIndex + 1,
+      ArrowLeft: activeIndex === 0 ? last : activeIndex - 1,
+      Home: 0,
+      End: last,
+    }[event.key];
+    if (next === undefined) return;
+    event.preventDefault();
+    setActiveIndex(next);
+    tabRefs.current[next]?.focus();
+  };
 
   return (
     <section
@@ -84,22 +107,70 @@ export function ShowcasesSection({
           description={copy.sections.showcases.description}
         />
 
-        <div className="mb-10 flex flex-wrap items-center justify-center gap-3">
-          {copy.featureShowcases.map((showcase) => (
-            <a
-              key={showcase.id}
-              href={`#${showcase.id}`}
-              className="soft-pill rounded-full px-4 py-2 text-sm text-ink/[0.68] hover:text-ink/[0.92] transition-colors"
-            >
-              {showcase.label}
-            </a>
-          ))}
+        <div
+          role="tablist"
+          aria-label={copy.sections.showcases.eyebrow}
+          className="-mt-6 mb-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3"
+        >
+          {showcases.map((showcase, index) => {
+            const selected = index === activeIndex;
+            return (
+              <button
+                key={showcase.id}
+                ref={(el) => {
+                  tabRefs.current[index] = el;
+                }}
+                type="button"
+                role="tab"
+                id={tabId(showcase.id)}
+                aria-selected={selected}
+                aria-controls={showcase.id}
+                tabIndex={selected ? 0 : -1}
+                onClick={() => setActiveIndex(index)}
+                onKeyDown={onTabKeyDown}
+                className={`rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
+                  selected
+                    ? "bg-ink text-surface font-medium"
+                    : "soft-pill text-ink/[0.68] hover:text-ink/[0.92]"
+                }`}
+              >
+                {showcase.label}
+              </button>
+            );
+          })}
         </div>
 
-        <div className="space-y-8">
-          {copy.featureShowcases.map((showcase) => (
-            <FeatureShowcaseBlock key={showcase.id} showcase={showcase} />
-          ))}
+        <div className="showcase-panel overflow-hidden hover:transform-none!">
+          {showcases.map((showcase, index) => {
+            const active = index === activeIndex;
+            return (
+              <article
+                key={showcase.id}
+                id={showcase.id}
+                role="tabpanel"
+                aria-labelledby={tabId(showcase.id)}
+                hidden={!active}
+                className="scroll-mt-24 grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"
+              >
+                <div className="p-7 sm:p-10 flex flex-col justify-center">
+                  <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-ink tracking-tight leading-[1.12] text-balance">
+                    {showcase.title}
+                  </h3>
+                  <p className="mt-4 text-base text-ink/[0.6] leading-relaxed text-pretty">
+                    {showcase.description}
+                  </p>
+                </div>
+
+                <div
+                  className={`order-first lg:order-none min-w-0 ${
+                    showcase.visual === "mcp" ? "lg:aspect-[3/2]" : "aspect-[3/2]"
+                  }`}
+                >
+                  <ShowcaseMedia showcase={showcase} active={active} />
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         <div className="mt-12 flex justify-center">

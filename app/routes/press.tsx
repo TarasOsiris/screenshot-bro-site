@@ -82,6 +82,8 @@ const LOGOS = [
 
 const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([{ name: "Press kit", path: "/press" }]);
 
+const TRUSTMRR_URL = "https://trustmrr.com/startup/screenshot-bro";
+
 const LINK = "text-ink underline underline-offset-4 decoration-ink/25 hover:decoration-ink/60";
 
 export default function Press() {
@@ -129,6 +131,39 @@ export default function Press() {
                 </div>
               ))}
             </dl>
+          </Panel>
+        </section>
+
+        <section aria-labelledby="revenue-heading" className="mt-14">
+          <h2 id="revenue-heading" className="font-display text-2xl font-bold tracking-tight text-ink">
+            Revenue
+          </h2>
+          <Panel padding="sm" className="mt-5 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
+            <a
+              href={TRUSTMRR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 self-start sm:self-auto"
+            >
+              {(["light", "dark"] as const).map((theme) => (
+                <img
+                  key={theme}
+                  src={`https://trustmrr.com/api/embed/screenshot-bro?format=svg&theme=${theme}`}
+                  alt="TrustMRR verified revenue badge for Screenshot Bro"
+                  width="220"
+                  height="90"
+                  loading="lazy"
+                  className={`theme-${theme}-only`}
+                />
+              ))}
+            </a>
+            <p className="text-sm text-ink/[0.62] leading-relaxed">
+              {SITE_NAME} shares its numbers in the open. Total revenue is verified by{" "}
+              <a href={TRUSTMRR_URL} target="_blank" rel="noopener noreferrer" className={LINK}>
+                TrustMRR
+              </a>{" "}
+              and the badge updates on its own, so it always shows the current figure.
+            </p>
           </Panel>
         </section>
 

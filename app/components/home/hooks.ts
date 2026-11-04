@@ -67,58 +67,65 @@ export function useDeferredLoopVideo(src: string, delayMs = 2000, deferMs = 250)
 }
 
 /**
- * Defer setting `<video>` src until the element scrolls near the viewport,
- * so off-screen videos don't download on initial page load. Also re-loops
- * with the given delay between plays.
+ * Loops a video only while `active` and on screen: the src is set the first
+ * time both hold, and playback pauses when either stops holding, so inactive
+ * tabs never download or decode anything.
  */
-export function useLazyLoopVideo(src: string, delayMs = 2000, rootMargin = "300px") {
+export function useActiveLoopVideo(
+  src: string,
+  active: boolean,
+  delayMs = 2000,
+  rootMargin = "300px",
+) {
   const ref = useRef<HTMLVideoElement>(null);
+  const playing = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || !src) return;
 
     const onEnded = () => {
       window.setTimeout(() => {
+        if (!playing.current) return;
         el.currentTime = 0;
         void el.play().catch(() => {});
       }, delayMs);
     };
     el.addEventListener("ended", onEnded);
+    return () => el.removeEventListener("ended", onEnded);
+  }, [src, delayMs]);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || !src || !active) return;
 
     // Assigning `src` after mount does not re-run the browser's autoplay
     // algorithm, so mobile Safari/Chrome leave the video paused. Kick off
-    // playback explicitly once a source is set.
-    const start = () => {
-      if (el.src) return;
-      el.src = src;
+    // playback explicitly.
+    const play = () => {
+      playing.current = true;
+      if (!el.src) el.src = src;
       playMuted(el);
     };
-
-    let io: IntersectionObserver | null = null;
-    if (typeof IntersectionObserver === "undefined") {
-      start();
-    } else {
-      io = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting) {
-              start();
-              io?.disconnect();
-              break;
-            }
-          }
-        },
-        { rootMargin },
-      );
-      io.observe(el);
-    }
-
-    return () => {
-      el.removeEventListener("ended", onEnded);
-      io?.disconnect();
+    const pause = () => {
+      playing.current = false;
+      el.pause();
     };
-  }, [src, delayMs, rootMargin]);
+
+    if (typeof IntersectionObserver === "undefined") {
+      play();
+      return pause;
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => (entry?.isIntersecting ? play() : pause()),
+      { rootMargin },
+    );
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      pause();
+    };
+  }, [src, active, rootMargin]);
 
   return ref;
 }

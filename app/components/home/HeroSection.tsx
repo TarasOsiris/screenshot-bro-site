@@ -11,7 +11,7 @@ import { ProductHuntBadge } from "~/components/home/ProductHuntBadge";
 // rated (config/app-store-proof.ts gates it) and the Product Hunt badge.
 function HeroProof({ copy }: { copy: HomeCopy }) {
   return (
-    <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-x-6 gap-y-3">
+    <div className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-x-6 gap-y-3">
       {APP_STORE_RATING ? (
         <p className="flex items-center gap-2 text-sm text-ink/70">
           <span className="text-warm-light tracking-[0.1em]" aria-hidden="true">
@@ -67,14 +67,14 @@ export function HeroSection({
   const ctaHref = href ?? downloadPageUrl(copy.locale.code);
 
   return (
-    <section className="relative pt-32 pb-14 px-6 overflow-hidden">
+    <section className="relative pt-24 sm:pt-26 pb-14 px-6 overflow-hidden">
       <div className="hero-gradient" />
       <div className="grid-bg absolute inset-0 opacity-40" />
 
       <div className="relative max-w-6xl mx-auto">
         <div className="max-w-4xl mx-auto text-center">
           <h1
-            className="animate-fade-up mt-6 font-display font-extrabold text-5xl sm:text-6xl md:text-7xl tracking-tight leading-[0.98]"
+            className="animate-fade-up font-display font-extrabold text-[2rem] sm:text-6xl lg:text-[4rem] tracking-tight leading-[1.02] text-balance [word-break:auto-phrase]"
             style={{ animationDelay: "0.12s" }}
           >
             <span className="text-ink">{copy.hero.titleLead}</span>
@@ -84,7 +84,7 @@ export function HeroSection({
           </h1>
 
           <p
-            className="animate-fade-up max-w-2xl mx-auto mt-6 text-lg sm:text-xl text-ink/[0.62] leading-relaxed"
+            className="animate-fade-up max-w-2xl mx-auto mt-5 text-base sm:text-lg text-ink/[0.62] leading-relaxed text-balance"
             style={{ animationDelay: "0.2s" }}
           >
             {copy.hero.descriptionLead}{" "}
@@ -95,7 +95,7 @@ export function HeroSection({
           </p>
 
           <div
-            className="animate-fade-up mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="animate-fade-up mt-7 flex flex-col sm:flex-row items-center justify-center gap-4"
             style={{ animationDelay: "0.28s" }}
           >
             <ButtonLink href={ctaHref}>
@@ -118,7 +118,7 @@ export function HeroSection({
         </div>
 
         <div
-          className="animate-fade-up relative max-w-6xl mx-auto mt-14"
+          className="animate-fade-up relative max-w-6xl mx-auto mt-10"
           style={{ animationDelay: "0.42s" }}
         >
           <AppPreview label={copy.hero.videoLabel} />

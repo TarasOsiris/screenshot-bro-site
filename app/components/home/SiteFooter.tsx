@@ -65,29 +65,6 @@ export function SiteFooter({ copy: copyProp }: { copy?: HomeCopy }) {
               />
               <ProductHuntBadge alt={copy.ui.productHuntAlt} lazy />
             </div>
-            <a
-              href="https://trustmrr.com/startup/screenshot-bro"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block"
-            >
-              <img
-                src="https://trustmrr.com/api/embed/screenshot-bro?format=svg&theme=light"
-                alt="TrustMRR verified revenue badge"
-                width="220"
-                height="90"
-                loading="lazy"
-                className="theme-light-only opacity-80 hover:opacity-100 transition-opacity"
-              />
-              <img
-                src="https://trustmrr.com/api/embed/screenshot-bro?format=svg&theme=dark"
-                alt="TrustMRR verified revenue badge"
-                width="220"
-                height="90"
-                loading="lazy"
-                className="theme-dark-only opacity-80 hover:opacity-100 transition-opacity"
-              />
-            </a>
           </div>
 
           <FooterColumn
