@@ -87,7 +87,7 @@ export const meta: Route.MetaFunction = ({ matches, params }) => {
   ]);
 };
 
-export const EFFECTIVE_DATE = "October 22, 2026";
+export const EFFECTIVE_DATE = "November 4, 2026";
 const DEVELOPER_NAME = "Nineva Studios";
 const DEVELOPER_EMAIL = "tleskiv@ninevastudios.com";
 
@@ -103,9 +103,12 @@ export default function Privacy() {
           <p>
             This Privacy Policy describes how {DEVELOPER_NAME} ("we", "us", or
             "our") handles information in connection with the{" "}
-            <strong>{SITE_NAME}</strong> application for macOS, iOS and iPadOS (the
-            "App"). We are committed to protecting your privacy and being
-            transparent about our practices. Section 9 covers this website,{" "}
+            <strong>{SITE_NAME}</strong> application for macOS, iOS, iPadOS and
+            Windows (the "App"), whether it comes from the App Store, the
+            Microsoft Store or our website. We are committed to protecting your
+            privacy and being transparent about our practices. The Windows
+            version sends less than the others; how it differs is summarized at
+            the end of Section 1. Section 9 covers this website,{" "}
             <code>screenshotbro.app</code>, which is separate from the App.
           </p>
 
@@ -142,7 +145,8 @@ export default function Privacy() {
           <p>
             The App contains <strong>no advertising frameworks</strong> and does
             no cross-app or cross-site tracking. Besides purchase validation
-            (<strong>Section 4</strong>), it includes two services that send
+            (<strong>Section 4</strong>), the Mac, iPhone and iPad versions
+            include two services that send
             data off your device: a crash and error reporting service,
             which sends technical diagnostics when something goes wrong
             (<strong>Section 5</strong>), and a product analytics service, which
@@ -153,6 +157,46 @@ export default function Privacy() {
             our website also checks our website for updates
             (<strong>Section 7</strong>), and a few features you choose to use
             talk directly to Apple or Google (<strong>Section 8</strong>).
+          </p>
+          <p>
+            <strong>The Windows version.</strong> {SITE_NAME} for Windows, from
+            the Microsoft Store or our website, contains{" "}
+            <strong>no crash reporting and no product analytics</strong>:
+            Sections 5 and 6 do not apply to it. It sends data off your PC only
+            to:
+          </p>
+          <ul>
+            <li>
+              RevenueCat, to check and activate Pro, which is bought on our
+              website (Section 4). The App calls RevenueCat&apos;s web API with
+              the anonymous identifier it creates the first time it runs; the
+              request carries your IP address and a standard user agent naming
+              Windows, but no device model or other identifier.
+            </li>
+            <li>
+              <code>screenshotbro.app</code>, to check for updates — the
+              version downloaded from our website only; the Microsoft Store
+              version is updated by the Microsoft Store (Section 7).
+            </li>
+            <li>
+              Apple and Google, only for the store uploads you start, and
+              Apple&apos;s public lookup service to show your app&apos;s icon
+              (Section 8).
+            </li>
+          </ul>
+          <p>
+            It has no iCloud sync and no automatic translation, so the parts
+            of Sections 3 and 8 about those do not apply. Leaving a rating
+            opens the Microsoft Store&apos;s own review page, which is governed
+            by{" "}
+            <a
+              href="https://privacy.microsoft.com/privacystatement"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Microsoft&apos;s Privacy Statement
+            </a>
+            , as are downloads and updates through the Microsoft Store.
           </p>
 
           <h2>2. Data Stored on Your Device</h2>
@@ -165,7 +209,9 @@ export default function Privacy() {
             <li>
               <strong>Project data</strong> — screenshot layouts, shapes, text,
               backgrounds, and locale configurations (stored as JSON files in{" "}
-              <code>~/Library/Application&nbsp;Support/screenshot/</code>)
+              <code>~/Library/Application&nbsp;Support/screenshot/</code>; on
+              Windows, in <code>%APPDATA%\Screenshot&nbsp;Bro\data</code>, which
+              the Microsoft Store version keeps inside its own app storage)
             </li>
             <li>
               <strong>Imported images and fonts</strong> — copies of files you
@@ -287,7 +333,8 @@ export default function Privacy() {
           </ul>
           <p>
             <strong>Purchases on our website.</strong> If you use the version
-            of {SITE_NAME} downloaded from our website, Pro is bought through a
+            of {SITE_NAME} downloaded from our website, or any Windows version
+            including the one from the Microsoft Store, Pro is bought through a
             checkout page hosted by RevenueCat, with payments processed by{" "}
             <a
               href="https://stripe.com/privacy"
@@ -302,8 +349,8 @@ export default function Privacy() {
             can send your receipt and activation link and help with refunds or
             moving a purchase. When you open the activation link, the App links
             the purchase to its anonymous RevenueCat identifier — no account is
-            created. For refunds or to move a website purchase to another Mac,
-            email{" "}
+            created. For refunds or to move a website purchase to another
+            computer, email{" "}
             <a href={`mailto:${WEB_PURCHASE_EMAIL}`}>{WEB_PURCHASE_EMAIL}</a>.
           </p>
           <p>
@@ -317,6 +364,7 @@ export default function Privacy() {
           </p>
 
           <h2>5. Crash and Error Reporting (Sentry)</h2>
+          <p>This section does not apply to the Windows version.</p>
           <p>
             To find and fix bugs, {SITE_NAME} uses{" "}
             <a
@@ -455,6 +503,7 @@ export default function Privacy() {
           </p>
 
           <h2>6. Product Analytics (PostHog)</h2>
+          <p>This section does not apply to the Windows version.</p>
           <p>
             To understand which parts of {SITE_NAME} people actually reach — how
             many installations finish the introduction, create a project, get as
@@ -643,6 +692,18 @@ export default function Privacy() {
             installing an update unless you have chosen to have it install
             updates automatically.
           </p>
+          <p>
+            <strong>Windows.</strong> The Microsoft Store version is updated by
+            the Microsoft Store and does not check by itself. The Windows version
+            downloaded from our website checks the same way, with the open-source
+            electron-updater: about once a day it downloads a list of available
+            versions from <code>screenshotbro.app</code>, and, when you choose to
+            install one, the installer from <code>downloads.screenshotbro.app</code>.
+            These requests carry your IP address and a standard user agent, but
+            no identifier, purchase information, or project data. You can turn
+            automatic checks off under Settings ▸ About, and it asks before
+            installing an update.
+          </p>
 
           <h2>8. Store Uploads, Translation, and Automation</h2>
           <p>
@@ -663,8 +724,9 @@ export default function Privacy() {
               description, keywords, promotional text, what&apos;s new, and
               support, marketing and privacy policy URLs — including product
               page experiments when you upload to one. Your credentials are
-              kept in your device&apos;s Keychain, are not synced, and are sent
-              only to Apple or Google. Apple and Google handle this data as the
+              kept in your device&apos;s Keychain (on Windows, in a file
+              encrypted for your Windows user account), are not synced, and are
+              sent only to Apple or Google. Apple and Google handle this data as the
               providers of your developer accounts, under the{" "}
               <a
                 href="https://www.apple.com/legal/privacy/"
@@ -702,11 +764,11 @@ export default function Privacy() {
               and images are not sent to us or to any AI or translation service.
             </li>
             <li>
-              <strong>Local automation server (Mac only).</strong> If you turn
-              it on under Settings ▸ Automation, the App runs an MCP server that
-              accepts connections only from your own Mac
-              (<code>127.0.0.1</code>) and only with an access token kept in
-              your Keychain. AI agents and other MCP clients you connect can read and
+              <strong>Local automation server (Mac and Windows).</strong> If
+              you turn it on under Settings ▸ Automation, the App runs an MCP
+              server that accepts connections only from your own computer
+              (<code>127.0.0.1</code>) and only with an access token kept on
+              your device (in the Keychain on Mac). AI agents and other MCP clients you connect can read and
               change your projects, including their text and images, and export
               screenshots. What such a tool does with that content — including
               sending it to an AI provider — is governed by that tool and its
@@ -805,7 +867,7 @@ export default function Privacy() {
               </tr>
               <tr>
                 <td>Sentry</td>
-                <td>Crash and error reporting</td>
+                <td>Crash and error reporting (not on Windows)</td>
                 <td>
                   Random installation ID, crash and error diagnostics, recent
                   in-app events, app configuration labels and document counts,
@@ -815,7 +877,7 @@ export default function Privacy() {
               </tr>
               <tr>
                 <td>PostHog</td>
-                <td>Product analytics</td>
+                <td>Product analytics (not on Windows)</td>
                 <td>
                   Random installation ID and anonymous RevenueCat ID, a random
                   session ID, a fixed list of milestone events (Section 6) with
@@ -827,6 +889,14 @@ export default function Privacy() {
                 <td>Apple App Store</td>
                 <td>In-app purchases</td>
                 <td>Standard App Store transaction data</td>
+              </tr>
+              <tr>
+                <td>Microsoft Store</td>
+                <td>Distribution, updates and ratings (Windows)</td>
+                <td>
+                  Standard Microsoft Store download and review data; no
+                  purchases go through it
+                </td>
               </tr>
               <tr>
                 <td>Google Analytics (website only)</td>
@@ -877,7 +947,10 @@ export default function Privacy() {
               <strong>Local data</strong> — all project data and preferences are
               removed when you delete the App, or you can manually delete them
               from{" "}
-              <code>~/Library/Application&nbsp;Support/screenshot/</code>.
+              <code>~/Library/Application&nbsp;Support/screenshot/</code>. On
+              Windows, uninstalling the Microsoft Store version removes them;
+              for the version from our website, delete{" "}
+              <code>%APPDATA%\Screenshot&nbsp;Bro</code>.
             </li>
             <li>
               <strong>iCloud data</strong> — disable sync in the App's settings,
@@ -888,7 +961,8 @@ export default function Privacy() {
               <strong>Purchase records</strong> — managed by Apple and
               RevenueCat, and by Stripe for website purchases. You can contact
               RevenueCat, or email us with the RevenueCat ID shown under
-              Settings ▸ Purchase, to request deletion of the anonymous records
+              Settings ▸ Purchase (on Windows, copied by Settings ▸ General ▸
+              Copy Diagnostics), to request deletion of the anonymous records
               associated with your installation and transactions. For a website purchase, email{" "}
               <a href={`mailto:${WEB_PURCHASE_EMAIL}`}>{WEB_PURCHASE_EMAIL}</a>{" "}
               to request deletion of the email address kept with it; payment
@@ -924,13 +998,16 @@ export default function Privacy() {
           <h2>13. Security</h2>
           <p>
             The App runs inside Apple's app sandbox on macOS, iOS and iPadOS, which
-            restricts file system access and network capabilities. All data at
-            rest is protected by platform storage encryption and iCloud
-            encryption when applicable. The limited data the App does send —
-            purchase validation, crash reports, analytics events, update
-            checks, App Store lookups, and the store uploads you start — is
-            transmitted over encrypted HTTPS connections. The local automation
-            server accepts connections only from your own Mac.
+            restricts file system access and network capabilities. On Windows,
+            its interface runs in a sandboxed process with no direct access to
+            your files or the network, and the Microsoft Store version runs as
+            a packaged app with its own storage. All data at rest is protected
+            by platform storage encryption and iCloud encryption when
+            applicable. The limited data the App does send — purchase
+            validation, crash reports, analytics events, update checks, App
+            Store lookups, and the store uploads you start — is transmitted
+            over encrypted HTTPS connections. The local automation server
+            accepts connections only from your own computer.
           </p>
 
           <h2>14. Changes to This Policy</h2>
