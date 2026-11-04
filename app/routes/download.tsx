@@ -249,7 +249,7 @@ export default function Download() {
             </p>
           </div>
           <div className="md:w-72 shrink-0 flex flex-col">
-            <a href={windows?.url ?? WINDOWS_DOWNLOAD_URL} className={primaryButton} data-placement="download-page-windows">
+            <a href={WINDOWS_DOWNLOAD_URL} className={primaryButton} data-placement="download-page-windows">
               <WindowsLogo /> Download for Windows
             </a>
             <p className="mt-3 text-center text-xs text-ink/55 leading-relaxed">
