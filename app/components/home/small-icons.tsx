@@ -1,4 +1,4 @@
-export function ArrowDownIcon() {
+export function ArrowUpRightIcon() {
   return (
     <svg
       aria-hidden="true"
@@ -11,8 +11,8 @@ export function ArrowDownIcon() {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <line x1="12" y1="5" x2="12" y2="19" />
-      <polyline points="19,12 12,19 5,12" />
+      <line x1="7" y1="17" x2="17" y2="7" />
+      <polyline points="7,7 17,7 17,17" />
     </svg>
   );
 }

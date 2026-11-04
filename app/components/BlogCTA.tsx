@@ -1,6 +1,6 @@
 import { DownloadIcon } from "~/components/home/small-icons";
 import { ButtonLink } from "~/components/ui/Button";
-import { PRIMARY_CTA_LABEL } from "~/config/site";
+import { PRIMARY_CTA_LABEL, WEB_DEMO_URL } from "~/config/site";
 import { useHomeCopy } from "~/config/home-copy";
 import {
   downloadPageUrl,
@@ -27,14 +27,10 @@ export function BlogCTA({
 }) {
   const copy = useHomeCopy();
   const resolvedButtonLabel = buttonLabel ?? copy.primaryCtaLabel;
-  // Descriptive anchors are authored in English, so only use them on the
-  // English pages; translated posts fall back to already-translated UI copy
-  // and link to their own locale's homepage rather than across the hreflang
-  // cluster.
-  const linkLabel =
-    locale === "en"
-      ? (homeLinkLabel ?? DEFAULT_HOME_LINK_LABEL)
-      : copy.ui.seeInAction;
+  // Descriptive anchors are authored in English, so English posts link to the
+  // homepage with one; translated posts link to the web demo with its
+  // already-translated label instead.
+  const isEnglish = locale === "en";
 
   return (
     <div className="soft-panel mt-10 p-7 rounded-3xl text-center">
@@ -45,10 +41,11 @@ export function BlogCTA({
       </ButtonLink>
       <p className="mt-4 text-sm">
         <a
-          href={localizedPath(locale)}
+          href={isEnglish ? localizedPath(locale) : WEB_DEMO_URL}
+          {...(isEnglish ? {} : { target: "_blank", rel: "noopener" })}
           className="text-ink/55 underline underline-offset-4 decoration-ink/20 hover:text-ink/80 hover:decoration-ink/40 transition-colors"
         >
-          {linkLabel} →
+          {isEnglish ? (homeLinkLabel ?? DEFAULT_HOME_LINK_LABEL) : copy.ui.tryWebDemo} →
         </a>
       </p>
     </div>

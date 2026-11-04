@@ -130,7 +130,7 @@ export type HomeCopy = {
     madeWithLoveAt: string;
     language: string;
     homeLabel: string;
-    seeInAction: string;
+    tryWebDemo: string;
     read: string;
     browseGuides: string;
     submitApp: string;
@@ -236,7 +236,7 @@ export const EN_HOME_COPY: HomeCopy = {
     madeWithLoveAt: "Made with ❤️ at",
     language: "Language",
     homeLabel: `${SITE_NAME} home`,
-    seeInAction: "See it in action",
+    tryWebDemo: "Try web demo",
     read: "Read",
     browseGuides: "Browse all guides",
     submitApp: "Submit your app",

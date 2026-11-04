@@ -1,8 +1,9 @@
 import { ButtonLink } from "~/components/ui/Button";
-import { ArrowDownIcon, DownloadIcon } from "~/components/home/small-icons";
+import { ArrowUpRightIcon, DownloadIcon } from "~/components/home/small-icons";
 import { useDeferredLoopVideo } from "~/components/home/hooks";
 import { downloadPageUrl, type HomeCopy } from "~/config/localization";
 import { APP_STORE_RATING } from "~/config/app-store-proof";
+import { WEB_DEMO_URL } from "~/config/site";
 import { fill } from "~/config/home-copy";
 import { ProductHuntBadge } from "~/components/home/ProductHuntBadge";
 
@@ -101,9 +102,14 @@ export function HeroSection({
               <DownloadIcon className="opacity-80 group-hover:opacity-100 transition-opacity" />
               {copy.primaryCtaLabel}
             </ButtonLink>
-            <ButtonLink href="#showcases" variant="secondary">
-              {copy.ui.seeInAction}
-              <ArrowDownIcon />
+            <ButtonLink
+              href={WEB_DEMO_URL}
+              target="_blank"
+              rel="noopener"
+              variant="secondary"
+            >
+              {copy.ui.tryWebDemo}
+              <ArrowUpRightIcon />
             </ButtonLink>
           </div>
           <div className="animate-fade-up" style={{ animationDelay: "0.34s" }}>
