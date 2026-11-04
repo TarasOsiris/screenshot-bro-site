@@ -3,7 +3,6 @@ import { data, useLoaderData } from "react-router";
 import type { Route } from "./+types/vs.appscreens";
 import {
   ComparisonShell,
-  ComparisonTable,
   type ComparisonRow,
   type RelatedLink,
 } from "~/components/ComparisonShell";
@@ -174,6 +173,7 @@ export default function AppScreensComparison() {
   return (
     <ComparisonShell
       slug={SLUG}
+      rows={ROWS}
       tldr={
         <>
           AppScreens is the better pick if you need captions machine-translated
@@ -250,9 +250,6 @@ export default function AppScreensComparison() {
         string with Reuse Translation, and watch translation progress per
         language.
       </p>
-
-      <h2>Side-by-side</h2>
-      <ComparisonTable competitor="AppScreens" rows={ROWS} />
 
       <h2>What AppScreens does well</h2>
       <p>

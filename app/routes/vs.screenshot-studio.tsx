@@ -3,7 +3,6 @@ import { data, useLoaderData } from "react-router";
 import type { Route } from "./+types/vs.screenshot-studio";
 import {
   ComparisonShell,
-  ComparisonTable,
   type ComparisonRow,
   type RelatedLink,
 } from "~/components/ComparisonShell";
@@ -179,6 +178,7 @@ export default function ScreenshotStudioComparison() {
   return (
     <ComparisonShell
       slug={SLUG}
+      rows={ROWS}
       tldr={
         <>
           pick Screenshot Studio if your app ships on Apple Watch, Apple TV or
@@ -256,9 +256,6 @@ export default function ScreenshotStudioComparison() {
         <a href="/docs/project-schema">public schema</a>, and on Mac an opt-in
         local MCP server lets AI agents drive edits.
       </p>
-
-      <h2>Side-by-side</h2>
-      <ComparisonTable competitor="Screenshot Studio" rows={ROWS} />
 
       <h2>What Screenshot Studio does well</h2>
       <p>

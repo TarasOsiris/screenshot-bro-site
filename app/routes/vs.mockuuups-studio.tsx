@@ -3,7 +3,6 @@ import { data, useLoaderData } from "react-router";
 import type { Route } from "./+types/vs.mockuuups-studio";
 import {
   ComparisonShell,
-  ComparisonTable,
   type ComparisonRow,
   type RelatedLink,
 } from "~/components/ComparisonShell";
@@ -175,6 +174,7 @@ export default function MockuuupsStudioComparison() {
   return (
     <ComparisonShell
       slug={SLUG}
+      rows={ROWS}
       tldr={
         <>
           Mockuuups Studio is the better choice when you need a photoreal
@@ -248,9 +248,6 @@ export default function MockuuupsStudioComparison() {
         includes store upload; Pro lifts those limits and nothing else is
         gated.
       </p>
-
-      <h2>Side-by-side</h2>
-      <ComparisonTable competitor="Mockuuups Studio" rows={ROWS} />
 
       <h2>What Mockuuups Studio does well</h2>
       <p>

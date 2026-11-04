@@ -2,6 +2,7 @@ import type { Route } from "./+types/blog.make-and-ship-screenshots-with-fastlan
 import { ContentLayout } from "~/components/ContentLayout";
 import { BlogCTA } from "~/components/BlogCTA";
 import { BlogPostHeader } from "~/components/BlogPostHeader";
+import { BlogPostLayout } from "~/components/BlogPostLayout";
 import { CodeBlock } from "~/components/CodeBlock";
 import { RelatedPosts } from "~/components/RelatedPosts";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
@@ -360,14 +361,14 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
   const { blocks, locale } = loaderData;
   return (
     <ContentLayout locale={locale}>
-      <div className="max-w-3xl mx-auto">
+      <BlogPostLayout locale={locale}>
         <article className="prose-policy">
           <BlogPostHeader slug={SLUG} locale={locale} />
           {renderContent(locale, blocks)}
         </article>
         <BlogCTA message={getCTAMessage(locale)} locale={locale} />
         <RelatedPosts currentSlug={SLUG} locale={locale} />
-      </div>
+      </BlogPostLayout>
     </ContentLayout>
   );
 }

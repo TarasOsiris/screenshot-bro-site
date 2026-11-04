@@ -1,5 +1,6 @@
 import type { BlogPost } from "~/config/blog";
-import { getBlogThumb } from "~/config/blog-images";
+import { getBlogCover } from "~/config/blog-images";
+import { BlogCover } from "~/components/BlogCover";
 import { buttonClass } from "~/components/ui/Button";
 import { SectionIntro } from "~/components/home/SectionIntro";
 import { localizedPath, type HomeCopy } from "~/config/localization";
@@ -27,26 +28,14 @@ export function BlogPreviewSection({
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {highlight.map((post) => {
-            const thumb = getBlogThumb(post.slug);
-            return (
+          {highlight.map((post) => (
               <a
                 key={post.slug}
                 href={`/blog/${post.slug}`}
                 className="group rounded-3xl bg-surface-raised border border-border overflow-hidden transition-all hover:border-ink/20 flex flex-col"
               >
                 <div className="relative aspect-video overflow-hidden bg-surface-overlay">
-                  {thumb ? (
-                    <img
-                      src={thumb.src}
-                      alt={thumb.alt}
-                      width={800}
-                      height={450}
-                      loading="lazy"
-                      decoding="async"
-                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    />
-                  ) : null}
+                  <BlogCover cover={getBlogCover(post.slug, post.category)} />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center gap-3 mb-3">
@@ -62,8 +51,7 @@ export function BlogPreviewSection({
                   </h3>
                 </div>
               </a>
-            );
-          })}
+          ))}
         </div>
 
         <div className="mt-10 text-center">

@@ -3,7 +3,6 @@ import { data, useLoaderData } from "react-router";
 import type { Route } from "./+types/vs.shotbot";
 import {
   ComparisonShell,
-  ComparisonTable,
   type ComparisonRow,
   type RelatedLink,
 } from "~/components/ComparisonShell";
@@ -173,6 +172,7 @@ export default function ShotbotComparison() {
   return (
     <ComparisonShell
       slug={SLUG}
+      rows={ROWS}
       tldr={
         <>
           Shotbot is the faster tool when you have one screenshot on your
@@ -240,9 +240,6 @@ export default function ShotbotComparison() {
         templates per row) has no expiry and no watermark and includes both
         uploads; Pro removes the count limits and nothing else.
       </p>
-
-      <h2>Side-by-side</h2>
-      <ComparisonTable competitor="Shotbot" rows={ROWS} />
 
       <h2>What Shotbot does well</h2>
       <p>

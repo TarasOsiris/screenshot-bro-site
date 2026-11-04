@@ -3,7 +3,6 @@ import { data, useLoaderData } from "react-router";
 import type { Route } from "./+types/vs.placeit";
 import {
   ComparisonShell,
-  ComparisonTable,
   type ComparisonRow,
   type RelatedLink,
 } from "~/components/ComparisonShell";
@@ -195,6 +194,7 @@ export default function PlaceitComparison() {
   return (
     <ComparisonShell
       slug={SLUG}
+      rows={ROWS}
       tldr={
         <>
           Placeit wins when one subscription has to cover a logo, social posts,
@@ -282,9 +282,6 @@ export default function PlaceitComparison() {
         limits and nothing else. It does not make logos, social posts or
         videos.
       </p>
-
-      <h2>Side-by-side</h2>
-      <ComparisonTable competitor="Placeit" rows={ROWS} />
 
       <h2>What Placeit does well</h2>
       <p>

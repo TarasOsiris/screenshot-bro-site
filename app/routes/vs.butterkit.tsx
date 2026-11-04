@@ -3,7 +3,6 @@ import { data } from "react-router";
 import type { Route } from "./+types/vs.butterkit";
 import {
   ComparisonShell,
-  ComparisonTable,
   type ComparisonRow,
   type RelatedLink,
 } from "~/components/ComparisonShell";
@@ -172,6 +171,7 @@ export default function ButterKitComparison() {
   return (
     <ComparisonShell
       slug={SLUG}
+      rows={ROWS}
       tldr={
         <>
           ButterKit and {SITE_NAME} are the two closest tools in this category —
@@ -238,9 +238,6 @@ export default function ButterKitComparison() {
         per row — has no expiry and no watermark and includes both uploads; Pro
         removes the count limits and nothing else.
       </p>
-
-      <h2>Side-by-side</h2>
-      <ComparisonTable competitor="ButterKit" rows={ROWS} />
 
       <h2>What ButterKit does well</h2>
       <p>

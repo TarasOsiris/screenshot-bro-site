@@ -3,7 +3,6 @@ import { data, useLoaderData } from "react-router";
 import type { Route } from "./+types/vs.applaunchpad";
 import {
   ComparisonShell,
-  ComparisonTable,
   type ComparisonRow,
   type RelatedLink,
 } from "~/components/ComparisonShell";
@@ -175,6 +174,7 @@ export default function AppLaunchpadComparison() {
   return (
     <ComparisonShell
       slug={SLUG}
+      rows={ROWS}
       tldr={
         <>
           AppLaunchpad is the pick when you want the largest template library
@@ -244,9 +244,6 @@ export default function AppLaunchpadComparison() {
         through Apple&apos;s Translation framework and per-locale overrides for
         text, style, image and position.
       </p>
-
-      <h2>Side-by-side</h2>
-      <ComparisonTable competitor="AppLaunchpad" rows={ROWS} />
 
       <h2>What AppLaunchpad does well</h2>
       <p>
