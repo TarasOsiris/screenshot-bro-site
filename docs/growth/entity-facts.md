@@ -33,11 +33,12 @@ Last reviewed: 2026-08-20.
 | Community | https://www.reddit.com/r/ScreenshotBro/ |
 | Sister product | Screenshot Bro Web — https://screenshotbro.com — **unverified (2026-08-20): nothing on screenshotbro.app links to it; confirm it exists or delete this row before using it anywhere** |
 
-**Pricing** — fill in before submitting anywhere: free tier (no signup, no
-expiry) plus a paid Pro unlock. Quote the current Pro price from App Store
-Connect at submission time; do not guess, and keep it identical across
-directories. The website deliberately does not publish a price, so a directory
-listing that quotes a stale one is the only place a contradiction can appear.
+**Pricing** — free tier (no signup, no expiry) plus a paid Pro unlock. US
+prices, as published on /pricing (Nov 2026): App Store Pro Monthly $4.99/month,
+Pro Yearly $29.99/year, Pro Lifetime $59.99; web purchase (direct Mac download
+and Windows beta) Pro Lifetime $30 one-time. Re-check App Store Connect and the
+checkout at submission time, and keep /pricing (`APP_STORE_PRO_PLANS` and
+`WEB_PRO_LIFETIME_PRICE` in app/config/site.ts) in step with any change.
 
 ## Descriptions
 
@@ -128,7 +129,7 @@ Made by Nineva Studios.
   Vision Pro screenshot-size presets (an Apple Watch Ultra 3 *frame* exists, a
   watch *row size* does not), a hosted API or CLI (the in-app MCP server is local
   to the Mac), video or App Preview export, fastlane integration, import of other
-  tools' project files, a Windows, Linux or web version, or a published price.
+  tools' project files, or a Windows, Linux or web version.
 - Say "81 language presets plus custom codes", never "81+ languages". On-device
   auto-translate covers the languages Apple's Translation framework supports; the
   remaining presets are filled by typing or pasting. Competitors with machine

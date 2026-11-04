@@ -2,6 +2,7 @@ import { BLOG_POSTS } from "~/config/blog";
 import { COMPARISON_PAGES, comparisonPath } from "~/config/comparisons";
 import {
   APP_CATEGORY,
+  APP_STORE_PRO_PLANS,
   APP_STORE_URL,
   MINIMUM_IPADOS_VERSION,
   MINIMUM_MACOS_VERSION,
@@ -12,6 +13,7 @@ import {
   REDDIT_COMMUNITY_URL,
   SITE_NAME,
   SITE_URL,
+  WEB_PRO_LIFETIME_PRICE,
 } from "~/config/site";
 
 // /llms.txt — a plain-text map of the site for answer engines and LLM crawlers
@@ -39,7 +41,7 @@ function buildLlmsTxt(): string {
     `- App Store listing: ${APP_STORE_URL}`,
     `- Category: ${APP_CATEGORY}.`,
     "- Free tier: 1 project, up to 3 rows with 5 templates per row, every device frame, shape and locale, watermark-free exports, App Store Connect and Google Play upload, iCloud sync. No trial expiry and no signup.",
-    `- Pro: lifts those limits — unlimited projects, rows and templates. App Store version (Mac, iPad, iPhone): an in-app purchase, as a lifetime unlock or a subscription. Direct download (Mac): a one-time web purchase that activates on one Mac. A purchase stays with the version it was bought in. Prices are shown in the App Store and at checkout; details at ${SITE_URL}/pricing`,
+    `- Pro: lifts those limits — unlimited projects, rows and templates. App Store version (Mac, iPad, iPhone): an in-app purchase, ${APP_STORE_PRO_PLANS.map((plan) => `${plan.name} ${plan.price}${plan.period === "one-time" ? "" : `/${plan.period}`}`).join(", ")}. Direct Mac download and Windows beta: Pro Lifetime for ${WEB_PRO_LIFETIME_PRICE}, a one-time web purchase (tax calculated at checkout) that activates one copy, Mac or Windows. A purchase stays with the version it was bought in. These are US prices; other countries see their local price in the App Store and at checkout. Details at ${SITE_URL}/pricing`,
     "- Core workflow: import screenshots, arrange multi-row layouts on one continuous canvas, add device frames for iPhone, iPad, Mac and Android, style with text, shapes, gradients, images and SVG, then batch export PNG or JPEG organized by locale and row.",
     "- Localization: 81 language presets plus custom codes, on-device auto-translate for the languages Apple's Translation framework supports, per-shape text/position/image overrides, and translation progress tracking. Layout and art stay shared across locales.",
     "- Automation: an opt-in local MCP server on macOS (http://127.0.0.1:8722/mcp, access-token protected) exposes 48 tools, so an MCP client such as Claude Code, Claude Desktop or Cursor can create and edit any project (in batches), import screenshots, set translations, render previews, export, edit App Store listing text, and upload screenshots to App Store Connect and Google Play. There is no hosted API and no CLI; the Mac app must be running.",

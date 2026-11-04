@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { Route } from "./+types/features";
 import { ContentLayout } from "~/components/ContentLayout";
 import { FeatureIcon } from "~/components/home/icons";
@@ -11,8 +12,6 @@ import {
   SITE_NAME,
   SITE_URL,
   WORKFLOW_STEPS,
-  type FeatureIconKey,
-  type FeatureItem,
 } from "~/config/site";
 import { STARTER_TEMPLATES } from "~/config/templates";
 
@@ -34,48 +33,175 @@ export const meta: Route.MetaFunction = ({ matches }) =>
     { name: "twitter:description", content: DESCRIPTION },
   ]);
 
-const GROUPS: { id: string; title: string; description: string; keys: FeatureIconKey[] }[] = [
+type Card = { key: string; title: string; description: string; icon: ReactNode };
+
+type Visual = {
+  images: { src: string; srcSet?: string; width: number; height: number }[];
+  alt: string;
+  caption: string;
+};
+
+const SCREENSHOT_SIZES = "(min-width: 1024px) 560px, 100vw";
+
+function appStoreScreenshot(n: number) {
+  return {
+    src: `/screenshots/0${n}_screenshot.webp`,
+    srcSet: `/screenshots/0${n}_screenshot-720.webp 720w, /screenshots/0${n}_screenshot.webp 1440w`,
+    width: 1440,
+    height: 900,
+  };
+}
+
+// Cards that only make sense on this page; the rest come from FEATURES in config/site.ts.
+const EXTRA_CARDS: Record<string, Card> = {
+  overrides: {
+    key: "overrides",
+    title: "See What Each Language Changes",
+    description:
+      "Controls a language overrides are tinted amber, row headers count the shapes it changes, and the translation table puts every string side by side with per-cell Translate and Reset.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="16" rx="2" />
+        <path d="M3 10h18M12 4v16" />
+      </svg>
+    ),
+  },
+  overflow: {
+    key: "overflow",
+    title: "Catch Text That Doesn't Fit",
+    description:
+      "A translation too long for its box gets a dashed orange outline on the canvas and a warning in the upload checks. Enlarge the box, shorten the copy, or turn on Shrink to Fit.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2" strokeDasharray="3 2.5" />
+        <path d="M7 10h10M7 14h6" />
+      </svg>
+    ),
+  },
+  format: {
+    key: "format",
+    title: "Open Project Format",
+    description:
+      "Projects are plain JSON on your device, with a published schema, so you can read, diff or generate them with your own tools.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+        <path d="M14 3v6h6M10 13l-2 2 2 2M14 13l2 2-2 2" />
+      </svg>
+    ),
+  },
+};
+
+const GROUPS: { id: string; title: string; description: string; keys: string[]; visual: Visual }[] = [
   {
     id: "design",
     title: "Design",
     description: "Lay out a whole listing on one canvas and change it in one place.",
     keys: ["templates", "starter", "device", "gradient", "shapes", "align", "fonts", "keyboard"],
+    visual: {
+      images: ["aurora/2", "sunset/2", "cosmic-bloom/3"].map((id) => ({
+        src: `/template-gallery/${id}.webp`,
+        width: 462,
+        height: 1000,
+      })),
+      alt: "Three App Store screenshots from the Aurora, Sunset and Cosmic Bloom templates, each an iPhone frame with a headline",
+      caption: `Three of the ${STARTER_TEMPLATES.length} built-in templates, exported from the app.`,
+    },
   },
   {
     id: "localize",
     title: "Localize",
     description: "One design, every language — translated copy without duplicated layouts.",
-    keys: ["project", "privacy"],
+    keys: ["project", "privacy", "overrides", "overflow"],
+    visual: {
+      images: [appStoreScreenshot(4)],
+      alt: "The editor with a project switched to German: translated headlines over the same layout",
+      caption: "Editing the German version of a project: the layout stays shared, the copy changes.",
+    },
   },
   {
     id: "ship",
     title: "Export and upload",
     description: "From raw captures to the store without a browser tab.",
     keys: ["batch", "export", "upload", "automation"],
+    visual: {
+      images: [appStoreScreenshot(2)],
+      alt: "An iPhone row and an iPad row of finished screenshots, ready to export together",
+      caption: "Every row and language exports in one pass, sized for each store.",
+    },
   },
   {
     id: "app",
     title: "The app",
     description: "Native, private and free to start.",
-    keys: ["native", "cloud", "free"],
+    keys: ["native", "cloud", "free", "format"],
+    visual: {
+      images: [{ src: "/docs-help/welcome.webp", width: 1660, height: 1080 }],
+      alt: "The Screenshot Bro editor on a Mac: an iPhone row and an iPad row of screenshots with the inspector on the right",
+      caption: "The editor on a Mac. With iCloud sync on, the same projects open on iPad and iPhone.",
+    },
   },
 ];
 
-const byKey = new Map(FEATURES.map((feature) => [feature.icon, feature]));
+const CARDS = new Map<string, Card>([
+  ...FEATURES.map((feature): [string, Card] => [
+    feature.icon,
+    { key: feature.icon, title: feature.title, description: feature.description, icon: <FeatureIcon icon={feature.icon} /> },
+  ]),
+  ...Object.entries(EXTRA_CARDS),
+]);
 
 const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([{ name: "Features", path: "/features" }]);
 
-function FeatureCard({ feature }: { feature: FeatureItem }) {
+function FeatureCard({ card }: { card: Card }) {
   return (
     <div className="feature-card rounded-3xl p-6 flex flex-col gap-4">
       <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-accent/10 text-accent-light">
-        <FeatureIcon icon={feature.icon} />
+        {card.icon}
       </div>
       <div className="space-y-2.5">
-        <h3 className="font-display font-semibold text-ink text-base">{feature.title}</h3>
-        <p className="text-sm leading-relaxed text-ink/[0.62]">{feature.description}</p>
+        <h3 className="font-display font-semibold text-ink text-base">{card.title}</h3>
+        <p className="text-sm leading-relaxed text-ink/[0.62]">{card.description}</p>
       </div>
     </div>
+  );
+}
+
+// Spans two columns and two rows of the four-column grid; `flip` puts it on the right.
+function GroupVisual({ visual, flip }: { visual: Visual; flip: boolean }) {
+  const strip = visual.images.length > 1;
+  return (
+    <figure
+      className={`soft-panel rounded-3xl p-4 sm:p-5 flex flex-col gap-4 sm:col-span-2 lg:row-span-2 ${flip ? "lg:col-start-3" : ""}`}
+    >
+      <div className="relative flex-1 min-h-0 rounded-2xl bg-[radial-gradient(circle_at_30%_20%,color-mix(in_srgb,var(--color-accent)_14%,transparent),transparent_70%)] lg:min-h-64">
+        <div
+          role="img"
+          aria-label={visual.alt}
+          className={`flex items-center justify-center gap-3 lg:absolute lg:inset-0 ${strip ? "py-2" : ""}`}
+        >
+          {visual.images.map((image) => (
+            <img
+              key={image.src}
+              src={image.src}
+              srcSet={image.srcSet}
+              sizes={image.srcSet ? SCREENSHOT_SIZES : undefined}
+              width={image.width}
+              height={image.height}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              className={
+                strip
+                  ? "w-[30%] max-w-40 h-auto lg:max-w-none lg:w-[31%] lg:max-h-full lg:object-contain rounded-xl shadow-lg"
+                  : "w-full h-auto lg:w-auto lg:max-w-full lg:max-h-full rounded-xl shadow-lg ring-1 ring-ink/10"
+              }
+            />
+          ))}
+        </div>
+      </div>
+      <figcaption className="text-xs text-ink/60 leading-relaxed">{visual.caption}</figcaption>
+    </figure>
   );
 }
 
@@ -106,16 +232,17 @@ export default function Features() {
           </nav>
         </section>
 
-        {GROUPS.map((group) => (
+        {GROUPS.map((group, index) => (
           <section key={group.id} id={group.id} aria-labelledby={`${group.id}-heading`} className="mt-20 scroll-mt-24">
             <h2 id={`${group.id}-heading`} className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-ink">
               {group.title}
             </h2>
             <p className="mt-2 text-ink/60">{group.description}</p>
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:grid-flow-dense gap-4">
+              <GroupVisual visual={group.visual} flip={index % 2 === 1} />
               {group.keys.map((key) => {
-                const feature = byKey.get(key);
-                return feature ? <FeatureCard key={key} feature={feature} /> : null;
+                const card = CARDS.get(key);
+                return card ? <FeatureCard key={key} card={card} /> : null;
               })}
             </div>
           </section>
