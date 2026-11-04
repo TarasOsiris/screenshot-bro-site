@@ -3,9 +3,9 @@ import { buttonClass } from "~/components/ui/Button";
 import { useLoaderData } from "react-router";
 import type { Route } from "./+types/download";
 import { ContentLayout } from "~/components/ContentLayout";
-import { AppleLogo } from "~/components/home/icons";
+import { AppleLogo, WindowsLogo } from "~/components/home/icons";
 import { DownloadIcon } from "~/components/home/small-icons";
-import { loadLatestRelease } from "~/lib/latest-release.server";
+import { loadLatestRelease, loadLatestWindowsRelease } from "~/lib/latest-release.server";
 import { mergeMeta } from "~/config/meta";
 import { LOCALES } from "~/config/localization";
 import {
@@ -13,9 +13,11 @@ import {
   DIRECT_DOWNLOAD_URL,
   MINIMUM_IPADOS_VERSION,
   MINIMUM_MACOS_VERSION,
+  MINIMUM_WINDOWS_VERSION,
   SITE_NAME,
   SITE_URL,
   WEB_PURCHASE_EMAIL,
+  WINDOWS_DOWNLOAD_URL,
 } from "~/config/site";
 
 // Home and blog CTAs pass the visitor's storefront as ?store=, so the App Store
@@ -26,13 +28,14 @@ export async function loader({ request }: Route.LoaderArgs) {
   const store = new URL(request.url).searchParams.get("store") ?? "";
   return {
     release: await loadLatestRelease(),
+    windows: await loadLatestWindowsRelease(),
     appStoreUrl: appStoreProductUrl(STOREFRONTS.has(store) ? store : undefined),
   };
 }
 
 export const meta: Route.MetaFunction = ({ matches }) => {
-  const title = `Download ${SITE_NAME} for Mac`;
-  const description = `Download ${SITE_NAME} directly or from the App Store. Free to start; Pro is an App Store in-app purchase, or a one-time web purchase for the direct download.`;
+  const title = `Download ${SITE_NAME} for Mac and Windows`;
+  const description = `Download ${SITE_NAME} for Mac directly or from the App Store, or try the Windows beta. Free to start; Pro is an App Store in-app purchase, or a one-time web purchase for the direct downloads.`;
   return mergeMeta(matches, [
     { title },
     { name: "description", content: description },
@@ -71,9 +74,13 @@ const FAQ = [
     answer: `Click Open ${SITE_NAME} on the page you land on after checkout. Or paste the activation link from your receipt email into ${SITE_NAME} ▸ Settings ▸ Activate Web Purchase.`,
   },
   {
+    question: "Is there a Windows version?",
+    answer: `Yes, in beta, for Windows ${MINIMUM_WINDOWS_VERSION} and 11 (64-bit). It uses the same project format as the Mac app, updates itself, and sells Pro once on our site like the direct Mac download; a web purchase activates one copy, Mac or Windows. iCloud sync and a few Mac features aren't there yet. Tell us what's missing or broken at ${WEB_PURCHASE_EMAIL}.`,
+  },
+  {
     question: "Is the download safe?",
     answer:
-      "It's signed with our Apple Developer ID and notarized by Apple, so macOS checks it before the first launch — no security warnings to click through.",
+      "The Mac download is signed with our Apple Developer ID and notarized by Apple, so macOS checks it before the first launch — no security warnings to click through. The Windows beta isn't code-signed yet, so Windows SmartScreen asks before the first run: choose More info, then Run anyway.",
   },
 ];
 
@@ -127,7 +134,7 @@ function OptionCard({
 }
 
 export default function Download() {
-  const { release, appStoreUrl } = useLoaderData<typeof loader>();
+  const { release, windows, appStoreUrl } = useLoaderData<typeof loader>();
   const [started, setStarted] = useState(false);
   const markStarted = () => setStarted(true);
 
@@ -217,11 +224,50 @@ export default function Download() {
         </p>
 
         <section
+          aria-labelledby="windows-heading"
+          className="soft-panel mt-10 rounded-3xl p-7 sm:p-8 flex flex-col md:flex-row md:items-center gap-6 text-left"
+        >
+          <div className="flex-1">
+            <div className="flex items-center gap-4">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-accent/10 text-accent-light">
+                <WindowsLogo className="h-5 w-5" />
+              </span>
+              <div>
+                <h2 id="windows-heading" className="font-display text-2xl font-bold tracking-tight text-ink">
+                  Windows{" "}
+                  <span className="ml-1 rounded-full bg-accent/10 px-2 py-0.5 align-middle text-xs font-semibold uppercase tracking-wider text-accent-light">
+                    Beta
+                  </span>
+                </h2>
+                <p className="text-sm text-ink/60">Windows {MINIMUM_WINDOWS_VERSION} and 11, 64-bit</p>
+              </div>
+            </div>
+            <p className="mt-4 text-sm text-ink/70 leading-relaxed">
+              The same editor and project format as the Mac app. It updates itself, and Pro is a one-time
+              purchase on our site, like the direct Mac download. Still in beta: iCloud sync and a few Mac
+              features aren't there yet.
+            </p>
+          </div>
+          <div className="md:w-72 shrink-0 flex flex-col">
+            <a href={windows?.url ?? WINDOWS_DOWNLOAD_URL} className={primaryButton} data-placement="download-page-windows">
+              <WindowsLogo /> Download for Windows
+            </a>
+            <p className="mt-3 text-center text-xs text-ink/55 leading-relaxed">
+              {windows
+                ? `Beta ${windows.version} · ${formatSize(windows.sizeBytes)} · ${formatDate(windows.publishedAt)}`
+                : "Beta"}
+              <br />
+              Not code-signed yet: if SmartScreen asks, choose More info ▸ Run anyway.
+            </p>
+          </div>
+        </section>
+
+        <section
           aria-labelledby="install-heading"
           className={`soft-panel mt-16 rounded-3xl p-6 sm:p-8 transition-shadow ${started ? "ring-2 ring-accent/40" : ""}`}
         >
           <h2 id="install-heading" className="text-lg font-semibold text-ink">
-            {started ? "While it downloads" : "Installing the direct download takes a few seconds"}
+            {started ? "While it downloads" : "Installing the direct Mac download takes a few seconds"}
           </h2>
           <ol className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
             {INSTALL_STEPS.map((step, index) => (

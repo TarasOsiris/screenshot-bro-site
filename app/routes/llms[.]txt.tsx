@@ -68,7 +68,7 @@ function buildLlmsTxt(): string {
     link("/features", "Features", "every capability, grouped, with the free-tier limits"),
     link("/templates", "Templates", "the built-in project templates, each a real export"),
     link("/pricing", "Pricing", "Free vs Pro, and how Pro is bought in each version"),
-    link("/download", "Download", "App Store and direct Mac download side by side"),
+    link("/download", "Download", "App Store, direct Mac download and the Windows beta"),
     link("/press", "Press kit", "description, logos, app icon and screenshots to download"),
     link("/docs/help", "Help docs", "how to use every part of the editor"),
     link("/docs/project-schema", "Project file schema", "the plain-JSON format Screenshot Bro projects are stored in"),

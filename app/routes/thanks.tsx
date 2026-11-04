@@ -19,7 +19,7 @@ export const meta: Route.MetaFunction = ({ matches }) =>
     { name: "robots", content: "noindex, nofollow" },
   ]);
 
-const ACTIVATE_LOCATION = `${SITE_NAME} ▸ Settings ▸ Activate Web Purchase`;
+const ACTIVATE_LOCATION = `${SITE_NAME} ▸ Settings ▸ Activate Web Purchase (on Windows: Settings ▸ Purchase ▸ Upgrade)`;
 
 function SuccessBadge() {
   return (
@@ -91,7 +91,7 @@ export default function Thanks() {
         {redeemUrl ? (
           <>
             <p className="mt-4 text-lg text-ink/60 leading-relaxed">
-              One last step: activate Pro on this Mac.
+              One last step: activate Pro on this computer.
             </p>
             <a
               href={redeemUrl}
@@ -108,15 +108,16 @@ export default function Thanks() {
             </h2>
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
               <HelpCard title="No app yet">
-                <a href={DIRECT_DOWNLOAD_URL} className="underline hover:text-ink">Download it</a>,
-                move it to Applications and open it once. Then come back and click{" "}
+                <a href={DIRECT_DOWNLOAD_URL} className="underline hover:text-ink">Download it</a>{" "}
+                (or the <a href="/download" className="underline hover:text-ink">Windows beta</a>), install it
+                and open it once. Then come back and click{" "}
                 <span className="text-ink/80">Open {SITE_NAME}</span> again.
               </HelpCard>
               <HelpCard title="Button does nothing">
                 Copy the link and paste it into {ACTIVATE_LOCATION}.
                 <CopyLink link={redeemUrl} />
               </HelpCard>
-              <HelpCard title="Later, or another Mac">
+              <HelpCard title="Later, or another computer">
                 The link is also in your receipt email. If it has expired, opening it emails you a
                 fresh one.
               </HelpCard>
@@ -125,7 +126,7 @@ export default function Thanks() {
         ) : (
           <>
             <p className="mt-4 text-lg text-ink/60 leading-relaxed">
-              Your activation link is in your receipt email. Open it on the Mac where {SITE_NAME} is
+              Your activation link is in your receipt email. Open it on the computer where {SITE_NAME} is
               installed, or paste it into {ACTIVATE_LOCATION}.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">

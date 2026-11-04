@@ -48,3 +48,36 @@ export function parseLatestRelease(xml: string): LatestRelease | null {
     publishedAt: published.toISOString(),
   };
 }
+
+export type LatestWindowsRelease = {
+  version: string;
+  url: string; // the versioned installer: the permanent link can sit in Cloudflare's cache for hours after a release
+  sizeBytes: number;
+  publishedAt: string; // ISO date
+};
+
+// The Windows build's electron-updater feed, which the Windows repo's `ship-windows` rewrites on every release.
+const WINDOWS_FEED_PATHS = ["public/windows/latest.yml", "build/client/windows/latest.yml"];
+
+export async function loadLatestWindowsRelease(): Promise<LatestWindowsRelease | null> {
+  for (const relative of WINDOWS_FEED_PATHS) {
+    try {
+      return parseWindowsFeed(await readFile(path.join(process.cwd(), relative), "utf8"));
+    } catch {
+      continue;
+    }
+  }
+  return null;
+}
+
+export function parseWindowsFeed(yaml: string): LatestWindowsRelease | null {
+  const field = (name: string) => yaml.match(new RegExp(`^${name}:\\s*'?([^'\\n]+)'?\\s*$`, "m"))?.[1]?.trim();
+  const version = field("version");
+  const url = field("path");
+  const size = yaml.match(/^\s+size:\s*(\d+)\s*$/m)?.[1];
+  const date = field("releaseDate");
+  if (!version || !url?.startsWith("https://") || !size || !date) return null;
+  const published = new Date(date);
+  if (Number.isNaN(published.getTime())) return null;
+  return { version, url, sizeBytes: Number(size), publishedAt: published.toISOString() };
+}

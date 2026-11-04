@@ -7,7 +7,7 @@ import { DIRECT_DOWNLOAD_URL } from "~/config/site";
 // wiring. Consent Mode (lib/consent.ts) decides what Google may store; this
 // only describes the click.
 //
-//   download_click   — the direct-download DMG
+//   download_click   — the direct-download DMG, or the Windows beta installer (channel "windows")
 //   app_store_click  — any apps.apple.com link
 //   buy_click        — /buy, the web checkout for the direct version
 //
@@ -19,6 +19,8 @@ type TrackedLink = { event: string; channel?: string };
 function classify(anchor: HTMLAnchorElement): TrackedLink | null {
   const href = anchor.getAttribute("href") ?? "";
   if (href.startsWith(DIRECT_DOWNLOAD_URL)) return { event: "download_click", channel: "direct" };
+  if (/^https:\/\/downloads\.screenshotbro\.app\/ScreenshotBro-[^/]*\.exe$/.test(href))
+    return { event: "download_click", channel: "windows" };
   if (/^https:\/\/apps\.apple\.com\//.test(href)) return { event: "app_store_click", channel: "app_store" };
   if (href === "/buy" || href.startsWith("/buy?")) return { event: "buy_click", channel: "direct" };
   return null;

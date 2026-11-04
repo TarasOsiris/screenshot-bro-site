@@ -26,6 +26,11 @@ export const DEFAULT_APP_STORE_COUNTRY = "us";
 // RevenueCat Web Purchase Link (Stripe); its success redirect is /thanks?redeem_url=…
 export const DIRECT_DOWNLOAD_URL = "https://downloads.screenshotbro.app/ScreenshotBro.dmg";
 export const APPCAST_URL = "/appcast.xml";
+// The Windows beta (NSIS installer, updates itself from /windows/latest.yml). The download page links the feed's
+// versioned installer; this permanent link is the fallback, and Cloudflare may serve the previous release from it
+// for a few hours after a new one.
+export const WINDOWS_DOWNLOAD_URL = "https://downloads.screenshotbro.app/ScreenshotBro-Setup.exe";
+export const MINIMUM_WINDOWS_VERSION = "10";
 // The free browser editor (one project), from the Windows/web port.
 export const WEB_DEMO_URL = "https://demo.screenshotbro.app";
 export const REDEMPTION_URL_SCHEME = "rc-6cc0af703b";

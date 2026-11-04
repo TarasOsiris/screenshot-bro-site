@@ -101,6 +101,14 @@ function IconNative({ size = 32 }: IconProps = {}) {
   );
 }
 
+export function WindowsLogo({ className }: { className?: string }) {
+  return (
+    <svg aria-hidden="true" className={className} width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M0 0h7.5v7.5H0zM8.5 0H16v7.5H8.5zM0 8.5h7.5V16H0zM8.5 8.5H16V16H8.5z" />
+    </svg>
+  );
+}
+
 type AppleLogoProps = {
   className?: string;
 };
