@@ -1,13 +1,12 @@
-version: 0.1.2
+version: 0.1.3
 files:
-  - url: https://downloads.screenshotbro.app/ScreenshotBro-0.1.2-x64-setup.exe
-    sha512: OX3ilA3H2i6QKSlvJbbTQo+61/7jG4rljvzihAtdhHwfm8+IVmeb8/KA8TZnK8y4e2YkSgkIc2TjaslqUI57zQ==
-    size: 158718783
-path: https://downloads.screenshotbro.app/ScreenshotBro-0.1.2-x64-setup.exe
-sha512: OX3ilA3H2i6QKSlvJbbTQo+61/7jG4rljvzihAtdhHwfm8+IVmeb8/KA8TZnK8y4e2YkSgkIc2TjaslqUI57zQ==
-releaseDate: '2026-11-04T12:23:11.572Z'
+  - url: https://downloads.screenshotbro.app/ScreenshotBro-0.1.3-x64-setup.exe
+    sha512: r7iz9YEh5nKjyBgeUhX4IuTcqB3F4GOidowlEP44e1vqtqcNwmAmYlTgPDZPi4tdjdg3xRBNN8RbltASVXTUJw==
+    size: 158720652
+path: https://downloads.screenshotbro.app/ScreenshotBro-0.1.3-x64-setup.exe
+sha512: r7iz9YEh5nKjyBgeUhX4IuTcqB3F4GOidowlEP44e1vqtqcNwmAmYlTgPDZPi4tdjdg3xRBNN8RbltASVXTUJw==
+releaseDate: '2026-11-04T12:35:35.023Z'
 releaseNotes: |
   <ul>
-  <li>(sandbox) Test release: Pro purchases go through RevenueCat's sandbox checkout, where test cards aren't charged</li>
-  <li>Fixed Buy Pro opening a “Page not found” checkout page</li>
+  <li>Buy Screenshot Bro Pro once on our website, with a card, Apple Pay or Google Pay, and activate it from your receipt email</li>
   </ul>
