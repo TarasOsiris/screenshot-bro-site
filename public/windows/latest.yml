@@ -1,0 +1,13 @@
+version: 0.1.1
+files:
+  - url: https://downloads.screenshotbro.app/ScreenshotBro-0.1.1-x64-setup.exe
+    sha512: OmLXYwRBGARwQyViyvctcKcMqgESmLIPZ9drXPjYVuqh1vX/QOOSfrXxS5Eq36MXiiDHCGjiDwFCBcyFMUYrQA==
+    size: 158715689
+path: https://downloads.screenshotbro.app/ScreenshotBro-0.1.1-x64-setup.exe
+sha512: OmLXYwRBGARwQyViyvctcKcMqgESmLIPZ9drXPjYVuqh1vX/QOOSfrXxS5Eq36MXiiDHCGjiDwFCBcyFMUYrQA==
+releaseDate: '2026-11-04T12:12:44.542Z'
+releaseNotes: |
+  <ul>
+  <li>(sandbox) Test release: Pro purchases go through RevenueCat's sandbox checkout, where test cards aren't charged</li>
+  <li>Screenshot Bro now keeps itself up to date: it checks for new versions once a day, and Help ▸ Check for Updates… checks any time</li>
+  </ul>
