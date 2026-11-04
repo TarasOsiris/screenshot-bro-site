@@ -10,10 +10,14 @@ import type { BlogFaqItem } from "~/config/blog-seo";
 import { buildComparisonMeta } from "~/config/comparison-seo";
 import { SCREENSHOT_BRO_FACTS } from "~/config/comparisons";
 import {
+  APP_STORE_PRO_PLANS,
   MINIMUM_IPADOS_VERSION,
   MINIMUM_MACOS_VERSION,
   SITE_NAME,
+  WEB_PRO_LIFETIME_PRICE,
 } from "~/config/site";
+
+const [PRO_MONTHLY, PRO_YEARLY, PRO_LIFETIME] = APP_STORE_PRO_PLANS;
 
 const SLUG = "butterkit";
 
@@ -130,7 +134,7 @@ const FAQS: BlogFaqItem[] = [
   {
     question: "Is Screenshot Bro free?",
     answer:
-      "Yes, with count limits rather than a time limit. The free tier gives you one project, three rows and five templates per row, with every device frame, shape and locale, no watermark, and App Store Connect and Google Play upload included. Pro removes the count limits: on the App Store it is $4.99 a month, $29.99 a year or $59.99 lifetime, and on the web it is $30 once for the direct Mac download or the Windows beta (US prices).",
+      `Yes, with count limits rather than a time limit. The free tier gives you one project, three rows and five templates per row, with every device frame, shape and locale, no watermark, and App Store Connect and Google Play upload included. Pro removes the count limits: on the App Store it is ${PRO_MONTHLY.price} a month, ${PRO_YEARLY.price} a year or ${PRO_LIFETIME.price} lifetime, and on the web it is ${WEB_PRO_LIFETIME_PRICE} once for the direct Mac download or the Windows beta (US prices).`,
   },
   {
     question: "Can Screenshot Bro capture screenshots from the Xcode Simulator?",
@@ -286,7 +290,7 @@ export default function ButterKitComparison() {
           14-day refund, discounts for students, teachers, veterans and first
           responders. {SITE_NAME} lists its prices on its pricing page too, but
           splits them by where you buy: subscriptions or a lifetime unlock on the
-          App Store, or a $30 one-time web purchase for the direct download.
+          App Store, or a {WEB_PRO_LIFETIME_PRICE} one-time web purchase for the direct download.
         </li>
         <li>
           <strong>You can install it three ways.</strong> Direct{" "}
@@ -434,11 +438,11 @@ export default function ButterKitComparison() {
         write the copy.
       </p>
 
-      <h3>&quot;$99 once versus $30 to $59.99 — isn&apos;t that the whole story?&quot;</h3>
+      <h3>&quot;$99 once versus {WEB_PRO_LIFETIME_PRICE} to {PRO_LIFETIME.price} — isn&apos;t that the whole story?&quot;</h3>
       <p>
         ButterKit deserves credit for a simple offer: $99 on the page, with the
-        refund window and the five-Mac allowance. {SITE_NAME}&apos;s Pro is $59.99
-        lifetime on the App Store or $30 once on the web, but a web unlock
+        refund window and the five-Mac allowance. {SITE_NAME}&apos;s Pro is {PRO_LIFETIME.price}
+        lifetime on the App Store or {WEB_PRO_LIFETIME_PRICE} once on the web, but a web unlock
         activates one copy. And the numbers are not comparing the same thing: {SITE_NAME}&apos;s free tier is a
         permanent, watermark-free way to ship a one-project listing including both
         store uploads, so for a small app the comparison is $99 against nothing.

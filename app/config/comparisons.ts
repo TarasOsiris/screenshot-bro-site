@@ -1,8 +1,12 @@
 import {
+  APP_STORE_PRO_PLANS,
   MINIMUM_IPADOS_VERSION,
   MINIMUM_MACOS_VERSION,
   SITE_NAME,
+  WEB_PRO_LIFETIME_PRICE,
 } from "~/config/site";
+
+const [PRO_MONTHLY, PRO_YEARLY, PRO_LIFETIME] = APP_STORE_PRO_PLANS;
 
 // Single source of truth for the /vs section. One entry here drives the hub
 // matrix, its group lists and ItemList schema, the sitemap, llms.txt, and the
@@ -54,7 +58,7 @@ export const SCREENSHOT_BRO_FACTS = {
   platform: `Native Mac, iPad and iPhone app (macOS ${MINIMUM_MACOS_VERSION}+, iOS/iPadOS ${MINIMUM_IPADOS_VERSION}+), from the App Store or as a direct Mac download`,
   account: "None — no signup; projects are local files",
   priceModel:
-    "Free tier with no expiry; Pro on the App Store is $4.99/month, $29.99/year or $59.99 lifetime, or $30 once on the web for the direct Mac and Windows downloads (US prices)",
+    `Free tier with no expiry; Pro on the App Store is ${PRO_MONTHLY.price}/month, ${PRO_YEARLY.price}/year or ${PRO_LIFETIME.price} lifetime, or ${WEB_PRO_LIFETIME_PRICE} once on the web for the direct Mac and Windows downloads (US prices)`,
   freeTier:
     "1 project, 3 rows, 5 templates per row; every device frame, shape and locale; store uploads included",
   watermark: "None on any export, free tier included",

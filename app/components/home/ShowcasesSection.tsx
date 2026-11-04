@@ -67,19 +67,30 @@ export function ShowcasesSection({
   const showcases = copy.featureShowcases;
   const [activeIndex, setActiveIndex] = useState(0);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const [scrollTarget, setScrollTarget] = useState<string | null>(null);
 
-  // Old deep links (/#auto-upload) open their tab.
+  // Old deep links (/#auto-upload) open their tab. The browser cannot scroll
+  // to a panel that was `hidden` when the hash was applied, so scroll once the
+  // tab is shown.
   useEffect(() => {
     const selectFromHash = () => {
       const index = showcases.findIndex(
         (showcase) => `#${showcase.id}` === window.location.hash,
       );
-      if (index >= 0) setActiveIndex(index);
+      if (index < 0) return;
+      setActiveIndex(index);
+      setScrollTarget(showcases[index].id);
     };
     selectFromHash();
     window.addEventListener("hashchange", selectFromHash);
     return () => window.removeEventListener("hashchange", selectFromHash);
   }, [showcases]);
+
+  useEffect(() => {
+    if (!scrollTarget) return;
+    document.getElementById(scrollTarget)?.scrollIntoView();
+    setScrollTarget(null);
+  }, [scrollTarget]);
 
   const onTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
     const last = showcases.length - 1;

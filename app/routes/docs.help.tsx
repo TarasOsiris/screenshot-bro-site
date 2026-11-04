@@ -1173,7 +1173,8 @@ function jumpTo(item: SearchItem) {
     );
     if (found) target = found;
   }
-  history.replaceState(null, "", `#${item.sectionId}`);
+  // Keep the router's own state (key, idx) on the entry; only the hash changes.
+  window.history.replaceState(window.history.state, "", `#${item.sectionId}`);
   target.scrollIntoView({ block: item.isTitle ? "start" : "center", behavior: "smooth" });
   target.animate(
     [
@@ -1227,12 +1228,16 @@ function DocsSidebar({ locale }: { locale: LocaleCode }) {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  useEffect(() => setActive(0), [query]);
+  // Every new query starts again from the first result.
+  function search(value: string) {
+    setQuery(value);
+    setActive(0);
+  }
 
   function onInputKey(event: React.KeyboardEvent<HTMLInputElement>) {
     if (event.key === "Escape") {
       if (!query) event.currentTarget.blur();
-      setQuery("");
+      search("");
       return;
     }
     if (!shown.length) return;
@@ -1261,7 +1266,7 @@ function DocsSidebar({ locale }: { locale: LocaleCode }) {
           id="docs-search"
           type="search"
           value={query}
-          onChange={(event) => setQuery(event.target.value)}
+          onChange={(event) => search(event.target.value)}
           onKeyDown={onInputKey}
           placeholder="Search the docs"
           autoComplete="off"
@@ -1274,7 +1279,7 @@ function DocsSidebar({ locale }: { locale: LocaleCode }) {
           <button
             type="button"
             onClick={() => {
-              setQuery("");
+              search("");
               inputRef.current?.focus();
             }}
             className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md px-1.5 text-lg leading-none text-ink/50 hover:text-ink"

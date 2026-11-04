@@ -134,7 +134,6 @@ export type HomeCopy = {
     read: string;
     browseGuides: string;
     submitApp: string;
-    contactDeveloper: string;
     productLabel: string;
     resourcesLabel: string;
     sectionsLabel: string;
@@ -242,7 +241,6 @@ export const EN_HOME_COPY: HomeCopy = {
     read: "Read",
     browseGuides: "Browse all guides",
     submitApp: "Submit your app",
-    contactDeveloper: "Contact the developer",
     productLabel: "Product",
     resourcesLabel: "Resources",
     sectionsLabel: "Sections",

@@ -3,7 +3,8 @@ import { getBlogUiCopy, type BlogUiCopy } from "~/config/blog-ui-copy";
 import type { LocaleCode } from "~/config/localization";
 
 type Heading = { id: string; text: string };
-type TocState = { headings: Heading[]; activeId: string | null; locale: LocaleCode };
+// `headings` is null until the rendered article has been scanned.
+type TocState = { headings: Heading[] | null; activeId: string | null; locale: LocaleCode };
 
 const MIN_HEADINGS = 3;
 const ACTIVE_OFFSET = 140;
@@ -23,7 +24,7 @@ export function BlogPostLayout({
   children: ReactNode;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [headings, setHeadings] = useState<Heading[]>([]);
+  const [headings, setHeadings] = useState<Heading[] | null>(null);
   const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
@@ -104,8 +105,7 @@ export function BlogTocDisclosure() {
   const toc = useContext(TocContext);
   if (!toc) return null;
   const copy = getBlogUiCopy(toc.locale);
-  const hidden = toc.headings.length > 0 && toc.headings.length < MIN_HEADINGS;
-  if (hidden) return null;
+  if (toc.headings && toc.headings.length < MIN_HEADINGS) return null;
   return (
     <details className="group/toc soft-panel xl:hidden mb-8 rounded-2xl">
       <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-3.5 [&::-webkit-details-marker]:hidden">
@@ -114,7 +114,7 @@ export function BlogTocDisclosure() {
           {copy.onThisPage}
         </span>
         <span className="flex items-center gap-2 text-xs text-ink/50">
-          {toc.headings.length > 0 ? copy.sections(toc.headings.length) : null}
+          {toc.headings ? copy.sections(toc.headings.length) : null}
           <ChevronIcon />
         </span>
       </summary>
@@ -127,7 +127,7 @@ export function BlogTocDisclosure() {
 
 function TocList({ variant }: { variant: "aside" | "disclosure" }) {
   const toc = useContext(TocContext);
-  if (!toc || toc.headings.length < MIN_HEADINGS) return null;
+  if (!toc?.headings || toc.headings.length < MIN_HEADINGS) return null;
   const copy = getBlogUiCopy(toc.locale);
 
   if (variant === "disclosure") {
@@ -236,7 +236,9 @@ function enhanceSizeValues(root: HTMLElement, copy: BlogUiCopy): () => void {
     }
   }
 
-  const timers = new Set<number>();
+  // One reset timer per button, so a second click restarts it instead of the
+  // first click's timer clearing the new "Copied" state early.
+  const timers = new Map<HTMLButtonElement, number>();
   const onClick = (event: MouseEvent) => {
     const button = (event.target as Element | null)?.closest<HTMLButtonElement>("button.size-copy");
     if (!button) return;
@@ -251,13 +253,18 @@ function enhanceSizeValues(root: HTMLElement, copy: BlogUiCopy): () => void {
       badge.className = COPIED_BADGE_CLASS;
       badge.textContent = copy.copied;
       button.append(badge);
-      const timer = window.setTimeout(() => {
-        timers.delete(timer);
-        delete button.dataset.copied;
-        button.querySelector("[data-icon]")!.innerHTML = COPY_ICON;
-        badge.remove();
-      }, 1400);
-      timers.add(timer);
+      window.clearTimeout(timers.get(button));
+      timers.set(
+        button,
+        window.setTimeout(() => {
+          timers.delete(button);
+          delete button.dataset.copied;
+          button.querySelector("[data-icon]")!.innerHTML = COPY_ICON;
+          badge.remove();
+        }, 1400),
+      );
+    }, () => {
+      // Nothing was copied, so show no confirmation; the value stays visible to select by hand.
     });
   };
   root.addEventListener("click", onClick);
@@ -295,8 +302,9 @@ async function writeClipboard(value: string): Promise<void> {
     area.style.opacity = "0";
     document.body.append(area);
     area.select();
-    document.execCommand("copy");
+    const copied = document.execCommand("copy");
     area.remove();
+    if (!copied) throw new Error("Copy to clipboard failed");
   }
 }
 

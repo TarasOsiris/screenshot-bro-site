@@ -120,6 +120,9 @@ export function TemplatesSection({
   const sectionRef = useRef<HTMLElement>(null);
   const stripRef = useRef<HTMLDivElement>(null);
   const advancingRef = useRef(false);
+  // Bumped by every visitor choice, so a rotation step still waiting on its
+  // preload does not override a template or store picked in the meantime.
+  const choiceRef = useRef(0);
 
   const templates = useMemo(
     () => STARTER_TEMPLATES.filter((template) => hasTemplatePreview(template, store)),
@@ -202,15 +205,17 @@ export function TemplatesSection({
     const next = nextInRotation();
     if (!next || advancingRef.current) return;
     advancingRef.current = true;
+    const choice = choiceRef.current;
     await Promise.race([
       preloadTemplate(templatePreview(next, store)),
       new Promise((resolve) => setTimeout(resolve, 2500)),
     ]);
     advancingRef.current = false;
-    setSelectedId(next.id);
+    if (choice === choiceRef.current) setSelectedId(next.id);
   }
 
   function pick(id: string) {
+    choiceRef.current++;
     setUserPaused(true);
     setSelectedId(id);
   }
@@ -221,6 +226,7 @@ export function TemplatesSection({
   }
 
   function chooseStore(next: TemplateStore) {
+    choiceRef.current++;
     setStore(next);
     if (!hasTemplatePreview(selected, next)) setSelectedId(DEFAULT_STARTER_TEMPLATE_ID);
   }
