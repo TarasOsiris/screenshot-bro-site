@@ -210,8 +210,8 @@ export default function Privacy() {
               <strong>Project data</strong> — screenshot layouts, shapes, text,
               backgrounds, and locale configurations (stored as JSON files in{" "}
               <code>~/Library/Application&nbsp;Support/screenshot/</code>; on
-              Windows, in <code>%APPDATA%\Screenshot&nbsp;Bro\data</code>, which
-              the Microsoft Store version keeps inside its own app storage)
+              Windows, in <code>%APPDATA%\Screenshot&nbsp;Bro\data</code>, for both
+              the Microsoft Store version and the one from our website)
             </li>
             <li>
               <strong>Imported images and fonts</strong> — copies of files you
@@ -948,9 +948,10 @@ export default function Privacy() {
               removed when you delete the App, or you can manually delete them
               from{" "}
               <code>~/Library/Application&nbsp;Support/screenshot/</code>. On
-              Windows, uninstalling the Microsoft Store version removes them;
-              for the version from our website, delete{" "}
-              <code>%APPDATA%\Screenshot&nbsp;Bro</code>.
+              Windows, projects are kept when you uninstall, so that reinstalling
+              or switching between the Microsoft Store and website versions keeps
+              your work; delete <code>%APPDATA%\Screenshot&nbsp;Bro</code> to
+              remove them.
             </li>
             <li>
               <strong>iCloud data</strong> — disable sync in the App's settings,
@@ -1000,8 +1001,7 @@ export default function Privacy() {
             The App runs inside Apple's app sandbox on macOS, iOS and iPadOS, which
             restricts file system access and network capabilities. On Windows,
             its interface runs in a sandboxed process with no direct access to
-            your files or the network, and the Microsoft Store version runs as
-            a packaged app with its own storage. All data at rest is protected
+            your files or the network. All data at rest is protected
             by platform storage encryption and iCloud encryption when
             applicable. The limited data the App does send — purchase
             validation, crash reports, analytics events, update checks, App
