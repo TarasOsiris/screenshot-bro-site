@@ -3,7 +3,6 @@ import { DownloadIcon } from "~/components/home/small-icons";
 import { ButtonLink } from "~/components/ui/Button";
 import { ctaCoverFor } from "~/config/blog-images";
 import { SITE_NAME, WEB_DEMO_URL } from "~/config/site";
-import { STARTER_TEMPLATES } from "~/config/templates";
 import { useHomeCopy } from "~/config/home-copy";
 import {
   downloadPageUrl,
@@ -37,17 +36,14 @@ export function BlogCTA({
   // The card shows a real template export, picked from the message so a page
   // always shows the same one.
   const cover = ctaCoverFor(message);
-  const template = STARTER_TEMPLATES.find((entry) => entry.id === cover.templateId);
 
   return (
     <div className="soft-panel mt-12 overflow-hidden rounded-3xl sm:grid sm:grid-cols-[minmax(0,1fr)_15rem]">
       <div className="relative h-52 sm:order-2 sm:h-auto sm:min-h-72 sm:border-s sm:border-border-subtle">
         <BlogCover cover={cover} shotWidth={27} />
-        {template ? (
-          <span className="absolute bottom-3 left-1/2 z-10 hidden -translate-x-1/2 whitespace-nowrap rounded-full border border-border bg-surface-raised/90 px-3 py-1 text-[11px] font-medium text-ink/75 shadow-sm backdrop-blur sm:block">
-            {template.name} · {template.width}×{template.height}
-          </span>
-        ) : null}
+        <span className="absolute bottom-3 left-1/2 z-10 hidden -translate-x-1/2 whitespace-nowrap rounded-full border border-border bg-surface-raised/90 px-3 py-1 text-[11px] font-medium text-ink/75 shadow-sm backdrop-blur sm:block">
+          {cover.name} · {cover.width}×{cover.height}
+        </span>
       </div>
       <div className="flex flex-col justify-center p-7 sm:p-9">
         <div className="mb-4 flex items-center gap-2.5">

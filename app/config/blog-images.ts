@@ -1,5 +1,5 @@
 import type { BlogCategory } from "~/config/blog";
-import { STARTER_TEMPLATES } from "~/config/templates";
+import { STARTER_TEMPLATES, templatePreview } from "~/config/templates";
 
 // Blog cards use real Screenshot Bro template exports (public/template-gallery,
 // see config/templates.ts) as covers instead of stock photos, tinted by the
@@ -81,13 +81,13 @@ const FALLBACK_POOLS: Record<BlogCategory, string[]> = {
   Comparison: ["golden", "copper-luxe", "solar-flare", "teal-amber", "citrus-pop", "sunset"],
 };
 
-export const CATEGORY_TINTS: Record<BlogCategory, string> = {
+const CATEGORY_TINTS: Record<BlogCategory, string> = {
   Guide: "var(--color-accent)",
   Reference: "var(--color-mint)",
   Comparison: "var(--color-warm)",
 };
 
-export type BlogCover = { templateId: string; shots: string[]; tint: string };
+export type BlogCover = { name: string; width: number; height: number; shots: string[]; tint: string };
 
 function hash(value: string): number {
   let h = 2166136261;
@@ -95,13 +95,10 @@ function hash(value: string): number {
   return h;
 }
 
-export function coverFromTemplate(templateId: string, count: number, tint = CATEGORY_TINTS.Guide): BlogCover {
-  const available = STARTER_TEMPLATES.find((t) => t.id === templateId)?.shots ?? 3;
-  return {
-    templateId,
-    tint,
-    shots: Array.from({ length: Math.min(count, available) }, (_, i) => `/template-gallery/${templateId}/${i + 1}.webp`),
-  };
+function coverFromTemplate(templateId: string, count: number, tint = CATEGORY_TINTS.Guide): BlogCover {
+  const template = STARTER_TEMPLATES.find((t) => t.id === templateId) ?? STARTER_TEMPLATES[0];
+  const { width, height, shotUrls } = templatePreview(template, "appStore");
+  return { name: template.name, width, height, tint, shots: shotUrls.slice(0, count) };
 }
 
 export function getBlogCover(slug: string, category: BlogCategory, count = 3): BlogCover {

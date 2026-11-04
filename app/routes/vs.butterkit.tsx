@@ -10,14 +10,14 @@ import type { BlogFaqItem } from "~/config/blog-seo";
 import { buildComparisonMeta } from "~/config/comparison-seo";
 import { SCREENSHOT_BRO_FACTS } from "~/config/comparisons";
 import {
-  APP_STORE_PRO_PLANS,
+  APP_STORE_PRO,
   MINIMUM_IPADOS_VERSION,
   MINIMUM_MACOS_VERSION,
   SITE_NAME,
   WEB_PRO_LIFETIME_PRICE,
 } from "~/config/site";
 
-const [PRO_MONTHLY, PRO_YEARLY, PRO_LIFETIME] = APP_STORE_PRO_PLANS;
+const { monthly: PRO_MONTHLY, yearly: PRO_YEARLY, lifetime: PRO_LIFETIME } = APP_STORE_PRO;
 
 const SLUG = "butterkit";
 

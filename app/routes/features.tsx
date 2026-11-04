@@ -13,7 +13,7 @@ import {
   SITE_URL,
   WORKFLOW_STEPS,
 } from "~/config/site";
-import { STARTER_TEMPLATES } from "~/config/templates";
+import { STARTER_TEMPLATES, templatePreview } from "~/config/templates";
 
 // The home page's #features grid shows eight cards; this is the full list from
 // config/site.ts (the same copy the SoftwareApplication featureList reads), so
@@ -99,11 +99,16 @@ const GROUPS: { id: string; title: string; description: string; keys: string[]; 
     description: "Lay out a whole listing on one canvas and change it in one place.",
     keys: ["templates", "starter", "device", "gradient", "shapes", "align", "fonts", "keyboard"],
     visual: {
-      images: ["aurora/2", "sunset/2", "cosmic-bloom/3"].map((id) => ({
-        src: `/template-gallery/${id}.webp`,
-        width: 462,
-        height: 1000,
-      })),
+      images: (
+        [
+          ["aurora", 1],
+          ["sunset", 1],
+          ["cosmic-bloom", 2],
+        ] as const
+      ).map(([id, shot]) => {
+        const preview = templatePreview(STARTER_TEMPLATES.find((t) => t.id === id)!, "appStore");
+        return { src: preview.shotUrls[shot], width: preview.shotWidth, height: preview.shotHeight };
+      }),
       alt: "Three App Store screenshots from the Aurora, Sunset and Cosmic Bloom templates, each an iPhone frame with a headline",
       caption: `Three of the ${STARTER_TEMPLATES.length} built-in templates, exported from the app.`,
     },

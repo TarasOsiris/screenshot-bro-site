@@ -67,13 +67,7 @@ export function SiteNav({
   }, []);
 
   const homeHref = localizedPath(copy.locale.code);
-  // The drawer's Product group already links the full Features and Templates
-  // pages, so skip the home anchors of the same name.
-  const sectionAnchors = showSectionAnchors
-    ? copy.navItems.filter(
-        (item) => !NAV_BAR_LINKS.some((link) => item.href === `#${link.uiKey}`),
-      )
-    : [];
+  const sectionAnchors = showSectionAnchors ? copy.navItems : [];
 
   return (
     <nav

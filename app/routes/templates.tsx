@@ -46,7 +46,7 @@ const ITEM_LIST_JSON_LD = JSON.stringify({
     position: index + 1,
     name: template.name,
     url: `${SITE_URL}/templates#${template.id}`,
-    image: `${SITE_URL}${templatePreview(template, "appStore")!.shotUrls[0]}`,
+    image: `${SITE_URL}${templatePreview(template, "appStore").shotUrls[0]}`,
   })),
 });
 

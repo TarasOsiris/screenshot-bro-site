@@ -6,6 +6,7 @@ import { ButtonLink } from "~/components/ui/Button";
 import { Panel } from "~/components/ui/Panel";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
 import {
+  APP_STORE_PRO,
   APP_STORE_PRO_PLANS,
   appStoreProductUrl,
   SITE_NAME,
@@ -20,7 +21,7 @@ import {
 // lifetime), the direct Mac build and the Windows beta sell a one-time web
 // purchase that activates one copy. Prices shown are US prices.
 
-const [MONTHLY, YEARLY, LIFETIME] = APP_STORE_PRO_PLANS;
+const { monthly: MONTHLY, yearly: YEARLY, lifetime: LIFETIME } = APP_STORE_PRO;
 
 const TITLE = `Pricing — ${SITE_NAME}`;
 const DESCRIPTION = `${SITE_NAME} is free with no trial expiry. Pro is ${WEB_PRO_LIFETIME_PRICE} once on the web, or ${MONTHLY.price}/month, ${YEARLY.price}/year or ${LIFETIME.price} lifetime on the App Store (US prices).`;

@@ -1,3 +1,4 @@
+import { PostTitle, ShortAnswer } from "~/components/PostHeading";
 import type { ReactNode } from "react";
 import { BlogCTA } from "~/components/BlogCTA";
 import { BlogPostLayout, BlogTocDisclosure } from "~/components/BlogPostLayout";
@@ -111,15 +112,8 @@ export function ComparisonShell({
           <p className="meta mb-4!">
             Comparison · {page.readTime} · Checked {checked}
           </p>
-          <h1 className="text-[1.875rem]! leading-[1.12] text-balance sm:text-[2.25rem]! mb-6!">{page.heading}</h1>
-          {tldr ? (
-            <div className="mb-8 rounded-2xl border border-accent/25 bg-accent/[0.05] px-5 py-4 sm:px-6 sm:py-5">
-              <p className="mb-1.5! font-mono text-[11px] uppercase tracking-[0.2em] text-accent-light">
-                Short answer
-              </p>
-              <p className="mb-0! text-ink/80">{tldr}</p>
-            </div>
-          ) : null}
+          <PostTitle>{page.heading}</PostTitle>
+          {tldr ? <ShortAnswer>{tldr}</ShortAnswer> : null}
 
           <h2>Side-by-side</h2>
           <ComparisonTable competitor={page.competitor} rows={rows} />
@@ -176,7 +170,7 @@ export function ComparisonShell({
 const STACKED_CELL =
   "align-top max-sm:border-0! max-sm:p-0! max-sm:before:mb-0.5 max-sm:before:block max-sm:before:font-mono max-sm:before:text-[10px] max-sm:before:uppercase max-sm:before:tracking-[0.14em] max-sm:before:text-ink/45 max-sm:before:content-[attr(data-label)]";
 
-export function ComparisonTable({
+function ComparisonTable({
   competitor,
   rows,
 }: {

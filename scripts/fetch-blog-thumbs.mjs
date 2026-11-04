@@ -10,9 +10,10 @@
 //   npm run blog:thumbs -- --force   # re-download everything
 //   npm run blog:thumbs -- --check   # report map/file drift, no downloads
 //
-// When adding a post: pick a photo on unsplash.com, add its
-// images.unsplash.com/photo-... base URL here and an alt text entry in
-// app/config/blog-images.ts, then run this script.
+// These photos now feed only the social images (scripts/generate-og-images.mjs);
+// blog cards use template exports (app/config/blog-images.ts). When adding a
+// post: pick a photo on unsplash.com, add its images.unsplash.com/photo-...
+// base URL here, then run this script.
 
 import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";

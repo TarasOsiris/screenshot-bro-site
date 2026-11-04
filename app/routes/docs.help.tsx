@@ -1096,6 +1096,7 @@ type SearchItem = {
   text: string;
   target?: string;
   isTitle?: boolean;
+  haystack: string;
 };
 
 function plain(md: string): string {
@@ -1108,7 +1109,7 @@ function normalize(text: string): string {
 
 const SEARCH_INDEX: SearchItem[] = SECTIONS.flatMap((section) => {
   const base = { sectionId: section.id, sectionTitle: section.navTitle };
-  const items: SearchItem[] = [
+  const items: Omit<SearchItem, "haystack">[] = [
     { ...base, text: [section.title, section.subtitle].filter(Boolean).join(" — "), isTitle: true },
   ];
   let heading: string | undefined;
@@ -1126,15 +1127,10 @@ const SEARCH_INDEX: SearchItem[] = SECTIONS.flatMap((section) => {
       items.push({ ...base, heading, text: plain(block.text) });
     }
   }
-  return items;
+  return items.map((item) => ({ ...item, haystack: normalize(item.text) }));
 });
 
 const MAX_RESULTS = 40;
-
-function matches(text: string, terms: string[]): boolean {
-  const haystack = normalize(text);
-  return terms.every((term) => haystack.includes(term));
-}
 
 function escapeRegExp(text: string): string {
   return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -1202,7 +1198,7 @@ function DocsSidebar({ locale }: { locale: LocaleCode }) {
   const searching = terms.length > 0;
 
   const results = useMemo(
-    () => (searching ? SEARCH_INDEX.filter((item) => matches(item.text, terms)) : []),
+    () => (searching ? SEARCH_INDEX.filter((item) => terms.every((term) => item.haystack.includes(term))) : []),
     [searching, terms],
   );
   const counts = useMemo(() => {
@@ -1211,7 +1207,7 @@ function DocsSidebar({ locale }: { locale: LocaleCode }) {
     return map;
   }, [results]);
   const entries = searching
-    ? NAV_ENTRIES.filter((entry) => counts.has(entry.id) || matches(entry.navTitle, terms))
+    ? NAV_ENTRIES.filter((entry) => counts.has(entry.id) || terms.every((term) => normalize(entry.navTitle).includes(term)))
     : NAV_ENTRIES;
   const shown = results.slice(0, MAX_RESULTS);
 

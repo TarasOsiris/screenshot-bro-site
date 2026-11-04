@@ -36,11 +36,12 @@ export const WEB_DEMO_URL = "https://demo.screenshotbro.app";
 export const REDEMPTION_URL_SCHEME = "rc-6cc0af703b";
 // Pro prices in US dollars, from App Store Connect and the live checkout (Nov 2026). Other
 // storefronts show their own price in the App Store and at checkout.
-export const APP_STORE_PRO_PLANS = [
-  { name: "Pro Monthly", price: "$4.99", period: "month" },
-  { name: "Pro Yearly", price: "$29.99", period: "year" },
-  { name: "Pro Lifetime", price: "$59.99", period: "one-time" },
-] as const;
+export const APP_STORE_PRO = {
+  monthly: { name: "Pro Monthly", price: "$4.99", period: "month" },
+  yearly: { name: "Pro Yearly", price: "$29.99", period: "year" },
+  lifetime: { name: "Pro Lifetime", price: "$59.99", period: "one-time" },
+} as const;
+export const APP_STORE_PRO_PLANS = [APP_STORE_PRO.monthly, APP_STORE_PRO.yearly, APP_STORE_PRO.lifetime];
 export const WEB_PRO_LIFETIME_PRICE = "$30";
 
 // Builds the clickable App Store product link. Deliberately carries no query
@@ -93,10 +94,10 @@ export type NavItem = {
   href: string;
 };
 
+// Home-page anchors for the drawer's Sections group. Features and Templates
+// are left out: the Product group links their full pages.
 export const NAV_ITEMS: NavItem[] = [
   { label: "Showcases", href: "#showcases" },
-  { label: "Templates", href: "#templates" },
-  { label: "Features", href: "#features" },
   { label: "FAQ", href: "#faq" },
 ];
 

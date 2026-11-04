@@ -1,3 +1,4 @@
+import { ShortAnswer } from "~/components/PostHeading";
 import { BlogCTA } from "~/components/BlogCTA";
 import { BlogPostHeader } from "~/components/BlogPostHeader";
 import { BlogPostLayout } from "~/components/BlogPostLayout";
@@ -130,9 +131,7 @@ export function BlogArticleShell({
         <article className="prose-policy">
           <BlogPostHeader slug={slug} locale={locale} />
           {tldr ? (
-            <p>
-              <strong>{SHORT_ANSWER_LABELS[locale] || SHORT_ANSWER_LABELS.en}</strong> {tldr}
-            </p>
+            <ShortAnswer label={(SHORT_ANSWER_LABELS[locale] || SHORT_ANSWER_LABELS.en).replace(/[:：]\s*$/, "")}>{tldr}</ShortAnswer>
           ) : null}
           {children}
           {seoLinks.length > 0 ? (

@@ -116,7 +116,12 @@ export function hasTemplatePreview(template: StarterTemplate, store: TemplateSto
 }
 
 // The row a store shows for a template, or undefined when that template has no
-// export for it.
+// export for it. Every template has an App Store row.
+export function templatePreview(template: StarterTemplate, store: "appStore"): TemplatePreview;
+export function templatePreview(
+  template: StarterTemplate,
+  store: TemplateStore,
+): TemplatePreview | undefined;
 export function templatePreview(
   template: StarterTemplate,
   store: TemplateStore,

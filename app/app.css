@@ -255,12 +255,6 @@ button:focus-visible {
   transform: translateY(-2px);
 }
 
-.showcase-media {
-  min-height: 100%;
-  object-fit: cover;
-  background: var(--color-surface-overlay);
-}
-
 /* Templates gallery: the selected template's screenshots sit side by side as
    separate images, the way an App Store listing shows them, and scroll
    sideways when a template has more than fit. */

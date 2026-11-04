@@ -591,7 +591,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Descargar Screenshot Bro",
     navItems: [
       { label: "Ejemplos", href: "#showcases" },
-      { label: "Funciones", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -813,7 +812,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ],
     navItems: [
       { label: "演示", href: "#showcases" },
-      { label: "功能", href: "#features" },
       { label: "常见问题", href: "#faq" },
     ],
     ui: {
@@ -968,7 +966,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ],
     navItems: [
       { label: "शोकेस", href: "#showcases" },
-      { label: "फीचर", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     ui: {
@@ -1127,7 +1124,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ],
     navItems: [
       { label: "Démos", href: "#showcases" },
-      { label: "Fonctions", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     ui: {
@@ -1288,7 +1284,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     ],
     navItems: [
       { label: "العروض", href: "#showcases" },
-      { label: "الميزات", href: "#features" },
       { label: "الأسئلة", href: "#faq" },
     ],
     ui: {
@@ -1386,7 +1381,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Screenshot Bro laden",
     navItems: [
       { label: "Beispiele", href: "#showcases" },
-      { label: "Funktionen", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -1547,7 +1541,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Screenshot Bro をダウンロード",
     navItems: [
       { label: "デモ", href: "#showcases" },
-      { label: "機能", href: "#features" },
       { label: "よくある質問", href: "#faq" },
     ],
     benefits: [
@@ -1707,7 +1700,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Baixar o Screenshot Bro",
     navItems: [
       { label: "Exemplos", href: "#showcases" },
-      { label: "Recursos", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -1868,7 +1860,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Scarica Screenshot Bro",
     navItems: [
       { label: "Esempi", href: "#showcases" },
-      { label: "Funzionalità", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -2029,7 +2020,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Screenshot Bro 다운로드",
     navItems: [
       { label: "쇼케이스", href: "#showcases" },
-      { label: "주요 기능", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -2189,7 +2179,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Завантажити Screenshot Bro",
     navItems: [
       { label: "Показ", href: "#showcases" },
-      { label: "Можливості", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -2350,7 +2339,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Pobierz Screenshot Bro",
     navItems: [
       { label: "Przykłady", href: "#showcases" },
-      { label: "Funkcje", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -2511,7 +2499,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Screenshot Bro'yu İndir",
     navItems: [
       { label: "Örnekler", href: "#showcases" },
-      { label: "Özellikler", href: "#features" },
       { label: "SSS", href: "#faq" },
     ],
     benefits: [
@@ -2637,7 +2624,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Download Screenshot Bro",
     navItems: [
       { label: "Voorbeelden", href: "#showcases" },
-      { label: "Functies", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -2763,7 +2749,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Unduh Screenshot Bro",
     navItems: [
       { label: "Contoh", href: "#showcases" },
-      { label: "Fitur", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -2889,7 +2874,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Tải Screenshot Bro",
     navItems: [
       { label: "Trình diễn", href: "#showcases" },
-      { label: "Tính năng", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -3015,7 +2999,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "ดาวน์โหลด Screenshot Bro",
     navItems: [
       { label: "ตัวอย่าง", href: "#showcases" },
-      { label: "ฟีเจอร์", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -3141,7 +3124,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Hämta Screenshot Bro",
     navItems: [
       { label: "Exempel", href: "#showcases" },
-      { label: "Funktioner", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -3266,7 +3248,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Hent Screenshot Bro",
     navItems: [
       { label: "Eksempler", href: "#showcases" },
-      { label: "Funktioner", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -3381,7 +3362,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Lataa Screenshot Bro",
     navItems: [
       { label: "Esimerkit", href: "#showcases" },
-      { label: "Ominaisuudet", href: "#features" },
       { label: "UKK", href: "#faq" },
     ],
     benefits: [
@@ -3496,7 +3476,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Hent Screenshot Bro",
     navItems: [
       { label: "Eksempler", href: "#showcases" },
-      { label: "Funksjoner", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -3611,7 +3590,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Stáhnout Screenshot Bro",
     navItems: [
       { label: "Příklady", href: "#showcases" },
-      { label: "Schopnosti", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -3726,7 +3704,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Descarcă Screenshot Bro",
     navItems: [
       { label: "Exemple", href: "#showcases" },
-      { label: "Capabilități", href: "#features" },
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
@@ -3841,7 +3818,6 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     primaryCtaLabel: "Muat turun Screenshot Bro",
     navItems: [
       { label: "Contoh", href: "#showcases" },
-      { label: "Keupayaan", href: "#features" },
       { label: "Soalan Lazim", href: "#faq" },
     ],
     benefits: [
