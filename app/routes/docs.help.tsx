@@ -1,4 +1,4 @@
-import type { ReactElement } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactElement } from "react";
 import type { Route } from "./+types/docs.help";
 import { data, useLoaderData } from "react-router";
 import { ContentLayout } from "~/components/ContentLayout";
@@ -159,11 +159,11 @@ const SECTIONS: Section[] = [
     title: "Welcome to Screenshot Bro",
     subtitle: "Beautiful App Store and Google Play screenshots, made on Mac, iPad, and iPhone.",
     image: {
-      src: "/docs-help/editor-overview.webp",
-      alt: "Screenshot Bro editor with two rows of templates and the right-side inspector",
-      width: 1600,
-      height: 1046,
-      caption: "The Screenshot Bro editor — rows of templates with a shared row canvas, plus the inspector on the right.",
+      src: "/docs-help/welcome.webp",
+      alt: "Screenshot Bro editor with a table tennis app's iPhone and iPad rows of screenshots and the inspector on the right",
+      width: 1660,
+      height: 1080,
+      caption: "The Screenshot Bro editor — an iPhone row and an iPad row of templates on one canvas, plus the inspector on the right.",
     },
     blocks: [
       { kind: "p", text: "Screenshot Bro turns raw device screenshots into polished, store-ready marketing images. Drop in a screenshot, pick a device frame, add a headline, and export at exactly the resolution the App Store and Google Play expect." },
@@ -831,6 +831,7 @@ const SECTIONS: Section[] = [
       { kind: "li", text: "Future Pro-only features as they ship." },
       { kind: "h", text: "Buying or restoring" },
       { kind: "li", text: "**Settings ▸ Purchase** lists the available plans. RevenueCat handles the transaction." },
+      { kind: "li", text: "Plans and US prices for every version are on the [Pricing](/pricing) page." },
       { kind: "li", text: "**Restore Purchase** brings back an existing purchase on a new Mac." },
       { kind: "li", text: "Subscriptions are managed through your Apple Account. To change or cancel one, open **System Settings**, click your name, choose **Media & Purchases**, then click **Manage** next to **Subscriptions**." },
       { kind: "tip", text: "Pro paywall messages adapt to context — the prompt you see when adding a 4th row is different from the one you see when adding a 6th template, so you always know exactly which limit you're hitting." },
@@ -1087,6 +1088,282 @@ const NAV_ENTRIES: { id: SectionId | "project-schema"; navTitle: string; href?: 
   { id: "project-schema", navTitle: "Project File Schema", href: "/docs/project-schema" },
 ];
 
+type SearchItem = {
+  sectionId: SectionId;
+  sectionTitle: string;
+  heading?: string;
+  // What is shown and searched; `target` is the text to find on the page when it differs.
+  text: string;
+  target?: string;
+  isTitle?: boolean;
+};
+
+function plain(md: string): string {
+  return md.replace(/\*\*([^*]+)\*\*/g, "$1").replace(/`([^`]+)`/g, "$1").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+}
+
+function normalize(text: string): string {
+  return text.toLowerCase().replace(/[\s\-‐–—_/]+/g, " ").trim();
+}
+
+const SEARCH_INDEX: SearchItem[] = SECTIONS.flatMap((section) => {
+  const base = { sectionId: section.id, sectionTitle: section.navTitle };
+  const items: SearchItem[] = [
+    { ...base, text: [section.title, section.subtitle].filter(Boolean).join(" — "), isTitle: true },
+  ];
+  let heading: string | undefined;
+  for (const block of section.blocks) {
+    if (block.kind === "table") {
+      heading = block.title;
+      items.push({ ...base, text: block.title, heading });
+      for (const row of block.rows) {
+        items.push({ ...base, heading, text: `${row.keys} — ${row.description}`, target: row.description });
+      }
+    } else if (block.kind === "h") {
+      heading = plain(block.text);
+      items.push({ ...base, text: heading });
+    } else {
+      items.push({ ...base, heading, text: plain(block.text) });
+    }
+  }
+  return items;
+});
+
+const MAX_RESULTS = 40;
+
+function matches(text: string, terms: string[]): boolean {
+  const haystack = normalize(text);
+  return terms.every((term) => haystack.includes(term));
+}
+
+function escapeRegExp(text: string): string {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function Snippet({ text, terms }: { text: string; terms: string[] }) {
+  const lower = text.toLowerCase();
+  const first = Math.min(text.length, ...terms.map((term) => lower.indexOf(term)).filter((i) => i >= 0));
+  const start = first > 40 && first < text.length ? text.lastIndexOf(" ", first - 30) + 1 : 0;
+  const clipped = (start > 0 ? "…" : "") + text.slice(start);
+  const parts = clipped.split(new RegExp(`(${terms.map(escapeRegExp).join("|")})`, "gi"));
+  return (
+    <>
+      {parts.map((part, i) =>
+        i % 2 === 1 ? (
+          <mark key={i} className="rounded-sm bg-accent/20 text-ink">
+            {part}
+          </mark>
+        ) : (
+          part
+        ),
+      )}
+    </>
+  );
+}
+
+function jumpTo(item: SearchItem) {
+  const heading = document.getElementById(item.sectionId);
+  const section = heading?.closest("section");
+  if (!heading || !section) return;
+  let target: Element = heading;
+  if (!item.isTitle) {
+    const needle = normalize(item.target ?? item.text).slice(0, 80);
+    const found = Array.from(section.querySelectorAll("h3, p, li, td")).find((el) =>
+      normalize(el.textContent ?? "").includes(needle),
+    );
+    if (found) target = found;
+  }
+  history.replaceState(null, "", `#${item.sectionId}`);
+  target.scrollIntoView({ block: item.isTitle ? "start" : "center", behavior: "smooth" });
+  target.animate(
+    [
+      { backgroundColor: "color-mix(in srgb, var(--color-accent) 22%, transparent)", borderRadius: "6px" },
+      { backgroundColor: "transparent", borderRadius: "6px" },
+    ],
+    { duration: 2200, easing: "ease-out" },
+  );
+}
+
+function SearchIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+      <circle cx="11" cy="11" r="7" />
+      <path d="m20 20-3.5-3.5" />
+    </svg>
+  );
+}
+
+function DocsSidebar({ locale }: { locale: LocaleCode }) {
+  const [query, setQuery] = useState("");
+  const [active, setActive] = useState(0);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const terms = useMemo(() => normalize(query).split(" ").filter(Boolean), [query]);
+  const searching = terms.length > 0;
+
+  const results = useMemo(
+    () => (searching ? SEARCH_INDEX.filter((item) => matches(item.text, terms)) : []),
+    [searching, terms],
+  );
+  const counts = useMemo(() => {
+    const map = new Map<string, number>();
+    for (const item of results) map.set(item.sectionId, (map.get(item.sectionId) ?? 0) + 1);
+    return map;
+  }, [results]);
+  const entries = searching
+    ? NAV_ENTRIES.filter((entry) => counts.has(entry.id) || matches(entry.navTitle, terms))
+    : NAV_ENTRIES;
+  const shown = results.slice(0, MAX_RESULTS);
+
+  useEffect(() => {
+    function onKey(event: KeyboardEvent) {
+      if (event.key !== "/" || event.metaKey || event.ctrlKey || event.altKey) return;
+      const el = event.target as HTMLElement | null;
+      if (el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
+      event.preventDefault();
+      inputRef.current?.focus();
+      inputRef.current?.select();
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  useEffect(() => setActive(0), [query]);
+
+  function onInputKey(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.key === "Escape") {
+      if (!query) event.currentTarget.blur();
+      setQuery("");
+      return;
+    }
+    if (!shown.length) return;
+    if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+      event.preventDefault();
+      const next = (active + (event.key === "ArrowDown" ? 1 : -1) + shown.length) % shown.length;
+      setActive(next);
+      document.getElementById(`docs-result-${next}`)?.scrollIntoView({ block: "nearest" });
+    } else if (event.key === "Enter") {
+      event.preventDefault();
+      jumpTo(shown[active]);
+    }
+  }
+
+  return (
+    <div>
+      <div role="search" className="relative">
+        <label htmlFor="docs-search" className="sr-only">
+          Search the help docs
+        </label>
+        <span className="pointer-events-none absolute left-3 top-1/2 z-10 -translate-y-1/2 text-ink/45">
+          <SearchIcon />
+        </span>
+        <input
+          ref={inputRef}
+          id="docs-search"
+          type="search"
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          onKeyDown={onInputKey}
+          placeholder="Search the docs"
+          autoComplete="off"
+          spellCheck={false}
+          aria-controls="docs-search-results"
+          aria-activedescendant={searching && shown.length ? `docs-result-${active}` : undefined}
+          className="soft-pill w-full rounded-xl py-2.5 pl-9 pr-9 text-sm text-ink placeholder:text-ink/45 outline-none focus:border-accent/60 focus:ring-2 focus:ring-accent/25 [&::-webkit-search-cancel-button]:hidden"
+        />
+        {searching ? (
+          <button
+            type="button"
+            onClick={() => {
+              setQuery("");
+              inputRef.current?.focus();
+            }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md px-1.5 text-lg leading-none text-ink/50 hover:text-ink"
+            aria-label="Clear search"
+          >
+            ×
+          </button>
+        ) : (
+          <kbd className="pointer-events-none absolute right-2.5 top-1/2 hidden -translate-y-1/2 rounded-md border border-ink/15 px-1.5 font-mono text-[11px] text-ink/50 lg:block">
+            /
+          </kbd>
+        )}
+      </div>
+
+      <p className="sr-only" aria-live="polite">
+        {searching ? `${results.length} matches in ${counts.size} topics` : ""}
+      </p>
+
+      <p className="mt-6 mb-3 text-[11px] uppercase tracking-[0.25em] text-ink/55 font-mono">
+        {searching ? "Topics" : "On this page"}
+      </p>
+      {entries.length ? (
+        <nav aria-label="Help topics" className="grid grid-cols-2 gap-x-4 gap-y-2 lg:flex lg:flex-col">
+          {entries.map((entry) => (
+            <a
+              key={entry.id}
+              href={entry.href ? localeHref(locale, entry.href) : `#${entry.id}`}
+              className="flex items-center gap-2.5 text-sm text-ink/60 hover:text-ink/95 transition-colors"
+            >
+              <span className="text-ink/55 shrink-0">{ICON_MAP[entry.id]}</span>
+              <span className="min-w-0 flex-1 truncate">{entry.navTitle}</span>
+              {searching && counts.has(entry.id) && (
+                <span className="rounded-full bg-accent/10 px-1.5 text-[11px] tabular-nums text-accent-light">
+                  {counts.get(entry.id)}
+                </span>
+              )}
+            </a>
+          ))}
+        </nav>
+      ) : (
+        <p className="text-sm text-ink/60">
+          Nothing matches “{query.trim()}”. Try another word, or ask on{" "}
+          <a href={DISCORD_INVITE_URL} className="underline underline-offset-2 hover:text-ink">
+            Discord
+          </a>
+          .
+        </p>
+      )}
+
+      {searching && shown.length > 0 && (
+        <>
+          <p className="mt-6 mb-2 text-[11px] uppercase tracking-[0.25em] text-ink/55 font-mono">
+            {results.length} {results.length === 1 ? "match" : "matches"}
+          </p>
+          <ul
+            id="docs-search-results"
+            role="listbox"
+            aria-label="Search results"
+            className="-mx-2 max-h-96 overflow-auto lg:max-h-none lg:overflow-visible"
+          >
+            {shown.map((item, i) => (
+              <li key={`${item.sectionId}-${i}`} id={`docs-result-${i}`} role="option" aria-selected={i === active}>
+                <button
+                  type="button"
+                  onClick={() => jumpTo(item)}
+                  onMouseEnter={() => setActive(i)}
+                  className={`w-full rounded-lg px-2 py-2 text-left transition-colors ${i === active ? "bg-ink/[0.06]" : ""}`}
+                >
+                  <span className="block truncate font-mono text-[10px] uppercase tracking-[0.15em] text-ink/50">
+                    {item.heading ? `${item.sectionTitle} › ${item.heading}` : item.sectionTitle}
+                  </span>
+                  <span className="mt-0.5 line-clamp-2 text-[13px] leading-snug text-ink/75">
+                    <Snippet text={item.text} terms={terms} />
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+          {results.length > shown.length && (
+            <p className="mt-2 text-xs text-ink/50">
+              Showing the first {shown.length}. Add a word to narrow it down.
+            </p>
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
 function SectionView({ section, locale }: { section: Section; locale: LocaleCode }) {
   const image = section.image;
   const imageSrc = image && (image.src ?? `/docs-help/${section.id}.webp`);
@@ -1117,33 +1394,19 @@ export default function Help() {
         <header className="prose-policy mb-12">
           <h1>Screenshot Bro Help</h1>
           <p className="meta">
-            Complete guide to designing App Store and Google Play screenshots
-            on macOS.
+            The complete guide to designing App Store and Google Play
+            screenshots on Mac, iPad and iPhone. The{" "}
+            <a href={localeHref(locale, "/download")}>Windows beta</a> uses the
+            same editor, without iCloud sync and a few Mac-only features.
           </p>
         </header>
 
-        <div className="grid gap-12 lg:grid-cols-[200px_minmax(0,1fr)]">
-          <aside className="lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-auto">
-            <p className="text-[11px] uppercase tracking-[0.25em] text-ink/55 font-mono mb-4">
-              On this page
-            </p>
-            <nav className="flex flex-col gap-2">
-              {NAV_ENTRIES.map((entry) => (
-                <a
-                  key={entry.id}
-                  href={entry.href ? localeHref(locale, entry.href) : `#${entry.id}`}
-                  className="flex items-center gap-2.5 text-sm text-ink/60 hover:text-ink/95 transition-colors"
-                >
-                  <span className="text-ink/55 shrink-0">
-                    {ICON_MAP[entry.id]}
-                  </span>
-                  <span>{entry.navTitle}</span>
-                </a>
-              ))}
-            </nav>
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-10 lg:gap-12 lg:grid-cols-[232px_minmax(0,1fr)]">
+          <aside className="lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-7rem)] lg:overflow-auto lg:pr-1 lg:pb-4">
+            <DocsSidebar locale={locale} />
           </aside>
 
-          <article className="prose-policy max-w-3xl">
+          <article className="prose-policy max-w-3xl [&_code]:[overflow-wrap:anywhere]">
             {SECTIONS.map((section) => (
               <SectionView key={section.id} section={section} locale={locale} />
             ))}

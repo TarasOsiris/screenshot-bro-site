@@ -34,6 +34,14 @@ export const WINDOWS_REQUIREMENT = `Windows ${MINIMUM_WINDOWS_VERSION} and 11, 6
 // The free browser editor (one project), from the Windows/web port.
 export const WEB_DEMO_URL = "https://demo.screenshotbro.app";
 export const REDEMPTION_URL_SCHEME = "rc-6cc0af703b";
+// Pro prices in US dollars, from App Store Connect and the live checkout (Nov 2026). Other
+// storefronts show their own price in the App Store and at checkout.
+export const APP_STORE_PRO_PLANS = [
+  { name: "Pro Monthly", price: "$4.99", period: "month" },
+  { name: "Pro Yearly", price: "$29.99", period: "year" },
+  { name: "Pro Lifetime", price: "$59.99", period: "one-time" },
+] as const;
+export const WEB_PRO_LIFETIME_PRICE = "$30";
 
 // Builds the clickable App Store product link. Deliberately carries no query
 // params: campaign/platform params (`pt`, `ct`, `platform=mac`) sometimes broke
