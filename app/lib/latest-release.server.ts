@@ -51,7 +51,7 @@ export function parseLatestRelease(xml: string): LatestRelease | null {
 
 export type LatestWindowsRelease = {
   version: string;
-  url: string; // the versioned installer: the permanent link can sit in Cloudflare's cache for hours after a release
+  url: string; // the versioned installer
   sizeBytes: number;
   publishedAt: string; // ISO date
 };
