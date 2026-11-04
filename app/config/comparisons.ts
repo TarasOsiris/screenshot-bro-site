@@ -54,7 +54,7 @@ export const SCREENSHOT_BRO_FACTS = {
   platform: `Native Mac, iPad and iPhone app (macOS ${MINIMUM_MACOS_VERSION}+, iOS/iPadOS ${MINIMUM_IPADOS_VERSION}+), from the App Store or as a direct Mac download`,
   account: "None — no signup; projects are local files",
   priceModel:
-    "Free tier with no expiry; Pro unlock sold as a lifetime purchase or a subscription (price shown in the app)",
+    "Free tier with no expiry; Pro on the App Store is $4.99/month, $29.99/year or $59.99 lifetime, or $30 once on the web for the direct Mac and Windows downloads (US prices)",
   freeTier:
     "1 project, 3 rows, 5 templates per row; every device frame, shape and locale; store uploads included",
   watermark: "None on any export, free tier included",

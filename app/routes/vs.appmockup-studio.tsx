@@ -130,7 +130,7 @@ const FAQS: BlogFaqItem[] = [
   {
     question: "Is Screenshot Bro free?",
     answer:
-      "The free tier has no expiry and no signup: one project, three rows, five templates per row, every device frame, shape and locale, watermark-free exports, and App Store Connect and Google Play upload included. Pro removes the project, row and template limits and is sold as a lifetime purchase or a subscription, with the price shown in the app. Nothing else is gated.",
+      "The free tier has no expiry and no signup: one project, three rows, five templates per row, every device frame, shape and locale, watermark-free exports, and App Store Connect and Google Play upload included. Pro removes the project, row and template limits and is sold as a lifetime purchase or a subscription, with prices listed on the pricing page. Nothing else is gated.",
   },
   {
     question: "Can Screenshot Bro open AppMockUp Studio projects?",

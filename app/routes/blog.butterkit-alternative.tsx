@@ -45,7 +45,7 @@ const COMPARISON = [
   {
     factor: "Price",
     butterkit: "$99 one-time (listed down from $149), or a $10/month, $39/year Supporter plan",
-    screenshotBro: "Free tier plus a Pro unlock, lifetime or subscription; price shown in the app",
+    screenshotBro: "Free tier plus a Pro unlock, lifetime or subscription; prices on the pricing page",
   },
   {
     factor: "Project files",

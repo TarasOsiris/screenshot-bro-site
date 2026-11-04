@@ -106,8 +106,8 @@ const SOFTWARE_APP_SCHEMA = {
     name: "Taras Leskiv",
     url: X_PROFILE_URL,
   },
-  // The download is free; Pro is an optional in-app or web purchase whose
-  // price varies by storefront, so no Pro price is asserted here.
+  // The download is free; Pro is an optional purchase (see /pricing), so the
+  // offer here is the free download only.
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",

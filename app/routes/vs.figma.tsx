@@ -130,7 +130,7 @@ const FAQS: BlogFaqItem[] = [
   {
     question: "Is Screenshot Bro free?",
     answer:
-      "Yes, with limits on quantity rather than features. The free tier has no signup and no expiry, and it gives you 1 project, 3 rows and 5 templates per row with every device frame, shape and locale, watermark-free exports, and App Store Connect and Google Play upload. Pro removes the project, row and template limits; the price is shown in the app.",
+      "Yes, with limits on quantity rather than features. The free tier has no signup and no expiry, and it gives you 1 project, 3 rows and 5 templates per row with every device frame, shape and locale, watermark-free exports, and App Store Connect and Google Play upload. Pro removes the project, row and template limits; prices are listed on the pricing page.",
   },
   {
     question: "Can Screenshot Bro import Figma files?",

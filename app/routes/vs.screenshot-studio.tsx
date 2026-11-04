@@ -134,7 +134,7 @@ const FAQS: BlogFaqItem[] = [
   {
     question: "Is Screenshot Bro free?",
     answer:
-      "Yes, with no signup and no expiry. The free tier allows 1 project, 3 rows and 5 templates per row, includes every device frame, shape and locale, exports without a watermark, and includes App Store Connect upload, Google Play upload and iCloud sync. Pro removes the project, row and template limits and nothing else; the price is shown in the app.",
+      "Yes, with no signup and no expiry. The free tier allows 1 project, 3 rows and 5 templates per row, includes every device frame, shape and locale, exports without a watermark, and includes App Store Connect upload, Google Play upload and iCloud sync. Pro removes the project, row and template limits and nothing else; prices are listed on the pricing page.",
   },
   {
     question: "Can Screenshot Bro open Screenshot Studio projects?",

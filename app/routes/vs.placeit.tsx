@@ -151,7 +151,7 @@ const FAQS: BlogFaqItem[] = [
   {
     question: "Is Screenshot Bro free?",
     answer:
-      "Yes, with count limits: the free tier gives you 1 project, 3 rows and 5 templates per row, with every device frame, shape and locale, watermark-free export, and App Store Connect and Google Play upload included. There is no signup and it does not expire. Pro removes the project, row and template limits; the price is shown in the app.",
+      "Yes, with count limits: the free tier gives you 1 project, 3 rows and 5 templates per row, with every device frame, shape and locale, watermark-free export, and App Store Connect and Google Play upload included. There is no signup and it does not expire. Pro removes the project, row and template limits; prices are listed on the pricing page.",
   },
   {
     question: "Can Screenshot Bro open Placeit projects?",

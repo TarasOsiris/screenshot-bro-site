@@ -130,7 +130,7 @@ const FAQS: BlogFaqItem[] = [
   {
     question: "Is Screenshot Bro free?",
     answer:
-      "Yes, with count limits rather than a time limit. The free tier gives you one project, three rows and five templates per row, with every device frame, shape and locale, no watermark, and App Store Connect and Google Play upload included. Pro removes the count limits and is sold as a lifetime purchase or a subscription; the price is shown in the app.",
+      "Yes, with count limits rather than a time limit. The free tier gives you one project, three rows and five templates per row, with every device frame, shape and locale, no watermark, and App Store Connect and Google Play upload included. Pro removes the count limits and is sold as a lifetime purchase or a subscription; prices are listed on the pricing page.",
   },
   {
     question: "Can Screenshot Bro open Shotbot projects?",

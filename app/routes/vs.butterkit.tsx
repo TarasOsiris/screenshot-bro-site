@@ -130,7 +130,7 @@ const FAQS: BlogFaqItem[] = [
   {
     question: "Is Screenshot Bro free?",
     answer:
-      "Yes, with count limits rather than a time limit. The free tier gives you one project, three rows and five templates per row, with every device frame, shape and locale, no watermark, and App Store Connect and Google Play upload included. Pro removes the count limits and is sold as a lifetime purchase or a subscription; the price is shown in the app.",
+      "Yes, with count limits rather than a time limit. The free tier gives you one project, three rows and five templates per row, with every device frame, shape and locale, no watermark, and App Store Connect and Google Play upload included. Pro removes the count limits: on the App Store it is $4.99 a month, $29.99 a year or $59.99 lifetime, and on the web it is $30 once for the direct Mac download or the Windows beta (US prices).",
   },
   {
     question: "Can Screenshot Bro capture screenshots from the Xcode Simulator?",
@@ -284,15 +284,16 @@ export default function ButterKitComparison() {
         <li>
           <strong>The price is on the page.</strong> $99 one-time, five Macs,
           14-day refund, discounts for students, teachers, veterans and first
-          responders. {SITE_NAME} deliberately publishes no price and shows it in
-          the app instead, which is less convenient if you are comparing before
-          downloading.
+          responders. {SITE_NAME} lists its prices on its pricing page too, but
+          splits them by where you buy: subscriptions or a lifetime unlock on the
+          App Store, or a $30 one-time web purchase for the direct download.
         </li>
         <li>
           <strong>You can install it three ways.</strong> Direct{" "}
           <code>.dmg</code>, Mac App Store, or{" "}
-          <code>brew install --cask butterkit</code>. {SITE_NAME} is App Store
-          only.
+          <code>brew install --cask butterkit</code>. {SITE_NAME} has no Homebrew
+          cask: it comes from the App Store or as a direct download, plus a
+          Windows beta.
         </li>
       </ul>
 
@@ -366,8 +367,8 @@ export default function ButterKitComparison() {
           the screenshot copy, and you already pay for an AI API key.
         </li>
         <li>
-          You want to know the price before you download, and you would rather
-          pay $99 once than judge a price inside an app.
+          You want one licence that covers five Macs, and you would rather pay
+          $99 once than choose between subscriptions and a per-copy unlock.
         </li>
         <li>
           You want App Preview-style video eventually and like that ButterKit
@@ -433,17 +434,17 @@ export default function ButterKitComparison() {
         write the copy.
       </p>
 
-      <h3>&quot;$99 once versus an unpublished price — isn&apos;t that the whole story?&quot;</h3>
+      <h3>&quot;$99 once versus $30 to $59.99 — isn&apos;t that the whole story?&quot;</h3>
       <p>
-        It is a fair criticism of {SITE_NAME} that you have to open the app to
-        see the price, and ButterKit deserves credit for putting $99 on the page
-        along with the refund window and the five-Mac allowance. But the numbers
-        are not comparing the same thing: {SITE_NAME}&apos;s free tier is a
+        ButterKit deserves credit for a simple offer: $99 on the page, with the
+        refund window and the five-Mac allowance. {SITE_NAME}&apos;s Pro is $59.99
+        lifetime on the App Store or $30 once on the web, but a web unlock
+        activates one copy. And the numbers are not comparing the same thing: {SITE_NAME}&apos;s free tier is a
         permanent, watermark-free way to ship a one-project listing including both
         store uploads, so for a small app the comparison is $99 against nothing.
         For a developer with several apps it is $99 against {SITE_NAME}&apos;s Pro
-        unlock, and at that point you should look at both prices properly rather
-        than at this page.
+        unlock, and at that point the number of Macs you work on matters more
+        than the sticker price.
       </p>
 
       <h3>&quot;Two MCP servers — so the automation is equivalent?&quot;</h3>
