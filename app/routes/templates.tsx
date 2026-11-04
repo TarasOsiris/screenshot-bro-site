@@ -1,10 +1,18 @@
+import { useState } from "react";
+
 import type { Route } from "./+types/templates";
 import { ContentLayout } from "~/components/ContentLayout";
 import { DownloadIcon } from "~/components/home/small-icons";
+import { TemplateStoreSwitch } from "~/components/home/TemplatesSection";
 import { ButtonLink } from "~/components/ui/Button";
 import { buildBreadcrumbJsonLd, mergeMeta } from "~/config/meta";
 import { SITE_NAME, SITE_URL } from "~/config/site";
-import { STARTER_TEMPLATES, starterTemplateShots } from "~/config/templates";
+import {
+  STARTER_TEMPLATES,
+  hasTemplatePreview,
+  templatePreview,
+  type TemplateStore,
+} from "~/config/templates";
 
 // An indexable gallery of every bundled starter template. The home page's
 // Templates section shows one at a time behind a picker; this lists them all,
@@ -38,11 +46,19 @@ const ITEM_LIST_JSON_LD = JSON.stringify({
     position: index + 1,
     name: template.name,
     url: `${SITE_URL}/templates#${template.id}`,
-    image: `${SITE_URL}${starterTemplateShots(template)[0]}`,
+    image: `${SITE_URL}${templatePreview(template, "appStore")!.shotUrls[0]}`,
   })),
 });
 
+const ALT_SUFFIX: Record<TemplateStore, string> = {
+  appStore: "App Store screenshots with headlines and iPhone frames",
+  googlePlay: "Google Play screenshots with headlines and Android phone frames",
+};
+
 export default function Templates() {
+  const [store, setStore] = useState<TemplateStore>("appStore");
+  const templates = STARTER_TEMPLATES.filter((template) => hasTemplatePreview(template, store));
+
   return (
     <ContentLayout>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: BREADCRUMB_JSON_LD }} />
@@ -60,39 +76,46 @@ export default function Templates() {
           </p>
         </section>
 
-        <ul className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {STARTER_TEMPLATES.map((template, index) => (
-            <li key={template.id} id={template.id} className="scroll-mt-24">
-              <figure className="soft-panel rounded-3xl p-4 h-full flex flex-col">
-                <div className="grid grid-cols-3 gap-2 overflow-hidden rounded-2xl">
-                  {starterTemplateShots(template)
-                    .slice(0, PREVIEW_SHOTS)
-                    .map((src, shot) => (
-                      <img
-                        key={src}
-                        src={src}
-                        alt={
-                          shot === 0
-                            ? `${template.name} template exported from ${SITE_NAME}: App Store screenshots with headlines and device frames`
-                            : ""
-                        }
-                        width={template.shotWidth}
-                        height={template.shotHeight}
-                        loading={index < 3 ? "eager" : "lazy"}
-                        decoding="async"
-                        className="w-full h-auto rounded-lg"
-                      />
-                    ))}
-                </div>
-                <figcaption className="mt-4 px-1">
-                  <h2 className="font-display font-semibold text-ink">{template.name}</h2>
-                  <p className="mt-1 text-xs text-ink/60 font-mono">
-                    {template.columns} screenshots · {template.width}×{template.height} px
-                  </p>
-                </figcaption>
-              </figure>
-            </li>
-          ))}
+        <div className="mt-10 flex justify-center">
+          <TemplateStoreSwitch store={store} onChange={setStore} label="Choose a store to preview" />
+        </div>
+
+        <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {templates.map((template, index) => {
+            const preview = templatePreview(template, store)!;
+            return (
+              <li key={template.id} id={template.id} className="scroll-mt-24">
+                <figure className="soft-panel rounded-3xl p-4 h-full flex flex-col">
+                  <div className="grid grid-cols-3 gap-2 overflow-hidden rounded-2xl">
+                    {preview.shotUrls
+                      .slice(0, PREVIEW_SHOTS)
+                      .map((src, shot) => (
+                        <img
+                          key={src}
+                          src={src}
+                          alt={
+                            shot === 0
+                              ? `${template.name} template exported from ${SITE_NAME}: ${ALT_SUFFIX[store]}`
+                              : ""
+                          }
+                          width={preview.shotWidth}
+                          height={preview.shotHeight}
+                          loading={index < 3 ? "eager" : "lazy"}
+                          decoding="async"
+                          className="w-full h-auto rounded-lg"
+                        />
+                      ))}
+                  </div>
+                  <figcaption className="mt-4 px-1">
+                    <h2 className="font-display font-semibold text-ink">{template.name}</h2>
+                    <p className="mt-1 text-xs text-ink/60 font-mono">
+                      {preview.columns} screenshots · {preview.width}×{preview.height} px
+                    </p>
+                  </figcaption>
+                </figure>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="mt-16 text-center">

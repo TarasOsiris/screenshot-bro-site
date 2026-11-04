@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 
 import { SectionIntro } from "~/components/home/SectionIntro";
 import {
@@ -11,9 +11,10 @@ import { downloadPageUrl, type HomeCopy } from "~/config/localization";
 import {
   DEFAULT_STARTER_TEMPLATE_ID,
   STARTER_TEMPLATES,
-  starterTemplateShots,
-  starterTemplateThumb,
-  type StarterTemplate,
+  hasTemplatePreview,
+  templatePreview,
+  type TemplatePreview,
+  type TemplateStore,
 } from "~/config/templates";
 
 // How long each template stays on screen while the gallery rotates. The
@@ -26,11 +27,13 @@ const PRELOAD_SHOTS = 5;
 
 const preloaded = new Map<string, Promise<void>>();
 
-function preloadTemplate(template: StarterTemplate): Promise<void> {
-  let pending = preloaded.get(template.id);
+function preloadTemplate(preview: TemplatePreview | undefined): Promise<void> {
+  if (!preview) return Promise.resolve();
+  const key = preview.shotUrls[0];
+  let pending = preloaded.get(key);
   if (!pending) {
     pending = Promise.all(
-      starterTemplateShots(template)
+      preview.shotUrls
         .slice(0, PRELOAD_SHOTS)
         .map((src) => {
           const image = new Image();
@@ -38,9 +41,46 @@ function preloadTemplate(template: StarterTemplate): Promise<void> {
           return image.decode().catch(() => undefined);
         }),
     ).then(() => undefined);
-    preloaded.set(template.id, pending);
+    preloaded.set(key, pending);
   }
   return pending;
+}
+
+const TEMPLATE_STORES: { id: TemplateStore; label: string }[] = [
+  { id: "appStore", label: "App Store" },
+  { id: "googlePlay", label: "Google Play" },
+];
+
+// Switches the template previews between each template's iPhone row (App
+// Store) and its Android phone row (Google Play).
+export function TemplateStoreSwitch({
+  store,
+  onChange,
+  label,
+}: {
+  store: TemplateStore;
+  onChange: (store: TemplateStore) => void;
+  label: string;
+}) {
+  return (
+    <div role="group" aria-label={label} className="soft-pill inline-flex rounded-full p-1">
+      {TEMPLATE_STORES.map(({ id, label: name }) => (
+        <button
+          key={id}
+          type="button"
+          aria-pressed={store === id}
+          onClick={() => onChange(id)}
+          className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
+            store === id
+              ? "bg-accent/15 text-accent-light ring-1 ring-accent/40"
+              : "text-ink/60 hover:text-ink"
+          }`}
+        >
+          {name}
+        </button>
+      ))}
+    </div>
+  );
 }
 
 function shuffled<T>(items: T[]): T[] {
@@ -68,6 +108,7 @@ export function TemplatesSection({
   href?: string;
 }) {
   const [selectedId, setSelectedId] = useState(DEFAULT_STARTER_TEMPLATE_ID);
+  const [store, setStore] = useState<TemplateStore>("appStore");
   const [rotation, setRotation] = useState<string[]>([]);
   const [userPaused, setUserPaused] = useState(false);
   const [hovering, setHovering] = useState(false);
@@ -80,14 +121,19 @@ export function TemplatesSection({
   const stripRef = useRef<HTMLDivElement>(null);
   const advancingRef = useRef(false);
 
+  const templates = useMemo(
+    () => STARTER_TEMPLATES.filter((template) => hasTemplatePreview(template, store)),
+    [store],
+  );
   const selectedIndex = Math.max(
     0,
-    STARTER_TEMPLATES.findIndex((template) => template.id === selectedId),
+    templates.findIndex((template) => template.id === selectedId),
   );
-  const selected = STARTER_TEMPLATES[selectedIndex];
+  const selected = templates[selectedIndex];
+  const preview = templatePreview(selected, store)!;
   const ctaHref = href ?? downloadPageUrl(copy.locale.code);
-  const total = STARTER_TEMPLATES.length;
-  const count = String(total);
+  const total = templates.length;
+  const count = String(STARTER_TEMPLATES.length);
   const section = copy.sections.templates;
   const playing =
     !userPaused && !hovering && !focused && inView && pageVisible && rotation.length > 0;
@@ -121,25 +167,28 @@ export function TemplatesSection({
   }, []);
 
   const nextInRotation = useCallback(() => {
-    if (rotation.length === 0) return undefined;
-    const at = rotation.indexOf(selectedId);
-    const id = rotation[(at + 1) % rotation.length];
-    return STARTER_TEMPLATES.find((template) => template.id === id);
-  }, [rotation, selectedId]);
+    const at = rotation.indexOf(selected.id);
+    for (let step = 1; step < rotation.length; step++) {
+      const id = rotation[(at + step) % rotation.length];
+      const next = templates.find((template) => template.id === id);
+      if (next) return next;
+    }
+    return undefined;
+  }, [rotation, selected.id, templates]);
 
   // Warm the next template while the current one is on screen, so the swap
   // never shows half-loaded frames.
   useEffect(() => {
     if (!inView) return;
     const next = nextInRotation();
-    if (next) void preloadTemplate(next);
-  }, [inView, nextInRotation]);
+    if (next) void preloadTemplate(templatePreview(next, store));
+  }, [inView, nextInRotation, store]);
 
   // Keep the active chip in view inside the strip without scrolling the page.
   useEffect(() => {
     if (expanded) return;
     const strip = stripRef.current;
-    const chip = strip?.querySelector<HTMLElement>(`[data-template="${selectedId}"]`);
+    const chip = strip?.querySelector<HTMLElement>(`[data-template="${selected.id}"]`);
     if (!strip || !chip) return;
     strip.scrollTo({
       left: chip.offsetLeft - (strip.clientWidth - chip.offsetWidth) / 2,
@@ -147,14 +196,14 @@ export function TemplatesSection({
         ? "auto"
         : "smooth",
     });
-  }, [selectedId, expanded]);
+  }, [selected.id, expanded]);
 
   async function advance() {
     const next = nextInRotation();
     if (!next || advancingRef.current) return;
     advancingRef.current = true;
     await Promise.race([
-      preloadTemplate(next),
+      preloadTemplate(templatePreview(next, store)),
       new Promise((resolve) => setTimeout(resolve, 2500)),
     ]);
     advancingRef.current = false;
@@ -168,7 +217,12 @@ export function TemplatesSection({
 
   function step(delta: number) {
     const index = (selectedIndex + delta + total) % total;
-    pick(STARTER_TEMPLATES[index].id);
+    pick(templates[index].id);
+  }
+
+  function chooseStore(next: TemplateStore) {
+    setStore(next);
+    if (!hasTemplatePreview(selected, next)) setSelectedId(DEFAULT_STARTER_TEMPLATE_ID);
   }
 
   return (
@@ -184,6 +238,14 @@ export function TemplatesSection({
           description={section.description?.replace("{count}", count)}
         />
 
+        <div className="mb-6 flex justify-center">
+          <TemplateStoreSwitch
+            store={store}
+            onChange={chooseStore}
+            label={copy.ui.templateStoreLabel}
+          />
+        </div>
+
         <figure
           className="showcase-panel template-stage overflow-hidden"
           onPointerEnter={(event) => {
@@ -195,15 +257,21 @@ export function TemplatesSection({
             if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
           }}
         >
-          <div key={selected.id} className="template-shots" role="list">
-            {starterTemplateShots(selected).map((src, index) => (
+          <div key={`${store}-${selected.id}`} className="template-shots" role="list">
+            {preview.shotUrls.map((src, index) => (
               <img
                 key={src}
                 role="listitem"
                 src={src}
-                alt={index === 0 ? copy.ui.templateAlt(selected.name) : ""}
-                width={selected.shotWidth}
-                height={selected.shotHeight}
+                alt={
+                  index === 0
+                    ? store === "googlePlay"
+                      ? copy.ui.templateAltAndroid(selected.name)
+                      : copy.ui.templateAlt(selected.name)
+                    : ""
+                }
+                width={preview.shotWidth}
+                height={preview.shotHeight}
                 className="template-shot"
                 style={{ "--i": index } as CSSProperties}
                 decoding="async"
@@ -241,7 +309,7 @@ export function TemplatesSection({
                   </span>
                 </p>
                 <p className="text-sm text-ink/55">
-                  {copy.ui.templateMeta(selected.columns, selected.width, selected.height)}
+                  {copy.ui.templateMeta(preview.columns, preview.width, preview.height)}
                 </p>
               </div>
 
@@ -288,8 +356,9 @@ export function TemplatesSection({
           aria-label={copy.ui.templatePickerLabel}
           className={`template-picker mt-8 ${expanded ? "is-expanded" : ""}`}
         >
-          {STARTER_TEMPLATES.map((template) => {
+          {templates.map((template) => {
             const active = template.id === selected.id;
+            const chipPreview = templatePreview(template, store)!;
             return (
               <button
                 key={template.id}
@@ -297,14 +366,14 @@ export function TemplatesSection({
                 type="button"
                 aria-pressed={active}
                 onClick={() => pick(template.id)}
-                onPointerEnter={() => void preloadTemplate(template)}
+                onPointerEnter={() => void preloadTemplate(chipPreview)}
                 className="template-chip group text-left"
               >
                 <img
-                  src={starterTemplateThumb(template.id)}
+                  src={chipPreview.thumbUrl}
                   alt=""
-                  width={template.thumbWidth}
-                  height={template.thumbHeight}
+                  width={chipPreview.thumbWidth}
+                  height={chipPreview.thumbHeight}
                   loading="lazy"
                   decoding="async"
                   className="template-chip-image"

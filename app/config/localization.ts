@@ -151,6 +151,8 @@ export type HomeCopy = {
     playTemplates: string;
     showAllTemplates: (count: number) => string;
     showFewerTemplates: string;
+    templateStoreLabel: string;
+    templateAltAndroid: (name: string) => string;
     productHuntAlt: string;
     availabilityNote: string;
     features: string;
@@ -259,6 +261,9 @@ export const EN_HOME_COPY: HomeCopy = {
     playTemplates: "Play template rotation",
     showAllTemplates: (count) => `Show all ${count} templates`,
     showFewerTemplates: "Show fewer",
+    templateStoreLabel: "Choose a store to preview",
+    templateAltAndroid: (name) =>
+      `${name} template exported from Screenshot Bro: a row of Google Play screenshots with headlines and Android phone frames`,
     productHuntAlt:
       "ScreenshotBro App - Design and export beautiful App Store screenshots. | Product Hunt",
     availabilityNote:
