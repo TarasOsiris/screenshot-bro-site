@@ -11,7 +11,7 @@ import { STARTER_TEMPLATES, starterTemplateShots } from "~/config/templates";
 // each with its own #id so a template can be linked directly. Images are the
 // same real exports in public/template-gallery/ (see config/templates.ts).
 const COUNT = STARTER_TEMPLATES.length;
-const TITLE = `${COUNT} App Store Screenshot Templates — ${SITE_NAME}`;
+const TITLE = `${COUNT} App Store & Google Play Templates — ${SITE_NAME}`;
 const DESCRIPTION = `Browse ${COUNT} App Store and Google Play screenshot templates built into Screenshot Bro. Every preview is a real export; start from any and swap in your shots.`;
 const PREVIEW_SHOTS = 3;
 

@@ -1,6 +1,6 @@
 export const SITE_NAME = "Screenshot Bro";
 export const SITE_DESCRIPTION =
-  "Native App Store and Google Play screenshot tool for Mac, iPad, and iPhone. Device frames, localization, batch export, and App Store Connect upload.";
+  "Native App Store and Google Play screenshot tool for Mac, iPad, and iPhone. Device frames, localization, batch export, and upload to both stores.";
 export const SITE_TAGLINE =
   "Design and upload App Store and Google Play screenshots in minutes.";
 export const SITE_URL =
@@ -30,6 +30,7 @@ export const APPCAST_URL = "/appcast.xml";
 // ScreenshotBro.dmg: a symlink to the newest installer, served no-cache so Cloudflare revalidates it.
 export const WINDOWS_DOWNLOAD_URL = "https://downloads.screenshotbro.app/ScreenshotBro-Setup.exe";
 export const MINIMUM_WINDOWS_VERSION = "10";
+export const WINDOWS_REQUIREMENT = `Windows ${MINIMUM_WINDOWS_VERSION} and 11, 64-bit`;
 // The free browser editor (one project), from the Windows/web port.
 export const WEB_DEMO_URL = "https://demo.screenshotbro.app";
 export const REDEMPTION_URL_SCHEME = "rc-6cc0af703b";
@@ -154,9 +155,9 @@ export const LEGAL_LINKS: SecondaryLink[] = [
 ];
 
 export const DOWNLOAD_BENEFITS = [
-  "Mac, iPad and iPhone on the App Store, plus a direct download for Mac",
+  "Mac, iPad and iPhone on the App Store, a direct download for Mac, and a Windows beta",
   "Full workflow: import, design, auto-translate, localize, export",
-  "Upload direct to App Store Connect — no more drag-and-drop in a browser tab",
+  "Upload straight to App Store Connect and Google Play — no more drag-and-drop in a browser tab",
 ];
 
 export type FaqItem = {
@@ -173,12 +174,12 @@ export const FAQS: FaqItem[] = [
   {
     question: "How is this different from a web-based App Store screenshot generator?",
     answer:
-      "Screenshot Bro is a native Mac, iPad, and iPhone app rather than a browser tool, so projects, screenshots, and fonts stay on disk and everyday editing needs no account and no internet connection. Rendering and batch export run on your own hardware instead of a server. If you are on Windows or Linux, want to collaborate in a shared browser session, or only need one or two images, a web-based App Store screenshot tool is the better fit — the alternatives page covers those cases.",
+      "Screenshot Bro is a native Mac, iPad, and iPhone app rather than a browser tool, so projects, screenshots, and fonts stay on disk and everyday editing needs no account and no internet connection. Rendering and batch export run on your own hardware instead of a server. If you are on Linux, want to collaborate in a shared browser session, or only need one or two images, a web-based App Store screenshot tool is the better fit — the alternatives page covers those cases.",
   },
   {
     question: "What do I need to run it?",
     answer:
-      "macOS 15 (Sequoia) or later on Mac, iPadOS 18 or later on iPad, or iOS 18 or later on iPhone. No companion device, no account, no internet connection required for everyday editing.",
+      `macOS 15 (Sequoia) or later on Mac, iPadOS 18 or later on iPad, or iOS 18 or later on iPhone. The Windows beta runs on ${WINDOWS_REQUIREMENT}. No companion device, no account, no internet connection required for everyday editing.`,
   },
   {
     question: "Does my data leave my device?",
@@ -188,12 +189,12 @@ export const FAQS: FaqItem[] = [
   {
     question: "How does localization work?",
     answer:
-      "Pick from 81 language presets, or define your own code. Auto-translate fills in missing copy on-device. Translations save as per-locale text overrides, so layout, color, and images stay shared across every locale — design once, ship in every language. Exports are organized into locale folders App Store Connect can pick up directly.",
+      "Pick from 81 language presets, or define your own code. Auto-translate fills in missing copy on-device. Translations save as per-locale text overrides, so layout, color, and images stay shared across every locale — design once, ship in every language. Exports are organized into locale folders ready for App Store Connect and Google Play, and the in-app uploaders match each locale to the store's own languages.",
   },
   {
     question: "Can I make Google Play screenshots too?",
     answer:
-      "Yes. Android phone and tablet rows render alongside iPhone, iPad, and Mac in the same project. Each device category comes pre-set to the pixel dimensions the relevant store accepts.",
+      "Yes. Android phone and tablet rows sit alongside iPhone, iPad, and Mac in the same project, each pre-set to pixel sizes Google Play accepts, and a bundled template covers the Google Play feature graphic. When the set is ready, upload it straight to your Play listing from inside the app.",
   },
   {
     question: "Can I drop simulator and device screenshots straight in?",
@@ -201,14 +202,14 @@ export const FAQS: FaqItem[] = [
       "Yes. Drop a folder of screenshots and Screenshot Bro routes each one to the right row by its pixel size — iPhone shots to the iPhone row, iPad to iPad, Android to Android.",
   },
   {
-    question: "Can I upload to App Store Connect from inside the app?",
+    question: "Can I upload to App Store Connect and Google Play from inside the app?",
     answer:
-      "Yes. Configure your App Store Connect API key once (Issuer ID, Key ID, and .p8). Screenshot Bro auto-detects the right display type for each row, matches your project locales to App Store Connect localizations, and replaces existing screenshots in a single pass — no drag-and-drop in the browser.",
+      "Yes. Configure your App Store Connect API key once (Issuer ID, Key ID, and .p8). Screenshot Bro auto-detects the right display type for each row, matches your project locales to App Store Connect localizations, and replaces existing screenshots in a single pass. For Google Play, import a service account JSON key once and enter your package name: each project language maps to its Play listing language, and the upload is staged as a Play edit that is committed only when you confirm. No drag-and-drop in the browser for either store.",
   },
   {
     question: "Can an AI agent build my screenshots?",
     answer:
-      "Yes. Screenshot Bro hosts an opt-in local MCP server on Mac, so an assistant like Claude Code, Claude Desktop, or Cursor can create projects, lay out rows and shapes, import screenshots, translate copy, render previews it can actually look at, export, and sync a finished set to App Store Connect. The server listens on 127.0.0.1 only, every request needs an access token you copy from Settings, and every change the agent makes is undoable with ⌘Z.",
+      "Yes. Screenshot Bro hosts an opt-in local MCP server on Mac, so an assistant like Claude Code, Claude Desktop, or Cursor can create projects, lay out rows and shapes, import screenshots, translate copy, render previews it can actually look at, export, and upload a finished set to App Store Connect or Google Play. The server listens on 127.0.0.1 only, every request needs an access token you copy from Settings, and every change the agent makes is undoable with ⌘Z.",
   },
   {
     question: "Does it sync between devices?",
@@ -293,16 +294,16 @@ export const FEATURES: FeatureItem[] = [
   },
   {
     icon: "upload",
-    title: "Upload to App Store Connect",
+    title: "Upload to App Store Connect & Google Play",
     description:
-      "One-click upload straight to App Store Connect. Auto-detect display types from row size, match project locales to App Store localizations, and replace existing screenshots with a preflight that catches problems before they reach Apple.",
+      "One-click upload straight to App Store Connect or your Google Play listing. Display types and Play image types are detected from row size, project locales are matched to each store's languages, and a preflight catches problems before anything reaches Apple or Google.",
     accent: "var(--color-warm)",
   },
   {
     icon: "automation",
     title: "AI Agents & MCP",
     description:
-      "An opt-in local MCP server on Mac lets Claude Code, Claude Desktop, or Cursor drive the app — create projects, lay out rows and shapes, import screenshots, translate, render previews, export, and sync to App Store Connect. Loopback-only, token-protected, and every change is undoable.",
+      "An opt-in local MCP server on Mac lets Claude Code, Claude Desktop, or Cursor drive the app — create projects, lay out rows and shapes, import screenshots, translate, render previews, export, and upload to App Store Connect or Google Play. Loopback-only, token-protected, and every change is undoable.",
     accent: "var(--color-accent-light)",
   },
   {
@@ -399,9 +400,9 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
   {
     id: "auto-upload",
     label: "Auto Upload",
-    title: "Upload to App Store Connect in one click.",
+    title: "Upload to App Store Connect and Google Play in one click.",
     description:
-      "Connect your App Store Connect API key once, then push rendered screenshots straight to the right app, version, display type, and locale. Auto-detected display types, locale matching, preflight checks, and one-pass replace — no drag-and-drop in the browser.",
+      "Connect your App Store Connect API key or Google Play service account once, then push rendered screenshots straight to the right app, version, display type, and locale. Auto-detected sizes, locale matching, preflight checks, and one-pass replace — no drag-and-drop in the browser.",
     media: "/showcases/autoupload.mp4",
     mediaWidth: 1280,
     mediaHeight: 988,
@@ -449,13 +450,13 @@ export const FEATURE_SHOWCASES: FeatureShowcase[] = [
     label: "AI Agents & MCP",
     title: "Let your AI agent do the busywork.",
     description:
-      "Turn on the local MCP server and Claude Code, Claude Desktop, or Cursor can drive Screenshot Bro: create a project, lay out rows and shapes, import screenshots, translate copy, look at rendered previews, export, and sync the set to App Store Connect. It listens on 127.0.0.1 only, needs a token from Settings, and every change undoes with ⌘Z.",
+      "Turn on the local MCP server and Claude Code, Claude Desktop, or Cursor can drive Screenshot Bro: create a project, lay out rows and shapes, import screenshots, translate copy, look at rendered previews, export, and upload the set to App Store Connect or Google Play. It listens on 127.0.0.1 only, needs a token from Settings, and every change undoes with ⌘Z.",
     media: "",
     visual: "mcp",
     mediaWidth: 1280,
     mediaHeight: 820,
     mediaAlt:
-      "An AI agent session calling Screenshot Bro MCP tools to build, translate, render and upload App Store screenshots",
+      "An AI agent session calling Screenshot Bro MCP tools to build, translate, render and upload App Store and Google Play screenshots",
   },
 ];
 
@@ -582,7 +583,7 @@ export const APP_SCREENSHOTS: AppScreenshot[] = [
   },
   {
     src: "/screenshots/02_screenshot.webp",
-    alt: "Batch export view with all project screenshots ready for App Store upload",
+    alt: "Batch export view with all project screenshots ready for App Store and Google Play upload",
     caption: "Export the whole project at once",
   },
   {
@@ -639,8 +640,8 @@ export const WORKFLOW_STEPS: WorkflowStep[] = [
   },
   {
     step: "04",
-    title: "Upload to App Store Connect",
+    title: "Upload to App Store Connect and Google Play",
     description:
-      "Connect your API key once, then push screenshots straight to the right app, version, display type, and locale — no manual drag-and-drop into the browser.",
+      "Connect your App Store Connect API key or Google Play service account once, then push screenshots straight to the right app, version, display type, and locale — no manual drag-and-drop into the browser.",
   },
 ];

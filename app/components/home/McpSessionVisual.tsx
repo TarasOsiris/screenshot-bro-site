@@ -2,15 +2,16 @@
 // server's real ones; the project and counts are illustrative. It stays dark in
 // both themes, like a terminal would.
 const PROMPT =
-  "Make App Store screenshots for my app in English, German and Japanese, then upload them.";
+  "Make App Store and Google Play screenshots for my app in English, German and Japanese, then upload them.";
 
 const CALLS: { tool: string; args: string; result: string }[] = [
   { tool: "create_project", args: '"Habit Garden"', result: "project ready" },
-  { tool: "import_screenshots", args: "12 files", result: "routed to iPhone, iPad rows" },
+  { tool: "import_screenshots", args: "12 files", result: "routed to iPhone, iPad, Android rows" },
   { tool: "add_locale", args: "de, ja", result: "2 locales added" },
   { tool: "set_translation", args: "× 24", result: "headlines translated" },
   { tool: "render_preview", args: "row: iPhone", result: "checked the layout" },
   { tool: "apply_app_store_screenshot_sync", args: "3 locales", result: "uploaded to App Store Connect" },
+  { tool: "upload_play_screenshots", args: "3 languages", result: "saved as a Google Play draft" },
 ];
 
 export function McpSessionVisual({ label }: { label: string }) {

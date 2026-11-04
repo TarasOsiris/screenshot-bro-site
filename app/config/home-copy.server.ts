@@ -153,14 +153,14 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
           "Exporta PNG o JPEG al tamaño exacto en píxeles de cada fila, para todos los locales a la vez. Carpetas organizadas automáticamente por locale y fila para App Store Connect, Google Play y assets de lanzamiento.",
       },
       {
-        title: "Subida a App Store Connect",
+        title: "Subida a App Store Connect y Google Play",
         description:
-          "Subida directa con un clic. Detecta tipos de pantalla por tamaño de fila, empareja locales del proyecto con App Store Connect y reemplaza capturas con validación previa.",
+          "Subida directa con un clic a App Store Connect o a tu ficha de Google Play. Detecta tipos de pantalla y tipos de imagen de Play por tamaño de fila, empareja los locales del proyecto con los idiomas de cada tienda y valida todo antes de que llegue a Apple o Google.",
       },
       {
         title: "Agentes de IA y MCP",
         description:
-          "Un servidor MCP local y opcional en Mac permite que Claude Code, Claude Desktop o Cursor manejen la app: crear proyectos, colocar filas y formas, importar capturas, traducir, renderizar vistas previas y exportar.",
+          "Un servidor MCP local y opcional en Mac permite que Claude Code, Claude Desktop o Cursor manejen la app: crear proyectos, colocar filas y formas, importar capturas, traducir, renderizar vistas previas, exportar y subir a App Store Connect o Google Play.",
       },
       {
         title: "Localización integrada",
@@ -219,9 +219,9 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
       },
       {
         label: "Subida automática",
-        title: "Sube a App Store Connect con un clic.",
+        title: "Sube a App Store Connect y Google Play con un clic.",
         description:
-          "Conecta tu clave API una vez y envía las capturas renderizadas al app, versión, display type y locale correctos. Detección automática, validaciones y reemplazo en una pasada.",
+          "Conecta una vez tu clave API de App Store Connect o tu cuenta de servicio de Google Play y envía las capturas renderizadas al app, versión, display type y locale correctos. Detección automática de tamaños, validaciones y reemplazo en una pasada.",
         mediaAlt:
           "Subida directa de capturas desde Screenshot Bro a App Store Connect con tipos y locales detectados",
       },
@@ -252,9 +252,9 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
         label: "Agentes de IA y MCP",
         title: "Deja el trabajo pesado a tu agente de IA.",
         description:
-          "Activa el servidor MCP local y Claude Code, Claude Desktop o Cursor podrán manejar Screenshot Bro: crear un proyecto, colocar filas y formas, importar capturas, traducir el texto, revisar las vistas previas renderizadas, exportar y sincronizar el set con App Store Connect. Solo escucha en 127.0.0.1, necesita un token de Ajustes y cada cambio se deshace con ⌘Z.",
+          "Activa el servidor MCP local y Claude Code, Claude Desktop o Cursor podrán manejar Screenshot Bro: crear un proyecto, colocar filas y formas, importar capturas, traducir el texto, revisar las vistas previas renderizadas, exportar y subir el set a App Store Connect o Google Play. Solo escucha en 127.0.0.1, necesita un token de Ajustes y cada cambio se deshace con ⌘Z.",
         mediaAlt:
-          "Sesión de un agente de IA que llama a las herramientas MCP de Screenshot Bro para crear, traducir, renderizar y subir capturas de App Store",
+          "Sesión de un agente de IA que llama a las herramientas MCP de Screenshot Bro para crear, traducir, renderizar y subir capturas de App Store y Google Play",
       },
     ]),
     workflowSteps: localizeWorkflowSteps([
@@ -274,106 +274,106 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
           "Pulsa exportar y obtén carpetas organizadas por locale y fila, con cada captura al tamaño exacto que pide la tienda. Un clic.",
       },
       {
-        title: "Sube a App Store Connect",
+        title: "Sube a App Store Connect y Google Play",
         description:
-          "Conecta tu clave API una vez y envía capturas al app, versión, tipo de pantalla y locale correctos sin arrastrar archivos en el navegador.",
+          "Conecta una vez tu clave API de App Store Connect o tu cuenta de servicio de Google Play y envía capturas al app, versión, tipo de pantalla y locale correctos sin arrastrar archivos en el navegador.",
       },
     ]),
   },
   zh: compactLandingContent("zh", {
     socialImageAlt: "Screenshot Bro — 用设备边框、渐变和本地化制作 App Store 与 Google Play 截图的 Mac、iPad 和 iPhone 原生应用",
     ui: { docs: "文档", redditCommunity: "Reddit 社区", followOnX: "在 X 上关注", followOnThreads: "在 Threads 上关注", homeLabel: `${SITE_NAME} 首页`, read: "阅读", productLabel: "产品", resourcesLabel: "资源", productHuntAlt: "ScreenshotBro App - 设计并导出精美 App Store 截图。| Product Hunt" },
-    featureTitles: ["多模板编辑", "设备边框", "背景与跨模板背景", "形状工具 + SVG", "智能对齐", "本地化导出", "上传到 App Store Connect", "AI 智能体与 MCP", "内建本地化", "原生 Mac、iPad 与 iPhone", "iCloud 同步", "自定义字体", "项目模板", "键盘快捷键", "隐私优先", "批量图片导入", "永久免费层级"],
+    featureTitles: ["多模板编辑", "设备边框", "背景与跨模板背景", "形状工具 + SVG", "智能对齐", "本地化导出", "上传到 App Store Connect 与 Google Play", "AI 智能体与 MCP", "内建本地化", "原生 Mac、iPad 与 iPhone", "iCloud 同步", "自定义字体", "项目模板", "键盘快捷键", "隐私优先", "批量图片导入", "永久免费层级"],
     featureDescription: "为多语言商店截图准备的专注工具，保留原生性能、可重复模板和可直接提交的导出结果。",
     showcaseLabels: ["批量导入", "自动上传", "形状与图层", "背景", "设备边框", "AI 智能体与 MCP"],
-    showcaseTitles: ["拖入，完成。", "一键上传到 App Store Connect。", "一层一层搭建。", "制作漂亮背景。", "自定义设备边框。", "让 AI 智能体替你处理繁琐工作。"],
+    showcaseTitles: ["拖入，完成。", "一键上传到 App Store Connect 与 Google Play。", "一层一层搭建。", "制作漂亮背景。", "自定义设备边框。", "让 AI 智能体替你处理繁琐工作。"],
     showcaseDescription: "核心工作流展示了 Screenshot Bro 如何减少重复设计、导出和上传步骤。",
     screenshotAltSuffix: "Screenshot Bro 界面截图",
-    workflowTitles: ["设置行", "设计并本地化", "全部导出", "上传到 App Store Connect"],
+    workflowTitles: ["设置行", "设计并本地化", "全部导出", "上传到 App Store Connect 与 Google Play"],
     workflowDescription: "从设备尺寸到多语言导出和上传，整个截图流程都集中在一个原生应用中。",
   }),
   hi: compactLandingContent("hi", {
     socialImageAlt: "Screenshot Bro — Mac, iPad और iPhone के लिए App Store और Google Play screenshots बनाने वाला native ऐप",
     ui: { docs: "दस्तावेज़", redditCommunity: "Reddit समुदाय", followOnX: "X पर follow करें", followOnThreads: "Threads पर follow करें", homeLabel: `${SITE_NAME} होम`, read: "पढ़ें", productLabel: "उत्पाद", resourcesLabel: "संसाधन", productHuntAlt: "ScreenshotBro App - सुंदर App Store screenshots design और export करें. | Product Hunt" },
-    featureTitles: ["मल्टी-टेम्पलेट एडिटिंग", "डिवाइस फ्रेम", "बैकग्राउंड और स्पैनिंग", "शेप टूल्स + SVG", "स्मार्ट अलाइनमेंट", "लोकलाइज्ड एक्सपोर्ट", "App Store Connect अपलोड", "AI एजेंट और MCP", "बिल्ट-इन लोकलाइजेशन", "नेटिव Mac, iPad और iPhone", "iCloud सिंक", "कस्टम फॉन्ट", "प्रोजेक्ट टेम्पलेट", "कीबोर्ड शॉर्टकट", "प्राइवेसी-फर्स्ट", "बैच इमेज इंपोर्ट", "हमेशा फ्री प्लान"],
+    featureTitles: ["मल्टी-टेम्पलेट एडिटिंग", "डिवाइस फ्रेम", "बैकग्राउंड और स्पैनिंग", "शेप टूल्स + SVG", "स्मार्ट अलाइनमेंट", "लोकलाइज्ड एक्सपोर्ट", "App Store Connect और Google Play अपलोड", "AI एजेंट और MCP", "बिल्ट-इन लोकलाइजेशन", "नेटिव Mac, iPad और iPhone", "iCloud सिंक", "कस्टम फॉन्ट", "प्रोजेक्ट टेम्पलेट", "कीबोर्ड शॉर्टकट", "प्राइवेसी-फर्स्ट", "बैच इमेज इंपोर्ट", "हमेशा फ्री प्लान"],
     featureDescription: "Multi-language store screenshots के लिए focused tools, native performance, reusable templates और upload-ready exports के साथ।",
     showcaseLabels: ["बैच इंपोर्ट", "ऑटो अपलोड", "शेप्स और लेयर्स", "बैकग्राउंड", "डिवाइस फ्रेम", "AI एजेंट और MCP"],
-    showcaseTitles: ["खींचें, छोड़ें, हो गया।", "App Store Connect पर एक क्लिक में अपलोड।", "लेयर दर लेयर बनाएं।", "सुंदर बैकग्राउंड बनाएं।", "डिवाइस फ्रेम कस्टमाइज़ करें।", "दोहराव वाला काम अपने AI एजेंट को सौंपें।"],
+    showcaseTitles: ["खींचें, छोड़ें, हो गया।", "App Store Connect और Google Play पर एक क्लिक में अपलोड।", "लेयर दर लेयर बनाएं।", "सुंदर बैकग्राउंड बनाएं।", "डिवाइस फ्रेम कस्टमाइज़ करें।", "दोहराव वाला काम अपने AI एजेंट को सौंपें।"],
     showcaseDescription: "मुख्य वर्कफ़्लो दिखाता है कि Screenshot Bro दोहराव वाले डिज़ाइन, एक्सपोर्ट और अपलोड चरणों को कैसे कम करता है।",
     screenshotAltSuffix: "Screenshot Bro इंटरफ़ेस स्क्रीनशॉट",
-    workflowTitles: ["पंक्तियां सेट करें", "डिजाइन और लोकलाइज करें", "सब एक्सपोर्ट करें", "App Store Connect पर अपलोड"],
+    workflowTitles: ["पंक्तियां सेट करें", "डिजाइन और लोकलाइज करें", "सब एक्सपोर्ट करें", "App Store Connect और Google Play पर अपलोड"],
     workflowDescription: "डिवाइस साइज़ से मल्टी-लैंग्वेज एक्सपोर्ट और अपलोड तक पूरा स्क्रीनशॉट वर्कफ़्लो एक नेटिव ऐप में रहता है।",
   }),
   fr: compactLandingContent("fr", {
     socialImageAlt: "Screenshot Bro — app native Mac, iPad et iPhone pour créer des captures App Store et Google Play avec cadres, dégradés et localisation",
     ui: { docs: "Documentation", redditCommunity: "Communauté Reddit", followOnX: "Suivre sur X", followOnThreads: "Suivre sur Threads", homeLabel: `Accueil ${SITE_NAME}`, read: "Lire", productLabel: "Produit", resourcesLabel: "Ressources", productHuntAlt: "ScreenshotBro App - Créez et exportez de belles captures App Store. | Product Hunt" },
-    featureTitles: ["Édition multi-template", "Cadres d'appareils", "Arrière-plans étendus", "Outils de formes + SVG", "Alignement intelligent", "Export localisé", "Envoi App Store Connect", "Agents IA et MCP", "Localisation intégrée", "Natif Mac, iPad et iPhone", "Sync iCloud", "Polices personnalisées", "Templates de projet", "Raccourcis clavier", "Confidentialité d'abord", "Import d'images groupé", "Version gratuite permanente"],
+    featureTitles: ["Édition multi-template", "Cadres d'appareils", "Arrière-plans étendus", "Outils de formes + SVG", "Alignement intelligent", "Export localisé", "Envoi App Store Connect et Google Play", "Agents IA et MCP", "Localisation intégrée", "Natif Mac, iPad et iPhone", "Sync iCloud", "Polices personnalisées", "Templates de projet", "Raccourcis clavier", "Confidentialité d'abord", "Import d'images groupé", "Version gratuite permanente"],
     featureDescription: "Des outils ciblés pour des captures de store multilingues, avec performances natives, templates réutilisables et exports prêts à envoyer.",
     showcaseLabels: ["Import groupé", "Envoi auto", "Formes et calques", "Arrière-plans", "Cadres", "Agents IA et MCP"],
-    showcaseTitles: ["Glissez, déposez, terminé.", "App Store Connect en un clic.", "Construisez calque par calque.", "Créez de beaux fonds.", "Personnalisez les cadres.", "Confiez les tâches répétitives à votre agent IA."],
+    showcaseTitles: ["Glissez, déposez, terminé.", "App Store Connect et Google Play en un clic.", "Construisez calque par calque.", "Créez de beaux fonds.", "Personnalisez les cadres.", "Confiez les tâches répétitives à votre agent IA."],
     showcaseDescription: "Le flux principal montre comment Screenshot Bro réduit les étapes répétitives de design, d'export et d'envoi.",
     screenshotAltSuffix: "capture de l'interface Screenshot Bro",
-    workflowTitles: ["Configurez les rangées", "Créez et localisez", "Exportez tout", "Envoyez à App Store Connect"],
+    workflowTitles: ["Configurez les rangées", "Créez et localisez", "Exportez tout", "Envoyez à App Store Connect et Google Play"],
     workflowDescription: "Des tailles d'appareils à l'export multilingue et à l'envoi, tout le flux reste dans une app native.",
   }),
   ar: compactLandingContent("ar", {
     socialImageAlt: "Screenshot Bro — تطبيق أصلي على Mac و iPad و iPhone لتصميم لقطات App Store و Google Play بإطارات وتدرجات وتوطين",
     ui: { docs: "الوثائق", redditCommunity: "مجتمع Reddit", followOnX: "تابع على X", followOnThreads: "تابع على Threads", homeLabel: `صفحة ${SITE_NAME} الرئيسية`, read: "اقرأ", productLabel: "المنتج", resourcesLabel: "الموارد", productHuntAlt: "ScreenshotBro App - صمّم وصدّر لقطات App Store جميلة. | Product Hunt" },
-    featureTitles: ["تحرير متعدد القوالب", "إطارات الأجهزة", "الخلفيات والامتداد", "أدوات الأشكال + SVG", "محاذاة ذكية", "تصدير موطّن", "رفع إلى App Store Connect", "وكلاء الذكاء الاصطناعي و MCP", "توطين مدمج", "أصلي على Mac و iPad و iPhone", "مزامنة iCloud", "خطوط مخصصة", "قوالب المشاريع", "اختصارات لوحة المفاتيح", "الخصوصية أولاً", "استيراد صور جماعي", "خطة مجانية دائماً"],
+    featureTitles: ["تحرير متعدد القوالب", "إطارات الأجهزة", "الخلفيات والامتداد", "أدوات الأشكال + SVG", "محاذاة ذكية", "تصدير موطّن", "رفع إلى App Store Connect و Google Play", "وكلاء الذكاء الاصطناعي و MCP", "توطين مدمج", "أصلي على Mac و iPad و iPhone", "مزامنة iCloud", "خطوط مخصصة", "قوالب المشاريع", "اختصارات لوحة المفاتيح", "الخصوصية أولاً", "استيراد صور جماعي", "خطة مجانية دائماً"],
     featureDescription: "أدوات مركزة للقطات متجر متعددة اللغات مع أداء أصلي وقوالب قابلة لإعادة الاستخدام وتصدير جاهز للرفع.",
     showcaseLabels: ["استيراد جماعي", "رفع تلقائي", "أشكال وطبقات", "خلفيات", "إطارات الأجهزة", "وكلاء الذكاء الاصطناعي و MCP"],
-    showcaseTitles: ["اسحب، أفلت، انتهى.", "رفع App Store Connect بنقرة.", "ابنِه طبقة بعد طبقة.", "اصنع خلفيات جميلة.", "خصص إطارات الأجهزة.", "دع وكيل الذكاء الاصطناعي يتولى المهام الروتينية."],
+    showcaseTitles: ["اسحب، أفلت، انتهى.", "رفع إلى App Store Connect و Google Play بنقرة.", "ابنِه طبقة بعد طبقة.", "اصنع خلفيات جميلة.", "خصص إطارات الأجهزة.", "دع وكيل الذكاء الاصطناعي يتولى المهام الروتينية."],
     showcaseDescription: "يوضح سير العمل كيف يقلل Screenshot Bro خطوات التصميم والتصدير والرفع المتكررة.",
     screenshotAltSuffix: "لقطة من واجهة Screenshot Bro",
-    workflowTitles: ["أعدّ الصفوف", "صمّم ووطّن", "صدّر الكل", "ارفع إلى App Store Connect"],
+    workflowTitles: ["أعدّ الصفوف", "صمّم ووطّن", "صدّر الكل", "ارفع إلى App Store Connect و Google Play"],
     workflowDescription: "من أحجام الأجهزة إلى التصدير متعدد اللغات والرفع، يبقى سير اللقطات داخل تطبيق أصلي واحد.",
   }),
   de: compactLandingContent("de", {
     socialImageAlt: "Screenshot Bro — native Mac-, iPad- und iPhone-App für App Store- und Google Play-Screenshots mit Geräterahmen, Verläufen und Lokalisierung",
     ui: { docs: "Dokumentation", redditCommunity: "Reddit-Community", followOnX: "Auf X folgen", followOnThreads: "Auf Threads folgen", homeLabel: `${SITE_NAME} Startseite`, read: "Lesen", productLabel: "Produkt", resourcesLabel: "Ressourcen", productHuntAlt: "ScreenshotBro App - Schöne App-Store-Screenshots gestalten und exportieren. | Product Hunt" },
-    featureTitles: ["Multi-Template-Bearbeitung", "Geräterahmen", "Hintergründe & Spanning", "Formwerkzeuge + SVG", "Intelligente Ausrichtung", "Lokalisierter Export", "Upload zu App Store Connect", "KI-Agenten & MCP", "Lokalisierung integriert", "Nativ für Mac, iPad & iPhone", "iCloud-Synchronisierung", "Eigene Schriften", "Projektvorlagen", "Tastaturkürzel", "Datenschutz zuerst", "Batch-Bildimport", "Kostenlos dauerhaft"],
+    featureTitles: ["Multi-Template-Bearbeitung", "Geräterahmen", "Hintergründe & Spanning", "Formwerkzeuge + SVG", "Intelligente Ausrichtung", "Lokalisierter Export", "Upload zu App Store Connect & Google Play", "KI-Agenten & MCP", "Lokalisierung integriert", "Nativ für Mac, iPad & iPhone", "iCloud-Synchronisierung", "Eigene Schriften", "Projektvorlagen", "Tastaturkürzel", "Datenschutz zuerst", "Batch-Bildimport", "Kostenlos dauerhaft"],
     featureDescription: "Fokussierte Werkzeuge für mehrsprachige Store-Screenshots mit nativer Performance, wiederverwendbaren Templates und uploadfertigen Exporten.",
     showcaseLabels: ["Batch-Import", "Auto-Upload", "Formen & Ebenen", "Hintergründe", "Geräterahmen", "KI-Agenten & MCP"],
-    showcaseTitles: ["Ziehen, ablegen, fertig.", "App Store Connect mit einem Klick.", "Ebene für Ebene aufbauen.", "Schöne Hintergründe erstellen.", "Geräterahmen anpassen.", "Überlass die Fleißarbeit deinem KI-Agenten."],
+    showcaseTitles: ["Ziehen, ablegen, fertig.", "App Store Connect & Google Play mit einem Klick.", "Ebene für Ebene aufbauen.", "Schöne Hintergründe erstellen.", "Geräterahmen anpassen.", "Überlass die Fleißarbeit deinem KI-Agenten."],
     showcaseDescription: "Der Kernworkflow zeigt, wie Screenshot Bro wiederholte Design-, Export- und Upload-Schritte reduziert.",
     screenshotAltSuffix: "Screenshot der Screenshot-Bro-Oberfläche",
-    workflowTitles: ["Zeilen einrichten", "Gestalten & lokalisieren", "Alles exportieren", "Zu App Store Connect hochladen"],
+    workflowTitles: ["Zeilen einrichten", "Gestalten & lokalisieren", "Alles exportieren", "Zu App Store Connect und Google Play hochladen"],
     workflowDescription: "Von Gerätegrößen bis Mehrsprachenexport und Upload bleibt der gesamte Screenshot-Workflow in einer nativen App.",
   }),
   ja: compactLandingContent("ja", {
     socialImageAlt: "Screenshot Bro — App Store・Google Playスクリーンショットをデバイスフレーム、グラデーション、ローカライズ付きで作成するMac/iPad/iPhoneネイティブアプリ",
     ui: { docs: "ドキュメント", redditCommunity: "Redditコミュニティ", followOnX: "Xでフォロー", followOnThreads: "Threadsでフォロー", homeLabel: `${SITE_NAME} ホーム`, read: "読む", productLabel: "製品", resourcesLabel: "リソース", productHuntAlt: "ScreenshotBro App - 美しいApp Storeスクリーンショットを作成・書き出し。| Product Hunt" },
-    featureTitles: ["マルチテンプレート編集", "デバイスフレーム", "背景とスパン", "図形ツール + SVG", "スマート整列", "ローカライズ書き出し", "App Store Connectアップロード", "AIエージェントとMCP", "内蔵ローカライズ", "Mac・iPad・iPhoneにネイティブ対応", "iCloud同期", "カスタムフォント", "プロジェクトテンプレート", "キーボードショートカット", "プライバシー重視", "画像の一括読み込み", "ずっと無料のプラン"],
+    featureTitles: ["マルチテンプレート編集", "デバイスフレーム", "背景とスパン", "図形ツール + SVG", "スマート整列", "ローカライズ書き出し", "App Store Connect・Google Playアップロード", "AIエージェントとMCP", "内蔵ローカライズ", "Mac・iPad・iPhoneにネイティブ対応", "iCloud同期", "カスタムフォント", "プロジェクトテンプレート", "キーボードショートカット", "プライバシー重視", "画像の一括読み込み", "ずっと無料のプラン"],
     featureDescription: "多言語ストア用スクリーンショットに特化したツール群。ネイティブ性能、再利用可能なテンプレート、提出しやすい書き出しを備えています。",
     showcaseLabels: ["一括読み込み", "自動アップロード", "図形とレイヤー", "背景", "デバイスフレーム", "AIエージェントとMCP"],
-    showcaseTitles: ["ドラッグして完了。", "App Store Connectへワンクリック。", "レイヤーごとに作成。", "美しい背景を作成。", "フレームをカスタマイズ。", "面倒な作業はAIエージェントにおまかせ。"],
+    showcaseTitles: ["ドラッグして完了。", "App Store Connect・Google Playへワンクリック。", "レイヤーごとに作成。", "美しい背景を作成。", "フレームをカスタマイズ。", "面倒な作業はAIエージェントにおまかせ。"],
     showcaseDescription: "Screenshot Broが繰り返しのデザイン、書き出し、アップロード作業を減らす流れを紹介します。",
     screenshotAltSuffix: "Screenshot Broのインターフェイス画像",
-    workflowTitles: ["行を設定", "デザインとローカライズ", "すべて書き出し", "App Store Connectへアップロード"],
+    workflowTitles: ["行を設定", "デザインとローカライズ", "すべて書き出し", "App Store Connect・Google Playへアップロード"],
     workflowDescription: "デバイスサイズから多言語書き出しとアップロードまで、スクリーンショット作業を1つのネイティブアプリで完結できます。",
   }),
   pt: compactLandingContent("pt", {
     socialImageAlt: "Screenshot Bro — app nativo para Mac, iPad e iPhone para criar capturas da App Store e Google Play com molduras, gradientes e localização",
     ui: { docs: "Documentação", redditCommunity: "Comunidade Reddit", followOnX: "Seguir no X", followOnThreads: "Seguir no Threads", homeLabel: `Início do ${SITE_NAME}`, read: "Ler", productLabel: "Produto", resourcesLabel: "Recursos", productHuntAlt: "ScreenshotBro App - Crie e exporte belas capturas da App Store. | Product Hunt" },
-    featureTitles: ["Edição multi-template", "Molduras de dispositivos", "Fundos e expansão", "Formas + SVG", "Alinhamento inteligente", "Exportação localizada", "Envio ao App Store Connect", "Agentes de IA e MCP", "Localização integrada", "Nativo para Mac, iPad e iPhone", "Sincronização iCloud", "Fontes personalizadas", "Modelos de projeto", "Atalhos de teclado", "Privacidade primeiro", "Importação em lote", "Plano grátis para sempre"],
+    featureTitles: ["Edição multi-template", "Molduras de dispositivos", "Fundos e expansão", "Formas + SVG", "Alinhamento inteligente", "Exportação localizada", "Envio ao App Store Connect e Google Play", "Agentes de IA e MCP", "Localização integrada", "Nativo para Mac, iPad e iPhone", "Sincronização iCloud", "Fontes personalizadas", "Modelos de projeto", "Atalhos de teclado", "Privacidade primeiro", "Importação em lote", "Plano grátis para sempre"],
     featureDescription: "Ferramentas focadas para capturas de loja em vários idiomas, com desempenho nativo, modelos reutilizáveis e exportações prontas para envio.",
     showcaseLabels: ["Importação em lote", "Envio automático", "Formas e camadas", "Fundos", "Molduras", "Agentes de IA e MCP"],
-    showcaseTitles: ["Arraste, solte, pronto.", "App Store Connect em um clique.", "Monte camada por camada.", "Crie fundos bonitos.", "Personalize molduras.", "Deixe o trabalho repetitivo com seu agente de IA."],
+    showcaseTitles: ["Arraste, solte, pronto.", "App Store Connect e Google Play em um clique.", "Monte camada por camada.", "Crie fundos bonitos.", "Personalize molduras.", "Deixe o trabalho repetitivo com seu agente de IA."],
     showcaseDescription: "O fluxo principal mostra como o Screenshot Bro reduz etapas repetitivas de design, exportação e envio.",
     screenshotAltSuffix: "captura da interface do Screenshot Bro",
-    workflowTitles: ["Configure linhas", "Projete e localize", "Exporte tudo", "Envie ao App Store Connect"],
+    workflowTitles: ["Configure linhas", "Projete e localize", "Exporte tudo", "Envie ao App Store Connect e Google Play"],
     workflowDescription: "Dos tamanhos de dispositivo à exportação em vários idiomas e envio, todo o fluxo fica em um app nativo.",
   }),
   it: compactLandingContent("it", {
     socialImageAlt: "Screenshot Bro — app nativa per Mac, iPad e iPhone per creare screenshot App Store e Google Play con cornici, gradienti e localizzazione",
     ui: { docs: "Documentazione", redditCommunity: "Community Reddit", followOnX: "Segui su X", followOnThreads: "Segui su Threads", homeLabel: `Home di ${SITE_NAME}`, read: "Leggi", productLabel: "Prodotto", resourcesLabel: "Risorse", productHuntAlt: "ScreenshotBro App - Progetta ed esporta splendidi screenshot App Store. | Product Hunt" },
-    featureTitles: ["Modifica multi-template", "Cornici dispositivo", "Sfondi estesi", "Strumenti forme + SVG", "Allineamento intelligente", "Export localizzato", "Upload App Store Connect", "Agenti IA e MCP", "Localizzazione integrata", "Nativa Mac, iPad e iPhone", "Sync iCloud", "Font personalizzati", "Template progetto", "Scorciatoie da tastiera", "Privacy prima di tutto", "Import batch", "Piano gratis per sempre"],
+    featureTitles: ["Modifica multi-template", "Cornici dispositivo", "Sfondi estesi", "Strumenti forme + SVG", "Allineamento intelligente", "Export localizzato", "Upload su App Store Connect e Google Play", "Agenti IA e MCP", "Localizzazione integrata", "Nativa Mac, iPad e iPhone", "Sync iCloud", "Font personalizzati", "Template progetto", "Scorciatoie da tastiera", "Privacy prima di tutto", "Import batch", "Piano gratis per sempre"],
     featureDescription: "Strumenti mirati per screenshot store multilingue, con prestazioni native, template riutilizzabili ed export pronti per l'upload.",
     showcaseLabels: ["Import batch", "Upload automatico", "Forme e livelli", "Sfondi", "Cornici", "Agenti IA e MCP"],
-    showcaseTitles: ["Trascina, rilascia, fatto.", "App Store Connect in un clic.", "Costruisci livello per livello.", "Crea sfondi belli.", "Personalizza le cornici.", "Lascia il lavoro ripetitivo al tuo agente IA."],
+    showcaseTitles: ["Trascina, rilascia, fatto.", "App Store Connect e Google Play in un clic.", "Costruisci livello per livello.", "Crea sfondi belli.", "Personalizza le cornici.", "Lascia il lavoro ripetitivo al tuo agente IA."],
     showcaseDescription: "Il flusso principale mostra come Screenshot Bro riduce passaggi ripetitivi di design, export e upload.",
     screenshotAltSuffix: "schermata dell'interfaccia Screenshot Bro",
-    workflowTitles: ["Configura righe", "Progetta e localizza", "Esporta tutto", "Carica su App Store Connect"],
+    workflowTitles: ["Configura righe", "Progetta e localizza", "Esporta tutto", "Carica su App Store Connect e Google Play"],
     workflowDescription: "Dalle dimensioni dispositivo all'export multilingue e all'upload, tutto il workflow resta in un'app nativa.",
   }),
   ko: {
@@ -386,8 +386,8 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
       { title: "도형 도구 + SVG", description: "사각형, 원, 별, 텍스트, 이미지, SVG, 디바이스 프레임을 추가하고 스타일과 변형을 조정할 수 있습니다." },
       { title: "스마트 정렬", description: "드래그할 때 스냅 가이드가 표시됩니다. 방향키로 이동하고 Option 드래그로 복제하며 Shift로 비율을 고정합니다." },
       { title: "현지화 내보내기", description: "각 행의 정확한 픽셀 크기로 PNG 또는 JPEG를 모든 locale에 한 번에 내보내고, App Store Connect, Google Play, 출시용 에셋에 맞게 locale과 행별 폴더로 자동 정리합니다." },
-      { title: "App Store Connect 업로드", description: "디스플레이 유형 감지, locale 매칭, 사전 검사를 거쳐 App Store Connect에 원클릭 업로드합니다." },
-      { title: "AI 에이전트와 MCP", description: "Mac에서 선택적으로 켜는 로컬 MCP 서버를 통해 Claude Code, Claude Desktop, Cursor가 프로젝트 생성, 행과 도형 배치, 스크린샷 가져오기, 번역, 미리보기 렌더링, 내보내기를 대신 수행합니다." },
+      { title: "App Store Connect·Google Play 업로드", description: "App Store Connect 또는 Google Play 스토어 등록정보에 원클릭으로 바로 업로드합니다. 행 크기로 디스플레이 유형과 Play 이미지 유형을 감지하고, 프로젝트 locale을 각 스토어의 언어와 매칭하며, 사전 검사로 Apple이나 Google에 전달되기 전에 문제를 잡아냅니다." },
+      { title: "AI 에이전트와 MCP", description: "Mac에서 선택적으로 켜는 로컬 MCP 서버를 통해 Claude Code, Claude Desktop, Cursor가 프로젝트 생성, 행과 도형 배치, 스크린샷 가져오기, 번역, 미리보기 렌더링, 내보내기, App Store Connect 또는 Google Play 업로드를 대신 수행합니다." },
       { title: "내장 현지화", description: "81개 언어 프리셋, 온디바이스 자동 번역, 도형별 텍스트·위치·이미지 재정의를 지원합니다." },
       { title: "Mac, iPad 및 iPhone 네이티브", description: "Swift와 SwiftUI로 제작되었습니다. Electron이나 브라우저 탭 없이 빠르게 실행되고 자동 저장을 지원합니다." },
       { title: "iCloud 동기화", description: "선택형 iCloud Drive 동기화로 Mac, iPad, iPhone에서 프로젝트를 사용할 수 있습니다." },
@@ -400,185 +400,185 @@ const LOCALIZED_LANDING_CONTENT: Record<Exclude<LocaleCode, "en">, HomeCopyOverr
     ]),
     featureShowcases: localizeFeatureShowcases([
       { label: "일괄 가져오기", title: "드래그하고 놓으면 끝.", description: "여러 스크린샷을 한 번에 드롭하면 Screenshot Bro가 가져와 각각을 디바이스 프레임에 자동으로 배치합니다.", mediaAlt: "여러 스크린샷이 자동으로 디바이스 프레임에 들어가는 모습" },
-      { label: "자동 업로드", title: "App Store Connect에 원클릭 업로드.", description: "API 키를 한 번 연결하면 올바른 앱, 버전, 디스플레이 유형, locale로 스크린샷을 보냅니다.", mediaAlt: "Screenshot Bro에서 App Store Connect로 스크린샷 업로드" },
+      { label: "자동 업로드", title: "App Store Connect와 Google Play에 원클릭 업로드.", description: "App Store Connect API 키나 Google Play 서비스 계정을 한 번 연결하면 올바른 앱, 버전, 디스플레이 유형, locale로 스크린샷을 보냅니다.", mediaAlt: "Screenshot Bro에서 App Store Connect로 스크린샷 업로드" },
       { label: "도형과 레이어", title: "레이어별로 완성하세요.", description: "도형, 텍스트, 이미지, SVG를 추가하고 크기, 회전, 색상, 그라디언트, 외곽선을 조정합니다.", mediaAlt: "캔버스에서 도형을 편집하는 모습" },
       { label: "배경", title: "멋진 배경 만들기.", description: "프리셋, 사용자 지정 그라디언트, 이미지를 사용하고 여러 템플릿에 걸친 배경을 만들 수 있습니다.", mediaAlt: "그라디언트와 확장 배경을 전환하는 모습" },
       { label: "디바이스 프레임", title: "프레임을 맞춤 설정.", description: "iPhone, iPad, MacBook, iMac, Android를 선택하고 색상을 바꿔 브랜드에 맞춥니다.", mediaAlt: "앱 스크린샷 주변의 디바이스 프레임을 선택하고 조정" },
-      { label: "AI 에이전트와 MCP", title: "번거로운 작업은 AI 에이전트에게 맡기세요.", description: "로컬 MCP 서버를 켜면 Claude Code, Claude Desktop, Cursor가 Screenshot Bro를 직접 다룹니다. 프로젝트 생성, 행과 도형 배치, 스크린샷 가져오기, 텍스트 번역, 렌더링된 미리보기 확인, 내보내기, App Store Connect 동기화까지 처리합니다. 127.0.0.1에서만 수신하고 설정에서 받은 토큰이 필요하며, 모든 변경은 ⌘Z로 되돌릴 수 있습니다.", mediaAlt: "AI 에이전트가 Screenshot Bro MCP 도구를 호출해 App Store 스크린샷을 만들고 번역하고 렌더링하고 업로드하는 세션" },
+      { label: "AI 에이전트와 MCP", title: "번거로운 작업은 AI 에이전트에게 맡기세요.", description: "로컬 MCP 서버를 켜면 Claude Code, Claude Desktop, Cursor가 Screenshot Bro를 직접 다룹니다. 프로젝트 생성, 행과 도형 배치, 스크린샷 가져오기, 텍스트 번역, 렌더링된 미리보기 확인, 내보내기, App Store Connect 또는 Google Play 업로드까지 처리합니다. 127.0.0.1에서만 수신하고 설정에서 받은 토큰이 필요하며, 모든 변경은 ⌘Z로 되돌릴 수 있습니다.", mediaAlt: "AI 에이전트가 Screenshot Bro MCP 도구를 호출해 App Store·Google Play 스크린샷을 만들고 번역하고 렌더링하고 업로드하는 세션" },
     ]),
     workflowSteps: localizeWorkflowSteps([
       { title: "행 설정", description: "iPhone, iPad, Mac, Android 휴대폰과 태블릿 중에서 기기 크기를 선택하세요. 각 크기는 해당 스토어가 요구하는 픽셀로 미리 설정되어 있으며, 행은 필요한 만큼 추가할 수 있습니다." },
       { title: "디자인 및 현지화", description: "프레임, 텍스트, 도형, 배경을 추가하고 locale과 텍스트 재정의를 조정합니다." },
       { title: "모두 내보내기", description: "내보내기를 누르면 locale과 행별로 정리된 폴더에 모든 스크린샷이 스토어가 요구하는 정확한 크기로 담깁니다. 클릭 한 번이면 끝." },
-      { title: "App Store Connect 업로드", description: "API 키를 연결하고 올바른 앱, 버전, 디스플레이 유형, locale로 스크린샷을 보냅니다." },
+      { title: "App Store Connect·Google Play 업로드", description: "App Store Connect API 키나 Google Play 서비스 계정을 한 번 연결하고 올바른 앱, 버전, 디스플레이 유형, locale로 스크린샷을 바로 보냅니다. 브라우저에서 수동으로 드래그 앤 드롭할 필요가 없습니다." },
     ]),
   },
   uk: compactLandingContent("uk", {
     socialImageAlt: "Screenshot Bro — нативний додаток для Mac, iPad та iPhone для дизайну скриншотів App Store і Google Play з рамками пристроїв, градієнтами та локалізацією",
     ui: { docs: "Документація", redditCommunity: "Спільнота в Reddit", followOnX: "Стежити в X", followOnThreads: "Стежити в Threads", homeLabel: `${SITE_NAME} Головна`, read: "Читати", productLabel: "Продукт", resourcesLabel: "Ресурси", productHuntAlt: "ScreenshotBro App - Створюйте та експортуйте красиві скриншоти для App Store. | Product Hunt" },
-    featureTitles: ["Мульти-шаблонне редагування", "Рамки пристроїв", "Фони та розтягування", "Інструменти фігур + SVG", "Розумне вирівнювання", "Локалізований експорт", "Завантаження в App Store Connect", "ШІ-агенти та MCP", "Вбудована локалізація", "Нативно для Mac, iPad та iPhone", "Синхронізація iCloud", "Власні шрифти", "Шаблони проектів", "Гарячі клавіші", "Конфіденційність понад усе", "Пакетний імпорт зображень", "Назавжди безкоштовний тариф"],
+    featureTitles: ["Мульти-шаблонне редагування", "Рамки пристроїв", "Фони та розтягування", "Інструменти фігур + SVG", "Розумне вирівнювання", "Локалізований експорт", "Завантаження в App Store Connect і Google Play", "ШІ-агенти та MCP", "Вбудована локалізація", "Нативно для Mac, iPad та iPhone", "Синхронізація iCloud", "Власні шрифти", "Шаблони проектів", "Гарячі клавіші", "Конфіденційність понад усе", "Пакетний імпорт зображень", "Назавжди безкоштовний тариф"],
     featureDescription: "Спеціалізовані інструменти для багатомовних скриншотів магазинів із нативною швидкістю, шаблонами для повторного використання та експортом, готовим до завантаження.",
     showcaseLabels: ["Пакетний імпорт", "Автозавантаження", "Фігури та шари", "Фони", "Рамки пристроїв", "ШІ-агенти та MCP"],
-    showcaseTitles: ["Перетягніть, відпустіть — готово.", "Завантажуйте в App Store Connect в один клік.", "Створюйте шар за шаром.", "Створюйте красиві фони.", "Налаштовуйте рамки пристроїв.", "Доручіть рутину своєму ШІ-агенту."],
+    showcaseTitles: ["Перетягніть, відпустіть — готово.", "Завантажуйте в App Store Connect і Google Play в один клік.", "Створюйте шар за шаром.", "Створюйте красиві фони.", "Налаштовуйте рамки пристроїв.", "Доручіть рутину своєму ШІ-агенту."],
     showcaseDescription: "Основний робочий процес показує, як Screenshot Bro усуває повторювану рутину під час дизайну, експорту та завантаження.",
     screenshotAltSuffix: "скриншот інтерфейсу Screenshot Bro",
-    workflowTitles: ["Налаштуйте рядки", "Створюйте дизайн і локалізуйте", "Експортуйте все", "Завантажуйте в App Store Connect"],
+    workflowTitles: ["Налаштуйте рядки", "Створюйте дизайн і локалізуйте", "Експортуйте все", "Завантажуйте в App Store Connect і Google Play"],
     workflowDescription: "Від розмірів пристроїв до багатомовного експорту та завантаження — увесь робочий процес залишається в одному нативному додатку.",
   }),
   pl: compactLandingContent("pl", {
     socialImageAlt: "Screenshot Bro — natywna aplikacja na Maca, iPada i iPhone'a do projektowania zrzutów ekranu dla App Store i Google Play z ramkami urządzeń, gradientami i lokalizacją",
     ui: { docs: "Dokumentacja", redditCommunity: "Społeczność Reddit", followOnX: "Obserwuj na X", followOnThreads: "Obserwuj na Threads", homeLabel: `${SITE_NAME} Strona główna`, read: "Czytaj", productLabel: "Produkt", resourcesLabel: "Zasoby", productHuntAlt: "ScreenshotBro App - Projektuj i eksportuj piękne zrzuty ekranu dla App Store. | Product Hunt" },
-    featureTitles: ["Edycja wielu szablonów", "Ramki urządzeń", "Tła i rozciąganie", "Narzędzia kształtów + SVG", "Inteligentne wyrównanie", "Zlokalizowany eksport", "Przesyłanie do App Store Connect", "Agenci AI i MCP", "Wbudowana lokalizacja", "Natywna na Maca, iPada i iPhone'a", "Synchronizacja iCloud", "Własne czcionki", "Szablony projektów", "Skróty klawiszowe", "Prywatność przede wszystkim", "Masowy import obrazów", "Zawsze darmowy plan"],
+    featureTitles: ["Edycja wielu szablonów", "Ramki urządzeń", "Tła i rozciąganie", "Narzędzia kształtów + SVG", "Inteligentne wyrównanie", "Zlokalizowany eksport", "Przesyłanie do App Store Connect i Google Play", "Agenci AI i MCP", "Wbudowana lokalizacja", "Natywna na Maca, iPada i iPhone'a", "Synchronizacja iCloud", "Własne czcionki", "Szablony projektów", "Skróty klawiszowe", "Prywatność przede wszystkim", "Masowy import obrazów", "Zawsze darmowy plan"],
     featureDescription: "Dedykowane narzędzia do wielojęzycznych zrzutów ekranu w sklepach z natywną wydajnością, szablonami wielokrotnego użytku i eksportem gotowym do przesłania.",
     showcaseLabels: ["Masowy import", "Automatyczne przesyłanie", "Kształty i warstwy", "Tła", "Ramki urządzeń", "Agenci AI i MCP"],
-    showcaseTitles: ["Przeciągnij, upuść, gotowe.", "Przesyłaj do App Store Connect jednym kliknięciem.", "Buduj warstwa po warstwie.", "Twórz atrakcyjne tła.", "Dostosuj ramki urządzeń.", "Zostaw żmudną robotę agentowi AI."],
+    showcaseTitles: ["Przeciągnij, upuść, gotowe.", "Przesyłaj do App Store Connect i Google Play jednym kliknięciem.", "Buduj warstwa po warstwie.", "Twórz atrakcyjne tła.", "Dostosuj ramki urządzeń.", "Zostaw żmudną robotę agentowi AI."],
     showcaseDescription: "Główny przepływ pracy pokazuje, jak Screenshot Bro eliminuje powtarzalne projektowanie, eksport i przesyłanie.",
     screenshotAltSuffix: "zrzut ekranu interfejsu Screenshot Bro",
-    workflowTitles: ["Skonfiguruj wiersze", "Zaprojektuj i zlokalizuj", "Wyeksportuj wszystko", "Prześlij do App Store Connect"],
+    workflowTitles: ["Skonfiguruj wiersze", "Zaprojektuj i zlokalizuj", "Wyeksportuj wszystko", "Prześlij do App Store Connect i Google Play"],
     workflowDescription: "Od rozmiarów urządzeń po wielojęzyczny eksport i przesyłanie — cały proces pozostaje w jednej natywnej aplikacji.",
   }),
   tr: compactLandingContent("tr", {
     socialImageAlt: "Screenshot Bro — Cihaz çerçeveleri, degradeler ve yerelleştirme ile App Store ve Google Play ekran görüntüleri tasarlamak için yerel Mac, iPad ve iPhone uygulaması",
     ui: { docs: "Belgeler", redditCommunity: "Reddit Topluluğu", followOnX: "X'te Takip Et", followOnThreads: "Threads'te Takip Et", homeLabel: `${SITE_NAME} Ana Sayfa`, read: "Oku", productLabel: "Ürün", resourcesLabel: "Kaynaklar", productHuntAlt: "ScreenshotBro App - Harika App Store ekran görüntüleri tasarlayın ve dışa aktarın. | Product Hunt" },
-    featureTitles: ["Çoklu Şablon Düzenleme", "Cihaz Çerçeveleri", "Arka Planlar ve Yayma", "Şekil Araçları + SVG", "Akıllı Hizalama", "Yerelleştirilmiş Dışa Aktarma", "App Store Connect'e Yükleme", "Yapay Zeka Ajanları ve MCP", "Yerleşik Yerelleştirme", "Yerel Mac, iPad ve iPhone", "iCloud Eşzamanlama", "Özel Yazı Tipleri", "Proje Şablonları", "Klavye Kısayolları", "Önce Gizlilik", "Toplu Görsel İçe Aktarma", "Kalıcı Ücretsiz Plan"],
+    featureTitles: ["Çoklu Şablon Düzenleme", "Cihaz Çerçeveleri", "Arka Planlar ve Yayma", "Şekil Araçları + SVG", "Akıllı Hizalama", "Yerelleştirilmiş Dışa Aktarma", "App Store Connect ve Google Play'e Yükleme", "Yapay Zeka Ajanları ve MCP", "Yerleşik Yerelleştirme", "Yerel Mac, iPad ve iPhone", "iCloud Eşzamanlama", "Özel Yazı Tipleri", "Proje Şablonları", "Klavye Kısayolları", "Önce Gizlilik", "Toplu Görsel İçe Aktarma", "Kalıcı Ücretsiz Plan"],
     featureDescription: "Yerel performans, yeniden kullanılabilir şablonlar ve yüklemeye hazır dışa aktarmalarla çok dilli mağaza ekran görüntüleri için odaklanmış araçlar.",
     showcaseLabels: ["Toplu İçe Aktarma", "Otomatik Yükleme", "Şekiller ve Katmanlar", "Arka Planlar", "Cihaz Çerçeveleri", "Yapay Zeka Ajanları ve MCP"],
-    showcaseTitles: ["Sürükle, bırak, bitti.", "App Store Connect'e tek tıkla yükleyin.", "Katman katman inşa edin.", "Göz alıcı arka planlar oluşturun.", "Cihaz çerçevelerini özelleştirin.", "Angarya işleri yapay zeka ajanınıza bırakın."],
+    showcaseTitles: ["Sürükle, bırak, bitti.", "App Store Connect ve Google Play'e tek tıkla yükleyin.", "Katman katman inşa edin.", "Göz alıcı arka planlar oluşturun.", "Cihaz çerçevelerini özelleştirin.", "Angarya işleri yapay zeka ajanınıza bırakın."],
     showcaseDescription: "Temel iş akışı, Screenshot Bro'nun tekrarlayan tasarım, dışa aktarma ve yükleme adımlarını nasıl ortadan kaldırdığını gösterir.",
     screenshotAltSuffix: "Screenshot Bro arayüz ekran görüntüsü",
-    workflowTitles: ["Satırları Ayarlayın", "Tasarlayın ve Yerelleştirin", "Hepsini Dışa Aktarın", "App Store Connect'e Yükleyin"],
+    workflowTitles: ["Satırları Ayarlayın", "Tasarlayın ve Yerelleştirin", "Hepsini Dışa Aktarın", "App Store Connect ve Google Play'e Yükleyin"],
     workflowDescription: "Cihaz boyutlarından çok dilli dışa aktarma ve yüklemeye kadar tüm ekran görüntüsü iş akışı tek bir yerel uygulamada kalır.",
   }),
   nl: compactLandingContent("nl", {
     socialImageAlt: "Screenshot Bro — native app voor Mac, iPad en iPhone voor het ontwerpen van App Store- en Google Play-screenshots met apparaatframes, verlopen en lokalisatie",
     ui: { docs: "Documentatie", redditCommunity: "Reddit-community", followOnX: "Volg op X", followOnThreads: "Volg op Threads", homeLabel: `${SITE_NAME} Home`, read: "Lees", productLabel: "Product", resourcesLabel: "Bronnen", productHuntAlt: "ScreenshotBro App - Ontwerp en exporteer prachtige App Store-screenshots. | Product Hunt" },
-    featureTitles: ["Multi-template bewerking", "Apparaatframes", "Achtergronden & overspanning", "Vormgereedschappen + SVG", "Slimme uitlijning", "Gelokaliseerde export", "Uploaden naar App Store Connect", "AI-agenten & MCP", "Ingebouwde lokalisatie", "Native voor Mac, iPad & iPhone", "iCloud-synchronisatie", "Aangepaste lettertypen", "Projectsjablonen", "Toetscombinaties", "Privacy voorop", "Batch-afbeeldingsimport", "Blijvend gratis plan"],
+    featureTitles: ["Multi-template bewerking", "Apparaatframes", "Achtergronden & overspanning", "Vormgereedschappen + SVG", "Slimme uitlijning", "Gelokaliseerde export", "Uploaden naar App Store Connect & Google Play", "AI-agenten & MCP", "Ingebouwde lokalisatie", "Native voor Mac, iPad & iPhone", "iCloud-synchronisatie", "Aangepaste lettertypen", "Projectsjablonen", "Toetscombinaties", "Privacy voorop", "Batch-afbeeldingsimport", "Blijvend gratis plan"],
     featureDescription: "Gerichte tools voor meertalige store-screenshots met native prestaties, herbruikbare sjablonen en exporten klaar voor upload.",
     showcaseLabels: ["Batch-import", "Automatische upload", "Vormen en lagen", "Achtergronden", "Apparaatframes", "AI-agenten & MCP"],
-    showcaseTitles: ["Slepen, neerzetten, klaar.", "Upload naar App Store Connect in één klik.", "Bouw laag voor laag op.", "Maak prachtige achtergronden.", "Pas apparaatframes aan.", "Laat je AI-agent het saaie werk doen."],
+    showcaseTitles: ["Slepen, neerzetten, klaar.", "Upload naar App Store Connect en Google Play in één klik.", "Bouw laag voor laag op.", "Maak prachtige achtergronden.", "Pas apparaatframes aan.", "Laat je AI-agent het saaie werk doen."],
     showcaseDescription: "De kernworkflow laat zien hoe Screenshot Bro repetitief ontwerp-, export- en uploadwerk elimineert.",
     screenshotAltSuffix: "Screenshot Bro-interface screenshot",
-    workflowTitles: ["Rijen instellen", "Ontwerpen & lokaliseren", "Alles exporteren", "Uploaden naar App Store Connect"],
+    workflowTitles: ["Rijen instellen", "Ontwerpen & lokaliseren", "Alles exporteren", "Uploaden naar App Store Connect en Google Play"],
     workflowDescription: "Van apparaatformaten tot meertalige export en upload: de hele workflow blijft in één native app.",
   }),
   id: compactLandingContent("id", {
     socialImageAlt: "Screenshot Bro — aplikasi native Mac, iPad dan iPhone untuk mendesain tangkapan layar App Store dan Google Play dengan bingkai perangkat, gradien, dan lokalisasi",
     ui: { docs: "Dokumentasi", redditCommunity: "Komunitas Reddit", followOnX: "Ikuti di X", followOnThreads: "Ikuti di Threads", homeLabel: `${SITE_NAME} Beranda`, read: "Baca", productLabel: "Produk", resourcesLabel: "Sumber Daya", productHuntAlt: "ScreenshotBro App - Desain dan ekspor tangkapan layar App Store yang indah. | Product Hunt" },
-    featureTitles: ["Pengeditan Multi-Template", "Bingkai Perangkat", "Latar Belakang & Rentang", "Alat Bentuk + SVG", "Perataan Cerdas", "Ekspor Terlokalisasi", "Unggah ke App Store Connect", "Agen AI & MCP", "Lokalisasi Bawaan", "Native untuk Mac, iPad & iPhone", "Sinkronisasi iCloud", "Font Khusus", "Template Proyek", "Pintasan Papan Ketik", "Privasi Utama", "Impor Gambar Massal", "Paket Gratis Selamanya"],
+    featureTitles: ["Pengeditan Multi-Template", "Bingkai Perangkat", "Latar Belakang & Rentang", "Alat Bentuk + SVG", "Perataan Cerdas", "Ekspor Terlokalisasi", "Unggah ke App Store Connect & Google Play", "Agen AI & MCP", "Lokalisasi Bawaan", "Native untuk Mac, iPad & iPhone", "Sinkronisasi iCloud", "Font Khusus", "Template Proyek", "Pintasan Papan Ketik", "Privasi Utama", "Impor Gambar Massal", "Paket Gratis Selamanya"],
     featureDescription: "Alat terfokus untuk tangkapan layar toko multibahasa dengan performa native, template yang dapat digunakan kembali, dan ekspor siap unggah.",
     showcaseLabels: ["Impor Massal", "Unggah Otomatis", "Bentuk & Lapisan", "Latar Belakang", "Bingkai Perangkat", "Agen AI & MCP"],
-    showcaseTitles: ["Tarik, lepas, selesai.", "Unggah ke App Store Connect dalam satu klik.", "Bangun lapis demi lapis.", "Buat latar belakang menarik.", "Sesuaikan bingkai perangkat.", "Serahkan pekerjaan rutin ke agen AI Anda."],
+    showcaseTitles: ["Tarik, lepas, selesai.", "Unggah ke App Store Connect dan Google Play dalam satu klik.", "Bangun lapis demi lapis.", "Buat latar belakang menarik.", "Sesuaikan bingkai perangkat.", "Serahkan pekerjaan rutin ke agen AI Anda."],
     showcaseDescription: "Alur kerja inti menunjukkan bagaimana Screenshot Bro menghilangkan pekerjaan desain, ekspor, dan unggah yang berulang.",
     screenshotAltSuffix: "tangkapan layar antarmuka Screenshot Bro",
-    workflowTitles: ["Atur Baris", "Desain & Lokalisasi", "Ekspor Semua", "Unggah ke App Store Connect"],
+    workflowTitles: ["Atur Baris", "Desain & Lokalisasi", "Ekspor Semua", "Unggah ke App Store Connect dan Google Play"],
     workflowDescription: "Dari ukuran perangkat hingga ekspor multibahasa dan pengunggahan, seluruh alur kerja tetap berada dalam satu aplikasi native.",
   }),
   vi: compactLandingContent("vi", {
     socialImageAlt: "Screenshot Bro — ứng dụng native trên Mac, iPad và iPhone để thiết kế ảnh chụp màn hình App Store và Google Play với khung thiết bị, gradient và bản địa hóa",
     ui: { docs: "Tài liệu", redditCommunity: "Cộng đồng Reddit", followOnX: "Theo dõi trên X", followOnThreads: "Theo dõi trên Threads", homeLabel: `${SITE_NAME} Trang chủ`, read: "Đọc", productLabel: "Sản phẩm", resourcesLabel: "Tài nguyên", productHuntAlt: "ScreenshotBro App - Thiết kế và xuất ảnh chụp màn hình App Store tuyệt đẹp. | Product Hunt" },
-    featureTitles: ["Chỉnh sửa đa mẫu", "Khung thiết bị", "Hình nền & trải rộng", "Công cụ hình dạng + SVG", "Căn chỉnh thông minh", "Xuất bản địa hóa", "Tải lên App Store Connect", "AI Agent & MCP", "Bản địa hóa tích hợp", "Native cho Mac, iPad & iPhone", "Đồng bộ iCloud", "Phông chữ tùy chỉnh", "Mẫu dự án", "Phím tắt", "Bảo mật hàng đầu", "Nhập ảnh hàng loạt", "Gói miễn phí vĩnh viễn"],
+    featureTitles: ["Chỉnh sửa đa mẫu", "Khung thiết bị", "Hình nền & trải rộng", "Công cụ hình dạng + SVG", "Căn chỉnh thông minh", "Xuất bản địa hóa", "Tải lên App Store Connect & Google Play", "AI Agent & MCP", "Bản địa hóa tích hợp", "Native cho Mac, iPad & iPhone", "Đồng bộ iCloud", "Phông chữ tùy chỉnh", "Mẫu dự án", "Phím tắt", "Bảo mật hàng đầu", "Nhập ảnh hàng loạt", "Gói miễn phí vĩnh viễn"],
     featureDescription: "Công cụ chuyên dụng cho ảnh chụp màn hình ứng dụng đa ngôn ngữ với hiệu năng native, mẫu tái sử dụng và xuất file sẵn sàng tải lên.",
     showcaseLabels: ["Nhập hàng loạt", "Tải lên tự động", "Hình dạng & lớp", "Hình nền", "Khung thiết bị", "AI Agent & MCP"],
-    showcaseTitles: ["Kéo, thả, xong.", "Tải lên App Store Connect chỉ với một cú nhấp.", "Xây dựng từng lớp.", "Tạo hình nền ấn tượng.", "Tùy chỉnh khung thiết bị.", "Để AI agent lo những việc lặp đi lặp lại."],
+    showcaseTitles: ["Kéo, thả, xong.", "Tải lên App Store Connect và Google Play chỉ với một cú nhấp.", "Xây dựng từng lớp.", "Tạo hình nền ấn tượng.", "Tùy chỉnh khung thiết bị.", "Để AI agent lo những việc lặp đi lặp lại."],
     showcaseDescription: "Quy trình làm việc cốt lõi cho thấy Screenshot Bro giúp loại bỏ các bước thiết kế, xuất file và tải lên lặp đi lặp lại như thế nào.",
     screenshotAltSuffix: "ảnh chụp giao diện Screenshot Bro",
-    workflowTitles: ["Thiết lập hàng", "Thiết kế & bản địa hóa", "Xuất tất cả", "Tải lên App Store Connect"],
+    workflowTitles: ["Thiết lập hàng", "Thiết kế & bản địa hóa", "Xuất tất cả", "Tải lên App Store Connect và Google Play"],
     workflowDescription: "Từ kích thước thiết bị đến xuất đa ngôn ngữ và tải lên — toàn bộ quy trình làm việc đều nằm trong một ứng dụng native duy nhất.",
   }),
   th: compactLandingContent("th", {
     socialImageAlt: "Screenshot Bro — แอปเนทีฟบน Mac, iPad และ iPhone สำหรับออกแบบภาพสกรีนช็อต App Store และ Google Play พร้อมกรอบอุปกรณ์ การไล่ระดับสี และการแปลภาษา",
     ui: { docs: "เอกสารประกอบ", redditCommunity: "ชุมชน Reddit", followOnX: "ติดตามบน X", followOnThreads: "ติดตามบน Threads", homeLabel: `${SITE_NAME} หน้าแรก`, read: "อ่าน", productLabel: "ผลิตภัณฑ์", resourcesLabel: "แหล่งข้อมูล", productHuntAlt: "ScreenshotBro App - ออกแบบและส่งออกภาพสกรีนช็อต App Store ที่สวยงาม | Product Hunt" },
-    featureTitles: ["แก้ไขหลายเทมเพลตพร้อมกัน", "กรอบอุปกรณ์", "พื้นหลังและการขยายข้ามหน้า", "เครื่องมือรูปทรง + SVG", "การจัดตำแหน่งอัจฉริยะ", "การส่งออกตามภาษา", "อัปโหลดไปยัง App Store Connect", "AI Agent และ MCP", "การแปลภาษาในตัว", "เนทีฟสำหรับ Mac, iPad และ iPhone", "การซิงค์ iCloud", "ฟอนต์แบบกำหนดเอง", "เทมเพลตโปรเจกต์", "คีย์ลัดบนแป้นพิมพ์", "เน้นความเป็นส่วนตัว", "นำเข้ารูปภาพเป็นชุด", "แผนฟรีตลอดไป"],
+    featureTitles: ["แก้ไขหลายเทมเพลตพร้อมกัน", "กรอบอุปกรณ์", "พื้นหลังและการขยายข้ามหน้า", "เครื่องมือรูปทรง + SVG", "การจัดตำแหน่งอัจฉริยะ", "การส่งออกตามภาษา", "อัปโหลดไปยัง App Store Connect & Google Play", "AI Agent และ MCP", "การแปลภาษาในตัว", "เนทีฟสำหรับ Mac, iPad และ iPhone", "การซิงค์ iCloud", "ฟอนต์แบบกำหนดเอง", "เทมเพลตโปรเจกต์", "คีย์ลัดบนแป้นพิมพ์", "เน้นความเป็นส่วนตัว", "นำเข้ารูปภาพเป็นชุด", "แผนฟรีตลอดไป"],
     featureDescription: "เครื่องมือเฉพาะทางสำหรับสกรีนช็อตหลายภาษา พร้อมประสิทธิภาพเนทีฟ เทมเพลตที่ใช้ซ้ำได้ และการส่งออกที่พร้อมอัปโหลดทันที",
     showcaseLabels: ["นำเข้าเป็นชุด", "อัปโหลดอัตโนมัติ", "รูปทรงและเลเยอร์", "พื้นหลัง", "กรอบอุปกรณ์", "AI Agent และ MCP"],
-    showcaseTitles: ["ลาก วาง เรียบร้อย", "อัปโหลดไปยัง App Store Connect ในคลิกเดียว", "สร้างทีละเลเยอร์", "สร้างพื้นหลังที่สวยงาม", "ปรับแต่งกรอบอุปกรณ์", "ให้ AI Agent จัดการงานจุกจิกแทนคุณ"],
+    showcaseTitles: ["ลาก วาง เรียบร้อย", "อัปโหลดไปยัง App Store Connect และ Google Play ในคลิกเดียว", "สร้างทีละเลเยอร์", "สร้างพื้นหลังที่สวยงาม", "ปรับแต่งกรอบอุปกรณ์", "ให้ AI Agent จัดการงานจุกจิกแทนคุณ"],
     showcaseDescription: "ขั้นตอนการทำงานหลักแสดงให้เห็นว่า Screenshot Bro ช่วยลดขั้นตอนการออกแบบ การส่งออก และการอัปโหลดที่ซ้ำซ้อนได้อย่างไร",
     screenshotAltSuffix: "ภาพหน้าจออินเทอร์เฟซ Screenshot Bro",
-    workflowTitles: ["ตั้งค่าแถว", "ออกแบบและแปลภาษา", "ส่งออกทั้งหมด", "อัปโหลดไปยัง App Store Connect"],
+    workflowTitles: ["ตั้งค่าแถว", "ออกแบบและแปลภาษา", "ส่งออกทั้งหมด", "อัปโหลดไปยัง App Store Connect และ Google Play"],
     workflowDescription: "ตั้งแต่ขนาดอุปกรณ์ไปจนถึงการส่งออกหลายภาษาและการอัปโหลด ทุกขั้นตอนทำได้ในแอปเนทีฟเดียว",
   }),
   sv: compactLandingContent("sv", {
     socialImageAlt: "Screenshot Bro — nativ Mac-, iPad- och iPhone-app för att designa skärmdumpar för App Store och Google Play med enhetsramar, gradienter och lokalisering",
     ui: { docs: "Dokumentation", redditCommunity: "Reddit-community", followOnX: "Följ på X", followOnThreads: "Följ på Threads", homeLabel: `${SITE_NAME} Hem`, read: "Läs", productLabel: "Produkt", resourcesLabel: "Resurser", productHuntAlt: "ScreenshotBro App - Designa och exportera vackra App Store-skärmdumpar. | Product Hunt" },
-    featureTitles: ["Redigering av flera mallar", "Enhetsramar", "Bakgrunder & spännvidd", "Formverktyg + SVG", "Smart justering", "Lokaliserad export", "Uppladdning till App Store Connect", "AI-agenter & MCP", "Inbyggd lokalisering", "Nativt för Mac, iPad & iPhone", "iCloud-synkronisering", "Anpassade typsnitt", "Projektmallar", "Kortkommandon", "Integritet först", "Batchimport av bilder", "Permanent gratisplan"],
+    featureTitles: ["Redigering av flera mallar", "Enhetsramar", "Bakgrunder & spännvidd", "Formverktyg + SVG", "Smart justering", "Lokaliserad export", "Uppladdning till App Store Connect & Google Play", "AI-agenter & MCP", "Inbyggd lokalisering", "Nativt för Mac, iPad & iPhone", "iCloud-synkronisering", "Anpassade typsnitt", "Projektmallar", "Kortkommandon", "Integritet först", "Batchimport av bilder", "Permanent gratisplan"],
     featureDescription: "Fokuserade verktyg för flerspråkiga butiksskärmdumpar med nativ prestanda, återanvändbara mallar och uppladdningsklara exporter.",
     showcaseLabels: ["Batchimport", "Automatisk uppladdning", "Former och lager", "Bakgrunder", "Enhetsramar", "AI-agenter & MCP"],
-    showcaseTitles: ["Dra, släpp, klart.", "Ladda upp till App Store Connect med ett klick.", "Bygg lager för lager.", "Skapa snygga bakgrunder.", "Anpassa enhetsramar.", "Låt din AI-agent sköta grovjobbet."],
+    showcaseTitles: ["Dra, släpp, klart.", "Ladda upp till App Store Connect och Google Play med ett klick.", "Bygg lager för lager.", "Skapa snygga bakgrunder.", "Anpassa enhetsramar.", "Låt din AI-agent sköta grovjobbet."],
     showcaseDescription: "Kärnarbetsflödet visar hur Screenshot Bro eliminerar repetitivt design-, export- och uppladdningsarbete.",
     screenshotAltSuffix: "Screenshot Bro-gränssnittsskärmdump",
-    workflowTitles: ["Ställ in rader", "Designa & lokalisera", "Exportera allt", "Ladda upp till App Store Connect"],
+    workflowTitles: ["Ställ in rader", "Designa & lokalisera", "Exportera allt", "Ladda upp till App Store Connect och Google Play"],
     workflowDescription: "Från enhetsstorlekar till flerspråkig export och uppladdning — hela arbetsflödet ryms i en enda nativ app.",
   }),
   da: compactLandingContent("da", {
     socialImageAlt: "Screenshot Bro — nativ Mac-, iPad- og iPhone-app til at designe App Store- og Google Play-skærmbilleder med enhedsrammer, gradueringer og lokalisering",
     ui: { docs: "Dokumentation", redditCommunity: "Reddit-fællesskab", followOnX: "Følg på X", followOnThreads: "Følg på Threads", homeLabel: `${SITE_NAME} Hjem`, read: "Læs", productLabel: "Produkt", resourcesLabel: "Ressourcer", productHuntAlt: "ScreenshotBro App - Design og eksportér smukke App Store-skærmbilleder. | Product Hunt" },
-    featureTitles: ["Multi-skabelon redigering", "Enhedsrammer", "Baggrunde & spændvidde", "Formværktøjer + SVG", "Smart justering", "Lokaliseret eksport", "Upload til App Store Connect", "AI-agenter & MCP", "Indbygget lokalisering", "Nativ til Mac, iPad & iPhone", "iCloud-synkronisering", "Brugerdefinerede skrifttyper", "Projektskabeloner", "Tastaturgenveje", "Privatliv først", "Batch-import af billeder", "Permanent gratis plan"],
+    featureTitles: ["Multi-skabelon redigering", "Enhedsrammer", "Baggrunde & spændvidde", "Formværktøjer + SVG", "Smart justering", "Lokaliseret eksport", "Upload til App Store Connect & Google Play", "AI-agenter & MCP", "Indbygget lokalisering", "Nativ til Mac, iPad & iPhone", "iCloud-synkronisering", "Brugerdefinerede skrifttyper", "Projektskabeloner", "Tastaturgenveje", "Privatliv først", "Batch-import af billeder", "Permanent gratis plan"],
     featureDescription: "Fokuserede værktøjer til flersprogede butiksskærmbilleder med nativ ydeevne, genanvendelige skabeloner og upload-klare eksporter.",
     showcaseLabels: ["Batch-import", "Automatisk upload", "Former og lag", "Baggrunde", "Enhedsrammer", "AI-agenter & MCP"],
-    showcaseTitles: ["Træk, slip, færdig.", "Upload til App Store Connect med ét klik.", "Byg lag for lag.", "Skab flotte baggrunde.", "Tilpas enhedsrammer.", "Lad din AI-agent klare det trivielle arbejde."],
+    showcaseTitles: ["Træk, slip, færdig.", "Upload til App Store Connect og Google Play med ét klik.", "Byg lag for lag.", "Skab flotte baggrunde.", "Tilpas enhedsrammer.", "Lad din AI-agent klare det trivielle arbejde."],
     showcaseDescription: "Det centrale arbejdsflow viser, hvordan Screenshot Bro fjerner gentagne design-, eksport- og upload-opgaver.",
     screenshotAltSuffix: "Screenshot Bro brugerflade-skærmbillede",
-    workflowTitles: ["Opsæt rækker", "Design & lokaliser", "Eksportér alt", "Upload til App Store Connect"],
+    workflowTitles: ["Opsæt rækker", "Design & lokaliser", "Eksportér alt", "Upload til App Store Connect og Google Play"],
     workflowDescription: "Fra enhedsstørrelser til flersproget eksport og upload — hele arbejdsgangen samlet i én nativ app.",
   }),
   fi: compactLandingContent("fi", {
     socialImageAlt: "Screenshot Bro — natiivi Mac-, iPad- ja iPhone-sovellus App Store- ja Google Play -kuvakaappausten suunnitteluun laitekehyksillä, liukuväreillä ja lokalisoinnilla",
     ui: { docs: "Dokumentaatio", redditCommunity: "Reddit-yhteisö", followOnX: "Seuraa X:ssä", followOnThreads: "Seuraa Threadsissä", homeLabel: `${SITE_NAME} Etusivu`, read: "Lue", productLabel: "Tuote", resourcesLabel: "Resurssit", productHuntAlt: "ScreenshotBro App - Suunnittele ja vie upeita App Store -kuvakaappauksia. | Product Hunt" },
-    featureTitles: ["Usean mallin muokkaus", "Laitekehykset", "Taustat & kattavuus", "Muototyökalut + SVG", "Älykäs kohdistus", "Lokalisoitu vienti", "Lataus App Store Connectiin", "Tekoälyagentit & MCP", "Sisäänrakennettu lokalisointi", "Natiivi Macille, iPadille ja iPhonelle", "iCloud-synkronointi", "Mukautetut fontit", "Projektimallit", "Pikanäppäimet", "Yksityisyys edellä", "Kuvien erätuonti", "Pysyvästi ilmainen versio"],
+    featureTitles: ["Usean mallin muokkaus", "Laitekehykset", "Taustat & kattavuus", "Muototyökalut + SVG", "Älykäs kohdistus", "Lokalisoitu vienti", "Lataus App Store Connectiin & Google Playhin", "Tekoälyagentit & MCP", "Sisäänrakennettu lokalisointi", "Natiivi Macille, iPadille ja iPhonelle", "iCloud-synkronointi", "Mukautetut fontit", "Projektimallit", "Pikanäppäimet", "Yksityisyys edellä", "Kuvien erätuonti", "Pysyvästi ilmainen versio"],
     featureDescription: "Täsmälliset työkalut monikielisiin sovelluskaupan kuvakaappauksiin natiivilla suorituskyvyllä, uudelleenkäytettävillä malleilla ja latausvalmiilla viennillä.",
     showcaseLabels: ["Erätuonti", "Automaattinen lataus", "Muodot ja tasot", "Taustat", "Laitekehykset", "Tekoälyagentit & MCP"],
-    showcaseTitles: ["Vedä, pudota, valmis.", "Lataa App Store Connectiin yhdellä napsautuksella.", "Rakenna taso tasolta.", "Luo upeita taustoja.", "Mukauta laitekehyksiä.", "Anna tekoälyagentin hoitaa rutiinityöt."],
+    showcaseTitles: ["Vedä, pudota, valmis.", "Lataa App Store Connectiin ja Google Playhin yhdellä napsautuksella.", "Rakenna taso tasolta.", "Luo upeita taustoja.", "Mukauta laitekehyksiä.", "Anna tekoälyagentin hoitaa rutiinityöt."],
     showcaseDescription: "Ydintyönkulku näyttää, miten Screenshot Bro poistaa toistuvat suunnittelu-, vienti- ja latausvaiheet.",
     screenshotAltSuffix: "Screenshot Bro -käyttöliittymän kuvakaappaus",
-    workflowTitles: ["Määritä rivit", "Suunnittele ja lokalisoi", "Vie kaikki", "Lataa App Store Connectiin"],
+    workflowTitles: ["Määritä rivit", "Suunnittele ja lokalisoi", "Vie kaikki", "Lataa App Store Connectiin ja Google Playhin"],
     workflowDescription: "Laitteiden koosta monikieliseen vientiin ja lataukseen — koko työnkulku yhdessä natiivisovelluksessa.",
   }),
   no: compactLandingContent("no", {
     socialImageAlt: "Screenshot Bro — nativ Mac-, iPad- og iPhone-app for å designe App Store- og Google Play-skjermbilder med enhetsrammer, gradienter og lokalisering",
     ui: { docs: "Dokumentasjon", redditCommunity: "Reddit-fellesskap", followOnX: "Følg på X", followOnThreads: "Følg på Threads", homeLabel: `${SITE_NAME} Hjem`, read: "Les", productLabel: "Produkt", resourcesLabel: "Ressourcer", productHuntAlt: "ScreenshotBro App - Design og eksporter flotte App Store-skjermbilder. | Product Hunt" },
-    featureTitles: ["Redigering av flere maler", "Enhetsrammer", "Bakgrunner & spennvidde", "Formverktøy + SVG", "Smart justering", "Lokalisert eksport", "Opplasting til App Store Connect", "AI-agenter & MCP", "Innebygd lokalisering", "Nativt for Mac, iPad & iPhone", "iCloud-synkronisering", "Egendefinerte fonter", "Prosjektmaler", "Tastatursnarveier", "Personvern først", "Batch-import av bilder", "Permanent gratisplan"],
+    featureTitles: ["Redigering av flere maler", "Enhetsrammer", "Bakgrunner & spennvidde", "Formverktøy + SVG", "Smart justering", "Lokalisert eksport", "Opplasting til App Store Connect & Google Play", "AI-agenter & MCP", "Innebygd lokalisering", "Nativt for Mac, iPad & iPhone", "iCloud-synkronisering", "Egendefinerte fonter", "Prosjektmaler", "Tastatursnarveier", "Personvern først", "Batch-import av bilder", "Permanent gratisplan"],
     featureDescription: "Målrettede verktøy for flerspråklige butikkskjermbilder med nativ ytelse, gjenbrukbare maler og eksport klare for opplasting.",
     showcaseLabels: ["Batch-import", "Automatisk opplasting", "Former og lag", "Bakgrunner", "Enhetsrammer", "AI-agenter & MCP"],
-    showcaseTitles: ["Dra, slipp, ferdig.", "Last opp til App Store Connect med ett klikk.", "Bygg lag for lag.", "Lag flotte bakgrunner.", "Tilpass enhetsrammer.", "La AI-agenten ta seg av rutinearbeidet."],
+    showcaseTitles: ["Dra, slipp, ferdig.", "Last opp til App Store Connect og Google Play med ett klikk.", "Bygg lag for lag.", "Lag flotte bakgrunner.", "Tilpass enhetsrammer.", "La AI-agenten ta seg av rutinearbeidet."],
     showcaseDescription: "Det sentrale arbeidsflyten viser hvordan Screenshot Bro fjerner repetitivt design-, eksport- og opplastingsarbeid.",
     screenshotAltSuffix: "Screenshot Bro-grensesnittskjermbilde",
-    workflowTitles: ["Sett opp rader", "Design & lokaliser", "Eksporter alt", "Last opp til App Store Connect"],
+    workflowTitles: ["Sett opp rader", "Design & lokaliser", "Eksporter alt", "Last opp til App Store Connect og Google Play"],
     workflowDescription: "Fra enhetsstørrelser til flerspråklig eksport og opplasting — hele arbeidsflyten i én enkelt nativ app.",
   }),
   cs: compactLandingContent("cs", {
     socialImageAlt: "Screenshot Bro — nativní aplikace pro Mac, iPad a iPhone k navrhování snímků obrazovky pro App Store a Google Play s rámečky zařízení, přechody a lokalizací",
     ui: { docs: "Dokumentace", redditCommunity: "Komunita Reddit", followOnX: "Sledovat na X", followOnThreads: "Sledovat na Threads", homeLabel: `${SITE_NAME} Domů`, read: "Číst", productLabel: "Produkt", resourcesLabel: "Zdroje", productHuntAlt: "ScreenshotBro App - Navrhujte a exportujte krásné snímky obrazovky pro App Store. | Product Hunt" },
-    featureTitles: ["Úprava více šablon", "Rámečky zařízení", "Pozadí a prolínání", "Nástroje tvarů + SVG", "Chytré zarovnání", "Lokalizovaný export", "Nahrávání do App Store Connect", "AI agenti & MCP", "Vestavěná lokalizace", "Nativní pro Mac, iPad & iPhone", "Synchronizace přes iCloud", "Vlastní písma", "Projektové šablony", "Klávesové zkratky", "Důraz na soukromí", "Dávkový import obrázků", "Trvale bezplatný plán"],
+    featureTitles: ["Úprava více šablon", "Rámečky zařízení", "Pozadí a prolínání", "Nástroje tvarů + SVG", "Chytré zarovnání", "Lokalizovaný export", "Nahrávání do App Store Connect & Google Play", "AI agenti & MCP", "Vestavěná lokalizace", "Nativní pro Mac, iPad & iPhone", "Synchronizace přes iCloud", "Vlastní písma", "Projektové šablony", "Klávesové zkratky", "Důraz na soukromí", "Dávkový import obrázků", "Trvale bezplatný plán"],
     featureDescription: "Cílené nástroje pro vícejazyčné snímky obrazovky s nativním výkonem, znovupoužitelnými šablonami a exportem připraveným k nahrání.",
     showcaseLabels: ["Dávkový import", "Automatické nahrávání", "Tvary a vrstvy", "Pozadí", "Rámečky zařízení", "AI agenti & MCP"],
-    showcaseTitles: ["Přetáhněte, pusťte, hotovo.", "Nahrávání do App Store Connect jedním kliknutím.", "Stavějte vrstvu po vrstvě.", "Vytvářejte působivá pozadí.", "Přizpůsobte rámečky zařízení.", "Nechte otravnou práci na svém AI agentovi."],
+    showcaseTitles: ["Přetáhněte, pusťte, hotovo.", "Nahrávání do App Store Connect a Google Play jedním kliknutím.", "Stavějte vrstvu po vrstvě.", "Vytvářejte působivá pozadí.", "Přizpůsobte rámečky zařízení.", "Nechte otravnou práci na svém AI agentovi."],
     showcaseDescription: "Základní pracovní postup ukazuje, jak Screenshot Bro odstraňuje opakující se návrhové, exportní a nahrávací kroky.",
     screenshotAltSuffix: "Snímek rozhraní aplikace Screenshot Bro",
-    workflowTitles: ["Nastavení řádků", "Návrh a lokalizace", "Export všeho", "Nahrání do App Store Connect"],
+    workflowTitles: ["Nastavení řádků", "Návrh a lokalizace", "Export všeho", "Nahrání do App Store Connect a Google Play"],
     workflowDescription: "Od velikostí zařízení po vícejazyčný export a nahrávání — celý pracovní postup v jediné nativní aplikaci.",
   }),
   ro: compactLandingContent("ro", {
     socialImageAlt: "Screenshot Bro — aplicație nativă pentru Mac, iPad și iPhone pentru proiectarea capturilor de ecran pentru App Store și Google Play cu rame de dispozitive, degradeuri și localizare",
     ui: { docs: "Documentație", redditCommunity: "Comunitate Reddit", followOnX: "Urmărește pe X", followOnThreads: "Urmărește pe Threads", homeLabel: `${SITE_NAME} Acasă`, read: "Citește", productLabel: "Produs", resourcesLabel: "Resurse", productHuntAlt: "ScreenshotBro App - Proiectează și exportă capturi de ecran superbe pentru App Store. | Product Hunt" },
-    featureTitles: ["Editare multi-șablon", "Rame de dispozitive", "Fundaluri & extindere", "Instrumente de forme + SVG", "Aliniere inteligentă", "Export localizat", "Încărcare în App Store Connect", "Agenți AI & MCP", "Localizare integrată", "Nativ pentru Mac, iPad & iPhone", "Sincronizare iCloud", "Fonturi personalizate", "Șabloane de proiect", "Scurtături de tastatură", "Confidențialitate prioritară", "Import în masă al imaginilor", "Plan gratuit permanent"],
+    featureTitles: ["Editare multi-șablon", "Rame de dispozitive", "Fundaluri & extindere", "Instrumente de forme + SVG", "Aliniere inteligentă", "Export localizat", "Încărcare în App Store Connect & Google Play", "Agenți AI & MCP", "Localizare integrată", "Nativ pentru Mac, iPad & iPhone", "Sincronizare iCloud", "Fonturi personalizate", "Șabloane de proiect", "Scurtături de tastatură", "Confidențialitate prioritară", "Import în masă al imaginilor", "Plan gratuit permanent"],
     featureDescription: "Instrumente dedicate pentru capturi de ecran multilingve, cu performanță nativă, șabloane reutilizabile și exporturi gata de încărcare.",
     showcaseLabels: ["Import în masă", "Încărcare automată", "Forme și straturi", "Fundaluri", "Rame de dispozitive", "Agenți AI & MCP"],
-    showcaseTitles: ["Trage, plasează, gata.", "Încărcare în App Store Connect cu un singur clic.", "Construiește strat cu strat.", "Creează fundaluri impresionante.", "Personalizează ramele dispozitivelor.", "Lasă agentul AI să se ocupe de munca repetitivă."],
+    showcaseTitles: ["Trage, plasează, gata.", "Încărcare în App Store Connect și Google Play cu un singur clic.", "Construiește strat cu strat.", "Creează fundaluri impresionante.", "Personalizează ramele dispozitivelor.", "Lasă agentul AI să se ocupe de munca repetitivă."],
     showcaseDescription: "Fluxul de lucru de bază arată cum Screenshot Bro elimină pașii repetitivi de design, export și încărcare.",
     screenshotAltSuffix: "Captură de ecran din interfața Screenshot Bro",
-    workflowTitles: ["Configurează rândurile", "Proiectează și localizează", "Exportă tot", "Încarcă în App Store Connect"],
+    workflowTitles: ["Configurează rândurile", "Proiectează și localizează", "Exportă tot", "Încarcă în App Store Connect și Google Play"],
     workflowDescription: "De la dimensiunile dispozitivelor până la exportul multilingv și încărcare — întregul flux de lucru într-o singură aplicație nativă.",
   }),
   ms: compactLandingContent("ms", {
     socialImageAlt: "Screenshot Bro — aplikasi natif Mac, iPad dan iPhone untuk mereka bentuk tangkapan skrin App Store dan Google Play dengan bingkai peranti, kecerunan dan penyetempatan",
     ui: { docs: "Dokumentasi", redditCommunity: "Komuniti Reddit", followOnX: "Ikuti di X", followOnThreads: "Ikuti di Threads", homeLabel: `${SITE_NAME} Utama`, read: "Baca", productLabel: "Produk", resourcesLabel: "Sumber", productHuntAlt: "ScreenshotBro App - Reka dan eksport tangkapan skrin App Store yang cantik. | Product Hunt" },
-    featureTitles: ["Penyuntingan pelbagai templat", "Bingkai peranti", "Latar belakang & rentangan", "Alat bentuk + SVG", "Penjajaran pintar", "Eksport setempat", "Muat naik ke App Store Connect", "Ejen AI & MCP", "Penyetempatan terbina dalam", "Natif untuk Mac, iPad & iPhone", "Penyelarasan iCloud", "Fon tersuai", "Templat projek", "Pintasan papan kekunci", "Privasi diutamakan", "Import imej secara pukal", "Pelan percuma selamanya"],
+    featureTitles: ["Penyuntingan pelbagai templat", "Bingkai peranti", "Latar belakang & rentangan", "Alat bentuk + SVG", "Penjajaran pintar", "Eksport setempat", "Muat naik ke App Store Connect & Google Play", "Ejen AI & MCP", "Penyetempatan terbina dalam", "Natif untuk Mac, iPad & iPhone", "Penyelarasan iCloud", "Fon tersuai", "Templat projek", "Pintasan papan kekunci", "Privasi diutamakan", "Import imej secara pukal", "Pelan percuma selamanya"],
     featureDescription: "Alat khusus untuk tangkapan skrin gedung berbilang bahasa dengan prestasi natif, templat boleh guna semula dan eksport sedia dimuat naik.",
     showcaseLabels: ["Import pukal", "Muat naik automatik", "Bentuk dan lapisan", "Latar belakang", "Bingkai peranti", "Ejen AI & MCP"],
-    showcaseTitles: ["Tarik, lepas, siap.", "Muat naik ke App Store Connect dengan satu klik.", "Bina lapisan demi lapisan.", "Cipta latar belakang yang menakjubkan.", "Sesuaikan bingkai peranti.", "Biar ejen AI anda uruskan kerja yang remeh."],
+    showcaseTitles: ["Tarik, lepas, siap.", "Muat naik ke App Store Connect dan Google Play dengan satu klik.", "Bina lapisan demi lapisan.", "Cipta latar belakang yang menakjubkan.", "Sesuaikan bingkai peranti.", "Biar ejen AI anda uruskan kerja yang remeh."],
     showcaseDescription: "Aliran kerja utama menunjukkan bagaimana Screenshot Bro menghapuskan tugas reka bentuk, eksport dan muat naik yang berulang.",
     screenshotAltSuffix: "Tangkapan skrin antara muka Screenshot Bro",
-    workflowTitles: ["Sediakan baris", "Reka & setempatkan", "Eksport semua", "Muat naik ke App Store Connect"],
+    workflowTitles: ["Sediakan baris", "Reka & setempatkan", "Eksport semua", "Muat naik ke App Store Connect dan Google Play"],
     workflowDescription: "Daripada saiz peranti hingga eksport pelbagai bahasa dan muat naik — seluruh aliran kerja dalam satu aplikasi natif.",
   }),
 };
@@ -587,7 +587,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
   es: {
     siteTitle: `${SITE_NAME} — Capturas de App Store y Google Play en Mac`,
     siteDescription:
-      "Diseña capturas para App Store y Google Play en una app nativa para Mac, iPad y iPhone. Marcos de dispositivos, localización y subida a App Store Connect.",
+      "Diseña capturas para App Store y Google Play en una app nativa para Mac, iPad y iPhone. Marcos de dispositivos, localización y subida a App Store Connect y Google Play.",
     primaryCtaLabel: "Descargar Screenshot Bro",
     navItems: [
       { label: "Ejemplos", href: "#showcases" },
@@ -595,9 +595,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Para Mac, iPad y iPhone en la App Store, y descarga directa para Mac",
+      "Para Mac, iPad y iPhone en la App Store, descarga directa para Mac y beta para Windows",
       "Flujo completo: importar, diseñar, traducir, localizar y exportar",
-      "Subida directa a App Store Connect sin arrastrar archivos en el navegador",
+      "Subida directa a App Store Connect y Google Play sin arrastrar archivos en el navegador",
     ],
     faqs: [
       {
@@ -608,12 +608,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "¿En qué se diferencia de un generador de capturas de App Store basado en web?",
         answer:
-          "Screenshot Bro es una aplicación nativa para Mac, iPad e iPhone en lugar de una herramienta de navegador, por lo que los proyectos, capturas y tipografías se guardan en el disco y la edición diaria no requiere cuenta ni conexión a internet. El renderizado y la exportación por lotes se ejecutan en tu propio hardware en lugar de un servidor. Si estás en Windows o Linux, deseas colaborar en una sesión de navegador compartida o solo necesitas una o dos imágenes, una herramienta web es una mejor opción; nuestra página de alternativas cubre esos casos.",
+          "Screenshot Bro es una aplicación nativa para Mac, iPad e iPhone en lugar de una herramienta de navegador, por lo que los proyectos, capturas y tipografías se guardan en el disco y la edición diaria no requiere cuenta ni conexión a internet. El renderizado y la exportación por lotes se ejecutan en tu propio hardware en lugar de un servidor. Si estás en Linux, deseas colaborar en una sesión de navegador compartida o solo necesitas una o dos imágenes, una herramienta web es una mejor opción; nuestra página de alternativas cubre esos casos.",
       },
       {
         question: "¿Qué necesito para usarlo?",
         answer:
-          "macOS 15 (Sequoia) o posterior en Mac, iPadOS 18 o posterior en iPad, o iOS 18 o posterior en iPhone. No hace falta dispositivo acompañante, cuenta ni conexión a internet para la edición diaria.",
+          "macOS 15 (Sequoia) o posterior en Mac, iPadOS 18 o posterior en iPad, o iOS 18 o posterior en iPhone. La beta para Windows funciona en Windows 10 y 11 (64 bits). No hace falta dispositivo acompañante, cuenta ni conexión a internet para la edición diaria.",
       },
       {
         question: "¿Mis datos salen de mi dispositivo?",
@@ -623,12 +623,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "¿Cómo funciona la localización?",
         answer:
-          "Elige entre 81 idiomas predefinidos o añade tu propio código. La traducción automática en el dispositivo rellena el texto que falte. Las traducciones se guardan como modificaciones de texto por idioma, por lo que el diseño, color e imágenes se comparten entre todos los idiomas: diseña una vez y publica en cualquier idioma. Las exportaciones se organizan en carpetas por idioma listas para App Store Connect.",
+          "Elige entre 81 idiomas predefinidos o añade tu propio código. La traducción automática en el dispositivo rellena el texto que falte. Las traducciones se guardan como modificaciones de texto por idioma, por lo que el diseño, color e imágenes se comparten entre todos los idiomas: diseña una vez y publica en cualquier idioma. Las exportaciones se organizan en carpetas por idioma listas para App Store Connect y Google Play, y la subida integrada empareja cada idioma con los idiomas de cada tienda.",
       },
       {
         question: "¿Puedo crear capturas para Google Play también?",
         answer:
-          "Sí. Las filas para teléfonos y tablets Android se renderizan junto a las de iPhone, iPad y Mac en el mismo proyecto. Cada categoría de dispositivo viene preconfigurada con las dimensiones exactas en píxeles que acepta la tienda correspondiente.",
+          "Sí. Las filas para teléfonos y tablets Android se renderizan junto a las de iPhone, iPad y Mac en el mismo proyecto. Cada categoría de dispositivo viene preconfigurada con las dimensiones exactas en píxeles que acepta la tienda correspondiente, y una plantilla incluida cubre el gráfico de funciones de Google Play. Cuando el set esté listo, súbelo directo a tu ficha de Play desde la app.",
       },
       {
         question: "¿Puedo arrastrar capturas de simuladores y dispositivos directamente?",
@@ -636,9 +636,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "Sí. Arrastra una carpeta de capturas y Screenshot Bro dirigirá cada una a la fila correcta según su tamaño en píxeles: las de iPhone a la fila de iPhone, iPad a iPad y Android a Android.",
       },
       {
-        question: "¿Puedo subir directo a App Store Connect desde la app?",
+        question: "¿Puedo subir directo a App Store Connect y Google Play desde la app?",
         answer:
-          "Sí. Configura tu clave API de App Store Connect una vez (Issuer ID, Key ID y archivo .p8). Screenshot Bro detecta automáticamente el display type correcto para cada fila, casa los idiomas del proyecto con las localizaciones de App Store Connect y reemplaza las capturas existentes en una sola pasada, sin arrastrar archivos en el navegador.",
+          "Sí. Configura tu clave API de App Store Connect una vez (Issuer ID, Key ID y archivo .p8). Screenshot Bro detecta automáticamente el display type correcto para cada fila, casa los idiomas del proyecto con las localizaciones de App Store Connect y reemplaza las capturas existentes en una sola pasada. Para Google Play, importa una vez la clave JSON de una cuenta de servicio e introduce el nombre del paquete: cada idioma del proyecto se asigna al idioma de tu ficha de Play, y la subida se prepara como una edición de Play que solo se confirma cuando tú lo apruebas. En ninguna de las dos tiendas hace falta arrastrar archivos en el navegador.",
       },
       {
         question: "¿Se sincroniza entre dispositivos?",
@@ -648,7 +648,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "¿Puede un agente de IA crear mis capturas?",
         answer:
-          "Sí. Screenshot Bro incluye un servidor MCP local y opcional en Mac, de modo que un asistente como Claude Code, Claude Desktop o Cursor puede crear proyectos, colocar filas y formas, importar capturas, traducir el texto, renderizar vistas previas que puede ver, exportar y sincronizar el set final con App Store Connect. El servidor solo escucha en 127.0.0.1, cada petición necesita un token de acceso que copias desde Ajustes y cualquier cambio del agente se deshace con ⌘Z.",
+          "Sí. Screenshot Bro incluye un servidor MCP local y opcional en Mac, de modo que un asistente como Claude Code, Claude Desktop o Cursor puede crear proyectos, colocar filas y formas, importar capturas, traducir el texto, renderizar vistas previas que puede ver, exportar y subir el set final a App Store Connect o Google Play. El servidor solo escucha en 127.0.0.1, cada petición necesita un token de acceso que copias desde Ajustes y cualquier cambio del agente se deshace con ⌘Z.",
       },
       {
         question: "¿Dónde consigo ayuda?",
@@ -681,15 +681,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "Contactar al desarrollador",
       backToTop: "Volver arriba",
       availabilityNote:
-        "App para macOS 15+ y iOS/iPadOS 18+ | Swift y SwiftUI | En la App Store o descarga directa para Mac",
+        "App para macOS 15+ y iOS/iPadOS 18+ | Swift y SwiftUI | En la App Store o descarga directa para Mac | Beta para Windows",
     },
     hero: {
-      titleLead: "Diseña y publica",
-      titleAccent: "App Store",
-      titleRest: " capturas.",
+      titleLead: "Diseña y publica capturas de",
+      titleAccent: "App Store & Google Play",
+      titleRest: ".",
       descriptionLead:
         "Importa tus capturas, añade marcos de dispositivo, localiza el texto, traduce lo que falte y",
-      descriptionStrong: "sube todo directo a App Store Connect",
+      descriptionStrong: "sube todo directo a App Store Connect y Google Play",
       descriptionTail: "— desde una app nativa para Mac, iPad y iPhone rápida.",
     },
     sections: {
@@ -697,7 +697,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "Ejemplos",
         title: "Mira el flujo principal antes de instalar.",
         description:
-          "Importación por lotes, subida a App Store Connect, capas, fondos y marcos de dispositivo en un solo flujo.",
+          "Importación por lotes, subida con un clic a App Store Connect y Google Play, capas, fondos y marcos de dispositivo en un solo flujo.",
       },
       workflow: {
         eyebrow: "Flujo",
@@ -713,7 +713,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       blog: {
         eyebrow: "Del blog",
-        title: "Guías para enviar mejores capturas de App Store.",
+        title: "Guías para publicar mejores capturas de App Store y Google Play.",
         description:
           "Referencias y guías para tamaños, localización, subida y diseño de capturas.",
       },
@@ -738,22 +738,22 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "Listo para publicar",
       titleLine2: "mejores capturas?",
       description:
-        "Descárgalo desde la App Store y usa el flujo completo en Mac, iPad o iPhone: configuración, diseño, traducción automática, localización y exportación.",
+        "Descárgalo desde la App Store para Mac, iPad y iPhone, bájalo directo para Mac o prueba la beta para Windows. El flujo completo está ahí: diseño, traducción automática, localización, exportación y subida a App Store y Google Play.",
     },
     footer: {
       note:
-        "Creado con SwiftUI. Diseñado para desarrolladores que publican actualizaciones en App Store.",
+        "Creado con SwiftUI. Diseñado para desarrolladores que publican en App Store y Google Play.",
     },
   },
   zh: {
     siteTitle: `${SITE_NAME} — Mac、iPad 和 iPhone 上的 App Store 与 Google Play 截图设计工具`,
     siteDescription:
-      "用原生 Mac、iPad 和 iPhone 应用设计 App Store 和 Google Play 截图。设备边框、本地化、自动翻译、批量导出，并可直接上传到 App Store Connect。",
+      "用原生 Mac、iPad 和 iPhone 应用设计 App Store 和 Google Play 截图。设备边框、本地化、自动翻译、批量导出，并可直接上传到 App Store Connect 和 Google Play。",
     primaryCtaLabel: "下载 Screenshot Bro",
     benefits: [
-      "Mac、iPad 和 iPhone 版已在 App Store 上架，另提供 Mac 直接下载版",
+      "Mac、iPad 和 iPhone 版已在 App Store 上架，另提供 Mac 直接下载版和 Windows 测试版",
       "完整流程：导入、设计、自动翻译、本地化和导出",
-      "直接上传到 App Store Connect，不再在浏览器里拖放文件",
+      "直接上传到 App Store Connect 和 Google Play，不再在浏览器里拖放文件",
     ],
     faqs: [
       {
@@ -764,12 +764,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "它与基于网页的 App Store 截图生成器有何不同？",
         answer:
-          "Screenshot Bro 是一款专为 Mac、iPad 和 iPhone 打造的原生应用，而不是网页工具。因此项目、截图和字体完全保存在本地磁盘上，日常编辑无需注册账号，也无需联网。渲染和批量导出均利用你本地设备的硬件性能，而非远端服务器。如果你使用 Windows 或 Linux、需要多人网页协同，或者只需要制作一两张图片，网页版截图工具可能更适合——替代方案页面涵盖了这些场景。",
+          "Screenshot Bro 是一款专为 Mac、iPad 和 iPhone 打造的原生应用，而不是网页工具。因此项目、截图和字体完全保存在本地磁盘上，日常编辑无需注册账号，也无需联网。渲染和批量导出均利用你本地设备的硬件性能，而非远端服务器。如果你使用 Linux、需要多人网页协同，或者只需要制作一两张图片，网页版截图工具可能更适合——替代方案页面涵盖了这些场景。",
       },
       {
         question: "运行需要什么系统环境？",
         answer:
-          "Mac 需运行 macOS 15 (Sequoia) 或更高版本，iPad 需 iPadOS 18 或更高版本，iPhone 需 iOS 18 或更高版本。日常编辑无需辅助设备、无需注册账号，也无需网络连接。",
+          "Mac 需运行 macOS 15 (Sequoia) 或更高版本，iPad 需 iPadOS 18 或更高版本，iPhone 需 iOS 18 或更高版本。Windows 测试版支持 Windows 10 和 11（64 位）。日常编辑无需辅助设备、无需注册账号，也无需网络连接。",
       },
       {
         question: "我的数据会离开本地设备吗？",
@@ -779,12 +779,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "多语言本地化是如何运作的？",
         answer:
-          "你可以从 81 种预设语言中选择，也可以自定义语言代码。设备端自动翻译会补全缺失的文案。翻译内容以每种语言的文本覆盖形式保存，因此排版、配色和图像在所有语言之间共享——只需设计一次，即可发布所有语言版本。导出时会自动按语言建立文件夹，App Store Connect 可以直接读取。",
+          "你可以从 81 种预设语言中选择，也可以自定义语言代码。设备端自动翻译会补全缺失的文案。翻译内容以每种语言的文本覆盖形式保存，因此排版、配色和图像在所有语言之间共享——只需设计一次，即可发布所有语言版本。导出时会自动按语言建立文件夹，可直接用于 App Store Connect 和 Google Play；应用内上传还会把每种语言匹配到对应商店的语言。",
       },
       {
         question: "我可以制作 Google Play 截图吗？",
         answer:
-          "可以。Android 手机和平板截图行可以与 iPhone、iPad 和 Mac 放在同一个项目中并排设计。每个设备分类均预设了对应商店官方认可的像素尺寸。",
+          "可以。Android 手机和平板截图行可以与 iPhone、iPad 和 Mac 放在同一个项目中并排设计。每个设备分类均预设了对应商店官方认可的像素尺寸，内置模板还涵盖 Google Play 置顶大图。整套截图完成后，可直接在应用内上传到你的 Google Play 商品详情页。",
       },
       {
         question: "可以直接拖入模拟器和真机截图吗？",
@@ -792,9 +792,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "可以。直接拖入包含截图的文件夹，Screenshot Bro 会根据像素尺寸自动将每张截图分配到正确的行——iPhone 截图进 iPhone 行，iPad 进 iPad 行，Android 进 Android 行。",
       },
       {
-        question: "可以在应用内直接上传到 App Store Connect 吗？",
+        question: "可以在应用内直接上传到 App Store Connect 和 Google Play 吗？",
         answer:
-          "可以。只需配置一次 App Store Connect API 密钥（Issuer ID、Key ID 及 .p8 密钥文件），Screenshot Bro 就会自动识别每行的正确展示类型（display type），将项目语言与 App Store Connect 语言设置精准匹配，并一键替换已有截图——彻底告别在浏览器中手动拖拽文件的繁琐。",
+          "可以。只需配置一次 App Store Connect API 密钥（Issuer ID、Key ID 及 .p8 密钥文件），Screenshot Bro 就会自动识别每行的正确展示类型（display type），将项目语言与 App Store Connect 语言设置精准匹配，并一键替换已有截图。对于 Google Play，只需导入一次服务账号 JSON 密钥并填写包名：每种项目语言都会对应到 Play 商品详情页的语言，上传内容会先暂存为一次 Play 修改（edit），只有在你确认后才会提交。两个商店都无需在浏览器中手动拖拽文件。",
       },
       {
         question: "它能在多台设备之间同步吗？",
@@ -804,7 +804,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "AI 智能体可以帮我制作截图吗？",
         answer:
-          "可以。Screenshot Bro 在 Mac 上内置了可选的本地 MCP 服务器，Claude Code、Claude Desktop 或 Cursor 等助手可以创建项目、排布行与图形、导入截图、翻译文案、渲染它能实际查看的预览、导出，并把完成的截图同步到 App Store Connect。服务器仅监听 127.0.0.1，每个请求都需要你在设置中复制的访问令牌，智能体的每一次改动都可以用 ⌘Z 撤销。",
+          "可以。Screenshot Bro 在 Mac 上内置了可选的本地 MCP 服务器，Claude Code、Claude Desktop 或 Cursor 等助手可以创建项目、排布行与图形、导入截图、翻译文案、渲染它能实际查看的预览、导出，并把完成的截图上传到 App Store Connect 或 Google Play。服务器仅监听 127.0.0.1，每个请求都需要你在设置中复制的访问令牌，智能体的每一次改动都可以用 ⌘Z 撤销。",
       },
       {
         question: "我该去哪里获取支持？",
@@ -841,15 +841,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "提交你的 App",
       contactDeveloper: "联系开发者",
       backToTop: "返回顶部",
-      availabilityNote: "macOS 15+ 和 iOS/iPadOS 18+ 应用 | Swift 和 SwiftUI | App Store 或 Mac 直接下载",
+      availabilityNote: "macOS 15+ 和 iOS/iPadOS 18+ 应用 | Swift 和 SwiftUI | App Store 或 Mac 直接下载 | Windows 测试版",
     },
     hero: {
       titleLead: "设计并发布",
-      titleAccent: "App Store",
+      titleAccent: "App Store 与 Google Play",
       titleRest: " 截图。",
       descriptionLead:
         "导入截图，套用设备边框，本地化文案，自动翻译缺失文本，并",
-      descriptionStrong: "直接上传到 App Store Connect",
+      descriptionStrong: "直接上传到 App Store Connect 和 Google Play",
       descriptionTail: "— 全部在一个快速的原生 Mac、iPad 和 iPhone 应用中完成。",
     },
     sections: {
@@ -857,7 +857,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "演示",
         title: "安装前先看看核心流程。",
         description:
-          "批量导入、一键上传 App Store Connect、图层、背景和设备边框都在同一个流程里。",
+          "批量导入、一键上传到 App Store Connect 和 Google Play、图层、背景和设备边框都在同一个流程里。",
       },
       workflow: {
         eyebrow: "流程",
@@ -895,21 +895,21 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "准备发布",
       titleLine2: "更好的截图？",
       description:
-        "从 App Store 下载，并在 Mac、iPad 或 iPhone 上使用完整截图流程：设置、设计、自动翻译、本地化和导出。",
+        "在 App Store 下载 Mac、iPad 和 iPhone 版，直接下载 Mac 版，或试用 Windows 测试版。完整流程都在其中：设计、自动翻译、本地化、导出，以及上传到 App Store 和 Google Play。",
     },
     footer: {
-      note: "使用 SwiftUI 构建。为需要发布 App Store 更新的开发者设计。",
+      note: "使用 SwiftUI 构建。为在 App Store 和 Google Play 上发布应用的开发者设计。",
     },
   },
   hi: {
     siteTitle: `${SITE_NAME} — App Store और Google Play स्क्रीनशॉट Mac पर`,
     siteDescription:
-      "नेटिव Mac, iPad और iPhone ऐप में App Store और Google Play स्क्रीनशॉट डिजाइन करें। डिवाइस फ्रेम, लोकलाइजेशन और App Store Connect पर सीधा अपलोड।",
+      "नेटिव Mac, iPad और iPhone ऐप में App Store और Google Play स्क्रीनशॉट डिजाइन करें। डिवाइस फ्रेम, लोकलाइजेशन, और App Store Connect व Google Play पर सीधा अपलोड।",
     primaryCtaLabel: "Screenshot Bro डाउनलोड करें",
     benefits: [
-      "Mac, iPad और iPhone के लिए App Store पर, साथ ही Mac के लिए सीधा डाउनलोड",
+      "Mac, iPad और iPhone के लिए App Store पर, Mac के लिए सीधा डाउनलोड, और Windows बीटा",
       "पूरा workflow: import, design, auto-translate, localize और export",
-      "App Store Connect पर सीधा upload, browser में drag-and-drop नहीं",
+      "App Store Connect और Google Play पर सीधा upload, browser में drag-and-drop नहीं",
     ],
     faqs: [
       {
@@ -920,12 +920,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "यह वेब-आधारित App Store स्क्रीनशॉट जेनरेटर से कैसे अलग है?",
         answer:
-          "Screenshot Bro ब्राउज़र टूल के बजाय एक नेटिव Mac, iPad और iPhone ऐप है, इसलिए प्रोजेक्ट, स्क्रीनशॉट और फ़ॉन्ट डिस्क पर रहते हैं और रोज़मर्रा के संपादन के लिए किसी खाते या इंटरनेट कनेक्शन की आवश्यकता नहीं होती है। रेंडरिंग और बैच निर्यात सर्वर के बजाय आपके अपने हार्डवेयर पर चलते हैं। यदि आप Windows या Linux पर हैं, किसी ब्राउज़र सत्र में सहयोग करना चाहते हैं, या केवल एक या दो छवियों की आवश्यकता है, तो एक वेब टूल बेहतर विकल्प है — विकल्प पृष्ठ उन मामलों को कवर करता है।",
+          "Screenshot Bro ब्राउज़र टूल के बजाय एक नेटिव Mac, iPad और iPhone ऐप है, इसलिए प्रोजेक्ट, स्क्रीनशॉट और फ़ॉन्ट डिस्क पर रहते हैं और रोज़मर्रा के संपादन के लिए किसी खाते या इंटरनेट कनेक्शन की आवश्यकता नहीं होती है। रेंडरिंग और बैच निर्यात सर्वर के बजाय आपके अपने हार्डवेयर पर चलते हैं। यदि आप Linux पर हैं, किसी ब्राउज़र सत्र में सहयोग करना चाहते हैं, या केवल एक या दो छवियों की आवश्यकता है, तो एक वेब टूल बेहतर विकल्प है — विकल्प पृष्ठ उन मामलों को कवर करता है।",
       },
       {
         question: "इसे चलाने के लिए क्या आवश्यकता है?",
         answer:
-          "Mac पर macOS 15 (Sequoia) या बाद का वर्ज़न, iPad पर iPadOS 18 या बाद का, या iPhone पर iOS 18 या बाद का। रोज़मर्रा के संपादन के लिए किसी साथी डिवाइस, खाते या इंटरनेट कनेक्शन की आवश्यकता नहीं है।",
+          "Mac पर macOS 15 (Sequoia) या बाद का वर्ज़न, iPad पर iPadOS 18 या बाद का, या iPhone पर iOS 18 या बाद का। Windows बीटा Windows 10 और 11 (64-बिट) पर चलता है। रोज़मर्रा के संपादन के लिए किसी साथी डिवाइस, खाते या इंटरनेट कनेक्शन की आवश्यकता नहीं है।",
       },
       {
         question: "क्या मेरा डेटा मेरे डिवाइस से बाहर जाता है?",
@@ -935,12 +935,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "स्थानीयकरण (Localization) कैसे काम करता है?",
         answer:
-          "81 भाषा प्रीसेट में से चुनें, या अपना स्वयं का कोड परिभाषित करें। ऑटो-ट्रांसलेट डिवाइस पर छूटे हुए टेक्स्ट को भरता है। अनुवाद प्रति-भाषा टेक्स्ट ओवरराइड के रूप में सहेजते हैं, इसलिए लेआउट, रंग और छवियां हर भाषा में साझा रहती हैं — एक बार डिज़ाइन करें, हर भाषा में शिप करें। निर्यात भाषा फ़ोल्डरों में व्यवस्थित होते हैं जिन्हें App Store Connect सीधे ले सकता है।",
+          "81 भाषा प्रीसेट में से चुनें, या अपना स्वयं का कोड परिभाषित करें। ऑटो-ट्रांसलेट डिवाइस पर छूटे हुए टेक्स्ट को भरता है। अनुवाद प्रति-भाषा टेक्स्ट ओवरराइड के रूप में सहेजते हैं, इसलिए लेआउट, रंग और छवियां हर भाषा में साझा रहती हैं — एक बार डिज़ाइन करें, हर भाषा में शिप करें। निर्यात भाषा फ़ोल्डरों में व्यवस्थित होते हैं जो App Store Connect और Google Play के लिए तैयार रहते हैं, और ऐप के अंदर का अपलोडर हर भाषा को स्टोर की अपनी भाषाओं से मिलाता है।",
       },
       {
         question: "क्या मैं Google Play स्क्रीनशॉट भी बना सकता हूँ?",
         answer:
-          "हाँ। एक ही प्रोजेक्ट में iPhone, iPad और Mac के साथ Android फ़ोन और टैबलेट पंक्तियाँ भी रेंडर होती हैं। प्रत्येक डिवाइस श्रेणी संबंधित स्टोर द्वारा स्वीकृत पिक्सेल आयामों पर पहले से सेट होती है।",
+          "हाँ। एक ही प्रोजेक्ट में iPhone, iPad और Mac के साथ Android फ़ोन और टैबलेट पंक्तियाँ भी रेंडर होती हैं। प्रत्येक डिवाइस श्रेणी संबंधित स्टोर द्वारा स्वीकृत पिक्सेल आयामों पर पहले से सेट होती है, और Google Play feature graphic के लिए एक बंडल टेम्पलेट भी शामिल है। सेट तैयार होने पर उसे ऐप के अंदर से सीधे अपनी Play listing पर अपलोड करें।",
       },
       {
         question: "क्या मैं सिम्युलेटर और डिवाइस स्क्रीनशॉट सीधे ड्रॉप कर सकता हूँ?",
@@ -948,9 +948,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "हाँ। स्क्रीनशॉट का एक फ़ोल्डर ड्रॉप करें और Screenshot Bro प्रत्येक को उसके पिक्सेल आकार के अनुसार सही पंक्ति में भेजता है — iPhone शॉट्स iPhone पंक्ति में, iPad शॉट्स iPad में, Android शॉट्स Android में।",
       },
       {
-        question: "क्या मैं ऐप के भीतर से सीधे App Store Connect पर अपलोड कर सकता हूँ?",
+        question: "क्या मैं ऐप के भीतर से सीधे App Store Connect और Google Play पर अपलोड कर सकता हूँ?",
         answer:
-          "हाँ। अपनी App Store Connect API कुंजी को एक बार कॉन्फ़िगर करें (Issuer ID, Key ID, और .p8 फ़ाइल)। Screenshot Bro प्रत्येक पंक्ति के लिए सही डिस्प्ले प्रकार का स्वतः पता लगाता है, आपके प्रोजेक्ट की भाषाओं को App Store Connect स्थानीयकरण से मिलाता है, और एक ही बार में मौजूदा स्क्रीनशॉट को बदल देता है — ब्राउज़र में ड्रैग-एंड-ड्रॉप की कोई आवश्यकता नहीं।",
+          "हाँ। अपनी App Store Connect API कुंजी को एक बार कॉन्फ़िगर करें (Issuer ID, Key ID, और .p8 फ़ाइल)। Screenshot Bro प्रत्येक पंक्ति के लिए सही डिस्प्ले प्रकार का स्वतः पता लगाता है, आपके प्रोजेक्ट की भाषाओं को App Store Connect स्थानीयकरण से मिलाता है, और एक ही बार में मौजूदा स्क्रीनशॉट को बदल देता है। Google Play के लिए, एक बार service account JSON key इंपोर्ट करें और अपना package name डालें: हर प्रोजेक्ट भाषा अपनी Play listing भाषा से मैप होती है, और अपलोड एक Play edit के रूप में तैयार होता है जो आपकी पुष्टि के बाद ही commit होता है। किसी भी स्टोर के लिए ब्राउज़र में ड्रैग-एंड-ड्रॉप की ज़रूरत नहीं।",
       },
       {
         question: "क्या यह विभिन्न डिवाइसों के बीच सिंक होता है?",
@@ -960,7 +960,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "क्या कोई AI एजेंट मेरे स्क्रीनशॉट बना सकता है?",
         answer:
-          "हाँ। Screenshot Bro में Mac पर एक वैकल्पिक लोकल MCP सर्वर है, जिससे Claude Code, Claude Desktop या Cursor जैसे असिस्टेंट प्रोजेक्ट बना सकते हैं, रो और शेप लगा सकते हैं, स्क्रीनशॉट इंपोर्ट कर सकते हैं, टेक्स्ट का अनुवाद कर सकते हैं, प्रीव्यू रेंडर करके देख सकते हैं, एक्सपोर्ट कर सकते हैं और तैयार सेट को App Store Connect पर सिंक कर सकते हैं। सर्वर सिर्फ 127.0.0.1 पर सुनता है, हर अनुरोध के लिए सेटिंग्स से कॉपी किया गया एक्सेस टोकन चाहिए, और एजेंट का हर बदलाव ⌘Z से वापस लिया जा सकता है।",
+          "हाँ। Screenshot Bro में Mac पर एक वैकल्पिक लोकल MCP सर्वर है, जिससे Claude Code, Claude Desktop या Cursor जैसे असिस्टेंट प्रोजेक्ट बना सकते हैं, रो और शेप लगा सकते हैं, स्क्रीनशॉट इंपोर्ट कर सकते हैं, टेक्स्ट का अनुवाद कर सकते हैं, प्रीव्यू रेंडर करके देख सकते हैं, एक्सपोर्ट कर सकते हैं और तैयार सेट को App Store Connect या Google Play पर अपलोड कर सकते हैं। सर्वर सिर्फ 127.0.0.1 पर सुनता है, हर अनुरोध के लिए सेटिंग्स से कॉपी किया गया एक्सेस टोकन चाहिए, और एजेंट का हर बदलाव ⌘Z से वापस लिया जा सकता है।",
       },
       {
         question: "मुझे सहायता कहाँ मिलेगी?",
@@ -1001,15 +1001,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "डेवलपर से संपर्क करें",
       backToTop: "ऊपर जाएं",
       availabilityNote:
-        "macOS 15+ और iOS/iPadOS 18+ ऐप | Swift और SwiftUI | App Store या Mac के लिए सीधा डाउनलोड",
+        "macOS 15+ और iOS/iPadOS 18+ ऐप | Swift और SwiftUI | App Store या Mac के लिए सीधा डाउनलोड | Windows बीटा",
     },
     hero: {
       titleLead: "डिजाइन करें और शिप करें",
-      titleAccent: "App Store",
+      titleAccent: "App Store & Google Play",
       titleRest: " स्क्रीनशॉट।",
       descriptionLead:
         "अपने शॉट्स इंपोर्ट करें, डिवाइस फ्रेम लगाएं, कॉपी लोकलाइज करें, छूटा टेक्स्ट ऑटो-ट्रांसलेट करें और",
-      descriptionStrong: "सीधे App Store Connect पर अपलोड करें",
+      descriptionStrong: "सीधे App Store Connect और Google Play पर अपलोड करें",
       descriptionTail: "— सब एक तेज नेटिव Mac, iPad और iPhone ऐप से।",
     },
     sections: {
@@ -1017,11 +1017,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "शोकेस",
         title: "इंस्टॉल करने से पहले मुख्य वर्कफ्लो देखें।",
         description:
-          "बैच इंपोर्ट, एक-क्लिक App Store Connect अपलोड, लेयर्स, बैकग्राउंड और डिवाइस फ्रेम एक ही जगह।",
+          "बैच इंपोर्ट, एक-क्लिक App Store Connect और Google Play अपलोड, लेयर्स, बैकग्राउंड और डिवाइस फ्रेम एक ही जगह।",
       },
       workflow: {
         eyebrow: "वर्कफ्लो",
-        title: "कच्चे स्क्रीनशॉट से App Store-ready assets तक छोटा रास्ता।",
+        title: "कच्चे स्क्रीनशॉट से store-ready assets तक छोटा रास्ता।",
         description:
           "ऐप एक काम पर केंद्रित है: कई अलग-अलग डिजाइन फाइलें संभाले बिना polished screenshot sets बनाना।",
       },
@@ -1033,7 +1033,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       blog: {
         eyebrow: "ब्लॉग से",
-        title: "बेहतर App Store screenshots शिप करने की गाइड।",
+        title: "बेहतर App Store और Google Play screenshots शिप करने की गाइड।",
         description: "Sizing, localization, upload और design के लिए references और playbooks.",
       },
       faq: {
@@ -1055,21 +1055,21 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "बेहतर screenshots",
       titleLine2: "ship करने के लिए तैयार?",
       description:
-        "App Store से डाउनलोड करें और Mac, iPad या iPhone पर setup, design, auto-translation, localization और export का पूरा workflow इस्तेमाल करें।",
+        "Mac, iPad और iPhone के लिए App Store से डाउनलोड करें, Mac के लिए सीधा डाउनलोड लें, या Windows बीटा आज़माएँ। पूरा workflow मौजूद है: design, auto-translation, localization, export और App Store व Google Play पर upload।",
     },
     footer: {
-      note: "SwiftUI से बनाया गया। App Store updates ship करने वाले developers के लिए।",
+      note: "SwiftUI से बनाया गया। App Store और Google Play पर ship करने वाले developers के लिए।",
     },
   },
   fr: {
     siteTitle: `${SITE_NAME} — Captures App Store et Google Play sur Mac`,
     siteDescription:
-      "Créez des captures App Store et Google Play dans une app native pour Mac, iPad et iPhone. Cadres d'appareils, localisation et envoi vers App Store Connect.",
+      "Créez des captures App Store et Google Play dans une app native pour Mac, iPad et iPhone. Cadres d'appareils, localisation et envoi vers App Store Connect et Google Play.",
     primaryCtaLabel: "Télécharger Screenshot Bro",
     benefits: [
-      "Pour Mac, iPad et iPhone sur l'App Store, plus un téléchargement direct pour Mac",
+      "Pour Mac, iPad et iPhone sur l'App Store, un téléchargement direct pour Mac et une bêta Windows",
       "Flux complet : import, design, traduction automatique, localisation et export",
-      "Envoi direct vers App Store Connect sans glisser-déposer dans le navigateur",
+      "Envoi direct vers App Store Connect et Google Play sans glisser-déposer dans le navigateur",
     ],
     faqs: [
       {
@@ -1080,12 +1080,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "En quoi est-ce différent d'un générateur de captures App Store en ligne ?",
         answer:
-          "Screenshot Bro est une application native pour Mac, iPad et iPhone et non un outil web dans le navigateur : vos projets, captures et polices restent sur votre disque, et l'édition quotidienne ne nécessite aucun compte ni connexion internet. Le rendu et l'export par lot s'exécutent sur votre propre matériel au lieu d'un serveur. Si vous travaillez sur Windows ou Linux, souhaitez collaborer dans le navigateur ou n'avez besoin que d'une ou deux images, un outil web sera plus adapté — notre page d'alternatives détaille ces cas.",
+          "Screenshot Bro est une application native pour Mac, iPad et iPhone et non un outil web dans le navigateur : vos projets, captures et polices restent sur votre disque, et l'édition quotidienne ne nécessite aucun compte ni connexion internet. Le rendu et l'export par lot s'exécutent sur votre propre matériel au lieu d'un serveur. Si vous travaillez sur Linux, souhaitez collaborer dans le navigateur ou n'avez besoin que d'une ou deux images, un outil web sera plus adapté — notre page d'alternatives détaille ces cas.",
       },
       {
         question: "Que faut-il pour l'utiliser ?",
         answer:
-          "macOS 15 (Sequoia) ou version ultérieure sur Mac, iPadOS 18 ou ultérieur sur iPad, ou iOS 18 ou ultérieur sur iPhone. Aucun appareil compagnon, compte ou connexion internet requis pour l'édition quotidienne.",
+          "macOS 15 (Sequoia) ou version ultérieure sur Mac, iPadOS 18 ou ultérieur sur iPad, ou iOS 18 ou ultérieur sur iPhone. La bêta Windows fonctionne sous Windows 10 et 11 (64 bits). Aucun appareil compagnon, compte ou connexion internet requis pour l'édition quotidienne.",
       },
       {
         question: "Mes données quittent-elles mon appareil ?",
@@ -1095,12 +1095,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Comment fonctionne la localisation ?",
         answer:
-          "Choisissez parmi 81 langues prédéfinies ou définissez votre propre code. La traduction automatique sur l'appareil comble les textes manquants. Les traductions sont enregistrées sous forme de surcharges par langue : mise en page, couleurs et images restent partagées entre toutes les langues — concevez une fois, publiez dans toutes les langues. Les exports sont organisés en dossiers par langue prêts pour App Store Connect.",
+          "Choisissez parmi 81 langues prédéfinies ou définissez votre propre code. La traduction automatique sur l'appareil comble les textes manquants. Les traductions sont enregistrées sous forme de surcharges par langue : mise en page, couleurs et images restent partagées entre toutes les langues — concevez une fois, publiez dans toutes les langues. Les exports sont organisés en dossiers par langue prêts pour App Store Connect et Google Play, et l'envoi intégré associe chaque langue aux langues propres à chaque store.",
       },
       {
         question: "Puis-je aussi créer des captures pour Google Play ?",
         answer:
-          "Oui. Les rangées pour téléphones et tablettes Android s'affichent aux côtés de l'iPhone, de l'iPad et du Mac dans le même projet. Chaque catégorie d'appareil est préconfigurée aux dimensions en pixels exactes acceptées par chaque store.",
+          "Oui. Les rangées pour téléphones et tablettes Android s'affichent aux côtés de l'iPhone, de l'iPad et du Mac dans le même projet. Chaque catégorie d'appareil est préconfigurée aux dimensions en pixels exactes acceptées par chaque store, et un modèle intégré couvre l'image de présentation Google Play. Une fois le set prêt, envoyez-le directement vers votre fiche Play depuis l'app.",
       },
       {
         question: "Puis-je glisser-déposer directement des captures de simulateurs ou d'appareils ?",
@@ -1108,9 +1108,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "Oui. Glissez un dossier de captures et Screenshot Bro achemine chaque fichier vers la bonne rangée selon sa résolution en pixels : les captures iPhone vers la rangée iPhone, iPad vers iPad, Android vers Android.",
       },
       {
-        question: "Puis-je envoyer directement vers App Store Connect depuis l'application ?",
+        question: "Puis-je envoyer directement vers App Store Connect et Google Play depuis l'application ?",
         answer:
-          "Oui. Configurez votre clé API App Store Connect une seule fois (Issuer ID, Key ID et fichier .p8). Screenshot Bro détecte automatiquement le type d'affichage approprié pour chaque rangée, associe vos langues de projet aux localisations App Store Connect et remplace les captures existantes en une seule passe, sans glisser-déposer dans le navigateur.",
+          "Oui. Configurez votre clé API App Store Connect une seule fois (Issuer ID, Key ID et fichier .p8). Screenshot Bro détecte automatiquement le type d'affichage approprié pour chaque rangée, associe vos langues de projet aux localisations App Store Connect et remplace les captures existantes en une seule passe. Pour Google Play, importez une fois la clé JSON d'un compte de service et saisissez le nom du package : chaque langue du projet est associée à la langue correspondante de votre fiche Play, et l'envoi est préparé dans une modification Play qui n'est validée qu'après votre confirmation. Aucun glisser-déposer dans le navigateur, quel que soit le store.",
       },
       {
         question: "L'application se synchronise-t-elle entre plusieurs appareils ?",
@@ -1120,7 +1120,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Un agent IA peut-il créer mes captures ?",
         answer:
-          "Oui. Screenshot Bro héberge un serveur MCP local et optionnel sur Mac : un assistant comme Claude Code, Claude Desktop ou Cursor peut créer des projets, disposer les lignes et les formes, importer vos captures, traduire le texte, générer des aperçus qu'il voit réellement, exporter et synchroniser le set final avec App Store Connect. Le serveur n'écoute que sur 127.0.0.1, chaque requête exige un jeton d'accès copié depuis les Réglages, et chaque modification de l'agent s'annule avec ⌘Z.",
+          "Oui. Screenshot Bro héberge un serveur MCP local et optionnel sur Mac : un assistant comme Claude Code, Claude Desktop ou Cursor peut créer des projets, disposer les lignes et les formes, importer vos captures, traduire le texte, générer des aperçus qu'il voit réellement, exporter et envoyer le set final vers App Store Connect ou Google Play. Le serveur n'écoute que sur 127.0.0.1, chaque requête exige un jeton d'accès copié depuis les Réglages, et chaque modification de l'agent s'annule avec ⌘Z.",
       },
       {
         question: "Où obtenir de l'aide ?",
@@ -1159,15 +1159,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "Contacter le développeur",
       backToTop: "Retour en haut",
       availabilityNote:
-        "App macOS 15+ et iOS/iPadOS 18+ | Swift et SwiftUI | Sur l'App Store ou en téléchargement direct pour Mac",
+        "App macOS 15+ et iOS/iPadOS 18+ | Swift et SwiftUI | Sur l'App Store ou en téléchargement direct pour Mac | Bêta Windows",
     },
     hero: {
-      titleLead: "Créez et publiez",
-      titleAccent: "App Store",
-      titleRest: " captures d'écran.",
+      titleLead: "Créez et publiez vos captures",
+      titleAccent: "App Store & Google Play",
+      titleRest: ".",
       descriptionLead:
         "Importez vos captures, ajoutez des cadres d'appareils, localisez le texte, traduisez automatiquement ce qui manque et",
-      descriptionStrong: "envoyez directement vers App Store Connect",
+      descriptionStrong: "envoyez directement vers App Store Connect et Google Play",
       descriptionTail: "— depuis une app native rapide pour Mac, iPad et iPhone.",
     },
     sections: {
@@ -1175,11 +1175,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "Démos",
         title: "Voyez le flux principal avant d'installer.",
         description:
-          "Import groupé, envoi App Store Connect, calques, arrière-plans et cadres d'appareils dans un seul flux.",
+          "Import groupé, envoi en un clic vers App Store Connect et Google Play, calques, arrière-plans et cadres d'appareils dans un seul flux.",
       },
       workflow: {
         eyebrow: "Flux",
-        title: "Un chemin plus court vers des assets prêts pour l'App Store.",
+        title: "Un chemin plus court vers des assets prêts pour l'App Store et Google Play.",
         description:
           "Le produit se concentre sur une tâche: créer des captures soignées sans maintenir une pile de fichiers de design uniques.",
       },
@@ -1191,7 +1191,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       blog: {
         eyebrow: "Sur le blog",
-        title: "Guides pour publier de meilleures captures App Store.",
+        title: "Guides pour publier de meilleures captures App Store et Google Play.",
         description:
           "Références et guides pour les tailles, la localisation, l'envoi et le design de captures.",
       },
@@ -1216,22 +1216,22 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "Prêt à publier",
       titleLine2: "de meilleures captures?",
       description:
-        "Téléchargez depuis l'App Store et utilisez le flux complet sur Mac, iPad ou iPhone : configuration, design, traduction automatique, localisation et export.",
+        "Téléchargez-le sur l'App Store pour Mac, iPad et iPhone, en téléchargement direct pour Mac, ou essayez la bêta Windows. Tout le flux est là : design, traduction automatique, localisation, export et envoi vers l'App Store et Google Play.",
     },
     footer: {
       note:
-        "Construit avec SwiftUI. Pensé pour les développeurs qui publient des mises à jour App Store.",
+        "Construit avec SwiftUI. Pensé pour les développeurs qui publient sur l'App Store et Google Play.",
     },
   },
   ar: {
     siteTitle: `${SITE_NAME} — لقطات App Store و Google Play على Mac`,
     siteDescription:
-      "صمّم لقطات App Store و Google Play داخل تطبيق أصلي على Mac و iPad و iPhone. إطارات أجهزة، توطين، ترجمة تلقائية، تصدير جماعي ورفع مباشر إلى App Store Connect.",
+      "صمّم لقطات App Store و Google Play داخل تطبيق أصلي على Mac و iPad و iPhone. إطارات أجهزة، توطين، ترجمة تلقائية، تصدير جماعي ورفع مباشر إلى App Store Connect و Google Play.",
     primaryCtaLabel: "نزّل Screenshot Bro",
     benefits: [
-      "لأجهزة Mac وiPad وiPhone على App Store، مع تنزيل مباشر لنظام Mac",
+      "لأجهزة Mac وiPad وiPhone على App Store، مع تنزيل مباشر لنظام Mac ونسخة تجريبية لنظام Windows",
       "سير كامل: استيراد، تصميم، ترجمة تلقائية، توطين وتصدير",
-      "رفع مباشر إلى App Store Connect بدون السحب والإفلات في المتصفح",
+      "رفع مباشر إلى App Store Connect و Google Play بدون السحب والإفلات في المتصفح",
     ],
     faqs: [
       {
@@ -1242,12 +1242,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "كيف يختلف هذا التطبيق عن أدوات تصميم لقطات شاشة App Store عبر المتصفح؟",
         answer:
-          "Screenshot Bro هو تطبيق أصلي لأجهزة Mac و iPad و iPhone وليس أداة ويب، مما يعني أن المشاريع ولقطات الشاشة والخطوط تبقى على القرص المحلي ولا يتطلب التحرير اليومي أي حساب أو اتصال بالإنترنت. تتم المعالجة والتصدير الجماعي على جهازك الخاص بدلاً من خوادم خارجية. إذا كنت تستخدم Windows أو Linux أو ترغب في العمل التشاركي عبر المتصفح، فإن أدوات الويب تناسبك أكثر — وتوضح صفحة البدائل تلك الحالات.",
+          "Screenshot Bro هو تطبيق أصلي لأجهزة Mac و iPad و iPhone وليس أداة ويب، مما يعني أن المشاريع ولقطات الشاشة والخطوط تبقى على القرص المحلي ولا يتطلب التحرير اليومي أي حساب أو اتصال بالإنترنت. تتم المعالجة والتصدير الجماعي على جهازك الخاص بدلاً من خوادم خارجية. إذا كنت تستخدم Linux أو ترغب في العمل التشاركي عبر المتصفح، فإن أدوات الويب تناسبك أكثر — وتوضح صفحة البدائل تلك الحالات.",
       },
       {
         question: "ما الذي أحتاجه لتشغيله؟",
         answer:
-          "نظام macOS 15 (Sequoia) أو أحدث على Mac، أو iPadOS 18 أو أحدث على iPad، أو iOS 18 أو أحدث على iPhone. لا يلزم جهاز إضافي، ولا حساب، ولا اتصال بالإنترنت للتحرير اليومي.",
+          "نظام macOS 15 (Sequoia) أو أحدث على Mac، أو iPadOS 18 أو أحدث على iPad، أو iOS 18 أو أحدث على iPhone. وتعمل النسخة التجريبية لنظام Windows على Windows 10 و 11 (64 بت). لا يلزم جهاز إضافي، ولا حساب، ولا اتصال بالإنترنت للتحرير اليومي.",
       },
       {
         question: "هل تغادر بياناتي جهازي؟",
@@ -1257,12 +1257,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "كيف تعمل ميزة التوطين وتعدد اللغات؟",
         answer:
-          "اختر من بين 81 لغة معدة مسبقاً أو أضف رمز لغتك المخصص. تملأ الترجمة التلقائية على الجهاز أي نصوص مفقودة. تُحفظ الترجمات كتعديلات نصية خاصة بكل لغة، بحيث تبقى التصاميم والألوان والصور مشتركة عبر كل اللغات — صمم مرة واحدة وانشر بجميع اللغات. يتم تنظيم الملفات المصدرة في مجلدات جاهزة للرفع المباشر إلى App Store Connect.",
+          "اختر من بين 81 لغة معدة مسبقاً أو أضف رمز لغتك المخصص. تملأ الترجمة التلقائية على الجهاز أي نصوص مفقودة. تُحفظ الترجمات كتعديلات نصية خاصة بكل لغة، بحيث تبقى التصاميم والألوان والصور مشتركة عبر كل اللغات — صمم مرة واحدة وانشر بجميع اللغات. يتم تنظيم الملفات المصدرة في مجلدات حسب اللغة جاهزة لـ App Store Connect و Google Play، وتطابق أدوات الرفع داخل التطبيق كل لغة مع لغات المتجر نفسه.",
       },
       {
         question: "هل يمكنني إنشاء لقطات شاشة لمتجر Google Play أيضاً؟",
         answer:
-          "نعم. تظهر صفوف هواتف وأجهزة Android اللوحية جنباً إلى جنب مع صفوف iPhone و iPad و Mac في نفس المشروع. تأتي كل فئة جهاز مجهزة مسبقاً بالأبعاد الدقيقة التي يقبلها كل متجر.",
+          "نعم. تظهر صفوف هواتف وأجهزة Android اللوحية جنباً إلى جنب مع صفوف iPhone و iPad و Mac في نفس المشروع. تأتي كل فئة جهاز مجهزة مسبقاً بالأبعاد الدقيقة التي يقبلها كل متجر، ويتضمن التطبيق قالباً جاهزاً لرسم الميزة (feature graphic) في Google Play. وعندما تصبح المجموعة جاهزة، ارفعها مباشرة إلى صفحة تطبيقك على Google Play من داخل التطبيق.",
       },
       {
         question: "هل يمكنني سحب لقطات شاشة المحاكي والأجهزة مباشرة إلى التطبيق؟",
@@ -1270,9 +1270,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "نعم. اسحب مجلد لقطات الشاشة وسيوجه Screenshot Bro كل لقطة إلى الصف المناسب وفقاً لحجم أبعادها بالبكسل — صور iPhone إلى صف iPhone، و iPad إلى iPad، و Android إلى Android.",
       },
       {
-        question: "هل يمكن الرفع مباشرة إلى App Store Connect من داخل التطبيق؟",
+        question: "هل يمكن الرفع مباشرة إلى App Store Connect و Google Play من داخل التطبيق؟",
         answer:
-          "نعم. قم بتهيئة مفتاح API الخاص بـ App Store Connect لمرة واحدة (معرف Issuer ID و Key ID وملف .p8)، وسيقوم Screenshot Bro تلقائياً باكتشاف نوع العرض المناسب لكل صف ومطابقة لغات المشروع مع لغات المتجر واستبدال اللقطات الحالية دفعة واحدة — دون الحاجة إلى السحب والإفلات في المتصفح.",
+          "نعم. قم بتهيئة مفتاح API الخاص بـ App Store Connect لمرة واحدة (معرف Issuer ID و Key ID وملف .p8)، وسيقوم Screenshot Bro تلقائياً باكتشاف نوع العرض المناسب لكل صف ومطابقة لغات المشروع مع لغات المتجر واستبدال اللقطات الحالية دفعة واحدة. أما في Google Play، فاستورد مفتاح JSON لحساب الخدمة مرة واحدة وأدخل اسم الحزمة: تُطابَق كل لغة في المشروع مع لغة صفحة التطبيق على Play، ويُجهَّز الرفع كتعديل (edit) في Play لا يُعتمد إلا بعد تأكيدك. لا حاجة إلى السحب والإفلات في المتصفح لأي من المتجرين.",
       },
       {
         question: "هل يتزامن التطبيق بين مختلف الأجهزة؟",
@@ -1282,7 +1282,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "هل يمكن لوكيل ذكاء اصطناعي إنشاء لقطاتي؟",
         answer:
-          "نعم. يشغّل Screenshot Bro خادم MCP محليًا اختياريًا على Mac، فيستطيع مساعد مثل Claude Code أو Claude Desktop أو Cursor إنشاء المشاريع وترتيب الصفوف والأشكال واستيراد اللقطات وترجمة النصوص وعرض معاينات يراها فعليًا والتصدير ومزامنة المجموعة النهائية مع App Store Connect. يستمع الخادم على 127.0.0.1 فقط، وتحتاج كل طلبية إلى رمز وصول تنسخه من الإعدادات، ويمكن التراجع عن أي تغيير بالضغط على ⌘Z.",
+          "نعم. يشغّل Screenshot Bro خادم MCP محليًا اختياريًا على Mac، فيستطيع مساعد مثل Claude Code أو Claude Desktop أو Cursor إنشاء المشاريع وترتيب الصفوف والأشكال واستيراد اللقطات وترجمة النصوص وعرض معاينات يراها فعليًا والتصدير ورفع المجموعة النهائية إلى App Store Connect أو Google Play. يستمع الخادم على 127.0.0.1 فقط، وتحتاج كل طلبية إلى رمز وصول تنسخه من الإعدادات، ويمكن التراجع عن أي تغيير بالضغط على ⌘Z.",
       },
       {
         question: "أين أحصل على الدعم؟",
@@ -1320,15 +1320,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "تواصل مع المطور",
       backToTop: "العودة للأعلى",
       availabilityNote:
-        "تطبيق macOS 15+ و iOS/iPadOS 18+ | Swift و SwiftUI | على App Store أو تنزيل مباشر لنظام Mac",
+        "تطبيق macOS 15+ و iOS/iPadOS 18+ | Swift و SwiftUI | على App Store أو تنزيل مباشر لنظام Mac | نسخة تجريبية لنظام Windows",
     },
     hero: {
       titleLead: "صمّم وانشر لقطات",
-      titleAccent: "App Store",
+      titleAccent: "App Store و Google Play",
       titleRest: ".",
       descriptionLead:
         "استورد لقطاتك، أضف إطارات الأجهزة، وطّن النصوص، ترجم النص المفقود تلقائياً، ثم",
-      descriptionStrong: "ارفع مباشرة إلى App Store Connect",
+      descriptionStrong: "ارفع مباشرة إلى App Store Connect و Google Play",
       descriptionTail: "— كل ذلك من تطبيق أصلي وسريع على Mac و iPad و iPhone.",
     },
     sections: {
@@ -1336,7 +1336,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "العروض",
         title: "شاهد سير العمل الأساسي قبل التثبيت.",
         description:
-          "استيراد جماعي، رفع بنقرة واحدة إلى App Store Connect، طبقات، خلفيات وإطارات أجهزة في سير واحد.",
+          "استيراد جماعي، رفع بنقرة واحدة إلى App Store Connect و Google Play، طبقات، خلفيات وإطارات أجهزة في سير واحد.",
       },
       workflow: {
         eyebrow: "سير العمل",
@@ -1352,7 +1352,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       blog: {
         eyebrow: "من المدونة",
-        title: "أدلة لإطلاق لقطات App Store أفضل.",
+        title: "أدلة لإطلاق لقطات أفضل على App Store و Google Play.",
         description:
           "مراجع وخطط للأحجام، التوطين، الرفع وتصميم لقطات App Store و Google Play.",
       },
@@ -1377,17 +1377,17 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "جاهز لإطلاق",
       titleLine2: "لقطات أفضل؟",
       description:
-        "نزّله من App Store واستخدم سير العمل الكامل على Mac أو iPad أو iPhone: الإعداد، التصميم، الترجمة التلقائية، التوطين والتصدير.",
+        "نزّله من App Store لأجهزة Mac و iPad و iPhone، أو حمّله مباشرة لنظام Mac، أو جرّب النسخة التجريبية لنظام Windows. سير العمل الكامل متاح: التصميم، الترجمة التلقائية، التوطين، التصدير والرفع إلى App Store و Google Play.",
     },
     footer: {
       note:
-        "مبني باستخدام SwiftUI. مصمم للمطورين الذين يطلقون تحديثات App Store.",
+        "مبني باستخدام SwiftUI. مصمم للمطورين الذين ينشرون تطبيقاتهم على App Store و Google Play.",
     },
   },
   de: {
     siteTitle: `${SITE_NAME} — Screenshots für App Store & Google Play`,
     siteDescription:
-      "Screenshots für App Store und Google Play in einer nativen App für Mac, iPad und iPhone. Geräterahmen, Lokalisierung und direkter Upload zu App Store Connect.",
+      "Screenshots für App Store und Google Play in einer nativen App für Mac, iPad und iPhone. Geräterahmen, Lokalisierung und direkter Upload zu App Store Connect und Google Play.",
     primaryCtaLabel: "Screenshot Bro laden",
     navItems: [
       { label: "Beispiele", href: "#showcases" },
@@ -1395,9 +1395,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Für Mac, iPad und iPhone im App Store, dazu als direkter Download für den Mac",
+      "Für Mac, iPad und iPhone im App Store, als direkter Download für den Mac und als Windows-Beta",
       "Vollständiger Workflow: Importieren, Gestalten, Übersetzen, Lokalisieren und Exportieren",
-      "Direkter Upload zu App Store Connect ohne lästiges Drag-and-Drop im Browser",
+      "Direkter Upload zu App Store Connect und Google Play ohne lästiges Drag-and-Drop im Browser",
     ],
     faqs: [
       {
@@ -1408,12 +1408,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Wie unterscheidet sich dies von einem webbasierten App Store Screenshot-Generator?",
         answer:
-          "Screenshot Bro ist eine native App für Mac, iPad und iPhone und kein Browser-Tool. Projekte, Screenshots und Schriftarten bleiben auf Ihrer Festplatte, und für die tägliche Bearbeitung sind weder ein Konto noch eine Internetverbindung erforderlich. Rendering und Batch-Export laufen auf Ihrer eigenen Hardware statt auf einem Server. Wenn Sie Windows oder Linux nutzen, im Browser zusammenarbeiten möchten oder nur ein oder zwei Bilder benötigen, ist ein Web-Tool die passendere Wahl — unsere Alternativen-Seite deckt diese Fälle ab.",
+          "Screenshot Bro ist eine native App für Mac, iPad und iPhone und kein Browser-Tool. Projekte, Screenshots und Schriftarten bleiben auf Ihrer Festplatte, und für die tägliche Bearbeitung sind weder ein Konto noch eine Internetverbindung erforderlich. Rendering und Batch-Export laufen auf Ihrer eigenen Hardware statt auf einem Server. Wenn Sie Linux nutzen, im Browser zusammenarbeiten möchten oder nur ein oder zwei Bilder benötigen, ist ein Web-Tool die passendere Wahl — unsere Alternativen-Seite deckt diese Fälle ab.",
       },
       {
         question: "Was brauche ich, um die App zu nutzen?",
         answer:
-          "macOS 15 (Sequoia) oder neuer auf dem Mac, iPadOS 18 oder neuer auf dem iPad oder iOS 18 oder neuer auf dem iPhone. Für die alltägliche Bearbeitung ist kein Zusatzgerät, kein Konto und keine Internetverbindung erforderlich.",
+          "macOS 15 (Sequoia) oder neuer auf dem Mac, iPadOS 18 oder neuer auf dem iPad oder iOS 18 oder neuer auf dem iPhone. Die Windows-Beta läuft unter Windows 10 und 11 (64 Bit). Für die alltägliche Bearbeitung ist kein Zusatzgerät, kein Konto und keine Internetverbindung erforderlich.",
       },
       {
         question: "Verlassen meine Daten mein Gerät?",
@@ -1423,12 +1423,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Wie funktioniert die Lokalisierung?",
         answer:
-          "Wählen Sie aus 81 vordefinierten Sprachprofilen oder geben Sie eigene Sprachcodes ein. Die automatische Übersetzung füllt fehlende Texte direkt auf dem Gerät aus. Übersetzungen werden als sprachspezifische Textanpassungen gespeichert, sodass Layout, Farben und Bilder für alle Sprachen einheitlich bleiben — einmal gestalten, in allen Sprachen veröffentlichen. Die Exporte werden übersichtlich in Sprachordnern abgelegt, die App Store Connect direkt verarbeiten kann.",
+          "Wählen Sie aus 81 vordefinierten Sprachprofilen oder geben Sie eigene Sprachcodes ein. Die automatische Übersetzung füllt fehlende Texte direkt auf dem Gerät aus. Übersetzungen werden als sprachspezifische Textanpassungen gespeichert, sodass Layout, Farben und Bilder für alle Sprachen einheitlich bleiben — einmal gestalten, in allen Sprachen veröffentlichen. Die Exporte werden übersichtlich in Sprachordnern abgelegt, bereit für App Store Connect und Google Play, und die Uploads direkt aus der App ordnen jede Sprache den Sprachen des jeweiligen Stores zu.",
       },
       {
         question: "Kann ich auch Screenshots für Google Play erstellen?",
         answer:
-          "Ja. Zeilen für Android-Smartphones und -Tablets können im selben Projekt neben iPhone, iPad und Mac angelegt werden. Jede Gerätekategorie ist auf die von den jeweiligen Stores geforderten Pixelabmessungen voreingestellt.",
+          "Ja. Zeilen für Android-Smartphones und -Tablets können im selben Projekt neben iPhone, iPad und Mac angelegt werden. Jede Gerätekategorie ist auf die von den jeweiligen Stores geforderten Pixelabmessungen voreingestellt, und eine mitgelieferte Vorlage deckt die Google Play-Vorstellungsgrafik ab. Ist das Set fertig, laden Sie es direkt aus der App in Ihren Play-Store-Eintrag hoch.",
       },
       {
         question: "Kann ich Screenshots aus dem Simulator oder von Geräten direkt hineinziehen?",
@@ -1436,9 +1436,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "Ja. Ziehen Sie einfach einen Ordner mit Screenshots hinein: Screenshot Bro ordnet jedes Bild anhand seiner Pixelgröße automatisch der richtigen Zeile zu — iPhone-Bilder in die iPhone-Zeile, iPad zu iPad und Android zu Android.",
       },
       {
-        question: "Kann ich direkt aus der App zu App Store Connect hochladen?",
+        question: "Kann ich direkt aus der App zu App Store Connect und Google Play hochladen?",
         answer:
-          "Ja. Richten Sie Ihren App Store Connect API-Schlüssel einmalig ein (Issuer ID, Key ID und .p8-Datei). Screenshot Bro erkennt automatisch den passenden Anzeigetyp für jede Zeile, gleicht die Projektsprachen mit den Lokalisierungen in App Store Connect ab und ersetzt vorhandene Screenshots in einem Durchgang — ganz ohne Drag-and-Drop im Browser.",
+          "Ja. Richten Sie Ihren App Store Connect API-Schlüssel einmalig ein (Issuer ID, Key ID und .p8-Datei). Screenshot Bro erkennt automatisch den passenden Anzeigetyp für jede Zeile, gleicht die Projektsprachen mit den Lokalisierungen in App Store Connect ab und ersetzt vorhandene Screenshots in einem Durchgang. Für Google Play importieren Sie einmalig den JSON-Schlüssel eines Dienstkontos und geben den Paketnamen ein: Jede Projektsprache wird der passenden Sprache Ihres Play-Store-Eintrags zugeordnet, und der Upload wird als Play-Bearbeitung vorbereitet, die erst nach Ihrer Bestätigung übernommen wird. Für keinen der beiden Stores ist Drag-and-Drop im Browser nötig.",
       },
       {
         question: "Werden Daten zwischen verschiedenen Geräten synchronisiert?",
@@ -1448,7 +1448,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Kann ein KI-Agent meine Screenshots bauen?",
         answer:
-          "Ja. Screenshot Bro betreibt auf dem Mac einen optionalen lokalen MCP-Server, sodass ein Assistent wie Claude Code, Claude Desktop oder Cursor Projekte anlegen, Zeilen und Formen setzen, Screenshots importieren, Texte übersetzen, Vorschauen rendern und ansehen, exportieren und das fertige Set mit App Store Connect abgleichen kann. Der Server lauscht nur auf 127.0.0.1, jede Anfrage braucht ein Zugriffstoken aus den Einstellungen, und jede Änderung lässt sich mit ⌘Z rückgängig machen.",
+          "Ja. Screenshot Bro betreibt auf dem Mac einen optionalen lokalen MCP-Server, sodass ein Assistent wie Claude Code, Claude Desktop oder Cursor Projekte anlegen, Zeilen und Formen setzen, Screenshots importieren, Texte übersetzen, Vorschauen rendern und ansehen, exportieren und das fertige Set zu App Store Connect oder Google Play hochladen kann. Der Server lauscht nur auf 127.0.0.1, jede Anfrage braucht ein Zugriffstoken aus den Einstellungen, und jede Änderung lässt sich mit ⌘Z rückgängig machen.",
       },
       {
         question: "Wo bekomme ich Unterstützung?",
@@ -1482,15 +1482,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "Entwickler kontaktieren",
       backToTop: "Zurück nach oben",
       availabilityNote:
-        "macOS 15+ und iOS/iPadOS 18+ App | Swift & SwiftUI | Im App Store oder als direkter Download für den Mac",
+        "macOS 15+ und iOS/iPadOS 18+ App | Swift & SwiftUI | Im App Store oder als direkter Download für den Mac | Windows-Beta",
     },
     hero: {
-      titleLead: "Gestalte und veröffentliche",
-      titleAccent: "App Store",
-      titleRest: " Screenshots.",
+      titleLead: "Gestalte und veröffentliche Screenshots für",
+      titleAccent: "App Store & Google Play",
+      titleRest: ".",
       descriptionLead:
         "Importiere deine Screenshots, passe sie in Geräterahmen ein, lokalisiere den Text, übersetze fehlende Texte automatisch und",
-      descriptionStrong: "lade sie direkt zu App Store Connect hoch",
+      descriptionStrong: "lade sie direkt zu App Store Connect und Google Play hoch",
       descriptionTail: "— alles aus einer schnellen, nativen App für Mac, iPad und iPhone.",
     },
     sections: {
@@ -1498,7 +1498,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "Demos",
         title: "Sieh dir den Workflow an, bevor du installierst.",
         description:
-          "Batch-Import, App Store Connect Upload mit einem Klick, Ebenen, Hintergründe und Geräterahmen in einem einzigen Workflow.",
+          "Batch-Import, Upload zu App Store Connect und Google Play mit einem Klick, Ebenen, Hintergründe und Geräterahmen in einem einzigen Workflow.",
       },
       workflow: {
         eyebrow: "Workflow",
@@ -1514,7 +1514,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       blog: {
         eyebrow: "Aus dem Blog",
-        title: "Anleitungen für bessere App Store Screenshots.",
+        title: "Anleitungen für bessere App Store & Google Play Screenshots.",
         description:
           "Referenzen und Playbooks zur Größe, Lokalisierung, zum Upload und Design von App Store & Google Play Screenshots.",
       },
@@ -1539,17 +1539,17 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "Bereit für",
       titleLine2: "bessere Screenshots?",
       description:
-        "Lade die App aus dem App Store herunter und nutze den gesamten Workflow auf Mac, iPad oder iPhone: Einrichtung, Design, automatische Übersetzung, Lokalisierung und Export.",
+        "Hol dir die App im App Store für Mac, iPad und iPhone, lade sie direkt für den Mac herunter oder teste die Windows-Beta. Der gesamte Workflow ist dabei: Design, automatische Übersetzung, Lokalisierung, Export und Upload zu App Store und Google Play.",
     },
     footer: {
       note:
-        "Entwickelt mit SwiftUI. Gemacht für Entwickler, die App-Store-Updates veröffentlichen.",
+        "Entwickelt mit SwiftUI. Gemacht für Entwickler, die im App Store und bei Google Play veröffentlichen.",
     },
   },
   ja: {
     siteTitle: `${SITE_NAME} — Mac、iPad、iPhone用App Store & Google Playスクリーンショット作成ツール`,
     siteDescription:
-      "App StoreとGoogle Play用のスクリーンショットをネイティブMac、iPad、iPhoneアプリでデザイン。デバイスフレーム、ローカライズ、自動翻訳、バッチ書き出し、App Store Connectへの直接アップロードに対応。",
+      "App StoreとGoogle Play用のスクリーンショットをネイティブMac、iPad、iPhoneアプリでデザイン。デバイスフレーム、ローカライズ、自動翻訳、バッチ書き出し、App Store ConnectとGoogle Playへの直接アップロードに対応。",
     primaryCtaLabel: "Screenshot Bro をダウンロード",
     navItems: [
       { label: "デモ", href: "#showcases" },
@@ -1557,9 +1557,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "よくある質問", href: "#faq" },
     ],
     benefits: [
-      "Mac・iPad・iPhone 版を App Store で配信中。Mac 向け直接ダウンロード版もあり",
+      "Mac・iPad・iPhone 版を App Store で配信中。Mac 向け直接ダウンロード版と Windows ベータ版もあり",
       "インポート、デザイン、翻訳、ローカライズ、書き出しまでの完全なワークフロー",
-      "ブラウザへのドラッグ＆ドロップ不要で、App Store Connectに直接アップロード",
+      "ブラウザへのドラッグ＆ドロップ不要で、App Store ConnectとGoogle Playに直接アップロード",
     ],
     faqs: [
       {
@@ -1570,12 +1570,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "WebベースのApp Storeスクリーンショット作成ツールとは何が違いますか？",
         answer:
-          "Screenshot Broはブラウザで動くツールではなく、Mac、iPad、iPhone専用のネイティブアプリケーションです。プロジェクト、画像、フォントはすべてローカルディスクに保存され、日常的な編集作業にアカウント登録やインターネット接続は一切不要です。レンダリングや一括書き出しもクラウドサーバーではなくご自身の端末ハードウェア上で高速に処理されます。WindowsやLinuxをお使いの場合や、Web上でリアルタイム共同編集を行いたい場合はWebツールが適しています（比較・代替ツールページで詳しく解説しています）。",
+          "Screenshot Broはブラウザで動くツールではなく、Mac、iPad、iPhone専用のネイティブアプリケーションです。プロジェクト、画像、フォントはすべてローカルディスクに保存され、日常的な編集作業にアカウント登録やインターネット接続は一切不要です。レンダリングや一括書き出しもクラウドサーバーではなくご自身の端末ハードウェア上で高速に処理されます。Linuxをお使いの場合や、Web上でリアルタイム共同編集を行いたい場合はWebツールが適しています（比較・代替ツールページで詳しく解説しています）。",
       },
       {
         question: "動作環境を教えてください。",
         answer:
-          "MacはmacOS 15（Sequoia）以降、iPadはiPadOS 18以降、iPhoneはiOS 18以降に対応しています。日常の編集作業に外部機器、アカウント登録、ネット接続は不要です。",
+          "MacはmacOS 15（Sequoia）以降、iPadはiPadOS 18以降、iPhoneはiOS 18以降に対応しています。Windowsベータ版はWindows 10および11（64ビット）で動作します。日常の編集作業に外部機器、アカウント登録、ネット接続は不要です。",
       },
       {
         question: "データがデバイスの外部に送信されることはありますか？",
@@ -1585,12 +1585,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "ローカライズ（多言語対応）はどのように機能しますか？",
         answer:
-          "81言語のプリセットから選択するか、独自の言語コードを追加できます。オンデバイスの自動翻訳により未翻訳テキストをすばやく補完します。翻訳は言語ごとのテキスト上書きとして保存されるため、レイアウト、配色、画像は全言語共通で保持されます（1回デザインすれば全言語に展開可能）。書き出し時はApp Store Connectがそのまま読み込める言語別フォルダに整理されます。",
+          "81言語のプリセットから選択するか、独自の言語コードを追加できます。オンデバイスの自動翻訳により未翻訳テキストをすばやく補完します。翻訳は言語ごとのテキスト上書きとして保存されるため、レイアウト、配色、画像は全言語共通で保持されます（1回デザインすれば全言語に展開可能）。書き出し時はApp Store ConnectとGoogle Playにそのまま使える言語別フォルダに整理され、アプリ内のアップローダーが各ロケールをストア側の言語に自動で照合します。",
       },
       {
         question: "Google Play用のスクリーンショットも作成できますか？",
         answer:
-          "はい。同じプロジェクト内で、iPhone、iPad、Macの行と並んでAndroidスマートフォンやタブレットの行を同時に編集・レンダリングできます。各デバイスカテゴリは各ストアが指定する正確なピクセル寸法にあらかじめ設定されています。",
+          "はい。同じプロジェクト内で、iPhone、iPad、Macの行と並んでAndroidスマートフォンやタブレットの行を同時に編集・レンダリングできます。各デバイスカテゴリはGoogle Playが受け付けるピクセル寸法にあらかじめ設定されており、Google Playのフィーチャーグラフィック用テンプレートも同梱しています。完成したら、アプリから直接Playのストア掲載情報へアップロードできます。",
       },
       {
         question: "シミュレータや実機のスクリーンショットを直接ドラッグ＆ドロップできますか？",
@@ -1598,9 +1598,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "はい。スクリーンショットが入ったフォルダをドラッグ＆ドロップするだけで、Screenshot Broがピクセル解像度を自動判別し、適切な行（iPhone用画像はiPhone行、iPad用はiPad行、Android用はAndroid行）へ振り分けます。",
       },
       {
-        question: "App Store Connectに直接アップロードできますか？",
+        question: "App Store ConnectやGoogle Playに直接アップロードできますか？",
         answer:
-          "はい。App Store Connect APIキー（Issuer ID、Key ID、.p8ファイル）を一度設定するだけで、Screenshot Broが各行の適切な表示タイプ（Display Type）を自動検出し、プロジェクトの言語とストアの言語設定をマッチングして既存スクリーンショットを一括更新します。ブラウザ上で1枚ずつドラッグ＆ドロップする手間は不要です。",
+          "はい。App Store Connect APIキー（Issuer ID、Key ID、.p8ファイル）を一度設定するだけで、Screenshot Broが各行の適切な表示タイプ（Display Type）を自動検出し、プロジェクトの言語とストアの言語設定をマッチングして既存スクリーンショットを一括更新します。Google Playの場合は、サービスアカウントのJSONキーを一度読み込み、パッケージ名を入力するだけ。プロジェクトの各言語がPlayのストア掲載情報の言語に対応付けられ、アップロードはPlayの編集（edit）としてステージングされ、確認したときにだけ確定されます。どちらのストアでも、ブラウザ上で1枚ずつドラッグ＆ドロップする手間は不要です。",
       },
       {
         question: "複数デバイス間で同期できますか？",
@@ -1610,7 +1610,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "AIエージェントにスクリーンショットを作らせられますか？",
         answer:
-          "はい。Screenshot BroはMacで任意のローカルMCPサーバーを起動でき、Claude Code、Claude Desktop、Cursorなどのアシスタントがプロジェクト作成、行や図形の配置、スクリーンショットの読み込み、テキストの翻訳、実際に確認できるプレビューのレンダリング、書き出し、App Store Connectへの同期まで行えます。サーバーは127.0.0.1のみで待ち受け、リクエストごとに設定からコピーしたアクセストークンが必要で、エージェントの変更は⌘Zで取り消せます。",
+          "はい。Screenshot BroはMacで任意のローカルMCPサーバーを起動でき、Claude Code、Claude Desktop、Cursorなどのアシスタントがプロジェクト作成、行や図形の配置、スクリーンショットの読み込み、テキストの翻訳、実際に確認できるプレビューのレンダリング、書き出し、App Store ConnectまたはGoogle Playへのアップロードまで行えます。サーバーは127.0.0.1のみで待ち受け、リクエストごとに設定からコピーしたアクセストークンが必要で、エージェントの変更は⌘Zで取り消せます。",
       },
       {
         question: "サポートはどこで受けられますか？",
@@ -1643,15 +1643,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "開発者に連絡",
       backToTop: "トップへ戻る",
       availabilityNote:
-        "macOS 15以降・iOS/iPadOS 18以降のアプリ | Swift & SwiftUI | App Store または Mac 向け直接ダウンロード",
+        "macOS 15以降・iOS/iPadOS 18以降のアプリ | Swift & SwiftUI | App Store または Mac 向け直接ダウンロード | Windows ベータ版",
     },
     hero: {
       titleLead: "デザインから",
-      titleAccent: "App Store",
-      titleRest: " への書き出しまでをスムーズに。",
+      titleAccent: "App Store・Google Play",
+      titleRest: " への公開までをスムーズに。",
       descriptionLead:
         "ショットをインポートし、デバイスフレームを重ね、テキストをローカライズ。不足しているテキストは自動翻訳し、",
-      descriptionStrong: "App Store Connectに直接アップロード",
+      descriptionStrong: "App Store ConnectとGoogle Playに直接アップロード",
       descriptionTail: "— これらすべてを、高速なネイティブMac、iPad、iPhoneアプリで完結できます。",
     },
     sections: {
@@ -1659,11 +1659,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "デモ",
         title: "インストール前に、コアとなるワークフローを確認。",
         description:
-          "一括インポート、ワンクリックでのApp Store Connectアップロード、レイヤー、背景、デバイスフレームなど、作業時間を劇的に短縮する機能をご覧ください。",
+          "一括インポート、ワンクリックでのApp Store Connect・Google Playアップロード、レイヤー、背景、デバイスフレームなど、作業時間を劇的に短縮する機能をご覧ください。",
       },
       workflow: {
         eyebrow: "ワークフロー",
-        title: "生のスクリーンショットからApp Store提出用アセットへの最短ルート。",
+        title: "生のスクリーンショットからストア提出用アセットへの最短ルート。",
         description:
           "一回限りのデザインファイルを大量に管理することなく、美しく洗練されたスクリーンショットを作成するという一つの目的に特化しています。",
       },
@@ -1675,9 +1675,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       blog: {
         eyebrow: "ブログ記事",
-        title: "より効果的なApp Storeスクリーンショットを作成するためのガイド。",
+        title: "より効果的なApp Store・Google Playスクリーンショットを作成するためのガイド。",
         description:
-          "サイズ選定、ローカライズ、アップロード、そしてコンバージョンにつながるデザインのコツやプレイブック。",
+          "App Store・Google Playスクリーンショットのサイズ選定、ローカライズ、アップロード、そしてコンバージョンにつながるデザインのコツやプレイブック。",
       },
       faq: {
         eyebrow: "よくある質問",
@@ -1700,17 +1700,17 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "より魅力的なスクリーンショットを",
       titleLine2: "配信しませんか？",
       description:
-        "App Storeからダウンロードして、Mac、iPad、iPhoneでセットアップ、デザイン、自動翻訳、ローカライズ、書き出しまでのフルワークフローを体験してください。",
+        "Mac、iPad、iPhone版はApp Storeから、Mac版は直接ダウンロードでも入手でき、Windowsベータ版も試せます。デザイン、自動翻訳、ローカライズ、書き出し、App StoreとGoogle Playへのアップロードまで、フルワークフローがそろっています。",
     },
     footer: {
       note:
-        "SwiftUIで構築。App Storeのアップデートをリリースする開発者のためにデザインされました。",
+        "SwiftUIで構築。App StoreとGoogle Playにアプリをリリースする開発者のためにデザインされました。",
     },
   },
   pt: {
     siteTitle: `${SITE_NAME} — Capturas para App Store e Google Play`,
     siteDescription:
-      "Crie capturas para App Store e Google Play em um app nativo para Mac, iPad e iPhone. Molduras de dispositivos, localização e envio para App Store Connect.",
+      "Crie capturas para App Store e Google Play em um app nativo para Mac, iPad e iPhone. Molduras de dispositivos, localização e envio para App Store Connect e Google Play.",
     primaryCtaLabel: "Baixar o Screenshot Bro",
     navItems: [
       { label: "Exemplos", href: "#showcases" },
@@ -1718,9 +1718,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Para Mac, iPad e iPhone na App Store, além de download direto para Mac",
+      "Para Mac, iPad e iPhone na App Store, além de download direto para Mac e uma versão beta para Windows",
       "Fluxo completo: importar, projetar, traduzir, localizar e exportar",
-      "Envio direto para o App Store Connect sem arrastar arquivos no navegador",
+      "Envio direto para o App Store Connect e o Google Play sem arrastar arquivos no navegador",
     ],
     faqs: [
       {
@@ -1731,12 +1731,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Como ele se diferencia de um gerador de capturas de tela web?",
         answer:
-          "O Screenshot Bro é um aplicativo nativo para Mac, iPad e iPhone, e não uma ferramenta no navegador. Seus projetos, capturas e fontes ficam no seu disco e a edição diária não requer conta nem conexão com a internet. A renderização e a exportação em lote rodam no seu próprio hardware em vez de um servidor. Se você usa Windows ou Linux, deseja colaborar em uma sessão compartilhada no navegador ou precisa de apenas uma ou duas imagens, uma ferramenta web é mais indicada — nossa página de alternativas detalha esses casos.",
+          "O Screenshot Bro é um aplicativo nativo para Mac, iPad e iPhone, e não uma ferramenta no navegador. Seus projetos, capturas e fontes ficam no seu disco e a edição diária não requer conta nem conexão com a internet. A renderização e a exportação em lote rodam no seu próprio hardware em vez de um servidor. Se você usa Linux, deseja colaborar em uma sessão compartilhada no navegador ou precisa de apenas uma ou duas imagens, uma ferramenta web é mais indicada — nossa página de alternativas detalha esses casos.",
       },
       {
         question: "O que preciso para usá-lo?",
         answer:
-          "macOS 15 (Sequoia) ou posterior no Mac, iPadOS 18 ou posterior no iPad, ou iOS 18 ou posterior no iPhone. Nenhum dispositivo adicional, conta ou conexão à internet é necessária para a edição diária.",
+          "macOS 15 (Sequoia) ou posterior no Mac, iPadOS 18 ou posterior no iPad, ou iOS 18 ou posterior no iPhone. A versão beta para Windows roda no Windows 10 e 11 (64 bits). Nenhum dispositivo adicional, conta ou conexão à internet é necessária para a edição diária.",
       },
       {
         question: "Meus dados saem do meu dispositivo?",
@@ -1746,12 +1746,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Como funciona a localização?",
         answer:
-          "Escolha entre 81 idiomas pré-configurados ou adicione seu próprio código. A tradução automática no dispositivo preenche os textos que faltarem. As traduções são salvas como substituições de texto por idioma, mantendo layout, cores e imagens compartilhados entre todas as línguas — desenhe uma vez e publique em todos os idiomas. As exportações são organizadas em pastas por idioma prontas para o App Store Connect.",
+          "Escolha entre 81 idiomas pré-configurados ou adicione seu próprio código. A tradução automática no dispositivo preenche os textos que faltarem. As traduções são salvas como substituições de texto por idioma, mantendo layout, cores e imagens compartilhados entre todas as línguas — desenhe uma vez e publique em todos os idiomas. As exportações são organizadas em pastas por idioma prontas para o App Store Connect e o Google Play, e os envios feitos pelo app associam cada idioma aos idiomas da própria loja.",
       },
       {
         question: "Posso criar capturas de tela para o Google Play também?",
         answer:
-          "Sim. As linhas para celulares e tablets Android são editadas lado a lado com iPhone, iPad e Mac no mesmo projeto. Cada categoria de dispositivo já vem pré-configurada nas dimensões exatas em pixels aceitas pelas respectivas lojas.",
+          "Sim. As linhas para celulares e tablets Android são editadas lado a lado com iPhone, iPad e Mac no mesmo projeto. Cada categoria de dispositivo já vem pré-configurada nas dimensões em pixels aceitas pelo Google Play, e um modelo incluído cobre o gráfico de recursos (feature graphic) do Google Play. Quando o conjunto estiver pronto, envie-o direto para a página da loja no Google Play pelo próprio app.",
       },
       {
         question: "Posso arrastar capturas do simulador e de aparelhos diretamente?",
@@ -1759,9 +1759,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "Sim. Arraste uma pasta de capturas e o Screenshot Bro encaminhará cada uma para a linha correta de acordo com seu tamanho em pixels — imagens de iPhone para a linha do iPhone, iPad para iPad e Android para Android.",
       },
       {
-        question: "Posso enviar diretamente para o App Store Connect a partir do aplicativo?",
+        question: "Posso enviar diretamente para o App Store Connect e o Google Play a partir do aplicativo?",
         answer:
-          "Sim. Configure sua chave de API do App Store Connect uma única vez (Issuer ID, Key ID e arquivo .p8) e o Screenshot Bro detectará automaticamente o display type correto para cada linha, associará os idiomas do projeto às localizações do App Store Connect e substituirá as capturas existentes em uma única etapa — sem arrastar e soltar no navegador.",
+          "Sim. Configure sua chave de API do App Store Connect uma única vez (Issuer ID, Key ID e arquivo .p8) e o Screenshot Bro detectará automaticamente o display type correto para cada linha, associará os idiomas do projeto às localizações do App Store Connect e substituirá as capturas existentes em uma única etapa. Para o Google Play, importe uma vez a chave JSON de uma conta de serviço e informe o nome do pacote: cada idioma do projeto é associado ao idioma correspondente da página no Play, e o envio é preparado como uma edição do Play, confirmada apenas quando você aprovar. Sem arrastar e soltar no navegador em nenhuma das lojas.",
       },
       {
         question: "Ele sincroniza entre diferentes dispositivos?",
@@ -1771,7 +1771,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Um agente de IA pode criar minhas capturas?",
         answer:
-          "Sim. O Screenshot Bro tem um servidor MCP local e opcional no Mac, então um assistente como Claude Code, Claude Desktop ou Cursor pode criar projetos, posicionar linhas e formas, importar capturas, traduzir o texto, renderizar prévias que ele realmente vê, exportar e sincronizar o conjunto final com o App Store Connect. O servidor escuta apenas em 127.0.0.1, cada requisição exige um token de acesso copiado dos Ajustes, e qualquer mudança do agente é desfeita com ⌘Z.",
+          "Sim. O Screenshot Bro tem um servidor MCP local e opcional no Mac, então um assistente como Claude Code, Claude Desktop ou Cursor pode criar projetos, posicionar linhas e formas, importar capturas, traduzir o texto, renderizar prévias que ele realmente vê, exportar e enviar o conjunto final para o App Store Connect ou o Google Play. O servidor escuta apenas em 127.0.0.1, cada requisição exige um token de acesso copiado dos Ajustes, e qualquer mudança do agente é desfeita com ⌘Z.",
       },
       {
         question: "Onde consigo suporte?",
@@ -1805,15 +1805,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "Contatar desenvolvedor",
       backToTop: "Voltar ao topo",
       availabilityNote:
-        "App para macOS 15+ e iOS/iPadOS 18+ | Swift & SwiftUI | Na App Store ou download direto para Mac",
+        "App para macOS 15+ e iOS/iPadOS 18+ | Swift & SwiftUI | Na App Store ou download direto para Mac | Beta para Windows",
     },
     hero: {
-      titleLead: "Crie e publique",
-      titleAccent: "App Store",
-      titleRest: " capturas de tela.",
+      titleLead: "Crie capturas para",
+      titleAccent: "App Store & Google Play",
+      titleRest: " em minutos.",
       descriptionLead:
         "Importe suas capturas, coloque-as em molduras de dispositivos, localize os textos, auto-traduza o que faltar e",
-      descriptionStrong: "suba direto para o App Store Connect",
+      descriptionStrong: "envie direto para o App Store Connect e o Google Play",
       descriptionTail: "— tudo a partir de um único app nativo e rápido para Mac, iPad e iPhone.",
     },
     sections: {
@@ -1821,11 +1821,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "Exemplos",
         title: "Veja o fluxo de trabalho principal antes de instalar.",
         description:
-          "Importação em lote, envio para o App Store Connect em um clique, camadas, fundos e molduras de dispositivos em um único fluxo de trabalho.",
+          "Importação em lote, envio para o App Store Connect e o Google Play em um clique, camadas, fundos e molduras de dispositivos em um único fluxo de trabalho.",
       },
       workflow: {
         eyebrow: "Fluxo de Trabalho",
-        title: "Um caminho mais curto de capturas brutas a arquivos prontos para a App Store.",
+        title: "Um caminho mais curto de capturas brutas a arquivos prontos para as lojas.",
         description:
           "O produto é focado em apenas uma tarefa: criar conjuntos de capturas de tela refinados sem precisar manter um monte de arquivos de design avulsos.",
       },
@@ -1837,7 +1837,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       blog: {
         eyebrow: "Do Blog",
-        title: "Guias para publicar melhores capturas de tela na App Store.",
+        title: "Guias para publicar melhores capturas de tela na App Store e no Google Play.",
         description:
           "Referências e práticas recomendadas para dimensionamento, localização, upload e design de capturas de tela da App Store e Google Play.",
       },
@@ -1862,17 +1862,17 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "Pronto para publicar",
       titleLine2: "capturas de tela melhores?",
       description:
-        "Baixe na App Store e utilize o fluxo completo no Mac, iPad ou iPhone: configuração, design, tradução automática, localização e exportação.",
+        "Baixe na App Store para Mac, iPad e iPhone, faça o download direto para Mac ou experimente a versão beta para Windows. O fluxo completo está lá: design, tradução automática, localização, exportação e envio para a App Store e o Google Play.",
     },
     footer: {
       note:
-        "Desenvolvido com SwiftUI. Projetado para desenvolvedores que enviam atualizações para a App Store.",
+        "Desenvolvido com SwiftUI. Projetado para desenvolvedores que publicam na App Store e no Google Play.",
     },
   },
   it: {
     siteTitle: `${SITE_NAME} — Screenshot per App Store e Google Play`,
     siteDescription:
-      "Progetta screenshot per App Store e Google Play in un'app nativa per Mac, iPad e iPhone. Cornici per dispositivi, localizzazione e upload su App Store Connect.",
+      "Progetta screenshot per App Store e Google Play in un'app nativa per Mac, iPad e iPhone. Cornici per dispositivi, localizzazione e upload su App Store Connect e Google Play.",
     primaryCtaLabel: "Scarica Screenshot Bro",
     navItems: [
       { label: "Esempi", href: "#showcases" },
@@ -1880,9 +1880,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Per Mac, iPad e iPhone sull'App Store, più un download diretto per Mac",
+      "Per Mac, iPad e iPhone sull'App Store, più un download diretto per Mac e una beta per Windows",
       "Flusso completo: importa, progetta, traduci, localizza ed esporta",
-      "Caricamento diretto su App Store Connect senza trascinare file nel browser",
+      "Caricamento diretto su App Store Connect e Google Play senza trascinare file nel browser",
     ],
     faqs: [
       {
@@ -1893,12 +1893,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "In che modo si differenzia da un generatore di screenshot per App Store basato sul web?",
         answer:
-          "Screenshot Bro è un'applicazione nativa per Mac, iPad e iPhone anziché uno strumento nel browser: progetti, screenshot e font rimangono sul tuo disco e l'editing quotidiano non richiede alcun account né connessione a Internet. Il rendering e l'esportazione in batch vengono eseguiti direttamente sul tuo hardware invece che su un server remoto. Se utilizzi Windows o Linux, desideri collaborare nel browser o hai bisogno solo di una o due immagini, uno strumento web rappresenta una scelta migliore: la nostra pagina delle alternative illustra questi casi.",
+          "Screenshot Bro è un'applicazione nativa per Mac, iPad e iPhone anziché uno strumento nel browser: progetti, screenshot e font rimangono sul tuo disco e l'editing quotidiano non richiede alcun account né connessione a Internet. Il rendering e l'esportazione in batch vengono eseguiti direttamente sul tuo hardware invece che su un server remoto. Se utilizzi Linux, desideri collaborare nel browser o hai bisogno solo di una o due immagini, uno strumento web rappresenta una scelta migliore: la nostra pagina delle alternative illustra questi casi.",
       },
       {
         question: "Di cosa ho bisogno per usarlo?",
         answer:
-          "macOS 15 (Sequoia) o versioni successive su Mac, iPadOS 18 o versioni successive su iPad, oppure iOS 18 o versioni successive su iPhone. Nessun dispositivo aggiuntivo, account o connessione internet richiesta per l'editing quotidiano.",
+          "macOS 15 (Sequoia) o versioni successive su Mac, iPadOS 18 o versioni successive su iPad, oppure iOS 18 o versioni successive su iPhone. La beta per Windows funziona su Windows 10 e 11 (64 bit). Nessun dispositivo aggiuntivo, account o connessione internet richiesta per l'editing quotidiano.",
       },
       {
         question: "I miei dati lasciano il mio dispositivo?",
@@ -1908,12 +1908,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Come funziona la localizzazione?",
         answer:
-          "Scegli tra 81 lingue preimpostate o definisci il tuo codice personalizzato. La traduzione automatica on-device completa i testi mancanti. Le traduzioni vengono salvate come modifiche testuali per ciascuna lingua, preservando layout, colori e immagini su tutti gli idiomi: progetta una volta sola e pubblica ovunque. I file esportati sono suddivisi in cartelle per lingua pronte per App Store Connect.",
+          "Scegli tra 81 lingue preimpostate o definisci il tuo codice personalizzato. La traduzione automatica on-device completa i testi mancanti. Le traduzioni vengono salvate come modifiche testuali per ciascuna lingua, preservando layout, colori e immagini su tutti gli idiomi: progetta una volta sola e pubblica ovunque. I file esportati sono suddivisi in cartelle per lingua pronte per App Store Connect e Google Play, e il caricamento integrato abbina ogni lingua a quelle dello store.",
       },
       {
         question: "Posso creare anche screenshot per Google Play?",
         answer:
-          "Sì. Le righe dedicate a smartphone e tablet Android vengono gestite affiancate a iPhone, iPad e Mac nello stesso progetto. Ogni categoria di dispositivo è preimpostata con le esatte dimensioni in pixel richieste dai rispettivi store.",
+          "Sì. Le righe dedicate a smartphone e tablet Android vengono gestite affiancate a iPhone, iPad e Mac nello stesso progetto. Ogni categoria di dispositivo è preimpostata con dimensioni in pixel accettate da Google Play, e un template incluso copre la grafica in primo piano (feature graphic) di Google Play. Quando il set è pronto, caricalo direttamente sulla tua scheda dello Store Play senza uscire dall'app.",
       },
       {
         question: "Posso trascinare direttamente screenshot da simulatori e dispositivi reali?",
@@ -1921,9 +1921,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "Sì. Trascina una cartella di screenshot e Screenshot Bro smisterà ciascuna immagine nella riga corretta in base alla risoluzione in pixel: le immagini iPhone nella riga iPhone, iPad su iPad e Android su Android.",
       },
       {
-        question: "Posso caricare direttamente su App Store Connect dall'applicazione?",
+        question: "Posso caricare direttamente su App Store Connect e Google Play dall'applicazione?",
         answer:
-          "Sì. Configura la chiave API di App Store Connect una sola volta (Issuer ID, Key ID e file .p8). Screenshot Bro individua automaticamente il display type appropriato per ciascuna riga, abbina le lingue del progetto alle localizzazioni di App Store Connect e aggiorna gli screenshot esistenti in un solo passaggio, eliminando il trascinamento manuale nel browser.",
+          "Sì. Configura la chiave API di App Store Connect una sola volta (Issuer ID, Key ID e file .p8). Screenshot Bro individua automaticamente il display type appropriato per ciascuna riga, abbina le lingue del progetto alle localizzazioni di App Store Connect e aggiorna gli screenshot esistenti in un solo passaggio. Per Google Play, importa una volta la chiave JSON di un account di servizio e inserisci il nome del pacchetto: ogni lingua del progetto viene abbinata alla lingua della scheda Play, e il caricamento viene preparato come modifica di Play e confermato solo quando dai l'ok. Nessun trascinamento manuale nel browser, per nessuno dei due store.",
       },
       {
         question: "Si sincronizza tra più dispositivi?",
@@ -1933,7 +1933,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Un agente IA può creare i miei screenshot?",
         answer:
-          "Sì. Screenshot Bro include un server MCP locale e opzionale su Mac, così un assistente come Claude Code, Claude Desktop o Cursor può creare progetti, disporre righe e forme, importare screenshot, tradurre i testi, generare anteprime che vede davvero, esportare e sincronizzare il set finito con App Store Connect. Il server ascolta solo su 127.0.0.1, ogni richiesta richiede un token di accesso copiato dalle Impostazioni e ogni modifica dell'agente si annulla con ⌘Z.",
+          "Sì. Screenshot Bro include un server MCP locale e opzionale su Mac, così un assistente come Claude Code, Claude Desktop o Cursor può creare progetti, disporre righe e forme, importare screenshot, tradurre i testi, generare anteprime che vede davvero, esportare e caricare il set finito su App Store Connect o Google Play. Il server ascolta solo su 127.0.0.1, ogni richiesta richiede un token di accesso copiato dalle Impostazioni e ogni modifica dell'agente si annulla con ⌘Z.",
       },
       {
         question: "Dove posso ottenere assistenza?",
@@ -1967,15 +1967,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "Contatta lo sviluppatore",
       backToTop: "Torna in alto",
       availabilityNote:
-        "App per macOS 15+ e iOS/iPadOS 18+ | Swift e SwiftUI | Sull'App Store o in download diretto per Mac",
+        "App per macOS 15+ e iOS/iPadOS 18+ | Swift e SwiftUI | Sull'App Store o in download diretto per Mac | Beta per Windows",
     },
     hero: {
-      titleLead: "Progetta e pubblica",
-      titleAccent: "App Store",
-      titleRest: " screenshot.",
+      titleLead: "Crea screenshot per",
+      titleAccent: "App Store & Google Play",
+      titleRest: " in pochi minuti.",
       descriptionLead:
         "Importa i tuoi screenshot, inseriscili in cornici per dispositivi, localizza i testi, traduci automaticamente i testi mancanti e",
-      descriptionStrong: "carica tutto direttamente su App Store Connect",
+      descriptionStrong: "carica tutto direttamente su App Store Connect e Google Play",
       descriptionTail: "— tutto da un'unica e veloce app nativa per Mac, iPad e iPhone.",
     },
     sections: {
@@ -1983,11 +1983,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "Esempi",
         title: "Guarda il flusso di lavoro principale prima di installare.",
         description:
-          "Importazione in batch, caricamento su App Store Connect in un clic, livelli, sfondi e cornici per dispositivi in un unico flusso di lavoro.",
+          "Importazione in batch, caricamento su App Store Connect e Google Play in un clic, livelli, sfondi e cornici per dispositivi in un unico flusso di lavoro.",
       },
       workflow: {
         eyebrow: "Flusso di lavoro",
-        title: "Una scorciatoia dagli screenshot grezzi agli asset pronti per l'App Store.",
+        title: "Una scorciatoia dagli screenshot grezzi agli asset pronti per gli store.",
         description:
           "L'app è focalizzata su un unico compito: creare set di screenshot curati senza dover gestire una montagna di file di design temporanei.",
       },
@@ -1999,7 +1999,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       blog: {
         eyebrow: "Dal Blog",
-        title: "Guide per pubblicare screenshot migliori su App Store.",
+        title: "Guide per pubblicare screenshot migliori su App Store e Google Play.",
         description:
           "Riferimenti e playbook per dimensioni, localizzazione, caricamento e progettazione di screenshot per App Store e Google Play.",
       },
@@ -2024,17 +2024,17 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "Pronto a pubblicare",
       titleLine2: "screenshot migliori?",
       description:
-        "Scarica dall'App Store e prova il flusso di lavoro completo su Mac, iPad o iPhone: configurazione, design, traduzione automatica, localizzazione ed esportazione.",
+        "Scaricalo dall'App Store per Mac, iPad e iPhone, in download diretto per Mac, oppure prova la beta per Windows. C'è tutto il flusso di lavoro: design, traduzione automatica, localizzazione, esportazione e caricamento su App Store e Google Play.",
     },
     footer: {
       note:
-        "Sviluppato con SwiftUI. Progettato per gli sviluppatori che pubblicano aggiornamenti sull'App Store.",
+        "Sviluppato con SwiftUI. Progettato per gli sviluppatori che pubblicano su App Store e Google Play.",
     },
   },
   ko: {
     siteTitle: `${SITE_NAME} — App Store·Google Play 스크린샷 (Mac·iPad·iPhone)`,
     siteDescription:
-      "네이티브 Mac, iPad 및 iPhone 앱에서 App Store 및 Google Play 스크린샷을 디자인하세요. 디바이스 프레임, 현지화, 자동 번역, 일괄 내보내기, App Store Connect 직접 업로드를 지원합니다.",
+      "네이티브 Mac, iPad 및 iPhone 앱에서 App Store 및 Google Play 스크린샷을 디자인하세요. 디바이스 프레임, 현지화, 자동 번역, 일괄 내보내기, App Store Connect 및 Google Play 직접 업로드를 지원합니다.",
     primaryCtaLabel: "Screenshot Bro 다운로드",
     navItems: [
       { label: "쇼케이스", href: "#showcases" },
@@ -2042,9 +2042,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Mac, iPad, iPhone용 App Store 버전과 Mac용 직접 다운로드 버전 제공",
+      "Mac, iPad, iPhone용 App Store 버전, Mac용 직접 다운로드 버전, Windows 베타 제공",
       "가져오기, 디자인, 자동 번역, 현지화, 내보내기까지 완벽한 워크플로우",
-      "브라우저 드래그 앤 드롭 없이 App Store Connect에 직접 업로드",
+      "브라우저 드래그 앤 드롭 없이 App Store Connect와 Google Play에 직접 업로드",
     ],
     faqs: [
       {
@@ -2055,12 +2055,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "웹 기반 App Store 스크린샷 생성기와 어떤 점이 다른가요?",
         answer:
-          "Screenshot Bro는 브라우저 웹 도구가 아닌 Mac, iPad, iPhone용 전용 네이티브 앱입니다. 따라서 프로젝트, 이미지, 폰트가 로컬 디스크에 안전하게 보관되며 일상적인 편집에 계정 생성이나 인터넷 연결이 필요하지 않습니다. 렌더링과 일괄 내보내기 역시 원격 서버가 아닌 사용자 기기의 하드웨어에서 직접 실행됩니다. Windows나 Linux를 사용하시거나 브라우저에서 협업해야 하는 경우, 혹은 한두 장의 이미지만 필요한 경우에는 웹 기반 도구가 더 적합할 수 있으며 대안 페이지에서 관련 도구들을 안내하고 있습니다.",
+          "Screenshot Bro는 브라우저 웹 도구가 아닌 Mac, iPad, iPhone용 전용 네이티브 앱입니다. 따라서 프로젝트, 이미지, 폰트가 로컬 디스크에 안전하게 보관되며 일상적인 편집에 계정 생성이나 인터넷 연결이 필요하지 않습니다. 렌더링과 일괄 내보내기 역시 원격 서버가 아닌 사용자 기기의 하드웨어에서 직접 실행됩니다. Linux를 사용하시거나 브라우저에서 협업해야 하는 경우, 혹은 한두 장의 이미지만 필요한 경우에는 웹 기반 도구가 더 적합할 수 있으며 대안 페이지에서 관련 도구들을 안내하고 있습니다.",
       },
       {
         question: "사용하려면 어떤 기기와 OS가 필요한가요?",
         answer:
-          "Mac은 macOS 15(Sequoia) 이상, iPad는 iPadOS 18 이상, iPhone은 iOS 18 이상이 필요합니다. 일상적인 편집 작업에는 별도의 기기, 계정, 인터넷 연결이 필요하지 않습니다.",
+          "Mac은 macOS 15(Sequoia) 이상, iPad는 iPadOS 18 이상, iPhone은 iOS 18 이상이 필요합니다. Windows 베타는 Windows 10 및 11(64비트)에서 실행됩니다. 일상적인 편집 작업에는 별도의 기기, 계정, 인터넷 연결이 필요하지 않습니다.",
       },
       {
         question: "내 데이터가 기기 외부로 전송되나요?",
@@ -2070,12 +2070,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "현지화(Localization)는 어떻게 작동하나요?",
         answer:
-          "81개 사전 설정 언어 중에서 선택하거나 사용자 지정 언어 코드를 추가할 수 있습니다. 온디바이스 자동 번역이 누락된 텍스트를 기기 내에서 채워줍니다. 번역은 언어별 텍스트 오버라이드로 저장되므로 레이아웃, 색상, 이미지는 모든 언어에서 공유됩니다. 한 번만 디자인하면 모든 언어로 바로 출시할 수 있습니다. 내보내기 시 App Store Connect에서 즉시 인식할 수 있는 언어별 폴더로 자동 정리됩니다.",
+          "81개 사전 설정 언어 중에서 선택하거나 사용자 지정 언어 코드를 추가할 수 있습니다. 온디바이스 자동 번역이 누락된 텍스트를 기기 내에서 채워줍니다. 번역은 언어별 텍스트 오버라이드로 저장되므로 레이아웃, 색상, 이미지는 모든 언어에서 공유됩니다. 한 번만 디자인하면 모든 언어로 바로 출시할 수 있습니다. 내보내기 시 App Store Connect와 Google Play에 바로 쓸 수 있는 언어별 폴더로 자동 정리되며, 앱 내 업로드 기능이 각 locale을 스토어의 언어와 자동으로 매칭합니다.",
       },
       {
         question: "Google Play용 스크린샷도 만들 수 있나요?",
         answer:
-          "네. 동일한 프로젝트 내에서 iPhone, iPad, Mac과 함께 Android 스마트폰 및 태블릿 행을 나란히 배치하여 작업할 수 있습니다. 각 기기 카테고리는 해당 스토어에서 요구하는 정확한 픽셀 규격으로 사전 설정되어 있습니다.",
+          "네. 동일한 프로젝트 내에서 iPhone, iPad, Mac과 함께 Android 스마트폰 및 태블릿 행을 나란히 배치하여 작업할 수 있습니다. 각 기기 카테고리는 Google Play가 허용하는 픽셀 규격으로 사전 설정되어 있으며, Google Play 그래픽 이미지(feature graphic)용 템플릿도 기본 제공됩니다. 세트가 완성되면 앱에서 바로 Play 스토어 등록정보에 업로드할 수 있습니다.",
       },
       {
         question: "시뮬레이터나 기기 스크린샷을 직접 드래그 앤 드롭할 수 있나요?",
@@ -2083,9 +2083,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "네. 스크린샷이 담긴 폴더를 드래그하기만 하면 Screenshot Bro가 픽셀 해상도를 인식하여 올바른 행(iPhone 이미지는 iPhone 행, iPad는 iPad 행, Android는 Android 행)으로 자동 배치합니다.",
       },
       {
-        question: "앱 내에서 App Store Connect로 바로 업로드할 수 있나요?",
+        question: "앱 내에서 App Store Connect와 Google Play로 바로 업로드할 수 있나요?",
         answer:
-          "네. App Store Connect API 키(Issuer ID, Key ID, .p8 파일)를 한 번만 등록해 두면, Screenshot Bro가 각 행에 맞는 올바른 디스플레이 유형(Display Type)을 자동 감지하고 프로젝트 언어와 App Store Connect 현지화 설정을 매칭하여 기존 스크린샷을 한 번에 교체합니다. 브라우저에서 일일이 드래그 앤 드롭할 필요가 없습니다.",
+          "네. App Store Connect API 키(Issuer ID, Key ID, .p8 파일)를 한 번만 등록해 두면, Screenshot Bro가 각 행에 맞는 올바른 디스플레이 유형(Display Type)을 자동 감지하고 프로젝트 언어와 App Store Connect 현지화 설정을 매칭하여 기존 스크린샷을 한 번에 교체합니다. Google Play는 서비스 계정 JSON 키를 한 번 가져오고 패키지 이름을 입력하면 됩니다. 프로젝트의 각 언어가 Play 스토어 등록정보 언어에 매칭되고, 업로드는 Play 수정사항(edit)으로 준비되었다가 확인할 때만 커밋됩니다. 두 스토어 모두 브라우저에서 일일이 드래그 앤 드롭할 필요가 없습니다.",
       },
       {
         question: "여러 기기 간에 프로젝트가 동기화되나요?",
@@ -2095,7 +2095,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "AI 에이전트가 스크린샷을 만들어 줄 수 있나요?",
         answer:
-          "네. Screenshot Bro는 Mac에서 선택적으로 켤 수 있는 로컬 MCP 서버를 제공합니다. Claude Code, Claude Desktop, Cursor 같은 어시스턴트가 프로젝트 생성, 행과 도형 배치, 스크린샷 가져오기, 텍스트 번역, 직접 확인할 수 있는 미리보기 렌더링, 내보내기, App Store Connect 동기화까지 처리합니다. 서버는 127.0.0.1에서만 대기하고 모든 요청에 설정에서 복사한 액세스 토큰이 필요하며, 에이전트의 변경은 ⌘Z로 되돌릴 수 있습니다.",
+          "네. Screenshot Bro는 Mac에서 선택적으로 켤 수 있는 로컬 MCP 서버를 제공합니다. Claude Code, Claude Desktop, Cursor 같은 어시스턴트가 프로젝트 생성, 행과 도형 배치, 스크린샷 가져오기, 텍스트 번역, 직접 확인할 수 있는 미리보기 렌더링, 내보내기, App Store Connect 또는 Google Play 업로드까지 처리합니다. 서버는 127.0.0.1에서만 대기하고 모든 요청에 설정에서 복사한 액세스 토큰이 필요하며, 에이전트의 변경은 ⌘Z로 되돌릴 수 있습니다.",
       },
       {
         question: "지원은 어디서 받을 수 있나요?",
@@ -2128,15 +2128,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "개발자에게 연락하기",
       backToTop: "맨 위로 이동",
       availabilityNote:
-        "macOS 15+ 및 iOS/iPadOS 18+ 앱 | Swift 및 SwiftUI | App Store 또는 Mac용 직접 다운로드",
+        "macOS 15+ 및 iOS/iPadOS 18+ 앱 | Swift 및 SwiftUI | App Store 또는 Mac용 직접 다운로드 | Windows 베타",
     },
     hero: {
       titleLead: "스크린샷 디자인부터",
-      titleAccent: "App Store",
+      titleAccent: "App Store·Google Play",
       titleRest: " 등록까지 간편하게.",
       descriptionLead:
         "스크린샷을 가져오고, 디바이스 프레임을 씌우고, 문구를 현지화하며, 누락된 텍스트는 자동으로 번역하여",
-      descriptionStrong: "App Store Connect에 바로 업로드하세요",
+      descriptionStrong: "App Store Connect와 Google Play에 바로 업로드하세요",
       descriptionTail: "— 이 모든 작업이 빠르고 네이티브한 하나의 Mac, iPad 및 iPhone 앱에서 가능합니다.",
     },
     sections: {
@@ -2144,11 +2144,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "쇼케이스",
         title: "설치하기 전에 핵심 워크플로우를 확인하세요.",
         description:
-          "일괄 가져오기, 원클릭 App Store Connect 업로드, 레이어, 배경, 디바이스 프레임 등 대부분의 사용자가 시간을 절약할 수 있는 주요 기능들을 보여줍니다.",
+          "일괄 가져오기, 원클릭 App Store Connect·Google Play 업로드, 레이어, 배경, 디바이스 프레임 등 대부분의 사용자가 시간을 절약할 수 있는 주요 기능들을 보여줍니다.",
       },
       workflow: {
         eyebrow: "워크플로우",
-        title: "원본 스크린샷에서 App Store에 바로 제출할 수 있는 리소스까지의 단축 경로.",
+        title: "원본 스크린샷에서 스토어에 바로 제출할 수 있는 리소스까지의 단축 경로.",
         description:
           "단발성 디자인 파일을 대량으로 관리할 필요 없이, 깔끔하게 다듬어진 스크린샷 세트를 손쉽게 만드는 단 하나의 작업에만 집중합니다.",
       },
@@ -2160,7 +2160,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       blog: {
         eyebrow: "블로그 소식",
-        title: "더 나은 App Store 스크린샷 제작을 위한 가이드.",
+        title: "더 나은 App Store·Google Play 스크린샷 제작을 위한 가이드.",
         description:
           "실제 전환율을 높여주는 App Store 및 Google Play 스크린샷 규격, 현지화, 업로드 및 디자인에 관한 참고용 플레이북입니다.",
       },
@@ -2168,7 +2168,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "자주 묻는 질문",
         title: "사용하기 전에 가장 많이 묻는 질문들.",
         description:
-          "가격, 요구 사항, 개인정보 보호, 그리고 워크플로우가 App Store Connect와 어떻게 연결되는지 정리했습니다.",
+          "가격, 요구 사항, 개인정보 보호, 그리고 워크플로우가 App Store Connect 및 Google Play와 어떻게 연결되는지 정리했습니다.",
       },
       appShowcase: {
         eyebrow: "Screenshot Bro로 완성된 앱",
@@ -2185,17 +2185,17 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "더 매력적인 스크린샷을",
       titleLine2: "배포할 준비가 되셨나요?",
       description:
-        "App Store에서 다운로드하여 Mac, iPad 또는 iPhone에서 설정, 디자인, 자동 번역, 현지화 및 내보내기까지의 모든 워크플로우를 지금 경험해보세요.",
+        "Mac, iPad, iPhone용은 App Store에서 받고, Mac용은 직접 다운로드할 수 있으며, Windows 베타도 사용해 볼 수 있습니다. 디자인, 자동 번역, 현지화, 내보내기, App Store와 Google Play 업로드까지 모든 워크플로우를 지금 경험해보세요.",
     },
     footer: {
       note:
-        "SwiftUI로 개발되었습니다. App Store 업데이트를 릴리스하는 모든 개발자들을 위해 디자인되었습니다.",
+        "SwiftUI로 개발되었습니다. App Store와 Google Play에 앱을 출시하는 모든 개발자들을 위해 디자인되었습니다.",
     },
   },
   uk: {
     siteTitle: `${SITE_NAME} — Скриншоти для App Store та Google Play на Mac`,
     siteDescription:
-      "Створюйте скриншоти App Store та Google Play на Mac, iPad і iPhone. Додавайте рамки, локалізуйте та завантажуйте в App Store Connect.",
+      "Створюйте скриншоти App Store та Google Play на Mac, iPad і iPhone. Додавайте рамки, локалізуйте та завантажуйте в App Store Connect і Google Play.",
     primaryCtaLabel: "Завантажити Screenshot Bro",
     navItems: [
       { label: "Показ", href: "#showcases" },
@@ -2203,9 +2203,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Для Mac, iPad і iPhone в App Store, а також пряме завантаження для Mac",
+      "Для Mac, iPad і iPhone в App Store, пряме завантаження для Mac і бета-версія для Windows",
       "Повний робочий процес: імпорт, дизайн, автопереклад, локалізація та експорт",
-      "Пряме завантаження в App Store Connect без ручного перетягування у браузері",
+      "Пряме завантаження в App Store Connect і Google Play без ручного перетягування у браузері",
     ],
     faqs: [
       {
@@ -2216,12 +2216,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Чим це відрізняється від онлайн-генераторів скриншотів?",
         answer:
-          "Screenshot Bro — це нативний додаток для Mac, iPad та iPhone, а не інструмент у браузері. Ваші проекти, скриншоти та шрифти зберігаються на диску, а щоденне редагування не потребує облікового запису чи інтернету. Рендеринг і пакетний експорт працюють на вашому власному залізі, а не на віддаленому сервері. Якщо ви користуєтеся Windows чи Linux, потребуєте спільної роботи в браузері або вам потрібні лише одне-два зображення, веб-інструмент може підійти краще — наша сторінка альтернатив описує ці випадки.",
+          "Screenshot Bro — це нативний додаток для Mac, iPad та iPhone, а не інструмент у браузері. Ваші проекти, скриншоти та шрифти зберігаються на диску, а щоденне редагування не потребує облікового запису чи інтернету. Рендеринг і пакетний експорт працюють на вашому власному залізі, а не на віддаленому сервері. Якщо ви користуєтеся Linux, потребуєте спільної роботи в браузері або вам потрібні лише одне-два зображення, веб-інструмент може підійти краще — наша сторінка альтернатив описує ці випадки.",
       },
       {
         question: "Що потрібно для запуску?",
         answer:
-          "macOS 15 (Sequoia) або новіша на Mac, iPadOS 18 або новіша на iPad, або iOS 18 або новіша на iPhone. Для щоденної роботи не потрібні додаткові пристрої, облікові записи чи підключення до інтернету.",
+          "macOS 15 (Sequoia) або новіша на Mac, iPadOS 18 або новіша на iPad, або iOS 18 або новіша на iPhone. Бета-версія для Windows працює на Windows 10 і 11 (64-біт). Для щоденної роботи не потрібні додаткові пристрої, облікові записи чи підключення до інтернету.",
       },
       {
         question: "Чи залишають мої дані мій пристрій?",
@@ -2231,12 +2231,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Як працює локалізація?",
         answer:
-          "Обирайте серед 81 попередньо налаштованих мов або додайте власний код локалі. Автопереклад на пристрої заповнює відсутній текст. Переклади зберігаються як перевизначення тексту для кожної мови, тому макет, кольори та зображення залишаються спільними для всіх мов: оформіть один раз і публікуйте будь-якою мовою. Експортовані файли автоматично розподіляються по папках мов, готових для App Store Connect.",
+          "Обирайте серед 81 попередньо налаштованих мов або додайте власний код локалі. Автопереклад на пристрої заповнює відсутній текст. Переклади зберігаються як перевизначення тексту для кожної мови, тому макет, кольори та зображення залишаються спільними для всіх мов: оформіть один раз і публікуйте будь-якою мовою. Експортовані файли автоматично розподіляються по папках мов, готових для App Store Connect і Google Play, а вбудоване завантаження зіставляє кожну мову з мовами самого магазину.",
       },
       {
         question: "Чи можу я створювати скриншоти для Google Play?",
         answer:
-          "Так. Рядки для телефонів і планшетів Android рендеряться поруч із рядками для iPhone, iPad і Mac в одному проекті. Кожна категорія пристроїв попередньо налаштована під точні піксельні розміри, які вимагає відповідний магазин.",
+          "Так. Рядки для телефонів і планшетів Android рендеряться поруч із рядками для iPhone, iPad і Mac в одному проекті. Кожна категорія пристроїв попередньо налаштована під піксельні розміри, які приймає Google Play, а вбудований шаблон покриває рекламне зображення (feature graphic) для Google Play. Коли набір готовий, завантажте його на сторінку додатку в Google Play прямо з Screenshot Bro.",
       },
       {
         question: "Чи можна перетягувати скриншоти з симуляторів і пристроїв напряму?",
@@ -2244,9 +2244,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "Так. Перетягніть папку зі скриншотами, і Screenshot Bro автоматично розподілить кожен знімок у потрібний рядок за його піксельним розміром: скриншоти iPhone — у рядок iPhone, iPad — в iPad, а Android — в Android.",
       },
       {
-        question: "Чи можна завантажувати в App Store Connect напряму з додатку?",
+        question: "Чи можна завантажувати в App Store Connect і Google Play напряму з додатку?",
         answer:
-          "Так. Налаштуйте API-ключ App Store Connect один раз (Issuer ID, Key ID та файл .p8). Screenshot Bro автоматично визначить правильний тип дисплея для кожного рядка, співставить мови проекту з локалізаціями App Store Connect і замінить наявні скриншоти за один прохід — без перетягування файлів у браузері.",
+          "Так. Налаштуйте API-ключ App Store Connect один раз (Issuer ID, Key ID та файл .p8). Screenshot Bro автоматично визначить правильний тип дисплея для кожного рядка, співставить мови проекту з локалізаціями App Store Connect і замінить наявні скриншоти за один прохід. Для Google Play один раз імпортуйте JSON-ключ сервісного акаунта й вкажіть назву пакета: кожна мова проекту зіставляється з мовою сторінки в Play, а завантаження готується як редагування (edit) у Play і застосовується лише після вашого підтвердження. Без перетягування файлів у браузері — для жодного з магазинів.",
       },
       {
         question: "Чи синхронізується це між пристроями?",
@@ -2256,7 +2256,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Чи може ШІ-агент створювати мої скриншоти?",
         answer:
-          "Так. Screenshot Bro містить опціональний локальний MCP-сервер на Mac, тому асистенти на зразок Claude Code, Claude Desktop або Cursor можуть створювати проекти, розміщувати рядки та фігури, імпортувати скриншоти, перекладати текст, рендерити прев'ю, експортувати та завантажувати фінальний набір в App Store Connect. Сервер слухає лише 127.0.0.1, кожен запит потребує токена доступу з Налаштувань, а будь-які зміни агента можна скасувати через ⌘Z.",
+          "Так. Screenshot Bro містить опціональний локальний MCP-сервер на Mac, тому асистенти на зразок Claude Code, Claude Desktop або Cursor можуть створювати проекти, розміщувати рядки та фігури, імпортувати скриншоти, перекладати текст, рендерити прев'ю, експортувати та завантажувати фінальний набір в App Store Connect або Google Play. Сервер слухає лише 127.0.0.1, кожен запит потребує токена доступу з Налаштувань, а будь-які зміни агента можна скасувати через ⌘Z.",
       },
       {
         question: "Де отримати допомогу та підтримку?",
@@ -2290,15 +2290,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "Написати розробнику",
       backToTop: "Вгору",
       availabilityNote:
-        "Додаток для macOS 15+ та iOS/iPadOS 18+ | Swift і SwiftUI | В App Store або пряме завантаження для Mac",
+        "Додаток для macOS 15+ та iOS/iPadOS 18+ | Swift і SwiftUI | В App Store або пряме завантаження для Mac | Бета для Windows",
     },
     hero: {
-      titleLead: "Створюйте та публікуйте",
-      titleAccent: "App Store",
-      titleRest: " скриншоти.",
+      titleLead: "Створюйте скриншоти для",
+      titleAccent: "App Store & Google Play",
+      titleRest: " за лічені хвилини.",
       descriptionLead:
         "Імпортуйте кадри, обрамляйте їх у рамки пристроїв, локалізуйте текст, автоматично перекладайте відсутні фрагменти та",
-      descriptionStrong: "завантажуйте напряму в App Store Connect",
+      descriptionStrong: "завантажуйте напряму в App Store Connect і Google Play",
       descriptionTail: " — усе в одному швидкому нативному додатку для Mac, iPad та iPhone.",
     },
     sections: {
@@ -2306,11 +2306,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "Показ",
         title: "Подивіться, як працює генератор скриншотів перед встановленням.",
         description:
-          "Пакетний імпорт, завантаження в App Store Connect в один клік, шари, фони та рамки пристроїв — те, що заощаджує найбільше часу.",
+          "Пакетний імпорт, завантаження в App Store Connect і Google Play в один клік, шари, фони та рамки пристроїв — те, що заощаджує найбільше часу.",
       },
       workflow: {
         eyebrow: "Процес",
-        title: "Коротший шлях від сирих знімків до готових матеріалів для App Store.",
+        title: "Коротший шлях від сирих знімків до матеріалів, готових для App Store і Google Play.",
         description:
           "Продукт заточений під одне завдання: створювати вишукані скриншоти без підтримки купи одноразових файлів дизайну.",
       },
@@ -2322,7 +2322,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       blog: {
         eyebrow: "З блогу",
-        title: "Посібники зі створення кращих скриншотів для App Store.",
+        title: "Посібники зі створення кращих скриншотів для App Store і Google Play.",
         description:
           "Довідники та інструкції щодо розмірів, локалізації, завантаження та дизайну скриншотів, які дійсно конвертують.",
       },
@@ -2347,17 +2347,17 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "Готові публікувати",
       titleLine2: "кращі скриншоти?",
       description:
-        "Завантажте з App Store та використовуйте повний робочий процес на Mac, iPad або iPhone: налаштування, дизайн, автопереклад, локалізація та експорт для App Store і Google Play.",
+        "Завантажте з App Store для Mac, iPad та iPhone, напряму для Mac або спробуйте бета-версію для Windows. Повний робочий процес уже тут: дизайн, автопереклад, локалізація, експорт і завантаження в App Store та Google Play.",
     },
     footer: {
       note:
-        "Створено на SwiftUI. Створено для розробників, які регулярно випускають оновлення в App Store.",
+        "Створено на SwiftUI. Створено для розробників, які випускають додатки в App Store та Google Play.",
     },
   },
   pl: {
     siteTitle: `${SITE_NAME} — Zrzuty ekranu do App Store i Google Play na Maca`,
     siteDescription:
-      "Projektuj zrzuty App Store i Google Play na Macu, iPadzie i iPhonie. Dodawaj ramki, lokalizuj i przesyłaj obrazy do App Store Connect.",
+      "Projektuj zrzuty App Store i Google Play na Macu, iPadzie i iPhonie. Dodawaj ramki, lokalizuj i przesyłaj obrazy do App Store Connect i Google Play.",
     primaryCtaLabel: "Pobierz Screenshot Bro",
     navItems: [
       { label: "Przykłady", href: "#showcases" },
@@ -2365,9 +2365,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Na Maca, iPada i iPhone'a w App Store oraz do pobrania bezpośrednio na Maca",
+      "Na Maca, iPada i iPhone'a w App Store, do pobrania bezpośrednio na Maca oraz w wersji beta na Windows",
       "Pełny przepływ pracy: import, projektowanie, automatyczne tłumaczenie, lokalizacja i eksport",
-      "Bezpośrednie przesyłanie do App Store Connect bez ręcznego przeciągania plików w przeglądarce",
+      "Bezpośrednie przesyłanie do App Store Connect i Google Play bez ręcznego przeciągania plików w przeglądarce",
     ],
     faqs: [
       {
@@ -2378,12 +2378,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Czym różni się od generatorów zrzutów ekranu w przeglądarce?",
         answer:
-          "Screenshot Bro to natywna aplikacja na Maca, iPada i iPhone'a, a nie narzędzie w przeglądarce. Projekty, zrzuty ekranu i czcionki są zapisywane na Twoim dysku, a codzienna edycja nie wymaga konta ani połączenia z internetem. Renderowanie i masowy eksport działają na Twoim własnym sprzęcie, a nie na serwerze. Jeśli używasz systemu Windows lub Linux, potrzebujesz współpracy zespołowej w czasie rzeczywistym lub tylko jednego czy dwóch obrazów, narzędzie przeglądarkowe może być lepszym wyborem — nasza strona z alternatywami opisuje te przypadki.",
+          "Screenshot Bro to natywna aplikacja na Maca, iPada i iPhone'a, a nie narzędzie w przeglądarce. Projekty, zrzuty ekranu i czcionki są zapisywane na Twoim dysku, a codzienna edycja nie wymaga konta ani połączenia z internetem. Renderowanie i masowy eksport działają na Twoim własnym sprzęcie, a nie na serwerze. Jeśli używasz Linuksa, potrzebujesz współpracy zespołowej w czasie rzeczywistym lub tylko jednego czy dwóch obrazów, narzędzie przeglądarkowe może być lepszym wyborem — nasza strona z alternatywami opisuje te przypadki.",
       },
       {
         question: "Czego potrzebuję, aby go używać?",
         answer:
-          "macOS 15 (Sequoia) lub nowszego na Macu, iPadOS 18 lub nowszego na iPadzie lub iOS 18 lub nowszego na iPhonie. Do codziennej pracy nie są wymagane żadne dodatkowe urządzenia, konta ani połączenie z internetem.",
+          "macOS 15 (Sequoia) lub nowszego na Macu, iPadOS 18 lub nowszego na iPadzie lub iOS 18 lub nowszego na iPhonie. Wersja beta na Windows działa w systemach Windows 10 i 11 (64-bitowych). Do codziennej pracy nie są wymagane żadne dodatkowe urządzenia, konta ani połączenie z internetem.",
       },
       {
         question: "Czy moje dane opuszczają moje urządzenie?",
@@ -2393,12 +2393,12 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Jak działa lokalizacja?",
         answer:
-          "Wybieraj spośród 81 predefiniowanych języków lub dodaj własny kod lokalizacji. Automatyczne tłumaczenie na urządzeniu uzupełnia brakujący tekst. Tłumaczenia są zapisywane jako nadpisania tekstu dla poszczególnych języków, więc układ, kolory i obrazy są współdzielone: projektujesz raz i publikujesz w dowolnym języku. Wyeksportowane pliki są automatycznie organizowane w foldery według języków, gotowe dla App Store Connect.",
+          "Wybieraj spośród 81 predefiniowanych języków lub dodaj własny kod lokalizacji. Automatyczne tłumaczenie na urządzeniu uzupełnia brakujący tekst. Tłumaczenia są zapisywane jako nadpisania tekstu dla poszczególnych języków, więc układ, kolory i obrazy są współdzielone: projektujesz raz i publikujesz w dowolnym języku. Wyeksportowane pliki są automatycznie organizowane w foldery według języków, gotowe dla App Store Connect i Google Play, a wbudowane przesyłanie dopasowuje każdy język do języków danego sklepu.",
       },
       {
         question: "Czy mogę tworzyć zrzuty ekranu również dla Google Play?",
         answer:
-          "Tak. Wiersze dla telefonów i tabletów z Androidem renderują się obok wierszy dla iPhone'a, iPada i Maca w tym samym projekcie. Każda kategoria urządzeń jest wstępnie skonfigurowana pod kątem dokładnych wymiarów w pikselach wymaganych przez dany sklep.",
+          "Tak. Wiersze dla telefonów i tabletów z Androidem renderują się obok wierszy dla iPhone'a, iPada i Maca w tym samym projekcie. Każda kategoria urządzeń jest wstępnie skonfigurowana pod kątem wymiarów w pikselach akceptowanych przez Google Play, a dołączony szablon obejmuje grafikę promocyjną (feature graphic) Google Play. Gdy zestaw jest gotowy, prześlij go prosto na stronę aplikacji w Google Play bez wychodzenia z Screenshot Bro.",
       },
       {
         question: "Czy mogę przeciągać zrzuty ekranu bezpośrednio z symulatorów i urządzeń?",
@@ -2406,9 +2406,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "Tak. Przeciągnij folder ze zrzutami ekranu, a Screenshot Bro automatycznie przypisze każdy plik do właściwego wiersza na podstawie jego wymiarów w pikselach: zrzuty z iPhone'a do wiersza iPhone, z iPada do iPada, a z Androida do Androida.",
       },
       {
-        question: "Czy mogę przesyłać bezpośrednio do App Store Connect z aplikacji?",
+        question: "Czy mogę przesyłać bezpośrednio do App Store Connect i Google Play z aplikacji?",
         answer:
-          "Tak. Skonfiguruj klucz API App Store Connect raz (Issuer ID, Key ID i plik .p8). Screenshot Bro automatycznie wykrywa właściwy typ ekranu dla każdego wiersza, dopasowuje języki projektu do lokalizacji w App Store Connect i podmienia istniejące zrzuty ekranu w jednym przebiegu — bez przeciągania plików w przeglądarce.",
+          "Tak. Skonfiguruj klucz API App Store Connect raz (Issuer ID, Key ID i plik .p8). Screenshot Bro automatycznie wykrywa właściwy typ ekranu dla każdego wiersza, dopasowuje języki projektu do lokalizacji w App Store Connect i podmienia istniejące zrzuty ekranu w jednym przebiegu. W przypadku Google Play zaimportuj raz klucz JSON konta usługi i podaj nazwę pakietu: każdy język projektu jest dopasowywany do języka strony w Google Play, a przesyłanie jest przygotowywane jako edycja Play i zatwierdzane dopiero po Twoim potwierdzeniu. W żadnym ze sklepów nie musisz przeciągać plików w przeglądarce.",
       },
       {
         question: "Czy synchronizuje się między urządzeniami?",
@@ -2418,7 +2418,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Czy agent AI może stworzyć moje zrzuty ekranu?",
         answer:
-          "Tak. Screenshot Bro zawiera opcjonalny lokalny serwer MCP na Macu, dzięki czemu asystenci tacy jak Claude Code, Claude Desktop lub Cursor mogą tworzyć projekty, układać wiersze i kształty, importować zrzuty ekranu, tłumaczyć teksty, renderować podglądy, eksportować i przesyłać gotowy zestaw do App Store Connect. Serwer nasłuchuje tylko na 127.0.0.1, każde żądanie wymaga tokenu dostępu z Ustawień, a wszelkie zmiany wykonane przez agenta można cofnąć za pomocą ⌘Z.",
+          "Tak. Screenshot Bro zawiera opcjonalny lokalny serwer MCP na Macu, dzięki czemu asystenci tacy jak Claude Code, Claude Desktop lub Cursor mogą tworzyć projekty, układać wiersze i kształty, importować zrzuty ekranu, tłumaczyć teksty, renderować podglądy, eksportować i przesyłać gotowy zestaw do App Store Connect lub Google Play. Serwer nasłuchuje tylko na 127.0.0.1, każde żądanie wymaga tokenu dostępu z Ustawień, a wszelkie zmiany wykonane przez agenta można cofnąć za pomocą ⌘Z.",
       },
       {
         question: "Gdzie mogę uzyskać pomoc i wsparcie?",
@@ -2452,15 +2452,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       contactDeveloper: "Napisz do twórcy",
       backToTop: "W górę",
       availabilityNote:
-        "Aplikacja na macOS 15+ i iOS/iPadOS 18+ | Swift i SwiftUI | W App Store lub do pobrania bezpośrednio na Maca",
+        "Aplikacja na macOS 15+ i iOS/iPadOS 18+ | Swift i SwiftUI | W App Store lub do pobrania bezpośrednio na Maca | Wersja beta na Windows",
     },
     hero: {
-      titleLead: "Twórz i publikuj",
-      titleAccent: "App Store",
-      titleRest: " zrzuty ekranu.",
+      titleLead: "Twórz zrzuty ekranu do",
+      titleAccent: "App Store & Google Play",
+      titleRest: " w kilka minut.",
       descriptionLead:
         "Importuj zrzuty, oprawiaj je w ramki urządzeń, lokalizuj tekst, automatycznie tłumacz brakujące fragmenty i",
-      descriptionStrong: "przesyłaj bezpośrednio do App Store Connect",
+      descriptionStrong: "przesyłaj bezpośrednio do App Store Connect i Google Play",
       descriptionTail: " — wszystko w jednej szybkiej, natywnej aplikacji na Maca, iPada i iPhone'a.",
     },
     sections: {
@@ -2468,11 +2468,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
         eyebrow: "Prezentacja",
         title: "Zobacz, jak działa generator zrzutów ekranu, zanim zainstalujesz.",
         description:
-          "Masowy import, przesyłanie do App Store Connect jednym kliknięciem, warstwy, tła i ramki urządzeń — to, co pozwala zaoszczędzić najwięcej czasu.",
+          "Masowy import, przesyłanie do App Store Connect i Google Play jednym kliknięciem, warstwy, tła i ramki urządzeń — to, co pozwala zaoszczędzić najwięcej czasu.",
       },
       workflow: {
         eyebrow: "Przepływ pracy",
-        title: "Krótsza droga od surowych zrzutów do gotowych materiałów dla App Store.",
+        title: "Krótsza droga od surowych zrzutów do materiałów gotowych dla App Store i Google Play.",
         description:
           "Produkt jest stworzony do jednego zadania: tworzenia dopracowanych zrzutów bez konieczności utrzymywania wielu jednorazowych plików graficznych.",
       },
@@ -2484,7 +2484,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       blog: {
         eyebrow: "Z bloga",
-        title: "Poradniki dotyczące tworzenia lepszych zrzutów ekranu dla App Store.",
+        title: "Poradniki dotyczące tworzenia lepszych zrzutów ekranu dla App Store i Google Play.",
         description:
           "Przewodniki i wskazówki dotyczące wymiarów, lokalizacji, przesyłania i projektowania zrzutów, które naprawdę konwertują.",
       },
@@ -2509,17 +2509,17 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       titleLine1: "Gotowy na publikację",
       titleLine2: "lepszych zrzutów ekranu?",
       description:
-        "Pobierz z App Store i korzystaj z pełnego przepływu pracy na Macu, iPadzie lub iPhonie: konfiguracja, projektowanie, automatyczne tłumaczenie, lokalizacja i eksport dla App Store i Google Play.",
+        "Pobierz z App Store na Maca, iPada i iPhone'a, pobierz bezpośrednio na Maca lub wypróbuj wersję beta na Windows. Masz cały przepływ pracy: projektowanie, automatyczne tłumaczenie, lokalizację, eksport i przesyłanie do App Store i Google Play.",
     },
     footer: {
       note:
-        "Stworzone w SwiftUI. Zaprojektowane dla twórców aplikacji regularnie publikujących aktualizacje w App Store.",
+        "Stworzone w SwiftUI. Zaprojektowane dla twórców aplikacji publikujących w App Store i Google Play.",
     },
   },
   tr: {
     siteTitle: `${SITE_NAME} — Mac'te App Store ve Google Play Ekran Görüntüleri`,
     siteDescription:
-      "App Store ve Google Play ekran görüntülerini Mac, iPad ve iPhone'da tasarlayın. Cihaz çerçeveleri, yerelleştirme ve App Store Connect'e yükleme.",
+      "App Store ve Google Play ekran görüntülerini Mac, iPad ve iPhone'da tasarlayın. Cihaz çerçeveleri, yerelleştirme ve App Store Connect ile Google Play'e yükleme.",
     primaryCtaLabel: "Screenshot Bro'yu İndir",
     navItems: [
       { label: "Örnekler", href: "#showcases" },
@@ -2527,9 +2527,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "SSS", href: "#faq" },
     ],
     benefits: [
-      "Mac, iPad ve iPhone için App Store'da, ayrıca Mac için doğrudan indirme",
+      "Mac, iPad ve iPhone için App Store'da, Mac için doğrudan indirme ve Windows beta sürümü",
       "Tam iş akışı: içe aktarma, tasarım, otomatik çeviri, yerelleştirme ve dışa aktarma",
-      "Tarayıcıda sürükleyip bırakmadan doğrudan App Store Connect'e yükleme",
+      "Tarayıcıda sürükleyip bırakmadan doğrudan App Store Connect ve Google Play'e yükleme",
     ],
     faqs: [
       {
@@ -2545,7 +2545,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Çalıştırmak için neye ihtiyacım var?",
         answer:
-          "Mac'te macOS 15 (Sequoia) veya üstü, iPad'de iPadOS 18 veya üstü ya da iPhone'da iOS 18 veya üstü. Günlük düzenleme için ek bir cihaza, hesaba veya internet bağlantısına gerek yoktur.",
+          "Mac'te macOS 15 (Sequoia) veya üstü, iPad'de iPadOS 18 veya üstü ya da iPhone'da iOS 18 veya üstü. Windows beta sürümü Windows 10 ve 11 (64 bit) üzerinde çalışır. Günlük düzenleme için ek bir cihaza, hesaba veya internet bağlantısına gerek yoktur.",
       },
       {
         question: "Verilerim cihazımdan dışarı çıkıyor mu?",
@@ -2560,7 +2560,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Google Play için de ekran görüntüsü oluşturabilir miyim?",
         answer:
-          "Evet. Android telefon ve tablet satırları, aynı projede iPhone, iPad ve Mac satırlarıyla yan yana işlenir. Her cihaz kategorisi, mağazanın gerektirdiği tam piksel boyutlarıyla önceden yapılandırılmıştır.",
+          "Evet. Android telefon ve tablet satırları, aynı projede iPhone, iPad ve Mac satırlarıyla yan yana işlenir. Her cihaz kategorisi, mağazanın gerektirdiği tam piksel boyutlarıyla önceden yapılandırılmıştır. Google Play öne çıkan grafiği için hazır bir şablon da var; set hazır olduğunda onu uygulamadan çıkmadan doğrudan Play mağaza sayfanıza yükleyin.",
       },
       {
         question: "Simülatörlerden ve cihazlardan ekran görüntülerini doğrudan sürükleyebilir miyim?",
@@ -2568,9 +2568,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "Evet. Ekran görüntüleri klasörünü sürükleyin; Screenshot Bro her görüntüyü piksel boyutuna göre doğru satıra otomatik olarak yerleştirir.",
       },
       {
-        question: "Uygulamadan doğrudan App Store Connect'e yükleyebilir miyim?",
+        question: "Uygulamadan doğrudan App Store Connect ve Google Play'e yükleyebilir miyim?",
         answer:
-          "Evet. App Store Connect API anahtarınızı bir kez yapılandırın. Screenshot Bro her satır için doğru ekran türünü algılar ve mevcut ekran görüntülerini tek geçişte günceller.",
+          "Evet. App Store Connect API anahtarınızı bir kez yapılandırın. Screenshot Bro her satır için doğru ekran türünü algılar ve mevcut ekran görüntülerini tek geçişte günceller. Google Play için bir hizmet hesabı JSON anahtarını bir kez içe aktarıp paket adınızı girin: her proje dili Play mağaza sayfasındaki dile eşlenir ve yükleme, yalnızca siz onayladığınızda kaydedilen bir Play düzenlemesi olarak hazırlanır. İki mağaza için de tarayıcıda sürükle-bırak yok.",
       },
       {
         question: "Cihazlar arasında eşitleniyor mu?",
@@ -2580,7 +2580,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Bir yapay zeka ajanı ekran görüntülerimi oluşturabilir mi?",
         answer:
-          "Evet. Screenshot Bro, Mac'te isteğe bağlı bir yerel MCP sunucusu içerir; böylece Claude veya Cursor gibi asistanlar projeler oluşturabilir, metinleri çevirebilir ve App Store Connect'e yükleyebilir.",
+          "Evet. Screenshot Bro, Mac'te isteğe bağlı bir yerel MCP sunucusu içerir; böylece Claude veya Cursor gibi asistanlar projeler oluşturabilir, metinleri çevirebilir ve hazır seti App Store Connect'e veya Google Play'e yükleyebilir.",
       },
       {
         question: "Nereden yardım ve destek alabilirim?",
@@ -2613,21 +2613,21 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Uygulamanızı gönderin",
       contactDeveloper: "Geliştiriciye ulaşın",
       backToTop: "Yukarı çık",
-      availabilityNote: "macOS 15+ ve iOS/iPadOS 18+ uygulaması | Swift ve SwiftUI | App Store'da veya Mac için doğrudan indirme",
+      availabilityNote: "macOS 15+ ve iOS/iPadOS 18+ uygulaması | Swift ve SwiftUI | App Store'da veya Mac için doğrudan indirme | Windows beta",
     },
     hero: {
       titleLead: "Dakikalar İçinde",
-      titleAccent: "App Store",
+      titleAccent: "App Store & Google Play",
       titleRest: " Ekran Görüntüleri Oluşturun",
       descriptionLead: "Bir kez tasarlayın. 81 dile yerelleştirin, her cihaz boyutunu oluşturun ve",
-      descriptionStrong: "doğrudan App Store Connect'e yükleyin",
+      descriptionStrong: "doğrudan App Store Connect ve Google Play'e yükleyin",
       descriptionTail: " — hepsi tek bir yerel Mac, iPad ve iPhone uygulamasında.",
     },
     sections: {
-      showcases: { eyebrow: "Vitrin", title: "Yüklemeden önce ekran görüntüsü oluşturucunun nasıl çalıştığını görün.", description: "Toplu içe aktarma, tek tıkla App Store Connect yüklemesi, katmanlar ve cihaz çerçeveleri." },
-      workflow: { eyebrow: "İş Akışı", title: "Ham görüntülerden App Store'a hazır varlıklara giden en kısa yol.", description: "Tek kullanımlık tasarım dosyaları yığını tutmadan kusursuz ekran görüntüleri oluşturun." },
-      features: { eyebrow: "Yetenekler", title: "Bir App Store ekran görüntüsü aracının yapması gereken her şey.", description: "Düzen hızı, tutarlılık ve zahmetsiz dışa aktarma odaklı." },
-      blog: { eyebrow: "Blogdan", title: "Daha iyi App Store ekran görüntüleri için rehberler.", description: "Dönüşüm sağlayan ekran görüntüleri tasarlamak için başvuru kaynakları." },
+      showcases: { eyebrow: "Vitrin", title: "Yüklemeden önce ekran görüntüsü oluşturucunun nasıl çalıştığını görün.", description: "Toplu içe aktarma, tek tıkla App Store Connect ve Google Play yüklemesi, katmanlar ve cihaz çerçeveleri." },
+      workflow: { eyebrow: "İş Akışı", title: "Ham görüntülerden mağazaya hazır varlıklara giden en kısa yol.", description: "Tek kullanımlık tasarım dosyaları yığını tutmadan kusursuz ekran görüntüleri oluşturun." },
+      features: { eyebrow: "Yetenekler", title: "Bir App Store ve Google Play ekran görüntüsü aracının yapması gereken her şey.", description: "Düzen hızı, tutarlılık ve zahmetsiz dışa aktarma odaklı." },
+      blog: { eyebrow: "Blogdan", title: "Daha iyi App Store ve Google Play ekran görüntüleri için rehberler.", description: "Dönüşüm sağlayan ekran görüntüleri tasarlamak için başvuru kaynakları." },
       faq: { eyebrow: "SSS", title: "Denemeden önce en çok sorulan sorular.", description: "Uyumluluk ve temel iş akışı hakkındaki yanıtlar." },
       appShowcase: { eyebrow: "Screenshot Bro ile Yayınlandı", title: "Harika bir topluluktassınız.", description: "Ekran görüntüleri için Screenshot Bro'yu kullanan bağımsız uygulamalar." },
     },
@@ -2637,16 +2637,16 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     download: {
       titleLine1: "Daha iyi ekran görüntüleri",
       titleLine2: "yayınlamaya hazır mısınız?",
-      description: "App Store'dan indirin ve Mac, iPad veya iPhone'da tam iş akışını kullanın: kurulum, tasarım, yerelleştirme ve dışa aktarma.",
+      description: "Mac, iPad ve iPhone için App Store'dan edinin, Mac için doğrudan indirin ya da Windows beta sürümünü deneyin. Tam iş akışı hazır: tasarım, otomatik çeviri, yerelleştirme, dışa aktarma ve App Store ile Google Play'e yükleme.",
     },
     footer: {
-      note: "SwiftUI ile geliştirildi. App Store güncellemeleri yayınlayan geliştiriciler için tasarlandı.",
+      note: "SwiftUI ile geliştirildi. App Store ve Google Play'de uygulama yayınlayan geliştiriciler için tasarlandı.",
     },
   },
   nl: {
     siteTitle: `${SITE_NAME} — App Store & Google Play screenshots op Mac`,
     siteDescription:
-      "Ontwerp screenshots voor App Store en Google Play op Mac, iPad en iPhone. Apparaatframes, lokalisatie en upload naar App Store Connect.",
+      "Ontwerp screenshots voor App Store en Google Play op Mac, iPad en iPhone. Apparaatframes, lokalisatie en upload naar App Store Connect en Google Play.",
     primaryCtaLabel: "Download Screenshot Bro",
     navItems: [
       { label: "Voorbeelden", href: "#showcases" },
@@ -2654,9 +2654,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Voor Mac, iPad en iPhone in de App Store, plus een directe download voor Mac",
+      "Voor Mac, iPad en iPhone in de App Store, een directe download voor Mac en een Windows-bèta",
       "Volledige workflow: importeren, ontwerpen, automatisch vertalen, lokaliseren en exporteren",
-      "Direct uploaden naar App Store Connect zonder bestanden in de browser te slepen",
+      "Direct uploaden naar App Store Connect en Google Play zonder bestanden in de browser te slepen",
     ],
     faqs: [
       {
@@ -2672,7 +2672,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Wat heb ik nodig om het te gebruiken?",
         answer:
-          "macOS 15 (Sequoia) of nieuwer op Mac, iPadOS 18 of nieuwer op iPad, of iOS 18 of nieuwer op iPhone. Geen account of internet vereist voor dagelijks gebruik.",
+          "macOS 15 (Sequoia) of nieuwer op Mac, iPadOS 18 of nieuwer op iPad, of iOS 18 of nieuwer op iPhone. De Windows-bèta draait op Windows 10 en 11 (64-bit). Geen account of internet vereist voor dagelijks gebruik.",
       },
       {
         question: "Verlaten mijn gegevens mijn apparaat?",
@@ -2687,7 +2687,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Kan ik ook screenshots maken voor Google Play?",
         answer:
-          "Ja. Android-rijen worden naast iPhone-, iPad- en Mac-rijen in hetzelfde project weergegeven, met de exacte afmetingen van de winkel.",
+          "Ja. Android-rijen worden naast iPhone-, iPad- en Mac-rijen in hetzelfde project weergegeven, met de exacte afmetingen die Google Play accepteert. Een meegeleverd sjabloon dekt de Google Play-feature graphic, en zodra de set klaar is, uploadt u die vanuit de app direct naar uw Play-vermelding.",
       },
       {
         question: "Kan ik screenshots rechtstreeks vanaf simulatoren slepen?",
@@ -2695,9 +2695,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "Ja. Sleep een map met screenshots en Screenshot Bro wijst elk bestand automatisch toe aan de juiste rij op basis van de afmetingen.",
       },
       {
-        question: "Kan ik direct uploaden naar App Store Connect?",
+        question: "Kan ik direct uploaden naar App Store Connect en Google Play?",
         answer:
-          "Ja. Stel uw API-sleutel eenmalig in en Screenshot Bro uploadt screenshots direct naar de juiste display types en talen.",
+          "Ja. Stel uw App Store Connect API-sleutel eenmalig in en Screenshot Bro uploadt screenshots direct naar de juiste display types en talen. Voor Google Play importeert u eenmalig een JSON-sleutel van een serviceaccount en vult u uw pakketnaam in: elke projecttaal wordt gekoppeld aan de taal van uw Play-vermelding, en de upload wordt klaargezet als Play-bewerking die pas wordt doorgevoerd als u bevestigt. Voor geen van beide stores hoeft u iets in de browser te slepen.",
       },
       {
         question: "Synchroniseert het tussen apparaten?",
@@ -2740,21 +2740,21 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "App aanmelden",
       contactDeveloper: "Contacteer ontwikkelaar",
       backToTop: "Naar boven",
-      availabilityNote: "macOS 15+ en iOS/iPadOS 18+ app | Swift & SwiftUI | In de App Store of als directe download voor Mac",
+      availabilityNote: "macOS 15+ en iOS/iPadOS 18+ app | Swift & SwiftUI | In de App Store of als directe download voor Mac | Windows-bèta",
     },
     hero: {
-      titleLead: "Maak & lokaliseer",
-      titleAccent: "App Store",
+      titleLead: "Maak en lokaliseer",
+      titleAccent: "App Store & Google Play",
       titleRest: " screenshots in minuten",
       descriptionLead: "Ontwerp één keer. Lokaliseer naar 81 talen, genereer elk apparaatformaat en",
-      descriptionStrong: "upload direct naar App Store Connect",
+      descriptionStrong: "upload direct naar App Store Connect en Google Play",
       descriptionTail: " zonder screenshots handmatig opnieuw te maken. Alles in één native app.",
     },
     sections: {
-      showcases: { eyebrow: "Voorbeelden", title: "Zie hoe de screenshotgenerator werkt voordat u installeert.", description: "Batch-import, one-click upload naar App Store Connect, lagen en apparaatframes." },
-      workflow: { eyebrow: "Werkwijze", title: "Een kortere weg van ruwe beelden naar App Store-klare bestanden.", description: "Gericht op één taak: verzorgde screenshots maken zonder ontwerpmallen te onderhouden." },
-      features: { eyebrow: "Mogelijkheden", title: "Alles wat een App Store screenshottool moet doen.", description: "Volledige focus op snelheid, lay-out en soepele export." },
-      blog: { eyebrow: "Van de Blog", title: "Gidsen voor betere App Store-screenshots.", description: "Tips en handleidingen voor effectieve screenshots." },
+      showcases: { eyebrow: "Voorbeelden", title: "Zie hoe de screenshotgenerator werkt voordat u installeert.", description: "Batch-import, one-click upload naar App Store Connect en Google Play, lagen en apparaatframes." },
+      workflow: { eyebrow: "Werkwijze", title: "Een kortere weg van ruwe beelden naar store-klare bestanden.", description: "Gericht op één taak: verzorgde screenshots maken zonder ontwerpmallen te onderhouden." },
+      features: { eyebrow: "Mogelijkheden", title: "Alles wat een screenshottool voor App Store en Google Play moet doen.", description: "Volledige focus op snelheid, lay-out en soepele export." },
+      blog: { eyebrow: "Van de Blog", title: "Gidsen voor betere App Store- en Google Play-screenshots.", description: "Tips en handleidingen voor effectieve screenshots." },
       faq: { eyebrow: "FAQ", title: "Veelgestelde vragen voor het proberen.", description: "Antwoorden op de belangrijkste vragen." },
       appShowcase: { eyebrow: "Gemaakt met Screenshot Bro", title: "In goed gezelschap.", description: "Indie-apps die Screenshot Bro al gebruiken." },
     },
@@ -2764,16 +2764,16 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     download: {
       titleLine1: "Klaar om betere",
       titleLine2: "screenshots te publiceren?",
-      description: "Download in de App Store en gebruik de complete workflow op Mac, iPad of iPhone.",
+      description: "Haal hem uit de App Store voor Mac, iPad en iPhone, download hem direct voor Mac of probeer de Windows-bèta. De complete workflow zit erin: ontwerpen, automatisch vertalen, lokaliseren, exporteren en uploaden naar de App Store en Google Play.",
     },
     footer: {
-      note: "Gebouwd met SwiftUI. Ontworpen voor app-ontwikkelaars.",
+      note: "Gebouwd met SwiftUI. Ontworpen voor ontwikkelaars die publiceren in de App Store en op Google Play.",
     },
   },
   id: {
     siteTitle: `${SITE_NAME} — Tangkapan Layar App Store & Google Play di Mac`,
     siteDescription:
-      "Desain tangkapan layar App Store dan Google Play di Mac, iPad, dan iPhone. Tambahkan bingkai, lokalisasi, dan unggah ke App Store Connect.",
+      "Desain tangkapan layar App Store dan Google Play di Mac, iPad, dan iPhone. Tambahkan bingkai, lokalisasi, dan unggah ke App Store Connect dan Google Play.",
     primaryCtaLabel: "Unduh Screenshot Bro",
     navItems: [
       { label: "Contoh", href: "#showcases" },
@@ -2781,9 +2781,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Untuk Mac, iPad, dan iPhone di App Store, plus unduhan langsung untuk Mac",
+      "Untuk Mac, iPad, dan iPhone di App Store, unduhan langsung untuk Mac, dan versi beta Windows",
       "Alur kerja lengkap: impor, desain, terjemahan otomatis, lokalisasi, dan ekspor",
-      "Unggah langsung ke App Store Connect tanpa menyeret file di browser",
+      "Unggah langsung ke App Store Connect dan Google Play tanpa menyeret file di browser",
     ],
     faqs: [
       {
@@ -2799,7 +2799,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Apa yang saya perlukan untuk menggunakannya?",
         answer:
-          "macOS 15 (Sequoia) atau lebih baru di Mac, iPadOS 18 atau lebih baru di iPad, atau iOS 18 atau lebih baru di iPhone. Tidak memerlukan akun atau internet untuk pengeditan harian.",
+          "macOS 15 (Sequoia) atau lebih baru di Mac, iPadOS 18 atau lebih baru di iPad, atau iOS 18 atau lebih baru di iPhone. Versi beta Windows berjalan di Windows 10 dan 11 (64-bit). Tidak memerlukan akun atau internet untuk pengeditan harian.",
       },
       {
         question: "Apakah data saya keluar dari perangkat?",
@@ -2814,7 +2814,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Bisakah saya membuat tangkapan layar untuk Google Play juga?",
         answer:
-          "Ya. Baris ponsel dan tablet Android dirender bersama baris iPhone, iPad, dan Mac dalam proyek yang sama.",
+          "Ya. Baris ponsel dan tablet Android dirender bersama baris iPhone, iPad, dan Mac dalam proyek yang sama. Template bawaan juga mencakup feature graphic Google Play, dan setelah set siap, unggah langsung ke listing Play Anda dari dalam aplikasi.",
       },
       {
         question: "Bisakah saya menyeret tangkapan layar dari simulator langsung?",
@@ -2822,9 +2822,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "Ya. Seret folder tangkapan layar dan Screenshot Bro akan mengarahkannya ke baris yang benar berdasarkan ukuran piksel.",
       },
       {
-        question: "Bisakah saya mengunggah langsung ke App Store Connect?",
+        question: "Bisakah saya mengunggah langsung ke App Store Connect dan Google Play?",
         answer:
-          "Ya. Konfigurasikan kunci API sekali, dan aplikasi akan mengunggah tangkapan layar ke jenis layar dan bahasa yang tepat.",
+          "Ya. Konfigurasikan kunci API App Store Connect sekali, dan aplikasi akan mengunggah tangkapan layar ke jenis layar dan bahasa yang tepat. Untuk Google Play, impor kunci JSON akun layanan sekali dan masukkan nama paket Anda: setiap bahasa proyek dipetakan ke bahasa listing Play, dan unggahan disiapkan sebagai edit Play yang baru diterapkan setelah Anda mengonfirmasi. Tanpa tarik-lepas di browser untuk kedua toko.",
       },
       {
         question: "Apakah tersinkronisasi antar perangkat?",
@@ -2867,21 +2867,21 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Kirim aplikasi",
       contactDeveloper: "Hubungi pengembang",
       backToTop: "Kembali ke atas",
-      availabilityNote: "Aplikasi macOS 15+ dan iOS/iPadOS 18+ | Swift & SwiftUI | Di App Store atau unduh langsung untuk Mac",
+      availabilityNote: "Aplikasi macOS 15+ dan iOS/iPadOS 18+ | Swift & SwiftUI | Di App Store atau unduh langsung untuk Mac | Beta Windows",
     },
     hero: {
-      titleLead: "Buat & Lokalisasikan",
-      titleAccent: "App Store",
-      titleRest: " Tangkapan Layar dalam Hitungan Menit",
+      titleLead: "Buat & Lokalisasikan Tangkapan Layar",
+      titleAccent: "App Store & Google Play",
+      titleRest: " dalam Hitungan Menit",
       descriptionLead: "Desain sekali. Lokalisasikan ke 81 bahasa, hasilkan setiap ukuran perangkat, dan",
-      descriptionStrong: "unggah langsung ke App Store Connect",
+      descriptionStrong: "unggah langsung ke App Store Connect dan Google Play",
       descriptionTail: " tanpa mendesain ulang secara manual. Semua dalam satu aplikasi native.",
     },
     sections: {
-      showcases: { eyebrow: "Pameran", title: "Lihat cara kerja pembuat tangkapan layar sebelum Anda memasangnya.", description: "Impor massal, unggah satu klik ke App Store Connect, lapisan, dan bingkai perangkat." },
-      workflow: { eyebrow: "Alur Kerja", title: "Jalur lebih cepat dari tangkapan mentah ke aset siap App Store.", description: "Dibuat untuk satu tujuan: tangkapan layar rapi tanpa tumpukan file desain." },
-      features: { eyebrow: "Kemampuan", title: "Semua yang dibutuhkan alat tangkapan layar App Store.", description: "Fokus pada kecepatan tata letak, konsistensi, dan kemudahan ekspor." },
-      blog: { eyebrow: "Dari Blog", title: "Panduan untuk membuat tangkapan layar App Store yang lebih baik.", description: "Referensi dan panduan untuk merancang tangkapan layar yang meningkatkan konversi." },
+      showcases: { eyebrow: "Pameran", title: "Lihat cara kerja pembuat tangkapan layar sebelum Anda memasangnya.", description: "Impor massal, unggah satu klik ke App Store Connect dan Google Play, lapisan, dan bingkai perangkat." },
+      workflow: { eyebrow: "Alur Kerja", title: "Jalur lebih cepat dari tangkapan mentah ke aset yang siap untuk toko aplikasi.", description: "Dibuat untuk satu tujuan: tangkapan layar rapi tanpa tumpukan file desain." },
+      features: { eyebrow: "Kemampuan", title: "Semua yang dibutuhkan alat tangkapan layar App Store dan Google Play.", description: "Fokus pada kecepatan tata letak, konsistensi, dan kemudahan ekspor." },
+      blog: { eyebrow: "Dari Blog", title: "Panduan untuk membuat tangkapan layar App Store dan Google Play yang lebih baik.", description: "Referensi dan panduan untuk merancang tangkapan layar yang meningkatkan konversi." },
       faq: { eyebrow: "FAQ", title: "Pertanyaan yang paling sering diajukan.", description: "Jawaban atas pertanyaan kompatibilitas dan ekspor." },
       appShowcase: { eyebrow: "Dibuat dengan Screenshot Bro", title: "Bersama aplikasi hebat lainnya.", description: "Aplikasi indie yang sudah menggunakan Screenshot Bro." },
     },
@@ -2891,16 +2891,16 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     download: {
       titleLine1: "Siap merilis tangkapan layar",
       titleLine2: "yang lebih baik?",
-      description: "Unduh dari App Store dan gunakan alur kerja lengkap di Mac, iPad, atau iPhone.",
+      description: "Dapatkan di App Store untuk Mac, iPad, dan iPhone, unduh langsung untuk Mac, atau coba versi beta Windows. Alur kerja lengkap tersedia: desain, terjemahan otomatis, lokalisasi, ekspor, dan unggah ke App Store serta Google Play.",
     },
     footer: {
-      note: "Dibuat dengan SwiftUI. Dirancang untuk pengembang aplikasi App Store.",
+      note: "Dibuat dengan SwiftUI. Dirancang untuk pengembang yang merilis aplikasi di App Store dan Google Play.",
     },
   },
   vi: {
     siteTitle: `${SITE_NAME} — Ảnh chụp màn hình App Store & Google Play trên Mac`,
     siteDescription:
-      "Thiết kế ảnh chụp màn hình App Store và Google Play trên Mac, iPad và iPhone. Khung thiết bị, bản địa hóa và tải lên App Store Connect.",
+      "Thiết kế ảnh chụp màn hình App Store và Google Play trên Mac, iPad và iPhone. Khung thiết bị, bản địa hóa và tải lên App Store Connect và Google Play.",
     primaryCtaLabel: "Tải Screenshot Bro",
     navItems: [
       { label: "Trình diễn", href: "#showcases" },
@@ -2908,9 +2908,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Cho Mac, iPad và iPhone trên App Store, kèm bản tải trực tiếp cho Mac",
+      "Cho Mac, iPad và iPhone trên App Store, bản tải trực tiếp cho Mac và bản beta cho Windows",
       "Quy trình hoàn chỉnh: nhập, thiết kế, tự động dịch, bản địa hóa và xuất file",
-      "Tải trực tiếp lên App Store Connect không cần kéo thả trong trình duyệt",
+      "Tải trực tiếp lên App Store Connect và Google Play không cần kéo thả trong trình duyệt",
     ],
     faqs: [
       {
@@ -2926,7 +2926,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Tôi cần gì để sử dụng ứng dụng?",
         answer:
-          "macOS 15 (Sequoia) trở lên trên Mac, iPadOS 18 trở lên trên iPad hoặc iOS 18 trở lên trên iPhone. Không cần tài khoản hay kết nối mạng khi chỉnh sửa hàng ngày.",
+          "macOS 15 (Sequoia) trở lên trên Mac, iPadOS 18 trở lên trên iPad hoặc iOS 18 trở lên trên iPhone. Bản beta cho Windows chạy trên Windows 10 và 11 (64-bit). Không cần tài khoản hay kết nối mạng khi chỉnh sửa hàng ngày.",
       },
       {
         question: "Dữ liệu của tôi có rời khỏi thiết bị không?",
@@ -2941,7 +2941,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Tôi có thể tạo ảnh chụp cho Google Play không?",
         answer:
-          "Có. Các hàng cho điện thoại và máy tính bảng Android được kết xuất song song với iPhone, iPad và Mac trong cùng một dự án.",
+          "Có. Các hàng cho điện thoại và máy tính bảng Android được kết xuất song song với iPhone, iPad và Mac trong cùng một dự án. Có sẵn mẫu cho ảnh đồ họa nổi bật (feature graphic) của Google Play, và khi bộ ảnh đã xong, bạn có thể tải thẳng lên trang Play của ứng dụng ngay trong app.",
       },
       {
         question: "Có thể kéo ảnh trực tiếp từ trình giả lập vào không?",
@@ -2949,9 +2949,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "Có. Kéo thư mục ảnh vào và Screenshot Bro sẽ tự động phân loại từng ảnh vào đúng hàng theo kích thước pixel.",
       },
       {
-        question: "Tôi có thể tải trực tiếp lên App Store Connect không?",
+        question: "Tôi có thể tải trực tiếp lên App Store Connect và Google Play không?",
         answer:
-          "Có. Thiết lập khóa API một lần và ứng dụng sẽ tự động tải ảnh lên đúng loại màn hình và ngôn ngữ chỉ trong một lượt.",
+          "Có. Thiết lập khóa API App Store Connect một lần và ứng dụng sẽ tự động tải ảnh lên đúng loại màn hình và ngôn ngữ chỉ trong một lượt. Với Google Play, nhập khóa JSON của tài khoản dịch vụ một lần và điền tên gói: mỗi ngôn ngữ của dự án được ghép với ngôn ngữ tương ứng trên trang Play, và lượt tải lên được chuẩn bị dưới dạng một bản chỉnh sửa (edit) trên Play, chỉ được áp dụng khi bạn xác nhận. Không cần kéo thả trên trình duyệt cho cả hai cửa hàng.",
       },
       {
         question: "Ứng dụng có đồng bộ giữa các thiết bị không?",
@@ -2994,21 +2994,21 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Gửi ứng dụng",
       contactDeveloper: "Liên hệ nhà phát triển",
       backToTop: "Lên đầu trang",
-      availabilityNote: "Ứng dụng macOS 15+ và iOS/iPadOS 18+ | Swift & SwiftUI | Trên App Store hoặc tải trực tiếp cho Mac",
+      availabilityNote: "Ứng dụng macOS 15+ và iOS/iPadOS 18+ | Swift & SwiftUI | Trên App Store hoặc tải trực tiếp cho Mac | Bản beta cho Windows",
     },
     hero: {
-      titleLead: "Tạo & Bản địa hóa",
-      titleAccent: "App Store",
-      titleRest: " Ảnh chụp màn hình trong tích tắc",
+      titleLead: "Tạo & Bản địa hóa ảnh chụp màn hình",
+      titleAccent: "App Store & Google Play",
+      titleRest: " trong tích tắc",
       descriptionLead: "Thiết kế một lần. Bản địa hóa sang 81 ngôn ngữ, tạo mọi kích thước thiết bị và",
-      descriptionStrong: "tải trực tiếp lên App Store Connect",
+      descriptionStrong: "tải trực tiếp lên App Store Connect và Google Play",
       descriptionTail: " mà không cần làm lại từng ảnh thủ công. Tất cả trong một ứng dụng native.",
     },
     sections: {
-      showcases: { eyebrow: "Trình diễn", title: "Xem cách công cụ hoạt động trước khi cài đặt.", description: "Nhập hàng loạt, tải lên App Store Connect một cú nhấp, các lớp và khung thiết bị." },
-      workflow: { eyebrow: "Quy trình", title: "Con đường ngắn nhất từ ảnh thô đến tài nguyên hoàn thiện cho App Store.", description: "Tập trung vào một mục tiêu duy nhất: tạo ảnh chụp màn hình trau chuốt mà không cần quản lý nhiều file thiết kế." },
-      features: { eyebrow: "Khả năng", title: "Tất cả những gì bạn cần cho ảnh chụp màn hình App Store.", description: "Tập trung vào tốc độ bố cục, tính nhất quán và xuất file mượt mà." },
-      blog: { eyebrow: "Từ Blog", title: "Hướng dẫn tạo ảnh chụp màn hình App Store hiệu quả.", description: "Kinh nghiệm và tài liệu tham khảo để tăng tỷ lệ chuyển đổi." },
+      showcases: { eyebrow: "Trình diễn", title: "Xem cách công cụ hoạt động trước khi cài đặt.", description: "Nhập hàng loạt, tải lên App Store Connect và Google Play chỉ với một cú nhấp, các lớp và khung thiết bị." },
+      workflow: { eyebrow: "Quy trình", title: "Con đường ngắn nhất từ ảnh thô đến tài nguyên sẵn sàng cho cửa hàng ứng dụng.", description: "Tập trung vào một mục tiêu duy nhất: tạo ảnh chụp màn hình trau chuốt mà không cần quản lý nhiều file thiết kế." },
+      features: { eyebrow: "Khả năng", title: "Tất cả những gì bạn cần cho ảnh chụp màn hình App Store và Google Play.", description: "Tập trung vào tốc độ bố cục, tính nhất quán và xuất file mượt mà." },
+      blog: { eyebrow: "Từ Blog", title: "Hướng dẫn tạo ảnh chụp màn hình App Store và Google Play hiệu quả.", description: "Kinh nghiệm và tài liệu tham khảo để tăng tỷ lệ chuyển đổi." },
       faq: { eyebrow: "FAQ", title: "Các câu hỏi thường gặp trước khi dùng thử.", description: "Giải đáp về tính tương thích và quy trình xuất file." },
       appShowcase: { eyebrow: "Tạo bằng Screenshot Bro", title: "Đồng hành cùng các ứng dụng tuyệt vời.", description: "Các ứng dụng indie đã tin dùng Screenshot Bro." },
     },
@@ -3018,16 +3018,16 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     download: {
       titleLine1: "Sẵn sàng phát hành",
       titleLine2: "ảnh chụp màn hình đẹp hơn?",
-      description: "Tải trên App Store và trải nghiệm quy trình làm việc hoàn chỉnh trên Mac, iPad hoặc iPhone.",
+      description: "Tải trên App Store cho Mac, iPad và iPhone, tải trực tiếp cho Mac hoặc dùng thử bản beta cho Windows. Quy trình đầy đủ đã có sẵn: thiết kế, tự động dịch, bản địa hóa, xuất file và tải lên App Store cùng Google Play.",
     },
     footer: {
-      note: "Được xây dựng bằng SwiftUI. Dành cho các nhà phát triển phát hành ứng dụng trên App Store.",
+      note: "Được xây dựng bằng SwiftUI. Dành cho các nhà phát triển phát hành ứng dụng trên App Store và Google Play.",
     },
   },
   th: {
     siteTitle: `${SITE_NAME} — สกรีนช็อต App Store & Google Play บน Mac`,
     siteDescription:
-      "ออกแบบสกรีนช็อตสำหรับ App Store และ Google Play ในแอปเนทีฟสำหรับ Mac, iPad และ iPhone กรอบอุปกรณ์ การแปลภาษา และอัปโหลดตรงไปยัง App Store Connect",
+      "ออกแบบสกรีนช็อตสำหรับ App Store และ Google Play ในแอปเนทีฟสำหรับ Mac, iPad และ iPhone กรอบอุปกรณ์ การแปลภาษา และอัปโหลดตรงไปยัง App Store Connect และ Google Play",
     primaryCtaLabel: "ดาวน์โหลด Screenshot Bro",
     navItems: [
       { label: "ตัวอย่าง", href: "#showcases" },
@@ -3035,9 +3035,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "สำหรับ Mac, iPad และ iPhone บน App Store พร้อมเวอร์ชันดาวน์โหลดโดยตรงสำหรับ Mac",
+      "สำหรับ Mac, iPad และ iPhone บน App Store พร้อมเวอร์ชันดาวน์โหลดโดยตรงสำหรับ Mac และเวอร์ชันเบต้าสำหรับ Windows",
       "ครบทุกขั้นตอน: นำเข้า ออกแบบ แปลภาษาอัตโนมัติ และส่งออก",
-      "อัปโหลดไปยัง App Store Connect ได้โดยตรงโดยไม่ต้องลากไฟล์ในเบราว์เซอร์",
+      "อัปโหลดไปยัง App Store Connect และ Google Play ได้โดยตรงโดยไม่ต้องลากไฟล์ในเบราว์เซอร์",
     ],
     faqs: [
       {
@@ -3053,7 +3053,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "ต้องใช้อุปกรณ์ใดบ้าง?",
         answer:
-          "macOS 15 (Sequoia) ขึ้นไปบน Mac, iPadOS 18 ขึ้นไปบน iPad หรือ iOS 18 ขึ้นไปบน iPhone โดยไม่ต้องเชื่อมต่ออินเทอร์เน็ตสำหรับการแก้ไขทั่วไป",
+          "macOS 15 (Sequoia) ขึ้นไปบน Mac, iPadOS 18 ขึ้นไปบน iPad หรือ iOS 18 ขึ้นไปบน iPhone ส่วนเวอร์ชันเบต้าสำหรับ Windows ใช้งานได้บน Windows 10 และ 11 (64 บิต) และไม่ต้องเชื่อมต่ออินเทอร์เน็ตสำหรับการแก้ไขทั่วไป",
       },
       {
         question: "ข้อมูลของฉันจะถูกส่งออกจากเครื่องหรือไม่?",
@@ -3068,7 +3068,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "สามารถสร้างสกรีนช็อตสำหรับ Google Play ได้ด้วยหรือไม่?",
         answer:
-          "ได้ แถวสำหรับโทรศัพท์และแท็บเล็ต Android จะถูกสร้างควบคู่ไปกับ iPhone, iPad และ Mac ในโปรเจกต์เดียวกัน",
+          "ได้ แถวสำหรับโทรศัพท์และแท็บเล็ต Android จะถูกสร้างควบคู่ไปกับ iPhone, iPad และ Mac ในโปรเจกต์เดียวกัน มีเทมเพลตสำหรับกราฟิกเด่น (feature graphic) ของ Google Play มาให้ด้วย และเมื่อชุดภาพพร้อมแล้ว ก็อัปโหลดไปยังหน้าร้าน Play ของแอปได้โดยตรงจากในแอป",
       },
       {
         question: "สามารถลากสกรีนช็อตจากเครื่องจำลองมาใส่ได้โดยตรงหรือไม่?",
@@ -3076,9 +3076,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "ได้ ลากโฟลเดอร์สกรีนช็อตเข้ามา แล้ว Screenshot Bro จะจัดสรรแต่ละภาพไปยังแถวที่ถูกต้องตามขนาดพิกเซลโดยอัตโนมัติ",
       },
       {
-        question: "สามารถอัปโหลดไปยัง App Store Connect ได้โดยตรงหรือไม่?",
+        question: "สามารถอัปโหลดไปยัง App Store Connect และ Google Play ได้โดยตรงหรือไม่?",
         answer:
-          "ได้ ตั้งค่าคีย์ API เพียงครั้งเดียว แล้วแอปจะอัปโหลดสกรีนช็อตไปยังทุกขนาดหน้าจอและภาษาที่ถูกต้องในขั้นตอนเดียว",
+          "ได้ ตั้งค่าคีย์ API ของ App Store Connect เพียงครั้งเดียว แล้วแอปจะอัปโหลดสกรีนช็อตไปยังทุกขนาดหน้าจอและภาษาที่ถูกต้องในขั้นตอนเดียว สำหรับ Google Play ให้นำเข้าคีย์ JSON ของบัญชีบริการ (service account) ครั้งเดียวแล้วใส่ชื่อแพ็กเกจ แต่ละภาษาในโปรเจกต์จะจับคู่กับภาษาของหน้าร้าน Play และการอัปโหลดจะถูกเตรียมเป็น Play edit ที่จะบันทึกจริงก็ต่อเมื่อคุณยืนยันเท่านั้น ไม่ต้องลากวางในเบราว์เซอร์สำหรับทั้งสองสโตร์",
       },
       {
         question: "มีการซิงค์ระหว่างอุปกรณ์หรือไม่?",
@@ -3121,21 +3121,21 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "ส่งแอปของคุณ",
       contactDeveloper: "ติดต่อผู้พัฒนา",
       backToTop: "กลับขึ้นด้านบน",
-      availabilityNote: "แอป macOS 15+ และ iOS/iPadOS 18+ | Swift & SwiftUI | บน App Store หรือดาวน์โหลดโดยตรงสำหรับ Mac",
+      availabilityNote: "แอป macOS 15+ และ iOS/iPadOS 18+ | Swift & SwiftUI | บน App Store หรือดาวน์โหลดโดยตรงสำหรับ Mac | Windows เวอร์ชันเบต้า",
     },
     hero: {
-      titleLead: "สร้างและแปลภาษา",
-      titleAccent: "App Store",
-      titleRest: " สกรีนช็อตได้ในไม่กี่นาที",
+      titleLead: "สร้างและแปลภาษาสกรีนช็อต",
+      titleAccent: "App Store & Google Play",
+      titleRest: " ได้ในไม่กี่นาที",
       descriptionLead: "ออกแบบครั้งเดียว แปลได้ 81 ภาษา สร้างได้ทุกขนาดอุปกรณ์ และ",
-      descriptionStrong: "อัปโหลดไปยัง App Store Connect โดยตรง",
+      descriptionStrong: "อัปโหลดไปยัง App Store Connect และ Google Play โดยตรง",
       descriptionTail: " โดยไม่ต้องทำใหม่ทีละภาพ ทั้งหมดในแอปเนทีฟเดียว",
     },
     sections: {
-      showcases: { eyebrow: "ตัวอย่าง", title: "ดูการทำงานของเครื่องมือก่อนติดตั้ง", description: "นำเข้าเป็นชุด อัปโหลด App Store Connect ในคลิกเดียว เลเยอร์ และกรอบอุปกรณ์" },
+      showcases: { eyebrow: "ตัวอย่าง", title: "ดูการทำงานของเครื่องมือก่อนติดตั้ง", description: "นำเข้าเป็นชุด อัปโหลดไปยัง App Store Connect และ Google Play ในคลิกเดียว เลเยอร์ และกรอบอุปกรณ์" },
       workflow: { eyebrow: "ขั้นตอน", title: "เส้นทางที่เร็วที่สุดจากภาพต้นฉบับสู่ไฟล์พร้อมส่งสโตร์", description: "เน้นงานเดียว: สร้างสกรีนช็อตที่สวยงามโดยไม่ต้องดูแลไฟล์ดีไซน์จำนวนมาก" },
-      features: { eyebrow: "ความสามารถ", title: "ทุกสิ่งที่เครื่องมือสกรีนช็อต App Store ควรมี", description: "มุ่งเน้นที่ความเร็วในการจัดวาง ความสม่ำเสมอ และการส่งออกที่ง่ายดาย" },
-      blog: { eyebrow: "จากบล็อก", title: "คู่มือเพื่อสกรีนช็อต App Store ที่ดีกว่า", description: "แนวทางและข้อแนะนำเพื่อเพิ่มยอดดาวน์โหลด" },
+      features: { eyebrow: "ความสามารถ", title: "ทุกสิ่งที่เครื่องมือสกรีนช็อต App Store และ Google Play ควรมี", description: "มุ่งเน้นที่ความเร็วในการจัดวาง ความสม่ำเสมอ และการส่งออกที่ง่ายดาย" },
+      blog: { eyebrow: "จากบล็อก", title: "คู่มือเพื่อสกรีนช็อต App Store และ Google Play ที่ดีกว่า", description: "แนวทางและข้อแนะนำเพื่อเพิ่มยอดดาวน์โหลด" },
       faq: { eyebrow: "FAQ", title: "คำถามที่พบบ่อยก่อนลองใช้", description: "คำตอบเกี่ยวกับความเข้ากันได้และการส่งออกไฟล์" },
       appShowcase: { eyebrow: "สร้างด้วย Screenshot Bro", title: "ร่วมเป็นส่วนหนึ่งกับแอปชั้นนำ", description: "แอปอินดี้ที่ใช้ Screenshot Bro ในการทำสกรีนช็อต" },
     },
@@ -3145,16 +3145,16 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     download: {
       titleLine1: "พร้อมปล่อยสกรีนช็อต",
       titleLine2: "ที่ดูดียิ่งขึ้นหรือยัง?",
-      description: "ดาวน์โหลดจาก App Store และใช้งานทุกฟังก์ชันบน Mac, iPad หรือ iPhone ได้ทันที",
+      description: "ดาวน์โหลดจาก App Store สำหรับ Mac, iPad และ iPhone ดาวน์โหลดโดยตรงสำหรับ Mac หรือลองเวอร์ชันเบต้าสำหรับ Windows ครบทุกขั้นตอน ทั้งออกแบบ แปลภาษาอัตโนมัติ ส่งออก และอัปโหลดไปยัง App Store และ Google Play",
     },
     footer: {
-      note: "สร้างด้วย SwiftUI ออกแบบมาเพื่อนักพัฒนาที่อัปเดตแอปบน App Store สม่ำเสมอ",
+      note: "สร้างด้วย SwiftUI ออกแบบมาเพื่อนักพัฒนาที่ปล่อยแอปบน App Store และ Google Play",
     },
   },
   sv: {
     siteTitle: `${SITE_NAME} — App Store & Google Play-skärmdumpar på Mac`,
     siteDescription:
-      "Designa skärmdumpar för App Store och Google Play på Mac, iPad och iPhone. Enhetsramar, lokalisering och uppladdning till App Store Connect.",
+      "Designa skärmdumpar för App Store och Google Play på Mac, iPad och iPhone. Enhetsramar, lokalisering och uppladdning till App Store Connect och Google Play.",
     primaryCtaLabel: "Hämta Screenshot Bro",
     navItems: [
       { label: "Exempel", href: "#showcases" },
@@ -3162,9 +3162,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "För Mac, iPad och iPhone i App Store, plus direkt nedladdning för Mac",
+      "För Mac, iPad och iPhone i App Store, direkt nedladdning för Mac och en Windows-beta",
       "Komplett arbetsflöde: import, design, automatisk översättning, lokalisering och export",
-      "Direkt uppladdning till App Store Connect utan att dra filer i webbläsaren",
+      "Direkt uppladdning till App Store Connect och Google Play utan att dra filer i webbläsaren",
     ],
     faqs: [
       {
@@ -3180,7 +3180,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Vad krävs för att köra appen?",
         answer:
-          "macOS 15 (Sequoia) eller senare på Mac, iPadOS 18 eller senare på iPad, eller iOS 18 eller senare på iPhone. Inget konto eller internet krävs för daglig redigering.",
+          "macOS 15 (Sequoia) eller senare på Mac, iPadOS 18 eller senare på iPad, eller iOS 18 eller senare på iPhone. Windows-betan körs på Windows 10 och 11 (64-bitars). Inget konto eller internet krävs för daglig redigering.",
       },
       {
         question: "Lämnar mina data min enhet?",
@@ -3195,7 +3195,7 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       {
         question: "Kan jag skapa skärmdumpar för Google Play också?",
         answer:
-          "Ja. Rader för Android renderas tillsammans med iPhone, iPad och Mac i samma projekt med exakta butiksdimensioner.",
+          "Ja. Rader för Android renderas tillsammans med iPhone, iPad och Mac i samma projekt med exakta mått som Google Play accepterar. En medföljande mall täcker Google Plays feature graphic, och när uppsättningen är klar laddar du upp den direkt till din Play-butikssida inifrån appen.",
       },
       {
         question: "Kan jag dra skärmdumpar direkt från simulatorer?",
@@ -3203,9 +3203,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
           "Ja. Dra in en mapp med skärmdumpar så placeras varje bild automatiskt i rätt rad baserat på upplösningen.",
       },
       {
-        question: "Kan jag ladda upp direkt till App Store Connect?",
+        question: "Kan jag ladda upp direkt till App Store Connect och Google Play?",
         answer:
-          "Ja. Konfigurera din API-nyckel en gång så laddar appen upp skärmdumpar till rätt skärmstorlekar och språk i ett enda svep.",
+          "Ja. Konfigurera din App Store Connect-API-nyckel en gång så laddar appen upp skärmdumpar till rätt skärmstorlekar och språk i ett enda svep. För Google Play importerar du en JSON-nyckel för ett tjänstkonto en gång och anger paketnamnet: varje projektspråk matchas mot språket på din Play-butikssida, och uppladdningen förbereds som en Play-redigering som genomförs först när du bekräftar. Inget dra-och-släpp i webbläsaren för någon av butikerna.",
       },
       {
         question: "Synkroniseras det mellan enheter?",
@@ -3248,21 +3248,21 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Skicka in app",
       contactDeveloper: "Kontakta utvecklaren",
       backToTop: "Till toppen",
-      availabilityNote: "macOS 15+ och iOS/iPadOS 18+ app | Swift & SwiftUI | I App Store eller som direkt nedladdning för Mac",
+      availabilityNote: "macOS 15+ och iOS/iPadOS 18+ app | Swift & SwiftUI | I App Store eller som direkt nedladdning för Mac | Windows-beta",
     },
     hero: {
-      titleLead: "Skapa & lokalisera",
-      titleAccent: "App Store",
-      titleRest: " skärmdumpar på några minuter",
+      titleLead: "Skapa och lokalisera",
+      titleAccent: "App Store & Google Play",
+      titleRest: "-skärmdumpar på några minuter",
       descriptionLead: "Designa en gång. Lokalisera till 81 språk, generera alla enhetsstorlekar och",
-      descriptionStrong: "ladda upp direkt till App Store Connect",
+      descriptionStrong: "ladda upp direkt till App Store Connect och Google Play",
       descriptionTail: " utan att bygga om skärmdumpar för hand. Allt i en nativ app.",
     },
     sections: {
-      showcases: { eyebrow: "Exempel", title: "Se hur generatorn fungerar innan du installerar.", description: "Batchimport, uppladdning till App Store Connect med ett klick, lager och enhetsramar." },
+      showcases: { eyebrow: "Exempel", title: "Se hur generatorn fungerar innan du installerar.", description: "Batchimport, uppladdning till App Store Connect och Google Play med ett klick, lager och enhetsramar." },
       workflow: { eyebrow: "Arbetsflöde", title: "En kortare väg från råa skärmdumpar till färdiga butikstillgångar.", description: "Fokuserad på en uppgift: skapa snygga skärmdumpar utan att underhålla en hög med designfiler." },
-      features: { eyebrow: "Kapacitet", title: "Allt ett skärmdumpsverktyg för App Store behöver göra.", description: "Fokus på snabb layout, konsekvens och smidig export." },
-      blog: { eyebrow: "Från bloggen", title: "Guider för att skapa bättre App Store-skärmdumpar.", description: "Tips och referenser för att öka konverteringen." },
+      features: { eyebrow: "Kapacitet", title: "Allt ett skärmdumpsverktyg för App Store och Google Play behöver göra.", description: "Fokus på snabb layout, konsekvens och smidig export." },
+      blog: { eyebrow: "Från bloggen", title: "Guider för att skapa bättre skärmdumpar för App Store och Google Play.", description: "Tips och referenser för att öka konverteringen." },
       faq: { eyebrow: "FAQ", title: "Vanliga frågor innan du testar.", description: "Svar om kompatibilitet och export." },
       appShowcase: { eyebrow: "Skapad med Screenshot Bro", title: "I gott sällskap.", description: "Indieappar som redan använder Screenshot Bro." },
     },
@@ -3272,15 +3272,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     download: {
       titleLine1: "Redo att publicera",
       titleLine2: "bättre skärmdumpar?",
-      description: "Hämta i App Store och upplev hela arbetsflödet på Mac, iPad eller iPhone.",
+      description: "Hämta den i App Store för Mac, iPad och iPhone, ladda ner den direkt till Mac eller testa Windows-betan. Hela arbetsflödet finns där: design, automatisk översättning, lokalisering, export och uppladdning till App Store och Google Play.",
     },
     footer: {
-      note: "Byggd med SwiftUI. Designad för utvecklare som släpper App Store-uppdateringar.",
+      note: "Byggd med SwiftUI. Designad för utvecklare som publicerar i App Store och på Google Play.",
     },
   },
   da: {
     siteTitle: `${SITE_NAME} — App Store og Google Play skærmbilleder på Mac`,
-    siteDescription: "Design skærmbilleder til App Store og Google Play i en nativ app til Mac, iPad og iPhone. Enhedsrammer, lokalisering og direkte upload til App Store Connect.",
+    siteDescription: "Design skærmbilleder til App Store og Google Play i en nativ app til Mac, iPad og iPhone. Enhedsrammer, lokalisering og direkte upload til App Store Connect og Google Play.",
     primaryCtaLabel: "Hent Screenshot Bro",
     navItems: [
       { label: "Eksempler", href: "#showcases" },
@@ -3288,9 +3288,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Til Mac, iPad og iPhone i App Store, plus direkte download til Mac",
+      "Til Mac, iPad og iPhone i App Store, direkte download til Mac og en Windows-beta",
       "Hele arbejdsgangen: importér, design, oversæt automatisk, lokaliser, eksportér",
-      "Upload direkte til App Store Connect — slut med træk-og-slip i en browserfane",
+      "Upload direkte til App Store Connect og Google Play — slut med træk-og-slip i en browserfane",
     ],
     faqs: [
       {
@@ -3299,11 +3299,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       {
         question: "Hvordan adskiller den sig fra en webbaseret generator til App Store-skærmbilleder?",
-        answer: "Screenshot Bro er en nativ app til Mac, iPad og iPhone og ikke et browserværktøj, så projekter, skærmbilleder og skrifttyper bliver på disken, og daglig redigering kræver hverken konto eller internetforbindelse. Rendering og batch-eksport kører på din egen hardware i stedet for på en server. Hvis du bruger Windows eller Linux, vil samarbejde i en delt browsersession eller kun har brug for et eller to billeder, er et webbaseret værktøj til App Store-skærmbilleder et bedre valg — siden med alternativer dækker de tilfælde.",
+        answer: "Screenshot Bro er en nativ app til Mac, iPad og iPhone og ikke et browserværktøj, så projekter, skærmbilleder og skrifttyper bliver på disken, og daglig redigering kræver hverken konto eller internetforbindelse. Rendering og batch-eksport kører på din egen hardware i stedet for på en server. Hvis du bruger Linux, vil samarbejde i en delt browsersession eller kun har brug for et eller to billeder, er et webbaseret værktøj til App Store-skærmbilleder et bedre valg — siden med alternativer dækker de tilfælde.",
       },
       {
         question: "Hvad kræver det at køre den?",
-        answer: "macOS 15 (Sequoia) eller nyere på Mac, iPadOS 18 eller nyere på iPad eller iOS 18 eller nyere på iPhone. Ingen ekstra enhed, ingen konto og ingen internetforbindelse kræves til daglig redigering.",
+        answer: "macOS 15 (Sequoia) eller nyere på Mac, iPadOS 18 eller nyere på iPad eller iOS 18 eller nyere på iPhone. Windows-betaen kører på Windows 10 og 11 (64-bit). Ingen ekstra enhed, ingen konto og ingen internetforbindelse kræves til daglig redigering.",
       },
       {
         question: "Forlader mine data min enhed?",
@@ -3311,23 +3311,23 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       {
         question: "Hvordan fungerer lokalisering?",
-        answer: "Vælg mellem 81 sprogforudindstillinger, eller definér din egen kode. Automatisk oversættelse udfylder manglende tekst på enheden. Oversættelser gemmes som tekstoverstyringer pr. sprog, så layout, farver og billeder deles på tværs af alle sprog — design én gang, udgiv på alle sprog. Eksporter organiseres i sprogmapper, som App Store Connect kan bruge direkte.",
+        answer: "Vælg mellem 81 sprogforudindstillinger, eller definér din egen kode. Automatisk oversættelse udfylder manglende tekst på enheden. Oversættelser gemmes som tekstoverstyringer pr. sprog, så layout, farver og billeder deles på tværs af alle sprog — design én gang, udgiv på alle sprog. Eksporter organiseres i sprogmapper, der er klar til App Store Connect og Google Play, og upload-funktionerne i appen matcher hvert sprog med butikkens egne sprog.",
       },
       {
         question: "Kan jeg også lave skærmbilleder til Google Play?",
-        answer: "Ja. Rækker til Android-telefoner og -tablets renderes side om side med iPhone, iPad og Mac i det samme projekt. Hver enhedskategori er forudindstillet til de pixelmål, den pågældende butik accepterer.",
+        answer: "Ja. Rækker til Android-telefoner og -tablets renderes side om side med iPhone, iPad og Mac i det samme projekt. Hver enhedskategori er forudindstillet til de pixelmål, den pågældende butik accepterer. En medfølgende skabelon dækker Google Play-featuregrafikken, og når sættet er klar, uploader du det direkte til din Play-butiksside inde fra appen.",
       },
       {
         question: "Kan jeg trække skærmbilleder fra simulatoren og enheder direkte ind?",
         answer: "Ja. Slip en mappe med skærmbilleder, og Screenshot Bro sender hvert billede til den rigtige række ud fra pixelstørrelsen — iPhone-billeder til iPhone-rækken, iPad til iPad, Android til Android.",
       },
       {
-        question: "Kan jeg uploade til App Store Connect inde fra appen?",
-        answer: "Ja. Konfigurer din App Store Connect API-nøgle én gang (Issuer ID, Key ID og .p8). Screenshot Bro registrerer automatisk den rigtige skærmtype for hver række, matcher dine projektsprog med lokaliseringerne i App Store Connect og erstatter eksisterende skærmbilleder i én omgang — ingen træk-og-slip i browseren.",
+        question: "Kan jeg uploade til App Store Connect og Google Play inde fra appen?",
+        answer: "Ja. Konfigurer din App Store Connect API-nøgle én gang (Issuer ID, Key ID og .p8). Screenshot Bro registrerer automatisk den rigtige skærmtype for hver række, matcher dine projektsprog med lokaliseringerne i App Store Connect og erstatter eksisterende skærmbilleder i én omgang. Til Google Play importerer du en JSON-nøgle til en servicekonto én gang og angiver dit pakkenavn: hvert projektsprog matches med sit sprog på Play-butikssiden, og uploaden lægges op som en Play-redigering (edit), der først gennemføres, når du bekræfter. Ingen træk-og-slip i browseren til nogen af butikkerne.",
       },
       {
         question: "Kan en AI-agent bygge mine skærmbilleder?",
-        answer: "Ja. Screenshot Bro kører en valgfri lokal MCP-server på Mac, så en assistent som Claude Code, Claude Desktop eller Cursor kan oprette projekter, opsætte rækker og former, importere skærmbilleder, oversætte tekst, rendere forhåndsvisninger, den faktisk kan se, eksportere og synkronisere et færdigt sæt til App Store Connect. Serveren lytter kun på 127.0.0.1, hver anmodning kræver et adgangstoken, som du kopierer fra Indstillinger, og alle ændringer, agenten laver, kan fortrydes med ⌘Z.",
+        answer: "Ja. Screenshot Bro kører en valgfri lokal MCP-server på Mac, så en assistent som Claude Code, Claude Desktop eller Cursor kan oprette projekter, opsætte rækker og former, importere skærmbilleder, oversætte tekst, rendere forhåndsvisninger, den faktisk kan se, eksportere og uploade et færdigt sæt til App Store Connect eller Google Play. Serveren lytter kun på 127.0.0.1, hver anmodning kræver et adgangstoken, som du kopierer fra Indstillinger, og alle ændringer, agenten laver, kan fortrydes med ⌘Z.",
       },
       {
         question: "Synkroniserer den mellem enheder?",
@@ -3364,21 +3364,21 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Indsend app",
       contactDeveloper: "Kontakt udvikleren",
       backToTop: "Til toppen",
-      availabilityNote: "macOS 15+ og iOS/iPadOS 18+ app | Swift & SwiftUI | I App Store eller som direkte download til Mac",
+      availabilityNote: "macOS 15+ og iOS/iPadOS 18+ app | Swift & SwiftUI | I App Store eller som direkte download til Mac | Windows-beta",
     },
     hero: {
-      titleLead: "Opret & lokaliser",
-      titleAccent: "App Store",
-      titleRest: " skærmbilleder på få minutter",
+      titleLead: "Opret & lokaliser skærmbilleder til",
+      titleAccent: "App Store & Google Play",
+      titleRest: " på få minutter",
       descriptionLead: "Design én gang. Lokaliser til 81 sprog, generer alle enhedsstørrelser og",
-      descriptionStrong: "upload direkte til App Store Connect",
+      descriptionStrong: "upload direkte til App Store Connect og Google Play",
       descriptionTail: " uden at genopbygge skærmbilleder manuelt. Alt i en nativ app.",
     },
     sections: {
-      showcases: { eyebrow: "Eksempler", title: "Se hvordan generatoren fungerer, før du installerer.", description: "Batch-import, upload til App Store Connect med ét klik, lag og enhedsrammer." },
+      showcases: { eyebrow: "Eksempler", title: "Se hvordan generatoren fungerer, før du installerer.", description: "Batch-import, upload til App Store Connect og Google Play med ét klik, lag og enhedsrammer." },
       workflow: { eyebrow: "Arbejdsgang", title: "En kortere vej fra rå skærmbilleder til færdige butiksaktiver.", description: "Fokuseret på én opgave: skab flotte skærmbilleder uden at vedligeholde en masse designfiler." },
-      features: { eyebrow: "Funktioner", title: "Alt hvad et skærmbilledeværktøj til App Store skal kunne.", description: "Fokus på hurtigt layout, ensartethed og problemfri eksport." },
-      blog: { eyebrow: "Fra bloggen", title: "Guides til bedre App Store-skærmbilleder.", description: "Tips og referencer til at forbedre konvertering." },
+      features: { eyebrow: "Funktioner", title: "Alt hvad et skærmbilledeværktøj til App Store og Google Play skal kunne.", description: "Fokus på hurtigt layout, ensartethed og problemfri eksport." },
+      blog: { eyebrow: "Fra bloggen", title: "Guides til bedre App Store- og Google Play-skærmbilleder.", description: "Tips og referencer til at forbedre konvertering." },
       faq: { eyebrow: "FAQ", title: "Ofte stillede spørgsmål før du prøver.", description: "Svar om kompatibilitet og eksport." }      ,
       appShowcase: { eyebrow: "Lavet med Screenshot Bro", title: "I godt selskab.", description: "Indie-apps, der allerede bruger Screenshot Bro." },
     },
@@ -3388,15 +3388,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     download: {
       titleLine1: "Klar til at udgive",
       titleLine2: "bedre skærmbilleder?",
-      description: "Hent i App Store og oplev hele arbejdsgangen på Mac, iPad eller iPhone.",
+      description: "Hent den i App Store til Mac, iPad og iPhone, download den til Mac, eller prøv Windows-betaen. Hele arbejdsgangen er med: design, automatisk oversættelse, lokalisering, eksport og upload til App Store og Google Play.",
     },
     footer: {
-      note: "Bygget med SwiftUI. Designet til udviklere, der udgiver App Store-opdateringer.",
+      note: "Bygget med SwiftUI. Designet til udviklere, der udgiver i App Store og Google Play.",
     },
   },
   fi: {
     siteTitle: `${SITE_NAME} — App Store- ja Google Play -kuvakaappaukset Macilla`,
-    siteDescription: "Suunnittele App Store- ja Google Play -kuvakaappauksia Macilla, iPadilla ja iPhonella. Laitekehykset, lokalisointi ja lataus App Store Connectiin.",
+    siteDescription: "Suunnittele App Store- ja Google Play -kuvakaappauksia Macilla, iPadilla ja iPhonella. Laitekehykset, lokalisointi ja lataus App Store Connectiin ja Google Playhin.",
     primaryCtaLabel: "Lataa Screenshot Bro",
     navItems: [
       { label: "Esimerkit", href: "#showcases" },
@@ -3404,9 +3404,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "UKK", href: "#faq" },
     ],
     benefits: [
-      "Macille, iPadille ja iPhonelle App Storessa sekä suorana latauksena Macille",
+      "Macille, iPadille ja iPhonelle App Storessa, suorana latauksena Macille sekä Windows-beetana",
       "Koko työnkulku: tuonti, suunnittelu, automaattinen käännös, lokalisointi, vienti",
-      "Lataa suoraan App Store Connectiin — ei enää vetämistä ja pudottamista selainvälilehdessä",
+      "Lataa suoraan App Store Connectiin ja Google Playhin — ei enää vetämistä ja pudottamista selainvälilehdessä",
     ],
     faqs: [
       {
@@ -3415,11 +3415,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       {
         question: "Miten tämä eroaa verkkopohjaisesta App Store -kuvakaappausgeneraattorista?",
-        answer: "Screenshot Bro on natiivi Mac-, iPad- ja iPhone-sovellus eikä selaintyökalu, joten projektit, kuvakaappaukset ja fontit pysyvät levyllä, eikä päivittäinen muokkaus vaadi tiliä tai internetyhteyttä. Renderöinti ja erävienti tapahtuvat omalla laitteistollasi palvelimen sijaan. Jos käytät Windowsia tai Linuxia, haluat tehdä yhteistyötä jaetussa selainistunnossa tai tarvitset vain yhden tai kaksi kuvaa, verkkopohjainen App Store -kuvakaappaustyökalu sopii paremmin — vaihtoehtosivu käsittelee nämä tapaukset.",
+        answer: "Screenshot Bro on natiivi Mac-, iPad- ja iPhone-sovellus eikä selaintyökalu, joten projektit, kuvakaappaukset ja fontit pysyvät levyllä, eikä päivittäinen muokkaus vaadi tiliä tai internetyhteyttä. Renderöinti ja erävienti tapahtuvat omalla laitteistollasi palvelimen sijaan. Jos käytät Linuxia, haluat tehdä yhteistyötä jaetussa selainistunnossa tai tarvitset vain yhden tai kaksi kuvaa, verkkopohjainen App Store -kuvakaappaustyökalu sopii paremmin — vaihtoehtosivu käsittelee nämä tapaukset.",
       },
       {
         question: "Mitä tarvitsen sen käyttämiseen?",
-        answer: "macOS 15 (Sequoia) tai uudempi Macissa, iPadOS 18 tai uudempi iPadissa tai iOS 18 tai uudempi iPhonessa. Päivittäinen muokkaus ei vaadi lisälaitetta, tiliä eikä internetyhteyttä.",
+        answer: "macOS 15 (Sequoia) tai uudempi Macissa, iPadOS 18 tai uudempi iPadissa tai iOS 18 tai uudempi iPhonessa. Windows-beeta toimii 64-bittisissä Windows 10:ssä ja 11:ssä. Päivittäinen muokkaus ei vaadi lisälaitetta, tiliä eikä internetyhteyttä.",
       },
       {
         question: "Poistuvatko tietoni laitteeltani?",
@@ -3427,23 +3427,23 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       {
         question: "Miten lokalisointi toimii?",
-        answer: "Valitse 81 kieliesiasetuksesta tai määritä oma koodisi. Automaattinen käännös täyttää puuttuvat tekstit laitteella. Käännökset tallentuvat kielikohtaisina tekstin ohituksina, joten asettelu, värit ja kuvat pysyvät yhteisinä kaikille kielille — suunnittele kerran, julkaise kaikilla kielillä. Viennit järjestetään kielikansioihin, jotka App Store Connect voi ottaa suoraan käyttöön.",
+        answer: "Valitse 81 kieliesiasetuksesta tai määritä oma koodisi. Automaattinen käännös täyttää puuttuvat tekstit laitteella. Käännökset tallentuvat kielikohtaisina tekstin ohituksina, joten asettelu, värit ja kuvat pysyvät yhteisinä kaikille kielille — suunnittele kerran, julkaise kaikilla kielillä. Viennit järjestetään kielikansioihin, jotka ovat valmiita App Store Connectiin ja Google Playhin, ja sovelluksen latausominaisuudet täsmäyttävät jokaisen kielen kaupan omiin kieliin.",
       },
       {
         question: "Voinko tehdä myös Google Play -kuvakaappauksia?",
-        answer: "Kyllä. Android-puhelimen ja -tabletin rivit renderöidään iPhonen, iPadin ja Macin rinnalla samassa projektissa. Jokainen laiteluokka on valmiiksi asetettu niihin pikselimittoihin, jotka kyseinen kauppa hyväksyy.",
+        answer: "Kyllä. Android-puhelimen ja -tabletin rivit renderöidään iPhonen, iPadin ja Macin rinnalla samassa projektissa. Jokainen laiteluokka on valmiiksi asetettu niihin pikselimittoihin, jotka kyseinen kauppa hyväksyy. Mukana tuleva malli kattaa myös Google Playn esittelygrafiikan, ja kun sarja on valmis, voit ladata sen suoraan Play-kauppasivullesi sovelluksen sisältä.",
       },
       {
         question: "Voinko pudottaa simulaattorin ja laitteiden kuvakaappaukset suoraan sovellukseen?",
         answer: "Kyllä. Pudota kansiollinen kuvakaappauksia, niin Screenshot Bro ohjaa jokaisen oikealle riville sen pikselikoon perusteella — iPhone-kuvat iPhone-riville, iPad-kuvat iPad-riville ja Android-kuvat Android-riville.",
       },
       {
-        question: "Voinko ladata App Store Connectiin suoraan sovelluksesta?",
-        answer: "Kyllä. Määritä App Store Connect -API-avaimesi kerran (Issuer ID, Key ID ja .p8). Screenshot Bro tunnistaa automaattisesti oikean näyttötyypin jokaiselle riville, täsmäyttää projektisi kielet App Store Connectin lokalisointeihin ja korvaa olemassa olevat kuvakaappaukset yhdellä kertaa — ei vetämistä ja pudottamista selaimessa.",
+        question: "Voinko ladata App Store Connectiin ja Google Playhin suoraan sovelluksesta?",
+        answer: "Kyllä. Määritä App Store Connect -API-avaimesi kerran (Issuer ID, Key ID ja .p8). Screenshot Bro tunnistaa automaattisesti oikean näyttötyypin jokaiselle riville, täsmäyttää projektisi kielet App Store Connectin lokalisointeihin ja korvaa olemassa olevat kuvakaappaukset yhdellä kertaa. Google Playta varten tuot palvelutilin JSON-avaimen kerran ja syötät paketin nimen: jokainen projektin kieli yhdistetään vastaavaan Play-kauppasivun kieleen, ja lataus valmistellaan Play-muokkauksena (edit), joka vahvistetaan vasta, kun hyväksyt sen. Kummassakaan kaupassa ei tarvitse vetää ja pudottaa tiedostoja selaimessa.",
       },
       {
         question: "Voiko tekoälyagentti tehdä kuvakaappaukseni?",
-        answer: "Kyllä. Screenshot Bro tarjoaa Macilla valinnaisen paikallisen MCP-palvelimen, joten avustaja, kuten Claude Code, Claude Desktop tai Cursor, voi luoda projekteja, asetella rivejä ja muotoja, tuoda kuvakaappauksia, kääntää tekstejä, renderöidä esikatseluja, joita se voi oikeasti katsoa, viedä ja synkronoida valmiin sarjan App Store Connectiin. Palvelin kuuntelee vain osoitteessa 127.0.0.1, jokainen pyyntö vaatii Asetuksista kopioitavan käyttötunnisteen, ja jokaisen agentin tekemän muutoksen voi kumota ⌘Z:lla.",
+        answer: "Kyllä. Screenshot Bro tarjoaa Macilla valinnaisen paikallisen MCP-palvelimen, joten avustaja, kuten Claude Code, Claude Desktop tai Cursor, voi luoda projekteja, asetella rivejä ja muotoja, tuoda kuvakaappauksia, kääntää tekstejä, renderöidä esikatseluja, joita se voi oikeasti katsoa, viedä ja ladata valmiin sarjan App Store Connectiin tai Google Playhin. Palvelin kuuntelee vain osoitteessa 127.0.0.1, jokainen pyyntö vaatii Asetuksista kopioitavan käyttötunnisteen, ja jokaisen agentin tekemän muutoksen voi kumota ⌘Z:lla.",
       },
       {
         question: "Synkronoituuko se laitteiden välillä?",
@@ -3480,21 +3480,21 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Lähetä sovellus",
       contactDeveloper: "Ota yhteyttä kehittäjään",
       backToTop: "Takaisin alkuun",
-      availabilityNote: "macOS 15+ ja iOS/iPadOS 18+ sovellus | Swift & SwiftUI | App Storessa tai suorana latauksena Macille",
+      availabilityNote: "macOS 15+ ja iOS/iPadOS 18+ sovellus | Swift & SwiftUI | App Storessa tai suorana latauksena Macille | Windows-beeta",
     },
     hero: {
       titleLead: "Luo & lokalisoi",
-      titleAccent: "App Store",
+      titleAccent: "App Store & Google Play",
       titleRest: " -kuvakaappaukset minuuteissa",
       descriptionLead: "Suunnittele kerran. Lokalisoi 81 kielelle, luo kaikki laitekoot ja",
-      descriptionStrong: "lataa suoraan App Store Connectiin",
+      descriptionStrong: "lataa suoraan App Store Connectiin ja Google Playhin",
       descriptionTail: " rakentamatta kuvakaappauksia uudelleen käsin. Kaikki yhdessä natiivisovelluksessa.",
     },
     sections: {
-      showcases: { eyebrow: "Esimerkit", title: "Katso miten generaattori toimii ennen asennusta.", description: "Erätuonti, lataus App Store Connectiin yhdellä napsautuksella, tasot ja laitekehykset." },
+      showcases: { eyebrow: "Esimerkit", title: "Katso miten generaattori toimii ennen asennusta.", description: "Erätuonti, lataus App Store Connectiin ja Google Playhin yhdellä napsautuksella, tasot ja laitekehykset." },
       workflow: { eyebrow: "Työnkulku", title: "Lyhyempi tie raakakuvista valmiisiin sovelluskaupan materiaaleihin.", description: "Keskittynyt yhteen tehtävään: luo kauniita kuvakaappauksia ilman raskasta suunnittelutiedostojen ylläpitoa." },
-      features: { eyebrow: "Ominaisuudet", title: "Kaikki mitä App Store -kuvakaappaustyökalulta tarvitaan.", description: "Painopisteenä nopea asettelu, yhtenäisyys ja vaivaton vienti." },
-      blog: { eyebrow: "Blogista", title: "Oppaat parempien App Store -kuvakaappausten tekemiseen.", description: "Vinkkejä ja referenssejä konversion parantamiseen." },
+      features: { eyebrow: "Ominaisuudet", title: "Kaikki mitä App Store- ja Google Play -kuvakaappaustyökalulta tarvitaan.", description: "Painopisteenä nopea asettelu, yhtenäisyys ja vaivaton vienti." },
+      blog: { eyebrow: "Blogista", title: "Oppaat parempien App Store- ja Google Play -kuvakaappausten tekemiseen.", description: "Vinkkejä ja referenssejä konversion parantamiseen." },
       faq: { eyebrow: "UKK", title: "Usein kysytyt kysymykset ennen kokeilua.", description: "Vastauksia yhteensopivuudesta ja viennistä." },
       appShowcase: { eyebrow: "Luotu Screenshot Brolla", title: "Hyvässä seurassa.", description: "Indie-sovellukset, jotka käyttävät jo Screenshot Brota." },
     },
@@ -3504,15 +3504,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     download: {
       titleLine1: "Valmiina julkaisemaan",
       titleLine2: "parempia kuvakaappauksia?",
-      description: "Lataa App Storesta ja koe koko työnkulku Macilla, iPadilla tai iPhonella.",
+      description: "Hanki se App Storesta Macille, iPadille ja iPhonelle, lataa se suoraan Macille tai kokeile Windows-beetaa. Koko työnkulku on mukana: suunnittelu, automaattinen käännös, lokalisointi, vienti ja lataus App Storeen ja Google Playhin.",
     },
     footer: {
-      note: "Rakennettu SwiftUI:lla. Suunniteltu kehittäjille, jotka julkaisevat App Store -päivityksiä.",
+      note: "Rakennettu SwiftUI:lla. Suunniteltu kehittäjille, jotka julkaisevat App Storeen ja Google Playhin.",
     },
   },
   no: {
     siteTitle: `${SITE_NAME} — App Store- og Google Play-skjermbilder på Mac`,
-    siteDescription: "Design skjermbilder for App Store og Google Play i en nativ app for Mac, iPad og iPhone. Enhetsrammer, lokalisering og direkte opplasting til App Store Connect.",
+    siteDescription: "Design skjermbilder for App Store og Google Play i en nativ app for Mac, iPad og iPhone. Enhetsrammer, lokalisering og direkte opplasting til App Store Connect og Google Play.",
     primaryCtaLabel: "Hent Screenshot Bro",
     navItems: [
       { label: "Eksempler", href: "#showcases" },
@@ -3520,9 +3520,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "For Mac, iPad og iPhone i App Store, pluss direkte nedlasting for Mac",
+      "For Mac, iPad og iPhone i App Store, direkte nedlasting for Mac og en Windows-beta",
       "Hele arbeidsflyten: importer, design, oversett automatisk, lokaliser, eksporter",
-      "Last opp direkte til App Store Connect — slutt på dra-og-slipp i en nettleserfane",
+      "Last opp direkte til App Store Connect og Google Play — slutt på dra-og-slipp i en nettleserfane",
     ],
     faqs: [
       {
@@ -3531,11 +3531,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       {
         question: "Hvordan skiller dette seg fra en nettbasert generator for App Store-skjermbilder?",
-        answer: "Screenshot Bro er en nativ app for Mac, iPad og iPhone, ikke et nettleserverktøy, så prosjekter, skjermbilder og fonter blir liggende på disken, og daglig redigering krever verken konto eller internettforbindelse. Rendering og batch-eksport kjører på din egen maskinvare i stedet for på en server. Bruker du Windows eller Linux, vil samarbeide i en delt nettleserøkt eller trenger bare ett eller to bilder, passer et nettbasert verktøy for App Store-skjermbilder bedre — siden med alternativer dekker disse tilfellene.",
+        answer: "Screenshot Bro er en nativ app for Mac, iPad og iPhone, ikke et nettleserverktøy, så prosjekter, skjermbilder og fonter blir liggende på disken, og daglig redigering krever verken konto eller internettforbindelse. Rendering og batch-eksport kjører på din egen maskinvare i stedet for på en server. Bruker du Linux, vil samarbeide i en delt nettleserøkt eller trenger bare ett eller to bilder, passer et nettbasert verktøy for App Store-skjermbilder bedre — siden med alternativer dekker disse tilfellene.",
       },
       {
         question: "Hva trenger jeg for å kjøre den?",
-        answer: "macOS 15 (Sequoia) eller nyere på Mac, iPadOS 18 eller nyere på iPad, eller iOS 18 eller nyere på iPhone. Ingen ekstra enhet, ingen konto og ingen internettforbindelse kreves for daglig redigering.",
+        answer: "macOS 15 (Sequoia) eller nyere på Mac, iPadOS 18 eller nyere på iPad, eller iOS 18 eller nyere på iPhone. Windows-betaen kjører på Windows 10 og 11 (64-bit). Ingen ekstra enhet, ingen konto og ingen internettforbindelse kreves for daglig redigering.",
       },
       {
         question: "Forlater dataene mine enheten?",
@@ -3543,23 +3543,23 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       {
         question: "Hvordan fungerer lokalisering?",
-        answer: "Velg blant 81 språkforhåndsinnstillinger, eller definer din egen kode. Automatisk oversettelse fyller inn manglende tekst på enheten. Oversettelser lagres som tekstoverstyringer per språk, så layout, farger og bilder deles på tvers av alle språk — design én gang, publiser på alle språk. Eksporter organiseres i språkmapper som App Store Connect kan bruke direkte.",
+        answer: "Velg blant 81 språkforhåndsinnstillinger, eller definer din egen kode. Automatisk oversettelse fyller inn manglende tekst på enheten. Oversettelser lagres som tekstoverstyringer per språk, så layout, farger og bilder deles på tvers av alle språk — design én gang, publiser på alle språk. Eksporter organiseres i språkmapper klare for App Store Connect og Google Play, og opplastingsfunksjonene i appen kobler hvert språk til butikkens egne språk.",
       },
       {
         question: "Kan jeg lage skjermbilder for Google Play også?",
-        answer: "Ja. Rader for Android-telefoner og -nettbrett rendres side om side med iPhone, iPad og Mac i samme prosjekt. Hver enhetskategori er forhåndsinnstilt til pikseldimensjonene den aktuelle butikken godtar.",
+        answer: "Ja. Rader for Android-telefoner og -nettbrett rendres side om side med iPhone, iPad og Mac i samme prosjekt. Hver enhetskategori er forhåndsinnstilt til pikseldimensjonene den aktuelle butikken godtar. En medfølgende mal dekker Google Play-featuregrafikken, og når settet er klart, laster du det opp rett til Play-butikksiden din fra appen.",
       },
       {
         question: "Kan jeg slippe skjermbilder fra simulator og enheter rett inn?",
         answer: "Ja. Slipp en mappe med skjermbilder, så sender Screenshot Bro hvert bilde til riktig rad basert på pikselstørrelsen — iPhone-bilder til iPhone-raden, iPad til iPad, Android til Android.",
       },
       {
-        question: "Kan jeg laste opp til App Store Connect fra appen?",
-        answer: "Ja. Konfigurer App Store Connect API-nøkkelen din én gang (Issuer ID, Key ID og .p8). Screenshot Bro gjenkjenner automatisk riktig skjermtype for hver rad, kobler prosjektspråkene dine til lokaliseringene i App Store Connect og erstatter eksisterende skjermbilder i én omgang — ingen dra-og-slipp i nettleseren.",
+        question: "Kan jeg laste opp til App Store Connect og Google Play fra appen?",
+        answer: "Ja. Konfigurer App Store Connect API-nøkkelen din én gang (Issuer ID, Key ID og .p8). Screenshot Bro gjenkjenner automatisk riktig skjermtype for hver rad, kobler prosjektspråkene dine til lokaliseringene i App Store Connect og erstatter eksisterende skjermbilder i én omgang. For Google Play importerer du en JSON-nøkkel for en tjenestekonto én gang og oppgir pakkenavnet: hvert prosjektspråk kobles til sitt språk på Play-butikksiden, og opplastingen klargjøres som en Play-redigering (edit) som først fullføres når du bekrefter. Ingen dra-og-slipp i nettleseren for noen av butikkene.",
       },
       {
         question: "Kan en AI-agent lage skjermbildene mine?",
-        answer: "Ja. Screenshot Bro kjører en valgfri lokal MCP-server på Mac, så en assistent som Claude Code, Claude Desktop eller Cursor kan opprette prosjekter, sette opp rader og former, importere skjermbilder, oversette tekst, rendre forhåndsvisninger den faktisk kan se på, eksportere og synkronisere et ferdig sett til App Store Connect. Serveren lytter bare på 127.0.0.1, hver forespørsel krever et tilgangstoken du kopierer fra Innstillinger, og alle endringer agenten gjør, kan angres med ⌘Z.",
+        answer: "Ja. Screenshot Bro kjører en valgfri lokal MCP-server på Mac, så en assistent som Claude Code, Claude Desktop eller Cursor kan opprette prosjekter, sette opp rader og former, importere skjermbilder, oversette tekst, rendre forhåndsvisninger den faktisk kan se på, eksportere og laste opp et ferdig sett til App Store Connect eller Google Play. Serveren lytter bare på 127.0.0.1, hver forespørsel krever et tilgangstoken du kopierer fra Innstillinger, og alle endringer agenten gjør, kan angres med ⌘Z.",
       },
       {
         question: "Synkroniseres den mellom enheter?",
@@ -3596,20 +3596,20 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Send inn app",
       contactDeveloper: "Kontakt utvikleren",
       backToTop: "Til toppen",
-      availabilityNote: "macOS 15+ og iOS/iPadOS 18+ app | Swift & SwiftUI | I App Store eller som direkte nedlasting for Mac",
+      availabilityNote: "macOS 15+ og iOS/iPadOS 18+ app | Swift & SwiftUI | I App Store eller som direkte nedlasting for Mac | Windows-beta",
     },
     hero: {
-      titleLead: "Opprett & lokaliser",
-      titleAccent: "App Store",
-      titleRest: " skjermbilder på minutter",
+      titleLead: "Opprett & lokaliser skjermbilder for",
+      titleAccent: "App Store & Google Play",
+      titleRest: " på minutter",
       descriptionLead: "Design én gang. Lokaliser til 81 språk, generer alle enhetsstørrelser og",
-      descriptionStrong: "last opp direkte til App Store Connect",
+      descriptionStrong: "last opp direkte til App Store Connect og Google Play",
       descriptionTail: " uten å bygge om skjermbilder manuelt. Alt i en nativ app.",
     },
     sections: {
-      showcases: { eyebrow: "Eksempler", title: "Se hvordan generatoren fungerer før du installerer.", description: "Batch-import, opplasting til App Store Connect med ett klikk, lag og enhetsrammer." },
+      showcases: { eyebrow: "Eksempler", title: "Se hvordan generatoren fungerer før du installerer.", description: "Batch-import, opplasting til App Store Connect og Google Play med ett klikk, lag og enhetsrammer." },
       workflow: { eyebrow: "Arbeidsflyt", title: "En kortere vei fra rå skjermbilder til ferdige butikkressurser.", description: "Fokusert på én oppgave: lag flotte skjermbilder uten å vedlikeholde en haug med designfiler." },
-      features: { eyebrow: "Funksjoner", title: "Alt et skjermbildeverktøy for App Store trenger å gjøre.", description: "Fokus på raskt oppsett, konsistens og sømløs eksport." },
+      features: { eyebrow: "Funksjoner", title: "Alt et skjermbildeverktøy for App Store og Google Play trenger å gjøre.", description: "Fokus på raskt oppsett, konsistens og sømløs eksport." },
       blog: { eyebrow: "Fra bloggen", title: "Guider for å lage bedre App Store-skjermbilder.", description: "Tips og referenser for å øke konverteringen." },
       faq: { eyebrow: "FAQ", title: "Ofte stilte spørsmål før du prøver.", description: "Svar om kompatibilitet og eksport." },
       appShowcase: { eyebrow: "Laget med Screenshot Bro", title: "I godt selskap.", description: "Indie-apper som allerede bruker Screenshot Bro." },
@@ -3620,15 +3620,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     download: {
       titleLine1: "Klar til å publisere",
       titleLine2: "bedre skjermbilder?",
-      description: "Hent i App Store og opplev hele arbeidsflyten på Mac, iPad eller iPhone.",
+      description: "Hent den i App Store for Mac, iPad og iPhone, last den ned for Mac, eller prøv Windows-betaen. Hele arbeidsflyten er med: design, automatisk oversettelse, lokalisering, eksport og opplasting til App Store og Google Play.",
     },
     footer: {
-      note: "Bygget med SwiftUI. Designet for utviklere som publiserer App Store-oppdateringer.",
+      note: "Bygget med SwiftUI. Designet for utviklere som publiserer i App Store og Google Play.",
     },
   },
   cs: {
     siteTitle: `${SITE_NAME} — Snímky pro App Store a Google Play na Macu`,
-    siteDescription: "Navrhujte snímky obrazovky pro App Store a Google Play v nativní aplikaci pro Mac, iPad a iPhone. Rámečky zařízení, lokalizace a nahrávání do App Store Connect.",
+    siteDescription: "Navrhujte snímky obrazovky pro App Store a Google Play v nativní aplikaci pro Mac, iPad a iPhone. Rámečky zařízení, lokalizace a nahrávání do App Store Connect a Google Play.",
     primaryCtaLabel: "Stáhnout Screenshot Bro",
     navItems: [
       { label: "Příklady", href: "#showcases" },
@@ -3636,9 +3636,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Pro Mac, iPad a iPhone v App Store a také přímé stažení pro Mac",
+      "Pro Mac, iPad a iPhone v App Store, přímé stažení pro Mac a beta pro Windows",
       "Celý pracovní postup: import, návrh, automatický překlad, lokalizace, export",
-      "Nahrávání přímo do App Store Connect — konec přetahování v záložce prohlížeče",
+      "Nahrávání přímo do App Store Connect a Google Play — konec přetahování v záložce prohlížeče",
     ],
     faqs: [
       {
@@ -3647,11 +3647,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       {
         question: "Čím se liší od webového generátoru snímků pro App Store?",
-        answer: "Screenshot Bro je nativní aplikace pro Mac, iPad a iPhone, ne nástroj v prohlížeči, takže projekty, snímky a písma zůstávají na disku a běžná práce nevyžaduje účet ani připojení k internetu. Renderování a dávkový export běží na vašem vlastním hardwaru místo na serveru. Pokud používáte Windows nebo Linux, chcete spolupracovat ve sdílené relaci prohlížeče nebo potřebujete jen jeden či dva obrázky, bude pro vás vhodnější webový nástroj na snímky pro App Store — stránka s alternativami tyto případy popisuje.",
+        answer: "Screenshot Bro je nativní aplikace pro Mac, iPad a iPhone, ne nástroj v prohlížeči, takže projekty, snímky a písma zůstávají na disku a běžná práce nevyžaduje účet ani připojení k internetu. Renderování a dávkový export běží na vašem vlastním hardwaru místo na serveru. Pokud používáte Linux, chcete spolupracovat ve sdílené relaci prohlížeče nebo potřebujete jen jeden či dva obrázky, bude pro vás vhodnější webový nástroj na snímky pro App Store — stránka s alternativami tyto případy popisuje.",
       },
       {
         question: "Co potřebuji ke spuštění?",
-        answer: "macOS 15 (Sequoia) nebo novější na Macu, iPadOS 18 nebo novější na iPadu, nebo iOS 18 nebo novější na iPhonu. Pro běžnou práci není potřeba žádné doprovodné zařízení, účet ani připojení k internetu.",
+        answer: "macOS 15 (Sequoia) nebo novější na Macu, iPadOS 18 nebo novější na iPadu, nebo iOS 18 nebo novější na iPhonu. Beta pro Windows běží na 64bitových Windows 10 a 11. Pro běžnou práci není potřeba žádné doprovodné zařízení, účet ani připojení k internetu.",
       },
       {
         question: "Opouštějí moje data zařízení?",
@@ -3659,23 +3659,23 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       {
         question: "Jak funguje lokalizace?",
-        answer: "Vyberte si z 81 jazykových předvoleb nebo definujte vlastní kód. Automatický překlad doplní chybějící texty přímo v zařízení. Překlady se ukládají jako textové přepisy pro jednotlivé jazyky, takže rozvržení, barvy a obrázky zůstávají sdílené napříč všemi jazyky — navrhněte jednou, vydejte ve všech jazycích. Exporty se třídí do jazykových složek, které App Store Connect přímo převezme.",
+        answer: "Vyberte si z 81 jazykových předvoleb nebo definujte vlastní kód. Automatický překlad doplní chybějící texty přímo v zařízení. Překlady se ukládají jako textové přepisy pro jednotlivé jazyky, takže rozvržení, barvy a obrázky zůstávají sdílené napříč všemi jazyky — navrhněte jednou, vydejte ve všech jazycích. Exporty se třídí do jazykových složek připravených pro App Store Connect i Google Play a nahrávání přímo z aplikace přiřadí každý jazyk k jazykům daného obchodu.",
       },
       {
         question: "Mohu vytvářet i snímky pro Google Play?",
-        answer: "Ano. Řádky pro telefony a tablety s Androidem se renderují vedle iPhonu, iPadu a Macu ve stejném projektu. Každá kategorie zařízení je předem nastavená na pixelové rozměry, které příslušný obchod přijímá.",
+        answer: "Ano. Řádky pro telefony a tablety s Androidem se renderují vedle iPhonu, iPadu a Macu ve stejném projektu. Každá kategorie zařízení je předem nastavená na pixelové rozměry, které příslušný obchod přijímá. Součástí je i šablona pro hlavní grafiku (feature graphic) Google Play, a jakmile je sada hotová, nahrajete ji přímo z aplikace do záznamu své aplikace v Google Play.",
       },
       {
         question: "Mohu snímky ze simulátoru a zařízení rovnou přetáhnout do aplikace?",
         answer: "Ano. Přetáhněte složku se snímky a Screenshot Bro přiřadí každý z nich do správného řádku podle pixelové velikosti — snímky z iPhonu do řádku iPhone, z iPadu do iPadu, z Androidu do Androidu.",
       },
       {
-        question: "Mohu nahrávat do App Store Connect přímo z aplikace?",
-        answer: "Ano. Jednou nastavte svůj API klíč k App Store Connect (Issuer ID, Key ID a .p8). Screenshot Bro automaticky rozpozná správný typ displeje pro každý řádek, spáruje jazyky projektu s lokalizacemi v App Store Connect a nahradí stávající snímky v jediném průchodu — žádné přetahování v prohlížeči.",
+        question: "Mohu nahrávat do App Store Connect a Google Play přímo z aplikace?",
+        answer: "Ano. Jednou nastavte svůj API klíč k App Store Connect (Issuer ID, Key ID a .p8). Screenshot Bro automaticky rozpozná správný typ displeje pro každý řádek, spáruje jazyky projektu s lokalizacemi v App Store Connect a nahradí stávající snímky v jediném průchodu. Pro Google Play jednou naimportujete JSON klíč servisního účtu a zadáte název balíčku: každý jazyk projektu se přiřadí k odpovídajícímu jazyku záznamu v Google Play a nahrání se připraví jako úprava (edit) v Play, která se uloží až po vašem potvrzení. U žádného z obchodů žádné přetahování v prohlížeči.",
       },
       {
         question: "Může moje snímky vytvořit AI agent?",
-        answer: "Ano. Screenshot Bro na Macu provozuje volitelný lokální MCP server, takže asistent jako Claude Code, Claude Desktop nebo Cursor může vytvářet projekty, rozvrhovat řádky a tvary, importovat snímky, překládat texty, renderovat náhledy, které si skutečně může prohlédnout, exportovat a synchronizovat hotovou sadu do App Store Connect. Server naslouchá pouze na 127.0.0.1, každý požadavek vyžaduje přístupový token, který zkopírujete z Nastavení, a každou změnu, kterou agent provede, lze vrátit pomocí ⌘Z.",
+        answer: "Ano. Screenshot Bro na Macu provozuje volitelný lokální MCP server, takže asistent jako Claude Code, Claude Desktop nebo Cursor může vytvářet projekty, rozvrhovat řádky a tvary, importovat snímky, překládat texty, renderovat náhledy, které si skutečně může prohlédnout, exportovat a nahrát hotovou sadu do App Store Connect nebo Google Play. Server naslouchá pouze na 127.0.0.1, každý požadavek vyžaduje přístupový token, který zkopírujete z Nastavení, a každou změnu, kterou agent provede, lze vrátit pomocí ⌘Z.",
       },
       {
         question: "Synchronizuje se mezi zařízeními?",
@@ -3712,20 +3712,20 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Odeslat aplikaci",
       contactDeveloper: "Kontaktovat vývojáře",
       backToTop: "Zpět nahoru",
-      availabilityNote: "Aplikace pro macOS 15+ a iOS/iPadOS 18+ | Swift & SwiftUI | V App Store nebo jako přímé stažení pro Mac",
+      availabilityNote: "Aplikace pro macOS 15+ a iOS/iPadOS 18+ | Swift & SwiftUI | V App Store nebo jako přímé stažení pro Mac | Beta pro Windows",
     },
     hero: {
-      titleLead: "Vytvářejte & lokalizujte",
-      titleAccent: "App Store",
-      titleRest: " snímky během několika minut",
+      titleLead: "Vytvářejte & lokalizujte snímky pro",
+      titleAccent: "App Store & Google Play",
+      titleRest: " během několika minut",
       descriptionLead: "Navrhněte jednou. Lokalizujte do 81 jazyků, generujte všechny velikosti zařízení a",
-      descriptionStrong: "nahrávejte přímo do App Store Connect",
+      descriptionStrong: "nahrávejte přímo do App Store Connect a Google Play",
       descriptionTail: " bez nutnosti ručně předělávat snímky. Vše v nativní aplikaci.",
     },
     sections: {
-      showcases: { eyebrow: "Příklady", title: "Podívejte se, jak generátor funguje, ještě před instalací.", description: "Dávkový import, nahrání do App Store Connect jedním kliknutím, vrstvy a rámečky zařízení." },
+      showcases: { eyebrow: "Příklady", title: "Podívejte se, jak generátor funguje, ještě před instalací.", description: "Dávkový import, nahrání do App Store Connect a Google Play jedním kliknutím, vrstvy a rámečky zařízení." },
       workflow: { eyebrow: "Pracovní postup", title: "Kratší cesta od hrubých snímků k hotovým materiálům pro obchod.", description: "Zaměřeno na jeden cíl: vytvořit skvělé snímky bez nutnosti spravovat hromady návrhových souborů." },
-      features: { eyebrow: "Schopnosti", title: "Vše, co nástroj pro snímky App Store potřebuje.", description: "Důraz na rychlé rozvržení, konzistenci a snadný export." },
+      features: { eyebrow: "Schopnosti", title: "Vše, co nástroj pro snímky App Store a Google Play potřebuje.", description: "Důraz na rychlé rozvržení, konzistenci a snadný export." },
       blog: { eyebrow: "Z blogu", title: "Průvodci pro tvorbu lepších snímků obrazovky pro App Store.", description: "Tipy a doporučení pro zvýšení konverze." },
       faq: { eyebrow: "FAQ", title: "Často kladené otázky před vyzkoušením.", description: "Odpovědi ohledně kompatibility a exportu." },
       appShowcase: { eyebrow: "Vytvořeno v Screenshot Bro", title: "V dobré společnosti.", description: "Indie aplikace, které již používají Screenshot Bro." },
@@ -3736,15 +3736,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     download: {
       titleLine1: "Připraveni publikovat",
       titleLine2: "lepší snímky obrazovky?",
-      description: "Stáhněte si aplikaci v App Store a vyzkoušejte celý pracovní postup na Macu, iPadu nebo iPhonu.",
+      description: "Získejte aplikaci v App Store pro Mac, iPad a iPhone, stáhněte si ji přímo pro Mac, nebo vyzkoušejte betu pro Windows. Celý pracovní postup je k dispozici: návrh, automatický překlad, lokalizace, export a nahrání do App Store a Google Play.",
     },
     footer: {
-      note: "Vytvořeno v SwiftUI. Navrženo pro vývojáře, kteří vydávají aktualizace v App Store.",
+      note: "Vytvořeno v SwiftUI. Navrženo pro vývojáře, kteří vydávají aplikace v App Store a Google Play.",
     },
   },
   ro: {
     siteTitle: `${SITE_NAME} — Capturi pentru App Store și Google Play pe Mac`,
-    siteDescription: "Proiectează capturi App Store și Google Play pe Mac, iPad și iPhone. Rame de dispozitive, localizare și încărcare în App Store Connect.",
+    siteDescription: "Proiectează capturi App Store și Google Play pe Mac, iPad și iPhone. Rame de dispozitive, localizare și încărcare în App Store Connect și Google Play.",
     primaryCtaLabel: "Descarcă Screenshot Bro",
     navItems: [
       { label: "Exemple", href: "#showcases" },
@@ -3752,9 +3752,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "FAQ", href: "#faq" },
     ],
     benefits: [
-      "Pentru Mac, iPad și iPhone pe App Store, plus descărcare directă pentru Mac",
+      "Pentru Mac, iPad și iPhone pe App Store, descărcare directă pentru Mac și o versiune beta pentru Windows",
       "Flux de lucru complet: import, design, traducere automată, localizare, export",
-      "Încărcare direct în App Store Connect — gata cu drag-and-drop într-o filă de browser",
+      "Încărcare direct în App Store Connect și Google Play — gata cu drag-and-drop într-o filă de browser",
     ],
     faqs: [
       {
@@ -3763,11 +3763,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       {
         question: "Prin ce diferă de un generator web de capturi de ecran pentru App Store?",
-        answer: "Screenshot Bro este o aplicație nativă pentru Mac, iPad și iPhone, nu un instrument în browser, așa că proiectele, capturile și fonturile rămân pe disc, iar editarea de zi cu zi nu necesită cont sau conexiune la internet. Randarea și exportul în masă rulează pe propriul tău hardware, nu pe un server. Dacă folosești Windows sau Linux, vrei să colaborezi într-o sesiune de browser partajată sau ai nevoie doar de una sau două imagini, un instrument web pentru capturi App Store ți se potrivește mai bine — pagina de alternative acoperă aceste situații.",
+        answer: "Screenshot Bro este o aplicație nativă pentru Mac, iPad și iPhone, nu un instrument în browser, așa că proiectele, capturile și fonturile rămân pe disc, iar editarea de zi cu zi nu necesită cont sau conexiune la internet. Randarea și exportul în masă rulează pe propriul tău hardware, nu pe un server. Dacă folosești Linux, vrei să colaborezi într-o sesiune de browser partajată sau ai nevoie doar de una sau două imagini, un instrument web pentru capturi App Store ți se potrivește mai bine — pagina de alternative acoperă aceste situații.",
       },
       {
         question: "De ce am nevoie ca să o rulez?",
-        answer: "macOS 15 (Sequoia) sau mai nou pe Mac, iPadOS 18 sau mai nou pe iPad ori iOS 18 sau mai nou pe iPhone. Pentru editarea de zi cu zi nu ai nevoie de un dispozitiv suplimentar, de cont sau de conexiune la internet.",
+        answer: "macOS 15 (Sequoia) sau mai nou pe Mac, iPadOS 18 sau mai nou pe iPad ori iOS 18 sau mai nou pe iPhone. Versiunea beta pentru Windows rulează pe Windows 10 și 11 (64 de biți). Pentru editarea de zi cu zi nu ai nevoie de un dispozitiv suplimentar, de cont sau de conexiune la internet.",
       },
       {
         question: "Datele mele părăsesc dispozitivul?",
@@ -3775,23 +3775,23 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       {
         question: "Cum funcționează localizarea?",
-        answer: "Alege dintre 81 de presetări de limbă sau definește-ți propriul cod. Traducerea automată completează textele lipsă pe dispozitiv. Traducerile se salvează ca suprascrieri de text pentru fiecare limbă, astfel încât aspectul, culorile și imaginile rămân comune tuturor limbilor — proiectezi o dată, publici în toate limbile. Exporturile sunt organizate în foldere pe limbi, pe care App Store Connect le poate prelua direct.",
+        answer: "Alege dintre 81 de presetări de limbă sau definește-ți propriul cod. Traducerea automată completează textele lipsă pe dispozitiv. Traducerile se salvează ca suprascrieri de text pentru fiecare limbă, astfel încât aspectul, culorile și imaginile rămân comune tuturor limbilor — proiectezi o dată, publici în toate limbile. Exporturile sunt organizate în foldere pe limbi, gata pentru App Store Connect și Google Play, iar încărcarea din aplicație potrivește fiecare limbă cu limbile magazinului respectiv.",
       },
       {
         question: "Pot face și capturi de ecran pentru Google Play?",
-        answer: "Da. Rândurile pentru telefoane și tablete Android se randează alături de iPhone, iPad și Mac în același proiect. Fiecare categorie de dispozitive vine presetată la dimensiunile în pixeli acceptate de magazinul respectiv.",
+        answer: "Da. Rândurile pentru telefoane și tablete Android se randează alături de iPhone, iPad și Mac în același proiect. Fiecare categorie de dispozitive vine presetată la dimensiunile în pixeli acceptate de magazinul respectiv. Un șablon inclus acoperă grafica de prezentare (feature graphic) pentru Google Play, iar când setul este gata îl încarci direct din aplicație în fișa aplicației tale din Google Play.",
       },
       {
         question: "Pot plasa direct capturile din simulator și de pe dispozitive?",
         answer: "Da. Plasează un folder cu capturi, iar Screenshot Bro trimite fiecare captură în rândul potrivit după dimensiunea în pixeli — capturile de iPhone în rândul de iPhone, cele de iPad la iPad, cele de Android la Android.",
       },
       {
-        question: "Pot încărca în App Store Connect direct din aplicație?",
-        answer: "Da. Configurează o singură dată cheia API App Store Connect (Issuer ID, Key ID și .p8). Screenshot Bro detectează automat tipul de afișaj potrivit pentru fiecare rând, potrivește limbile proiectului cu localizările din App Store Connect și înlocuiește capturile existente dintr-o singură trecere — fără drag-and-drop în browser.",
+        question: "Pot încărca în App Store Connect și Google Play direct din aplicație?",
+        answer: "Da. Configurează o singură dată cheia API App Store Connect (Issuer ID, Key ID și .p8). Screenshot Bro detectează automat tipul de afișaj potrivit pentru fiecare rând, potrivește limbile proiectului cu localizările din App Store Connect și înlocuiește capturile existente dintr-o singură trecere. Pentru Google Play, imporți o singură dată cheia JSON a unui cont de serviciu și introduci numele pachetului: fiecare limbă a proiectului este asociată cu limba corespunzătoare din fișa Play, iar încărcarea este pregătită ca o editare (edit) Play, aplicată doar după ce confirmi. Fără drag-and-drop în browser pentru niciunul dintre magazine.",
       },
       {
         question: "Poate un agent AI să-mi creeze capturile?",
-        answer: "Da. Screenshot Bro găzduiește pe Mac un server MCP local opțional, astfel încât un asistent precum Claude Code, Claude Desktop sau Cursor poate crea proiecte, aranja rânduri și forme, importa capturi, traduce textele, randa previzualizări pe care le poate vedea efectiv, exporta și sincroniza un set finalizat în App Store Connect. Serverul ascultă doar pe 127.0.0.1, fiecare cerere necesită un token de acces pe care îl copiezi din Setări, iar orice modificare făcută de agent poate fi anulată cu ⌘Z.",
+        answer: "Da. Screenshot Bro găzduiește pe Mac un server MCP local opțional, astfel încât un asistent precum Claude Code, Claude Desktop sau Cursor poate crea proiecte, aranja rânduri și forme, importa capturi, traduce textele, randa previzualizări pe care le poate vedea efectiv, exporta și încărca un set finalizat în App Store Connect sau Google Play. Serverul ascultă doar pe 127.0.0.1, fiecare cerere necesită un token de acces pe care îl copiezi din Setări, iar orice modificare făcută de agent poate fi anulată cu ⌘Z.",
       },
       {
         question: "Se sincronizează între dispozitive?",
@@ -3828,20 +3828,20 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Trimite aplicația",
       contactDeveloper: "Contactează dezvoltatorul",
       backToTop: "Înapoi sus",
-      availabilityNote: "Aplicație pentru macOS 15+ și iOS/iPadOS 18+ | Swift & SwiftUI | Pe App Store sau descărcare directă pentru Mac",
+      availabilityNote: "Aplicație pentru macOS 15+ și iOS/iPadOS 18+ | Swift & SwiftUI | Pe App Store sau descărcare directă pentru Mac | Beta pentru Windows",
     },
     hero: {
-      titleLead: "Creează & localizează",
-      titleAccent: "App Store",
-      titleRest: " capturi de ecran în câteva minute",
+      titleLead: "Creează & localizează capturi pentru",
+      titleAccent: "App Store & Google Play",
+      titleRest: " în câteva minute",
       descriptionLead: "Proiectează o dată. Localizează în 81 de limbi, generează toate dimensiunile de dispozitive și",
-      descriptionStrong: "încarcă direct în App Store Connect",
+      descriptionStrong: "încarcă direct în App Store Connect și Google Play",
       descriptionTail: " fără a reface manual capturile. Totul într-o aplicație nativă.",
     },
     sections: {
-      showcases: { eyebrow: "Exemple", title: "Vezi cum funcționează generatorul înainte de instalare.", description: "Import în masă, încărcare în App Store Connect cu un clic, straturi și rame de dispozitive." },
+      showcases: { eyebrow: "Exemple", title: "Vezi cum funcționează generatorul înainte de instalare.", description: "Import în masă, încărcare în App Store Connect și Google Play cu un clic, straturi și rame de dispozitive." },
       workflow: { eyebrow: "Flux de lucru", title: "O cale mai scurtă de la capturile brute la materialele finale pentru magazin.", description: "Conceput pentru un singur scop: creează capturi superbe fără a întreține o grămadă de fișiere de design." },
-      features: { eyebrow: "Capabilități", title: "Tot ce trebuie să facă un instrument de capturi pentru App Store.", description: "Accent pe aspect rapid, consecvență și export fără bătăi de cap." },
+      features: { eyebrow: "Capabilități", title: "Tot ce trebuie să facă un instrument de capturi pentru App Store și Google Play.", description: "Accent pe aspect rapid, consecvență și export fără bătăi de cap." },
       blog: { eyebrow: "Din blog", title: "Ghiduri pentru a crea capturi de ecran mai bune pentru App Store.", description: "Sfaturi și referințe pentru a crește conversia." },
       faq: { eyebrow: "FAQ", title: "Întrebări frecvente înainte de testare.", description: "Răspunsuri despre compatibilitate și export." },
       appShowcase: { eyebrow: "Creat cu Screenshot Bro", title: "În companie bună.", description: "Aplicații indie care folosesc deja Screenshot Bro." },
@@ -3852,15 +3852,15 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     download: {
       titleLine1: "Gata să publici",
       titleLine2: "capturi de ecran mai bune?",
-      description: "Descarcă din App Store și experimentează întregul flux de lucru pe Mac, iPad sau iPhone.",
+      description: "Ia-o din App Store pentru Mac, iPad și iPhone, descarc-o direct pentru Mac sau încearcă versiunea beta pentru Windows. Întregul flux de lucru este acolo: design, traducere automată, localizare, export și încărcare în App Store și Google Play.",
     },
     footer: {
-      note: "Construit cu SwiftUI. Creat pentru dezvoltatorii care publică actualizări în App Store.",
+      note: "Construit cu SwiftUI. Creat pentru dezvoltatorii care publică în App Store și Google Play.",
     },
   },
   ms: {
     siteTitle: `${SITE_NAME} — Tangkapan Skrin App Store & Google Play di Mac`,
-    siteDescription: "Reka tangkapan skrin App Store dan Google Play pada Mac, iPad dan iPhone. Bingkai peranti, penyetempatan dan muat naik ke App Store Connect.",
+    siteDescription: "Reka tangkapan skrin App Store dan Google Play pada Mac, iPad dan iPhone. Bingkai peranti, penyetempatan dan muat naik ke App Store Connect dan Google Play.",
     primaryCtaLabel: "Muat turun Screenshot Bro",
     navItems: [
       { label: "Contoh", href: "#showcases" },
@@ -3868,9 +3868,9 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       { label: "Soalan Lazim", href: "#faq" },
     ],
     benefits: [
-      "Untuk Mac, iPad dan iPhone di App Store, serta muat turun terus untuk Mac",
+      "Untuk Mac, iPad dan iPhone di App Store, muat turun terus untuk Mac dan versi beta Windows",
       "Aliran kerja penuh: import, reka, terjemah automatik, setempatkan, eksport",
-      "Muat naik terus ke App Store Connect — tiada lagi tarik dan lepas dalam tab pelayar",
+      "Muat naik terus ke App Store Connect dan Google Play — tiada lagi tarik dan lepas dalam tab pelayar",
     ],
     faqs: [
       {
@@ -3879,11 +3879,11 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       {
         question: "Apakah bezanya dengan penjana tangkapan skrin App Store berasaskan web?",
-        answer: "Screenshot Bro ialah aplikasi natif Mac, iPad dan iPhone, bukan alat pelayar, jadi projek, tangkapan skrin dan fon kekal pada cakera dan penyuntingan harian tidak memerlukan akaun atau sambungan internet. Proses render dan eksport pukal berjalan pada perkakasan anda sendiri, bukan pada pelayan. Jika anda menggunakan Windows atau Linux, mahu bekerjasama dalam sesi pelayar yang dikongsi, atau hanya memerlukan satu atau dua imej, alat tangkapan skrin App Store berasaskan web lebih sesuai — halaman alternatif merangkumi kes-kes tersebut.",
+        answer: "Screenshot Bro ialah aplikasi natif Mac, iPad dan iPhone, bukan alat pelayar, jadi projek, tangkapan skrin dan fon kekal pada cakera dan penyuntingan harian tidak memerlukan akaun atau sambungan internet. Proses render dan eksport pukal berjalan pada perkakasan anda sendiri, bukan pada pelayan. Jika anda menggunakan Linux, mahu bekerjasama dalam sesi pelayar yang dikongsi, atau hanya memerlukan satu atau dua imej, alat tangkapan skrin App Store berasaskan web lebih sesuai — halaman alternatif merangkumi kes-kes tersebut.",
       },
       {
         question: "Apakah yang saya perlukan untuk menjalankannya?",
-        answer: "macOS 15 (Sequoia) atau lebih baharu pada Mac, iPadOS 18 atau lebih baharu pada iPad, atau iOS 18 atau lebih baharu pada iPhone. Tiada peranti pendamping, tiada akaun dan tiada sambungan internet diperlukan untuk penyuntingan harian.",
+        answer: "macOS 15 (Sequoia) atau lebih baharu pada Mac, iPadOS 18 atau lebih baharu pada iPad, atau iOS 18 atau lebih baharu pada iPhone. Versi beta Windows berjalan pada Windows 10 dan 11 (64-bit). Tiada peranti pendamping, tiada akaun dan tiada sambungan internet diperlukan untuk penyuntingan harian.",
       },
       {
         question: "Adakah data saya keluar dari peranti saya?",
@@ -3891,23 +3891,23 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       },
       {
         question: "Bagaimanakah penyetempatan berfungsi?",
-        answer: "Pilih daripada 81 pratetap bahasa, atau tentukan kod anda sendiri. Terjemahan automatik mengisi teks yang tiada pada peranti. Terjemahan disimpan sebagai gantian teks bagi setiap bahasa, jadi susun atur, warna dan imej dikongsi merentas setiap bahasa — reka sekali, terbitkan dalam setiap bahasa. Eksport disusun ke dalam folder bahasa yang boleh terus diambil oleh App Store Connect.",
+        answer: "Pilih daripada 81 pratetap bahasa, atau tentukan kod anda sendiri. Terjemahan automatik mengisi teks yang tiada pada peranti. Terjemahan disimpan sebagai gantian teks bagi setiap bahasa, jadi susun atur, warna dan imej dikongsi merentas setiap bahasa — reka sekali, terbitkan dalam setiap bahasa. Eksport disusun ke dalam folder bahasa yang sedia untuk App Store Connect dan Google Play, dan fungsi muat naik dalam aplikasi memadankan setiap bahasa dengan bahasa gedung itu sendiri.",
       },
       {
         question: "Bolehkah saya membuat tangkapan skrin Google Play juga?",
-        answer: "Ya. Baris telefon dan tablet Android dirender bersama iPhone, iPad dan Mac dalam projek yang sama. Setiap kategori peranti dipratetap kepada dimensi piksel yang diterima oleh gedung berkenaan.",
+        answer: "Ya. Baris telefon dan tablet Android dirender bersama iPhone, iPad dan Mac dalam projek yang sama. Setiap kategori peranti dipratetap kepada dimensi piksel yang diterima oleh gedung berkenaan. Templat terbina dalam turut merangkumi grafik ciri Google Play, dan apabila set itu siap, muat naiknya terus ke penyenaraian Play anda dari dalam aplikasi.",
       },
       {
         question: "Bolehkah saya terus melepaskan tangkapan skrin simulator dan peranti ke dalamnya?",
         answer: "Ya. Lepaskan folder tangkapan skrin dan Screenshot Bro menghalakan setiap satu ke baris yang betul berdasarkan saiz pikselnya — tangkapan iPhone ke baris iPhone, iPad ke iPad, Android ke Android.",
       },
       {
-        question: "Bolehkah saya memuat naik ke App Store Connect dari dalam aplikasi?",
-        answer: "Ya. Konfigurasikan kunci API App Store Connect anda sekali (Issuer ID, Key ID dan .p8). Screenshot Bro mengesan jenis paparan yang betul bagi setiap baris secara automatik, memadankan bahasa projek anda dengan penyetempatan App Store Connect dan menggantikan tangkapan skrin sedia ada dalam satu laluan — tiada tarik dan lepas dalam pelayar.",
+        question: "Bolehkah saya memuat naik ke App Store Connect dan Google Play dari dalam aplikasi?",
+        answer: "Ya. Konfigurasikan kunci API App Store Connect anda sekali (Issuer ID, Key ID dan .p8). Screenshot Bro mengesan jenis paparan yang betul bagi setiap baris secara automatik, memadankan bahasa projek anda dengan penyetempatan App Store Connect dan menggantikan tangkapan skrin sedia ada dalam satu laluan. Untuk Google Play, import kunci JSON akaun perkhidmatan sekali dan masukkan nama pakej anda: setiap bahasa projek dipadankan dengan bahasa penyenaraian Play, dan muat naik disediakan sebagai suntingan Play (edit) yang hanya dilaksanakan selepas anda mengesahkannya. Tiada tarik dan lepas dalam pelayar untuk kedua-dua gedung.",
       },
       {
         question: "Bolehkah ejen AI membina tangkapan skrin saya?",
-        answer: "Ya. Screenshot Bro menyediakan pelayan MCP setempat pilihan pada Mac, jadi pembantu seperti Claude Code, Claude Desktop atau Cursor boleh mencipta projek, menyusun baris dan bentuk, mengimport tangkapan skrin, menterjemah teks, merender pratonton yang benar-benar boleh dilihatnya, mengeksport dan menyelaraskan set yang siap ke App Store Connect. Pelayan hanya mendengar pada 127.0.0.1, setiap permintaan memerlukan token akses yang anda salin daripada Tetapan, dan setiap perubahan yang dibuat oleh ejen boleh dibuat asal dengan ⌘Z.",
+        answer: "Ya. Screenshot Bro menyediakan pelayan MCP setempat pilihan pada Mac, jadi pembantu seperti Claude Code, Claude Desktop atau Cursor boleh mencipta projek, menyusun baris dan bentuk, mengimport tangkapan skrin, menterjemah teks, merender pratonton yang benar-benar boleh dilihatnya, mengeksport dan memuat naik set yang siap ke App Store Connect atau Google Play. Pelayan hanya mendengar pada 127.0.0.1, setiap permintaan memerlukan token akses yang anda salin daripada Tetapan, dan setiap perubahan yang dibuat oleh ejen boleh dibuat asal dengan ⌘Z.",
       },
       {
         question: "Adakah ia menyelaras antara peranti?",
@@ -3944,20 +3944,20 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
       submitApp: "Hantar aplikasi",
       contactDeveloper: "Hubungi pembangun",
       backToTop: "Kembali ke atas",
-      availabilityNote: "Aplikasi macOS 15+ dan iOS/iPadOS 18+ | Swift & SwiftUI | Di App Store atau muat turun terus untuk Mac",
+      availabilityNote: "Aplikasi macOS 15+ dan iOS/iPadOS 18+ | Swift & SwiftUI | Di App Store atau muat turun terus untuk Mac | Beta Windows",
     },
     hero: {
-      titleLead: "Cipta & setempatkan",
-      titleAccent: "App Store",
-      titleRest: " tangkapan skrin dalam beberapa minit",
+      titleLead: "Cipta & setempatkan tangkapan skrin",
+      titleAccent: "App Store & Google Play",
+      titleRest: " dalam beberapa minit",
       descriptionLead: "Reka sekali. Setempatkan ke 81 bahasa, jana semua saiz peranti dan",
-      descriptionStrong: "muat naik terus ke App Store Connect",
+      descriptionStrong: "muat naik terus ke App Store Connect dan Google Play",
       descriptionTail: " tanpa membina semula tangkapan skrin secara manual. Segalanya dalam satu aplikasi natif.",
     },
     sections: {
-      showcases: { eyebrow: "Contoh", title: "Lihat bagaimana penjana berfungsi sebelum memasang.", description: "Import pukal, muat naik ke App Store Connect dengan satu klik, lapisan dan bingkai peranti." },
+      showcases: { eyebrow: "Contoh", title: "Lihat bagaimana penjana berfungsi sebelum memasang.", description: "Import pukal, muat naik ke App Store Connect dan Google Play dengan satu klik, lapisan dan bingkai peranti." },
       workflow: { eyebrow: "Aliran kerja", title: "Laluan lebih pantas daripada tangkapan mentah ke aset gedung yang siap.", description: "Fokus pada satu matlamat: cipta tangkapan skrin hebat tanpa perlu menyelenggara timbunan fail reka bentuk." },
-      features: { eyebrow: "Keupayaan", title: "Semua yang diperlukan oleh alat tangkapan skrin App Store.", description: "Tumpuan pada susun atur pantas, ketekalan dan eksport yang lancar." },
+      features: { eyebrow: "Keupayaan", title: "Semua yang diperlukan oleh alat tangkapan skrin App Store dan Google Play.", description: "Tumpuan pada susun atur pantas, ketekalan dan eksport yang lancar." },
       blog: { eyebrow: "Daripada blog", title: "Panduan untuk mereka bentuk tangkapan skrin App Store yang lebih baik.", description: "Petua dan rujukan untuk meningkatkan kadar penukaran." },
       faq: { eyebrow: "Soalan Lazim", title: "Soalan lazim sebelum anda mencuba.", description: "Jawapan mengenai keserasian dan eksport." },
       appShowcase: { eyebrow: "Dicipta dengan Screenshot Bro", title: "Bersama rakan hebat.", description: "Aplikasi indie yang sudah menggunakan Screenshot Bro." },
@@ -3968,10 +3968,10 @@ const LOCALIZED_OVERRIDES: Record<Exclude<LocaleCode, "en">, HomeCopyOverrides> 
     download: {
       titleLine1: "Sedia untuk terbitkan",
       titleLine2: "tangkapan skrin yang lebih baik?",
-      description: "Dapatkan di App Store dan rasai seluruh aliran kerja di Mac, iPad atau iPhone.",
+      description: "Dapatkan di App Store untuk Mac, iPad dan iPhone, muat turun terus untuk Mac, atau cuba versi beta Windows. Seluruh aliran kerja tersedia: reka bentuk, terjemahan automatik, penyetempatan, eksport dan muat naik ke App Store dan Google Play.",
     },
     footer: {
-      note: "Dibina dengan SwiftUI. Direka untuk pembangun yang mengeluarkan kemas kini App Store.",
+      note: "Dibina dengan SwiftUI. Direka untuk pembangun yang menerbitkan aplikasi di App Store dan Google Play.",
     },
   },
 };

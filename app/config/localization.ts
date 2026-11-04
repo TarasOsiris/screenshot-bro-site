@@ -201,9 +201,9 @@ export type HomeCopy = {
 
 export const EN_HOME_COPY: HomeCopy = {
   locale: LOCALES[0],
-  // Brand first, like every translated title; 54 chars, inside the 60 the
+  // Brand first, like every translated title; 55 chars, inside the 60 the
   // blog and /vs titles are held to.
-  siteTitle: `${SITE_NAME}: App Store Screenshot Tool for Mac & iOS`,
+  siteTitle: `${SITE_NAME}: App Store & Google Play Screenshot Tool`,
   siteDescription: SITE_DESCRIPTION,
   socialImageAlt:
     "Screenshot Bro — native Mac, iPad and iPhone app for designing App Store and Google Play screenshots with device frames, gradients, and localization",
@@ -262,7 +262,7 @@ export const EN_HOME_COPY: HomeCopy = {
     productHuntAlt:
       "ScreenshotBro App - Design and export beautiful App Store screenshots. | Product Hunt",
     availabilityNote:
-      "macOS 15+ and iOS/iPadOS 18+ app | Swift & SwiftUI | App Store or direct download for Mac",
+      "macOS 15+ and iOS/iPadOS 18+ app | Swift & SwiftUI | App Store or direct download for Mac | Windows beta",
     features: "Features",
     templates: "Templates",
     pricing: "Pricing",
@@ -280,22 +280,22 @@ export const EN_HOME_COPY: HomeCopy = {
   },
   hero: {
     titleLead: "Create & Localize",
-    titleAccent: "App Store",
+    titleAccent: "App Store & Google Play",
     titleRest: " Screenshots in Minutes",
     descriptionLead:
       "Design once. Localize into 81 languages, generate every device size, and",
-    descriptionStrong: "upload directly to App Store Connect",
+    descriptionStrong: "upload directly to App Store Connect and Google Play",
     descriptionTail:
       "without rebuilding screenshots by hand. All in one native app.",
     videoLabel:
-      "Screenshot Bro app demo - designing App Store screenshots with device frames, gradients, and batch export",
+      "Screenshot Bro app demo - designing App Store and Google Play screenshots with device frames, gradients, and batch export",
   },
   sections: {
     showcases: {
       eyebrow: "Showcases",
       title: "See how the screenshot generator works before you install.",
       description:
-        "Batch import, one-click App Store Connect upload, layers, backgrounds, and device frames — the moments most people use to judge whether this saves them time.",
+        "Batch import, one-click App Store Connect and Google Play upload, layers, backgrounds, and device frames — the moments most people use to judge whether this saves them time.",
     },
     templates: {
       eyebrow: "Templates",
@@ -305,20 +305,20 @@ export const EN_HOME_COPY: HomeCopy = {
     },
     workflow: {
       eyebrow: "Workflow",
-      title: "A shorter path from raw screenshots to App Store-ready assets.",
+      title: "A shorter path from raw screenshots to store-ready assets.",
       description:
         "The product is opinionated around one job: create polished screenshot sets without maintaining a pile of one-off design files.",
     },
     features: {
       eyebrow: "Capabilities",
       title:
-        "Everything an App Store screenshot tool should do. Nothing it shouldn't.",
+        "Everything an App Store & Google Play screenshot tool should do. Nothing it shouldn't.",
       description:
         "The feature set stays focused on layout speed, screenshot consistency, and export sanity. No browser tab, no general-purpose design suite, no repetitive resize work.",
     },
     blog: {
       eyebrow: "From the Blog",
-      title: "Guides for shipping better App Store screenshots.",
+      title: "Guides for shipping better App Store and Google Play screenshots.",
       description:
         "References and playbooks for sizing, localizing, uploading, and designing App Store and Google Play screenshots that actually convert.",
     },
@@ -326,7 +326,7 @@ export const EN_HOME_COPY: HomeCopy = {
       eyebrow: "FAQ",
       title: "The questions most people ask before trying it.",
       description:
-        "Pricing, requirements, privacy, and how the workflow fits with App Store Connect.",
+        "Pricing, requirements, privacy, and how the workflow fits with App Store Connect and Google Play.",
     },
     appShowcase: {
       eyebrow: "Shipped with Screenshot Bro",
@@ -343,11 +343,11 @@ export const EN_HOME_COPY: HomeCopy = {
     titleLine1: "Ready to ship",
     titleLine2: "better screenshots?",
     description:
-      "Download from the App Store and use the full screenshot workflow on Mac, iPad, or iPhone: setup, design, auto-translation, localization, and export for App Store and Google Play assets.",
+      "Get it on the App Store for Mac, iPad, and iPhone, download it for Mac, or try the Windows beta. The full workflow is there: design, auto-translate, localize, export, and upload to the App Store and Google Play.",
   },
   footer: {
     note:
-      "Built with SwiftUI. Designed for developers shipping App Store updates.",
+      "Built with SwiftUI. Designed for developers shipping to the App Store and Google Play.",
   },
 };
 

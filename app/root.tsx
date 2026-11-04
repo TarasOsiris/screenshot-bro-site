@@ -34,6 +34,7 @@ import {
   TWITTER_HANDLE,
   WORKFLOW_STEPS,
   X_PROFILE_URL,
+  MINIMUM_WINDOWS_VERSION,
 } from "~/config/site";
 import {
   LOCALES,
@@ -75,9 +76,10 @@ const SOFTWARE_APP_SCHEMA = {
     `macOS ${MINIMUM_MACOS_VERSION} or later`,
     `iPadOS ${MINIMUM_IPADOS_VERSION} or later`,
     `iOS ${MINIMUM_IPADOS_VERSION} or later`,
+    `Windows ${MINIMUM_WINDOWS_VERSION} or later (beta)`,
   ],
   applicationCategory: "DesignApplication",
-  applicationSubCategory: "App Store screenshot generator",
+  applicationSubCategory: "App Store and Google Play screenshot generator",
   description: SITE_DESCRIPTION,
   url: SITE_URL,
   downloadUrl: APP_STORE_URL,
@@ -197,7 +199,7 @@ const HOW_TO_SCHEMA_JSON = JSON.stringify({
   tool: [{ "@type": "HowToTool", name: SITE_NAME }],
   supply: [
     { "@type": "HowToSupply", name: "Raw app screenshots (PNG or JPEG)" },
-    { "@type": "HowToSupply", name: "App Store Connect API key (optional, for direct upload)" },
+    { "@type": "HowToSupply", name: "App Store Connect API key or Google Play service account (optional, for direct upload)" },
   ],
   step: WORKFLOW_STEPS.map((step, index) => ({
     "@type": "HowToStep",
@@ -221,7 +223,7 @@ export const meta: Route.MetaFunction = ({ error }) => {
       {
         name: "description",
         content: notFound
-          ? `This page doesn't exist on ${SITE_NAME}'s site. Head to the home page, the blog or the docs to find App Store screenshot guides and help.`
+          ? `This page doesn't exist on ${SITE_NAME}'s site. Head to the home page, the blog or the docs to find App Store and Google Play screenshot guides and help.`
           : `${SITE_NAME} hit an unexpected error. Please try again in a moment.`,
       },
       { name: "robots", content: "noindex" },

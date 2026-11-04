@@ -87,7 +87,7 @@ export default function Features() {
         <section className="text-center max-w-3xl mx-auto">
           <p className="text-xs uppercase tracking-[0.25em] text-accent-light font-mono">Features</p>
           <h1 className="mt-3 font-display font-extrabold text-4xl sm:text-5xl text-ink tracking-tight text-balance">
-            Everything an App Store screenshot tool should do
+            Everything an App Store and Google Play screenshot tool should do
           </h1>
           <p className="mt-5 text-lg text-ink/60 leading-relaxed text-balance">
             {SITE_NAME} is a native Mac, iPad and iPhone app for designing, localizing, exporting and
