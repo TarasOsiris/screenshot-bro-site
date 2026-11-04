@@ -3994,6 +3994,8 @@ type TemplatesCopy = {
     | "playTemplates"
     | "showAllTemplates"
     | "showFewerTemplates"
+    | "templateStoreLabel"
+    | "templateAltAndroid"
   >;
 };
 
@@ -4016,6 +4018,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Reanudar la rotación de plantillas",
       showAllTemplates: (count) => `Ver las ${count} plantillas`,
       showFewerTemplates: "Ver menos",
+      templateStoreLabel: "Elige la tienda que quieres ver",
+      templateAltAndroid: (name) => `Plantilla ${name} exportada desde Screenshot Bro: una fila de capturas de Google Play con titulares y marcos de teléfono Android`,
     },
   },
   zh: {
@@ -4036,6 +4040,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "播放模板轮播",
       showAllTemplates: (count) => `查看全部 ${count} 个模板`,
       showFewerTemplates: "收起",
+      templateStoreLabel: "选择要预览的商店",
+      templateAltAndroid: (name) => `从 Screenshot Bro 导出的 ${name} 模板：一行带标题和 Android 手机边框的 Google Play 截图`,
     },
   },
   hi: {
@@ -4056,6 +4062,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "टेम्पलेट रोटेशन चलाएँ",
       showAllTemplates: (count) => `सभी ${count} टेम्पलेट देखें`,
       showFewerTemplates: "कम दिखाएँ",
+      templateStoreLabel: "प्रीव्यू के लिए स्टोर चुनें",
+      templateAltAndroid: (name) => `Screenshot Bro से एक्सपोर्ट किया गया ${name} टेम्पलेट: हेडलाइन और Android फ़ोन फ्रेम के साथ Google Play स्क्रीनशॉट की एक पंक्ति`,
     },
   },
   fr: {
@@ -4076,6 +4084,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Reprendre le défilement des modèles",
       showAllTemplates: (count) => `Voir les ${count} modèles`,
       showFewerTemplates: "Voir moins",
+      templateStoreLabel: "Choisissez la boutique à prévisualiser",
+      templateAltAndroid: (name) => `Modèle ${name} exporté depuis Screenshot Bro : une rangée de captures Google Play avec titres et cadres de téléphone Android`,
     },
   },
   ar: {
@@ -4096,6 +4106,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "تشغيل تبديل القوالب",
       showAllTemplates: (count) => `عرض كل القوالب (${count})`,
       showFewerTemplates: "عرض أقل",
+      templateStoreLabel: "اختر المتجر لمعاينته",
+      templateAltAndroid: (name) => `قالب ${name} مُصدَّر من Screenshot Bro: صف من لقطات Google Play مع عناوين وإطارات هاتف Android`,
     },
   },
   de: {
@@ -4116,6 +4128,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Vorlagenwechsel fortsetzen",
       showAllTemplates: (count) => `Alle ${count} Vorlagen anzeigen`,
       showFewerTemplates: "Weniger anzeigen",
+      templateStoreLabel: "Store für die Vorschau wählen",
+      templateAltAndroid: (name) => `Vorlage ${name}, exportiert aus Screenshot Bro: eine Reihe Google-Play-Screenshots mit Überschriften und Android-Smartphone-Rahmen`,
     },
   },
   ja: {
@@ -4136,6 +4150,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "テンプレートの自動切り替えを再開",
       showAllTemplates: (count) => `${count} 個のテンプレートをすべて表示`,
       showFewerTemplates: "表示を減らす",
+      templateStoreLabel: "プレビューするストアを選択",
+      templateAltAndroid: (name) => `Screenshot Bro から書き出した ${name} テンプレート：見出しと Android スマートフォンのフレーム付きの Google Play スクリーンショット 1 行`,
     },
   },
   pt: {
@@ -4156,6 +4172,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Retomar a rotação de modelos",
       showAllTemplates: (count) => `Ver todos os ${count} modelos`,
       showFewerTemplates: "Ver menos",
+      templateStoreLabel: "Escolha a loja para visualizar",
+      templateAltAndroid: (name) => `Modelo ${name} exportado do Screenshot Bro: uma fileira de capturas do Google Play com títulos e molduras de celular Android`,
     },
   },
   it: {
@@ -4176,6 +4194,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Riprendi la rotazione dei modelli",
       showAllTemplates: (count) => `Mostra tutti i ${count} modelli`,
       showFewerTemplates: "Mostra meno",
+      templateStoreLabel: "Scegli lo store da visualizzare",
+      templateAltAndroid: (name) => `Modello ${name} esportato da Screenshot Bro: una fila di screenshot per Google Play con titoli e cornici di telefono Android`,
     },
   },
   ko: {
@@ -4196,6 +4216,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "템플릿 자동 전환 재생",
       showAllTemplates: (count) => `템플릿 ${count}개 모두 보기`,
       showFewerTemplates: "간단히 보기",
+      templateStoreLabel: "미리 볼 스토어 선택",
+      templateAltAndroid: (name) => `Screenshot Bro에서 내보낸 ${name} 템플릿: 헤드라인과 Android 휴대폰 프레임이 있는 Google Play 스크린샷 한 줄`,
     },
   },
   uk: {
@@ -4216,6 +4238,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Відновити зміну шаблонів",
       showAllTemplates: (count) => `Показати всі ${count} шаблони`,
       showFewerTemplates: "Показати менше",
+      templateStoreLabel: "Оберіть магазин для перегляду",
+      templateAltAndroid: (name) => `Шаблон ${name}, експортований зі Screenshot Bro: ряд скриншотів для Google Play із заголовками та рамками Android-телефона`,
     },
   },
   pl: {
@@ -4236,6 +4260,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Wznów zmianę szablonów",
       showAllTemplates: (count) => `Pokaż wszystkie szablony (${count})`,
       showFewerTemplates: "Pokaż mniej",
+      templateStoreLabel: "Wybierz sklep do podglądu",
+      templateAltAndroid: (name) => `Szablon ${name} wyeksportowany ze Screenshot Bro: rząd zrzutów do Google Play z nagłówkami i ramkami telefonu z Androidem`,
     },
   },
   tr: {
@@ -4256,6 +4282,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Şablon geçişini başlat",
       showAllTemplates: (count) => `${count} şablonun tümünü göster`,
       showFewerTemplates: "Daha az göster",
+      templateStoreLabel: "Önizlemek için bir mağaza seçin",
+      templateAltAndroid: (name) => `Screenshot Bro'dan dışa aktarılan ${name} şablonu: başlıklı ve Android telefon çerçeveli bir sıra Google Play ekran görüntüsü`,
     },
   },
   nl: {
@@ -4276,6 +4304,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Sjabloonrotatie hervatten",
       showAllTemplates: (count) => `Alle ${count} sjablonen tonen`,
       showFewerTemplates: "Minder tonen",
+      templateStoreLabel: "Kies een store om te bekijken",
+      templateAltAndroid: (name) => `Sjabloon ${name} geëxporteerd uit Screenshot Bro: een rij Google Play-screenshots met koppen en Android-telefoonframes`,
     },
   },
   id: {
@@ -4296,6 +4326,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Putar rotasi templat",
       showAllTemplates: (count) => `Lihat semua ${count} templat`,
       showFewerTemplates: "Tampilkan lebih sedikit",
+      templateStoreLabel: "Pilih toko untuk pratinjau",
+      templateAltAndroid: (name) => `Templat ${name} yang diekspor dari Screenshot Bro: satu baris tangkapan layar Google Play dengan judul dan bingkai ponsel Android`,
     },
   },
   vi: {
@@ -4316,6 +4348,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Tiếp tục chuyển mẫu",
       showAllTemplates: (count) => `Xem tất cả ${count} mẫu`,
       showFewerTemplates: "Thu gọn",
+      templateStoreLabel: "Chọn cửa hàng để xem trước",
+      templateAltAndroid: (name) => `Mẫu ${name} xuất từ Screenshot Bro: một hàng ảnh chụp Google Play có tiêu đề và khung điện thoại Android`,
     },
   },
   th: {
@@ -4336,6 +4370,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "เล่นการสลับเทมเพลต",
       showAllTemplates: (count) => `ดูเทมเพลตทั้งหมด ${count} แบบ`,
       showFewerTemplates: "แสดงน้อยลง",
+      templateStoreLabel: "เลือกสโตร์เพื่อดูตัวอย่าง",
+      templateAltAndroid: (name) => `เทมเพลต ${name} ที่ส่งออกจาก Screenshot Bro: แถวภาพหน้าจอ Google Play พร้อมหัวข้อและกรอบโทรศัพท์ Android`,
     },
   },
   sv: {
@@ -4356,6 +4392,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Starta mallväxlingen",
       showAllTemplates: (count) => `Visa alla ${count} mallar`,
       showFewerTemplates: "Visa färre",
+      templateStoreLabel: "Välj en butik att förhandsgranska",
+      templateAltAndroid: (name) => `Mallen ${name} exporterad från Screenshot Bro: en rad Google Play-skärmbilder med rubriker och Android-telefonramar`,
     },
   },
   da: {
@@ -4376,6 +4414,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Genoptag skabelonskift",
       showAllTemplates: (count) => `Vis alle ${count} skabeloner`,
       showFewerTemplates: "Vis færre",
+      templateStoreLabel: "Vælg en butik at se",
+      templateAltAndroid: (name) => `Skabelonen ${name} eksporteret fra Screenshot Bro: en række Google Play-skærmbilleder med overskrifter og Android-telefonrammer`,
     },
   },
   fi: {
@@ -4396,6 +4436,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Jatka mallien vaihtumista",
       showAllTemplates: (count) => `Näytä kaikki ${count} mallia`,
       showFewerTemplates: "Näytä vähemmän",
+      templateStoreLabel: "Valitse esikatseltava kauppa",
+      templateAltAndroid: (name) => `Malli ${name} vietynä Screenshot Brosta: rivi Google Play -kuvakaappauksia otsikoilla ja Android-puhelimen kehyksillä`,
     },
   },
   no: {
@@ -4416,6 +4458,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Fortsett malbytte",
       showAllTemplates: (count) => `Vis alle ${count} malene`,
       showFewerTemplates: "Vis færre",
+      templateStoreLabel: "Velg en butikk å forhåndsvise",
+      templateAltAndroid: (name) => `Malen ${name} eksportert fra Screenshot Bro: en rad Google Play-skjermbilder med overskrifter og Android-telefonrammer`,
     },
   },
   cs: {
@@ -4436,6 +4480,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Spustit střídání šablon",
       showAllTemplates: (count) => `Zobrazit všech ${count} šablon`,
       showFewerTemplates: "Zobrazit méně",
+      templateStoreLabel: "Vyberte obchod k náhledu",
+      templateAltAndroid: (name) => `Šablona ${name} exportovaná ze Screenshot Bro: řada snímků pro Google Play s nadpisy a rámečky telefonu s Androidem`,
     },
   },
   ro: {
@@ -4456,6 +4502,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Pornește rotația șabloanelor",
       showAllTemplates: (count) => `Vezi toate cele ${count} șabloane`,
       showFewerTemplates: "Vezi mai puține",
+      templateStoreLabel: "Alege magazinul de previzualizat",
+      templateAltAndroid: (name) => `Șablonul ${name} exportat din Screenshot Bro: un rând de capturi Google Play cu titluri și rame de telefon Android`,
     },
   },
   ms: {
@@ -4476,6 +4524,8 @@ const LOCALIZED_TEMPLATES_COPY: Record<Exclude<LocaleCode, "en">, TemplatesCopy>
       playTemplates: "Mainkan putaran templat",
       showAllTemplates: (count) => `Lihat kesemua ${count} templat`,
       showFewerTemplates: "Tunjuk kurang",
+      templateStoreLabel: "Pilih gedung untuk pratonton",
+      templateAltAndroid: (name) => `Templat ${name} dieksport daripada Screenshot Bro: satu baris tangkapan skrin Google Play dengan tajuk dan bingkai telefon Android`,
     },
   },
 };

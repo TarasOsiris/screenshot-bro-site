@@ -5,10 +5,10 @@ import { EN_HOME_COPY, type HomeCopy } from "~/config/localization";
 
 // The home and site-chrome copy travels from root.tsx's loader to the browser
 // as loader data, one locale at a time (the full set lives in
-// config/home-copy.server.ts). Loader data has to be plain JSON, so the three
+// config/home-copy.server.ts). Loader data has to be plain JSON, so the
 // copy strings that take arguments are flattened to templates with `{name}`
 // placeholders on the server and turned back into functions here.
-type TemplateKeys = "templateAlt" | "templateMeta" | "showAllTemplates";
+type TemplateKeys = "templateAlt" | "templateAltAndroid" | "templateMeta" | "showAllTemplates";
 
 export type SerializedHomeCopy = Omit<HomeCopy, "ui"> & {
   ui: Omit<HomeCopy["ui"], TemplateKeys> & Record<TemplateKeys, string>;
@@ -23,6 +23,7 @@ export function serializeHomeCopy(copy: HomeCopy): SerializedHomeCopy {
     ui: {
       ...copy.ui,
       templateAlt: copy.ui.templateAlt("{name}"),
+      templateAltAndroid: copy.ui.templateAltAndroid("{name}"),
       templateMeta: copy.ui.templateMeta(
         asNumber("{columns}"),
         asNumber("{width}"),
@@ -41,12 +42,13 @@ export function fill(template: string, values: Record<string, string | number>):
 }
 
 export function hydrateHomeCopy(copy: SerializedHomeCopy): HomeCopy {
-  const { templateAlt, templateMeta, showAllTemplates } = copy.ui;
+  const { templateAlt, templateAltAndroid, templateMeta, showAllTemplates } = copy.ui;
   return {
     ...copy,
     ui: {
       ...copy.ui,
       templateAlt: (name) => fill(templateAlt, { name }),
+      templateAltAndroid: (name) => fill(templateAltAndroid, { name }),
       templateMeta: (columns, width, height) =>
         fill(templateMeta, { columns, width, height }),
       showAllTemplates: (count) => fill(showAllTemplates, { count }),
