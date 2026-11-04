@@ -3,7 +3,6 @@ import { data } from "react-router";
 import type { Route } from "./+types/vs.figma";
 import {
   ComparisonShell,
-  ComparisonTable,
   type ComparisonRow,
   type RelatedLink,
 } from "~/components/ComparisonShell";
@@ -174,6 +173,7 @@ export default function FigmaComparison() {
   return (
     <ComparisonShell
       slug={SLUG}
+      rows={ROWS}
       tldr={
         <>
           Figma is the better choice when a designer is building a bespoke,
@@ -266,9 +266,6 @@ export default function FigmaComparison() {
         a store-screenshot tool rather than a general design tool, and it is
         single-user.
       </p>
-
-      <h2>Side-by-side</h2>
-      <ComparisonTable competitor="Figma" rows={ROWS} />
 
       <h2>What Figma does well</h2>
       <p>

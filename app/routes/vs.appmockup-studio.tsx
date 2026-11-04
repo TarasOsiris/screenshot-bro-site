@@ -3,7 +3,6 @@ import { data, useLoaderData } from "react-router";
 import type { Route } from "./+types/vs.appmockup-studio";
 import {
   ComparisonShell,
-  ComparisonTable,
   type ComparisonRow,
   type RelatedLink,
 } from "~/components/ComparisonShell";
@@ -174,6 +173,7 @@ export default function AppMockUpStudioComparison() {
   return (
     <ComparisonShell
       slug={SLUG}
+      rows={ROWS}
       tldr={
         <>
           AppMockUp Studio is the right pick for a free, one-off set — it runs
@@ -249,9 +249,6 @@ export default function AppMockUpStudioComparison() {
         shape and locale, no watermark. Pro lifts the project, row and
         template limits and nothing else.
       </p>
-
-      <h2>Side-by-side</h2>
-      <ComparisonTable competitor="AppMockUp Studio" rows={ROWS} />
 
       <h2>What AppMockUp Studio does well</h2>
       <p>

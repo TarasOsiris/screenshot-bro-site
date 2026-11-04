@@ -3,7 +3,6 @@ import { data, useLoaderData } from "react-router";
 import type { Route } from "./+types/vs.screenshots-pro";
 import {
   ComparisonShell,
-  ComparisonTable,
   type ComparisonRow,
   type RelatedLink,
 } from "~/components/ComparisonShell";
@@ -175,6 +174,7 @@ export default function ScreenshotsProComparison() {
   return (
     <ComparisonShell
       slug={SLUG}
+      rows={ROWS}
       tldr={
         <>
           Screenshots Pro is the one to keep if your screenshot sets are
@@ -243,9 +243,6 @@ export default function ScreenshotsProComparison() {
         is a local, opt-in MCP server on Mac, and that gap is the axis this
         page turns on.
       </p>
-
-      <h2>Side-by-side</h2>
-      <ComparisonTable competitor="Screenshots Pro" rows={ROWS} />
 
       <h2>What Screenshots Pro does well</h2>
       <p>

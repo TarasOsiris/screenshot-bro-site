@@ -1,4 +1,6 @@
+import { BlogCover } from "~/components/BlogCover";
 import { BLOG_POSTS } from "~/config/blog";
+import { getBlogCover } from "~/config/blog-images";
 import type { LocaleCode } from "~/config/localization";
 import { localeHref } from "~/config/localized-routes";
 
@@ -67,10 +69,13 @@ export function RelatedPosts({
   locale?: LocaleCode;
   limit?: number;
 }) {
-  const related = BLOG_POSTS.filter((post) => post.slug !== currentSlug).slice(
-    0,
-    limit,
-  );
+  // Newest posts in the same category first, then the newest of the rest.
+  const category = BLOG_POSTS.find((post) => post.slug === currentSlug)?.category;
+  const others = BLOG_POSTS.filter((post) => post.slug !== currentSlug);
+  const related = [
+    ...others.filter((post) => post.category === category),
+    ...others.filter((post) => post.category !== category),
+  ].slice(0, limit);
   if (related.length === 0) return null;
 
   const keepReadingText = KEEP_READING_COPIES[locale] || KEEP_READING_COPIES.en;
@@ -94,22 +99,27 @@ export function RelatedPosts({
             <li key={post.slug}>
               <a
                 href={href}
-                className="block group rounded-2xl bg-surface-raised border border-border p-5 transition-all hover:border-ink/20 hover:bg-surface-overlay"
+                className="group flex items-stretch gap-4 sm:gap-5 rounded-2xl bg-surface-raised border border-border p-3 sm:p-3.5 transition-all hover:border-ink/20 hover:bg-surface-overlay"
               >
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="px-2 py-0.5 rounded bg-accent/10 text-accent-light text-[11px] font-medium">
-                    {categoryLabel}
-                  </span>
-                  <span className="text-[11px] text-ink/60 font-mono">
-                    {post.readTime}
-                  </span>
+                <div className="relative w-24 sm:w-40 shrink-0 self-start aspect-[4/5] sm:aspect-[4/3] overflow-hidden rounded-xl">
+                  <BlogCover cover={getBlogCover(post.slug, post.category)} />
                 </div>
-                <p className="font-display font-semibold text-base text-ink group-hover:text-accent-light transition-colors mb-1">
-                  {post.title}
-                </p>
-                <p className="text-sm text-ink/60 leading-relaxed">
-                  {post.description}
-                </p>
+                <div className="min-w-0 py-1 pe-2">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="px-2 py-0.5 rounded bg-accent/10 text-accent-light text-[11px] font-medium">
+                      {categoryLabel}
+                    </span>
+                    <span className="text-[11px] text-ink/60 font-mono">
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <p className="font-display font-semibold text-base text-ink group-hover:text-accent-light transition-colors mb-1">
+                    {post.title}
+                  </p>
+                  <p className="text-sm text-ink/60 leading-relaxed line-clamp-2">
+                    {post.description}
+                  </p>
+                </div>
               </a>
             </li>
           );

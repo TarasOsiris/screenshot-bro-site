@@ -1,5 +1,6 @@
 import { BlogCTA } from "~/components/BlogCTA";
 import { BlogPostHeader } from "~/components/BlogPostHeader";
+import { BlogPostLayout } from "~/components/BlogPostLayout";
 import { ContentLayout } from "~/components/ContentLayout";
 import { RelatedPosts } from "~/components/RelatedPosts";
 import { buildFaqJsonLd, type BlogFaqItem } from "~/config/blog-seo";
@@ -125,7 +126,7 @@ export function BlogArticleShell({
 }) {
   return (
     <ContentLayout locale={locale}>
-      <div className="max-w-3xl mx-auto">
+      <BlogPostLayout locale={locale}>
         <article className="prose-policy">
           <BlogPostHeader slug={slug} locale={locale} />
           {tldr ? (
@@ -169,7 +170,7 @@ export function BlogArticleShell({
           locale={locale}
         />
         <RelatedPosts currentSlug={slug} locale={locale} />
-      </div>
+      </BlogPostLayout>
     </ContentLayout>
   );
 }

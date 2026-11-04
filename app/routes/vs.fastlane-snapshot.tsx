@@ -3,7 +3,6 @@ import { data, useLoaderData } from "react-router";
 import type { Route } from "./+types/vs.fastlane-snapshot";
 import {
   ComparisonShell,
-  ComparisonTable,
   type ComparisonRow,
   type RelatedLink,
 } from "~/components/ComparisonShell";
@@ -182,6 +181,7 @@ export default function FastlaneSnapshotComparison() {
   return (
     <ComparisonShell
       slug={SLUG}
+      rows={ROWS}
       tldr={
         <>
           these tools solve different problems. Fastlane <em>snapshot</em> is a
@@ -256,9 +256,6 @@ export default function FastlaneSnapshotComparison() {
         3 rows, 5 templates per row) and includes store upload; Pro lifts those
         limits.
       </p>
-
-      <h2>Side-by-side</h2>
-      <ComparisonTable competitor="Fastlane snapshot" rows={ROWS} />
 
       <h2>When to pick Fastlane snapshot</h2>
       <ul>

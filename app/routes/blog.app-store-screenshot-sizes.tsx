@@ -2,6 +2,7 @@ import type { Route } from "./+types/blog.app-store-screenshot-sizes";
 import { ContentLayout } from "~/components/ContentLayout";
 import { BlogCTA } from "~/components/BlogCTA";
 import { BlogPostHeader } from "~/components/BlogPostHeader";
+import { BlogPostLayout } from "~/components/BlogPostLayout";
 import { RelatedPosts } from "~/components/RelatedPosts";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
 import { useLoaderData } from "react-router";
@@ -26,14 +27,14 @@ export default function BlogPost() {
 
   return (
     <ContentLayout locale={locale}>
-      <div className="max-w-3xl mx-auto">
+      <BlogPostLayout locale={locale}>
         <article className="prose-policy">
           <BlogPostHeader slug={SLUG} locale={locale} />
           {renderContent(locale)}
         </article>
         <BlogCTA message={getCTAMessage(locale)} locale={locale} />
         <RelatedPosts currentSlug={SLUG} locale={locale} />
-      </div>
+      </BlogPostLayout>
     </ContentLayout>
   );
 }

@@ -3,7 +3,6 @@ import { data } from "react-router";
 import type { Route } from "./+types/vs.canva";
 import {
   ComparisonShell,
-  ComparisonTable,
   type ComparisonRow,
   type RelatedLink,
 } from "~/components/ComparisonShell";
@@ -173,6 +172,7 @@ export default function CanvaComparison() {
   return (
     <ComparisonShell
       slug={SLUG}
+      rows={ROWS}
       tldr={
         <>
           Canva is the better choice when screenshots are one job among many —
@@ -257,9 +257,6 @@ export default function CanvaComparison() {
         removes the project, row and template limits and nothing else. It does
         not make social posts, presentations or video.
       </p>
-
-      <h2>Side-by-side</h2>
-      <ComparisonTable competitor="Canva" rows={ROWS} />
 
       <h2>What Canva does well</h2>
       <p>

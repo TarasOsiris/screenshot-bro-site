@@ -1,6 +1,7 @@
 import type { Route } from "./+types/blog.google-play-screenshot-sizes-requirements";
 import { BlogCTA } from "~/components/BlogCTA";
 import { BlogPostHeader } from "~/components/BlogPostHeader";
+import { BlogPostLayout } from "~/components/BlogPostLayout";
 import { ContentLayout } from "~/components/ContentLayout";
 import { RelatedPosts } from "~/components/RelatedPosts";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
@@ -26,7 +27,7 @@ export default function BlogPost() {
 
   return (
     <ContentLayout locale={locale}>
-      <div className="max-w-3xl mx-auto">
+      <BlogPostLayout locale={locale}>
         <article className="prose-policy">
           <BlogPostHeader slug={SLUG} locale={locale} />
           {renderContent(locale)}
@@ -38,7 +39,7 @@ export default function BlogPost() {
           locale={locale}
         />
         <RelatedPosts currentSlug={SLUG} locale={locale} />
-      </div>
+      </BlogPostLayout>
     </ContentLayout>
   );
 }

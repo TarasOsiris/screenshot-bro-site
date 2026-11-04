@@ -3,7 +3,9 @@ import type { Route } from "./+types/blog._index";
 import { SITE_NAME, SITE_URL } from "~/config/site";
 import { BLOG_CATEGORIES, type BlogCategory, type BlogPost } from "~/config/blog";
 import { getLocalizedBlogPosts } from "~/config/blog-localized.server";
-import { getBlogThumb } from "~/config/blog-images";
+import { getBlogCover } from "~/config/blog-images";
+import { ogImageFor } from "~/config/blog-seo";
+import { BlogCover } from "~/components/BlogCover";
 import { ContentLayout } from "~/components/ContentLayout";
 import { mergeMeta } from "~/config/meta";
 import { buildOgLocaleMeta, isLocaleCode, localizedPath, type LocaleCode } from "~/config/localization";
@@ -286,43 +288,14 @@ function CategoryPill({ category, locale = "en" }: { category: BlogCategory; loc
   );
 }
 
-const PLACEHOLDER_GRADIENTS: Record<BlogCategory, string> = {
-  Guide: "from-accent/25 to-surface",
-  Reference: "from-mint/15 to-surface",
-  Comparison: "from-warm/15 to-surface",
-};
-
-function CategoryPlaceholder({ category }: { category: BlogCategory }) {
-  return (
-    <div
-      className={`absolute inset-0 flex items-center justify-center bg-gradient-to-br ${PLACEHOLDER_GRADIENTS[category]}`}
-    >
-      <span className="font-mono text-xs uppercase tracking-widest text-ink/55">{category}</span>
-    </div>
-  );
-}
-
 function FeaturedCard({ post, locale, latestLabel }: { post: BlogPost; locale: LocaleCode; latestLabel: string }) {
-  const thumb = getBlogThumb(post.slug);
   return (
     <a
       href={`/blog/${post.slug}`}
       className="group grid md:grid-cols-2 rounded-2xl border border-border bg-surface-raised overflow-hidden transition-all hover:border-ink/20 hover:bg-surface-overlay mb-10"
     >
       <div className="relative aspect-video md:aspect-auto md:h-full md:min-h-72 overflow-hidden bg-surface-overlay">
-        {thumb ? (
-          <img
-            src={thumb.src}
-            alt={thumb.alt}
-            width={800}
-            height={450}
-            fetchPriority="high"
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-          />
-        ) : (
-          <CategoryPlaceholder category={post.category} />
-        )}
-        <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0" />
+        <BlogCover cover={getBlogCover(post.slug, post.category, 5)} eager />
       </div>
       <div className="p-7 md:p-9 flex flex-col justify-center">
         <div className="flex items-center gap-3 mb-3">
@@ -345,27 +318,13 @@ function FeaturedCard({ post, locale, latestLabel }: { post: BlogPost; locale: L
 }
 
 function BlogCard({ post, locale }: { post: BlogPost; locale: LocaleCode }) {
-  const thumb = getBlogThumb(post.slug);
   return (
     <a
       href={`/blog/${post.slug}`}
       className="group flex flex-col rounded-2xl border border-border bg-surface-raised overflow-hidden transition-all hover:border-ink/20 hover:bg-surface-overlay"
     >
       <div className="relative aspect-video overflow-hidden bg-surface-overlay">
-        {thumb ? (
-          <img
-            src={thumb.src}
-            alt={thumb.alt}
-            width={800}
-            height={450}
-            loading="lazy"
-            decoding="async"
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-          />
-        ) : (
-          <CategoryPlaceholder category={post.category} />
-        )}
-        <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0" />
+        <BlogCover cover={getBlogCover(post.slug, post.category)} />
       </div>
       <div className="p-5 flex flex-col flex-1">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2.5">
@@ -411,7 +370,7 @@ export default function BlogIndex() {
           headline: post.title,
           description: post.description,
           url: `${SITE_URL}${`/blog/${post.slug}`}`,
-          image: getBlogThumb(post.slug) ? `${SITE_URL}${getBlogThumb(post.slug)!.src}` : undefined,
+          image: ogImageFor(`blog-${post.slug}`),
           datePublished: post.date,
           dateModified: post.date,
           articleSection: post.category,

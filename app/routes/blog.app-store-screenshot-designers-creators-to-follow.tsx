@@ -3,6 +3,7 @@ import { type LocaleCode } from "~/config/localization";
 import type { Route } from "./+types/blog.app-store-screenshot-designers-creators-to-follow";
 import { BlogCTA } from "~/components/BlogCTA";
 import { BlogPostHeader } from "~/components/BlogPostHeader";
+import { BlogPostLayout } from "~/components/BlogPostLayout";
 import { ContentLayout } from "~/components/ContentLayout";
 import { RelatedPosts } from "~/components/RelatedPosts";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
@@ -24,7 +25,7 @@ export default function BlogPost() {
   const { locale } = useLoaderData<typeof loader>();
   return (
     <ContentLayout>
-      <div className="max-w-3xl mx-auto">
+      <BlogPostLayout locale={locale}>
         <article className="prose-policy">
           <BlogPostHeader slug={SLUG} locale={locale} />
           <ContentEn />
@@ -32,7 +33,7 @@ export default function BlogPost() {
 
         <BlogCTA message="Turn inspiration into a reusable screenshot system: device frames, captions, locales, batch export, and App Store Connect upload from one Mac, iPad and iPhone app." />
         <RelatedPosts currentSlug={SLUG} locale={locale} />
-      </div>
+      </BlogPostLayout>
     </ContentLayout>
   );
 }

@@ -3,7 +3,6 @@ import { data, useLoaderData } from "react-router";
 import type { Route } from "./+types/vs.rotato";
 import {
   ComparisonShell,
-  ComparisonTable,
   type ComparisonRow,
   type RelatedLink,
 } from "~/components/ComparisonShell";
@@ -175,6 +174,7 @@ export default function RotatoComparison() {
   return (
     <ComparisonShell
       slug={SLUG}
+      rows={ROWS}
       tldr={
         <>
           Rotato is the tool when you need a 3D render or a video of your app
@@ -245,9 +245,6 @@ export default function RotatoComparison() {
         Preview export. The free tier has no expiry and no watermark, and
         includes the store uploads.
       </p>
-
-      <h2>Side-by-side</h2>
-      <ComparisonTable competitor="Rotato" rows={ROWS} />
 
       <h2>What Rotato does well</h2>
       <p>

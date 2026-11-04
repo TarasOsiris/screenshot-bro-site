@@ -3,7 +3,6 @@ import { data, useLoaderData } from "react-router";
 import type { Route } from "./+types/vs.previewed";
 import {
   ComparisonShell,
-  ComparisonTable,
   type ComparisonRow,
   type RelatedLink,
 } from "~/components/ComparisonShell";
@@ -175,6 +174,7 @@ export default function PreviewedComparison() {
   return (
     <ComparisonShell
       slug={SLUG}
+      rows={ROWS}
       tldr={
         <>
           pick Previewed when the deliverable is a 3D device render, a
@@ -247,9 +247,6 @@ export default function PreviewedComparison() {
         kind. The free tier (1 project, 3 rows, 5 templates per row) includes
         every frame, every locale, watermark-free export and both uploads.
       </p>
-
-      <h2>Side-by-side</h2>
-      <ComparisonTable competitor="Previewed" rows={ROWS} />
 
       <h2>What Previewed does well</h2>
       <p>

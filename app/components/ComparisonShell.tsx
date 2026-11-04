@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { BlogCTA } from "~/components/BlogCTA";
+import { BlogPostLayout, BlogTocDisclosure } from "~/components/BlogPostLayout";
 import { ContentLayout } from "~/components/ContentLayout";
 import { buildFaqJsonLd, type BlogFaqItem } from "~/config/blog-seo";
 import { buildComparisonArticleJsonLd } from "~/config/comparison-seo";
@@ -59,6 +60,7 @@ const COMPARISON_BREADCRUMB_NAMES: Record<LocaleCode, string> = {
 export function ComparisonShell({
   slug,
   children,
+  rows,
   tldr,
   faqs = [],
   related = [],
@@ -68,6 +70,9 @@ export function ComparisonShell({
 }: {
   slug: string;
   children: ReactNode;
+  // The side-by-side table, shown right after the short answer so the page
+  // answers first and explains after.
+  rows: ComparisonRow[];
   // One- or two-sentence direct answer. Answer engines quote the first
   // extractable sentence, so it should stand on its own.
   tldr?: ReactNode;
@@ -92,7 +97,7 @@ export function ComparisonShell({
           white label accent-blue on the blue gradient. Lowering the rule's
           specificity (`:where()`) therefore does not help; only not matching
           the element does. BlogArticleShell and vs._index have the same shape. */}
-      <div className="max-w-3xl mx-auto">
+      <BlogPostLayout locale={locale} responsiveTables={false}>
         <article className="prose-policy">
           <script
             type="application/ld+json"
@@ -103,21 +108,31 @@ export function ComparisonShell({
             dangerouslySetInnerHTML={{ __html: breadcrumb }}
           />
 
-          <p className="meta">
+          <p className="meta mb-4!">
             Comparison · {page.readTime} · Checked {checked}
           </p>
-          <h1>{page.heading}</h1>
+          <h1 className="text-[1.875rem]! leading-[1.12] text-balance sm:text-[2.25rem]! mb-6!">{page.heading}</h1>
           {tldr ? (
-            <p>
-              <strong>Short answer:</strong> {tldr}
-            </p>
+            <div className="mb-8 rounded-2xl border border-accent/25 bg-accent/[0.05] px-5 py-4 sm:px-6 sm:py-5">
+              <p className="mb-1.5! font-mono text-[11px] uppercase tracking-[0.2em] text-accent-light">
+                Short answer
+              </p>
+              <p className="mb-0! text-ink/80">{tldr}</p>
+            </div>
           ) : null}
-          <p>
+
+          <h2>Side-by-side</h2>
+          <ComparisonTable competitor={page.competitor} rows={rows} />
+          <p className="mt-3 text-[13px] text-ink/55">
             Details about {page.competitor} were checked in {checked} on{" "}
             {page.checkedAgainst}; pricing and features change, so verify there
             before deciding. If something here is out of date,{" "}
             <a href={localeHref(locale, "/support")}>tell us</a> and we will fix it.
           </p>
+
+          <div className="mt-10">
+            <BlogTocDisclosure />
+          </div>
 
           {children}
 
@@ -151,10 +166,15 @@ export function ComparisonShell({
           ) : null}
         </article>
         <BlogCTA message={ctaMessage} buttonLabel={ctaButtonLabel} locale={locale} />
-      </div>
+      </BlogPostLayout>
     </ContentLayout>
   );
 }
+
+// On phones each row stacks: the factor on top, the two answers side by side
+// under labels. `!` because .prose-policy's td padding and border are unlayered.
+const STACKED_CELL =
+  "align-top max-sm:border-0! max-sm:p-0! max-sm:before:mb-0.5 max-sm:before:block max-sm:before:font-mono max-sm:before:text-[10px] max-sm:before:uppercase max-sm:before:tracking-[0.14em] max-sm:before:text-ink/45 max-sm:before:content-[attr(data-label)]";
 
 export function ComparisonTable({
   competitor,
@@ -164,20 +184,34 @@ export function ComparisonTable({
   rows: ComparisonRow[];
 }) {
   return (
-    <table>
-      <thead>
+    <table className="max-sm:block">
+      <thead className="max-sm:sr-only">
         <tr>
-          <th></th>
-          <th>{competitor}</th>
-          <th>{SITE_NAME}</th>
+          <th className="w-[22%]">
+            <span className="sr-only">Factor</span>
+          </th>
+          <th className="w-[39%]">{competitor}</th>
+          <th className="w-[39%] text-accent-light! bg-accent/[0.05]">{SITE_NAME}</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className="max-sm:block">
         {rows.map((row) => (
-          <tr key={row.factor}>
-            <td>{row.factor}</td>
-            <td>{row.them}</td>
-            <td>{row.us}</td>
+          <tr
+            key={row.factor}
+            className="max-sm:grid max-sm:grid-cols-2 max-sm:gap-x-4 max-sm:gap-y-2 max-sm:border-b max-sm:border-ink/[0.08] max-sm:py-4"
+          >
+            <td className="align-top font-medium text-ink/85 max-sm:col-span-2 max-sm:border-0! max-sm:p-0! max-sm:font-display max-sm:font-semibold">
+              {row.factor}
+            </td>
+            <td data-label={competitor} className={STACKED_CELL}>
+              {row.them}
+            </td>
+            <td
+              data-label={SITE_NAME}
+              className={`${STACKED_CELL} bg-accent/[0.05] max-sm:bg-transparent max-sm:before:text-accent-light`}
+            >
+              {row.us}
+            </td>
           </tr>
         ))}
       </tbody>

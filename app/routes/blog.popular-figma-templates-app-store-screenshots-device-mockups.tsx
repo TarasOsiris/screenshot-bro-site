@@ -3,6 +3,7 @@ import { type LocaleCode } from "~/config/localization";
 import type { Route } from "./+types/blog.popular-figma-templates-app-store-screenshots-device-mockups";
 import { BlogCTA } from "~/components/BlogCTA";
 import { BlogPostHeader } from "~/components/BlogPostHeader";
+import { BlogPostLayout } from "~/components/BlogPostLayout";
 import { ContentLayout } from "~/components/ContentLayout";
 import { RelatedPosts } from "~/components/RelatedPosts";
 import { buildBlogPostLinks, buildBlogPostMeta } from "~/config/blog-seo";
@@ -24,7 +25,7 @@ export default function BlogPost() {
   const { locale } = useLoaderData<typeof loader>();
   return (
     <ContentLayout>
-      <div className="max-w-3xl mx-auto">
+      <BlogPostLayout locale={locale}>
         <article className="prose-policy">
           <BlogPostHeader slug={SLUG} locale={locale} />
           <ContentEn />
@@ -32,7 +33,7 @@ export default function BlogPost() {
 
         <BlogCTA message="Use Figma templates for visual direction, then build the repeatable screenshot workflow in Screenshot Bro: frames, captions, localization, batch export, and App Store Connect upload." homeLinkLabel="a native App Store screenshot tool for Mac, iPad and iPhone" />
         <RelatedPosts currentSlug={SLUG} locale={locale} />
-      </div>
+      </BlogPostLayout>
     </ContentLayout>
   );
 }
