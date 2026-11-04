@@ -1,13 +1,13 @@
-version: 0.1.1
+version: 0.1.2
 files:
-  - url: https://downloads.screenshotbro.app/ScreenshotBro-0.1.1-x64-setup.exe
-    sha512: OmLXYwRBGARwQyViyvctcKcMqgESmLIPZ9drXPjYVuqh1vX/QOOSfrXxS5Eq36MXiiDHCGjiDwFCBcyFMUYrQA==
-    size: 158715689
-path: https://downloads.screenshotbro.app/ScreenshotBro-0.1.1-x64-setup.exe
-sha512: OmLXYwRBGARwQyViyvctcKcMqgESmLIPZ9drXPjYVuqh1vX/QOOSfrXxS5Eq36MXiiDHCGjiDwFCBcyFMUYrQA==
-releaseDate: '2026-11-04T12:12:44.542Z'
+  - url: https://downloads.screenshotbro.app/ScreenshotBro-0.1.2-x64-setup.exe
+    sha512: OX3ilA3H2i6QKSlvJbbTQo+61/7jG4rljvzihAtdhHwfm8+IVmeb8/KA8TZnK8y4e2YkSgkIc2TjaslqUI57zQ==
+    size: 158718783
+path: https://downloads.screenshotbro.app/ScreenshotBro-0.1.2-x64-setup.exe
+sha512: OX3ilA3H2i6QKSlvJbbTQo+61/7jG4rljvzihAtdhHwfm8+IVmeb8/KA8TZnK8y4e2YkSgkIc2TjaslqUI57zQ==
+releaseDate: '2026-11-04T12:23:11.572Z'
 releaseNotes: |
   <ul>
   <li>(sandbox) Test release: Pro purchases go through RevenueCat's sandbox checkout, where test cards aren't charged</li>
-  <li>Screenshot Bro now keeps itself up to date: it checks for new versions once a day, and Help ▸ Check for Updates… checks any time</li>
+  <li>Fixed Buy Pro opening a “Page not found” checkout page</li>
   </ul>
