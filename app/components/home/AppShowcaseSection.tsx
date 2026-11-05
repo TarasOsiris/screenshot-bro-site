@@ -4,7 +4,7 @@ import { appStoreCtaUrl, type HomeCopy } from "~/config/localization";
 import { APP_STORE_REVIEWS, type AppStoreReview } from "~/config/app-store-proof";
 import { fill } from "~/config/home-copy";
 
-const SHOWN_REVIEWS = 3;
+const SHOWN_REVIEWS = 6;
 
 // A real App Store review, quoted as written (scripts/fetch-app-store-proof.mjs).
 function ReviewCard({ review }: { review: AppStoreReview }) {

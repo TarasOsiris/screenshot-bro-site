@@ -4,8 +4,8 @@
 //
 // - Rating: Apple's public lookup API, one call per storefront the site
 //   targets, combined into one weighted average over every rating.
-// - Reviews: the public customer-reviews RSS for English-language storefronts,
-//   so the quotes can be shown as written.
+// - Reviews: the public customer-reviews RSS for the same storefronts,
+//   with quotes kept in their original language and wording.
 //
 // Never fails the build. Offline or on an API error, it keeps whatever file a
 // previous run left behind, or writes an empty one — the site then simply
@@ -22,8 +22,7 @@ const STOREFRONTS = [
   "tr", "nl", "id", "vn", "th", "se", "dk", "fi", "no", "cz", "ro", "my",
   "gb", "ca", "au",
 ];
-const REVIEW_STOREFRONTS = ["us", "gb", "ca", "au"];
-const MAX_REVIEWS = 6;
+const MAX_REVIEWS = 24;
 
 async function getJson(url) {
   const res = await fetch(url, { signal: AbortSignal.timeout(8_000) });
@@ -59,20 +58,23 @@ async function fetchRating() {
     : { value: 0, count: 0, storefronts: 0 };
 }
 
-async function fetchReviews() {
+async function fetchReviews(previousReviews = []) {
   const reviews = [];
-  for (const country of REVIEW_STOREFRONTS) {
-    try {
+  const results = await Promise.allSettled(
+    STOREFRONTS.map(async (country) => {
       const data = await getJson(
         `https://itunes.apple.com/${country}/rss/customerreviews/id=${APP_ID}/sortBy=mostRecent/json`,
       );
+      if (!data.feed) throw new Error(`Missing review feed for ${country}`);
       const entries = [data.feed?.entry ?? []].flat();
+      const countryReviews = [];
       for (const entry of entries) {
+        const id = String(entry.id?.label ?? "");
         const rating = Number(entry?.["im:rating"]?.label);
         const text = entry?.content?.label?.trim();
-        if (!rating || !text) continue;
-        reviews.push({
-          id: String(entry.id?.label ?? ""),
+        if (!id || !Number.isInteger(rating) || rating < 1 || rating > 5 || !text) continue;
+        countryReviews.push({
+          id,
           rating,
           title: entry.title?.label?.trim() ?? "",
           text,
@@ -81,9 +83,21 @@ async function fetchReviews() {
           country,
         });
       }
-    } catch {
-      // a storefront without reviews or a network error: skip it
+      return countryReviews;
+    }),
+  );
+  const failedCountries = new Set();
+  for (const [index, result] of results.entries()) {
+    if (result.status === "fulfilled") {
+      reviews.push(...result.value);
+    } else {
+      failedCountries.add(STOREFRONTS[index]);
     }
+  }
+  if (failedCountries.size === STOREFRONTS.length) throw new Error("every review feed failed");
+  if (failedCountries.size > 0) {
+    console.warn(`app-store-proof: keeping cached reviews for unavailable feeds: ${[...failedCountries].join(", ")}`);
+    reviews.push(...previousReviews.filter((review) => failedCountries.has(review.country)));
   }
   const seen = new Set();
   return reviews
@@ -100,7 +114,7 @@ async function main() {
     // first run
   }
   try {
-    const [rating, reviews] = await Promise.all([fetchRating(), fetchReviews()]);
+    const [rating, reviews] = await Promise.all([fetchRating(), fetchReviews(previous?.reviews)]);
     const proof = { fetchedAt: new Date().toISOString(), rating, reviews };
     await mkdir(path.dirname(OUT), { recursive: true });
     await writeFile(OUT, JSON.stringify(proof, null, 2) + "\n");
