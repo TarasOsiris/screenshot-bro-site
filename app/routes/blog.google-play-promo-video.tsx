@@ -129,6 +129,14 @@ export default function BlogPost() {
         <li>Open on the core experience in the first 3–5 seconds.</li>
         <li>Show real app footage, not just marketing animation.</li>
         <li>Keep it short; aim for 30 seconds to two minutes.</li>
+        <li>
+          Caption any voice-over so the video still works with the sound off;{" "}
+          <a href="https://captionsbro.app/" target="_blank" rel="noopener">
+            Captions Bro
+          </a>
+          , our iPhone video editor with on-device AI captions, handles that
+          step.
+        </li>
         <li>Design a feature graphic that works as a still poster.</li>
       </ol>
 

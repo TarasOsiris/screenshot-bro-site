@@ -198,7 +198,14 @@ export default function BlogPost() {
         <li>
           <strong>Edit to spec.</strong> Trim to length, keep 30 fps, and export
           H.264 at the target resolution. You can add brief text overlays, but
-          the underlying footage must be your real app.
+          the underlying footage must be your real app. Need captions on your
+          app preview? Previews autoplay muted, so captions are what carry a
+          voice-over.{" "}
+          <a href="https://captionsbro.app/" target="_blank" rel="noopener">
+            Captions Bro
+          </a>
+          , our iPhone video editor, generates them with on-device
+          AI.
         </li>
         <li>
           <strong>Choose the poster frame.</strong> In App Store Connect, set a

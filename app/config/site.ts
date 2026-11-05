@@ -58,6 +58,26 @@ export const REDDIT_COMMUNITY_URL = "https://www.reddit.com/r/ScreenshotBro/";
 export const DISCORD_INVITE_URL = "https://discord.com/invite/ahnDehd";
 export const NINEVA_STUDIOS_NAME = "Nineva Studios";
 export const NINEVA_STUDIOS_URL = "https://ninevastudios.com/";
+
+export type MoreAppKey =
+  | "moreAppsCaptionsBro"
+  | "moreAppsRoutines"
+  | "moreAppsTableTennis"
+  | "moreAppsTennis"
+  | "moreAppsSmashy";
+
+// The footer's "More apps from us" block: our other sites, most relevant to
+// Screenshot Bro users first. Names stay untranslated; `uiKey` is the localized
+// one-line descriptor. Plain followed links (rel="noopener", no UTM) so the
+// referral shows up in each site's analytics. SHOWCASE_APPS links the same
+// apps' store pages on purpose; this list is for their websites.
+export const MORE_APPS: { name: string; href: string; uiKey: MoreAppKey }[] = [
+  { name: "Captions Bro", href: "https://captionsbro.app/", uiKey: "moreAppsCaptionsBro" },
+  { name: "Checklist Routines", href: "https://routines.smashyapps.com/", uiKey: "moreAppsRoutines" },
+  { name: "Table Tennis Tracker", href: "https://ttapp.smashyapps.com/", uiKey: "moreAppsTableTennis" },
+  { name: "Tennis Tracker", href: "https://tennisapp.smashyapps.com/", uiKey: "moreAppsTennis" },
+  { name: "Smashy Apps", href: "https://smashyapps.com/", uiKey: "moreAppsSmashy" },
+];
 export const PRIMARY_CTA_LABEL = "Get Screenshot Bro";
 export const TWITTER_HANDLE = "@soycastic";
 export const X_PROFILE_URL = "https://x.com/soycastic";

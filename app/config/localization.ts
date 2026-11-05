@@ -128,6 +128,12 @@ export type HomeCopy = {
     followOnThreads: string;
     followJourney: string;
     madeWithLoveAt: string;
+    moreAppsLabel: string;
+    moreAppsCaptionsBro: string;
+    moreAppsRoutines: string;
+    moreAppsTableTennis: string;
+    moreAppsTennis: string;
+    moreAppsSmashy: string;
     language: string;
     homeLabel: string;
     tryWebDemo: string;
@@ -235,6 +241,12 @@ export const EN_HOME_COPY: HomeCopy = {
     followOnThreads: "Follow on Threads",
     followJourney: "Follow my journey",
     madeWithLoveAt: "Made with ❤️ at",
+    moreAppsLabel: "More apps from us",
+    moreAppsCaptionsBro: "Video editor with AI captions, handy for App Preview videos",
+    moreAppsRoutines: "Reusable checklists for daily routines",
+    moreAppsTableTennis: "Table tennis training & match log",
+    moreAppsTennis: "Tennis match & practice log",
+    moreAppsSmashy: "All our apps",
     language: "Language",
     homeLabel: `${SITE_NAME} home`,
     tryWebDemo: "Try web demo",

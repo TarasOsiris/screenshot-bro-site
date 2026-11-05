@@ -4,6 +4,7 @@ import {
   COMPARISON_LINKS,
   DISCORD_INVITE_URL,
   LEGAL_LINKS,
+  MORE_APPS,
   NINEVA_STUDIOS_NAME,
   NINEVA_STUDIOS_URL,
   PRODUCT_LINKS,
@@ -84,7 +85,9 @@ export function SiteFooter({ copy: copyProp }: { copy?: HomeCopy }) {
           />
         </div>
 
-        <div className="mt-12 pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4">
+        <MoreApps copy={copy} />
+
+        <div className="mt-10 pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-x-3 gap-y-1 text-xs text-ink/58">
             <span>
               © {year} {SITE_NAME}
@@ -97,7 +100,7 @@ export function SiteFooter({ copy: copyProp }: { copy?: HomeCopy }) {
               <a
                 href={NINEVA_STUDIOS_URL}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="text-ink/65 hover:text-ink/95 transition-colors"
               >
                 {NINEVA_STUDIOS_NAME}
@@ -150,6 +153,35 @@ function FooterColumn({
               {/* Under a "Community" heading the Reddit link needs its full name. */}
               {link.uiKey === "community" ? copy.ui.redditCommunity : copy.ui[link.uiKey]}
             </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+// Our other sites. Plain followed links with the referrer kept (rel="noopener"
+// only), so each site's analytics shows the visit as coming from here.
+function MoreApps({ copy }: { copy: HomeCopy }) {
+  return (
+    <div className="mt-12 pt-8 border-t border-border-subtle">
+      <p className="text-[11px] uppercase tracking-[0.25em] text-ink/55 font-mono">
+        {copy.ui.moreAppsLabel}
+      </p>
+      <ul className="mt-4 grid gap-x-8 gap-y-4 sm:grid-cols-3 lg:grid-cols-5">
+        {MORE_APPS.map((app) => (
+          <li key={app.href} className="flex flex-col gap-1">
+            <a
+              href={app.href}
+              target="_blank"
+              rel="noopener"
+              className="w-fit text-sm text-ink/75 hover:text-ink/95 transition-colors"
+            >
+              {app.name}
+            </a>
+            <span className="text-xs text-ink/55 leading-relaxed">
+              {copy.ui[app.uiKey]}
+            </span>
           </li>
         ))}
       </ul>

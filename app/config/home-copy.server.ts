@@ -1,4 +1,4 @@
-import type { FeatureItem, FeatureShowcase, WorkflowStep } from "~/config/site";
+import type { FeatureItem, FeatureShowcase, MoreAppKey, WorkflowStep } from "~/config/site";
 import { HOME_DESCRIPTIONS } from "~/config/home-descriptions";
 import { FEATURE_SHOWCASES, FEATURES, SITE_NAME, WORKFLOW_STEPS } from "~/config/site";
 import {
@@ -4802,6 +4802,205 @@ const LOCALIZED_EXTRA_UI: Record<Exclude<LocaleCode, "en">, ExtraUiCopy> = {
   },
 };
 
+// The footer's "More apps from us" block (MORE_APPS in config/site.ts): the
+// heading plus one descriptor per app. App names stay in English.
+type MoreAppsCopy = Pick<HomeCopy["ui"], "moreAppsLabel" | MoreAppKey>;
+
+const LOCALIZED_MORE_APPS: Record<Exclude<LocaleCode, "en">, MoreAppsCopy> = {
+  es: {
+    moreAppsLabel: "Más apps nuestras",
+    moreAppsCaptionsBro: "Editor de vídeo con subtítulos por IA, útil para vistas previas de apps",
+    moreAppsRoutines: "Listas de control reutilizables para rutinas diarias",
+    moreAppsTableTennis: "Registro de entrenamientos y partidos de tenis de mesa",
+    moreAppsTennis: "Registro de partidos y entrenamientos de tenis",
+    moreAppsSmashy: "Todas nuestras apps",
+  },
+  zh: {
+    moreAppsLabel: "我们的更多应用",
+    moreAppsCaptionsBro: "带 AI 字幕的视频编辑器，制作 App 预览视频很方便",
+    moreAppsRoutines: "可重复使用的日常例程清单",
+    moreAppsTableTennis: "乒乓球训练与比赛记录",
+    moreAppsTennis: "网球比赛与训练记录",
+    moreAppsSmashy: "我们的全部应用",
+  },
+  hi: {
+    moreAppsLabel: "हमारे और ऐप्स",
+    moreAppsCaptionsBro: "AI कैप्शन वाला वीडियो एडिटर, App Preview वीडियो के लिए उपयोगी",
+    moreAppsRoutines: "रोज़ की दिनचर्या के लिए दोबारा इस्तेमाल होने वाली चेकलिस्ट",
+    moreAppsTableTennis: "टेबल टेनिस ट्रेनिंग और मैच लॉग",
+    moreAppsTennis: "टेनिस मैच और प्रैक्टिस लॉग",
+    moreAppsSmashy: "हमारे सभी ऐप्स",
+  },
+  fr: {
+    moreAppsLabel: "Nos autres apps",
+    moreAppsCaptionsBro: "Éditeur vidéo avec sous-titres IA, pratique pour les aperçus d'app",
+    moreAppsRoutines: "Checklists réutilisables pour les routines du quotidien",
+    moreAppsTableTennis: "Journal d'entraînements et de matchs de tennis de table",
+    moreAppsTennis: "Journal de matchs et d'entraînements de tennis",
+    moreAppsSmashy: "Toutes nos apps",
+  },
+  ar: {
+    moreAppsLabel: "المزيد من تطبيقاتنا",
+    moreAppsCaptionsBro: "محرر فيديو بتسميات توضيحية بالذكاء الاصطناعي، مفيد لفيديوهات معاينة التطبيق",
+    moreAppsRoutines: "قوائم مهام قابلة لإعادة الاستخدام للروتين اليومي",
+    moreAppsTableTennis: "سجل تدريبات ومباريات تنس الطاولة",
+    moreAppsTennis: "سجل مباريات وتدريبات التنس",
+    moreAppsSmashy: "جميع تطبيقاتنا",
+  },
+  de: {
+    moreAppsLabel: "Weitere Apps von uns",
+    moreAppsCaptionsBro: "Videoeditor mit KI-Untertiteln, praktisch für App-Vorschauvideos",
+    moreAppsRoutines: "Wiederverwendbare Checklisten für tägliche Routinen",
+    moreAppsTableTennis: "Tischtennis-Trainings- und Matchtagebuch",
+    moreAppsTennis: "Tennis-Match- und Trainingstagebuch",
+    moreAppsSmashy: "Alle unsere Apps",
+  },
+  ja: {
+    moreAppsLabel: "その他のアプリ",
+    moreAppsCaptionsBro: "AI字幕付きの動画エディタ。App プレビュー動画づくりに便利",
+    moreAppsRoutines: "毎日のルーティンに繰り返し使えるチェックリスト",
+    moreAppsTableTennis: "卓球の練習・試合記録",
+    moreAppsTennis: "テニスの試合・練習記録",
+    moreAppsSmashy: "すべてのアプリ",
+  },
+  pt: {
+    moreAppsLabel: "Mais apps nossos",
+    moreAppsCaptionsBro: "Editor de vídeo com legendas por IA, útil para prévias de apps",
+    moreAppsRoutines: "Checklists reutilizáveis para rotinas diárias",
+    moreAppsTableTennis: "Registro de treinos e partidas de tênis de mesa",
+    moreAppsTennis: "Registro de partidas e treinos de tênis",
+    moreAppsSmashy: "Todos os nossos apps",
+  },
+  it: {
+    moreAppsLabel: "Altre nostre app",
+    moreAppsCaptionsBro: "Editor video con sottotitoli IA, utile per le anteprime delle app",
+    moreAppsRoutines: "Checklist riutilizzabili per le routine quotidiane",
+    moreAppsTableTennis: "Diario di allenamenti e partite di tennistavolo",
+    moreAppsTennis: "Diario di partite e allenamenti di tennis",
+    moreAppsSmashy: "Tutte le nostre app",
+  },
+  ko: {
+    moreAppsLabel: "저희의 다른 앱",
+    moreAppsCaptionsBro: "AI 자막 동영상 편집기, 앱 미리보기 영상 제작에 유용",
+    moreAppsRoutines: "일상 루틴을 위한 재사용 체크리스트",
+    moreAppsTableTennis: "탁구 훈련 및 경기 기록",
+    moreAppsTennis: "테니스 경기 및 연습 기록",
+    moreAppsSmashy: "모든 앱 보기",
+  },
+  uk: {
+    moreAppsLabel: "Інші наші застосунки",
+    moreAppsCaptionsBro: "Відеоредактор із ШІ-субтитрами, зручний для відео App Preview",
+    moreAppsRoutines: "Багаторазові чеклісти для щоденних рутин",
+    moreAppsTableTennis: "Журнал тренувань і матчів з настільного тенісу",
+    moreAppsTennis: "Журнал матчів і тренувань з тенісу",
+    moreAppsSmashy: "Усі наші застосунки",
+  },
+  pl: {
+    moreAppsLabel: "Więcej naszych aplikacji",
+    moreAppsCaptionsBro: "Edytor wideo z napisami AI, przydatny przy filmach App Preview",
+    moreAppsRoutines: "Listy kontrolne wielokrotnego użytku do codziennych rutyn",
+    moreAppsTableTennis: "Dziennik treningów i meczów tenisa stołowego",
+    moreAppsTennis: "Dziennik meczów i treningów tenisa",
+    moreAppsSmashy: "Wszystkie nasze aplikacje",
+  },
+  tr: {
+    moreAppsLabel: "Diğer uygulamalarımız",
+    moreAppsCaptionsBro: "Yapay zekâ altyazılı video düzenleyici, App Preview videoları için kullanışlı",
+    moreAppsRoutines: "Günlük rutinler için tekrar kullanılabilir kontrol listeleri",
+    moreAppsTableTennis: "Masa tenisi antrenman ve maç kaydı",
+    moreAppsTennis: "Tenis maç ve antrenman kaydı",
+    moreAppsSmashy: "Tüm uygulamalarımız",
+  },
+  nl: {
+    moreAppsLabel: "Meer apps van ons",
+    moreAppsCaptionsBro: "Video-editor met AI-ondertiteling, handig voor App Preview-video's",
+    moreAppsRoutines: "Herbruikbare checklists voor dagelijkse routines",
+    moreAppsTableTennis: "Logboek voor tafeltennistraining en -wedstrijden",
+    moreAppsTennis: "Logboek voor tenniswedstrijden en -training",
+    moreAppsSmashy: "Al onze apps",
+  },
+  id: {
+    moreAppsLabel: "Aplikasi kami lainnya",
+    moreAppsCaptionsBro: "Editor video dengan subtitel AI, praktis untuk video App Preview",
+    moreAppsRoutines: "Checklist yang bisa dipakai ulang untuk rutinitas harian",
+    moreAppsTableTennis: "Catatan latihan dan pertandingan tenis meja",
+    moreAppsTennis: "Catatan pertandingan dan latihan tenis",
+    moreAppsSmashy: "Semua aplikasi kami",
+  },
+  vi: {
+    moreAppsLabel: "Ứng dụng khác của chúng tôi",
+    moreAppsCaptionsBro: "Trình chỉnh sửa video có phụ đề AI, tiện cho video App Preview",
+    moreAppsRoutines: "Danh sách kiểm tra dùng lại cho thói quen hằng ngày",
+    moreAppsTableTennis: "Nhật ký tập luyện và thi đấu bóng bàn",
+    moreAppsTennis: "Nhật ký thi đấu và tập luyện quần vợt",
+    moreAppsSmashy: "Tất cả ứng dụng của chúng tôi",
+  },
+  th: {
+    moreAppsLabel: "แอปอื่นๆ ของเรา",
+    moreAppsCaptionsBro: "แอปตัดต่อวิดีโอพร้อมคำบรรยาย AI เหมาะกับวิดีโอ App Preview",
+    moreAppsRoutines: "เช็กลิสต์ที่ใช้ซ้ำได้สำหรับกิจวัตรประจำวัน",
+    moreAppsTableTennis: "บันทึกการฝึกซ้อมและการแข่งขันปิงปอง",
+    moreAppsTennis: "บันทึกการแข่งขันและการฝึกซ้อมเทนนิส",
+    moreAppsSmashy: "แอปทั้งหมดของเรา",
+  },
+  sv: {
+    moreAppsLabel: "Fler appar från oss",
+    moreAppsCaptionsBro: "Videoredigerare med AI-undertexter, smidig för App Preview-videor",
+    moreAppsRoutines: "Återanvändbara checklistor för dagliga rutiner",
+    moreAppsTableTennis: "Logg för bordtennisträning och matcher",
+    moreAppsTennis: "Logg för tennismatcher och träning",
+    moreAppsSmashy: "Alla våra appar",
+  },
+  da: {
+    moreAppsLabel: "Flere apps fra os",
+    moreAppsCaptionsBro: "Videoeditor med AI-undertekster, praktisk til App Preview-videoer",
+    moreAppsRoutines: "Genbrugelige tjeklister til daglige rutiner",
+    moreAppsTableTennis: "Log over bordtennistræning og kampe",
+    moreAppsTennis: "Log over tenniskampe og træning",
+    moreAppsSmashy: "Alle vores apps",
+  },
+  fi: {
+    moreAppsLabel: "Lisää sovelluksiamme",
+    moreAppsCaptionsBro: "Videoeditori tekoälytekstityksillä, kätevä App Preview -videoihin",
+    moreAppsRoutines: "Uudelleenkäytettävät tarkistuslistat päivittäisiin rutiineihin",
+    moreAppsTableTennis: "Pöytätennisharjoitusten ja -otteluiden loki",
+    moreAppsTennis: "Tennisotteluiden ja -harjoitusten loki",
+    moreAppsSmashy: "Kaikki sovelluksemme",
+  },
+  no: {
+    moreAppsLabel: "Flere apper fra oss",
+    moreAppsCaptionsBro: "Videoredigerer med AI-teksting, nyttig for App Preview-videoer",
+    moreAppsRoutines: "Gjenbrukbare sjekklister for daglige rutiner",
+    moreAppsTableTennis: "Logg for bordtennistrening og kamper",
+    moreAppsTennis: "Logg for tenniskamper og trening",
+    moreAppsSmashy: "Alle appene våre",
+  },
+  cs: {
+    moreAppsLabel: "Další naše aplikace",
+    moreAppsCaptionsBro: "Video editor s AI titulky, šikovný pro videa App Preview",
+    moreAppsRoutines: "Opakovaně použitelné checklisty pro denní rutiny",
+    moreAppsTableTennis: "Deník tréninků a zápasů ve stolním tenise",
+    moreAppsTennis: "Deník tenisových zápasů a tréninků",
+    moreAppsSmashy: "Všechny naše aplikace",
+  },
+  ro: {
+    moreAppsLabel: "Mai multe aplicații de la noi",
+    moreAppsCaptionsBro: "Editor video cu subtitrări AI, util pentru videoclipurile App Preview",
+    moreAppsRoutines: "Liste de verificare reutilizabile pentru rutinele zilnice",
+    moreAppsTableTennis: "Jurnal de antrenamente și meciuri de tenis de masă",
+    moreAppsTennis: "Jurnal de meciuri și antrenamente de tenis",
+    moreAppsSmashy: "Toate aplicațiile noastre",
+  },
+  ms: {
+    moreAppsLabel: "Lagi aplikasi daripada kami",
+    moreAppsCaptionsBro: "Editor video dengan sari kata AI, berguna untuk video App Preview",
+    moreAppsRoutines: "Senarai semak boleh guna semula untuk rutin harian",
+    moreAppsTableTennis: "Log latihan dan perlawanan tenis meja",
+    moreAppsTennis: "Log perlawanan dan latihan tenis",
+    moreAppsSmashy: "Semua aplikasi kami",
+  },
+};
+
 // Slots the Templates link in after Showcases, where the section sits on the page.
 function withTemplatesNav(items: HomeCopy["navItems"], label: string): HomeCopy["navItems"] {
   if (items.some((item) => item.href === "#templates")) return items;
@@ -4832,6 +5031,7 @@ export function getHomeCopy(locale: LocaleCode): HomeCopy {
       ...overrides.ui,
       ...templates.ui,
       ...LOCALIZED_EXTRA_UI[locale as Exclude<LocaleCode, "en">],
+      ...LOCALIZED_MORE_APPS[locale as Exclude<LocaleCode, "en">],
       features: featuresLabel,
       templates: templates.nav,
     },
