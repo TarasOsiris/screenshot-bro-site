@@ -479,22 +479,22 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
   {
     name: "Refuells",
     icon: "/showcase/refuells.jpg",
-    url: "https://apps.apple.com/app/refuells-fuel-trip-tracker/id6756374694",
+    url: "https://apps.apple.com/us/app/fuel-trip-tracker-refuells/id6756374694",
   },
   {
     name: "AdRadar",
     icon: "/showcase/adradar.jpg",
-    url: "https://apps.apple.com/app/adradar-ad-revenue-tracker/id6747883093",
+    url: "https://apps.apple.com/us/app/adradar-adsense-admob-stats/id6747883093",
   },
   {
     name: "TT Tracker",
     icon: "/showcase/tt-tracker.jpg",
-    url: "https://apps.apple.com/app/table-tennis-training-tracker/id6758044383",
+    url: "https://apps.apple.com/us/app/ping-pong-table-tennis-log/id6758044383",
   },
   {
     name: "My Checklist Routines",
     icon: "/showcase/checklist-routines.jpg",
-    url: "https://apps.apple.com/app/my-checklist-routines/id6759321248",
+    url: "https://apps.apple.com/us/app/routine-checklist-planner/id6759321248",
   },
   {
     name: "Utorbu",
@@ -504,17 +504,17 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
   {
     name: "Chapper",
     icon: "/showcase/chapper.jpg",
-    url: "https://apps.apple.com/us/app/chapper/id6760984679",
+    url: "https://apps.apple.com/us/app/chapper-ai-lm-studio-client/id6760984679",
   },
   {
     name: "OneTap",
     icon: "/showcase/onetap.jpg",
-    url: "https://apps.apple.com/us/app/onetap-ios-keyboard/id1639795583",
+    url: "https://apps.apple.com/us/app/clipboard-manager-onetap/id1639795583",
   },
   {
     name: "Pocket",
     icon: "/showcase/pocket.jpg",
-    url: "https://apps.apple.com/us/app/pocket-track-your-expenses/id6745982820",
+    url: "https://apps.apple.com/us/app/pocket-budget-expense-track/id6745982820",
   },
   {
     name: "ChronoType",
@@ -534,7 +534,7 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
   {
     name: "PocketMates",
     icon: "/showcase/pocketmates.jpg",
-    url: "https://apps.apple.com/ua/app/pocketmates/id6763726732",
+    url: "https://apps.apple.com/ua/app/pocketmates-expense-tracker/id6763726732",
   },
   {
     name: "Localify",
@@ -544,7 +544,7 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
   {
     name: "GrammarTrack",
     icon: "/showcase/grammartrack.jpg",
-    url: "https://apps.apple.com/ua/app/grammartrack/id6748993866?l=uk",
+    url: "https://apps.apple.com/ua/app/grammartrack-english-grammar/id6748993866?l=uk",
   },
   {
     name: "Weekline",
@@ -557,9 +557,9 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
     url: "https://apps.apple.com/us/app/dibsify-wishlist-rsvp-event/id6769796676",
   },
   {
-    name: "KidDo Routine",
-    icon: "/showcase/kiddo-routine.jpg",
-    url: "https://apps.apple.com/ua/app/kiddo-routine/id6777069731",
+    name: "DoGether",
+    icon: "/showcase/dogether.jpg",
+    url: "https://apps.apple.com/ua/app/dogether-family-chore-chart/id6777069731",
   },
   {
     name: "Rankor",
