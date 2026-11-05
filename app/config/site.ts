@@ -576,6 +576,16 @@ export const SHOWCASE_APPS: ShowcaseApp[] = [
     icon: "/showcase/under-my-roof.jpg",
     url: "https://apps.apple.com/ua/app/under-my-roof-home-inventory/id1524335878?l=uk",
   },
+  {
+    name: "Captions Bro",
+    icon: "/showcase/captions-bro.jpg",
+    url: "https://apps.apple.com/us/app/captions-bro-auto-subtitles/id6770987720",
+  },
+  {
+    name: "Tennis Tracker",
+    icon: "/showcase/tennis-tracker.jpg",
+    url: "https://apps.apple.com/us/app/tennis-tracker-match-log/id6821315884",
+  },
 ];
 
 export type AppScreenshot = {
