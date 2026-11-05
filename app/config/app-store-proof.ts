@@ -11,6 +11,7 @@ export type AppStoreReview = {
   author: string;
   date: string;
   country: string;
+  lang?: string;
 };
 
 type AppStoreProof = {

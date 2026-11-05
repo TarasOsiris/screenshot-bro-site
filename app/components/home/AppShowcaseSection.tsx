@@ -9,11 +9,11 @@ const SHOWN_REVIEWS = 6;
 // A real App Store review, quoted as written (scripts/fetch-app-store-proof.mjs).
 function ReviewCard({ review }: { review: AppStoreReview }) {
   return (
-    <figure className="soft-panel rounded-3xl p-5 flex flex-col gap-3 text-left">
+    <figure lang={review.lang} className="soft-panel rounded-3xl p-5 flex flex-col gap-3 text-left">
       <p className="text-warm-light text-sm tracking-[0.1em]" role="img" aria-label={`${review.rating}/5`}>
         {"★".repeat(review.rating)}
       </p>
-      <blockquote className="flex-1">
+      <blockquote dir="auto" className="flex-1">
         {review.title ? <p className="font-semibold text-ink">{review.title}</p> : null}
         <p className="mt-1 text-sm text-ink/65 leading-relaxed line-clamp-5">{review.text}</p>
       </blockquote>
