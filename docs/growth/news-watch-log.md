@@ -323,3 +323,13 @@ run missed, and it caught one item (Apple's Sep 18 iPhone Duo resources).
 - **Published:** none
 - **Updated:** none
 - **Watching:** Asset Library / product page headers going live (still no ASC release note); frameit Duo frames; April 2027 iOS 27 SDK floor and Duo screenshot requirement; Play 3,840 vs 7,680 px inconsistency; Play Android XR listing slot (8:5, 4-8 shots) — confirm our posts mention it if XR coverage is added.
+
+## 2026-11-09
+- **Scanned:** developer.apple.com/news, App Store Connect release notes, screenshot specifications, fastlane releases, Google Play screenshot requirements page.
+- **Findings:** nothing material this week.
+  - ASC Nov 3: iPad mini (A20 Pro) specs added; it sits in the existing 11" display class (no new required size, 13" remains the required iPad size). ASC Nov 4: App Store Connect 3.3.1 adds iPhone Duo support. Posts already say Duo uploads are accepted. <https://developer.apple.com/help/app-store-connect/release-notes/>, <https://developer.apple.com/help/app-store-connect/reference/screenshot-specifications/>
+  - Apple news Nov 2: new age rating descriptors (Shared Location, Dating and Relationships) from Nov 16, all apps by Jan 12, 2027 — metadata, not screenshots. Nov 3/4: Siri AI developer preview, retention messages — not relevant. <https://developer.apple.com/news/>
+  - Screenshot spec page: Duo 1398x2034 / 2007x2853, required from April 2027 for iOS 27.1 SDK+; unchanged. fastlane: no release since 2.241.2 (Oct 26). Google Play requirements page unchanged vs. our posts.
+- **Published:** none
+- **Updated:** none
+- **Watching:** Asset Library / product page headers going live; frameit Duo frames; April 2027 Duo screenshot requirement; Play 3,840 vs 7,680 px inconsistency; Play Android XR slot (8:5, 4-8 shots); age rating descriptor deadlines (Nov 16 / Jan 12) if an age-rating post is ever added.
