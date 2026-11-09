@@ -102,6 +102,20 @@ function withPeriod(text: string) {
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "4.28",
+    date: "November 9, 2026",
+    title: "App Store Experiments and Header Artwork",
+    changes: [
+      { type: "added", text: "An Experiment destination in the App Store Connect upload: pick or create a product page optimization experiment, create or replace one treatment, then submit it for review or start it from the done screen" },
+      { type: "added", text: "Upload Product Page Header and Search Results artwork (iOS 27) to the version, a custom product page or an experiment treatment; the editor has presets for these sizes" },
+      { type: "added", text: "Collapse or expand every row at once from View ▸ Collapse All Rows / Expand All Rows, the row menu, or by ⌥-clicking a row's chevron" },
+      { type: "added", text: "MCP agents can manage App Store experiments and upload header and search artwork" },
+      { type: "improved", text: "Retrying a failed App Store Connect or Google Play upload of an unchanged project no longer renders the screenshots again" },
+      { type: "improved", text: "The done screen of both upload wizards has Back, to upload another selection" },
+      { type: "improved", text: "The A/B testing beta's row variants are replaced by the Experiment destination; projects saved with variants open their variant rows as ordinary rows" },
+    ],
+  },
+  {
     version: "4.27",
     date: "November 2, 2026",
     title: "A Shareable App Store Connect Upload Log",
