@@ -676,6 +676,7 @@ const SECTIONS: Section[] = [
       { kind: "li", text: "**Upload** skips that screen and compares against the store as it goes, uploading only what differs and keeping the App Store asset IDs of exact matches. The progress bar counts the screenshots as they render, then compares each set." },
       { kind: "li", text: "**Replace All Screenshots**, offered next to Upload when you confirm, skips the comparison entirely: everything currently in the selected sets is deleted and every screenshot is uploaded again with new asset IDs. It prepares faster and uploads slower, so it pays off when most screenshots changed and costs you when only one did." },
       { kind: "li", text: "If an upload stops partway — a dropped connection, or App Store Connect rate limiting a large sync — just run it again. Locales that finished are remembered and skipped, and screenshots already delivered are matched by checksum rather than uploaded twice." },
+      { kind: "li", text: "If an upload fails, click **Details**, then **Share Log…**, and send the file to support. It lists the requests sent to App Store Connect and Apple's responses, never your API key or screenshots. You can share it later from **Settings ▸ App Store Connect ▸ Upload Log**." },
       { kind: "h", text: "Editing store metadata" },
       { kind: "li", text: "The same wizard edits the version's text, locale by locale, with a live character counter against Apple's limits." },
       { kind: "li", text: "**App Info** (shared across versions): **App Name**, **Subtitle**, **Privacy Policy URL**." },
