@@ -12,6 +12,8 @@ import { LOCALES } from "~/config/localization";
 import {
   appStoreProductUrl,
   DIRECT_DOWNLOAD_URL,
+  HOMEBREW_INSTALL_COMMAND,
+  HOMEBREW_TAP_URL,
   MINIMUM_IPADOS_VERSION,
   MINIMUM_MACOS_VERSION,
   SITE_NAME,
@@ -68,6 +70,7 @@ function detectPlatform(): Platform {
 
 type Installer = "mac" | "windows";
 type Option = Installer | "appStore";
+type InstallTab = "mac" | "homebrew" | "windows";
 
 // Devices none of the apps run on have no entry, so every option stays primary.
 const RECOMMENDED: Partial<Record<Platform, { options: Option[]; label: string }>> = {
@@ -77,13 +80,28 @@ const RECOMMENDED: Partial<Record<Platform, { options: Option[]; label: string }
   windows: { options: ["windows"], label: "For this PC" },
 };
 
-const INSTALLERS: Record<Installer, { label: string; steps: { title: string; body: string }[] }> = {
+const INSTALLERS: Record<InstallTab, { label: string; command?: string; steps: { title: string; body: string }[] }> = {
   mac: {
     label: "Mac direct download",
     steps: [
       { title: "Open the download", body: "Double-click ScreenshotBro.dmg in your Downloads folder." },
       { title: "Drag to Applications", body: `Drag ${SITE_NAME} onto the Applications folder in the window that opens.` },
       { title: "Launch it", body: `Open ${SITE_NAME} from Applications. Updates arrive automatically from then on.` },
+    ],
+  },
+  homebrew: {
+    label: "Homebrew",
+    command: HOMEBREW_INSTALL_COMMAND,
+    steps: [
+      {
+        title: "Run the command",
+        body: "Paste it into Terminal. It installs the same notarized app as the direct download.",
+      },
+      { title: "Launch it", body: `Open ${SITE_NAME} from Applications.` },
+      {
+        title: "Stay up to date",
+        body: "The app updates itself, so Homebrew leaves it alone. To update through Homebrew anyway, run brew upgrade --cask --greedy screenshot-bro.",
+      },
     ],
   },
   windows: {
@@ -135,6 +153,10 @@ const FAQ = [
       "There's no app for those yet, but the free web demo runs in any modern browser: the same editor as the Windows beta, with one project.",
   },
   {
+    question: "Can I install it with Homebrew?",
+    answer: `Yes. Run ${HOMEBREW_INSTALL_COMMAND} in Terminal. It installs the direct-download version from our own tap, and the app keeps itself up to date after that. Remove it with brew uninstall --cask screenshot-bro.`,
+  },
+  {
     question: "Is the download safe?",
     answer:
       "The Mac download is signed with our Apple Developer ID and notarized by Apple, so macOS checks it before the first launch — no security warnings to click through. The Windows beta isn't code-signed yet, so Windows SmartScreen asks before the first run: choose More info, then Run anyway.",
@@ -146,6 +168,37 @@ function Check() {
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mt-0.5 shrink-0 text-mint" aria-hidden="true">
       <path d="m5 12.5 4.5 4.5L19 7.5" />
     </svg>
+  );
+}
+
+function CommandLine({ command }: { command: string }) {
+  const [state, setState] = useState<"idle" | "copied" | "failed">("idle");
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(command);
+      setState("copied");
+    } catch {
+      setState("failed");
+    }
+  };
+
+  return (
+    <div className="flex items-stretch overflow-hidden rounded-xl border border-ink/10 bg-ink/[0.04]">
+      <code className="min-w-0 flex-1 overflow-x-auto whitespace-nowrap px-3 py-2 font-mono text-xs text-ink/80">
+        <span className="select-none text-ink/40">$ </span>
+        {command}
+      </code>
+      <button
+        type="button"
+        onClick={copy}
+        className="shrink-0 border-l border-ink/10 px-3 text-xs font-semibold text-ink/70 hover:bg-ink/[0.06] hover:text-ink"
+        aria-label={`Copy ${command}`}
+        data-placement="download-page-homebrew-copy"
+      >
+        <span aria-live="polite">{state === "copied" ? "Copied ✓" : state === "failed" ? "Select & copy" : "Copy"}</span>
+      </button>
+    </div>
   );
 }
 
@@ -225,7 +278,7 @@ export default function Download() {
   const { release, windows, appStoreUrl } = useLoaderData<typeof loader>();
   const [platform, setPlatform] = useState<Platform | null>(null);
   const [started, setStarted] = useState<Installer | null>(null);
-  const [installer, setInstaller] = useState<Installer>("mac");
+  const [installer, setInstaller] = useState<InstallTab>("mac");
 
   useEffect(() => {
     const detected = detectPlatform();
@@ -236,6 +289,11 @@ export default function Download() {
   const start = (which: Installer) => {
     setStarted(which);
     setInstaller(which);
+  };
+
+  const showHomebrew = () => {
+    setInstaller("homebrew");
+    document.getElementById("install-heading")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   // Until the platform is known every option keeps a primary button; once it
@@ -324,6 +382,14 @@ export default function Download() {
             >
               <DownloadIcon /> Download for Mac
             </a>
+            <button
+              type="button"
+              onClick={showHomebrew}
+              className="mt-3 self-center text-xs font-medium text-ink/60 underline hover:text-ink"
+              data-placement="download-page-homebrew"
+            >
+              Or install with Homebrew
+            </button>
           </OptionCard>
 
           <OptionCard
@@ -426,8 +492,8 @@ export default function Download() {
             <h2 id="install-heading" className="text-lg font-semibold text-ink">
               {started ? "While it downloads" : "Installing takes a few seconds"}
             </h2>
-            <div role="tablist" aria-label="Installer" className="inline-flex self-start rounded-xl bg-ink/[0.05] p-1">
-              {(Object.keys(INSTALLERS) as Installer[]).map((id) => (
+            <div role="tablist" aria-label="Installer" className="inline-flex flex-wrap self-start rounded-xl bg-ink/[0.05] p-1">
+              {(Object.keys(INSTALLERS) as InstallTab[]).map((id) => (
                 <button
                   key={id}
                   type="button"
@@ -446,6 +512,11 @@ export default function Download() {
             </div>
           </div>
           <div id="install-steps" role="tabpanel" aria-labelledby={`install-tab-${installer}`} className="mt-6">
+            {INSTALLERS[installer].command ? (
+              <div className="mb-6">
+                <CommandLine command={INSTALLERS[installer].command} />
+              </div>
+            ) : null}
             <ol className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {INSTALLERS[installer].steps.map((step, index) => (
                 <li key={step.title} className="flex gap-4">
@@ -460,7 +531,19 @@ export default function Download() {
               ))}
             </ol>
           </div>
-          <p className="mt-6 text-xs text-ink/55">The App Store version installs like any other app — nothing to do here.</p>
+          <p className="mt-6 text-xs text-ink/55">
+            The App Store version installs like any other app — nothing to do here.
+            {installer === "homebrew" ? (
+              <>
+                {" "}
+                The cask lives in{" "}
+                <a href={HOMEBREW_TAP_URL} target="_blank" rel="noopener" className="underline hover:text-ink">
+                  our Homebrew tap
+                </a>
+                .
+              </>
+            ) : null}
+          </p>
         </section>
 
         <section aria-labelledby="faq-heading" className="mt-20 max-w-2xl mx-auto">

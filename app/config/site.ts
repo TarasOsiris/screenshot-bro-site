@@ -26,6 +26,9 @@ export const DEFAULT_APP_STORE_COUNTRY = "us";
 // RevenueCat Web Purchase Link (Stripe); its success redirect is /thanks?redeem_url=…
 export const DIRECT_DOWNLOAD_URL = "https://downloads.screenshotbro.app/ScreenshotBro.dmg";
 export const APPCAST_URL = "/appcast.xml";
+// Our own Homebrew tap (github.com/TarasOsiris/homebrew-tap) installs the same direct-download DMG.
+export const HOMEBREW_TAP_URL = "https://github.com/TarasOsiris/homebrew-tap";
+export const HOMEBREW_INSTALL_COMMAND = "brew install --cask tarasosiris/tap/screenshot-bro";
 // The Windows beta (NSIS installer, updates itself from /windows/latest.yml). The permanent link, as the Mac's
 // ScreenshotBro.dmg: a symlink to the newest installer, served no-cache so Cloudflare revalidates it.
 export const WINDOWS_DOWNLOAD_URL = "https://downloads.screenshotbro.app/ScreenshotBro-Setup.exe";
