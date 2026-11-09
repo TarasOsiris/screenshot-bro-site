@@ -4,6 +4,24 @@
         <title>Screenshot Bro</title>
         <link>https://screenshotbro.app</link>
         <item>
+            <title>4.28</title>
+            <pubDate>Mon, 09 Nov 2026 16:10:56 +0200</pubDate>
+            <link>https://screenshotbro.app</link>
+            <sparkle:fullReleaseNotesLink>https://screenshotbro.app/changelog</sparkle:fullReleaseNotesLink>
+            <sparkle:version>170</sparkle:version>
+            <sparkle:shortVersionString>4.28</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<ul>
+<li>Experiments: upload screenshots straight into an App Store product page optimization experiment. Pick or create one, create or replace a treatment, then submit it or start it when the upload finishes.</li>
+<li>Upload Product Page Header and Search Results artwork (iOS 27) to your version, a custom product page or an experiment, with editor presets for those sizes.</li>
+<li>Collapse or expand every row at once from the View menu, the row menu, or by Option-clicking a row&#8217;s chevron.</li>
+<li>Retrying a failed upload no longer renders your screenshots again, and the done screen has Back to upload another selection.</li>
+<li>Row variants from the A/B testing beta are replaced by the new Experiment destination; existing variant rows open as ordinary rows.</li>
+</ul>
+]]></description>
+            <enclosure url="https://downloads.screenshotbro.app/ScreenshotBro-4.28-170.dmg" length="56058897" type="application/octet-stream" sparkle:edSignature="B9y9smj1fAhW+w8i0cfGxSnsRu82is4t6f7wckcQaKmB65Qq6MPHoPVTM63vk66KgG1wQg9tQdvYT45Wr61gBQ=="/>
+        </item>
+        <item>
             <title>4.27</title>
             <pubDate>Mon, 02 Nov 2026 15:57:39 +0200</pubDate>
             <link>https://screenshotbro.app</link>
@@ -26,15 +44,6 @@
             <sparkle:shortVersionString>4.26</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
             <enclosure url="https://downloads.screenshotbro.app/ScreenshotBro-4.26-168.dmg" length="55994140" type="application/octet-stream" sparkle:edSignature="rGptH8C16779AJ+nAApz1TqcHh9EDP59Ql7XtRNK8ygQvTS0XIIswtgE4h5h//IYaXtTguaxAOswNkCFy7YnBw=="/>
-        </item>
-        <item>
-            <title>4.25</title>
-            <pubDate>Wed, 28 Oct 2026 22:09:54 +0200</pubDate>
-            <link>https://screenshotbro.app</link>
-            <sparkle:version>167</sparkle:version>
-            <sparkle:shortVersionString>4.25</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://downloads.screenshotbro.app/ScreenshotBro-4.25-167.dmg" length="55969471" type="application/octet-stream" sparkle:edSignature="70NV++hPdSvoKsF1iS05CwQH9TBde+BXm4Ngf6I0fkZ5YSCSOcMQ0Ma31SrWT7KUmVgUVK9fAlFz83rZpNLRDA=="/>
         </item>
     </channel>
 </rss>
