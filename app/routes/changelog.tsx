@@ -102,6 +102,16 @@ function withPeriod(text: string) {
 
 export const CHANGELOG: ChangelogEntry[] = [
   {
+    version: "4.29",
+    date: "November 13, 2026",
+    title: "Faster Editing in Large Projects",
+    changes: [
+      { type: "improved", text: "In large projects, selecting, moving and editing shapes, undo, typing and inspector slider drags take about half the work per change, so the editor keeps up with you" },
+      { type: "improved", text: "Scrolling a long project and changing zoom do less work for each row that comes into view" },
+      { type: "fixed", text: "An MCP agent reading a large project could freeze the app for several seconds" },
+    ],
+  },
+  {
     version: "4.28",
     date: "November 9, 2026",
     title: "App Store Experiments and Header Artwork",
