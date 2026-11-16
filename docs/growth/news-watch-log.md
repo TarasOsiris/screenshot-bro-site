@@ -333,3 +333,14 @@ run missed, and it caught one item (Apple's Sep 18 iPhone Duo resources).
 - **Published:** none
 - **Updated:** none
 - **Watching:** Asset Library / product page headers going live; frameit Duo frames; April 2027 Duo screenshot requirement; Play 3,840 vs 7,680 px inconsistency; Play Android XR slot (8:5, 4-8 shots); age rating descriptor deadlines (Nov 16 / Jan 12) if an age-rating post is ever added.
+
+## 2026-11-16
+- **Scanned:** developer.apple.com/news, App Store Connect release notes, screenshot specifications, fastlane releases, Google Play screenshot requirements page.
+- **Findings:** nothing material this week.
+  - Apple news Nov 10: Swift Student Challenge 2027 (not relevant). ASC Nov 12: On-Demand Resources uploads stop for new apps in early 2027 (not screenshot-related). Nov 3 iPad mini spec and Nov 4 ASC 3.3.1 already noted. <https://developer.apple.com/news/>, <https://developer.apple.com/help/app-store-connect/release-notes/>
+  - Screenshot spec page unchanged vs. our posts (Duo 1398x2034 / 2007x2853, required from April 2027 for iOS 27.1 SDK+). <https://developer.apple.com/help/app-store-connect/reference/screenshot-specifications/>
+  - fastlane: no release since 2.241.2 (Oct 26). <https://github.com/fastlane/fastlane/releases>
+  - Google Play requirements page unchanged (large screens 1,080-7,680 px, 4 min; Android XR 8:5, 4-8 shots). <https://support.google.com/googleplay/android-developer/answer/9866151>
+- **Published:** none
+- **Updated:** none
+- **Watching:** Asset Library / product page headers going live; frameit Duo frames; April 2027 Duo screenshot requirement; Play 3,840 vs 7,680 px inconsistency; age rating descriptor deadline Jan 12, 2027 (not screenshots).
