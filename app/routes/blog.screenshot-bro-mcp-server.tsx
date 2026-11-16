@@ -60,6 +60,11 @@ const TOOL_GROUPS = [
     what: "Link a project to its app, read and write every listing field per locale (description, keywords, promotional text, What's New, name, subtitle, URLs) with the store's length limits checked first, preview then apply a checksum-matched screenshot sync, and poll or cancel a large sync running as a background job.",
   },
   {
+    area: "Product page experiments",
+    tools: "list_app_store_experiments, prepare_app_store_experiment_treatment, submit_app_store_experiment, start_app_store_experiment, upload_app_store_creative_assets",
+    what: "List product page optimization experiments, prepare a treatment's screenshots, submit and start an experiment, and upload header and search artwork through the App Asset Library.",
+  },
+  {
     area: "Google Play",
     tools: "preview_play_upload, upload_play_screenshots",
     what: "Plan which rows go up as which Play image type and language, then render and upload them as a draft (or send for review), as a background job.",
@@ -210,7 +215,7 @@ export default function BlogPost() {
     <BlogArticleShell
       slug={SLUG}
       locale={locale}
-      tldr="Open Screenshot Bro on your Mac, switch on Settings ▸ Automation ▸ Enable MCP server, then paste the Copy Agent Prompt into Claude Code, Claude Desktop or Cursor. The client connects to a local server at http://127.0.0.1:8722/mcp with a bearer token, and your agent gets 48 tools that create projects, lay out rows and shapes, import screenshots, translate text, render previews it can actually see, export PNGs, and push a finished set to App Store Connect or Google Play — through the same editing actions you use by hand."
+      tldr="Open Screenshot Bro on your Mac, switch on Settings ▸ Automation ▸ Enable MCP server, then paste the Copy Agent Prompt into Claude Code, Claude Desktop or Cursor. The client connects to a local server at http://127.0.0.1:8722/mcp with a bearer token, and your agent gets 53 tools that create projects, lay out rows and shapes, import screenshots, translate text, render previews it can actually see, export PNGs, and push a finished set to App Store Connect or Google Play — through the same editing actions you use by hand."
       ctaMessage="Want an AI agent to build your App Store screenshots while you watch? Turn on the MCP server in Screenshot Bro — it's free to try."
       ctaHomeLinkLabel="a native App Store screenshot app for Mac with a built-in MCP server"
       seoLinks={[
@@ -244,7 +249,7 @@ export default function BlogPost() {
         {
           question: "What is the Screenshot Bro MCP server?",
           answer:
-            "It is a local Model Context Protocol server built into the Screenshot Bro Mac app. When you enable it at Settings ▸ Automation, the app listens on http://127.0.0.1:8722/mcp and exposes 48 tools that let an AI assistant create and edit screenshot projects, import screenshots, translate text, render previews, export images, and upload sets to App Store Connect and Google Play. It runs on your Mac only, requires an access token, and is off by default.",
+            "It is a local Model Context Protocol server built into the Screenshot Bro Mac app. When you enable it at Settings ▸ Automation, the app listens on http://127.0.0.1:8722/mcp and exposes 53 tools that let an AI assistant create and edit screenshot projects, import screenshots, translate text, render previews, export images, and upload sets to App Store Connect and Google Play. It runs on your Mac only, requires an access token, and is off by default.",
         },
         {
           question: "Which AI clients can connect to it?",
@@ -284,7 +289,7 @@ export default function BlogPost() {
       </p>
       <p>
         This guide covers the whole thing: what the server is, how to turn it on,
-        how to connect each client, what all 48 tools do, the prompts that get
+        how to connect each client, what all 53 tools do, the prompts that get
         good results, the sandbox rule that trips up screenshot imports, and what
         the server deliberately cannot do. Everything below was checked against
         Screenshot Bro 4.24 in October 2026.
@@ -408,13 +413,13 @@ export default function BlogPost() {
       <h3>Check that it worked</h3>
       <p>
         Ask the assistant to <em>list your screenshot-bro tools</em>. You should
-        get 48 of them on Screenshot Bro 4.24 or later (earlier versions list
+        get 53 of them on Screenshot Bro 4.28 or later (earlier versions list
         fewer), starting with <code>list_templates</code> and{" "}
         <code>list_projects</code>. If the list is empty, the client connected to
         nothing — see the troubleshooting table at the end.
       </p>
 
-      <h2>The 48 Tools, Grouped</h2>
+      <h2>The 53 Tools, Grouped</h2>
       <p>
         You never call these by hand; the agent picks them. But knowing what
         exists is what lets you write a prompt that maps cleanly onto them

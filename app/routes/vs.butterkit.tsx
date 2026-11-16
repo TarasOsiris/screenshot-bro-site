@@ -458,7 +458,7 @@ export default function ButterKitComparison() {
         belongs in CI. ButterKit&apos;s 42 tools across five namespaces are
         documented for Cursor, Claude Code and Codex, and pair with Simulator
         capture and fastlane folder linking, so more of the capture end of the
-        pipeline can be scripted. {SITE_NAME}&apos;s 48 tools are opt-in,
+        pipeline can be scripted. {SITE_NAME}&apos;s 53 tools are opt-in,
         macOS-only and loopback-only, also cover Google Play uploads, and edits
         to the project open in the window go through the same undo stack as
         manual ones. If agent-driven capture is central to how you build,
