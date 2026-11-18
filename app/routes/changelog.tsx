@@ -103,12 +103,15 @@ function withPeriod(text: string) {
 export const CHANGELOG: ChangelogEntry[] = [
   {
     version: "4.29",
-    date: "November 13, 2026",
-    title: "Faster Editing in Large Projects",
+    date: "November 18, 2026",
+    title: "Faster Editing and Smoother Previews",
     changes: [
       { type: "improved", text: "In large projects, selecting, moving and editing shapes, undo, typing and inspector slider drags take about half the work per change, so the editor keeps up with you" },
       { type: "improved", text: "Scrolling a long project and changing zoom do less work for each row that comes into view" },
-      { type: "fixed", text: "An MCP agent reading a large project could freeze the app for several seconds" },
+      { type: "improved", text: "The controls under each screenshot stay available in Preview and align with their tiles at every zoom level" },
+      { type: "improved", text: "Clearer Quick Look and device visibility icons, a highlighted Edit/Preview switch for the selected row, and updated Preview guidance" },
+      { type: "fixed", text: "Switching between Edit and Preview no longer flashes a loading placeholder or shifts the rows below" },
+      { type: "fixed", text: "MCP agents reading or updating large projects no longer hold up the editor for the full request, and repeat requests reuse cached text measurements" },
     ],
   },
   {
