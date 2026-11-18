@@ -4,6 +4,23 @@
         <title>Screenshot Bro</title>
         <link>https://screenshotbro.app</link>
         <item>
+            <title>4.29</title>
+            <pubDate>Wed, 18 Nov 2026 17:23:14 +0200</pubDate>
+            <link>https://screenshotbro.app</link>
+            <sparkle:fullReleaseNotesLink>https://screenshotbro.app/changelog</sparkle:fullReleaseNotesLink>
+            <sparkle:version>173</sparkle:version>
+            <sparkle:shortVersionString>4.29</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<ul>
+<li>Faster selection, movement, text editing and inspector adjustments in large projects.</li>
+<li>Switch between Edit and Preview without flashing or shifting rows. Screenshot controls stay available in Preview.</li>
+<li>Clearer Quick Look controls and cleaner preview spacing.</li>
+<li>Improved responsiveness when automation tools read or update large projects.</li>
+</ul>
+]]></description>
+            <enclosure url="https://downloads.screenshotbro.app/ScreenshotBro-4.29-173.dmg" length="56086264" type="application/octet-stream" sparkle:edSignature="lyCukz82LyIarIEUfEfNGatedwSVOBRWkL9GXInmnoVHvQiRIGWLBPenr/mf0QQwRF1k5zDm7RzEns0FnXAUCQ=="/>
+        </item>
+        <item>
             <title>4.28</title>
             <pubDate>Mon, 09 Nov 2026 16:10:56 +0200</pubDate>
             <link>https://screenshotbro.app</link>
@@ -35,15 +52,6 @@
 </ul>
 ]]></description>
             <enclosure url="https://downloads.screenshotbro.app/ScreenshotBro-4.27-169.dmg" length="56028550" type="application/octet-stream" sparkle:edSignature="dC6jP1h/tF1+mQ7ovRsTCJF8AIaZ3qfjB4GFypKXsM5/42FMObO1J9BLIiIFv1Oe6/BNEphdliM+MbJhhVGUBw=="/>
-        </item>
-        <item>
-            <title>4.26</title>
-            <pubDate>Sat, 31 Oct 2026 09:37:10 +0200</pubDate>
-            <link>https://screenshotbro.app</link>
-            <sparkle:version>168</sparkle:version>
-            <sparkle:shortVersionString>4.26</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://downloads.screenshotbro.app/ScreenshotBro-4.26-168.dmg" length="55994140" type="application/octet-stream" sparkle:edSignature="rGptH8C16779AJ+nAApz1TqcHh9EDP59Ql7XtRNK8ygQvTS0XIIswtgE4h5h//IYaXtTguaxAOswNkCFy7YnBw=="/>
         </item>
     </channel>
 </rss>
