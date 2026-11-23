@@ -615,7 +615,7 @@ const SECTIONS: Section[] = [
       { kind: "li", text: "Toggle **Reveal in Finder after export** in Settings to auto-reveal the result." },
       { kind: "h", text: "Preview vs export" },
       { kind: "li", text: "The **pencil / eye** switch in a row header lays the row out as a store-style carousel with no editing chrome — the fastest check that a set reads well together." },
-      { kind: "li", text: "Use the **Preview** button in the template control bar (or **Quick Look** in its **⋯** menu) to preview fully rendered screenshots without going through the export flow." },
+      { kind: "li", text: "Use the **Quick Look** button in the template control bar (also in its **⋯** menu) to preview fully rendered screenshots without going through the export flow." },
     ],
   },
   {
@@ -865,7 +865,7 @@ const SECTIONS: Section[] = [
       { kind: "li", text: "**Re-translate after editing base text.** If you change the base headline, run **Language ▸ Re-Translate All Text…** (or use **Translate Selected to All Languages** in the language bar with the edited text selected) so every language picks up the new wording." },
       { kind: "li", text: "**Use Invisible category for clipped designs.** When you want the screenshot to bleed off the canvas with no bezel, pick the Invisible device category." },
       { kind: "li", text: "**Star frequently used projects.** **Star Project** — on the toolbar ⋯ menu, or by right-clicking a card on the Projects screen — floats it to the top of the picker." },
-      { kind: "li", text: "**Preview before exporting.** The **Preview** button on each template renders the row's screenshots and opens the preview at that template — handy for spot-checks." },
+      { kind: "li", text: "**Preview before exporting.** The **Quick Look** button on each template renders the row's screenshots and opens the preview at that template — handy for spot-checks." },
       { kind: "li", text: "**Repeat a shape across the row.** Right-click ▸ **Duplicate ▸ To All Screenshots** drops a logo or footer onto every template at the same spot." },
       { kind: "li", text: "**Translate a repeated headline once.** Right-click a text shape ▸ **Reuse Translation** links it to another string so they share one translation." },
       { kind: "li", text: "**Lock the background art.** **⌘L** on a full-bleed image stops you grabbing it every time you click near the canvas edge." },
