@@ -1,0 +1,2857 @@
+{
+  "site": "screenshotbro.app",
+  "sitemap_total": 190,
+  "pages": [
+    {
+      "url": "https://screenshotbro.app/",
+      "status": 200,
+      "final": "https://screenshotbro.app/",
+      "redirects": 0,
+      "seconds": 0.25,
+      "title": "Screenshot Bro: App Store & Google Play Screenshot Tool",
+      "description": "Native App Store and Google Play screenshot tool for Mac, iPad, and iPhone. Device frames, localization, batch export, and upload to both stores.",
+      "canonical": "https://screenshotbro.app/",
+      "robots": "",
+      "words": 2508,
+      "h1": [
+        "Create & LocalizeApp Store & Google Play Screenshots in Minutes"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/es",
+      "status": 200,
+      "final": "https://screenshotbro.app/es",
+      "redirects": 0,
+      "seconds": 0.28,
+      "title": "Screenshot Bro — Capturas de App Store y Google Play en Mac",
+      "description": "Diseña capturas para App Store y Google Play en una app nativa para Mac, iPad y iPhone. Marcos de dispositivos, localización y subida a App Store Connect y Google Play.",
+      "canonical": "https://screenshotbro.app/es",
+      "robots": "",
+      "words": 2595,
+      "h1": [
+        "Diseña y publica capturas deApp Store & Google Play."
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/zh",
+      "status": 200,
+      "final": "https://screenshotbro.app/zh",
+      "redirects": 0,
+      "seconds": 0.31,
+      "title": "Screenshot Bro — Mac、iPad 和 iPhone 上的 App Store 与 Google Play 截图设计工具",
+      "description": "用原生 Mac、iPad 和 iPhone 应用设计 App Store 和 Google Play 截图。设备边框、本地化、自动翻译、批量导出，并可直接上传到 App Store Connect 和 Google Play。",
+      "canonical": "https://screenshotbro.app/zh",
+      "robots": "",
+      "words": 1128,
+      "h1": [
+        "设计并发布App Store 与 Google Play 截图。"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/hi",
+      "status": 200,
+      "final": "https://screenshotbro.app/hi",
+      "redirects": 0,
+      "seconds": 0.29,
+      "title": "Screenshot Bro — App Store और Google Play स्क्रीनशॉट Mac पर",
+      "description": "नेटिव Mac, iPad और iPhone ऐप में App Store और Google Play स्क्रीनशॉट डिजाइन करें। डिवाइस फ्रेम, लोकलाइजेशन, और App Store Connect व Google Play पर सीधा अपलोड।",
+      "canonical": "https://screenshotbro.app/hi",
+      "robots": "",
+      "words": 2741,
+      "h1": [
+        "डिजाइन करें और शिप करेंApp Store & Google Play स्क्रीनशॉट।"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/fr",
+      "status": 200,
+      "final": "https://screenshotbro.app/fr",
+      "redirects": 0,
+      "seconds": 0.32,
+      "title": "Screenshot Bro — Captures App Store et Google Play sur Mac",
+      "description": "Créez des captures App Store et Google Play dans une app native pour Mac, iPad et iPhone. Cadres d'appareils, localisation et envoi vers App Store Connect et Google Play.",
+      "canonical": "https://screenshotbro.app/fr",
+      "robots": "",
+      "words": 2725,
+      "h1": [
+        "Créez et publiez vos capturesApp Store & Google Play."
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ar",
+      "status": 200,
+      "final": "https://screenshotbro.app/ar",
+      "redirects": 0,
+      "seconds": 0.34,
+      "title": "Screenshot Bro — لقطات App Store و Google Play على Mac",
+      "description": "صمّم لقطات App Store و Google Play داخل تطبيق أصلي على Mac و iPad و iPhone. إطارات أجهزة، توطين، ترجمة تلقائية، تصدير جماعي ورفع مباشر إلى App Store Connect و Google Play.",
+      "canonical": "https://screenshotbro.app/ar",
+      "robots": "",
+      "words": 2433,
+      "h1": [
+        "صمّم وانشر لقطاتApp Store و Google Play."
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/de",
+      "status": 200,
+      "final": "https://screenshotbro.app/de",
+      "redirects": 0,
+      "seconds": 0.36,
+      "title": "Screenshot Bro — Screenshots für App Store & Google Play",
+      "description": "Screenshots für App Store und Google Play in einer nativen App für Mac, iPad und iPhone. Geräterahmen, Lokalisierung und direkter Upload zu App Store Connect und Google Play.",
+      "canonical": "https://screenshotbro.app/de",
+      "robots": "",
+      "words": 2487,
+      "h1": [
+        "Gestalte und veröffentliche Screenshots fürApp Store & Google Play."
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ja",
+      "status": 200,
+      "final": "https://screenshotbro.app/ja",
+      "redirects": 0,
+      "seconds": 0.35,
+      "title": "Screenshot Bro — Mac、iPad、iPhone用App Store & Google Playスクリーンショット作成ツール",
+      "description": "App StoreとGoogle Play用のスクリーンショットをネイティブMac、iPad、iPhoneアプリでデザイン。デバイスフレーム、ローカライズ、自動翻訳、バッチ書き出し、App Store ConnectとGoogle Playへの直接アップロードに対応。",
+      "canonical": "https://screenshotbro.app/ja",
+      "robots": "",
+      "words": 866,
+      "h1": [
+        "デザインからApp Store・Google Play への公開までをスムーズに。"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/pt",
+      "status": 200,
+      "final": "https://screenshotbro.app/pt",
+      "redirects": 0,
+      "seconds": 0.27,
+      "title": "Screenshot Bro — Capturas para App Store e Google Play",
+      "description": "Crie capturas para App Store e Google Play em um app nativo para Mac, iPad e iPhone. Molduras de dispositivos, localização e envio para App Store Connect e Google Play.",
+      "canonical": "https://screenshotbro.app/pt",
+      "robots": "",
+      "words": 2819,
+      "h1": [
+        "Crie capturas paraApp Store & Google Play em minutos."
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/it",
+      "status": 200,
+      "final": "https://screenshotbro.app/it",
+      "redirects": 0,
+      "seconds": 0.33,
+      "title": "Screenshot Bro — Screenshot per App Store e Google Play",
+      "description": "Progetta screenshot per App Store e Google Play in un'app nativa per Mac, iPad e iPhone. Cornici per dispositivi, localizzazione e upload su App Store Connect e Google Play.",
+      "canonical": "https://screenshotbro.app/it",
+      "robots": "",
+      "words": 2712,
+      "h1": [
+        "Crea screenshot perApp Store & Google Play in pochi minuti."
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ko",
+      "status": 200,
+      "final": "https://screenshotbro.app/ko",
+      "redirects": 0,
+      "seconds": 0.3,
+      "title": "Screenshot Bro — App Store·Google Play 스크린샷 (Mac·iPad·iPhone)",
+      "description": "네이티브 Mac, iPad 및 iPhone 앱에서 App Store 및 Google Play 스크린샷을 디자인하세요. 디바이스 프레임, 현지화, 자동 번역, 일괄 내보내기, App Store Connect 및 Google Play 직접 업로드를 지원합니다.",
+      "canonical": "https://screenshotbro.app/ko",
+      "robots": "",
+      "words": 2071,
+      "h1": [
+        "스크린샷 디자인부터App Store·Google Play 등록까지 간편하게."
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/uk",
+      "status": 200,
+      "final": "https://screenshotbro.app/uk",
+      "redirects": 0,
+      "seconds": 0.26,
+      "title": "Screenshot Bro — Скриншоти для App Store та Google Play на Mac",
+      "description": "Створюйте скриншоти App Store та Google Play на Mac, iPad і iPhone. Додавайте рамки, локалізуйте та завантажуйте в App Store Connect і Google Play.",
+      "canonical": "https://screenshotbro.app/uk",
+      "robots": "",
+      "words": 2466,
+      "h1": [
+        "Створюйте скриншоти дляApp Store & Google Play за лічені хвилини."
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/pl",
+      "status": 200,
+      "final": "https://screenshotbro.app/pl",
+      "redirects": 0,
+      "seconds": 0.29,
+      "title": "Screenshot Bro — Zrzuty ekranu do App Store i Google Play na Maca",
+      "description": "Projektuj zrzuty App Store i Google Play na Macu, iPadzie i iPhonie. Dodawaj ramki, lokalizuj i przesyłaj obrazy do App Store Connect i Google Play.",
+      "canonical": "https://screenshotbro.app/pl",
+      "robots": "",
+      "words": 2539,
+      "h1": [
+        "Twórz zrzuty ekranu doApp Store & Google Play w kilka minut."
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/tr",
+      "status": 200,
+      "final": "https://screenshotbro.app/tr",
+      "redirects": 0,
+      "seconds": 0.26,
+      "title": "Screenshot Bro — Mac'te App Store ve Google Play Ekran Görüntüleri",
+      "description": "App Store ve Google Play ekran görüntülerini Mac, iPad ve iPhone'da tasarlayın. Cihaz çerçeveleri, yerelleştirme ve App Store Connect ile Google Play'e yükleme.",
+      "canonical": "https://screenshotbro.app/tr",
+      "robots": "",
+      "words": 2152,
+      "h1": [
+        "Dakikalar İçindeApp Store & Google Play Ekran Görüntüleri Oluşturun"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/nl",
+      "status": 200,
+      "final": "https://screenshotbro.app/nl",
+      "redirects": 0,
+      "seconds": 0.23,
+      "title": "Screenshot Bro — App Store & Google Play screenshots op Mac",
+      "description": "Ontwerp screenshots voor App Store en Google Play op Mac, iPad en iPhone. Apparaatframes, lokalisatie en upload naar App Store Connect en Google Play.",
+      "canonical": "https://screenshotbro.app/nl",
+      "robots": "",
+      "words": 2137,
+      "h1": [
+        "Maak en lokaliseerApp Store & Google Play screenshots in minuten"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/id",
+      "status": 200,
+      "final": "https://screenshotbro.app/id",
+      "redirects": 0,
+      "seconds": 0.26,
+      "title": "Screenshot Bro — Tangkapan Layar App Store & Google Play di Mac",
+      "description": "Desain tangkapan layar App Store dan Google Play di Mac, iPad, dan iPhone. Tambahkan bingkai, lokalisasi, dan unggah ke App Store Connect dan Google Play.",
+      "canonical": "https://screenshotbro.app/id",
+      "robots": "",
+      "words": 2131,
+      "h1": [
+        "Buat & Lokalisasikan Tangkapan LayarApp Store & Google Play dalam Hitungan Menit"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vi",
+      "status": 200,
+      "final": "https://screenshotbro.app/vi",
+      "redirects": 0,
+      "seconds": 0.24,
+      "title": "Screenshot Bro — Ảnh chụp màn hình App Store & Google Play trên Mac",
+      "description": "Thiết kế ảnh chụp màn hình App Store và Google Play trên Mac, iPad và iPhone. Khung thiết bị, bản địa hóa và tải lên App Store Connect và Google Play.",
+      "canonical": "https://screenshotbro.app/vi",
+      "robots": "",
+      "words": 2795,
+      "h1": [
+        "Tạo & Bản địa hóa ảnh chụp màn hìnhApp Store & Google Play trong tích tắc"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/th",
+      "status": 200,
+      "final": "https://screenshotbro.app/th",
+      "redirects": 0,
+      "seconds": 0.3,
+      "title": "Screenshot Bro — สกรีนช็อต App Store & Google Play บน Mac",
+      "description": "ออกแบบสกรีนช็อตสำหรับ App Store และ Google Play ในแอปเนทีฟสำหรับ Mac, iPad และ iPhone กรอบอุปกรณ์ การแปลภาษา และอัปโหลดตรงไปยัง App Store Connect และ Google Play",
+      "canonical": "https://screenshotbro.app/th",
+      "robots": "",
+      "words": 1295,
+      "h1": [
+        "สร้างและแปลภาษาสกรีนช็อตApp Store & Google Play ได้ในไม่กี่นาที"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/sv",
+      "status": 200,
+      "final": "https://screenshotbro.app/sv",
+      "redirects": 0,
+      "seconds": 0.26,
+      "title": "Screenshot Bro — App Store & Google Play-skärmdumpar på Mac",
+      "description": "Designa skärmdumpar för App Store och Google Play på Mac, iPad och iPhone. Enhetsramar, lokalisering och uppladdning till App Store Connect och Google Play.",
+      "canonical": "https://screenshotbro.app/sv",
+      "robots": "",
+      "words": 2085,
+      "h1": [
+        "Skapa och lokaliseraApp Store & Google Play-skärmdumpar på några minuter"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/da",
+      "status": 200,
+      "final": "https://screenshotbro.app/da",
+      "redirects": 0,
+      "seconds": 0.26,
+      "title": "Screenshot Bro — App Store og Google Play skærmbilleder på Mac",
+      "description": "Design skærmbilleder til App Store og Google Play i en nativ app til Mac, iPad og iPhone. Enhedsrammer, lokalisering og direkte upload til App Store Connect og Google Play.",
+      "canonical": "https://screenshotbro.app/da",
+      "robots": "",
+      "words": 2425,
+      "h1": [
+        "Opret & lokaliser skærmbilleder tilApp Store & Google Play på få minutter"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/fi",
+      "status": 200,
+      "final": "https://screenshotbro.app/fi",
+      "redirects": 0,
+      "seconds": 0.24,
+      "title": "Screenshot Bro — App Store- ja Google Play -kuvakaappaukset Macilla",
+      "description": "Suunnittele App Store- ja Google Play -kuvakaappauksia Macilla, iPadilla ja iPhonella. Laitekehykset, lokalisointi ja lataus App Store Connectiin ja Google Playhin.",
+      "canonical": "https://screenshotbro.app/fi",
+      "robots": "",
+      "words": 2115,
+      "h1": [
+        "Luo & lokalisoiApp Store & Google Play -kuvakaappaukset minuuteissa"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/no",
+      "status": 200,
+      "final": "https://screenshotbro.app/no",
+      "redirects": 0,
+      "seconds": 0.27,
+      "title": "Screenshot Bro — App Store- og Google Play-skjermbilder på Mac",
+      "description": "Design skjermbilder for App Store og Google Play i en nativ app for Mac, iPad og iPhone. Enhetsrammer, lokalisering og direkte opplasting til App Store Connect og Google Play.",
+      "canonical": "https://screenshotbro.app/no",
+      "robots": "",
+      "words": 2413,
+      "h1": [
+        "Opprett & lokaliser skjermbilder forApp Store & Google Play på minutter"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/cs",
+      "status": 200,
+      "final": "https://screenshotbro.app/cs",
+      "redirects": 0,
+      "seconds": 0.2,
+      "title": "Screenshot Bro — Snímky pro App Store a Google Play na Macu",
+      "description": "Navrhujte snímky obrazovky pro App Store a Google Play v nativní aplikaci pro Mac, iPad a iPhone. Rámečky zařízení, lokalizace a nahrávání do App Store Connect a Google Play.",
+      "canonical": "https://screenshotbro.app/cs",
+      "robots": "",
+      "words": 2460,
+      "h1": [
+        "Vytvářejte & lokalizujte snímky proApp Store & Google Play během několika minut"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ro",
+      "status": 200,
+      "final": "https://screenshotbro.app/ro",
+      "redirects": 0,
+      "seconds": 0.23,
+      "title": "Screenshot Bro — Capturi pentru App Store și Google Play pe Mac",
+      "description": "Proiectează capturi App Store și Google Play pe Mac, iPad și iPhone. Rame de dispozitive, localizare și încărcare în App Store Connect și Google Play.",
+      "canonical": "https://screenshotbro.app/ro",
+      "robots": "",
+      "words": 2662,
+      "h1": [
+        "Creează & localizează capturi pentruApp Store & Google Play în câteva minute"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ms",
+      "status": 200,
+      "final": "https://screenshotbro.app/ms",
+      "redirects": 0,
+      "seconds": 0.17,
+      "title": "Screenshot Bro — Tangkapan Skrin App Store & Google Play di Mac",
+      "description": "Reka tangkapan skrin App Store dan Google Play pada Mac, iPad dan iPhone. Bingkai peranti, penyetempatan dan muat naik ke App Store Connect dan Google Play.",
+      "canonical": "https://screenshotbro.app/ms",
+      "robots": "",
+      "words": 2542,
+      "h1": [
+        "Cipta & setempatkan tangkapan skrinApp Store & Google Play dalam beberapa minit"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog",
+      "redirects": 0,
+      "seconds": 0.32,
+      "title": "Guides & Resources — Screenshot Bro",
+      "description": "Practical guides and references for designing, localizing, and shipping App Store and Google Play screenshots that actually convert.",
+      "canonical": "https://screenshotbro.app/blog",
+      "robots": "",
+      "words": 2580,
+      "h1": [
+        "Guides & Resources"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/es/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/es/blog",
+      "redirects": 0,
+      "seconds": 0.32,
+      "title": "Guías y recursos — Screenshot Bro",
+      "description": "Guías para diseñar capturas de App Store y Google Play: dimensiones, marcos, textos, localización y exportación con Screenshot Bro.",
+      "canonical": "https://screenshotbro.app/es/blog",
+      "robots": "",
+      "words": 2612,
+      "h1": [
+        "Guías y recursos"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/zh/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/zh/blog",
+      "redirects": 0,
+      "seconds": 0.31,
+      "title": "指南与资源 — Screenshot Bro",
+      "description": "设计高转化率 App Store 截图的实用指南。",
+      "canonical": "https://screenshotbro.app/zh/blog",
+      "robots": "",
+      "words": 1283,
+      "h1": [
+        "指南与资源"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/hi/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/hi/blog",
+      "redirects": 0,
+      "seconds": 0.4,
+      "title": "गाइड और संसाधन — Screenshot Bro",
+      "description": "Screenshot Bro के साथ App Store और Google Play स्क्रीनशॉट बनाने की गाइड: सही आकार, डिवाइस फ्रेम, टेक्स्ट, अनुवाद और एक्सपोर्ट की जानकारी।",
+      "canonical": "https://screenshotbro.app/hi/blog",
+      "robots": "",
+      "words": 2347,
+      "h1": [
+        "गाइड और संसाधन"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/fr/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/fr/blog",
+      "redirects": 0,
+      "seconds": 0.38,
+      "title": "Guides & Ressources — Screenshot Bro",
+      "description": "Guides pour créer des captures App Store et Google Play : dimensions, cadres, textes, localisation et exportation avec Screenshot Bro.",
+      "canonical": "https://screenshotbro.app/fr/blog",
+      "robots": "",
+      "words": 2387,
+      "h1": [
+        "Guides & Ressources"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ar/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/ar/blog",
+      "redirects": 0,
+      "seconds": 0.34,
+      "title": "الأدلة والموارد — Screenshot Bro",
+      "description": "أدلة لتصميم لقطات شاشة App Store وGoogle Play مع Screenshot Bro: المقاسات وإطارات الأجهزة والنصوص والترجمة والتصدير لمتاجر التطبيقات.",
+      "canonical": "https://screenshotbro.app/ar/blog",
+      "robots": "",
+      "words": 2143,
+      "h1": [
+        "الأدلة والموارد"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/de/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/de/blog",
+      "redirects": 0,
+      "seconds": 0.32,
+      "title": "Leitfäden & Ressourcen — Screenshot Bro",
+      "description": "Anleitungen für App Store- und Google Play-Screenshots: Größen, Geräterahmen, Texte, Lokalisierung und Export mit Screenshot Bro.",
+      "canonical": "https://screenshotbro.app/de/blog",
+      "robots": "",
+      "words": 2070,
+      "h1": [
+        "Leitfäden & Ressourcen"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ja/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/ja/blog",
+      "redirects": 0,
+      "seconds": 0.34,
+      "title": "ガイドとリソース — Screenshot Bro",
+      "description": "ダウンロードにつながる App Store スクリーンショットをデザインするための実践ガイド。",
+      "canonical": "https://screenshotbro.app/ja/blog",
+      "robots": "",
+      "words": 1070,
+      "h1": [
+        "ガイドとリソース"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/pt/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/pt/blog",
+      "redirects": 0,
+      "seconds": 0.3,
+      "title": "Guias e Recursos — Screenshot Bro",
+      "description": "Guias para criar capturas da App Store e do Google Play: tamanhos, molduras, textos, localização e exportação com Screenshot Bro.",
+      "canonical": "https://screenshotbro.app/pt/blog",
+      "robots": "",
+      "words": 2584,
+      "h1": [
+        "Guias e Recursos"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/it/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/it/blog",
+      "redirects": 0,
+      "seconds": 0.25,
+      "title": "Guide e Risorse — Screenshot Bro",
+      "description": "Guide per creare screenshot per App Store e Google Play: dimensioni, cornici, testi, localizzazione ed esportazione con Screenshot Bro.",
+      "canonical": "https://screenshotbro.app/it/blog",
+      "robots": "",
+      "words": 2388,
+      "h1": [
+        "Guide e Risorse"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ko/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/ko/blog",
+      "redirects": 0,
+      "seconds": 0.3,
+      "title": "가이드 및 리소스 — Screenshot Bro",
+      "description": "전환율을 높이는 App Store 스크린샷 디자인을 위한 실용 가이드.",
+      "canonical": "https://screenshotbro.app/ko/blog",
+      "robots": "",
+      "words": 2103,
+      "h1": [
+        "가이드 및 리소스"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/uk/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/uk/blog",
+      "redirects": 0,
+      "seconds": 0.2,
+      "title": "Посібники та ресурси — Screenshot Bro",
+      "description": "Практичні посібники зі створення та локалізації скриншотів для App Store і Google Play, які конвертують.",
+      "canonical": "https://screenshotbro.app/uk/blog",
+      "robots": "",
+      "words": 2642,
+      "h1": [
+        "Посібники та ресурси"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/pl/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/pl/blog",
+      "redirects": 0,
+      "seconds": 0.18,
+      "title": "Poradniki i materiały — Screenshot Bro",
+      "description": "Praktyczne poradniki dotyczące projektowania, lokalizowania i publikowania zrzutów ekranu do App Store i Google Play, które konwertują.",
+      "canonical": "https://screenshotbro.app/pl/blog",
+      "robots": "",
+      "words": 2583,
+      "h1": [
+        "Poradniki i materiały"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/tr/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/tr/blog",
+      "redirects": 0,
+      "seconds": 0.22,
+      "title": "Rehberler ve Kaynaklar — Screenshot Bro",
+      "description": "Dönüşüm sağlayan App Store ve Google Play ekran görüntüleri tasarlamak, yerelleştirmek ve yayınlamak için pratik rehberler.",
+      "canonical": "https://screenshotbro.app/tr/blog",
+      "robots": "",
+      "words": 2578,
+      "h1": [
+        "Rehberler ve Kaynaklar"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/nl/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/nl/blog",
+      "redirects": 0,
+      "seconds": 0.22,
+      "title": "Gidsen & Bronnen — Screenshot Bro",
+      "description": "Praktische gidsen voor het ontwerpen, lokaliseren en publiceren van App Store- en Google Play-screenshots die converteren.",
+      "canonical": "https://screenshotbro.app/nl/blog",
+      "robots": "",
+      "words": 2573,
+      "h1": [
+        "Gidsen & Bronnen"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/id/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/id/blog",
+      "redirects": 0,
+      "seconds": 0.2,
+      "title": "Panduan & Sumber Daya — Screenshot Bro",
+      "description": "Panduan praktis untuk mendesain, melokalkan, dan merilis tangkapan layar App Store dan Google Play yang berkonversi tinggi.",
+      "canonical": "https://screenshotbro.app/id/blog",
+      "robots": "",
+      "words": 2587,
+      "h1": [
+        "Panduan & Sumber Daya"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vi/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/vi/blog",
+      "redirects": 0,
+      "seconds": 0.23,
+      "title": "Hướng dẫn & Tài nguyên — Screenshot Bro",
+      "description": "Hướng dẫn thực tế để thiết kế, bản địa hóa và phát hành ảnh chụp màn hình App Store và Google Play có tỷ lệ chuyển đổi cao.",
+      "canonical": "https://screenshotbro.app/vi/blog",
+      "robots": "",
+      "words": 2787,
+      "h1": [
+        "Hướng dẫn & Tài nguyên"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/th/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/th/blog",
+      "redirects": 0,
+      "seconds": 0.21,
+      "title": "คู่มือและแหล่งข้อมูล — Screenshot Bro",
+      "description": "คู่มือเชิงปฏิบัติสำหรับการออกแบบ แปลภาษา และเผยแพร่ภาพหน้าจอ App Store และ Google Play ที่ช่วยเพิ่มยอดดาวน์โหลด",
+      "canonical": "https://screenshotbro.app/th/blog",
+      "robots": "",
+      "words": 2532,
+      "h1": [
+        "คู่มือและแหล่งข้อมูล"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/sv/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/sv/blog",
+      "redirects": 0,
+      "seconds": 0.27,
+      "title": "Guider & Resurser — Screenshot Bro",
+      "description": "Praktiska guider för att designa, lokalisera och publicera skärmdumpar för App Store och Google Play som konverterar.",
+      "canonical": "https://screenshotbro.app/sv/blog",
+      "robots": "",
+      "words": 2574,
+      "h1": [
+        "Guider & Resurser"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/da/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/da/blog",
+      "redirects": 0,
+      "seconds": 0.28,
+      "title": "Guides & Ressourcer — Screenshot Bro",
+      "description": "Praktiske guides til at designe, lokalisere og udgive App Store- og Google Play-skærmbilleder, der konverterer.",
+      "canonical": "https://screenshotbro.app/da/blog",
+      "robots": "",
+      "words": 2571,
+      "h1": [
+        "Guides & Ressourcer"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/fi/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/fi/blog",
+      "redirects": 0,
+      "seconds": 0.24,
+      "title": "Oppaat & Resurssit — Screenshot Bro",
+      "description": "Käytännön oppaita konvertoivien App Store- ja Google Play -kuvakaappausten suunnitteluun, lokalisointiin ja julkaisuun.",
+      "canonical": "https://screenshotbro.app/fi/blog",
+      "robots": "",
+      "words": 2557,
+      "h1": [
+        "Oppaat & Resurssit"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/no/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/no/blog",
+      "redirects": 0,
+      "seconds": 0.24,
+      "title": "Guider & Ressurser — Screenshot Bro",
+      "description": "Praktiske guider for å designe, lokalisere og publisere skjermbilder for App Store og Google Play som konverterer.",
+      "canonical": "https://screenshotbro.app/no/blog",
+      "robots": "",
+      "words": 2573,
+      "h1": [
+        "Guider & Ressurser"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/cs/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/cs/blog",
+      "redirects": 0,
+      "seconds": 0.26,
+      "title": "Průvodci & Zdroje — Screenshot Bro",
+      "description": "Praktické návody pro navrhování, lokalizaci a publikování snímků pro App Store a Google Play, které konvertují.",
+      "canonical": "https://screenshotbro.app/cs/blog",
+      "robots": "",
+      "words": 2582,
+      "h1": [
+        "Průvodci & Zdroje"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ro/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/ro/blog",
+      "redirects": 0,
+      "seconds": 0.24,
+      "title": "Ghiduri & Resurse — Screenshot Bro",
+      "description": "Ghiduri practice pentru crearea, localizarea și publicarea de capturi de ecran pentru App Store și Google Play cu conversie ridicată.",
+      "canonical": "https://screenshotbro.app/ro/blog",
+      "robots": "",
+      "words": 2596,
+      "h1": [
+        "Ghiduri & Resurse"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ms/blog",
+      "status": 200,
+      "final": "https://screenshotbro.app/ms/blog",
+      "redirects": 0,
+      "seconds": 0.18,
+      "title": "Panduan & Sumber — Screenshot Bro",
+      "description": "Panduan praktikal untuk mereka bentuk, menyetempatkan dan menerbitkan tangkapan skrin App Store dan Google Play yang berkesan.",
+      "canonical": "https://screenshotbro.app/ms/blog",
+      "robots": "",
+      "words": 2588,
+      "h1": [
+        "Panduan & Sumber"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/changelog",
+      "status": 200,
+      "final": "https://screenshotbro.app/changelog",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "Changelog — Screenshot Bro",
+      "description": "What's new in Screenshot Bro. Release notes, new features, and improvements for the App Store screenshot designer for Mac, iPad and iPhone.",
+      "canonical": "https://screenshotbro.app/changelog",
+      "robots": "",
+      "words": 7178,
+      "h1": [
+        "What's new in Screenshot Bro"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/privacy",
+      "status": 200,
+      "final": "https://screenshotbro.app/privacy",
+      "redirects": 0,
+      "seconds": 0.17,
+      "title": "Privacy Policy — Screenshot Bro",
+      "description": "Privacy policy for Screenshot Bro. Learn how we handle your data — no advertising, no cross-app tracking, and your projects stay on your device.",
+      "canonical": "https://screenshotbro.app/privacy",
+      "robots": "",
+      "words": 5119,
+      "h1": [
+        "Privacy Policy"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/terms",
+      "status": 200,
+      "final": "https://screenshotbro.app/terms",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Terms of Use — Screenshot Bro",
+      "description": "Terms of Use, EULA, and subscription terms for Screenshot Bro — auto-renewing subscriptions, lifetime purchase, cancellation, and refunds.",
+      "canonical": "https://screenshotbro.app/terms",
+      "robots": "",
+      "words": 1428,
+      "h1": [
+        "Terms of Use"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/download",
+      "status": 200,
+      "final": "https://screenshotbro.app/download",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "Download Screenshot Bro for Mac, iPad, iPhone and Windows",
+      "description": "Download Screenshot Bro for App Store and Google Play screenshots on Mac, iPad, iPhone or Windows. Free to start, with Pro in the app or once on the web.",
+      "canonical": "https://screenshotbro.app/download",
+      "robots": "",
+      "words": 970,
+      "h1": [
+        "Get Screenshot Bro"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/features",
+      "status": 200,
+      "final": "https://screenshotbro.app/features",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "Features — Screenshot Bro",
+      "description": "Device frames, multi-template editing, 81 language presets with on-device translation, batch export, App Store Connect and Google Play upload, and MCP.",
+      "canonical": "https://screenshotbro.app/features",
+      "robots": "",
+      "words": 1409,
+      "h1": [
+        "Everything an App Store and Google Play screenshot tool should do"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/templates",
+      "status": 200,
+      "final": "https://screenshotbro.app/templates",
+      "redirects": 0,
+      "seconds": 0.11,
+      "title": "63 App Store & Google Play Templates — Screenshot Bro",
+      "description": "Browse 63 App Store and Google Play screenshot templates built into Screenshot Bro. Every preview is a real export; start from any and swap in your shots.",
+      "canonical": "https://screenshotbro.app/templates",
+      "robots": "",
+      "words": 807,
+      "h1": [
+        "63 screenshot templates, ready for your app"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/pricing",
+      "status": 200,
+      "final": "https://screenshotbro.app/pricing",
+      "redirects": 0,
+      "seconds": 0.17,
+      "title": "Pricing — Screenshot Bro",
+      "description": "Screenshot Bro is free with no trial expiry. Pro is $30 once on the web, or $4.99/month, $29.99/year or $59.99 lifetime on the App Store (US prices).",
+      "canonical": "https://screenshotbro.app/pricing",
+      "robots": "",
+      "words": 659,
+      "h1": [
+        "Free to start. Pro when your project outgrows it."
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/press",
+      "status": 200,
+      "final": "https://screenshotbro.app/press",
+      "redirects": 0,
+      "seconds": 0.17,
+      "title": "Press Kit — Screenshot Bro",
+      "description": "Screenshot Bro press kit: app description, key facts, logos, app icon and screenshots to download, and a press contact.",
+      "canonical": "https://screenshotbro.app/press",
+      "robots": "",
+      "words": 569,
+      "h1": [
+        "Screenshot Bro press kit"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/support",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "Support — Screenshot Bro",
+      "description": "Get help with Screenshot Bro. Join the Discord for the fastest answers on bugs and feature requests — or email us, or find us on Reddit, X, and Threads.",
+      "canonical": "https://screenshotbro.app/support",
+      "robots": "",
+      "words": 290,
+      "h1": [
+        "Support"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/es/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/es/support",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "Soporte — Screenshot Bro",
+      "description": "Obtén ayuda con Screenshot Bro. Únete al Discord para respuestas rápidas, o escríbenos por correo o en Reddit, X y Threads.",
+      "canonical": "https://screenshotbro.app/es/support",
+      "robots": "",
+      "words": 307,
+      "h1": [
+        "Soporte"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/zh/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/zh/support",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "技术支持与帮助 — Screenshot Bro",
+      "description": "获取 Screenshot Bro 的技术支持与帮助。加入 Discord 可最快获得答复，也可以发邮件或在 Reddit、X 等社区与我们互动。",
+      "canonical": "https://screenshotbro.app/zh/support",
+      "robots": "",
+      "words": 178,
+      "h1": [
+        "技术支持与帮助"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/hi/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/hi/support",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "सहायता और संपर्क — Screenshot Bro",
+      "description": "Screenshot Bro के लिए सहायता प्राप्त करें। सबसे तेज़ जवाब के लिए Discord से जुड़ें, या हमें ईमेल करें।",
+      "canonical": "https://screenshotbro.app/hi/support",
+      "robots": "",
+      "words": 308,
+      "h1": [
+        "सहायता"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/fr/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/fr/support",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "Support & Contact — Screenshot Bro",
+      "description": "Obtenez de l'aide sur Screenshot Bro. Le Discord est le canal le plus rapide — sinon par e-mail ou sur nos réseaux sociaux.",
+      "canonical": "https://screenshotbro.app/fr/support",
+      "robots": "",
+      "words": 307,
+      "h1": [
+        "Support & Contact"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ar/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/ar/support",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "الدعم الفني والمساعدة — Screenshot Bro",
+      "description": "احصل على المساعدة بخصوص Screenshot Bro. خادم Discord هو أسرع قناة للدعم، ويمكنك أيضًا مراسلتنا عبر البريد الإلكتروني أو وسائل التواصل.",
+      "canonical": "https://screenshotbro.app/ar/support",
+      "robots": "",
+      "words": 285,
+      "h1": [
+        "الدعم الفني"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/de/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/de/support",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Support & Hilfe — Screenshot Bro",
+      "description": "Erhalten Sie Hilfe zu Screenshot Bro. Am schnellsten geht es über Discord — oder per E-Mail und auf Reddit, X und Threads.",
+      "canonical": "https://screenshotbro.app/de/support",
+      "robots": "",
+      "words": 266,
+      "h1": [
+        "Support"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ja/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/ja/support",
+      "redirects": 0,
+      "seconds": 0.12,
+      "title": "サポート＆お問い合わせ — Screenshot Bro",
+      "description": "Screenshot Broのサポート情報。Discord が最速の窓口です。メールや公式コミュニティからもお気軽にどうぞ。",
+      "canonical": "https://screenshotbro.app/ja/support",
+      "robots": "",
+      "words": 163,
+      "h1": [
+        "サポート"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/pt/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/pt/support",
+      "redirects": 0,
+      "seconds": 0.12,
+      "title": "Suporte & Ajuda — Screenshot Bro",
+      "description": "Obtenha suporte para o Screenshot Bro. O Discord é o canal mais rápido — também por e-mail, Reddit e X.",
+      "canonical": "https://screenshotbro.app/pt/support",
+      "robots": "",
+      "words": 303,
+      "h1": [
+        "Suporte"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/it/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/it/support",
+      "redirects": 0,
+      "seconds": 0.12,
+      "title": "Supporto e Assistenza — Screenshot Bro",
+      "description": "Ricevi assistenza per Screenshot Bro. Discord è il canale più rapido — oppure via email o su Reddit, X e Threads.",
+      "canonical": "https://screenshotbro.app/it/support",
+      "robots": "",
+      "words": 288,
+      "h1": [
+        "Supporto"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ko/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/ko/support",
+      "redirects": 0,
+      "seconds": 0.1,
+      "title": "고객 지원 및 문의 — Screenshot Bro",
+      "description": "Screenshot Bro 고객 지원. Discord가 가장 빠른 창구이며, 이메일이나 커뮤니티로도 문의할 수 있습니다.",
+      "canonical": "https://screenshotbro.app/ko/support",
+      "robots": "",
+      "words": 261,
+      "h1": [
+        "고객 지원"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/uk/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/uk/support",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Підтримка — Screenshot Bro",
+      "description": "Потрібна допомога зі Screenshot Bro? Запитайте в Discord про помилки чи можливості, напишіть нам на пошту або знайдіть нас у Reddit, X і Threads.",
+      "canonical": "https://screenshotbro.app/uk/support",
+      "robots": "",
+      "words": 277,
+      "h1": [
+        "Підтримка"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/pl/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/pl/support",
+      "redirects": 0,
+      "seconds": 0.11,
+      "title": "Wsparcie — Screenshot Bro",
+      "description": "Uzyskaj pomoc dotyczącą Screenshot Bro. Zapytaj na Discordzie o błędy, obsługę i nowe funkcje lub skontaktuj się z nami przez e-mail.",
+      "canonical": "https://screenshotbro.app/pl/support",
+      "robots": "",
+      "words": 286,
+      "h1": [
+        "Wsparcie"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/tr/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/tr/support",
+      "redirects": 0,
+      "seconds": 0.18,
+      "title": "Destek — Screenshot Bro",
+      "description": "Screenshot Bro ile ilgili yardım alın. Hatalar, sorular ve özellik istekleri hakkında en hızlı yanıtlar için Discord'a katılın veya bize e-posta gönderin.",
+      "canonical": "https://screenshotbro.app/tr/support",
+      "robots": "",
+      "words": 275,
+      "h1": [
+        "Destek"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/nl/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/nl/support",
+      "redirects": 0,
+      "seconds": 0.12,
+      "title": "Ondersteuning — Screenshot Bro",
+      "description": "Krijg hulp bij Screenshot Bro. Word lid van Discord voor de snelste antwoorden op vragen, bugs en functieverzoeken — of stuur ons een e-mail.",
+      "canonical": "https://screenshotbro.app/nl/support",
+      "robots": "",
+      "words": 278,
+      "h1": [
+        "Ondersteuning"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/id/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/id/support",
+      "redirects": 0,
+      "seconds": 0.21,
+      "title": "Dukungan — Screenshot Bro",
+      "description": "Dapatkan bantuan Screenshot Bro. Tanyakan bug, penggunaan, dan saran fitur di Discord untuk respons cepat, atau hubungi kami melalui email.",
+      "canonical": "https://screenshotbro.app/id/support",
+      "robots": "",
+      "words": 283,
+      "h1": [
+        "Dukungan"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vi/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/vi/support",
+      "redirects": 0,
+      "seconds": 0.18,
+      "title": "Hỗ trợ — Screenshot Bro",
+      "description": "Nhận trợ giúp về Screenshot Bro. Tham gia Discord để nhận câu trả lời nhanh nhất về lỗi, câu hỏi và yêu cầu tính năng — hoặc gửi email cho chúng tôi.",
+      "canonical": "https://screenshotbro.app/vi/support",
+      "robots": "",
+      "words": 380,
+      "h1": [
+        "Hỗ trợ"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/th/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/th/support",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "ฝ่ายสนับสนุน — Screenshot Bro",
+      "description": "รับความช่วยเหลือเกี่ยวกับ Screenshot Bro เข้าร่วม Discord เพื่อรับคำตอบที่เร็วที่สุดเกี่ยวกับข้อผิดพลาด คำถาม และคำขอคุณสมบัติ หรือส่งอีเมลถึงเรา",
+      "canonical": "https://screenshotbro.app/th/support",
+      "robots": "",
+      "words": 188,
+      "h1": [
+        "ฝ่ายสนับสนุน"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/sv/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/sv/support",
+      "redirects": 0,
+      "seconds": 0.18,
+      "title": "Support — Screenshot Bro",
+      "description": "Få hjälp med Screenshot Bro. Gå med i Discord för de snabbaste svaren på buggar, frågor och funktionsförfrågningar — eller mejla oss.",
+      "canonical": "https://screenshotbro.app/sv/support",
+      "robots": "",
+      "words": 275,
+      "h1": [
+        "Support"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/da/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/da/support",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "Support — Screenshot Bro",
+      "description": "Få hjælp til Screenshot Bro. Deltag i Discord for hurtigst svar på spørgsmål og fejl — eller send os en e-mail.",
+      "canonical": "https://screenshotbro.app/da/support",
+      "robots": "",
+      "words": 276,
+      "h1": [
+        "Support"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/fi/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/fi/support",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "Tuki — Screenshot Bro",
+      "description": "Hanki apua Screenshot Bron käyttöön. Liity Discordiin saadaksesi nopeimmat vastaukset virheisiin ja kysymyksiin — tai lähetä sähköpostia.",
+      "canonical": "https://screenshotbro.app/fi/support",
+      "robots": "",
+      "words": 241,
+      "h1": [
+        "Tuki"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/no/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/no/support",
+      "redirects": 0,
+      "seconds": 0.18,
+      "title": "Support — Screenshot Bro",
+      "description": "Få hjelp med Screenshot Bro. Bli med i Discord for raskeste svar på feil og spørsmål — eller send oss en e-post.",
+      "canonical": "https://screenshotbro.app/no/support",
+      "robots": "",
+      "words": 279,
+      "h1": [
+        "Support"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/cs/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/cs/support",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "Podpora — Screenshot Bro",
+      "description": "Získejte pomoc s Screenshot Bro. Připojte se k Discordu pro nejrychlejší odpovědi na chyby a dotazy — nebo nám napište e-mail.",
+      "canonical": "https://screenshotbro.app/cs/support",
+      "robots": "",
+      "words": 278,
+      "h1": [
+        "Podpora"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ro/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/ro/support",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Suport — Screenshot Bro",
+      "description": "Primește ajutor pentru Screenshot Bro. Alătură-te pe Discord pentru cele mai rapide răspunsuri la erori și întrebări — sau trimite-ne un e-mail.",
+      "canonical": "https://screenshotbro.app/ro/support",
+      "robots": "",
+      "words": 298,
+      "h1": [
+        "Suport"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ms/support",
+      "status": 200,
+      "final": "https://screenshotbro.app/ms/support",
+      "redirects": 0,
+      "seconds": 0.12,
+      "title": "Sokongan — Screenshot Bro",
+      "description": "Dapatkan bantuan untuk Screenshot Bro. Sertai Discord untuk respons terpantas mengenai pepijat dan pertanyaan — atau emel kepada kami.",
+      "canonical": "https://screenshotbro.app/ms/support",
+      "robots": "",
+      "words": 287,
+      "h1": [
+        "Sokongan"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/tutorials",
+      "redirects": 0,
+      "seconds": 0.11,
+      "title": "Tutorials — Screenshot Bro",
+      "description": "Learn Screenshot Bro with a step-by-step written guide and short videos — create projects, frame devices, localize, and export store screenshots.",
+      "canonical": "https://screenshotbro.app/tutorials",
+      "robots": "",
+      "words": 291,
+      "h1": [
+        "Tutorials"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/es/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/es/tutorials",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Tutoriales — Screenshot Bro",
+      "description": "Aprende a usar Screenshot Bro con guías paso a paso y vídeos: crea proyectos, añade marcos, localiza y exporta capturas.",
+      "canonical": "https://screenshotbro.app/es/tutorials",
+      "robots": "",
+      "words": 288,
+      "h1": [
+        "Tutoriales"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/zh/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/zh/tutorials",
+      "redirects": 0,
+      "seconds": 0.11,
+      "title": "视频与实战教程 — Screenshot Bro",
+      "description": "通过图文指南与短视频快速掌握 Screenshot Bro：新建项目、设置机型框架、多语言翻译及批量导出。",
+      "canonical": "https://screenshotbro.app/zh/tutorials",
+      "robots": "",
+      "words": 201,
+      "h1": [
+        "教程与实战指南"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/hi/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/hi/tutorials",
+      "redirects": 0,
+      "seconds": 0.11,
+      "title": "ट्यूटोरियल और गाइड — Screenshot Bro",
+      "description": "Screenshot Bro की गाइड और वीडियो से प्रोजेक्ट बनाना, डिवाइस फ्रेम जोड़ना, टेक्स्ट का अनुवाद करना और ऐप स्टोर के लिए स्क्रीनशॉट एक्सपोर्ट करना सीखें।",
+      "canonical": "https://screenshotbro.app/hi/tutorials",
+      "robots": "",
+      "words": 274,
+      "h1": [
+        "ट्यूटोरियल"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/fr/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/fr/tutorials",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Tutoriels & Guides — Screenshot Bro",
+      "description": "Apprenez à utiliser Screenshot Bro : créez des projets, ajoutez des cadres, traduisez les textes et exportez vos captures avec nos guides et vidéos.",
+      "canonical": "https://screenshotbro.app/fr/tutorials",
+      "robots": "",
+      "words": 278,
+      "h1": [
+        "Tutoriels"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ar/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/ar/tutorials",
+      "redirects": 0,
+      "seconds": 0.21,
+      "title": "الدروس والشروحات — Screenshot Bro",
+      "description": "تعلم استخدام Screenshot Bro عبر أدلة وفيديوهات توضح إنشاء المشاريع وإضافة إطارات الأجهزة وترجمة النصوص وتصدير لقطات الشاشة لمتاجر التطبيقات.",
+      "canonical": "https://screenshotbro.app/ar/tutorials",
+      "robots": "",
+      "words": 260,
+      "h1": [
+        "الدروس والشروحات"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/de/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/de/tutorials",
+      "redirects": 0,
+      "seconds": 0.19,
+      "title": "Tutorials & Anleitungen — Screenshot Bro",
+      "description": "Lernen Sie Screenshot Bro mit Anleitungen und Videos: Projekte erstellen, Geräterahmen hinzufügen, Texte lokalisieren und Store-Screenshots exportieren.",
+      "canonical": "https://screenshotbro.app/de/tutorials",
+      "robots": "",
+      "words": 248,
+      "h1": [
+        "Tutorials"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ja/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/ja/tutorials",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "チュートリアル・使い方 — Screenshot Bro",
+      "description": "Screenshot Broの使い方ガイドと動画解説。プロジェクト作成からデバイス配置、多言語化、一括書き出しまでを網羅。",
+      "canonical": "https://screenshotbro.app/ja/tutorials",
+      "robots": "",
+      "words": 185,
+      "h1": [
+        "チュートリアル"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/pt/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/pt/tutorials",
+      "redirects": 0,
+      "seconds": 0.18,
+      "title": "Tutoriais & Guias — Screenshot Bro",
+      "description": "Aprenda a usar o Screenshot Bro com guias e vídeos: crie projetos, adicione molduras, traduza textos e exporte capturas para as lojas de aplicativos.",
+      "canonical": "https://screenshotbro.app/pt/tutorials",
+      "robots": "",
+      "words": 285,
+      "h1": [
+        "Tutoriais"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/it/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/it/tutorials",
+      "redirects": 0,
+      "seconds": 0.18,
+      "title": "Tutorial e Guide pratiche — Screenshot Bro",
+      "description": "Impara a usare Screenshot Bro con guide e video: crea progetti, aggiungi cornici, traduci i testi ed esporta screenshot per gli store di app.",
+      "canonical": "https://screenshotbro.app/it/tutorials",
+      "robots": "",
+      "words": 270,
+      "h1": [
+        "Tutorial"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ko/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/ko/tutorials",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "튜토리얼 및 사용 가이드 — Screenshot Bro",
+      "description": "단계별 가이드와 동영상으로 Screenshot Bro 마스터하기: 프로젝트 생성부터 디바이스 프레임, 다국어 번역, 스토어 업로드까지.",
+      "canonical": "https://screenshotbro.app/ko/tutorials",
+      "robots": "",
+      "words": 252,
+      "h1": [
+        "튜토리얼"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/uk/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/uk/tutorials",
+      "redirects": 0,
+      "seconds": 0.19,
+      "title": "Посібники — Screenshot Bro",
+      "description": "Вивчайте Screenshot Bro за посібником і короткими відео: створюйте проєкти, додавайте рамки, локалізуйте й експортуйте скриншоти для магазинів.",
+      "canonical": "https://screenshotbro.app/uk/tutorials",
+      "robots": "",
+      "words": 272,
+      "h1": [
+        "Посібники"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/pl/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/pl/tutorials",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "Poradniki — Screenshot Bro",
+      "description": "Poznaj Screenshot Bro z przewodnikiem i filmami: twórz projekty, dodawaj ramki urządzeń, lokalizuj i eksportuj zrzuty ekranu do sklepów.",
+      "canonical": "https://screenshotbro.app/pl/tutorials",
+      "robots": "",
+      "words": 279,
+      "h1": [
+        "Poradniki"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/tr/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/tr/tutorials",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Rehberler — Screenshot Bro",
+      "description": "Rehber ve kısa videolarla Screenshot Bro öğrenin: proje oluşturun, cihaz çerçevesi ekleyin, yerelleştirin ve ekran görüntülerini dışa aktarın.",
+      "canonical": "https://screenshotbro.app/tr/tutorials",
+      "robots": "",
+      "words": 262,
+      "h1": [
+        "Rehberler"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/nl/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/nl/tutorials",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "Handleidingen — Screenshot Bro",
+      "description": "Leer Screenshot Bro kennen met een stapsgewijze gids en korte video's — maak projecten, voeg kaders toe, lokaliseer en exporteer screenshots.",
+      "canonical": "https://screenshotbro.app/nl/tutorials",
+      "robots": "",
+      "words": 267,
+      "h1": [
+        "Handleidingen"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/id/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/id/tutorials",
+      "redirects": 0,
+      "seconds": 0.12,
+      "title": "Tutorial — Screenshot Bro",
+      "description": "Pelajari Screenshot Bro dengan panduan langkah demi langkah dan video singkat — buat proyek, bingkai perangkat, lokalkan, dan ekspor tangkapan layar toko.",
+      "canonical": "https://screenshotbro.app/id/tutorials",
+      "robots": "",
+      "words": 273,
+      "h1": [
+        "Tutorial"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vi/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/vi/tutorials",
+      "redirects": 0,
+      "seconds": 0.11,
+      "title": "Hướng dẫn — Screenshot Bro",
+      "description": "Tìm hiểu cách sử dụng Screenshot Bro với hướng dẫn từng bước và video ngắn — tạo dự án, tạo khung thiết bị, bản địa hóa và xuất ảnh chụp màn hình.",
+      "canonical": "https://screenshotbro.app/vi/tutorials",
+      "robots": "",
+      "words": 350,
+      "h1": [
+        "Hướng dẫn"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/th/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/th/tutorials",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "คู่มือการใช้งาน — Screenshot Bro",
+      "description": "เรียนรู้การใช้งาน Screenshot Bro ด้วยคู่มือทีละขั้นตอนและวิดีโอสั้น — สร้างโปรเจกต์ ใส่กรอบอุปกรณ์ แปลภาษา และส่งออกภาพหน้าจอ",
+      "canonical": "https://screenshotbro.app/th/tutorials",
+      "robots": "",
+      "words": 205,
+      "h1": [
+        "คู่มือการใช้งาน"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/sv/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/sv/tutorials",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Guider — Screenshot Bro",
+      "description": "Lär dig Screenshot Bro med en steg-för-steg-guide och korta videor — skapa projekt, rama in enheter, lokalisera och exportera skärmdumpar.",
+      "canonical": "https://screenshotbro.app/sv/tutorials",
+      "robots": "",
+      "words": 262,
+      "h1": [
+        "Guider"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/da/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/da/tutorials",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "Vejledninger — Screenshot Bro",
+      "description": "Lær Screenshot Bro at kende med en trin-for-trin guide og korte videoer — opret projekter, tilføj enhedsrammer, lokaliser og eksportér butiksskærmbilleder.",
+      "canonical": "https://screenshotbro.app/da/tutorials",
+      "robots": "",
+      "words": 260,
+      "h1": [
+        "Vejledninger"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/fi/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/fi/tutorials",
+      "redirects": 0,
+      "seconds": 0.12,
+      "title": "Oppaat — Screenshot Bro",
+      "description": "Opi Screenshot Bro vaiheittaisen oppaan ja videoiden avulla: luo projekteja, lisää laitekehykset, lokalisoi ja vie kuvakaappaukset kauppoihin.",
+      "canonical": "https://screenshotbro.app/fi/tutorials",
+      "robots": "",
+      "words": 240,
+      "h1": [
+        "Oppaat"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/no/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/no/tutorials",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "Veiledninger — Screenshot Bro",
+      "description": "Lær Screenshot Bro med en trinnvis veiledning og korte videoer — lag prosjekter, ram inn enheter, lokaliser og eksporter butikkskjermbilder.",
+      "canonical": "https://screenshotbro.app/no/tutorials",
+      "robots": "",
+      "words": 262,
+      "h1": [
+        "Veiledninger"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/cs/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/cs/tutorials",
+      "redirects": 0,
+      "seconds": 0.22,
+      "title": "Návody — Screenshot Bro",
+      "description": "Naučte se pracovat s Screenshot Bro pomocí podrobného návodu a krátkých videí — vytvářejte projekty, přidávejte rámečky, lokalizujte a exportujte snímky.",
+      "canonical": "https://screenshotbro.app/cs/tutorials",
+      "robots": "",
+      "words": 271,
+      "h1": [
+        "Návody"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ro/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/ro/tutorials",
+      "redirects": 0,
+      "seconds": 0.19,
+      "title": "Ghiduri — Screenshot Bro",
+      "description": "Învață să folosești Screenshot Bro cu un ghid pas cu pas și videoclipuri scurte — creează proiecte, adaugă rame, localizează și exportă capturi de ecran.",
+      "canonical": "https://screenshotbro.app/ro/tutorials",
+      "robots": "",
+      "words": 290,
+      "h1": [
+        "Ghiduri"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/ms/tutorials",
+      "status": 200,
+      "final": "https://screenshotbro.app/ms/tutorials",
+      "redirects": 0,
+      "seconds": 0.19,
+      "title": "Tutorial — Screenshot Bro",
+      "description": "Pelajari Screenshot Bro melalui panduan dan video: cipta projek, tambah bingkai peranti, setempatkan dan eksport tangkapan skrin untuk gedung.",
+      "canonical": "https://screenshotbro.app/ms/tutorials",
+      "robots": "",
+      "words": 276,
+      "h1": [
+        "Tutorial"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/tutorials/how-to-use-screenshot-bro",
+      "status": 200,
+      "final": "https://screenshotbro.app/tutorials/how-to-use-screenshot-bro",
+      "redirects": 0,
+      "seconds": 0.19,
+      "title": "How to Use Screenshot Bro — Step-by-Step Guide",
+      "description": "Step-by-step guide to designing, localizing, and exporting App Store and Google Play screenshots with Screenshot Bro.",
+      "canonical": "https://screenshotbro.app/tutorials/how-to-use-screenshot-bro",
+      "robots": "",
+      "words": 3381,
+      "h1": [
+        "How to use Screenshot Bro"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/docs/help",
+      "status": 200,
+      "final": "https://screenshotbro.app/docs/help",
+      "redirects": 0,
+      "seconds": 0.21,
+      "title": "Help & Documentation — Screenshot Bro",
+      "description": "Complete guide to Screenshot Bro for Mac, iPad, and iPhone: projects, rows, templates, device frames, backgrounds, languages, exporting, and store uploads.",
+      "canonical": "https://screenshotbro.app/docs/help",
+      "robots": "",
+      "words": 10979,
+      "h1": [
+        "Screenshot Bro Help"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/docs/project-schema",
+      "status": 200,
+      "final": "https://screenshotbro.app/docs/project-schema",
+      "redirects": 0,
+      "seconds": 0.17,
+      "title": "Project File Schema — Screenshot Bro",
+      "description": "JSON Schema for the Screenshot Bro project file format. Use it to generate, validate, or transform project.json with AI assistants, scripts, or tooling.",
+      "canonical": "https://screenshotbro.app/docs/project-schema",
+      "robots": "",
+      "words": 877,
+      "h1": [
+        "Project File Schema"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/friends",
+      "status": 200,
+      "final": "https://screenshotbro.app/friends",
+      "redirects": 0,
+      "seconds": 0.18,
+      "title": "Friends — Screenshot Bro",
+      "description": "Indie apps for Mac, iPad, iPhone and the web, built by developers we know. No affiliate links, no paid placements — we just think they're good.",
+      "canonical": "https://screenshotbro.app/friends",
+      "robots": "",
+      "words": 1598,
+      "h1": [
+        "Apps by people we know."
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vs",
+      "status": 200,
+      "final": "https://screenshotbro.app/vs",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "Screenshot Bro vs other App Store screenshot tools",
+      "description": "Every App Store and Google Play screenshot tool compared against Screenshot Bro: platform, free tier, localization and store upload, with a page for each.",
+      "canonical": "https://screenshotbro.app/vs",
+      "robots": "",
+      "words": 1074,
+      "h1": [
+        "Screenshot Bro vs other App Store screenshot tools"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vs/screenshot-studio",
+      "status": 200,
+      "final": "https://screenshotbro.app/vs/screenshot-studio",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Screenshot Bro vs Screenshot Studio — which to use?",
+      "description": "Screenshot Studio covers Watch, TV and Vision Pro with AI translation; Screenshot Bro exports free and uploads to both stores. Which native Mac app fits.",
+      "canonical": "https://screenshotbro.app/vs/screenshot-studio",
+      "robots": "",
+      "words": 3485,
+      "h1": [
+        "Screenshot Bro vs Screenshot Studio"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vs/butterkit",
+      "status": 200,
+      "final": "https://screenshotbro.app/vs/butterkit",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Screenshot Bro vs ButterKit — which to use?",
+      "description": "ButterKit needs macOS 26 and your own AI key for 50 languages; Screenshot Bro runs on macOS 15, ships 81 locale presets and uploads to Google Play too.",
+      "canonical": "https://screenshotbro.app/vs/butterkit",
+      "robots": "",
+      "words": 3738,
+      "h1": [
+        "Screenshot Bro vs ButterKit"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vs/shotbot",
+      "status": 200,
+      "final": "https://screenshotbro.app/vs/shotbot",
+      "redirects": 0,
+      "seconds": 0.12,
+      "title": "Screenshot Bro vs Shotbot — which to use?",
+      "description": "Shotbot frames one screenshot in seconds from the share sheet; Screenshot Bro designs the whole store listing. When each fits, and how they work together.",
+      "canonical": "https://screenshotbro.app/vs/shotbot",
+      "robots": "",
+      "words": 3238,
+      "h1": [
+        "Screenshot Bro vs Shotbot"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vs/rotato",
+      "status": 200,
+      "final": "https://screenshotbro.app/vs/rotato",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Screenshot Bro vs Rotato — which to use?",
+      "description": "Rotato renders 3D device animations and video; Screenshot Bro builds flat, localized App Store sets. Row-by-row comparison and the pipeline that uses both.",
+      "canonical": "https://screenshotbro.app/vs/rotato",
+      "robots": "",
+      "words": 3328,
+      "h1": [
+        "Screenshot Bro vs Rotato"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vs/applaunchpad",
+      "status": 200,
+      "final": "https://screenshotbro.app/vs/applaunchpad",
+      "redirects": 0,
+      "seconds": 0.11,
+      "title": "Screenshot Bro vs AppLaunchpad — which to use?",
+      "description": "AppLaunchpad's browser editor and 1000+ templates versus Screenshot Bro's native Mac app with store upload and 81 locales: pricing and limits.",
+      "canonical": "https://screenshotbro.app/vs/applaunchpad",
+      "robots": "",
+      "words": 3013,
+      "h1": [
+        "Screenshot Bro vs AppLaunchpad"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vs/previewed",
+      "status": 200,
+      "final": "https://screenshotbro.app/vs/previewed",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "Screenshot Bro vs Previewed — which to use?",
+      "description": "Previewed makes 3D mockups and promo videos in the browser; Screenshot Bro makes store-ready localized sets on Mac. Pricing, exports and fit compared.",
+      "canonical": "https://screenshotbro.app/vs/previewed",
+      "robots": "",
+      "words": 3380,
+      "h1": [
+        "Screenshot Bro vs Previewed"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vs/appscreens",
+      "status": 200,
+      "final": "https://screenshotbro.app/vs/appscreens",
+      "redirects": 0,
+      "seconds": 0.18,
+      "title": "Screenshot Bro vs AppScreens — which to use?",
+      "description": "AppScreens' browser generator with 80+ locales versus Screenshot Bro's native Mac app with a watermark-free free tier and direct upload, compared.",
+      "canonical": "https://screenshotbro.app/vs/appscreens",
+      "robots": "",
+      "words": 3385,
+      "h1": [
+        "Screenshot Bro vs AppScreens"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vs/appmockup-studio",
+      "status": 200,
+      "final": "https://screenshotbro.app/vs/appmockup-studio",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "Screenshot Bro vs AppMockUp Studio — which to use?",
+      "description": "AppMockUp Studio is free in the browser with no account; Screenshot Bro is a native Mac app for repeated, localized sets with upload. Which fits when.",
+      "canonical": "https://screenshotbro.app/vs/appmockup-studio",
+      "robots": "",
+      "words": 3169,
+      "h1": [
+        "Screenshot Bro vs AppMockUp Studio"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vs/screenshots-pro",
+      "status": 200,
+      "final": "https://screenshotbro.app/vs/screenshots-pro",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "Screenshot Bro vs Screenshots Pro — which to use?",
+      "description": "Screenshots Pro's cloud editor, 3D angles and REST API versus Screenshot Bro's native, offline Mac app with free store upload: plans, limits, fit.",
+      "canonical": "https://screenshotbro.app/vs/screenshots-pro",
+      "robots": "",
+      "words": 3198,
+      "h1": [
+        "Screenshot Bro vs Screenshots Pro"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vs/fastlane-snapshot",
+      "status": 200,
+      "final": "https://screenshotbro.app/vs/fastlane-snapshot",
+      "redirects": 0,
+      "seconds": 0.12,
+      "title": "Fastlane snapshot vs Screenshot Bro — which to use?",
+      "description": "Fastlane snapshot captures UI screenshots from XCUITest; Screenshot Bro designs marketing screenshots. They solve different problems.",
+      "canonical": "https://screenshotbro.app/vs/fastlane-snapshot",
+      "robots": "",
+      "words": 1958,
+      "h1": [
+        "Fastlane snapshot vs Screenshot Bro"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vs/mockuuups-studio",
+      "status": 200,
+      "final": "https://screenshotbro.app/vs/mockuuups-studio",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "Screenshot Bro vs Mockuuups Studio — which to use?",
+      "description": "Mockuuups Studio's 5,300+ photoreal mockups and design plugins versus Screenshot Bro's App Store size presets, locales and upload: pricing and fit.",
+      "canonical": "https://screenshotbro.app/vs/mockuuups-studio",
+      "robots": "",
+      "words": 3249,
+      "h1": [
+        "Screenshot Bro vs Mockuuups Studio"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vs/placeit",
+      "status": 200,
+      "final": "https://screenshotbro.app/vs/placeit",
+      "redirects": 0,
+      "seconds": 0.17,
+      "title": "Screenshot Bro vs Placeit — which to use?",
+      "description": "Placeit's all-in-one design subscription versus Screenshot Bro's App Store screenshot app: watermarks, pricing, store sizes, locales, upload.",
+      "canonical": "https://screenshotbro.app/vs/placeit",
+      "robots": "",
+      "words": 3441,
+      "h1": [
+        "Screenshot Bro vs Placeit"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vs/canva",
+      "status": 200,
+      "final": "https://screenshotbro.app/vs/canva",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "Screenshot Bro vs Canva — which to use?",
+      "description": "Canva's all-purpose editor with paid Magic Resize and Translate versus Screenshot Bro's store sizes, 81 locales and direct upload: pricing and limits.",
+      "canonical": "https://screenshotbro.app/vs/canva",
+      "robots": "",
+      "words": 3388,
+      "h1": [
+        "Screenshot Bro vs Canva"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/vs/figma",
+      "status": 200,
+      "final": "https://screenshotbro.app/vs/figma",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "Screenshot Bro vs Figma — which to use?",
+      "description": "Figma's canvas, components and variable modes versus Screenshot Bro's store size presets, 81 locales and direct upload: plans, limits and fit.",
+      "canonical": "https://screenshotbro.app/vs/figma",
+      "robots": "",
+      "words": 3234,
+      "h1": [
+        "Screenshot Bro vs Figma"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-screenshot-majority-rule",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-screenshot-majority-rule",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "App Store Screenshot Majority Rule (Guideline 2.3.3)",
+      "description": "App Review now says over half your screenshots per device and language must show the app in use. The rule, Apple's examples, and how to audit your set.",
+      "canonical": "https://screenshotbro.app/blog/app-store-screenshot-majority-rule",
+      "robots": "",
+      "words": 1497,
+      "h1": [
+        "App Store Screenshot Majority Rule (Guideline 2.3.3)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/iphone-duo-app-store-screenshots",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/iphone-duo-app-store-screenshots",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "iPhone Duo App Store Screenshots: Sizes and Setup",
+      "description": "iPhone Duo screenshot sizes for the inner (2007×2853) and outer (1398×2034) displays, upload status, how to capture them, and how to build both sets.",
+      "canonical": "https://screenshotbro.app/blog/iphone-duo-app-store-screenshots",
+      "robots": "",
+      "words": 3292,
+      "h1": [
+        "iPhone Duo App Store Screenshots: Sizes and Setup"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/googlebook-google-play-screenshots",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/googlebook-google-play-screenshots",
+      "redirects": 0,
+      "seconds": 0.12,
+      "title": "Googlebook Ships: Your Play Large-Screen Screenshots",
+      "description": "Android laptops went on sale October 4. No new Play screenshot size — but the Large screens slot most listings leave empty now carries real distribution.",
+      "canonical": "https://screenshotbro.app/blog/googlebook-google-play-screenshots",
+      "robots": "",
+      "words": 2205,
+      "h1": [
+        "Googlebook Ships: Your Play Large-Screen Screenshots"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-creative-assets",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-creative-assets",
+      "redirects": 0,
+      "seconds": 0.17,
+      "title": "App Store Creative Assets: Headers and Search Results",
+      "description": "Apple is adding product page headers, search result assets and an Asset Library to the App Store. What's confirmed and what it changes for screenshots.",
+      "canonical": "https://screenshotbro.app/blog/app-store-creative-assets",
+      "robots": "",
+      "words": 2756,
+      "h1": [
+        "App Store Creative Assets: Headers and Search Results"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/screenshot-bro-mcp-server",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/screenshot-bro-mcp-server",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "Screenshot Bro MCP: Automate App Store Screenshots",
+      "description": "Turn on the Screenshot Bro MCP server and let Claude Code, Claude Desktop or Cursor build, translate, preview and export your App Store screenshots.",
+      "canonical": "https://screenshotbro.app/blog/screenshot-bro-mcp-server",
+      "robots": "",
+      "words": 4443,
+      "h1": [
+        "Screenshot Bro MCP: Automate App Store Screenshots"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/butterkit-alternative",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/butterkit-alternative",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "ButterKit Alternative: Two Native Mac Screenshot Apps",
+      "description": "ButterKit and Screenshot Bro are both native Mac App Store screenshot apps. How they differ on macOS version, translation, Google Play and free tiers.",
+      "canonical": "https://screenshotbro.app/blog/butterkit-alternative",
+      "robots": "",
+      "words": 2207,
+      "h1": [
+        "ButterKit Alternative: Two Native Mac Screenshot Apps"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/best-app-store-screenshot-tools-for-mac",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/best-app-store-screenshot-tools-for-mac",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "Best App Store Screenshot Tools for Mac (2026)",
+      "description": "The native Mac options for App Store screenshots compared: Screenshot Bro, Screenshot Studio, Rotato, Fastlane frameit, Mockuuups Studio, Figma and Sketch.",
+      "canonical": "https://screenshotbro.app/blog/best-app-store-screenshot-tools-for-mac",
+      "robots": "",
+      "words": 1368,
+      "h1": [
+        "Best App Store Screenshot Tools for Mac (2026)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/best-app-screenshot-localization-tools",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/best-app-screenshot-localization-tools",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "Best App Screenshot Localization Tools (2026)",
+      "description": "Which tools translate App Store and Google Play screenshots well: language coverage, built-in translation, per-locale overrides and export, compared.",
+      "canonical": "https://screenshotbro.app/blog/best-app-screenshot-localization-tools",
+      "robots": "",
+      "words": 1213,
+      "h1": [
+        "Best App Screenshot Localization Tools (2026)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/best-google-play-screenshot-tools",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/best-google-play-screenshot-tools",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "Best Google Play Screenshot Tools (2026) — Screenshot Bro",
+      "description": "Tools that handle a full Google Play listing: phone and tablet screenshots, the 1024x500 feature graphic, Android device frames and localization, compared.",
+      "canonical": "https://screenshotbro.app/blog/best-google-play-screenshot-tools",
+      "robots": "",
+      "words": 1177,
+      "h1": [
+        "Best Google Play Screenshot Tools (2026)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/screenshot-bro-alternatives",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/screenshot-bro-alternatives",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "Screenshot Bro Alternatives: When to Use Another Tool",
+      "description": "An honest list of Screenshot Bro alternatives from its own maker: which tool to use for Windows, Apple Watch, CI automation, 80+ languages or video.",
+      "canonical": "https://screenshotbro.app/blog/screenshot-bro-alternatives",
+      "robots": "",
+      "words": 1223,
+      "h1": [
+        "Screenshot Bro Alternatives: When to Use Another Tool"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/appscreens-alternative",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/appscreens-alternative",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "AppScreens Alternative: Native Mac Screenshot Editor",
+      "description": "Looking for an AppScreens alternative? How Screenshot Bro compares: native Mac app, watermark-free exports, 81 locales, direct store upload.",
+      "canonical": "https://screenshotbro.app/blog/appscreens-alternative",
+      "robots": "",
+      "words": 1067,
+      "h1": [
+        "AppScreens Alternative: Native Mac Screenshot Editor"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/screenshots-pro-alternative",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/screenshots-pro-alternative",
+      "redirects": 0,
+      "seconds": 0.17,
+      "title": "Screenshots Pro Alternative: A Native Screenshot App",
+      "description": "Looking for a Screenshots Pro alternative? How Screenshot Bro compares: native editing, localization and direct App Store Connect upload, not an API.",
+      "canonical": "https://screenshotbro.app/blog/screenshots-pro-alternative",
+      "robots": "",
+      "words": 1041,
+      "h1": [
+        "Screenshots Pro Alternative: A Native Screenshot App"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/rotato-alternative",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/rotato-alternative",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Rotato Alternative for App Store Screenshot Sets",
+      "description": "Looking for a Rotato alternative? Rotato does 3D mockups and video; Screenshot Bro builds the flat App Store and Google Play set in every size and locale.",
+      "canonical": "https://screenshotbro.app/blog/rotato-alternative",
+      "robots": "",
+      "words": 1016,
+      "h1": [
+        "Rotato Alternative for App Store Screenshot Sets"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/placeit-alternative",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/placeit-alternative",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "Placeit Alternative for App Store Screenshots",
+      "description": "Looking for a Placeit alternative for app screenshots? A broad library with watermarked free downloads versus a focused, watermark-free store tool.",
+      "canonical": "https://screenshotbro.app/blog/placeit-alternative",
+      "robots": "",
+      "words": 960,
+      "h1": [
+        "Placeit Alternative for App Store Screenshots"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/mockuuups-studio-alternative",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/mockuuups-studio-alternative",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "Mockuuups Studio Alternative for Store Screenshots",
+      "description": "Looking for a Mockuuups Studio alternative? Mockup libraries frame one image at a time; Screenshot Bro builds a localized store set from one canvas.",
+      "canonical": "https://screenshotbro.app/blog/mockuuups-studio-alternative",
+      "robots": "",
+      "words": 979,
+      "h1": [
+        "Mockuuups Studio Alternative for Store Screenshots"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/canva-app-store-screenshots",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/canva-app-store-screenshots",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "App Store Screenshots in Canva: How To and When Not",
+      "description": "How to make App Store screenshots in Canva step by step, plus the point where duplicating designs per device size and language stops being worth it.",
+      "canonical": "https://screenshotbro.app/blog/canva-app-store-screenshots",
+      "robots": "",
+      "words": 1117,
+      "h1": [
+        "App Store Screenshots in Canva: How To and When Not"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/appmockup-alternative",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/appmockup-alternative",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "AppMockUp Alternative With Projects and Locales",
+      "description": "Looking for an AppMockUp alternative? AppMockUp Studio is free in the browser; Screenshot Bro adds saved projects, 81 locales, batch export and upload.",
+      "canonical": "https://screenshotbro.app/blog/appmockup-alternative",
+      "robots": "",
+      "words": 961,
+      "h1": [
+        "AppMockUp Alternative With Projects and Locales"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/screenshot-studio-alternative",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/screenshot-studio-alternative",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "Screenshot Studio Alternative: Two Native Mac Apps",
+      "description": "Screenshot Studio vs Screenshot Bro: two native Apple-platform screenshot apps compared on device coverage, translation, free tiers and project files.",
+      "canonical": "https://screenshotbro.app/blog/screenshot-studio-alternative",
+      "robots": "",
+      "words": 1140,
+      "h1": [
+        "Screenshot Studio Alternative: Two Native Mac Apps"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/applaunchpad-alternative",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/applaunchpad-alternative",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "AppLaunchpad Alternative: A Native App Store Screenshot App",
+      "description": "Looking for an AppLaunchpad alternative? How Screenshot Bro compares: native Mac app, device frames, localization, direct App Store Connect upload.",
+      "canonical": "https://screenshotbro.app/blog/applaunchpad-alternative",
+      "robots": "",
+      "words": 890,
+      "h1": [
+        "AppLaunchpad Alternative: A Native App Store Screenshot App"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/previewed-alternative",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/previewed-alternative",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "Previewed Alternative: Store-Ready App Screenshots",
+      "description": "Looking for a Previewed alternative? How Screenshot Bro compares: store-ready screenshots at exact sizes, localization and direct App Store Connect upload.",
+      "canonical": "https://screenshotbro.app/blog/previewed-alternative",
+      "robots": "",
+      "words": 862,
+      "h1": [
+        "Previewed Alternative: Store-Ready App Screenshots"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/shotbot-alternative",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/shotbot-alternative",
+      "redirects": 0,
+      "seconds": 0.2,
+      "title": "Shotbot Alternative: From Framing to Full Screenshot Design",
+      "description": "Looking for a Shotbot alternative? How Screenshot Bro compares for designing full localized App Store screenshot sets, not just framing single shots.",
+      "canonical": "https://screenshotbro.app/blog/shotbot-alternative",
+      "robots": "",
+      "words": 873,
+      "h1": [
+        "Shotbot Alternative: From Framing to Full Screenshot Design"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/publish-app-on-google-play",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/publish-app-on-google-play",
+      "redirects": 0,
+      "seconds": 0.21,
+      "title": "How to Publish an App on Google Play: Step-by-Step (2026)",
+      "description": "A 2026 step-by-step for publishing an app on Google Play: Play Console account, store listing, policy declarations, App Bundle upload, and production rollout.",
+      "canonical": "https://screenshotbro.app/blog/publish-app-on-google-play",
+      "robots": "",
+      "words": 668,
+      "h1": [
+        "How to Publish an App on Google Play: Step-by-Step (2026)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/google-play-promo-video",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/google-play-promo-video",
+      "redirects": 0,
+      "seconds": 0.19,
+      "title": "Google Play Promo Video: Specs and How to Add One",
+      "description": "How the Google Play promo video works in 2026: it is a YouTube URL, not an upload. Specs, rules, where it appears, and how it differs from iOS.",
+      "canonical": "https://screenshotbro.app/blog/google-play-promo-video",
+      "robots": "",
+      "words": 943,
+      "h1": [
+        "Google Play Promo Video: Specs and How to Add One"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-description-that-converts",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-description-that-converts",
+      "redirects": 0,
+      "seconds": 0.19,
+      "title": "How to Write an App Store Description That Converts",
+      "description": "How to write App Store and Google Play descriptions that convert: what each field does, the first-three-lines rule, and how iOS and Play differ.",
+      "canonical": "https://screenshotbro.app/blog/app-store-description-that-converts",
+      "robots": "",
+      "words": 992,
+      "h1": [
+        "How to Write an App Store Description That Converts"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-keyword-research",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-keyword-research",
+      "redirects": 0,
+      "seconds": 0.18,
+      "title": "App Store Keyword Research: How to Choose Keywords (2026)",
+      "description": "How to research and choose App Store keywords in 2026: how the iOS keyword field works, how to use it efficiently, and how Google Play differs.",
+      "canonical": "https://screenshotbro.app/blog/app-store-keyword-research",
+      "robots": "",
+      "words": 973,
+      "h1": [
+        "App Store Keyword Research: How to Choose Keywords (2026)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-screenshots-for-games",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-screenshots-for-games",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "App Store Screenshots for Games: What Converts",
+      "description": "How to design App Store and Google Play screenshots for games: lead with gameplay, match orientation, write captions, and the Play feature graphic.",
+      "canonical": "https://screenshotbro.app/blog/app-store-screenshots-for-games",
+      "robots": "",
+      "words": 829,
+      "h1": [
+        "App Store Screenshots for Games: What Converts"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-screenshots-for-fitness-apps",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-screenshots-for-fitness-apps",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "App Store Screenshots for Fitness Apps: What Converts",
+      "description": "How to design App Store screenshots for fitness and wellness apps: sell the outcome, match the visual tone, and handle health data and claims.",
+      "canonical": "https://screenshotbro.app/blog/app-store-screenshots-for-fitness-apps",
+      "robots": "",
+      "words": 807,
+      "h1": [
+        "App Store Screenshots for Fitness Apps: What Converts"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/change-app-store-screenshots-without-updating-app",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/change-app-store-screenshots-without-updating-app",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "Can You Change App Store Screenshots Without an Update?",
+      "description": "When you can change App Store and Google Play screenshots without shipping a build — the iOS version rules, custom product pages, and how Play differs.",
+      "canonical": "https://screenshotbro.app/blog/change-app-store-screenshots-without-updating-app",
+      "robots": "",
+      "words": 998,
+      "h1": [
+        "Can You Change App Store Screenshots Without an Update?"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/best-free-app-store-screenshot-generators",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/best-free-app-store-screenshot-generators",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "Best Free App Store Screenshot Generators (2026)",
+      "description": "A 2026 comparison of free App Store screenshot generators — what each is known for, what to check on free tiers, and when it pays to upgrade.",
+      "canonical": "https://screenshotbro.app/blog/best-free-app-store-screenshot-generators",
+      "robots": "",
+      "words": 1009,
+      "h1": [
+        "Best Free App Store Screenshot Generators (2026)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/mac-app-store-screenshot-sizes",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/mac-app-store-screenshot-sizes",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Mac App Store Screenshot Sizes and Requirements (2026)",
+      "description": "The accepted Mac App Store screenshot sizes for 2026 — 1280×800 to 2880×1800 at 16:10 — plus format rules and how Mac screenshots differ from iPhone and iPad.",
+      "canonical": "https://screenshotbro.app/blog/mac-app-store-screenshot-sizes",
+      "robots": "",
+      "words": 868,
+      "h1": [
+        "Mac App Store Screenshot Sizes and Requirements (2026)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/iphone-simulator-screenshots",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/iphone-simulator-screenshots",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "How to Take iPhone Simulator Screenshots (xcrun simctl)",
+      "description": "Capture App Store screenshots from the iOS Simulator with xcrun simctl: native-resolution captures, a clean 9:41 status bar, and automation across devices.",
+      "canonical": "https://screenshotbro.app/blog/iphone-simulator-screenshots",
+      "robots": "",
+      "words": 942,
+      "h1": [
+        "How to Take iPhone Simulator Screenshots (xcrun simctl)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/submit-app-to-app-store",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/submit-app-to-app-store",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "How to Submit an App to the App Store: Step-by-Step (2026)",
+      "description": "A 2026 step-by-step for submitting an app to the App Store: developer account, App Store Connect record, build upload, metadata, review, release.",
+      "canonical": "https://screenshotbro.app/blog/submit-app-to-app-store",
+      "robots": "",
+      "words": 724,
+      "h1": [
+        "How to Submit an App to the App Store: Step-by-Step (2026)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/how-many-app-store-screenshots",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/how-many-app-store-screenshots",
+      "redirects": 0,
+      "seconds": 0.17,
+      "title": "How Many Screenshots for the App Store and Google Play?",
+      "description": "How many screenshots the App Store and Google Play allow, the minimums required, and how many you should actually use for the best conversion.",
+      "canonical": "https://screenshotbro.app/blog/how-many-app-store-screenshots",
+      "robots": "",
+      "words": 826,
+      "h1": [
+        "How Many Screenshots for the App Store and Google Play?"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/screenshot-generator-vs-figma-vs-photoshop",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/screenshot-generator-vs-figma-vs-photoshop",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "Screenshot Generator vs Figma vs Photoshop: Which to Use",
+      "description": "Making App Store screenshots with a dedicated generator, Figma, or Photoshop — and when each workflow wins on speed, scale, and creative control.",
+      "canonical": "https://screenshotbro.app/blog/screenshot-generator-vs-figma-vs-photoshop",
+      "robots": "",
+      "words": 911,
+      "h1": [
+        "Screenshot Generator vs Figma vs Photoshop: Which to Use"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/localize-screenshots-japan-china-germany",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/localize-screenshots-japan-china-germany",
+      "redirects": 0,
+      "seconds": 0.17,
+      "title": "Localizing App Store Screenshots: Japan, China, Germany",
+      "description": "Localizing App Store and Google Play screenshots for Japan, China, and Germany: text density, the China storefront, and German text expansion.",
+      "canonical": "https://screenshotbro.app/blog/localize-screenshots-japan-china-germany",
+      "robots": "",
+      "words": 953,
+      "h1": [
+        "Localizing App Store Screenshots: Japan, China, Germany"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-app-preview-video-specs",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-app-preview-video-specs",
+      "redirects": 0,
+      "seconds": 0.17,
+      "title": "App Store App Preview Video Specs and How to Make One (2026)",
+      "description": "App preview video specs for the App Store in 2026: dimensions, length, format, poster frame, and a step-by-step guide to record and upload one.",
+      "canonical": "https://screenshotbro.app/blog/app-store-app-preview-video-specs",
+      "robots": "",
+      "words": 1411,
+      "h1": [
+        "App Store App Preview Video Specs and How to Make One (2026)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/device-mockup-generator-app-screenshots",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/device-mockup-generator-app-screenshots",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "Device Mockup Generator: Free Frames for App Screenshots",
+      "description": "How to wrap app screenshots in realistic device frames — iPhone, iPad, MacBook, and Android — plus free frame sources and export tips.",
+      "canonical": "https://screenshotbro.app/blog/device-mockup-generator-app-screenshots",
+      "robots": "",
+      "words": 1726,
+      "h1": [
+        "Device Mockup Generator: Free Frames for App Screenshots"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-optimization-aso-guide",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-optimization-aso-guide",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "App Store Optimization (ASO) for Indie Developers 2026",
+      "description": "A practical 2026 ASO guide for indie developers: app name, subtitle, keywords, screenshots, localization, ratings, and what actually moves installs.",
+      "canonical": "https://screenshotbro.app/blog/app-store-optimization-aso-guide",
+      "robots": "",
+      "words": 927,
+      "h1": [
+        "App Store Optimization (ASO) for Indie Developers 2026"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-icon-sizes-design-guidelines",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-icon-sizes-design-guidelines",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "App Icon Sizes for the App Store and Google Play (2026)",
+      "description": "App icon sizes and design rules for the App Store and Google Play in 2026: dimensions, formats, safe areas, no-alpha rules, and rejection pitfalls.",
+      "canonical": "https://screenshotbro.app/blog/app-icon-sizes-design-guidelines",
+      "robots": "",
+      "words": 1220,
+      "h1": [
+        "App Icon Sizes for the App Store and Google Play (2026)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-screenshot-examples",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-screenshot-examples",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "App Store Screenshot Examples: 25 Real Apps Broken Down",
+      "description": "A fact-checked teardown of 25 live App Store listings, with practical screenshot patterns you can adapt for your own iOS app.",
+      "canonical": "https://screenshotbro.app/blog/app-store-screenshot-examples",
+      "robots": "",
+      "words": 1680,
+      "h1": [
+        "App Store Screenshot Examples: 25 Real Apps Broken Down"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/google-play-feature-graphic-size-template-examples",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/google-play-feature-graphic-size-template-examples",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Google Play Feature Graphic Size, Template, and Examples",
+      "description": "The current Google Play feature graphic size, file requirements, layout template, design rules, and example patterns for app and game listings.",
+      "canonical": "https://screenshotbro.app/blog/google-play-feature-graphic-size-template-examples",
+      "robots": "",
+      "words": 1130,
+      "h1": [
+        "Google Play Feature Graphic Size, Template, and Examples"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-screenshots-rejected-fix",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-screenshots-rejected-fix",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "Why App Store Screenshots Get Rejected and How to Fix Them",
+      "description": "The common screenshot and metadata problems that trigger App Store rejection, based on Apple guidelines, plus a practical fix checklist.",
+      "canonical": "https://screenshotbro.app/blog/app-store-screenshots-rejected-fix",
+      "robots": "",
+      "words": 683,
+      "h1": [
+        "Why App Store Screenshots Get Rejected and How to Fix Them"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/google-play-screenshot-rejected-fix",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/google-play-screenshot-rejected-fix",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "Why Google Play Screenshots Get Rejected and How to Fix Them",
+      "description": "A policy-based checklist for fixing rejected Google Play screenshots, preview assets, metadata issues, and device-specific screenshot problems.",
+      "canonical": "https://screenshotbro.app/blog/google-play-screenshot-rejected-fix",
+      "robots": "",
+      "words": 1260,
+      "h1": [
+        "Why Google Play Screenshots Get Rejected and How to Fix Them"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-screenshot-order",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-screenshot-order",
+      "redirects": 0,
+      "seconds": 0.12,
+      "title": "App Store Screenshot Order: What to Put First",
+      "description": "An ASO ordering framework for App Store screenshots, including how search results, app previews, and the first images affect your listing.",
+      "canonical": "https://screenshotbro.app/blog/app-store-screenshot-order",
+      "robots": "",
+      "words": 1172,
+      "h1": [
+        "App Store Screenshot Order: What to Put First"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-screenshot-copywriting-examples",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-screenshot-copywriting-examples",
+      "redirects": 0,
+      "seconds": 0.18,
+      "title": "App Store Screenshot Text: 50 ASO Caption Examples",
+      "description": "A practical ASO copywriting guide for App Store screenshot captions, with fact-checked policy notes and 50 reusable headline examples.",
+      "canonical": "https://screenshotbro.app/blog/app-store-screenshot-copywriting-examples",
+      "robots": "",
+      "words": 1233,
+      "h1": [
+        "App Store Screenshot Text: 50 ASO Caption Examples"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-screenshot-mistakes",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-screenshot-mistakes",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "App Store Screenshot Mistakes: 15 Issues That Hurt Installs",
+      "description": "Common ASO screenshot mistakes that weaken conversion, create review risk, or make your App Store product page harder to understand.",
+      "canonical": "https://screenshotbro.app/blog/app-store-screenshot-mistakes",
+      "robots": "",
+      "words": 1113,
+      "h1": [
+        "App Store Screenshot Mistakes: 15 Issues That Hurt Installs"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/iphone-ipad-app-store-screenshots",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/iphone-ipad-app-store-screenshots",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "iPhone and iPad App Store Screenshots: What to Upload",
+      "description": "A practical ASO upload plan for iPhone and iPad App Store screenshots, including display classes, scaling behavior, and design workflow.",
+      "canonical": "https://screenshotbro.app/blog/iphone-ipad-app-store-screenshots",
+      "robots": "",
+      "words": 1241,
+      "h1": [
+        "iPhone and iPad App Store Screenshots: What to Upload"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/google-play-store-listing-graphics-checklist",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/google-play-store-listing-graphics-checklist",
+      "redirects": 0,
+      "seconds": 0.17,
+      "title": "Google Play Store Listing Graphics Checklist",
+      "description": "A fact-checked Google Play ASO checklist for app icons, feature graphics, screenshots, preview videos, alt text, and policy risks.",
+      "canonical": "https://screenshotbro.app/blog/google-play-store-listing-graphics-checklist",
+      "robots": "",
+      "words": 1056,
+      "h1": [
+        "Google Play Store Listing Graphics Checklist"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/seasonal-app-store-screenshots",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/seasonal-app-store-screenshots",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "Seasonal App Store Screenshots: When and How to Update Them",
+      "description": "How to plan seasonal ASO screenshot updates for App Store and Google Play without outdated claims, review timing issues, or stale listings.",
+      "canonical": "https://screenshotbro.app/blog/seasonal-app-store-screenshots",
+      "robots": "",
+      "words": 1056,
+      "h1": [
+        "Seasonal App Store Screenshots: When and How to Update Them"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-screenshot-localization-guide",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-screenshot-localization-guide",
+      "redirects": 0,
+      "seconds": 0.17,
+      "title": "App Store Screenshot Localization Guide (2026)",
+      "description": "Learn how to localize App Store screenshots for more markets: languages, copy, RTL layouts, device sizes, App Store Connect upload, and repeatable exports.",
+      "canonical": "https://screenshotbro.app/blog/app-store-screenshot-localization-guide",
+      "robots": "",
+      "words": 1939,
+      "h1": [
+        "App Store Screenshot Localization Guide (2026)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/popular-figma-templates-app-store-screenshots-device-mockups",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/popular-figma-templates-app-store-screenshots-device-mockups",
+      "redirects": 0,
+      "seconds": 0.16,
+      "title": "Figma Templates for App Store Screenshots and Mockups",
+      "description": "A practical shortlist of Figma templates and device mockup kits for App Store screenshots, plus when to move from Figma to a dedicated Screenshot Bro workflow.",
+      "canonical": "https://screenshotbro.app/blog/popular-figma-templates-app-store-screenshots-device-mockups",
+      "robots": "",
+      "words": 1632,
+      "h1": [
+        "Figma Templates for App Store Screenshots and Mockups"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-screenshot-designers-creators-to-follow",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-screenshot-designers-creators-to-follow",
+      "redirects": 0,
+      "seconds": 0.17,
+      "title": "Cool App Store Screenshot Designers and Creators to Follow",
+      "description": "A practical follow list for indie developers looking for App Store screenshot design inspiration, ASO creative teardown accounts, and better visual references.",
+      "canonical": "https://screenshotbro.app/blog/app-store-screenshot-designers-creators-to-follow",
+      "robots": "",
+      "words": 1622,
+      "h1": [
+        "Cool App Store Screenshot Designers and Creators to Follow"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/google-play-screenshot-sizes-requirements",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/google-play-screenshot-sizes-requirements",
+      "redirects": 0,
+      "seconds": 0.21,
+      "title": "Google Play Screenshot Sizes and Requirements",
+      "description": "A practical guide to Google Play screenshot sizes, formats, and device-specific requirements for phone, tablet, Chromebook, Wear OS, TV, and more.",
+      "canonical": "https://screenshotbro.app/blog/google-play-screenshot-sizes-requirements",
+      "robots": "",
+      "words": 1038,
+      "h1": [
+        "Google Play Screenshot Sizes and Requirements"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/ab-test-app-store-screenshots",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/ab-test-app-store-screenshots",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "How to A/B Test App Store and Google Play Screenshots",
+      "description": "How to test app screenshots with Apple Product Page Optimization and Google Play Store Listing Experiments, plus what to test first.",
+      "canonical": "https://screenshotbro.app/blog/ab-test-app-store-screenshots",
+      "robots": "",
+      "words": 1085,
+      "h1": [
+        "How to A/B Test App Store and Google Play Screenshots"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/custom-product-pages-app-store-screenshots",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/custom-product-pages-app-store-screenshots",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "Custom Product Pages: App Store Screenshots for Campaigns",
+      "description": "Use App Store custom product pages to create campaign-specific screenshot sets for Apple Ads, seasonal launches, and more.",
+      "canonical": "https://screenshotbro.app/blog/custom-product-pages-app-store-screenshots",
+      "robots": "",
+      "words": 1043,
+      "h1": [
+        "Custom Product Pages: App Store Screenshots for Campaigns"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/design-app-store-screenshots-in-figma",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/design-app-store-screenshots-in-figma",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "How to Design App Store Screenshots in Figma",
+      "description": "A practical Figma tutorial for designing App Store screenshots: file setup, device frames, reusable components, localization, and export.",
+      "canonical": "https://screenshotbro.app/blog/design-app-store-screenshots-in-figma",
+      "robots": "",
+      "words": 1596,
+      "h1": [
+        "How to Design App Store Screenshots in Figma"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/best-app-store-screenshot-tools",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/best-app-store-screenshot-tools",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Best App Store Screenshot Tools for Indie Developers",
+      "description": "Compare Screenshot Bro with AppScreens, AppLaunchpad, Rotato, Placeit, Figma, and other tools for App Store and Google Play screenshots.",
+      "canonical": "https://screenshotbro.app/blog/best-app-store-screenshot-tools",
+      "robots": "",
+      "words": 1790,
+      "h1": [
+        "Best App Store Screenshot Tools for Indie Developers"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/make-and-ship-screenshots-with-fastlane",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/make-and-ship-screenshots-with-fastlane",
+      "redirects": 0,
+      "seconds": 0.19,
+      "title": "Fastlane: Make and Ship App Store Screenshots (2026 Guide)",
+      "description": "End-to-end fastlane screenshot pipeline for iOS in 2026: snapshot, frameit, and deliver — with Fastfile, Deliverfile, and a GitHub Actions workflow.",
+      "canonical": "https://screenshotbro.app/blog/make-and-ship-screenshots-with-fastlane",
+      "robots": "",
+      "words": 3736,
+      "h1": [
+        "Fastlane: Make and Ship App Store Screenshots (2026 Guide)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/upload-screenshots-to-app-store-connect",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/upload-screenshots-to-app-store-connect",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "How to Upload Screenshots to App Store Connect (2026 Guide)",
+      "description": "Four ways to upload App Store screenshots: the web uploader, Transporter, fastlane, the App Store Connect API, and a Mac, iPad and iPhone app workflow.",
+      "canonical": "https://screenshotbro.app/blog/upload-screenshots-to-app-store-connect",
+      "robots": "",
+      "words": 1399,
+      "h1": [
+        "How to Upload Screenshots to App Store Connect (2026 Guide)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/screenshot-sizes-app-store-google-play",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/screenshot-sizes-app-store-google-play",
+      "redirects": 0,
+      "seconds": 0.15,
+      "title": "Screenshot Sizes for App Store and Google Play (2026)",
+      "description": "Every screenshot dimension for the Apple App Store and Google Play in 2026 — iPhone, iPad, Mac, Apple Watch, Apple TV, Vision Pro, and Android.",
+      "canonical": "https://screenshotbro.app/blog/screenshot-sizes-app-store-google-play",
+      "robots": "",
+      "words": 1596,
+      "h1": [
+        "Screenshot Sizes for App Store and Google Play (2026)"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/app-store-screenshot-sizes",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/app-store-screenshot-sizes",
+      "redirects": 0,
+      "seconds": 0.14,
+      "title": "App Store Screenshot Sizes for Every Apple Device in 2026",
+      "description": "A complete reference of accepted screenshot dimensions for iPhone, iPad, Mac, Apple Watch, Apple TV, and Apple Vision Pro.",
+      "canonical": "https://screenshotbro.app/blog/app-store-screenshot-sizes",
+      "robots": "",
+      "words": 964,
+      "h1": [
+        "App Store Screenshot Sizes for Every Apple Device in 2026"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/screenshots-that-convert",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/screenshots-that-convert",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "How to Design App Store Screenshots That Actually Convert",
+      "description": "Learn the layout patterns, copy formulas, and design principles that help turn App Store visitors into downloads.",
+      "canonical": "https://screenshotbro.app/blog/screenshots-that-convert",
+      "robots": "",
+      "words": 767,
+      "h1": [
+        "How to Design App Store Screenshots That Actually Convert"
+      ]
+    },
+    {
+      "url": "https://screenshotbro.app/blog/localize-app-store-screenshots",
+      "status": 200,
+      "final": "https://screenshotbro.app/blog/localize-app-store-screenshots",
+      "redirects": 0,
+      "seconds": 0.13,
+      "title": "Localizing App Store Screenshots Without Losing Your Mind",
+      "description": "Supporting multiple languages on the App Store means multiplying your screenshot workload. Here's how to set up a system that scales.",
+      "canonical": "https://screenshotbro.app/blog/localize-app-store-screenshots",
+      "robots": "",
+      "words": 765,
+      "h1": [
+        "Localizing App Store Screenshots Without Losing Your Mind"
+      ]
+    }
+  ],
+  "robots": "User-agent: *\nAllow: /\nDisallow: /build/\n# Cloudflare rewrites mailto: links to /cdn-cgi/l/email-protection#<hash>. Crawlers\n# drop the fragment and the bare URL 404s, so keep them out of the index entirely.\nDisallow: /cdn-cgi/\n# React Router serves every page's loader data as a parallel <path>.data URL.\n# They duplicate page content as opaque payloads, so keep crawl budget off them.\nDisallow: /*.data$\nDisallow: /*.data?\n\n# Answer engines and AI crawlers. Google-Extended and Applebot-Extended are\n# opt-outs that some sites set by default, so state the intent explicitly:\n# this site wants to be quoted. Per RFC 9309 a crawler matching one of these\n# groups ignores the * group above, so the disallows are repeated here.\nUser-agent: GPTBot\nUser-agent: OAI-SearchBot\nUser-agent: ChatGPT-User\nUser-agent: ClaudeBot\nUser-agent: Claude-User\nUser-agent: Claude-SearchBot\nUser-agent: PerplexityBot\nUser-agent: Perplexity-User\nUser-agent: Google-Extended\nUser-agent: Applebot\nUser-agent: Applebot-Extended\nUser-agent: CCBot\nAllow: /\nDisallow: /build/\nDisallow: /cdn-cgi/\nDisallow: /*.data$\nDisallow: /*.data?\n\nSitemap: https://screenshotbro.app/sitemap.xml\n"
+}
