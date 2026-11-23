@@ -344,3 +344,13 @@ run missed, and it caught one item (Apple's Sep 18 iPhone Duo resources).
 - **Published:** none
 - **Updated:** none
 - **Watching:** Asset Library / product page headers going live; frameit Duo frames; April 2027 Duo screenshot requirement; Play 3,840 vs 7,680 px inconsistency; age rating descriptor deadline Jan 12, 2027 (not screenshots).
+
+## 2026-11-23
+- **Scanned:** developer.apple.com/news, App Store Connect release notes, screenshot specifications, fastlane releases, Google Play screenshot requirements page.
+- **Findings:** nothing material this week.
+  - fastlane 2.242.0 (Nov 16): frameit adds iPhone Duo frame support (#30458); deliver stops review submission after precheck refusal; supply forced track promotion and ADC from service account impersonation. No existing post says frameit lacks Duo frames, so nothing contradicted. <https://github.com/fastlane/fastlane/releases>
+  - Apple news Nov 16-18: macOS 27.3 permissions, tax/price updates, App Store Awards finalists. ASC Nov 16/19: age rating declarations (Shared Location, Dating and Relationships; all apps by Jan 12, 2027), App Compliance page, Xcode 27.3 beta 2 TestFlight uploads. None screenshot-related. <https://developer.apple.com/news/>, <https://developer.apple.com/help/app-store-connect/release-notes/>
+  - Screenshot spec page unchanged vs. our posts (Duo 1398x2034 / 2007x2853; 13" iPad required; April 2027 requirement for iOS 27.1 SDK+; part of the page read via summary only). Google Play requirements page unchanged. <https://developer.apple.com/help/app-store-connect/reference/screenshot-specifications/>, <https://support.google.com/googleplay/android-developer/answer/9866151>
+- **Published:** none
+- **Updated:** none
+- **Watching:** Asset Library / product page headers going live; April 2027 Duo screenshot requirement; Play 3,840 vs 7,680 px inconsistency; age rating deadline Jan 12, 2027 (not screenshots); consider a frameit Duo mention in fastlane guide if a further fastlane release adds screenshot features.
